@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__mcp-registry__search_mcp_registry",
+      "Bash(node -e ' *)",
+      "WebSearch",
+      "Bash(cd \"C:\\\\Users\\\\yano5\\\\OneDrive\\\\デスクトップ\" && find . -iname \"main.py\" -o -iname \"*json_export*\" -o -iname \"update_dashboard.py\" 2>/dev/null | head -20)",
+      "Bash(cd \"/c/Users/yano5/OneDrive/デスクトップ/機関投資家の動き分析アプリ\" && find . -maxdepth 3 -not -path '*/.git*' | sort)",
+      "Bash(pip show *)",
+      "PowerShell(python --version)",
+      "PowerShell(py --version)",
+      "Read(//c/Users/yano5/.claude/**)",
+      "Read(//c/Users/yano5/AppData/Roaming/Claude/**)",
+      "PowerShell(winget install Python.Python.3.12 --silent --accept-package-agreements --accept-source-agreements)",
+      "PowerShell(wsl python3 --version 2>&1)",
+      "PowerShell(wsl bash -c \"cd '/mnt/c/Users/yano5/OneDrive/�f�X�N�g�b�v/�@�֓����Ƃ̓������̓A�v��' && pip3 install -r requirements.txt -q 2>&1 | tail -5\")",
+      "PowerShell(wsl bash -c \"cd '/mnt/c/Users/yano5/OneDrive/�f�X�N�g�b�v/�@�֓����Ƃ̓������̓A�v��' && python3 -m pip install -r requirements.txt -q 2>&1 | tail -5\")",
+      "PowerShell(wsl bash -c \"sudo apt-get install -y python3-pip python3-venv 2>&1 | tail -3\")",
+      "PowerShell(wsl bash -c \"which pip3 || which pip || python3 -c 'import ensurepip; ensurepip.bootstrap\\(\\)' 2>&1\")",
+      "PowerShell(wsl bash -c \"curl -sS https://bootstrap.pypa.io/get-pip.py | python3 2>&1 | tail -3\")",
+      "PowerShell(wsl bash -c \"python3 -m venv /tmp/inv_venv && /tmp/inv_venv/bin/pip install -q yfinance pandas numpy requests 2>&1 | tail -3\")",
+      "PowerShell(wsl bash -c \"sudo apt-get install -y python3-pip python3-venv python3.14-venv 2>&1 | tail -5\")",
+      "PowerShell(wsl bash -c \"python3 -m venv /tmp/inv_venv && /tmp/inv_venv/bin/pip install -q yfinance pandas numpy requests 2>&1 | tail -5\")",
+      "PowerShell(wsl bash -c \"sudo apt-get install -y python3.14-venv 2>&1 | tail -3\")",
+      "PowerShell(wsl bash -c \"rm -rf /tmp/inv_venv && python3 -m venv /tmp/inv_venv && /tmp/inv_venv/bin/pip install -q yfinance pandas numpy requests 2>&1 | tail -5\")",
+      "PowerShell(wsl bash -c \"apt list --installed 2>/dev/null | grep -E 'python3|venv'\")",
+      "PowerShell(wsl bash -c \"curl -sS https://bootstrap.pypa.io/get-pip.py | python3 --break-system-packages 2>&1 | tail -3\")",
+      "PowerShell(wsl bash -c \"curl -sS https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py && python3 /tmp/get-pip.py --break-system-packages 2>&1 | tail -3\")",
+      "PowerShell(wsl bash -c 'export PATH=$PATH:/home/yano50924/.local/bin && cd \"/mnt/c/Users/yano5/OneDrive/�f�X�N�g�b�v/�@�֓����Ƃ̓������̓A�v��\" && pip install -q --break-system-packages yfinance pandas numpy requests 2>&1 | tail -5')",
+      "Bash(ls /mnt/c/Users/yano5/OneDrive/ 2>/dev/null | head -5 || echo \"OneDrive not mounted\")",
+      "PowerShell(wsl bash /mnt/c/Users/yano5/AppData/Local/Temp/run_investor.sh 2>&1)",
+      "mcp__claude-in-chrome__navigate",
+      "mcp__claude-in-chrome__tabs_context_mcp",
+      "PowerShell(wsl bash /mnt/c/Users/yano5/AppData/Local/Temp/git_push.sh 2>&1)"
+    ]
+  }
+}

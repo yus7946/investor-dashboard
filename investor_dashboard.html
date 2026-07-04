@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070b14">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>機関投資家型 AIエージェント</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+:root {
+  --bg: #070b14;
+  --surface: #0d1526;
+  --surface2: #121d35;
+  --border: rgba(99,179,237,0.12);
+  --text: #e8f4fd;
+  --muted: #7a9bbf;
+  --accent: #3b82f6;
+  --accent2: #06b6d4;
+  --green: #10b981;
+  --red: #ef4444;
+  --yellow: #f59e0b;
+  --gold: #fbbf24;
+  --r: 16px;
+}
+
+body {
+  font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── 背景グリッド ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(59,130,246,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.wrap { position: relative; z-index: 1; padding: 0 16px 80px; max-width: 480px; margin: 0 auto; }
+
+/* ── ヘッダー ── */
+.header {
+  padding: 28px 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent2);
+  opacity: 0;
+}
+.header-badge::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+.header h1 {
+  font-size: clamp(20px, 5vw, 26px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #e8f4fd 0%, #63b3ed 50%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0;
+}
+.header-meta {
+  font-size: 12px;
+  color: var(--muted);
+  opacity: 0;
+}
+
+/* ── セクションタイトル ── */
+.section-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 28px 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── カード ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 16px;
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99,179,237,0.4), transparent);
+}
+
+/* ── KPIグリッド ── */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.kpi-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 14px;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.kpi-label {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+.kpi-value {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.kpi-sub {
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.up { color: var(--green); }
+.down { color: var(--red); }
+.neutral { color: var(--yellow); }
+.blue { color: var(--accent); }
+
+/* ── 銘柄カード ── */
+.stock-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 14px;
+  margin-bottom: 8px;
+  opacity: 0;
+  transform: translateY(16px);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: start;
+}
+.rank-badge {
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+.rank-badge.top { background: rgba(251,191,36,0.15); border-color: rgba(251,191,36,0.3); color: var(--gold); }
+.rank-badge.top2 { background: rgba(59,130,246,0.1); border-color: rgba(59,130,246,0.25); color: var(--accent); }
+
+.stock-info {}
+.stock-name { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+.stock-code { font-size: 11px; color: var(--muted); }
+.stock-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 6px; }
+.tag {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  white-space: nowrap;
+}
+.tag.green { border-color: rgba(16,185,129,0.3); color: var(--green); background: rgba(16,185,129,0.08); }
+.tag.blue  { border-color: rgba(59,130,246,0.3); color: var(--accent); background: rgba(59,130,246,0.08); }
+.tag.red   { border-color: rgba(239,68,68,0.3); color: var(--red); background: rgba(239,68,68,0.08); }
+
+.score-block { text-align: right; flex-shrink: 0; }
+.score-num {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--accent2);
+}
+.score-label { font-size: 9px; color: var(--muted); }
+
+/* ── スコアバー ── */
+.score-bars { margin-top: 10px; display: flex; flex-direction: column; gap: 5px; }
+.score-row { display: flex; align-items: center; gap: 8px; }
+.score-row-label { font-size: 10px; color: var(--muted); width: 52px; flex-shrink: 0; }
+.score-bar-track {
+  flex: 1;
+  height: 4px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.score-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  width: 0%;
+  transition: width 1.2s cubic-bezier(0.16,1,0.3,1);
+}
+.score-row-val { font-size: 10px; color: var(--text); width: 32px; text-align: right; flex-shrink: 0; }
+
+/* ── シグナルバッジ ── */
+.signal {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 99px;
+}
+.signal.buy   { background: rgba(16,185,129,0.15); color: var(--green); border: 1px solid rgba(16,185,129,0.3); }
+.signal.sell  { background: rgba(239,68,68,0.15);  color: var(--red);   border: 1px solid rgba(239,68,68,0.3);  }
+.signal.hold  { background: rgba(245,158,11,0.15); color: var(--yellow);border: 1px solid rgba(245,158,11,0.3); }
+.signal.strong-buy { background: rgba(16,185,129,0.25); color: #34d399; border: 1px solid rgba(16,185,129,0.5); box-shadow: 0 0 12px rgba(16,185,129,0.2); }
+
+/* ── アラートカード ── */
+.alert-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.alert-item:last-child { border-bottom: none; }
+.alert-icon {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.alert-icon.warn  { background: rgba(245,158,11,0.15); }
+.alert-icon.good  { background: rgba(16,185,129,0.15); }
+.alert-icon.info  { background: rgba(59,130,246,0.15); }
+.alert-body { flex: 1; min-width: 0; }
+.alert-title { font-size: 13px; font-weight: 600; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.alert-desc  { font-size: 11px; color: var(--muted); }
+
+/* ── フローバー ── */
+.flow-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.flow-label { font-size: 11px; color: var(--muted); width: 70px; flex-shrink: 0; }
+.flow-bar-wrap { flex: 1; height: 8px; background: rgba(255,255,255,0.06); border-radius: 99px; overflow: hidden; position: relative; }
+.flow-center { position: absolute; left: 50%; top: 0; width: 1px; height: 100%; background: rgba(255,255,255,0.15); }
+.flow-fill {
+  position: absolute;
+  height: 100%;
+  border-radius: 99px;
+  width: 0;
+  transition: width 1.4s cubic-bezier(0.16,1,0.3,1);
+}
+.flow-fill.positive { left: 50%; background: linear-gradient(90deg, var(--green), #34d399); }
+.flow-fill.negative { right: 50%; background: linear-gradient(270deg, var(--red), #f87171); }
+.flow-val { font-size: 11px; font-weight: 700; width: 60px; text-align: right; flex-shrink: 0; }
+
+/* ── バックテスト ── */
+.bt-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+.bt-item { text-align: center; }
+.bt-num { font-size: 18px; font-weight: 800; letter-spacing: -0.02em; }
+.bt-lbl { font-size: 9px; color: var(--muted); margin-top: 2px; }
+
+/* ── コピーボタン ── */
+.copy-section {
+  position: sticky;
+  bottom: 16px;
+  z-index: 100;
+  margin-top: 24px;
+}
+.copy-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border: none;
+  border-radius: var(--r);
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 8px 24px rgba(59,130,246,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.copy-btn:active { transform: scale(0.97); box-shadow: 0 4px 12px rgba(59,130,246,0.3); }
+.copy-btn.copied { background: linear-gradient(135deg, var(--green), #059669); box-shadow: 0 8px 24px rgba(16,185,129,0.4); }
+
+/* ── タブ ── */
+.tabs { display: flex; gap: 4px; margin-bottom: 16px; background: var(--surface); border-radius: 12px; padding: 4px; }
+.tab {
+  flex: 1; padding: 8px 4px;
+  border: none; background: transparent;
+  color: var(--muted); font-size: 12px; font-weight: 600;
+  border-radius: 8px; cursor: pointer;
+  transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.tab.active { background: var(--surface2); color: var(--text); box-shadow: 0 1px 4px rgba(0,0,0,0.4); }
+
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* ── F-Score ── */
+.fscore-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 8px; }
+.fscore-item {
+  font-size: 11px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.fscore-item.pass { background: rgba(16,185,129,0.1); color: #6ee7b7; }
+.fscore-item.fail { background: rgba(239,68,68,0.08); color: #fca5a5; }
+
+/* ── シナリオシミュレーション ── */
+.scenario-box {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border);
+  grid-column: 1 / -1;
+}
+.scenario-title { font-size: 10px; color: var(--accent2); font-weight: 700; margin-bottom: 6px; letter-spacing: 0.04em; }
+.scenario-range { display: flex; align-items: center; gap: 6px; font-size: 11px; margin-bottom: 4px; }
+.scenario-range .lo { color: var(--red); font-weight: 700; }
+.scenario-range .hi { color: var(--green); font-weight: 700; }
+.scenario-track { flex: 1; height: 4px; background: rgba(255,255,255,0.06); border-radius: 99px; position: relative; }
+.scenario-cur { position: absolute; top: -3px; width: 2px; height: 10px; background: var(--text); border-radius: 1px; }
+.scenario-note { font-size: 10px; color: var(--muted); }
+
+/* ── 戦略フィルタ ── */
+.strategy-filter { display: flex; gap: 6px; margin-bottom: 14px; }
+.sf-btn {
+  flex: 1; padding: 9px 4px;
+  border: 1px solid var(--border); background: var(--surface);
+  color: var(--muted); font-size: 11px; font-weight: 700;
+  border-radius: 10px; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.sf-btn.active { background: rgba(59,130,246,0.15); border-color: var(--accent); color: var(--text); }
+
+/* ── 初心者向けツールチップ ── */
+.hint {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--surface2); border: 1px solid var(--border);
+  color: var(--muted); font-size: 9px; font-weight: 700;
+  cursor: pointer; position: relative; flex-shrink: 0;
+}
+.hint .hint-pop {
+  display: none;
+  position: absolute; bottom: 130%; left: 50%; transform: translateX(-50%);
+  width: 180px; background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 8px; padding: 8px 10px; font-size: 10px; font-weight: 400;
+  color: var(--text); line-height: 1.5; z-index: 20;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+.hint:hover .hint-pop, .hint:active .hint-pop, .hint.open .hint-pop { display: block; }
+
+/* ── 配当・優待 ── */
+.yutai-box {
+  margin-top: 8px; padding: 8px 10px;
+  background: rgba(251,191,36,0.08); border: 1px solid rgba(251,191,36,0.2);
+  border-radius: 8px; font-size: 11px; color: var(--gold);
+}
+.div-row { display: flex; gap: 10px; font-size: 11px; margin-top: 6px; }
+
+/* ── ニュース ── */
+.news-item { padding: 8px 0; border-bottom: 1px solid var(--border); }
+.news-item:last-child { border-bottom: none; }
+.news-head { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; }
+.news-meta { font-size: 10px; color: var(--muted); margin-top: 2px; }
+.sentiment { font-size: 9px; padding: 1px 6px; border-radius: 99px; font-weight: 700; flex-shrink: 0; }
+.sentiment.pos { background: rgba(16,185,129,0.15); color: var(--green); }
+.sentiment.neg { background: rgba(239,68,68,0.15); color: var(--red); }
+.sentiment.neu { background: rgba(122,155,191,0.15); color: var(--muted); }
+.x-search-link { font-size: 10px; color: var(--accent2); text-decoration: none; }
+
+/* ── テーマ/トレンド ── */
+.theme-item { padding: 10px 0; border-bottom: 1px solid var(--border); }
+.theme-item:last-child { border-bottom: none; }
+.theme-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+.theme-name { font-size: 13px; font-weight: 700; }
+.theme-count { font-size: 10px; color: var(--muted); }
+.theme-flag { font-size: 10px; padding: 2px 7px; border-radius: 99px; font-weight: 700; flex-shrink: 0; }
+.theme-flag.hot  { background: rgba(239,68,68,0.15); color: var(--red); }
+.theme-flag.turn { background: rgba(251,191,36,0.15); color: var(--gold); }
+.theme-bar-track { height: 6px; background: rgba(255,255,255,0.06); border-radius: 99px; overflow: hidden; display: flex; }
+.theme-bar-pos { background: var(--green); height: 100%; }
+.theme-bar-neg { background: var(--red); height: 100%; }
+.theme-bar-neu { background: var(--muted); opacity: 0.4; height: 100%; }
+.theme-foot { display: flex; justify-content: space-between; align-items: center; margin-top: 4px; font-size: 10px; color: var(--muted); }
+
+/* ── 資産（保有銘柄） ── */
+.holding-card { display: flex; flex-direction: column; gap: 6px; }
+.holding-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+.holding-name { font-size: 14px; font-weight: 700; }
+.holding-code { font-size: 11px; color: var(--muted); }
+.holding-actions { display: flex; gap: 6px; flex-shrink: 0; }
+.holding-actions button {
+  width: 26px; height: 26px; border-radius: 6px;
+  border: 1px solid var(--border); background: var(--surface2);
+  color: var(--muted); font-size: 12px; cursor: pointer;
+}
+.holding-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; font-size: 11px; margin-top: 4px; }
+.holding-grid .lbl { color: var(--muted); }
+.holding-grid .val { font-weight: 700; text-align: right; }
+
+.asset-form { display: flex; flex-direction: column; gap: 8px; }
+.asset-form label { font-size: 11px; color: var(--muted); display: block; margin-bottom: 3px; }
+.asset-form input, .asset-form select {
+  width: 100%; padding: 9px 10px; border-radius: 8px;
+  border: 1px solid var(--border); background: var(--surface2); color: var(--text); font-size: 13px;
+}
+.asset-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.asset-type-toggle { display: flex; gap: 6px; }
+.asset-type-toggle button {
+  flex: 1; padding: 8px; border-radius: 8px; border: 1px solid var(--border);
+  background: var(--surface2); color: var(--muted); font-size: 12px; font-weight: 700; cursor: pointer;
+}
+.asset-type-toggle button.active { background: rgba(59,130,246,0.15); border-color: var(--accent); color: var(--text); }
+.asset-form-actions { display: flex; gap: 8px; margin-top: 4px; }
+.btn-primary {
+  flex: 1; padding: 11px; border-radius: 8px; border: none;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #fff; font-size: 13px; font-weight: 700; cursor: pointer;
+}
+.btn-secondary {
+  padding: 11px 16px; border-radius: 8px; border: 1px solid var(--border);
+  background: var(--surface2); color: var(--muted); font-size: 13px; font-weight: 700; cursor: pointer;
+}
+.field-optional { display: none; }
+.field-optional.show { display: block; }
+
+/* ── 更新時刻 ── */
+.update-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 16px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.live-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 6px var(--green);
+  display: inline-block;
+  margin-right: 6px;
+  animation: pulse 2s infinite;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ヘッダー -->
+<div class="header">
+  <div class="header-badge" id="badge">● LIVE ANALYSIS</div>
+  <h1 id="title">機関投資家型<br>AIエージェント</h1>
+  <div class="header-meta" id="meta">分析結果をClaudeに貼るだけで無料AI分析</div>
+</div>
+
+<!-- 更新バー -->
+<div class="update-bar">
+  <span><span class="live-dot"></span>データ取得済み</span>
+  <span id="update-time">--</span>
+</div>
+<div class="update-bar" id="freshness-bar">
+  <span>最終更新からの経過</span>
+  <span id="freshness-time">--</span>
+</div>
+
+<!-- タブ -->
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('screening')">銘柄</button>
+  <button class="tab" onclick="switchTab('signals')">シグナル</button>
+  <button class="tab" onclick="switchTab('watch')">ウォッチ</button>
+  <button class="tab" onclick="switchTab('backtest')">検証</button>
+  <button class="tab" onclick="switchTab('assets')">資産</button>
+</div>
+
+<!-- ── タブ1：スクリーニング ── -->
+<div class="tab-content active" id="tab-screening">
+
+  <div class="strategy-filter">
+    <button class="sf-btn active" data-strategy="all" onclick="setStrategy('all')">すべて</button>
+    <button class="sf-btn" data-strategy="swing" onclick="setStrategy('swing')">短期売買向け</button>
+    <button class="sf-btn" data-strategy="dividend" onclick="setStrategy('dividend')">高配当・長期向け</button>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card" id="kpi1">
+      <div class="kpi-label">スクリーニング通過</div>
+      <div class="kpi-value blue" data-target="23">0</div>
+      <div class="kpi-sub">/ 44銘柄中</div>
+    </div>
+    <div class="kpi-card" id="kpi2">
+      <div class="kpi-label">最高スコア</div>
+      <div class="kpi-value up">0.74</div>
+      <div class="kpi-sub">6因子モデル</div>
+    </div>
+  </div>
+
+  <div class="section-title">TOP 10 銘柄</div>
+
+  <!-- 銘柄リスト（サンプルデータ） -->
+  <div id="stock-list"></div>
+</div>
+
+<!-- ── タブ2：売買シグナル ── -->
+<div class="tab-content" id="tab-signals">
+  <div style="font-size:10px;color:var(--muted);background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;padding:8px 10px;margin-bottom:12px;line-height:1.6;">
+    ⚠️ 本アプリは過去データに基づく参考情報の提供であり、投資助言ではありません。投資判断・損益はすべて自己責任でお願いします。
+  </div>
+  <div class="section-title">売買タイミング判断</div>
+  <div id="signal-list"></div>
+</div>
+
+<!-- ── タブ3：朝のウォッチ ── -->
+<div class="tab-content" id="tab-watch">
+
+  <div class="section-title">テーマ/トレンド<span style="font-size:9px;font-weight:400;text-transform:none;color:var(--muted);margin-left:4px">ニュース論調の集計</span></div>
+  <div class="card" id="theme-card">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:10px;line-height:1.5">
+      ニュースの盛り上がり具合から市場のテーマの旬・過熱を把握する目安です。
+    </div>
+    <div id="theme-list"></div>
+  </div>
+
+  <div class="section-title">銘柄別ニュース<span style="font-size:9px;font-weight:400;text-transform:none;color:var(--muted);margin-left:4px">無料RSS・簡易センチメント</span></div>
+  <div class="card" id="news-card">
+    <div id="news-list"></div>
+  </div>
+
+  <div class="section-title">外国人フロー（4週）<span style="font-size:9px;font-weight:400;text-transform:none;color:var(--muted);margin-left:4px">週次更新</span></div>
+  <div class="card" id="flow-card">
+    <div id="flow-bars"></div>
+  </div>
+
+  <div class="section-title">機関動向アラート<span style="font-size:9px;font-weight:400;text-transform:none;color:var(--muted);margin-left:4px">EDINET/出来高 随時反映</span></div>
+  <div class="card" id="alert-card">
+    <div id="alert-list"></div>
+  </div>
+
+  <div class="section-title">プッシュ通知設定（無料・ntfy.sh）</div>
+  <div class="card" id="ntfy-card">
+    <div style="font-size:12px;color:var(--muted);margin-bottom:10px;line-height:1.6">
+      「強い買い」シグナル発生時に通知を受け取れます。<br>
+      ① ntfy.shアプリをインストール ② 下のトピック名を任意の文字列に変更して購読 ③ このページを開いたままにすると自動送信されます。
+    </div>
+    <div style="display:flex;gap:8px">
+      <input id="ntfy-topic" type="text" placeholder="トピック名（例:my-investor-app-xyz）" style="flex:1;padding:10px;border-radius:8px;border:1px solid var(--border);background:var(--surface2);color:var(--text);font-size:12px">
+      <button onclick="saveNtfyTopic()" style="padding:10px 14px;border-radius:8px;border:none;background:var(--accent);color:#fff;font-size:12px;font-weight:700;cursor:pointer">保存</button>
+    </div>
+    <div id="ntfy-status" style="font-size:11px;color:var(--muted);margin-top:8px"></div>
+  </div>
+
+</div>
+
+<!-- ── タブ4：バックテスト ── -->
+<div class="tab-content" id="tab-backtest">
+  <div class="section-title">戦略バックテスト結果</div>
+  <div class="card" id="bt-card">
+    <div class="bt-grid">
+      <div class="bt-item">
+        <div class="bt-num up" id="bt-annual">+18.4%</div>
+        <div class="bt-lbl">年率リターン</div>
+      </div>
+      <div class="bt-item">
+        <div class="bt-num blue" id="bt-sharpe">1.42</div>
+        <div class="bt-lbl">シャープレシオ</div>
+      </div>
+      <div class="bt-item">
+        <div class="bt-num down" id="bt-dd">-14.2%</div>
+        <div class="bt-lbl">最大DD</div>
+      </div>
+    </div>
+    <div style="margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+      <div class="bt-item">
+        <div class="bt-num" style="font-size:16px" id="bt-winrate">62.5%</div>
+        <div class="bt-lbl">月次勝率</div>
+      </div>
+      <div class="bt-item">
+        <div class="bt-num" style="font-size:16px" id="bt-months">24ヶ月</div>
+        <div class="bt-lbl">検証期間</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">判定</div>
+  <div class="card">
+    <div style="font-size:13px; line-height:1.7; color: var(--muted);">
+      シャープレシオ <span class="blue" style="font-weight:700">1.42</span> は市場平均を上回る水準。<br>
+      最大ドローダウン <span class="down" style="font-weight:700">-14.2%</span> は許容範囲内。<br>
+      月次勝率 <span class="up" style="font-weight:700">62.5%</span> は安定的な戦略といえる。
+    </div>
+  </div>
+</div>
+
+<!-- ── タブ5：資産（保有銘柄） ── -->
+<div class="tab-content" id="tab-assets">
+
+  <div class="kpi-grid">
+    <div class="kpi-card" id="asset-kpi1">
+      <div class="kpi-label">評価額合計</div>
+      <div class="kpi-value blue" id="asset-total-value">¥0</div>
+      <div class="kpi-sub" id="asset-total-cost">取得額 ¥0</div>
+    </div>
+    <div class="kpi-card" id="asset-kpi2">
+      <div class="kpi-label">評価損益</div>
+      <div class="kpi-value" id="asset-total-pl">¥0</div>
+      <div class="kpi-sub" id="asset-total-pl-pct">0%</div>
+    </div>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi-card" id="asset-kpi3">
+      <div class="kpi-label">今期配当金予想</div>
+      <div class="kpi-value up" id="asset-div-total">¥0</div>
+      <div class="kpi-sub">保有株数×一株配当予想</div>
+    </div>
+    <div class="kpi-card" id="asset-kpi4">
+      <div class="kpi-label">保有銘柄数</div>
+      <div class="kpi-value" id="asset-count">0</div>
+      <div class="kpi-sub">通常 + 持株会</div>
+    </div>
+  </div>
+
+  <div class="section-title">保有銘柄一覧</div>
+  <div id="holding-list"></div>
+
+  <div class="section-title" id="asset-form-title">銘柄を追加</div>
+  <div class="card">
+    <div class="asset-form" id="asset-form">
+      <div class="asset-type-toggle">
+        <button type="button" id="type-btn-normal" class="active" onclick="setHoldingType('normal')">通常保有</button>
+        <button type="button" id="type-btn-mochikabu" onclick="setHoldingType('mochikabu')">持株会</button>
+      </div>
+
+      <div>
+        <label>銘柄名</label>
+        <input id="hf-name" type="text" placeholder="例: パーソルホールディングス">
+      </div>
+      <div>
+        <label>証券コード</label>
+        <input id="hf-code" type="text" placeholder="例: 2181.T">
+      </div>
+
+      <!-- 通常保有用フィールド -->
+      <div id="normal-fields">
+        <div class="asset-form-row">
+          <div>
+            <label>保有株数</label>
+            <input id="hf-shares" type="number" min="0" placeholder="例: 100">
+          </div>
+          <div>
+            <label>取得単価（円）</label>
+            <input id="hf-cost-price" type="number" min="0" placeholder="例: 2500">
+          </div>
+        </div>
+      </div>
+
+      <!-- 持株会用フィールド -->
+      <div id="mochikabu-fields" class="field-optional">
+        <div class="asset-form-row">
+          <div>
+            <label>取得累計額（円）</label>
+            <input id="hf-acquired-total" type="number" min="0" placeholder="例: 500000">
+          </div>
+          <div>
+            <label>奨励金率（%）</label>
+            <input id="hf-incentive-rate" type="number" min="0" step="0.1" placeholder="例: 15">
+          </div>
+        </div>
+        <div>
+          <label><input id="hf-reinvest" type="checkbox" style="width:auto;margin-right:6px"> 配当を再投資している</label>
+        </div>
+      </div>
+
+      <div class="asset-form-row">
+        <div>
+          <label>現在株価（円）<span style="font-weight:400">・未入力時はDATAの株価情報を利用</span></label>
+          <input id="hf-current-price" type="number" min="0" placeholder="例: 2800">
+        </div>
+        <div>
+          <label>一株配当予想（円）</label>
+          <input id="hf-div-per-share" type="number" min="0" step="0.1" placeholder="例: 40">
+        </div>
+      </div>
+
+      <div class="asset-form-actions">
+        <button class="btn-primary" onclick="submitHoldingForm()" id="hf-submit-btn">追加する</button>
+        <button class="btn-secondary" id="hf-cancel-btn" style="display:none" onclick="cancelEditHolding()">キャンセル</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- コピーボタン（常に表示） -->
+<div class="copy-section">
+  <button class="copy-btn" id="copy-btn" onclick="copyToClipboard()">
+    <span>📋</span>
+    <span id="copy-text">分析結果をコピー → Claudeに貼る</span>
+  </button>
+</div>
+
+</div><!-- /wrap -->
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+// ── サンプルデータ（Pythonスクリプトが生成したJSONに差し替える） ──
+const DATA = {
+  updated: new Date().toLocaleString('ja-JP'),
+  updatedAtMs: Date.now(),
+  backtest: {
+    annual: '+18.4%', sharpe: '1.42', dd: '-14.2%',
+    winrate: '62.5%', months: '24ヶ月'
+  },
+  stocks: [
+    { rank:1, ticker:'6861.T', name:'キーエンス',    score:0.742, f:8, per:45.2, pbr:6.1, roe:15.8, value:0.52, quality:0.91, momentum:0.78, signal:'🟢 強い買い', rsi:42, conf:'高',
+      strategy:['swing'], dividend_yield:0.4, yutai:null,
+      news:[{title:'好決算を受けFA機器需要回復観測', source:'適時開示', url:'https://finance.yahoo.co.jp/quote/6861.T', sentiment:'pos', theme:'設備投資'}] },
+    { rank:2, ticker:'9984.T', name:'ソフトバンクG', score:0.718, f:6, per:18.3, pbr:1.8, roe:12.4, value:0.71, quality:0.68, momentum:0.82, signal:'🟢 強い買い', rsi:38, conf:'高',
+      strategy:['swing'], dividend_yield:0.6, yutai:null,
+      news:[{title:'AI関連投資先の評価益拡大が話題', source:'ニュース', url:'https://finance.yahoo.co.jp/quote/9984.T', sentiment:'pos', theme:'AI'}] },
+    { rank:3, ticker:'7203.T', name:'トヨタ自動車',  score:0.698, f:7, per:10.1, pbr:1.1, roe:13.2, value:0.88, quality:0.76, momentum:0.65, signal:'🔵 買い',     rsi:51, conf:'中',
+      strategy:['swing','dividend'], dividend_yield:2.9, yutai:'なし（株主優待は廃止）',
+      news:[{title:'北米販売台数が前年比増', source:'ニュース', url:'https://finance.yahoo.co.jp/quote/7203.T', sentiment:'pos', theme:'自動車'}] },
+    { rank:4, ticker:'8306.T', name:'三菱UFJ',       score:0.671, f:7, per:9.8,  pbr:0.7, roe:8.9,  value:0.92, quality:0.74, momentum:0.58, signal:'🔵 買い',     rsi:55, conf:'中',
+      strategy:['dividend'], dividend_yield:3.6, yutai:'なし',
+      news:[{title:'金利上昇で利ざや改善期待', source:'適時開示', url:'https://finance.yahoo.co.jp/quote/8306.T', sentiment:'pos', theme:'金利'}] },
+    { rank:5, ticker:'6758.T', name:'ソニーグループ',score:0.654, f:6, per:22.4, pbr:2.4, roe:11.3, value:0.65, quality:0.67, momentum:0.71, signal:'⚪ 様子見',   rsi:61, conf:'低',
+      strategy:['swing'], dividend_yield:0.7, yutai:null,
+      news:[{title:'ゲーム部門の販売計画を据え置き', source:'ニュース', url:'https://finance.yahoo.co.jp/quote/6758.T', sentiment:'neu', theme:'AI'}] },
+    { rank:6, ticker:'4063.T', name:'信越化学',      score:0.641, f:8, per:17.8, pbr:3.1, roe:18.4, value:0.68, quality:0.88, momentum:0.52, signal:'🔵 買い',     rsi:47, conf:'中',
+      strategy:['dividend'], dividend_yield:1.8, yutai:null,
+      news:[{title:'半導体材料市況の先行き慎重視', source:'ニュース', url:'https://finance.yahoo.co.jp/quote/4063.T', sentiment:'neg', theme:'半導体'}] },
+    { rank:7, ticker:'9432.T', name:'NTT',           score:0.628, f:6, per:12.3, pbr:1.5, roe:10.2, value:0.78, quality:0.65, momentum:0.59, signal:'⚪ ホールド', rsi:53, conf:'低',
+      strategy:['dividend'], dividend_yield:3.2, yutai:'なし（過去はdポイント優待）',
+      news:[{title:'連続増配方針を継続と発表', source:'適時開示', url:'https://finance.yahoo.co.jp/quote/9432.T', sentiment:'pos', theme:'通信'}] },
+    { rank:8, ticker:'4519.T', name:'中外製薬',      score:0.615, f:7, per:28.4, pbr:5.2, roe:20.1, value:0.44, quality:0.82, momentum:0.68, signal:'🔵 買い',     rsi:44, conf:'中',
+      strategy:['swing'], dividend_yield:1.1, yutai:null,
+      news:[{title:'新薬の承認申請が進展', source:'適時開示', url:'https://finance.yahoo.co.jp/quote/4519.T', sentiment:'pos', theme:'医薬品'}] },
+    { rank:9, ticker:'6326.T', name:'クボタ',        score:0.601, f:6, per:14.2, pbr:1.9, roe:11.8, value:0.74, quality:0.66, momentum:0.55, signal:'⚪ ホールド', rsi:58, conf:'低',
+      strategy:['dividend'], dividend_yield:2.6, yutai:null,
+      news:[{title:'農機需要は地域差ありと説明', source:'ニュース', url:'https://finance.yahoo.co.jp/quote/6326.T', sentiment:'neu', theme:'資源'}] },
+    { rank:10,ticker:'8801.T', name:'三井不動産',    score:0.588, f:5, per:16.1, pbr:1.1, roe:7.8,  value:0.80, quality:0.55, momentum:0.49, signal:'⚪ ホールド', rsi:62, conf:'低',
+      strategy:['dividend'], dividend_yield:2.2, yutai:'保有株数に応じ宿泊優待割引券（要IR確認・手動更新）',
+      news:[{title:'都心オフィス賃料が底堅く推移', source:'ニュース', url:'https://finance.yahoo.co.jp/quote/8801.T', sentiment:'pos', theme:'不動産'}] },
+  ],
+  alerts: [
+    { icon:'🏦', type:'warn',  title:'バンガード → 7203.T',       desc:'大量保有：5.1%→5.8%（増加）' },
+    { icon:'📈', type:'good',  title:'出来高急増：6861.T',          desc:'平均比3.2倍・株価+2.8%（買い集め）' },
+    { icon:'🔴', type:'warn',  title:'空売り急増：9984.T',          desc:'空売り残高前週比+24%（機関の売り圧力）' },
+    { icon:'📅', type:'info',  title:'決算予定：7203.T',            desc:'2026-08-01 本決算発表予定' },
+    { icon:'📅', type:'info',  title:'決算予定：8306.T',            desc:'2026-07-31 第1Q決算予定' },
+  ],
+  flow: [
+    { label:'外国人',   value: +3240, max: 8000 },
+    { label:'信託銀行', value: -820,  max: 3000 },
+    { label:'個人',     value: -2100, max: 5000 },
+  ],
+  // テーマ/トレンド：直近のニュース言及件数とセンチメント比率（手動集計 or 将来は自動集計に置換）
+  themeTrends: [
+    { theme:'AI',     mentions: 42, pos: 34, neg: 2,  prevMentions: 26 },
+    { theme:'半導体', mentions: 23, pos: 9,  neg: 10, prevMentions: 27 },
+    { theme:'資源',   mentions: 11, pos: 4,  neg: 5,  prevMentions: 9  },
+    { theme:'金利',   mentions: 18, pos: 11, neg: 4,  prevMentions: 12 },
+    { theme:'円安',   mentions: 14, pos: 6,  neg: 7,  prevMentions: 15 },
+  ]
+};
+
+// ── 日時表示 ──
+document.getElementById('update-time').textContent = DATA.updated;
+
+// ── 更新からの経過時間表示（軽量・1分ごとに再計算） ──
+const updatedAt = DATA.updatedAtMs ? new Date(DATA.updatedAtMs) : new Date();
+function renderFreshness() {
+  const el = document.getElementById('freshness-time');
+  if (isNaN(updatedAt.getTime())) { el.textContent = '--'; return; }
+  const diffMin = Math.max(0, Math.round((Date.now() - updatedAt.getTime()) / 60000));
+  const text = diffMin < 1 ? 'たった今' : diffMin < 60 ? `${diffMin}分前` : `${Math.floor(diffMin/60)}時間${diffMin%60}分前`;
+  el.textContent = text;
+  el.style.color = diffMin > 60 ? 'var(--yellow)' : 'var(--muted)';
+}
+renderFreshness();
+setInterval(renderFreshness, 60000);
+
+// ── ntfy.sh プッシュ通知（無料・登録不要） ──
+function saveNtfyTopic() {
+  const v = document.getElementById('ntfy-topic').value.trim();
+  const status = document.getElementById('ntfy-status');
+  if (!v) { status.textContent = 'トピック名を入力してください'; status.style.color = 'var(--red)'; return; }
+  localStorage.setItem('ntfy_topic', v);
+  status.textContent = `保存しました（ntfy.sh/${v} を購読してください）`;
+  status.style.color = 'var(--green)';
+}
+
+function sendNtfyNotification(topic, title, message) {
+  if (!topic) return;
+  fetch(`https://ntfy.sh/${encodeURIComponent(topic)}`, {
+    method: 'POST',
+    headers: { 'Title': title, 'Priority': 'high', 'Tags': 'chart_with_upwards_trend' },
+    body: message
+  }).catch(() => {});
+}
+
+function checkAndNotifyStrongBuy() {
+  const topic = localStorage.getItem('ntfy_topic');
+  const initEl = document.getElementById('ntfy-topic');
+  if (topic && initEl) initEl.value = topic;
+  if (!topic) return;
+  const lastNotified = JSON.parse(localStorage.getItem('ntfy_notified') || '[]');
+  const strongBuys = DATA.stocks.filter(s => s.signal.includes('強い買い'));
+  const newOnes = strongBuys.filter(s => !lastNotified.includes(s.ticker + DATA.updated));
+  if (newOnes.length > 0) {
+    const msg = newOnes.map(s => `${s.name}(${s.ticker}) スコア${s.score.toFixed(3)}`).join('\n');
+    sendNtfyNotification(topic, '🟢 強い買いシグナル発生', msg);
+    localStorage.setItem('ntfy_notified', JSON.stringify(strongBuys.map(s => s.ticker + DATA.updated)));
+  }
+}
+
+// ── 戦略フィルタ状態 ──
+let currentStrategy = 'all';
+function setStrategy(strategy) {
+  currentStrategy = strategy;
+  document.querySelectorAll('.sf-btn').forEach(b => b.classList.toggle('active', b.dataset.strategy === strategy));
+  renderStocks();
+  setTimeout(() => animateVisible(), 50);
+}
+
+const HINTS = {
+  score: 'マルチファクター（バリュー・品質・モメンタムなど）を合成した総合点。高いほど割安かつ堅調と判断される銘柄。',
+  fscore: '財務の健全性を9項目でチェックする指標。7以上なら財務状態が良好な目安。',
+  value: '株価が割安かどうかの度合い。高いほど「割安」と判定。',
+  quality: '収益性や財務の安定性。高いほど「優良企業」寄り。',
+  momentum: '直近の値動きの強さ。高いほど上昇トレンドが続きやすい目安。',
+  signal: 'スコアやテクニカル指標から自動算出した売買の目安。投資判断は自己責任で。',
+};
+
+// ── 銘柄リスト生成 ──
+function renderStocks() {
+  const el = document.getElementById('stock-list');
+  const list = DATA.stocks.filter(s => currentStrategy === 'all' || (s.strategy || []).includes(currentStrategy));
+  el.innerHTML = list.map(s => {
+    const isTop = s.rank === 1;
+    const isTop5 = s.rank <= 3;
+    const signalClass = s.signal.includes('強い買い') ? 'strong-buy' :
+                        s.signal.includes('買い') ? 'buy' :
+                        s.signal.includes('売り') ? 'sell' : 'hold';
+    const fscore_color = s.f >= 7 ? 'up' : s.f >= 5 ? 'neutral' : 'down';
+    const yutaiBox = s.yutai ? `<div class="yutai-box">🎁 株主優待: ${s.yutai}</div>` : '';
+    return `
+    <div class="stock-card" style="opacity:0;transform:translateY(16px)">
+      <div class="rank-badge ${isTop?'top':isTop5?'top2':''}">${s.rank}</div>
+      <div class="stock-info">
+        <div class="stock-name">${s.name}</div>
+        <div class="stock-code">${s.ticker}</div>
+        <div class="stock-tags">
+          <span class="tag">PER ${s.per}</span>
+          <span class="tag">PBR ${s.pbr}</span>
+          <span class="tag ${s.roe>=10?'green':''}">ROE ${s.roe}%</span>
+          <span class="tag ${s.f>=7?'green':s.f>=5?'':'red'}">F${s.f}/9
+            <span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.fscore}</span></span>
+          </span>
+        </div>
+        <div class="div-row">
+          <span style="color:var(--muted)">配当利回り</span>
+          <span style="font-weight:700;color:${s.dividend_yield>=3?'var(--green)':'var(--text)'}">${s.dividend_yield}%</span>
+        </div>
+        ${yutaiBox}
+        <div class="score-bars" style="margin-top:8px">
+          ${[
+            ['バリュー', s.value, '#3b82f6', HINTS.value],
+            ['品質',   s.quality, '#10b981', HINTS.quality],
+            ['モメ',   s.momentum,'#f59e0b', HINTS.momentum],
+          ].map(([lbl,val,col,hint]) => `
+          <div class="score-row">
+            <span class="score-row-label">${lbl}<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${hint}</span></span></span>
+            <div class="score-bar-track">
+              <div class="score-bar-fill" style="background:${col}" data-width="${Math.round(val*100)}"></div>
+            </div>
+            <span class="score-row-val">${val.toFixed(2)}</span>
+          </div>`).join('')}
+        </div>
+      </div>
+      <div class="score-block">
+        <div class="score-num">${s.score.toFixed(3)} <span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.score}</span></span></div>
+        <div class="score-label">スコア</div>
+      </div>
+      ${renderScenario(s)}
+    </div>`;
+  }).join('');
+}
+
+// ── シナリオシミュレーション（RSI・モメンタムから簡易レンジ算出。機械学習不使用） ──
+function calcScenario(s) {
+  // モメンタムが強いほど上振れ幅を拡大、RSIが過熱(>70)/売られすぎ(<30)なら反転を織り込む
+  const baseRange = 4 + s.momentum * 6; // 4%〜10%
+  const rsiSkew = s.rsi > 70 ? -2 : s.rsi < 30 ? +2 : 0;
+  const upPct = (baseRange * 0.55 + rsiSkew * 0.5).toFixed(1);
+  const downPct = (baseRange * 0.45 - rsiSkew * 0.5).toFixed(1);
+  // 過去類似パターン勝率の簡易近似：スコア・F-Score・モメンタムの合成
+  const winRate = Math.round(Math.min(85, Math.max(35,
+    40 + s.score * 40 + (s.f - 5) * 3 + (s.momentum - 0.5) * 20
+  )));
+  return { upPct, downPct, winRate };
+}
+
+function renderScenario(s) {
+  const sc = calcScenario(s);
+  const curPos = (parseFloat(sc.downPct) / (parseFloat(sc.downPct) + parseFloat(sc.upPct))) * 100;
+  return `
+  <div class="scenario-box">
+    <div class="scenario-title">📊 シナリオシミュレーション（簡易・5営業日目安）</div>
+    <div class="scenario-range">
+      <span class="lo">-${sc.downPct}%</span>
+      <div class="scenario-track"><div class="scenario-cur" style="left:${curPos}%"></div></div>
+      <span class="hi">+${sc.upPct}%</span>
+    </div>
+    <div class="scenario-note">想定レンジ（RSI${s.rsi}・モメンタム${s.momentum.toFixed(2)}より算出） / 類似パターン上昇確率 約${sc.winRate}%</div>
+  </div>`;
+}
+
+// ── シグナルリスト ──
+function renderSignals() {
+  const el = document.getElementById('signal-list');
+  el.innerHTML = DATA.stocks.map(s => {
+    const sc = s.signal.includes('強い買い') ? 'strong-buy' :
+               s.signal.includes('買い') ? 'buy' :
+               s.signal.includes('売り') ? 'sell' : 'hold';
+    return `
+    <div class="card" style="opacity:0;transform:translateY(16px);margin-bottom:8px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <div>
+          <div style="font-weight:700;font-size:14px">${s.name}</div>
+          <div style="font-size:11px;color:var(--muted)">${s.ticker}</div>
+        </div>
+        <span class="signal ${sc}">${s.signal}<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.signal}</span></span></span>
+      </div>
+      <div style="display:flex;gap:16px;font-size:11px">
+        <div><span style="color:var(--muted)">RSI </span><span style="font-weight:700;color:${s.rsi<30?'var(--green)':s.rsi>70?'var(--red)':'var(--text)'}">${s.rsi}</span></div>
+        <div><span style="color:var(--muted)">信頼度 </span><span style="font-weight:700">${s.conf}</span></div>
+        <div><span style="color:var(--muted)">F-Score </span><span style="font-weight:700;color:${s.f>=7?'var(--green)':'var(--muted)'}">${s.f}/9</span></div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── テーマ/トレンド（言及件数とセンチメント比率からルールベースで判定） ──
+function renderThemeTrends() {
+  const el = document.getElementById('theme-list');
+  if (!el || !DATA.themeTrends) return;
+  const maxMentions = Math.max(...DATA.themeTrends.map(t => t.mentions), 1);
+  el.innerHTML = DATA.themeTrends.map(t => {
+    const neu = Math.max(0, t.mentions - t.pos - t.neg);
+    const posPct = Math.round((t.pos / t.mentions) * 100);
+    const negPct = Math.round((t.neg / t.mentions) * 100);
+    const neuPct = 100 - posPct - negPct;
+    const growth = t.prevMentions ? (t.mentions - t.prevMentions) / t.prevMentions : 0;
+    const momentumLabel = growth > 0.1 ? `📈 増加 (+${Math.round(growth*100)}%)` : growth < -0.1 ? `📉 減少 (${Math.round(growth*100)}%)` : '➡️ 横ばい';
+
+    // ルールベース判定：件数多くポジ比率が高い→過熱注意／ポジ比率高いのに勢いが鈍化→転換点の可能性
+    let flag = '';
+    if (t.mentions / maxMentions > 0.6 && posPct >= 65) {
+      flag = '<span class="theme-flag hot">⚠️ 過熱注意</span>';
+    } else if (posPct >= 50 && growth < 0) {
+      flag = '<span class="theme-flag turn">🔄 転換点の可能性</span>';
+    } else if (negPct >= 50 && growth > 0.1) {
+      flag = '<span class="theme-flag turn">🔄 転換点の可能性</span>';
+    }
+
+    return `
+    <div class="theme-item">
+      <div class="theme-head">
+        <div><span class="theme-name">${t.theme}</span> <span class="theme-count">言及${t.mentions}件</span></div>
+        ${flag}
+      </div>
+      <div class="theme-bar-track">
+        <div class="theme-bar-pos" style="width:${posPct}%"></div>
+        <div class="theme-bar-neu" style="width:${neuPct}%"></div>
+        <div class="theme-bar-neg" style="width:${negPct}%"></div>
+      </div>
+      <div class="theme-foot">
+        <span>ポジ${posPct}% / ネガ${negPct}%</span>
+        <span>${momentumLabel}</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── ニュース一覧（簡易センチメント表示・X検索リンク付き） ──
+const SENTIMENT_LABEL = { pos:'ポジティブ', neg:'ネガティブ', neu:'中立' };
+function renderNews() {
+  const el = document.getElementById('news-list');
+  if (!el) return;
+  el.innerHTML = DATA.stocks.map(s => {
+    const items = (s.news || []).map(n => `
+      <div class="news-item">
+        <div class="news-head">
+          <span>${n.title}</span>
+          <span class="sentiment ${n.sentiment}">${SENTIMENT_LABEL[n.sentiment] || '中立'}</span>
+        </div>
+        <div class="news-meta">${n.source} ・ <a href="${n.url}" target="_blank" style="color:var(--muted)">記事を見る</a></div>
+      </div>`).join('');
+    const xUrl = `https://twitter.com/search?q=${encodeURIComponent(s.name + ' OR ' + s.ticker)}&src=typed_query&f=live`;
+    return `
+    <div style="margin-bottom:10px">
+      <div style="font-size:12px;font-weight:700;margin-bottom:2px">${s.name} <span style="color:var(--muted);font-weight:400">${s.ticker}</span></div>
+      ${items || '<div class="news-meta">関連ニュースなし</div>'}
+      <a class="x-search-link" href="${xUrl}" target="_blank">𝕏でリアルタイム検索 →</a>
+    </div>`;
+  }).join('');
+}
+
+// ── フローバー ──
+function renderFlow() {
+  const el = document.getElementById('flow-bars');
+  el.innerHTML = DATA.flow.map(f => {
+    const pct = Math.min(50, Math.abs(f.value) / f.max * 50);
+    const isPos = f.value >= 0;
+    const color = isPos ? 'var(--green)' : 'var(--red)';
+    const sign  = isPos ? '+' : '';
+    return `
+    <div class="flow-row">
+      <span class="flow-label">${f.label}</span>
+      <div class="flow-bar-wrap">
+        <div class="flow-center"></div>
+        <div class="flow-fill ${isPos?'positive':'negative'}" data-pct="${pct}"></div>
+      </div>
+      <span class="flow-val" style="color:${color}">${sign}${(f.value/1000).toFixed(1)}千億</span>
+    </div>`;
+  }).join('');
+}
+
+// ── アラートリスト ──
+function renderAlerts() {
+  const el = document.getElementById('alert-list');
+  el.innerHTML = DATA.alerts.map(a => `
+  <div class="alert-item">
+    <div class="alert-icon ${a.type}">${a.icon}</div>
+    <div class="alert-body">
+      <div class="alert-title">${a.title}</div>
+      <div class="alert-desc">${a.desc}</div>
+    </div>
+  </div>`).join('');
+}
+
+// ── タブ切替 ──
+function switchTab(id) {
+  document.querySelectorAll('.tab').forEach((t,i) => {
+    const ids = ['screening','signals','watch','backtest','assets'];
+    t.classList.toggle('active', ids[i] === id);
+  });
+  document.querySelectorAll('.tab-content').forEach(c => {
+    c.classList.toggle('active', c.id === 'tab-'+id);
+  });
+  // タブ切替時にアニメーション再実行
+  setTimeout(() => animateVisible(), 100);
+}
+
+// ── アニメーション ──
+function animateVisible() {
+  gsap.to('.stock-card, .card, .kpi-card', {
+    opacity: 1, y: 0, duration: 0.6,
+    ease: 'power3.out', stagger: 0.06
+  });
+  // スコアバー
+  setTimeout(() => {
+    document.querySelectorAll('.score-bar-fill').forEach(bar => {
+      bar.style.width = bar.dataset.width + '%';
+    });
+    // フローバー
+    document.querySelectorAll('.flow-fill').forEach(fill => {
+      fill.style.width = fill.dataset.pct + '%';
+    });
+  }, 300);
+}
+
+function animateCounters() {
+  document.querySelectorAll('[data-target]').forEach(el => {
+    const target = parseInt(el.dataset.target);
+    let cur = 0;
+    const step = () => {
+      cur = Math.min(cur + Math.ceil(target/20), target);
+      el.textContent = cur;
+      if (cur < target) requestAnimationFrame(step);
+    };
+    step();
+  });
+}
+
+// ── コピー機能 ──
+function buildCopyText() {
+  const now = new Date().toLocaleString('ja-JP');
+  let text = `【機関投資家型AIエージェント 分析結果】${now}\n`;
+  text += '='.repeat(55) + '\n\n';
+  text += '■ マルチファクタースクリーニング TOP10\n';
+  text += '  因子: バリュー25% / クオリティ25% / モメンタム20% / 低ボラ15% / 信用残15%\n\n';
+  DATA.stocks.forEach(s => {
+    text += `  ${s.rank}位 ${s.ticker} ${s.name}\n`;
+    text += `     総合スコア:${s.score.toFixed(3)} F-Score:${s.f}/9 PER:${s.per} PBR:${s.pbr} ROE:${s.roe}%\n`;
+    text += `     Value:${s.value.toFixed(2)} Quality:${s.quality.toFixed(2)} Momentum:${s.momentum.toFixed(2)}\n`;
+  });
+  text += '\n■ 売買シグナル\n';
+  DATA.stocks.forEach(s => {
+    text += `  ${s.ticker} ${s.name}: ${s.signal} RSI:${s.rsi} 信頼度:${s.conf}\n`;
+  });
+  text += `\n■ バックテスト結果\n`;
+  text += `  年率リターン: ${DATA.backtest.annual}\n`;
+  text += `  シャープレシオ: ${DATA.backtest.sharpe}\n`;
+  text += `  最大DD: ${DATA.backtest.dd}\n`;
+  text += `  月次勝率: ${DATA.backtest.winrate}\n`;
+  text += '\n■ 機関動向アラート\n';
+  DATA.alerts.forEach(a => {
+    text += `  ${a.icon} ${a.title}: ${a.desc}\n`;
+  });
+  text += '\n■ 外国人フロー（4週）\n';
+  DATA.flow.forEach(f => {
+    const sign = f.value >= 0 ? '+' : '';
+    const trend = f.value >= 0 ? '買い越し' : '売り越し';
+    text += `  ${f.label}: ${sign}${f.value.toLocaleString()}百万円（${trend}傾向）\n`;
+  });
+  text += '\n' + '='.repeat(55) + '\n';
+  text += '【Claudeへの分析依頼】\n';
+  text += '上記の結果を機関投資家の視点で分析してください。\n\n';
+  text += '1. スクリーニング上位3銘柄の投資テーシス\n';
+  text += '2. 最も強い買いシグナルの具体的なエントリー戦略\n';
+  text += '3. 外国人フロー・アラートから読める市場センチメント\n';
+  text += '4. 向こう1ヶ月で注意すべきリスクシナリオ\n';
+  text += '5. ポートフォリオを組むなら上位何銘柄をどう配分するか\n';
+  return text;
+}
+
+function copyToClipboard() {
+  const text = buildCopyText();
+  const btn = document.getElementById('copy-btn');
+  const label = document.getElementById('copy-text');
+  navigator.clipboard.writeText(text).then(() => {
+    btn.classList.add('copied');
+    label.textContent = '✅ コピー完了！Claudeに貼り付けてください';
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      label.textContent = '📋 分析結果をコピー → Claudeに貼る';
+    }, 3000);
+  }).catch(() => {
+    // フォールバック
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    btn.classList.add('copied');
+    label.textContent = '✅ コピー完了！';
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      label.textContent = '📋 分析結果をコピー → Claudeに貼る';
+    }, 3000);
+  });
+}
+
+// ── 資産（保有銘柄）管理：localStorageで個人管理 ──
+const HOLDINGS_KEY = 'my_holdings';
+let editingHoldingId = null;
+let currentHoldingType = 'normal';
+
+function loadHoldings() {
+  try { return JSON.parse(localStorage.getItem(HOLDINGS_KEY) || '[]'); }
+  catch (e) { return []; }
+}
+function saveHoldings(list) {
+  localStorage.setItem(HOLDINGS_KEY, JSON.stringify(list));
+}
+
+// DATAの銘柄リストからコード一致で現在値の参考情報を探す（現在株価が未入力の場合の補助。スコア由来の参考値のみで実勢株価ではない）
+function findStockByCode(code) {
+  if (!code) return null;
+  return DATA.stocks.find(s => s.ticker === code) || null;
+}
+
+function setHoldingType(type) {
+  currentHoldingType = type;
+  document.getElementById('type-btn-normal').classList.toggle('active', type === 'normal');
+  document.getElementById('type-btn-mochikabu').classList.toggle('active', type === 'mochikabu');
+  document.getElementById('normal-fields').classList.toggle('field-optional', type !== 'normal');
+  document.getElementById('normal-fields').classList.toggle('show', type === 'normal');
+  document.getElementById('mochikabu-fields').classList.toggle('show', type === 'mochikabu');
+}
+
+function clearHoldingForm() {
+  ['hf-name','hf-code','hf-shares','hf-cost-price','hf-acquired-total','hf-incentive-rate','hf-current-price','hf-div-per-share']
+    .forEach(id => document.getElementById(id).value = '');
+  document.getElementById('hf-reinvest').checked = false;
+  setHoldingType('normal');
+  editingHoldingId = null;
+  document.getElementById('hf-submit-btn').textContent = '追加する';
+  document.getElementById('hf-cancel-btn').style.display = 'none';
+  document.getElementById('asset-form-title').textContent = '銘柄を追加';
+}
+
+function submitHoldingForm() {
+  const name = document.getElementById('hf-name').value.trim();
+  const code = document.getElementById('hf-code').value.trim();
+  if (!name) { alert('銘柄名を入力してください'); return; }
+
+  const holding = {
+    id: editingHoldingId || (Date.now() + '_' + Math.random().toString(36).slice(2, 7)),
+    type: currentHoldingType,
+    name, code,
+    currentPrice: parseFloat(document.getElementById('hf-current-price').value) || null,
+    divPerShare: parseFloat(document.getElementById('hf-div-per-share').value) || 0,
+  };
+
+  if (currentHoldingType === 'normal') {
+    holding.shares = parseFloat(document.getElementById('hf-shares').value) || 0;
+    holding.costPrice = parseFloat(document.getElementById('hf-cost-price').value) || 0;
+  } else {
+    holding.acquiredTotal = parseFloat(document.getElementById('hf-acquired-total').value) || 0;
+    holding.incentiveRate = parseFloat(document.getElementById('hf-incentive-rate').value) || 0;
+    holding.reinvest = document.getElementById('hf-reinvest').checked;
+  }
+
+  let list = loadHoldings();
+  if (editingHoldingId) {
+    list = list.map(h => h.id === editingHoldingId ? holding : h);
+  } else {
+    list.push(holding);
+  }
+  saveHoldings(list);
+  clearHoldingForm();
+  renderHoldings();
+}
+
+function editHolding(id) {
+  const h = loadHoldings().find(x => x.id === id);
+  if (!h) return;
+  editingHoldingId = id;
+  setHoldingType(h.type);
+  document.getElementById('hf-name').value = h.name || '';
+  document.getElementById('hf-code').value = h.code || '';
+  document.getElementById('hf-current-price').value = h.currentPrice ?? '';
+  document.getElementById('hf-div-per-share').value = h.divPerShare ?? '';
+  if (h.type === 'normal') {
+    document.getElementById('hf-shares').value = h.shares ?? '';
+    document.getElementById('hf-cost-price').value = h.costPrice ?? '';
+  } else {
+    document.getElementById('hf-acquired-total').value = h.acquiredTotal ?? '';
+    document.getElementById('hf-incentive-rate').value = h.incentiveRate ?? '';
+    document.getElementById('hf-reinvest').checked = !!h.reinvest;
+  }
+  document.getElementById('hf-submit-btn').textContent = '更新する';
+  document.getElementById('hf-cancel-btn').style.display = 'block';
+  document.getElementById('asset-form-title').textContent = '銘柄を編集';
+  document.getElementById('asset-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function cancelEditHolding() {
+  clearHoldingForm();
+}
+
+function deleteHolding(id) {
+  if (!confirm('この保有銘柄を削除しますか？')) return;
+  saveHoldings(loadHoldings().filter(h => h.id !== id));
+  renderHoldings();
+}
+
+// 保有データから評価額・損益・配当予想を算出
+// 通常保有: 評価額 = 株数×現在株価、取得額 = 株数×取得単価
+// 持株会: 取得元本に奨励金率を加味した実質取得額を「みなし取得口数相当」として評価。
+//   配当再投資の場合は配当予想額を取得累計額に上乗せして表示（複利的な増加の目安）
+function calcHolding(h) {
+  const stockRef = findStockByCode(h.code);
+  const refPrice = h.currentPrice || (stockRef ? null : null); // 現在値が無ければ未確定として扱う
+
+  if (h.type === 'normal') {
+    const shares = h.shares || 0;
+    const costPrice = h.costPrice || 0;
+    const costTotal = shares * costPrice;
+    const curPrice = h.currentPrice;
+    const value = curPrice ? shares * curPrice : null;
+    const pl = value !== null ? value - costTotal : null;
+    const plPct = (value !== null && costTotal > 0) ? (pl / costTotal) * 100 : null;
+    const divForecast = shares * (h.divPerShare || 0);
+    return { costTotal, value, pl, plPct, divForecast };
+  } else {
+    // 持株会：取得累計額に奨励金率を加味した実質価値を簡易評価額とする
+    const acquiredTotal = h.acquiredTotal || 0;
+    const incentiveRate = h.incentiveRate || 0;
+    const incentiveAmount = acquiredTotal * (incentiveRate / 100);
+    let divForecast = 0;
+    // 配当再投資の場合、配当予想額を「取得累計額に上乗せされる分」として表示用に算出
+    // (一株配当予想・株数情報が無い前提のため、概算が必要な場合はユーザーが配当予想額の代わりに
+    //  取得累計額への影響分を直接把握できるよう、divPerShareは任意入力の参考値として扱う)
+    if (h.reinvest && h.divPerShare && h.acquiredTotal) {
+      divForecast = h.divPerShare; // ユーザーが見込み配当額を直接入力するケースを想定した参考値
+    }
+    const costTotal = acquiredTotal;
+    const value = acquiredTotal + incentiveAmount; // 奨励金分を反映した簡易評価額
+    const pl = value - costTotal;
+    const plPct = costTotal > 0 ? (pl / costTotal) * 100 : null;
+    return { costTotal, value, pl, plPct, divForecast, incentiveAmount };
+  }
+}
+
+function fmtYen(n) {
+  if (n === null || n === undefined || isNaN(n)) return '―';
+  return '¥' + Math.round(n).toLocaleString();
+}
+
+function renderHoldings() {
+  const list = loadHoldings();
+  const el = document.getElementById('holding-list');
+
+  if (list.length === 0) {
+    el.innerHTML = '<div class="card" style="color:var(--muted);font-size:12px">まだ保有銘柄が登録されていません。下のフォームから追加してください。</div>';
+  } else {
+    el.innerHTML = list.map(h => {
+      const c = calcHolding(h);
+      const plClass = c.pl === null ? '' : c.pl >= 0 ? 'up' : 'down';
+      const plSign = c.pl !== null && c.pl >= 0 ? '+' : '';
+      const typeTag = h.type === 'mochikabu'
+        ? `<span class="tag blue">持株会${h.reinvest ? '・配当再投資' : ''}</span>`
+        : `<span class="tag">通常保有</span>`;
+      const detailRows = h.type === 'normal'
+        ? `
+          <div class="lbl">保有株数</div><div class="val">${(h.shares||0).toLocaleString()}株</div>
+          <div class="lbl">取得単価</div><div class="val">${fmtYen(h.costPrice)}</div>
+          <div class="lbl">現在株価</div><div class="val">${h.currentPrice ? fmtYen(h.currentPrice) : '未入力'}</div>
+        `
+        : `
+          <div class="lbl">取得累計額</div><div class="val">${fmtYen(h.acquiredTotal)}</div>
+          <div class="lbl">奨励金率</div><div class="val">${h.incentiveRate||0}%（${fmtYen(c.incentiveAmount)}）</div>
+        `;
+      return `
+      <div class="card holding-card">
+        <div class="holding-head">
+          <div>
+            <div class="holding-name">${h.name}</div>
+            <div class="holding-code">${h.code || '―'} ${typeTag}</div>
+          </div>
+          <div class="holding-actions">
+            <button onclick="editHolding('${h.id}')">✎</button>
+            <button onclick="deleteHolding('${h.id}')">✕</button>
+          </div>
+        </div>
+        <div class="holding-grid">
+          ${detailRows}
+          <div class="lbl">評価額</div><div class="val">${fmtYen(c.value)}</div>
+          <div class="lbl">評価損益</div><div class="val ${plClass}">${c.pl===null?'―':plSign+fmtYen(c.pl)}${c.plPct!==null?` (${plSign}${c.plPct.toFixed(1)}%)`:''}</div>
+          <div class="lbl">今期配当予想</div><div class="val up">${fmtYen(c.divForecast)}</div>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  // サマリーKPI集計
+  let totalCost = 0, totalValue = 0, hasUnknownValue = false, totalDiv = 0;
+  list.forEach(h => {
+    const c = calcHolding(h);
+    totalCost += c.costTotal || 0;
+    if (c.value === null) { hasUnknownValue = true; } else { totalValue += c.value; }
+    totalDiv += c.divForecast || 0;
+  });
+  const totalPl = totalValue - totalCost;
+  const totalPlPct = totalCost > 0 ? (totalPl / totalCost) * 100 : 0;
+
+  document.getElementById('asset-total-value').textContent = fmtYen(totalValue) + (hasUnknownValue ? '+' : '');
+  document.getElementById('asset-total-cost').textContent = `取得額 ${fmtYen(totalCost)}`;
+  const plEl = document.getElementById('asset-total-pl');
+  plEl.textContent = (totalPl >= 0 ? '+' : '') + fmtYen(totalPl);
+  plEl.className = 'kpi-value ' + (totalPl >= 0 ? 'up' : 'down');
+  document.getElementById('asset-total-pl-pct').textContent = `${totalPl >= 0 ? '+' : ''}${totalPlPct.toFixed(1)}%`;
+  document.getElementById('asset-div-total').textContent = fmtYen(totalDiv);
+  document.getElementById('asset-count').textContent = list.length;
+
+  setTimeout(() => animateVisible(), 50);
+}
+
+// ── 初期化 ──
+document.addEventListener('DOMContentLoaded', () => {
+  renderStocks();
+  renderSignals();
+  renderFlow();
+  renderAlerts();
+  renderThemeTrends();
+  renderNews();
+  renderHoldings();
+
+  // ヘッダーアニメ
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+  tl.to('#badge',  { opacity: 1, y: 0, duration: 0.5 })
+    .to('#title',  { opacity: 1, y: 0, duration: 0.7 }, '-=0.2')
+    .to('#meta',   { opacity: 1, y: 0, duration: 0.5 }, '-=0.3');
+
+  // カードアニメ
+  setTimeout(animateVisible, 400);
+  setTimeout(animateCounters, 600);
+
+  checkAndNotifyStrongBuy();
+});
+
+// ── PWA: Service Worker登録 ──
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  });
+}
+</script>
+</body>
+</html>

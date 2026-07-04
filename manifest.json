@@ -1,0 +1,14 @@
+{
+  "name": "機関投資家型 AIエージェント",
+  "short_name": "投資AI",
+  "description": "機関投資家の動き分析・売買シグナルダッシュボード",
+  "start_url": "./investor_dashboard.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#070b14",
+  "theme_color": "#070b14",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

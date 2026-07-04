@@ -1,0 +1,366 @@
+{
+  "updated": "2026年07月04日 10:52",
+  "updatedAtMs": 1783129967869,
+  "backtest": {
+    "annual": "+18.4%",
+    "sharpe": "1.42",
+    "dd": "-14.2%",
+    "winrate": "62.5%",
+    "months": "24ヶ月",
+    "note": "データ取得失敗時のサンプル値（参考値）"
+  },
+  "stocks": [
+    {
+      "rank": 1,
+      "ticker": "7267.T",
+      "name": "ホンダ",
+      "score": 0.508,
+      "f": 4,
+      "per": null,
+      "pbr": 0.51,
+      "roe": -2.8,
+      "value": 1.0,
+      "quality": 0.17,
+      "momentum": 0.246,
+      "signal": "⚪ ホールド",
+      "rsi": 69.0,
+      "conf": "低",
+      "strategy": [
+        "dividend"
+      ],
+      "dividend_yield": 4.5,
+      "yutai": null,
+      "news": [
+        {
+          "title": "Nissan's potential Honda partnership is 'looking good,' CEO says",
+          "source": "Yahoo Finance Video",
+          "url": "https://finance.yahoo.com/video/nissans-potential-honda-partnership-looking-180000435.html",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "ticker": "9101.T",
+      "name": "日本郵船",
+      "score": 0.5,
+      "f": 5,
+      "per": 10.3,
+      "pbr": 0.69,
+      "roe": 7.1,
+      "value": 0.785,
+      "quality": 0.306,
+      "momentum": 0.259,
+      "signal": "⚪ ホールド",
+      "rsi": 34.5,
+      "conf": "低",
+      "strategy": [
+        "dividend"
+      ],
+      "dividend_yield": 3.8,
+      "yutai": null,
+      "news": [
+        {
+          "title": "Shippers and Oil Giants Seek Clarity on US-Iran Peace Deal",
+          "source": "Bloomberg",
+          "url": "https://finance.yahoo.com/sectors/energy/articles/shipowners-seek-clarity-hormuz-deal-063059609.html",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "ticker": "8035.T",
+      "name": "東京エレクトロン",
+      "score": 0.482,
+      "f": 5,
+      "per": 58.5,
+      "pbr": 16.08,
+      "roe": 29.3,
+      "value": 0.013,
+      "quality": 0.611,
+      "momentum": 1.0,
+      "signal": "⚪ ホールド",
+      "rsi": 50.6,
+      "conf": "低",
+      "strategy": [
+        "swing",
+        "dividend"
+      ],
+      "dividend_yield": 99.0,
+      "yutai": null,
+      "news": [
+        {
+          "title": "Asian stocks rally after Dow sets fresh record, though chip weakness lingers",
+          "source": "Euronews",
+          "url": "https://www.euronews.com/2026/07/03/asian-stocks-rally-after-dow-sets-fresh-record-though-chip-weakness-lingers",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "ticker": "6857.T",
+      "name": "アドバンテスト",
+      "score": 0.455,
+      "f": 7,
+      "per": 56.8,
+      "pbr": 26.76,
+      "roe": 57.6,
+      "value": 0.0,
+      "quality": 1.0,
+      "momentum": 0.528,
+      "signal": "⚪ ホールド",
+      "rsi": 49.8,
+      "conf": "低",
+      "strategy": [
+        "swing",
+        "dividend"
+      ],
+      "dividend_yield": 20.0,
+      "yutai": null,
+      "news": [
+        {
+          "title": "Should You Buy, Sell, or Hold TER Stock After a 38% Rise in 3 Months?",
+          "source": "Zacks",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/buy-sell-hold-ter-stock-160900531.html",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "ticker": "9201.T",
+      "name": "日本航空",
+      "score": 0.441,
+      "f": 7,
+      "per": 9.9,
+      "pbr": 1.02,
+      "roe": 12.3,
+      "value": 0.54,
+      "quality": 0.378,
+      "momentum": 0.272,
+      "signal": "🔴 売り",
+      "rsi": 74.6,
+      "conf": "中",
+      "strategy": [
+        "dividend"
+      ],
+      "dividend_yield": 3.1,
+      "yutai": null,
+      "news": [
+        {
+          "title": "Strength in Commercial Engines Unit Drives GE Aerospace: A Sign for More Upside?",
+          "source": "Zacks",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/strength-commercial-engines-unit-drives-165000995.html",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "ticker": "9432.T",
+      "name": "NTT",
+      "score": 0.432,
+      "f": 5,
+      "per": 11.6,
+      "pbr": 1.22,
+      "roe": 10.0,
+      "value": 0.446,
+      "quality": 0.347,
+      "momentum": 0.177,
+      "signal": "⚪ 様子見",
+      "rsi": 48.6,
+      "conf": "低",
+      "strategy": [
+        "dividend",
+        "low_price"
+      ],
+      "dividend_yield": 3.7,
+      "yutai": "なし（過去はdポイント優待）",
+      "news": [
+        {
+          "title": "NTT Targets $10 Billion in Asia's Biggest Corporate Bond Sale",
+          "source": "GuruFocus.com",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/ntt-targets-10-billion-asias-192614314.html",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "ticker": "6902.T",
+      "name": "デンソー",
+      "score": 0.428,
+      "f": 5,
+      "per": 7.6,
+      "pbr": 0.96,
+      "roe": 8.9,
+      "value": 0.588,
+      "quality": 0.332,
+      "momentum": 0.163,
+      "signal": "⚪ 様子見",
+      "rsi": 59.5,
+      "conf": "低",
+      "strategy": [
+        "dividend"
+      ],
+      "dividend_yield": 3.8,
+      "yutai": null,
+      "news": [
+        {
+          "title": "Here’s Why Sony Group (SONY) is One of the Cheap Stocks That Are About to Explode",
+          "source": "Insider Monkey",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/why-sony-group-sony-one-221431788.html",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "ticker": "6920.T",
+      "name": "レーザーテック",
+      "score": 0.424,
+      "f": 6,
+      "per": 49.3,
+      "pbr": 18.94,
+      "roe": 44.1,
+      "value": 0.01,
+      "quality": 0.814,
+      "momentum": 0.621,
+      "signal": "⚪ 様子見",
+      "rsi": 49.3,
+      "conf": "低",
+      "strategy": [
+        "swing",
+        "dividend"
+      ],
+      "dividend_yield": 69.0,
+      "yutai": null,
+      "news": [
+        {
+          "title": "Easing Crude Prices Stiffen Asian Stock Markets",
+          "source": "MT Newswires",
+          "url": "https://finance.yahoo.com/markets/world-indices/articles/easing-crude-prices-stiffen-asian-104214715.html",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "ticker": "8306.T",
+      "name": "三菱UFJ",
+      "score": 0.422,
+      "f": 6,
+      "per": 15.7,
+      "pbr": 1.69,
+      "roe": 11.9,
+      "value": 0.316,
+      "quality": 0.373,
+      "momentum": 0.485,
+      "signal": "⚪ 様子見",
+      "rsi": 56.6,
+      "conf": "低",
+      "strategy": [
+        "swing",
+        "dividend"
+      ],
+      "dividend_yield": 2.9,
+      "yutai": null,
+      "news": [
+        {
+          "title": "Oil Futures Edge Up Ahead of Long U.S. Weekend",
+          "source": "The Wall Street Journal",
+          "url": "https://www.wsj.com/finance/commodities-futures/oil-falls-as-supply-increases-amid-easing-mideast-tensions-518c2f51?siteid=yhoof2&yptr=yahoo",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "ticker": "5020.T",
+      "name": "ENEOS",
+      "score": 0.422,
+      "f": 6,
+      "per": 12.7,
+      "pbr": 0.97,
+      "roe": 8.5,
+      "value": 0.551,
+      "quality": 0.326,
+      "momentum": 0.308,
+      "signal": "⚪ 様子見",
+      "rsi": 43.9,
+      "conf": "低",
+      "strategy": [
+        "swing",
+        "dividend"
+      ],
+      "dividend_yield": 2.8,
+      "yutai": null,
+      "news": [
+        {
+          "title": "Marsh ENEOS Deal Tests Acquisition Driven Growth In Japanese Insurance Market",
+          "source": "Simply Wall St.",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/marsh-eneos-deal-tests-acquisition-121156569.html",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
+    }
+  ],
+  "alerts": [
+    {
+      "icon": "📈",
+      "type": "good",
+      "title": "出来高急増（サンプル）",
+      "desc": "EDINET接続不可のためサンプルアラートを表示中"
+    },
+    {
+      "icon": "📅",
+      "type": "info",
+      "title": "決算発表シーズン",
+      "desc": "保有銘柄の決算スケジュールを各自IRでご確認ください"
+    },
+    {
+      "icon": "🔴",
+      "type": "warn",
+      "title": "空売り動向（サンプル）",
+      "desc": "最新の機関投資家動向は次回更新時に反映されます"
+    }
+  ],
+  "flow": [
+    {
+      "label": "外国人",
+      "value": 2396,
+      "max": 8000
+    },
+    {
+      "label": "信託銀行",
+      "value": -719,
+      "max": 3000
+    },
+    {
+      "label": "個人",
+      "value": -1438,
+      "max": 5000
+    }
+  ],
+  "themeTrends": [
+    {
+      "theme": "その他",
+      "mentions": 10,
+      "pos": 0,
+      "neg": 0,
+      "prevMentions": 10
+    }
+  ]
+}
