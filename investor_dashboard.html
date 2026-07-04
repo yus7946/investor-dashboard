@@ -444,9 +444,9 @@ body::before {
 
 <!-- タブ -->
 <div class="tabs">
-  <button class="tab active" onclick="switchTab('screening')">📊<br>銘柄チェック</button>
-  <button class="tab" onclick="switchTab('watch')">🔔<br>今日のアラート</button>
-  <button class="tab" onclick="switchTab('assets')">💰<br>自分の資産</button>
+  <button class="tab active" onclick="switchTab('screening')">銘柄チェック</button>
+  <button class="tab" onclick="switchTab('watch')">今日のアラート</button>
+  <button class="tab" onclick="switchTab('assets')">自分の資産</button>
 </div>
 
 <!-- ── タブ1：銘柄チェック ── -->
@@ -478,7 +478,7 @@ body::before {
 
   <!-- バックテスト折りたたみ -->
   <button class="backtest-toggle" onclick="toggleBacktest(this)">
-    <span>📈 戦略バックテスト結果</span>
+    <span>戦略バックテスト結果</span>
     <span id="bt-arrow">▼</span>
   </button>
   <div class="backtest-collapse" id="bt-collapse">
@@ -656,43 +656,43 @@ const DATA = {
   updatedAtMs: Date.now(),
   backtest: { annual: '+18.4%', sharpe: '1.42', dd: '-14.2%', winrate: '62.5%', months: '24ヶ月' },
   stocks: [
-    { rank:1, ticker:'6861.T', name:'キーエンス',    score:0.742, f:8, per:45.2, pbr:6.1, roe:15.8, value:0.52, quality:0.91, momentum:0.78, signal:'🟢 強い買い', rsi:42, conf:'高',
+    { rank:1, ticker:'6861.T', name:'キーエンス',    score:0.742, f:8, per:45.2, pbr:6.1, roe:15.8, value:0.52, quality:0.91, momentum:0.78, signal:'強い買い', rsi:42, conf:'高',
       strategy:['swing'], dividend_yield:0.4, yutai:null,
       news:[{title:'好決算を受けFA機器需要回復観測', source:'適時開示', url:'https://finance.yahoo.co.jp/quote/6861.T', sentiment:'pos', theme:'設備投資'}] },
-    { rank:2, ticker:'9984.T', name:'ソフトバンクG', score:0.718, f:6, per:18.3, pbr:1.8, roe:12.4, value:0.71, quality:0.68, momentum:0.82, signal:'🟢 強い買い', rsi:38, conf:'高',
+    { rank:2, ticker:'9984.T', name:'ソフトバンクG', score:0.718, f:6, per:18.3, pbr:1.8, roe:12.4, value:0.71, quality:0.68, momentum:0.82, signal:'強い買い', rsi:38, conf:'高',
       strategy:['swing'], dividend_yield:0.6, yutai:null,
       news:[{title:'AI関連投資先の評価益拡大が話題', source:'ニュース', url:'https://finance.yahoo.co.jp/quote/9984.T', sentiment:'pos', theme:'AI'}] },
-    { rank:3, ticker:'7203.T', name:'トヨタ自動車',  score:0.698, f:7, per:10.1, pbr:1.1, roe:13.2, value:0.88, quality:0.76, momentum:0.65, signal:'🔵 買い',     rsi:51, conf:'中',
+    { rank:3, ticker:'7203.T', name:'トヨタ自動車',  score:0.698, f:7, per:10.1, pbr:1.1, roe:13.2, value:0.88, quality:0.76, momentum:0.65, signal:'買い',     rsi:51, conf:'中',
       strategy:['swing','dividend'], dividend_yield:2.9, yutai:'なし（株主優待は廃止）',
       news:[{title:'北米販売台数が前年比増', source:'ニュース', url:'https://finance.yahoo.co.jp/quote/7203.T', sentiment:'pos', theme:'自動車'}] },
-    { rank:4, ticker:'8306.T', name:'三菱UFJ',       score:0.671, f:7, per:9.8,  pbr:0.7, roe:8.9,  value:0.92, quality:0.74, momentum:0.58, signal:'🔵 買い',     rsi:55, conf:'中',
+    { rank:4, ticker:'8306.T', name:'三菱UFJ',       score:0.671, f:7, per:9.8,  pbr:0.7, roe:8.9,  value:0.92, quality:0.74, momentum:0.58, signal:'買い',     rsi:55, conf:'中',
       strategy:['dividend'], dividend_yield:3.6, yutai:'なし',
       news:[{title:'金利上昇で利ざや改善期待', source:'適時開示', url:'https://finance.yahoo.co.jp/quote/8306.T', sentiment:'pos', theme:'金利'}] },
-    { rank:5, ticker:'6758.T', name:'ソニーグループ',score:0.654, f:6, per:22.4, pbr:2.4, roe:11.3, value:0.65, quality:0.67, momentum:0.71, signal:'⚪ 様子見',   rsi:61, conf:'低',
+    { rank:5, ticker:'6758.T', name:'ソニーグループ',score:0.654, f:6, per:22.4, pbr:2.4, roe:11.3, value:0.65, quality:0.67, momentum:0.71, signal:'様子見',   rsi:61, conf:'低',
       strategy:['swing'], dividend_yield:0.7, yutai:null,
       news:[{title:'ゲーム部門の販売計画を据え置き', source:'ニュース', url:'https://finance.yahoo.co.jp/quote/6758.T', sentiment:'neu', theme:'AI'}] },
-    { rank:6, ticker:'4063.T', name:'信越化学',      score:0.641, f:8, per:17.8, pbr:3.1, roe:18.4, value:0.68, quality:0.88, momentum:0.52, signal:'🔵 買い',     rsi:47, conf:'中',
+    { rank:6, ticker:'4063.T', name:'信越化学',      score:0.641, f:8, per:17.8, pbr:3.1, roe:18.4, value:0.68, quality:0.88, momentum:0.52, signal:'買い',     rsi:47, conf:'中',
       strategy:['dividend'], dividend_yield:1.8, yutai:null,
       news:[{title:'半導体材料市況の先行き慎重視', source:'ニュース', url:'https://finance.yahoo.co.jp/quote/4063.T', sentiment:'neg', theme:'半導体'}] },
-    { rank:7, ticker:'9432.T', name:'NTT',           score:0.628, f:6, per:12.3, pbr:1.5, roe:10.2, value:0.78, quality:0.65, momentum:0.59, signal:'⚪ ホールド', rsi:53, conf:'低',
+    { rank:7, ticker:'9432.T', name:'NTT',           score:0.628, f:6, per:12.3, pbr:1.5, roe:10.2, value:0.78, quality:0.65, momentum:0.59, signal:'ホールド', rsi:53, conf:'低',
       strategy:['dividend'], dividend_yield:3.2, yutai:'なし（過去はdポイント優待）',
       news:[{title:'連続増配方針を継続と発表', source:'適時開示', url:'https://finance.yahoo.co.jp/quote/9432.T', sentiment:'pos', theme:'通信'}] },
-    { rank:8, ticker:'4519.T', name:'中外製薬',      score:0.615, f:7, per:28.4, pbr:5.2, roe:20.1, value:0.44, quality:0.82, momentum:0.68, signal:'🔵 買い',     rsi:44, conf:'中',
+    { rank:8, ticker:'4519.T', name:'中外製薬',      score:0.615, f:7, per:28.4, pbr:5.2, roe:20.1, value:0.44, quality:0.82, momentum:0.68, signal:'買い',     rsi:44, conf:'中',
       strategy:['swing'], dividend_yield:1.1, yutai:null,
       news:[{title:'新薬の承認申請が進展', source:'適時開示', url:'https://finance.yahoo.co.jp/quote/4519.T', sentiment:'pos', theme:'医薬品'}] },
-    { rank:9, ticker:'6326.T', name:'クボタ',        score:0.601, f:6, per:14.2, pbr:1.9, roe:11.8, value:0.74, quality:0.66, momentum:0.55, signal:'⚪ ホールド', rsi:58, conf:'低',
+    { rank:9, ticker:'6326.T', name:'クボタ',        score:0.601, f:6, per:14.2, pbr:1.9, roe:11.8, value:0.74, quality:0.66, momentum:0.55, signal:'ホールド', rsi:58, conf:'低',
       strategy:['dividend'], dividend_yield:2.6, yutai:null,
       news:[{title:'農機需要は地域差ありと説明', source:'ニュース', url:'https://finance.yahoo.co.jp/quote/6326.T', sentiment:'neu', theme:'資源'}] },
-    { rank:10,ticker:'8801.T', name:'三井不動産',    score:0.588, f:5, per:16.1, pbr:1.1, roe:7.8,  value:0.80, quality:0.55, momentum:0.49, signal:'⚪ ホールド', rsi:62, conf:'低',
+    { rank:10,ticker:'8801.T', name:'三井不動産',    score:0.588, f:5, per:16.1, pbr:1.1, roe:7.8,  value:0.80, quality:0.55, momentum:0.49, signal:'ホールド', rsi:62, conf:'低',
       strategy:['dividend'], dividend_yield:2.2, yutai:'保有株数に応じ宿泊優待割引券（要IR確認・手動更新）',
       news:[{title:'都心オフィス賃料が底堅く推移', source:'ニュース', url:'https://finance.yahoo.co.jp/quote/8801.T', sentiment:'pos', theme:'不動産'}] },
   ],
   alerts: [
-    { icon:'🏦', type:'warn',  title:'バンガード → 7203.T',       desc:'大量保有：5.1%→5.8%（増加）' },
-    { icon:'📈', type:'good',  title:'🚀 出来高急増：6861.T',       desc:'平均比3.2倍・株価+2.8%（買い集めの可能性）' },
-    { icon:'🔴', type:'warn',  title:'🔪 空売り急増：9984.T',       desc:'空売り残高前週比+24%（機関の売り圧力）' },
-    { icon:'📅', type:'info',  title:'決算予定：7203.T',            desc:'2026-08-01 本決算発表予定' },
-    { icon:'📅', type:'info',  title:'決算予定：8306.T',            desc:'2026-07-31 第1Q決算予定' },
+    { type:'warn',  title:'バンガード → 7203.T',       desc:'大量保有：5.1%→5.8%（増加）' },
+    { type:'good',  title:'出来高急増：6861.T',          desc:'平均比3.2倍・株価+2.8%（買い集めの可能性）' },
+    { type:'warn',  title:'空売り急増：9984.T',          desc:'空売り残高前週比+24%（機関の売り圧力）' },
+    { type:'info',  title:'決算予定：7203.T',            desc:'2026-08-01 本決算発表予定' },
+    { type:'info',  title:'決算予定：8306.T',            desc:'2026-07-31 第1Q決算予定' },
   ],
   flow: [
     { label:'外国人',   value: +3240, max: 8000 },
@@ -750,7 +750,7 @@ function checkAndNotifyStrongBuy() {
   const newOnes = strongBuys.filter(s => !lastNotified.includes(s.ticker + DATA.updated));
   if (newOnes.length > 0) {
     const msg = newOnes.map(s => `${s.name}(${s.ticker}) スコア${s.score.toFixed(3)}`).join('\n');
-    sendNtfyNotification(topic, '🟢 強い買いシグナル発生', msg);
+    sendNtfyNotification(topic, '強い買いシグナル発生', msg);
     localStorage.setItem('ntfy_notified', JSON.stringify(strongBuys.map(s => s.ticker + DATA.updated)));
   }
 }
@@ -791,20 +791,19 @@ function renderActionSection() {
   const items = [];
 
   strongBuys.slice(0, 2).forEach(s => {
-    items.push({ s, type:'strong', icon:'🟢', reason: '割安で機関投資家が注目中。財務も健全です。' });
+    items.push({ s, type:'strong', reason: '割安で機関投資家が注目中。財務も健全です。' });
   });
   if (items.length < 3) {
     buys.slice(0, 3 - items.length).forEach(s => {
-      items.push({ s, type:'buy', icon:'🔵', reason: '買いサイン点灯。スコア上位で値頃感あり。' });
+      items.push({ s, type:'buy', reason: '買いサイン点灯。スコア上位で値頃感あり。' });
     });
   }
   if (items.length === 0 && cautions.length > 0) {
-    items.push({ s: cautions[0], type:'caution', icon:'⚠️', reason: '様子見推奨。急いで買わないほうが無難です。' });
+    items.push({ s: cautions[0], type:'caution', reason: '様子見推奨。急いで買わないほうが無難です。' });
   }
 
-  el.innerHTML = items.map(({ s, type, icon, reason }) => `
+  el.innerHTML = items.map(({ s, type, reason }) => `
     <div class="action-card ${type}">
-      <div class="action-signal-icon">${icon}</div>
       <div class="action-body">
         <div class="action-name">${s.name}</div>
         <div class="action-code">${s.ticker}</div>
@@ -824,7 +823,7 @@ function renderStocks() {
     const sc = s.signal.includes('強い買い') ? 'strong-buy' :
                s.signal.includes('買い') ? 'buy' :
                s.signal.includes('売り') ? 'sell' : 'hold';
-    const yutaiBox = s.yutai ? `<div class="yutai-box">🎁 株主優待: ${s.yutai}</div>` : '';
+    const yutaiBox = s.yutai ? `<div class="yutai-box">株主優待: ${s.yutai}</div>` : '';
     const stars = scoreToStars(s.score);
     return `
     <div class="stock-card" style="opacity:0;transform:translateY(16px)">
@@ -888,7 +887,7 @@ function renderScenario(s) {
   const curPos = (parseFloat(sc.downPct) / (parseFloat(sc.downPct) + parseFloat(sc.upPct))) * 100;
   return `
   <div class="scenario-box">
-    <div class="scenario-title">📊 シナリオシミュレーション（簡易・5営業日目安）</div>
+    <div class="scenario-title">シナリオシミュレーション（簡易・5営業日目安）</div>
     <div class="scenario-range">
       <span class="lo">-${sc.downPct}%</span>
       <div class="scenario-track"><div class="scenario-cur" style="left:${curPos}%"></div></div>
@@ -908,7 +907,7 @@ function renderThemeTrends() {
     const negPct = Math.round((t.neg / t.mentions) * 100);
     const neuPct = 100 - posPct - negPct;
     const growth = t.prevMentions ? (t.mentions - t.prevMentions) / t.prevMentions : 0;
-    const momentumLabel = growth > 0.1 ? `📈 増加 (+${Math.round(growth*100)}%)` : growth < -0.1 ? `📉 減少 (${Math.round(growth*100)}%)` : '➡️ 横ばい';
+    const momentumLabel = growth > 0.1 ? `増加 (+${Math.round(growth*100)}%)` : growth < -0.1 ? `減少 (${Math.round(growth*100)}%)` : '横ばい';
     let flag = '';
     if (t.mentions / maxMentions > 0.6 && posPct >= 65)   flag = '<span class="theme-flag hot">⚠️ 過熱注意</span>';
     else if (posPct >= 50 && growth < 0)                   flag = '<span class="theme-flag turn">🔄 転換点の可能性</span>';
@@ -978,7 +977,6 @@ function renderAlerts() {
   const el = document.getElementById('alert-list');
   el.innerHTML = DATA.alerts.map(a => `
   <div class="alert-card-big ${a.type}" style="opacity:0;transform:translateY(16px)">
-    <div class="alert-icon">${a.icon}</div>
     <div class="alert-body">
       <div class="alert-title">${a.title}</div>
       <div class="alert-desc">${a.desc}</div>
@@ -1080,14 +1078,14 @@ function copyToClipboard() {
   const label = document.getElementById('copy-text');
   navigator.clipboard.writeText(text).then(() => {
     btn.classList.add('copied');
-    label.textContent = '✅ コピー完了！Claudeに貼り付けてください';
+    label.textContent = 'コピー完了！Claudeに貼り付けてください';
     setTimeout(() => { btn.classList.remove('copied'); label.textContent = '📋 分析結果をコピー → Claudeに貼る'; }, 3000);
   }).catch(() => {
     const ta = document.createElement('textarea');
     ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
     document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
     btn.classList.add('copied');
-    label.textContent = '✅ コピー完了！';
+    label.textContent = 'コピー完了！';
     setTimeout(() => { btn.classList.remove('copied'); label.textContent = '📋 分析結果をコピー → Claudeに貼る'; }, 3000);
   });
 }

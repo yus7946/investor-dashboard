@@ -444,9 +444,9 @@ body::before {
 
 <!-- タブ -->
 <div class="tabs">
-  <button class="tab active" onclick="switchTab('screening')">📊<br>銘柄チェック</button>
-  <button class="tab" onclick="switchTab('watch')">🔔<br>今日のアラート</button>
-  <button class="tab" onclick="switchTab('assets')">💰<br>自分の資産</button>
+  <button class="tab active" onclick="switchTab('screening')">銘柄チェック</button>
+  <button class="tab" onclick="switchTab('watch')">今日のアラート</button>
+  <button class="tab" onclick="switchTab('assets')">自分の資産</button>
 </div>
 
 <!-- ── タブ1：銘柄チェック ── -->
@@ -478,7 +478,7 @@ body::before {
 
   <!-- バックテスト折りたたみ -->
   <button class="backtest-toggle" onclick="toggleBacktest(this)">
-    <span>📈 戦略バックテスト結果</span>
+    <span>戦略バックテスト結果</span>
     <span id="bt-arrow">▼</span>
   </button>
   <div class="backtest-collapse" id="bt-collapse">
@@ -1154,7 +1154,7 @@ function checkAndNotifyStrongBuy() {
   const newOnes = strongBuys.filter(s => !lastNotified.includes(s.ticker + DATA.updated));
   if (newOnes.length > 0) {
     const msg = newOnes.map(s => `${s.name}(${s.ticker}) スコア${s.score.toFixed(3)}`).join('\n');
-    sendNtfyNotification(topic, '🟢 強い買いシグナル発生', msg);
+    sendNtfyNotification(topic, '強い買いシグナル発生', msg);
     localStorage.setItem('ntfy_notified', JSON.stringify(strongBuys.map(s => s.ticker + DATA.updated)));
   }
 }
@@ -1195,20 +1195,19 @@ function renderActionSection() {
   const items = [];
 
   strongBuys.slice(0, 2).forEach(s => {
-    items.push({ s, type:'strong', icon:'🟢', reason: '割安で機関投資家が注目中。財務も健全です。' });
+    items.push({ s, type:'strong', reason: '割安で機関投資家が注目中。財務も健全です。' });
   });
   if (items.length < 3) {
     buys.slice(0, 3 - items.length).forEach(s => {
-      items.push({ s, type:'buy', icon:'🔵', reason: '買いサイン点灯。スコア上位で値頃感あり。' });
+      items.push({ s, type:'buy', reason: '買いサイン点灯。スコア上位で値頃感あり。' });
     });
   }
   if (items.length === 0 && cautions.length > 0) {
-    items.push({ s: cautions[0], type:'caution', icon:'⚠️', reason: '様子見推奨。急いで買わないほうが無難です。' });
+    items.push({ s: cautions[0], type:'caution', reason: '様子見推奨。急いで買わないほうが無難です。' });
   }
 
-  el.innerHTML = items.map(({ s, type, icon, reason }) => `
+  el.innerHTML = items.map(({ s, type, reason }) => `
     <div class="action-card ${type}">
-      <div class="action-signal-icon">${icon}</div>
       <div class="action-body">
         <div class="action-name">${s.name}</div>
         <div class="action-code">${s.ticker}</div>
@@ -1228,7 +1227,7 @@ function renderStocks() {
     const sc = s.signal.includes('強い買い') ? 'strong-buy' :
                s.signal.includes('買い') ? 'buy' :
                s.signal.includes('売り') ? 'sell' : 'hold';
-    const yutaiBox = s.yutai ? `<div class="yutai-box">🎁 株主優待: ${s.yutai}</div>` : '';
+    const yutaiBox = s.yutai ? `<div class="yutai-box">株主優待: ${s.yutai}</div>` : '';
     const stars = scoreToStars(s.score);
     return `
     <div class="stock-card" style="opacity:0;transform:translateY(16px)">
@@ -1292,7 +1291,7 @@ function renderScenario(s) {
   const curPos = (parseFloat(sc.downPct) / (parseFloat(sc.downPct) + parseFloat(sc.upPct))) * 100;
   return `
   <div class="scenario-box">
-    <div class="scenario-title">📊 シナリオシミュレーション（簡易・5営業日目安）</div>
+    <div class="scenario-title">シナリオシミュレーション（簡易・5営業日目安）</div>
     <div class="scenario-range">
       <span class="lo">-${sc.downPct}%</span>
       <div class="scenario-track"><div class="scenario-cur" style="left:${curPos}%"></div></div>
@@ -1312,7 +1311,7 @@ function renderThemeTrends() {
     const negPct = Math.round((t.neg / t.mentions) * 100);
     const neuPct = 100 - posPct - negPct;
     const growth = t.prevMentions ? (t.mentions - t.prevMentions) / t.prevMentions : 0;
-    const momentumLabel = growth > 0.1 ? `📈 増加 (+${Math.round(growth*100)}%)` : growth < -0.1 ? `📉 減少 (${Math.round(growth*100)}%)` : '➡️ 横ばい';
+    const momentumLabel = growth > 0.1 ? `増加 (+${Math.round(growth*100)}%)` : growth < -0.1 ? `減少 (${Math.round(growth*100)}%)` : '横ばい';
     let flag = '';
     if (t.mentions / maxMentions > 0.6 && posPct >= 65)   flag = '<span class="theme-flag hot">⚠️ 過熱注意</span>';
     else if (posPct >= 50 && growth < 0)                   flag = '<span class="theme-flag turn">🔄 転換点の可能性</span>';
@@ -1382,7 +1381,6 @@ function renderAlerts() {
   const el = document.getElementById('alert-list');
   el.innerHTML = DATA.alerts.map(a => `
   <div class="alert-card-big ${a.type}" style="opacity:0;transform:translateY(16px)">
-    <div class="alert-icon">${a.icon}</div>
     <div class="alert-body">
       <div class="alert-title">${a.title}</div>
       <div class="alert-desc">${a.desc}</div>
@@ -1484,14 +1482,14 @@ function copyToClipboard() {
   const label = document.getElementById('copy-text');
   navigator.clipboard.writeText(text).then(() => {
     btn.classList.add('copied');
-    label.textContent = '✅ コピー完了！Claudeに貼り付けてください';
+    label.textContent = 'コピー完了！Claudeに貼り付けてください';
     setTimeout(() => { btn.classList.remove('copied'); label.textContent = '📋 分析結果をコピー → Claudeに貼る'; }, 3000);
   }).catch(() => {
     const ta = document.createElement('textarea');
     ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
     document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
     btn.classList.add('copied');
-    label.textContent = '✅ コピー完了！';
+    label.textContent = 'コピー完了！';
     setTimeout(() => { btn.classList.remove('copied'); label.textContent = '📋 分析結果をコピー → Claudeに貼る'; }, 3000);
   });
 }

@@ -140,13 +140,13 @@ def main():
         name = s.get("name", s.get("ticker", ""))
         if dc >= 0.05 and vr >= 2.0:
             extra_alerts.append({
-                "icon": "🚀", "type": "good",
+                "type": "good",
                 "title": f"急騰: {name}",
                 "desc": f"+{dc:.1%}・出来高{vr:.1f}倍",
             })
         if rsi <= 28 and wc <= -0.12 and vr >= 1.5:
             extra_alerts.append({
-                "icon": "🔪", "type": "warn",
+                "type": "warn",
                 "title": f"逆張り候補: {name}",
                 "desc": f"RSI{rsi}・週次{wc:.1%}・要リスク管理",
             })
@@ -154,13 +154,13 @@ def main():
         name = s.get("name", s.get("ticker", ""))
         if s.get("rotation_out"):
             extra_alerts.append({
-                "icon": "📊", "type": "warn",
+                "type": "warn",
                 "title": f"入替候補OUT: {name}",
                 "desc": f"スコア下位15% (score={s.get('score', 0)})",
             })
         if s.get("rotation_in"):
             extra_alerts.append({
-                "icon": "📈", "type": "good",
+                "type": "good",
                 "title": f"入替候補IN: {name}",
                 "desc": f"高スコア+モメンタム (score={s.get('score', 0)})",
             })

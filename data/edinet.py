@@ -31,7 +31,7 @@ def fetch_edinet_alerts(target_tickers: set[str], days_back: int = 3) -> list[di
                 filer = doc.get("filerName", "機関投資家")
                 desc = doc.get("docDescription", "大量保有報告書を提出")
                 alerts.append({
-                    "icon": "🏦", "type": "warn",
+                    "type": "warn",
                     "title": f"{filer[:18]}",
                     "desc": desc[:40],
                 })
@@ -47,7 +47,7 @@ def fetch_edinet_alerts(target_tickers: set[str], days_back: int = 3) -> list[di
 def _fallback_alerts() -> list[dict]:
     """EDINET接続失敗時や該当データなしの場合のフォールバック（出来高・決算予定ベースのサンプル）。"""
     return [
-        {"icon": "📈", "type": "good", "title": "出来高急増（サンプル）", "desc": "EDINET接続不可のためサンプルアラートを表示中"},
-        {"icon": "📅", "type": "info", "title": "決算発表シーズン", "desc": "保有銘柄の決算スケジュールを各自IRでご確認ください"},
-        {"icon": "🔴", "type": "warn", "title": "空売り動向（サンプル）", "desc": "最新の機関投資家動向は次回更新時に反映されます"},
+        {"type": "good", "title": "出来高急増（サンプル）", "desc": "EDINET接続不可のためサンプルアラートを表示中"},
+        {"type": "info", "title": "決算発表シーズン", "desc": "保有銘柄の決算スケジュールを各自IRでご確認ください"},
+        {"type": "warn", "title": "空売り動向（サンプル）", "desc": "最新の機関投資家動向は次回更新時に反映されます"},
     ]
