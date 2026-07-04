@@ -3,6 +3,7 @@ import json
 import re
 import os
 import sys
+import shutil
 
 try:
     sys.stdout.reconfigure(encoding="utf-8")
@@ -41,6 +42,13 @@ def update_dashboard():
         f.write(new_html)
 
     print(f"更新完了: {OUTPUT_HTML} ({data.get('updated', '')})")
+
+    # GitHub Pages 用に docs/index.html にもコピー
+    docs_dir = "docs"
+    os.makedirs(docs_dir, exist_ok=True)
+    docs_index = os.path.join(docs_dir, "index.html")
+    shutil.copy2(OUTPUT_HTML, docs_index)
+    print(f"コピー完了: {docs_index}")
 
 
 if __name__ == "__main__":

@@ -130,11 +130,47 @@ def main():
             "winrate": "62.5%", "months": "24ヶ月", "note": "バックテスト失敗時のサンプル値",
         }
 
+    # 急騰・落ちナイフ・ローテーションアラート生成
+    extra_alerts = []
+    for s in stocks:
+        dc = s.get("day_change_pct", 0) or 0
+        vr = s.get("volume_ratio", 1) or 1
+        wc = s.get("week_change_pct", 0) or 0
+        rsi = s.get("rsi", 50) or 50
+        name = s.get("name", s.get("ticker", ""))
+        if dc >= 0.05 and vr >= 2.0:
+            extra_alerts.append({
+                "icon": "🚀", "type": "good",
+                "title": f"急騰: {name}",
+                "desc": f"+{dc:.1%}・出来高{vr:.1f}倍",
+            })
+        if rsi <= 28 and wc <= -0.12 and vr >= 1.5:
+            extra_alerts.append({
+                "icon": "🔪", "type": "warn",
+                "title": f"逆張り候補: {name}",
+                "desc": f"RSI{rsi}・週次{wc:.1%}・要リスク管理",
+            })
+    for s in stocks:
+        name = s.get("name", s.get("ticker", ""))
+        if s.get("rotation_out"):
+            extra_alerts.append({
+                "icon": "📊", "type": "warn",
+                "title": f"入替候補OUT: {name}",
+                "desc": f"スコア下位15% (score={s.get('score', 0)})",
+            })
+        if s.get("rotation_in"):
+            extra_alerts.append({
+                "icon": "📈", "type": "good",
+                "title": f"入替候補IN: {name}",
+                "desc": f"高スコア+モメンタム (score={s.get('score', 0)})",
+            })
+    combined_alerts = extra_alerts + edinet_alerts
+
     print("\n7/7 JSON出力中...")
     try:
         path = export_dashboard_json(
             stocks=top10 if top10 else stocks[:10],
-            alerts=edinet_alerts,
+            alerts=combined_alerts,
             flow=flow,
             theme_trends=theme_trends,
             backtest=bt,

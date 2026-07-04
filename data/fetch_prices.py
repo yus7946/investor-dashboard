@@ -30,6 +30,11 @@ def fetch_stock_data(ticker: str, name: str) -> dict | None:
         momentum = float(hist["Close"].iloc[-1] / hist["Close"].iloc[0] - 1)
         volatility = float(hist["Close"].pct_change().std() * (252 ** 0.5))
 
+        day_change_pct = float(hist["Close"].iloc[-1] / hist["Close"].iloc[-2] - 1) if len(hist) >= 2 else 0.0
+        vol_20avg = float(hist["Volume"].iloc[-21:-1].mean()) if len(hist) >= 21 else float(hist["Volume"].mean())
+        volume_ratio = float(hist["Volume"].iloc[-1] / vol_20avg) if vol_20avg > 0 else 1.0
+        week_change_pct = float(hist["Close"].iloc[-1] / hist["Close"].iloc[-6] - 1) if len(hist) >= 6 else 0.0
+
         return {
             "ticker": ticker,
             "name": name,
@@ -42,6 +47,9 @@ def fetch_stock_data(ticker: str, name: str) -> dict | None:
             "rsi": round(rsi, 1),
             "momentum_raw": momentum,
             "volatility": volatility,
+            "day_change_pct": round(day_change_pct, 4),
+            "volume_ratio": round(volume_ratio, 2),
+            "week_change_pct": round(week_change_pct, 4),
         }
     except Exception:
         return None
@@ -79,5 +87,8 @@ def _sample_stock_data(ticker: str, name: str) -> dict:
         "rsi": round(random.uniform(30, 70), 1),
         "momentum_raw": round(random.uniform(-0.15, 0.2), 3),
         "volatility": round(random.uniform(0.15, 0.45), 3),
+        "day_change_pct": round(random.uniform(-0.05, 0.05), 4),
+        "volume_ratio": round(random.uniform(0.5, 2.5), 2),
+        "week_change_pct": round(random.uniform(-0.15, 0.15), 4),
         "_sample": True,
     }

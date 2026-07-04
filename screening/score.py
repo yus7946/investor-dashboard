@@ -59,4 +59,11 @@ def score_universe(stocks: list[dict]) -> list[dict]:
     stocks.sort(key=lambda s: s["score"], reverse=True)
     for i, s in enumerate(stocks, 1):
         s["rank"] = i
+
+    n = len(stocks)
+    cutoff_out = max(1, int(n * 0.15))
+    for i, s in enumerate(stocks):
+        s["rotation_out"] = i >= n - cutoff_out
+        s["rotation_in"] = (s["score"] >= 0.65) and ((s["momentum_raw"] or 0) > 0.08)
+
     return stocks
