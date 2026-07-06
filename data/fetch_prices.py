@@ -1,5 +1,7 @@
-"""yfinanceで株価・財務指標・配当利回りを取得する。"""
-import random
+"""yfinanceで株価・財務指標・配当利回りを取得する。
+
+取得に失敗した銘柄は表示対象から除外する（架空データでの補完は行わない）。
+"""
 import pandas as pd
 
 try:
@@ -35,6 +37,14 @@ def fetch_stock_data(ticker: str, name: str) -> dict | None:
         volume_ratio = float(hist["Volume"].iloc[-1] / vol_20avg) if vol_20avg > 0 else 1.0
         week_change_pct = float(hist["Close"].iloc[-1] / hist["Close"].iloc[-6] - 1) if len(hist) >= 6 else 0.0
 
+        # 配当利回り: yfinanceはバージョンにより比率(0.023)と百分率(2.3)の両方があり得る。
+        # 比率表記なら%へ変換し、二重変換で異常値(>20%)になった場合は戻す。
+        dy = float(info.get("dividendYield") or 0)
+        if 0 < dy < 1:
+            dy *= 100
+        if dy > 20:
+            dy /= 100
+
         return {
             "ticker": ticker,
             "name": name,
@@ -42,7 +52,7 @@ def fetch_stock_data(ticker: str, name: str) -> dict | None:
             "per": info.get("trailingPE"),
             "pbr": info.get("priceToBook"),
             "roe": (info.get("returnOnEquity") or 0) * 100,
-            "dividend_yield": (info.get("dividendYield") or 0) * (100 if info.get("dividendYield", 0) < 1 else 1),
+            "dividend_yield": dy,
             "market_cap": info.get("marketCap"),
             "rsi": round(rsi, 1),
             "momentum_raw": momentum,
@@ -57,38 +67,14 @@ def fetch_stock_data(ticker: str, name: str) -> dict | None:
 
 def fetch_universe(universe: list[tuple[str, str]]) -> list[dict]:
     results = []
+    failed = []
     for ticker, name in universe:
         d = fetch_stock_data(ticker, name)
         if d:
             results.append(d)
-    if len(results) < max(5, len(universe) // 3):
-        # 通信失敗が多い場合はフォールバックのサンプルデータで補完
-        print(f"  [警告] 取得成功 {len(results)}/{len(universe)} 件 -> 不足分をサンプルデータで補完")
-        got = {r["ticker"] for r in results}
-        for ticker, name in universe:
-            if ticker in got:
-                continue
-            results.append(_sample_stock_data(ticker, name))
+        else:
+            failed.append(ticker)
+    if failed:
+        # 架空データで補完せず、取得できた銘柄のみを分析対象とする
+        print(f"  [情報] {len(failed)}件は取得失敗のため表示対象から除外: {', '.join(failed[:10])}{' ほか' if len(failed) > 10 else ''}")
     return results
-
-
-def _sample_stock_data(ticker: str, name: str) -> dict:
-    random.seed(ticker)
-    price = round(random.uniform(800, 9000), 1)
-    return {
-        "ticker": ticker,
-        "name": name,
-        "price": price,
-        "per": round(random.uniform(8, 35), 1),
-        "pbr": round(random.uniform(0.6, 5.0), 2),
-        "roe": round(random.uniform(4, 20), 1),
-        "dividend_yield": round(random.uniform(0, 4), 2),
-        "market_cap": int(price * random.uniform(5e7, 2e9)),
-        "rsi": round(random.uniform(30, 70), 1),
-        "momentum_raw": round(random.uniform(-0.15, 0.2), 3),
-        "volatility": round(random.uniform(0.15, 0.45), 3),
-        "day_change_pct": round(random.uniform(-0.05, 0.05), 4),
-        "volume_ratio": round(random.uniform(0.5, 2.5), 2),
-        "week_change_pct": round(random.uniform(-0.15, 0.15), 4),
-        "_sample": True,
-    }

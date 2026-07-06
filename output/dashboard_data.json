@@ -1,13 +1,16 @@
 {
-  "updated": "2026年07月06日 06:52",
-  "updatedAtMs": 1783320736130,
+  "updated": "2026年07月06日 21:50",
+  "updatedAtMs": 1783342250494,
+  "fetched": 113,
+  "universeTotal": 116,
   "backtest": {
-    "annual": "+139.9%",
-    "sharpe": "4.40",
-    "dd": "-4.4%",
-    "winrate": "91.3%",
+    "annual": "+34.8%",
+    "benchmark": "+31.0%",
+    "sharpe": "1.17",
+    "dd": "-17.3%",
+    "winrate": "65.2%",
     "months": "23ヶ月",
-    "note": "手数料0.1%/回・月次リバランス上位10銘柄を前提とした簡易検証"
+    "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+31.0%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
   },
   "stocks": [
     {
@@ -29,6 +32,7 @@
         "dividend"
       ],
       "dividend_yield": 4.5,
+      "volatility": 0.1567,
       "yutai": null,
       "news": [
         {
@@ -58,15 +62,16 @@
       "strategy": [
         "low_price"
       ],
-      "dividend_yield": 0,
+      "dividend_yield": 0.0,
+      "volatility": 0.4231,
       "yutai": null,
       "news": [
         {
-          "title": "How Nissan is addressing affordability concerns in the US: CEO explains",
+          "title": "Nissan wants to 'lead the intelligent car': CEO discusses AI integration",
           "source": "Yahoo Finance Video",
-          "url": "https://finance.yahoo.com/video/nissan-addressing-affordability-concerns-us-120000285.html",
+          "url": "https://finance.yahoo.com/video/nissan-wants-lead-intelligent-car-120000646.html",
           "sentiment": "neu",
-          "theme": "その他"
+          "theme": "AI"
         }
       ]
     },
@@ -90,6 +95,7 @@
         "dividend"
       ],
       "dividend_yield": 20.0,
+      "volatility": 0.7393,
       "yutai": null,
       "news": [
         {
@@ -106,7 +112,7 @@
       "ticker": "3923.T",
       "name": "ラクス",
       "score": 0.386,
-      "f": 7,
+      "f": 6,
       "per": 28.0,
       "pbr": 14.06,
       "roe": 55.4,
@@ -117,9 +123,10 @@
       "rsi": 70.5,
       "conf": "中",
       "strategy": [
-        "dividend"
+        "swing"
       ],
-      "dividend_yield": 78.0,
+      "dividend_yield": 0.8,
+      "volatility": 0.6033,
       "yutai": null,
       "news": [
         {
@@ -150,6 +157,7 @@
         "dividend"
       ],
       "dividend_yield": 5.0,
+      "volatility": 0.2748,
       "yutai": null,
       "news": [
         {
@@ -179,7 +187,8 @@
       "strategy": [
         "low_price"
       ],
-      "dividend_yield": 0,
+      "dividend_yield": 0.0,
+      "volatility": 0.5537,
       "yutai": null,
       "news": [
         {
@@ -210,6 +219,7 @@
         "swing"
       ],
       "dividend_yield": 2.2,
+      "volatility": 0.3033,
       "yutai": null,
       "news": [
         {
@@ -226,7 +236,7 @@
       "ticker": "8035.T",
       "name": "東京エレクトロン",
       "score": 0.362,
-      "f": 5,
+      "f": 4,
       "per": 57.8,
       "pbr": 15.89,
       "roe": 29.3,
@@ -237,10 +247,10 @@
       "rsi": 52.0,
       "conf": "低",
       "strategy": [
-        "swing",
-        "dividend"
+        "swing"
       ],
-      "dividend_yield": 99.0,
+      "dividend_yield": 1.0,
+      "volatility": 0.5968,
       "yutai": null,
       "news": [
         {
@@ -272,6 +282,7 @@
         "dividend"
       ],
       "dividend_yield": 3.1,
+      "volatility": 0.2824,
       "yutai": null,
       "news": [
         {
@@ -288,7 +299,7 @@
       "ticker": "6920.T",
       "name": "レーザーテック",
       "score": 0.357,
-      "f": 6,
+      "f": 5,
       "per": 48.6,
       "pbr": 18.7,
       "roe": 44.1,
@@ -299,10 +310,10 @@
       "rsi": 51.0,
       "conf": "低",
       "strategy": [
-        "swing",
-        "dividend"
+        "swing"
       ],
-      "dividend_yield": 69.0,
+      "dividend_yield": 0.7,
+      "volatility": 0.7468,
       "yutai": null,
       "news": [
         {
@@ -437,10 +448,17 @@
   "themeTrends": [
     {
       "theme": "その他",
-      "mentions": 10,
+      "mentions": 9,
       "pos": 0,
       "neg": 0,
-      "prevMentions": 10
+      "prevMentions": 9
+    },
+    {
+      "theme": "AI",
+      "mentions": 1,
+      "pos": 0,
+      "neg": 0,
+      "prevMentions": 1
     }
   ]
 }

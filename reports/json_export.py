@@ -10,6 +10,8 @@ def export_dashboard_json(
     flow: list[dict],
     theme_trends: list[dict],
     backtest: dict,
+    fetched_count: int | None = None,
+    universe_total: int | None = None,
     output_path: str = "output/dashboard_data.json",
 ) -> str:
     out_stocks = []
@@ -31,6 +33,7 @@ def export_dashboard_json(
             "conf": s["conf"],
             "strategy": s["strategy"],
             "dividend_yield": round(s.get("dividend_yield", 0), 1),
+            "volatility": round(s["volatility"], 4) if s.get("volatility") else None,
             "yutai": s.get("yutai"),
             "news": s.get("news", []),
         })
@@ -38,6 +41,8 @@ def export_dashboard_json(
     data = {
         "updated": datetime.now().strftime("%Y年%m月%d日 %H:%M"),
         "updatedAtMs": int(datetime.now().timestamp() * 1000),
+        "fetched": fetched_count,
+        "universeTotal": universe_total,
         "backtest": backtest,
         "stocks": out_stocks,
         "alerts": alerts,

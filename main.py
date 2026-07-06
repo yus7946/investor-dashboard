@@ -97,14 +97,9 @@ def main():
             raise ValueError("テーマ集計結果が0件")
         print(f"  テーマ件数: {len(theme_trends)}")
     except Exception as e:
-        print(f"  [警告] テーマ集計に失敗、サンプル値を使用します: {e}")
-        theme_trends = [
-            {"theme": "AI", "mentions": 42, "pos": 34, "neg": 2, "prevMentions": 26},
-            {"theme": "半導体", "mentions": 23, "pos": 9, "neg": 10, "prevMentions": 27},
-            {"theme": "資源", "mentions": 11, "pos": 4, "neg": 5, "prevMentions": 9},
-            {"theme": "金利", "mentions": 18, "pos": 11, "neg": 4, "prevMentions": 12},
-            {"theme": "円安", "mentions": 14, "pos": 6, "neg": 7, "prevMentions": 15},
-        ]
+        # 架空のテーマ数値は表示しない。取得できなければ空のままUI側で「データなし」を表示する。
+        print(f"  [警告] テーマ集計に失敗（表示なしになります）: {e}")
+        theme_trends = []
 
     print("\n6/7 投資主体別フロー推定・バックテスト実行中...")
     flow = []
@@ -112,22 +107,22 @@ def main():
         flow = _estimate_flow(stocks)
         print("  フロー推定完了")
     except Exception as e:
-        print(f"  [警告] フロー推定に失敗、サンプル値を使用します: {e}")
-        flow = [
-            {"label": "外国人", "value": 3240, "max": 8000},
-            {"label": "信託銀行", "value": -820, "max": 3000},
-            {"label": "個人", "value": -2100, "max": 5000},
-        ]
+        # 架空のフロー数値は表示しない
+        print(f"  [警告] フロー推定に失敗（表示なしになります）: {e}")
+        flow = []
 
     bt = {}
     try:
-        bt = run_backtest([s["ticker"] for s in stocks[:15]])
+        # 現在のスコア上位だけに絞ると選択バイアスが入るため、取得できた全銘柄で検証する
+        bt = run_backtest([s["ticker"] for s in stocks])
         print(f"  バックテスト完了: 年率{bt.get('annual')} シャープ{bt.get('sharpe')}")
     except Exception as e:
         print(f"  [エラー] バックテストに失敗しました: {e}")
         bt = {
-            "annual": "+18.4%", "sharpe": "1.42", "dd": "-14.2%",
-            "winrate": "62.5%", "months": "24ヶ月", "note": "バックテスト失敗時のサンプル値",
+            "annual": "—", "benchmark": "—", "sharpe": "—", "dd": "—",
+            "winrate": "—", "months": "—",
+            "note": "データ取得に失敗したため計測できませんでした（架空の数値は表示しません）",
+            "unavailable": True,
         }
 
     # 急騰・落ちナイフ・ローテーションアラート生成
@@ -174,6 +169,8 @@ def main():
             flow=flow,
             theme_trends=theme_trends,
             backtest=bt,
+            fetched_count=len(stocks),
+            universe_total=len(UNIVERSE),
         )
         print(f"  出力完了: {path}")
     except Exception as e:

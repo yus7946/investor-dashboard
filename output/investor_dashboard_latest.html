@@ -462,14 +462,14 @@ body::before {
 
   <div class="kpi-grid">
     <div class="kpi-card" id="kpi1">
-      <div class="kpi-label">スクリーニング通過</div>
-      <div class="kpi-value blue" data-target="23">0</div>
-      <div class="kpi-sub">/ 44銘柄中</div>
+      <div class="kpi-label">分析対象銘柄</div>
+      <div class="kpi-value blue" id="kpi-count">--</div>
+      <div class="kpi-sub" id="kpi-count-sub">データ取得成功分のみ</div>
     </div>
     <div class="kpi-card" id="kpi2">
       <div class="kpi-label">最高 総合評価</div>
-      <div class="kpi-value up">0.74</div>
-      <div class="kpi-sub">6因子モデル</div>
+      <div class="kpi-value up" id="kpi-topscore">--</div>
+      <div class="kpi-sub">分析対象内の相対評価</div>
     </div>
   </div>
 
@@ -485,31 +485,33 @@ body::before {
     <div class="card" id="bt-card" style="margin-top:8px">
       <div class="bt-grid">
         <div class="bt-item">
-          <div class="bt-num up" id="bt-annual">+18.4%</div>
+          <div class="bt-num up" id="bt-annual">--</div>
           <div class="bt-lbl">年率リターン</div>
         </div>
         <div class="bt-item">
-          <div class="bt-num blue" id="bt-sharpe">1.42</div>
+          <div class="bt-num blue" id="bt-sharpe">--</div>
           <div class="bt-lbl">シャープレシオ</div>
         </div>
         <div class="bt-item">
-          <div class="bt-num down" id="bt-dd">-14.2%</div>
+          <div class="bt-num down" id="bt-dd">--</div>
           <div class="bt-lbl">最大下落</div>
         </div>
       </div>
-      <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
         <div class="bt-item">
-          <div class="bt-num" style="font-size:16px" id="bt-winrate">62.5%</div>
+          <div class="bt-num" style="font-size:16px" id="bt-winrate">--</div>
           <div class="bt-lbl">月次勝率</div>
         </div>
         <div class="bt-item">
-          <div class="bt-num" style="font-size:16px" id="bt-months">24ヶ月</div>
+          <div class="bt-num" style="font-size:16px" id="bt-months">--</div>
           <div class="bt-lbl">検証期間</div>
         </div>
+        <div class="bt-item">
+          <div class="bt-num" style="font-size:16px" id="bt-benchmark">--</div>
+          <div class="bt-lbl">同期間TOPIX（参考）</div>
+        </div>
       </div>
-      <div style="margin-top:12px;font-size:12px;line-height:1.7;color:var(--muted)">
-        シャープレシオ <span class="blue" style="font-weight:700">1.42</span> は市場平均を上回る水準。最大下落 <span class="down" style="font-weight:700">-14.2%</span> は許容範囲内。月次勝率 <span class="up" style="font-weight:700">62.5%</span> は安定的な戦略といえます。
-      </div>
+      <div id="bt-note" style="margin-top:12px;font-size:11px;line-height:1.7;color:var(--muted)"></div>
     </div>
   </div>
 </div>
@@ -534,9 +536,9 @@ body::before {
     <div id="news-list"></div>
   </div>
 
-  <div class="section-title">外国人フロー（4週）<span style="font-size:9px;font-weight:400;text-transform:none;color:var(--muted);margin-left:4px">週次更新</span></div>
+  <div class="section-title">資金フロー（簡易推定）<span style="font-size:9px;font-weight:400;text-transform:none;color:var(--muted);margin-left:4px">実測値ではありません</span></div>
   <div class="card">
-    <div style="font-size:11px;color:var(--muted);margin-bottom:10px">外国の機関投資家が日本株を買っているか売っているかを示します。緑が買い越し（強気）、赤が売り越し（弱気）。</div>
+    <div style="font-size:11px;color:var(--muted);margin-bottom:10px">分析対象銘柄の値動きから機械的に推定した参考値です。実際の投資主体別売買データ（JPX公表）ではないため、方向感の目安程度にご覧ください。</div>
     <div id="flow-bars"></div>
   </div>
 
@@ -652,15 +654,18 @@ body::before {
 gsap.registerPlugin(ScrollTrigger);
 
 const DATA = {
-  "updated": "2026年07月06日 06:52",
-  "updatedAtMs": 1783320736130,
+  "updated": "2026年07月06日 21:50",
+  "updatedAtMs": 1783342250494,
+  "fetched": 113,
+  "universeTotal": 116,
   "backtest": {
-    "annual": "+139.9%",
-    "sharpe": "4.40",
-    "dd": "-4.4%",
-    "winrate": "91.3%",
+    "annual": "+34.8%",
+    "benchmark": "+31.0%",
+    "sharpe": "1.17",
+    "dd": "-17.3%",
+    "winrate": "65.2%",
     "months": "23ヶ月",
-    "note": "手数料0.1%/回・月次リバランス上位10銘柄を前提とした簡易検証"
+    "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+31.0%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
   },
   "stocks": [
     {
@@ -682,6 +687,7 @@ const DATA = {
         "dividend"
       ],
       "dividend_yield": 4.5,
+      "volatility": 0.1567,
       "yutai": null,
       "news": [
         {
@@ -711,15 +717,16 @@ const DATA = {
       "strategy": [
         "low_price"
       ],
-      "dividend_yield": 0,
+      "dividend_yield": 0.0,
+      "volatility": 0.4231,
       "yutai": null,
       "news": [
         {
-          "title": "How Nissan is addressing affordability concerns in the US: CEO explains",
+          "title": "Nissan wants to 'lead the intelligent car': CEO discusses AI integration",
           "source": "Yahoo Finance Video",
-          "url": "https://finance.yahoo.com/video/nissan-addressing-affordability-concerns-us-120000285.html",
+          "url": "https://finance.yahoo.com/video/nissan-wants-lead-intelligent-car-120000646.html",
           "sentiment": "neu",
-          "theme": "その他"
+          "theme": "AI"
         }
       ]
     },
@@ -743,6 +750,7 @@ const DATA = {
         "dividend"
       ],
       "dividend_yield": 20.0,
+      "volatility": 0.7393,
       "yutai": null,
       "news": [
         {
@@ -759,7 +767,7 @@ const DATA = {
       "ticker": "3923.T",
       "name": "ラクス",
       "score": 0.386,
-      "f": 7,
+      "f": 6,
       "per": 28.0,
       "pbr": 14.06,
       "roe": 55.4,
@@ -770,9 +778,10 @@ const DATA = {
       "rsi": 70.5,
       "conf": "中",
       "strategy": [
-        "dividend"
+        "swing"
       ],
-      "dividend_yield": 78.0,
+      "dividend_yield": 0.8,
+      "volatility": 0.6033,
       "yutai": null,
       "news": [
         {
@@ -803,6 +812,7 @@ const DATA = {
         "dividend"
       ],
       "dividend_yield": 5.0,
+      "volatility": 0.2748,
       "yutai": null,
       "news": [
         {
@@ -832,7 +842,8 @@ const DATA = {
       "strategy": [
         "low_price"
       ],
-      "dividend_yield": 0,
+      "dividend_yield": 0.0,
+      "volatility": 0.5537,
       "yutai": null,
       "news": [
         {
@@ -863,6 +874,7 @@ const DATA = {
         "swing"
       ],
       "dividend_yield": 2.2,
+      "volatility": 0.3033,
       "yutai": null,
       "news": [
         {
@@ -879,7 +891,7 @@ const DATA = {
       "ticker": "8035.T",
       "name": "東京エレクトロン",
       "score": 0.362,
-      "f": 5,
+      "f": 4,
       "per": 57.8,
       "pbr": 15.89,
       "roe": 29.3,
@@ -890,10 +902,10 @@ const DATA = {
       "rsi": 52.0,
       "conf": "低",
       "strategy": [
-        "swing",
-        "dividend"
+        "swing"
       ],
-      "dividend_yield": 99.0,
+      "dividend_yield": 1.0,
+      "volatility": 0.5968,
       "yutai": null,
       "news": [
         {
@@ -925,6 +937,7 @@ const DATA = {
         "dividend"
       ],
       "dividend_yield": 3.1,
+      "volatility": 0.2824,
       "yutai": null,
       "news": [
         {
@@ -941,7 +954,7 @@ const DATA = {
       "ticker": "6920.T",
       "name": "レーザーテック",
       "score": 0.357,
-      "f": 6,
+      "f": 5,
       "per": 48.6,
       "pbr": 18.7,
       "roe": 44.1,
@@ -952,10 +965,10 @@ const DATA = {
       "rsi": 51.0,
       "conf": "低",
       "strategy": [
-        "swing",
-        "dividend"
+        "swing"
       ],
-      "dividend_yield": 69.0,
+      "dividend_yield": 0.7,
+      "volatility": 0.7468,
       "yutai": null,
       "news": [
         {
@@ -1090,10 +1103,17 @@ const DATA = {
   "themeTrends": [
     {
       "theme": "その他",
-      "mentions": 10,
+      "mentions": 9,
       "pos": 0,
       "neg": 0,
-      "prevMentions": 10
+      "prevMentions": 9
+    },
+    {
+      "theme": "AI",
+      "mentions": 1,
+      "pos": 0,
+      "neg": 0,
+      "prevMentions": 1
     }
   ]
 };
@@ -1159,8 +1179,8 @@ function scoreToStars(score) {
 }
 
 const HINTS = {
-  score:    '総合評価 composite score：割安・品質・勢いを合成した点数（0〜1）。高いほど機関投資家が注目しやすい銘柄の目安。',
-  fscore:   '財務健全度 F-Score：財務の健全性を9項目でチェック。7以上なら財務状態が良好な目安。',
+  score:    '総合評価 composite score：割安30%・品質30%・勢い25%・低ボラ15%を合成した点数（0〜1）。分析対象銘柄の中での相対評価であり、相場全体が悪い時でも高スコア銘柄は出る点に注意。',
+  fscore:   '財務健全度 F：当アプリ独自の9点満点の簡易チェック（ROE・PER・PBR・勢い・配当など）。正式なピオトロスキーF-Scoreとは異なります。7以上が良好の目安。',
   value:    '割安スコア value：株価が割安かどうかの度合い。高いほど「割安」と判定。',
   quality:  '品質スコア quality：収益性や財務の安定性。高いほど「優良企業」寄り。',
   momentum: '勢いスコア momentum：直近の値動きの強さ。高いほど上昇トレンドが続きやすい目安。',
@@ -1263,33 +1283,30 @@ function renderStocks() {
   }).join('');
 }
 
-function calcScenario(s) {
-  const baseRange = 4 + s.momentum * 6;
-  const rsiSkew = s.rsi > 70 ? -2 : s.rsi < 30 ? +2 : 0;
-  const upPct = (baseRange * 0.55 + rsiSkew * 0.5).toFixed(1);
-  const downPct = (baseRange * 0.45 - rsiSkew * 0.5).toFixed(1);
-  const winRate = Math.round(Math.min(85, Math.max(35, 40 + s.score * 40 + (s.f - 5) * 3 + (s.momentum - 0.5) * 20)));
-  return { upPct, downPct, winRate };
-}
-
 function renderScenario(s) {
-  const sc = calcScenario(s);
-  const curPos = (parseFloat(sc.downPct) / (parseFloat(sc.downPct) + parseFloat(sc.upPct))) * 100;
+  // 過去6ヶ月の実績ボラティリティ（年率）から5営業日の±1σレンジを計算。
+  // 実データが無い銘柄には表示しない（推測値で埋めない）。
+  if (!s.volatility || !(s.volatility > 0)) return '';
+  const range = (s.volatility / Math.sqrt(52) * 100).toFixed(1);
   return `
   <div class="scenario-box">
-    <div class="scenario-title">シナリオシミュレーション（簡易・5営業日目安）</div>
+    <div class="scenario-title">値動きの目安（過去6ヶ月の実績から計算）</div>
     <div class="scenario-range">
-      <span class="lo">-${sc.downPct}%</span>
-      <div class="scenario-track"><div class="scenario-cur" style="left:${curPos}%"></div></div>
-      <span class="hi">+${sc.upPct}%</span>
+      <span class="lo">-${range}%</span>
+      <div class="scenario-track"><div class="scenario-cur" style="left:50%"></div></div>
+      <span class="hi">+${range}%</span>
     </div>
-    <div class="scenario-note">想定レンジ（買われすぎ指数 RSI${s.rsi}・勢いスコア${s.momentum.toFixed(2)}より算出） / 類似パターン上昇確率 約${sc.winRate}%</div>
+    <div class="scenario-note">過去6ヶ月の値動きの振れ幅（±1σ）に基づく5営業日の想定レンジ。統計上、過去はおよそ3回に2回この範囲に収まった計算ですが、将来を保証するものではありません。</div>
   </div>`;
 }
 
 function renderThemeTrends() {
   const el = document.getElementById('theme-list');
-  if (!el || !DATA.themeTrends) return;
+  if (!el) return;
+  if (!DATA.themeTrends || !DATA.themeTrends.length) {
+    el.innerHTML = '<div style="font-size:11px;color:var(--muted)">本日は十分なニュースを取得できなかったため、テーマ集計はありません</div>';
+    return;
+  }
   const maxMentions = Math.max(...DATA.themeTrends.map(t => t.mentions), 1);
   el.innerHTML = DATA.themeTrends.map(t => {
     const neu = Math.max(0, t.mentions - t.pos - t.neg);
@@ -1346,11 +1363,15 @@ function renderNews() {
 
 function renderFlow() {
   const el = document.getElementById('flow-bars');
+  if (!DATA.flow || !DATA.flow.length) {
+    el.innerHTML = '<div style="font-size:11px;color:var(--muted)">データを取得できなかったため表示していません（架空の数値は表示しません）</div>';
+    return;
+  }
   el.innerHTML = DATA.flow.map(f => {
     const pct = Math.min(50, Math.abs(f.value) / f.max * 50);
     const isPos = f.value >= 0;
     const color = isPos ? 'var(--green)' : 'var(--red)';
-    const sign  = isPos ? '+' : '';
+    // 推定値のため金額単位は付けない（実測データではない）
     return `
     <div class="flow-row">
       <span class="flow-label">${f.label}</span>
@@ -1358,7 +1379,7 @@ function renderFlow() {
         <div class="flow-center"></div>
         <div class="flow-fill ${isPos?'positive':'negative'}" data-pct="${pct}"></div>
       </div>
-      <span class="flow-val" style="color:${color}">${sign}${(f.value/1000).toFixed(1)}千億</span>
+      <span class="flow-val" style="color:${color}">${isPos?'買い優勢':'売り優勢'}</span>
     </div>`;
   }).join('');
 }
@@ -1372,6 +1393,28 @@ function renderAlerts() {
       <div class="alert-desc">${a.desc}</div>
     </div>
   </div>`).join('');
+}
+
+function renderKpis() {
+  const countEl = document.getElementById('kpi-count');
+  const subEl = document.getElementById('kpi-count-sub');
+  const topEl = document.getElementById('kpi-topscore');
+  if (countEl) countEl.textContent = (DATA.fetched != null) ? DATA.fetched : DATA.stocks.length;
+  if (subEl && DATA.universeTotal) subEl.textContent = `/ ${DATA.universeTotal}銘柄中（取得成功分のみ）`;
+  if (topEl) topEl.textContent = DATA.stocks.length ? Math.max(...DATA.stocks.map(s => s.score)).toFixed(2) : '--';
+}
+
+function renderBacktest() {
+  const bt = DATA.backtest || {};
+  const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = (v != null && v !== '') ? v : '—'; };
+  set('bt-annual', bt.annual);
+  set('bt-sharpe', bt.sharpe);
+  set('bt-dd', bt.dd);
+  set('bt-winrate', bt.winrate);
+  set('bt-months', bt.months);
+  set('bt-benchmark', bt.benchmark);
+  const note = document.getElementById('bt-note');
+  if (note) note.textContent = bt.note || '';
 }
 
 function switchTab(id) {
@@ -1428,7 +1471,7 @@ function buildCopyText() {
   let text = `【機関投資家型AIエージェント 分析結果】${now}\n`;
   text += '='.repeat(55) + '\n\n';
   text += '■ マルチファクタースクリーニング TOP10\n';
-  text += '  因子: 割安スコア25% / 品質スコア25% / 勢いスコア20% / 低ボラ15% / 信用残15%\n\n';
+  text += '  因子: 割安スコア30% / 品質スコア30% / 勢いスコア25% / 低ボラ15%（分析対象内の相対評価）\n\n';
   DATA.stocks.forEach(s => {
     text += `  ${s.rank}位 ${s.ticker} ${s.name}\n`;
     text += `     総合評価:${s.score.toFixed(3)} 財務健全度:${s.f}/9 割安度PER:${s.per} 資産比較PBR:${s.pbr} 稼ぐ力ROE:${s.roe}%\n`;
@@ -1438,25 +1481,25 @@ function buildCopyText() {
   DATA.stocks.forEach(s => {
     text += `  ${s.ticker} ${s.name}: ${s.signal} 買われすぎ指数RSI:${s.rsi} 信頼度:${s.conf}\n`;
   });
-  text += `\n■ バックテスト結果\n`;
-  text += `  年率リターン: ${DATA.backtest.annual}\n`;
+  text += `\n■ バックテスト結果（モメンタム成分のみの近似検証・先読みなし）\n`;
+  text += `  年率リターン: ${DATA.backtest.annual}（同期間TOPIX: ${DATA.backtest.benchmark || '—'}）\n`;
   text += `  シャープレシオ: ${DATA.backtest.sharpe}\n`;
   text += `  最大下落: ${DATA.backtest.dd}\n`;
   text += `  月次勝率: ${DATA.backtest.winrate}\n`;
+  if (DATA.backtest.note) text += `  注記: ${DATA.backtest.note}\n`;
   text += '\n■ 機関動向アラート\n';
-  DATA.alerts.forEach(a => { text += `  ${a.icon} ${a.title}: ${a.desc}\n`; });
-  text += '\n■ 外国人フロー（4週）\n';
+  DATA.alerts.forEach(a => { text += `  ${a.title}: ${a.desc}\n`; });
+  text += '\n■ 資金フロー（値動きからの簡易推定・実測値ではない）\n';
   DATA.flow.forEach(f => {
-    const sign = f.value >= 0 ? '+' : '';
-    const trend = f.value >= 0 ? '買い越し' : '売り越し';
-    text += `  ${f.label}: ${sign}${f.value.toLocaleString()}百万円（${trend}傾向）\n`;
+    const trend = f.value >= 0 ? '買い優勢' : '売り優勢';
+    text += `  ${f.label}: ${trend}（推定）\n`;
   });
   text += '\n' + '='.repeat(55) + '\n';
   text += '【Claudeへの分析依頼】\n';
   text += '上記の結果を機関投資家の視点で分析してください。\n\n';
   text += '1. スクリーニング上位3銘柄の投資テーシス\n';
   text += '2. 最も強い買いシグナルの具体的なエントリー戦略\n';
-  text += '3. 外国人フロー・アラートから読める市場センチメント\n';
+  text += '3. アラートから読める市場センチメント\n';
   text += '4. 向こう1ヶ月で注意すべきリスクシナリオ\n';
   text += '5. ポートフォリオを組むなら上位何銘柄をどう配分するか\n';
   return text;
@@ -1667,7 +1710,9 @@ function renderHoldings() {
 // ── 初期化 ──
 document.addEventListener('DOMContentLoaded', () => {
   renderActionSection();
+  renderKpis();
   renderStocks();
+  renderBacktest();
   renderFlow();
   renderAlerts();
   renderThemeTrends();
