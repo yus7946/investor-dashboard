@@ -1,29 +1,29 @@
 {
-  "updated": "2026年07月04日 12:57",
-  "updatedAtMs": 1783137423280,
+  "updated": "2026年07月06日 01:16",
+  "updatedAtMs": 1783300611682,
   "backtest": {
-    "annual": "+18.4%",
-    "sharpe": "1.42",
-    "dd": "-14.2%",
-    "winrate": "62.5%",
-    "months": "24ヶ月",
-    "note": "データ取得失敗時のサンプル値（参考値）"
+    "annual": "+139.1%",
+    "sharpe": "4.37",
+    "dd": "-4.4%",
+    "winrate": "91.3%",
+    "months": "23ヶ月",
+    "note": "手数料0.1%/回・月次リバランス上位10銘柄を前提とした簡易検証"
   },
   "stocks": [
     {
       "rank": 1,
       "ticker": "8955.T",
       "name": "日本プライムリアルティ投資法人",
-      "score": 0.454,
+      "score": 0.457,
       "f": 4,
-      "per": 19.0,
-      "pbr": 0.35,
+      "per": 19.1,
+      "pbr": 0.36,
       "roe": 7.1,
-      "value": 0.627,
+      "value": 0.629,
       "quality": 0.306,
-      "momentum": 0.119,
-      "signal": "⚪ ホールド",
-      "rsi": 56.7,
+      "momentum": 0.127,
+      "signal": "ホールド",
+      "rsi": 69.7,
       "conf": "低",
       "strategy": [
         "dividend"
@@ -44,16 +44,16 @@
       "rank": 2,
       "ticker": "7201.T",
       "name": "日産自動車",
-      "score": 0.414,
+      "score": 0.411,
       "f": 1,
       "per": null,
       "pbr": 0.23,
       "roe": -9.9,
-      "value": 0.963,
+      "value": 0.952,
       "quality": 0.074,
-      "momentum": 0.078,
-      "signal": "⚪ 様子見",
-      "rsi": 21.1,
+      "momentum": 0.079,
+      "signal": "様子見",
+      "rsi": 28.4,
       "conf": "低",
       "strategy": [
         "low_price"
@@ -62,9 +62,9 @@
       "yutai": null,
       "news": [
         {
-          "title": "Nissan targets cost cuts on Mexico-built models as US tariffs bite – report",
-          "source": "Just Auto",
-          "url": "https://www.just-auto.com/news/nissan-targets-cost-cuts-mexico-built-models/",
+          "title": "How Nissan is addressing affordability concerns in the US: CEO explains",
+          "source": "Yahoo Finance Video",
+          "url": "https://finance.yahoo.com/video/nissan-addressing-affordability-concerns-us-120000285.html",
           "sentiment": "neu",
           "theme": "その他"
         }
@@ -74,16 +74,16 @@
       "rank": 3,
       "ticker": "6857.T",
       "name": "アドバンテスト",
-      "score": 0.404,
+      "score": 0.408,
       "f": 7,
-      "per": 56.8,
-      "pbr": 26.76,
+      "per": 57.1,
+      "pbr": 26.89,
       "roe": 57.6,
       "value": 0.0,
       "quality": 1.0,
-      "momentum": 0.277,
-      "signal": "⚪ 様子見",
-      "rsi": 49.8,
+      "momentum": 0.291,
+      "signal": "様子見",
+      "rsi": 47.4,
       "conf": "低",
       "strategy": [
         "swing",
@@ -105,16 +105,16 @@
       "rank": 4,
       "ticker": "3923.T",
       "name": "ラクス",
-      "score": 0.384,
+      "score": 0.386,
       "f": 6,
-      "per": 27.8,
-      "pbr": 13.94,
+      "per": 27.6,
+      "pbr": 13.85,
       "roe": 55.4,
       "value": 0.012,
       "quality": 0.969,
-      "momentum": 0.144,
-      "signal": "⚪ 様子見",
-      "rsi": 67.5,
+      "momentum": 0.153,
+      "signal": "様子見",
+      "rsi": 68.4,
       "conf": "低",
       "strategy": [
         "dividend"
@@ -135,16 +135,16 @@
       "rank": 5,
       "ticker": "5411.T",
       "name": "JFEホールディングス",
-      "score": 0.382,
+      "score": 0.38,
       "f": 4,
-      "per": 15.2,
-      "pbr": 0.39,
+      "per": 15.7,
+      "pbr": 0.4,
       "roe": 2.8,
-      "value": 0.575,
+      "value": 0.561,
       "quality": 0.248,
-      "momentum": 0.08,
-      "signal": "⚪ 様子見",
-      "rsi": 37.7,
+      "momentum": 0.091,
+      "signal": "様子見",
+      "rsi": 51.0,
       "conf": "低",
       "strategy": [
         "dividend"
@@ -165,16 +165,16 @@
       "rank": 6,
       "ticker": "9501.T",
       "name": "東京電力HD",
-      "score": 0.378,
+      "score": 0.376,
       "f": 1,
       "per": null,
       "pbr": 0.22,
       "roe": -12.6,
       "value": 1.0,
       "quality": 0.036,
-      "momentum": 0.027,
-      "signal": "⚪ 様子見",
-      "rsi": 24.5,
+      "momentum": 0.015,
+      "signal": "様子見",
+      "rsi": 30.5,
       "conf": "低",
       "strategy": [
         "low_price"
@@ -193,18 +193,48 @@
     },
     {
       "rank": 7,
+      "ticker": "9502.T",
+      "name": "中部電力",
+      "score": 0.374,
+      "f": 5,
+      "per": 10.6,
+      "pbr": 0.77,
+      "roe": 7.7,
+      "value": 0.3,
+      "quality": 0.315,
+      "momentum": 0.328,
+      "signal": "売り",
+      "rsi": 88.1,
+      "conf": "中",
+      "strategy": [
+        "swing"
+      ],
+      "dividend_yield": 2.2,
+      "yutai": null,
+      "news": [
+        {
+          "title": "Chubu Electric Shares Slide After Nuclear Safety Data Review Announced",
+          "source": "GuruFocus.com",
+          "url": "https://finance.yahoo.com/news/chubu-electric-shares-slide-nuclear-120534632.html",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
+    },
+    {
+      "rank": 8,
       "ticker": "8035.T",
       "name": "東京エレクトロン",
-      "score": 0.361,
+      "score": 0.368,
       "f": 5,
-      "per": 58.5,
-      "pbr": 16.08,
+      "per": 58.4,
+      "pbr": 16.06,
       "roe": 29.3,
-      "value": 0.005,
+      "value": 0.006,
       "quality": 0.611,
-      "momentum": 0.485,
-      "signal": "⚪ 様子見",
-      "rsi": 50.6,
+      "momentum": 0.513,
+      "signal": "様子見",
+      "rsi": 53.1,
       "conf": "低",
       "strategy": [
         "swing",
@@ -214,40 +244,9 @@
       "yutai": null,
       "news": [
         {
-          "title": "Asian stocks rally after Dow sets fresh record, though chip weakness lingers",
-          "source": "Euronews",
-          "url": "https://www.euronews.com/2026/07/03/asian-stocks-rally-after-dow-sets-fresh-record-though-chip-weakness-lingers",
-          "sentiment": "neu",
-          "theme": "その他"
-        }
-      ]
-    },
-    {
-      "rank": 8,
-      "ticker": "6920.T",
-      "name": "レーザーテック",
-      "score": 0.359,
-      "f": 6,
-      "per": 49.3,
-      "pbr": 18.94,
-      "roe": 44.1,
-      "value": 0.004,
-      "quality": 0.814,
-      "momentum": 0.318,
-      "signal": "⚪ 様子見",
-      "rsi": 49.3,
-      "conf": "低",
-      "strategy": [
-        "swing",
-        "dividend"
-      ],
-      "dividend_yield": 69.0,
-      "yutai": null,
-      "news": [
-        {
-          "title": "Easing Crude Prices Stiffen Asian Stock Markets",
-          "source": "MT Newswires",
-          "url": "https://finance.yahoo.com/markets/world-indices/articles/easing-crude-prices-stiffen-asian-104214715.html",
+          "title": "BofA Boosts Teradyne (TER) Price Target on Industry Growth",
+          "source": "Insider Monkey",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/bofa-boosts-teradyne-ter-price-134801547.html",
           "sentiment": "neu",
           "theme": "その他"
         }
@@ -257,16 +256,16 @@
       "rank": 9,
       "ticker": "8725.T",
       "name": "MS&ADインシュアランス",
-      "score": 0.356,
+      "score": 0.36,
       "f": 7,
       "per": 8.2,
       "pbr": 1.36,
-      "roe": 17.8,
-      "value": 0.179,
-      "quality": 0.454,
-      "momentum": 0.215,
-      "signal": "⚪ 様子見",
-      "rsi": 38.2,
+      "roe": 18.2,
+      "value": 0.18,
+      "quality": 0.458,
+      "momentum": 0.224,
+      "signal": "様子見",
+      "rsi": 41.3,
       "conf": "低",
       "strategy": [
         "swing",
@@ -286,29 +285,30 @@
     },
     {
       "rank": 10,
-      "ticker": "4385.T",
-      "name": "メルカリ",
-      "score": 0.352,
-      "f": 5,
-      "per": 25.3,
-      "pbr": 6.03,
-      "roe": 33.0,
-      "value": 0.033,
-      "quality": 0.661,
-      "momentum": 0.283,
-      "signal": "🔴 売り",
-      "rsi": 70.5,
-      "conf": "中",
+      "ticker": "6920.T",
+      "name": "レーザーテック",
+      "score": 0.359,
+      "f": 6,
+      "per": 48.7,
+      "pbr": 18.73,
+      "roe": 44.1,
+      "value": 0.004,
+      "quality": 0.814,
+      "momentum": 0.318,
+      "signal": "様子見",
+      "rsi": 51.1,
+      "conf": "低",
       "strategy": [
-        "swing"
+        "swing",
+        "dividend"
       ],
-      "dividend_yield": 0,
+      "dividend_yield": 69.0,
       "yutai": null,
       "news": [
         {
-          "title": "Optimism Around US Government Shutdown End, China Inflation Views Lift Asian Stock Markets",
+          "title": "Easing Crude Prices Stiffen Asian Stock Markets",
           "source": "MT Newswires",
-          "url": "https://finance.yahoo.com/news/optimism-around-us-government-shutdown-103813252.html",
+          "url": "https://finance.yahoo.com/markets/world-indices/articles/easing-crude-prices-stiffen-asian-104214715.html",
           "sentiment": "neu",
           "theme": "その他"
         }
@@ -317,115 +317,96 @@
   ],
   "alerts": [
     {
-      "icon": "📊",
       "type": "warn",
-      "title": "入替候補OUT: ネクソン",
-      "desc": "スコア下位15% (score=0.228)"
+      "title": "入替候補OUT: ファナック",
+      "desc": "スコア下位15% (score=0.233)"
     },
     {
-      "icon": "📊",
-      "type": "warn",
-      "title": "入替候補OUT: カバー",
-      "desc": "スコア下位15% (score=0.225)"
-    },
-    {
-      "icon": "📊",
       "type": "warn",
       "title": "入替候補OUT: オキサイド",
-      "desc": "スコア下位15% (score=0.222)"
+      "desc": "スコア下位15% (score=0.232)"
     },
     {
-      "icon": "📊",
+      "type": "warn",
+      "title": "入替候補OUT: ネクソン",
+      "desc": "スコア下位15% (score=0.227)"
+    },
+    {
+      "type": "warn",
+      "title": "入替候補OUT: カバー",
+      "desc": "スコア下位15% (score=0.227)"
+    },
+    {
       "type": "warn",
       "title": "入替候補OUT: ソシオネクスト",
-      "desc": "スコア下位15% (score=0.214)"
+      "desc": "スコア下位15% (score=0.212)"
     },
     {
-      "icon": "📊",
-      "type": "warn",
-      "title": "入替候補OUT: オリエンタルランド",
-      "desc": "スコア下位15% (score=0.213)"
-    },
-    {
-      "icon": "📊",
       "type": "warn",
       "title": "入替候補OUT: Sansan",
-      "desc": "スコア下位15% (score=0.209)"
+      "desc": "スコア下位15% (score=0.208)"
     },
     {
-      "icon": "📊",
       "type": "warn",
       "title": "入替候補OUT: 資生堂",
       "desc": "スコア下位15% (score=0.204)"
     },
     {
-      "icon": "📊",
       "type": "warn",
-      "title": "入替候補OUT: サイバーダイン",
+      "title": "入替候補OUT: メドレー",
       "desc": "スコア下位15% (score=0.2)"
     },
     {
-      "icon": "📊",
       "type": "warn",
-      "title": "入替候補OUT: メドレー",
+      "title": "入替候補OUT: サイバーダイン",
       "desc": "スコア下位15% (score=0.199)"
     },
     {
-      "icon": "📊",
       "type": "warn",
       "title": "入替候補OUT: イオン",
-      "desc": "スコア下位15% (score=0.193)"
+      "desc": "スコア下位15% (score=0.192)"
     },
     {
-      "icon": "📊",
       "type": "warn",
       "title": "入替候補OUT: Appier Group",
-      "desc": "スコア下位15% (score=0.184)"
+      "desc": "スコア下位15% (score=0.182)"
     },
     {
-      "icon": "📊",
       "type": "warn",
       "title": "入替候補OUT: マネーフォワード",
-      "desc": "スコア下位15% (score=0.169)"
+      "desc": "スコア下位15% (score=0.174)"
     },
     {
-      "icon": "📊",
       "type": "warn",
       "title": "入替候補OUT: 野村総合研究所",
       "desc": "スコア下位15% (score=0.166)"
     },
     {
-      "icon": "📊",
       "type": "warn",
       "title": "入替候補OUT: ネクセラファーマ",
       "desc": "スコア下位15% (score=0.154)"
     },
     {
-      "icon": "📊",
       "type": "warn",
       "title": "入替候補OUT: Kudan",
       "desc": "スコア下位15% (score=0.146)"
     },
     {
-      "icon": "📊",
       "type": "warn",
       "title": "入替候補OUT: freee",
-      "desc": "スコア下位15% (score=0.134)"
+      "desc": "スコア下位15% (score=0.136)"
     },
     {
-      "icon": "📈",
       "type": "good",
       "title": "出来高急増（サンプル）",
       "desc": "EDINET接続不可のためサンプルアラートを表示中"
     },
     {
-      "icon": "📅",
       "type": "info",
       "title": "決算発表シーズン",
       "desc": "保有銘柄の決算スケジュールを各自IRでご確認ください"
     },
     {
-      "icon": "🔴",
       "type": "warn",
       "title": "空売り動向（サンプル）",
       "desc": "最新の機関投資家動向は次回更新時に反映されます"
@@ -434,17 +415,17 @@
   "flow": [
     {
       "label": "外国人",
-      "value": 3004,
+      "value": 2719,
       "max": 8000
     },
     {
       "label": "信託銀行",
-      "value": -901,
+      "value": -816,
       "max": 3000
     },
     {
       "label": "個人",
-      "value": -1802,
+      "value": -1631,
       "max": 5000
     }
   ],
