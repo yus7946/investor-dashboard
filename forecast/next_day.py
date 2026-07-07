@@ -101,8 +101,11 @@ def _stock_factors(s: dict) -> list[dict]:
     return f
 
 
-def build_forecasts(top_stocks: list[dict], regime: str = "unknown") -> dict | None:
-    """各銘柄のforecastをin-placeで付与し、市場全体見通しを返す。"""
+def build_forecasts(top_stocks: list[dict], regime: str = "unknown", calib: float = 1.0) -> dict | None:
+    """各銘柄のforecastをin-placeで付与し、市場全体見通しを返す。
+
+    calib: 過去の答え合わせ実績から算出したレンジ幅の補正係数（1.0=無補正）。
+    """
     if yf is None or not top_stocks:
         return None
 
@@ -115,6 +118,8 @@ def build_forecasts(top_stocks: list[dict], regime: str = "unknown") -> dict | N
     except Exception:
         return None
 
+    calibrated = abs(calib - 1.0) > 1e-6
+
     # ── 銘柄別 ──
     for s in top_stocks:
         try:
@@ -122,9 +127,12 @@ def build_forecasts(top_stocks: list[dict], regime: str = "unknown") -> dict | N
             if len(close) < 60:
                 continue
             r = close.pct_change().dropna()
-            vol_d = float(r.std())
+            vol_d = float(r.std()) * calib  # 実績に基づくレンジ補正
             price = float(close.iloc[-1])
             cond = _conditional_uprate(close, s.get("rsi", 50), s.get("week_change_pct", 0) or 0)
+            basis = "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
+            if calibrated:
+                basis += f"（過去の答え合わせ実績に基づきレンジ幅を{calib:.2f}倍に自動補正済み）"
             s["forecast"] = {
                 "price": round(price, 1),
                 "rangeLow": round(price * (1 - vol_d)),
@@ -132,9 +140,10 @@ def build_forecasts(top_stocks: list[dict], regime: str = "unknown") -> dict | N
                 "rangeLow2": round(price * (1 - 2 * vol_d)),
                 "rangeHigh2": round(price * (1 + 2 * vol_d)),
                 "volDPct": round(vol_d * 100, 2),
+                "calibrated": calibrated,
                 "cond": cond,
                 "factors": _stock_factors(s),
-                "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。",
+                "basis": basis,
             }
         except Exception:
             continue

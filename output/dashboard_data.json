@@ -1,6 +1,6 @@
 {
-  "updated": "2026年07月07日 20:39",
-  "updatedAtMs": 1783424367598,
+  "updated": "2026年07月07日 23:20",
+  "updatedAtMs": 1783434056090,
   "fetched": 113,
   "universeTotal": 116,
   "market": {
@@ -11,15 +11,27 @@
     "source": "TOPIX連動ETF(1306.T)終値と200日移動平均から判定"
   },
   "marketOutlook": {
-    "spxChangePct": 0.72,
-    "spxDate": "2026-07-06",
-    "usdjpy": 161.92,
-    "usdjpyChangePct": 0.29,
-    "condition": "米S&P500が直近上昇",
-    "topixUpRate": 64.5,
-    "n": 279,
+    "spxChangePct": -0.52,
+    "spxDate": "2026-07-07",
+    "usdjpy": 161.89,
+    "usdjpyChangePct": 0.27,
+    "condition": "米S&P500が直近下落",
+    "topixUpRate": 41.7,
+    "n": 206,
     "regime": "bull",
     "basis": "過去2年で「米国市場が上昇/下落した翌営業日に東京(TOPIX ETF)が上昇した割合」を実際に集計。統計的傾向であり将来を保証しません。出典: Yahoo Finance価格データ。"
+  },
+  "accuracy": {
+    "resolvedStockCount": 0,
+    "resolvedMarketCount": 0,
+    "rangeHitRate": null,
+    "leanUpActualUp": null,
+    "leanUpN": 0,
+    "leanDownActualUp": null,
+    "leanDownN": 0,
+    "marketHitRate": null,
+    "sinceDate": "2026-07-06",
+    "note": "予測と実際の答え合わせを毎営業日ぶん蓄積した実績です。件数が増えるほど信頼度が上がります。将来を保証するものではありません。"
   },
   "backtest": {
     "annual": "+31.4%",
@@ -60,6 +72,7 @@
         "rangeLow2": 93453,
         "rangeHigh2": 96947,
         "volDPct": 0.92,
+        "calibrated": false,
         "cond": {
           "upRate": 47.6,
           "n": 189,
@@ -116,6 +129,7 @@
         "rangeLow2": 26402,
         "rangeHigh2": 31398,
         "volDPct": 4.32,
+        "calibrated": false,
         "cond": {
           "upRate": 56.0,
           "n": 166,
@@ -166,6 +180,7 @@
         "rangeLow2": 302,
         "rangeHigh2": 342,
         "volDPct": 3.1,
+        "calibrated": false,
         "cond": {
           "upRate": 45.2,
           "n": 188,
@@ -221,6 +236,7 @@
         "rangeLow2": 977,
         "rangeHigh2": 1093,
         "volDPct": 2.82,
+        "calibrated": false,
         "cond": {
           "upRate": 48.0,
           "n": 171,
@@ -276,6 +292,7 @@
         "rangeLow2": 3122,
         "rangeHigh2": 3346,
         "volDPct": 1.72,
+        "calibrated": false,
         "cond": {
           "upRate": 53.8,
           "n": 78,
@@ -331,6 +348,7 @@
         "rangeLow2": 433,
         "rangeHigh2": 492,
         "volDPct": 3.18,
+        "calibrated": false,
         "cond": {
           "upRate": 47.6,
           "n": 164,
@@ -381,6 +399,7 @@
         "rangeLow2": 1600,
         "rangeHigh2": 1708,
         "volDPct": 1.64,
+        "calibrated": false,
         "cond": {
           "upRate": 49.7,
           "n": 169,
@@ -431,6 +450,7 @@
         "rangeLow2": 64554,
         "rangeHigh2": 74386,
         "volDPct": 3.54,
+        "calibrated": false,
         "cond": {
           "upRate": 53.7,
           "n": 162,
@@ -454,57 +474,6 @@
     },
     {
       "rank": 9,
-      "ticker": "8725.T",
-      "name": "MS&ADインシュアランス",
-      "score": 0.37,
-      "f": 7,
-      "per": 8.4,
-      "pbr": 1.38,
-      "roe": 18.2,
-      "value": 0.175,
-      "quality": 0.458,
-      "momentum": 0.269,
-      "signal": "様子見",
-      "rsi": 48.8,
-      "conf": "低",
-      "strategy": [
-        "swing",
-        "dividend"
-      ],
-      "dividend_yield": 3.1,
-      "volatility": 0.2822,
-      "short_ratio": null,
-      "regime_adjusted": false,
-      "forecast": {
-        "price": 4534.0,
-        "rangeLow": 4435,
-        "rangeHigh": 4633,
-        "rangeLow2": 4336,
-        "rangeHigh2": 4732,
-        "volDPct": 2.18,
-        "cond": {
-          "upRate": 53.6,
-          "n": 192,
-          "condition": "RSI中立圏×5日上昇局面",
-          "note": null
-        },
-        "factors": [],
-        "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
-      },
-      "yutai": null,
-      "news": [
-        {
-          "title": "ＭＳ＆ＡＤインシュアランスグループホールディングス(株)【8725】：今の株価の理由は？値動きの背景をAIが解説",
-          "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9KWmdLUTRqbnN3Qnp3N0E2ZkZvRGdqNHY4Tm5YeE0yVEtlY2g5WHVnd1FkZ29XM29Yb0szcnpPRnU2RW0yT2plRjFOcy1PTDFXaDlyRE9HNWtUZEZfdHY0?oc=5",
-          "pubDate": "Mon, 06 Jul 2026 06:58:59 GMT",
-          "sentiment": "neu",
-          "theme": "AI"
-        }
-      ]
-    },
-    {
-      "rank": 10,
       "ticker": "4385.T",
       "name": "メルカリ",
       "score": 0.368,
@@ -532,6 +501,7 @@
         "rangeLow2": 4218,
         "rangeHigh2": 4806,
         "volDPct": 3.25,
+        "calibrated": false,
         "cond": {
           "upRate": 45.4,
           "n": 185,
@@ -548,6 +518,58 @@
           "source": "Yahoo!ファイナンス",
           "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5lcVVrWExfWFdXQ3pCVWFPN2t6eGZFYTlWbW1ySGsyYm96MU9lSWpxTW1SRm5PcUVRWi1VQ2RQMkhMNU5vNEhBSm81S1Jka1BEZlpsbzhrbl9DQmRRbTcw?oc=5",
           "pubDate": "Tue, 07 Jul 2026 07:07:31 GMT",
+          "sentiment": "neu",
+          "theme": "AI"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "ticker": "8725.T",
+      "name": "MS&ADインシュアランス",
+      "score": 0.367,
+      "f": 7,
+      "per": 8.4,
+      "pbr": 1.45,
+      "roe": 18.2,
+      "value": 0.167,
+      "quality": 0.458,
+      "momentum": 0.269,
+      "signal": "様子見",
+      "rsi": 48.8,
+      "conf": "低",
+      "strategy": [
+        "swing",
+        "dividend"
+      ],
+      "dividend_yield": 3.1,
+      "volatility": 0.2822,
+      "short_ratio": null,
+      "regime_adjusted": false,
+      "forecast": {
+        "price": 4534.0,
+        "rangeLow": 4435,
+        "rangeHigh": 4633,
+        "rangeLow2": 4336,
+        "rangeHigh2": 4732,
+        "volDPct": 2.18,
+        "calibrated": false,
+        "cond": {
+          "upRate": 53.6,
+          "n": 192,
+          "condition": "RSI中立圏×5日上昇局面",
+          "note": null
+        },
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
+      },
+      "yutai": null,
+      "news": [
+        {
+          "title": "ＭＳ＆ＡＤインシュアランスグループホールディングス(株)【8725】：今の株価の理由は？値動きの背景をAIが解説",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9KWmdLUTRqbnN3Qnp3N0E2ZkZvRGdqNHY4Tm5YeE0yVEtlY2g5WHVnd1FkZ29XM29Yb0szcnpPRnU2RW0yT2plRjFOcy1PTDFXaDlyRE9HNWtUZEZfdHY0?oc=5",
+          "pubDate": "Mon, 06 Jul 2026 06:58:59 GMT",
           "sentiment": "neu",
           "theme": "AI"
         }

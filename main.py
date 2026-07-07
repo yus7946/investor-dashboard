@@ -20,6 +20,9 @@ from screening.score import score_universe
 from signals.signal import judge_all
 from backtest.backtest import run_backtest
 from forecast.next_day import build_forecasts
+from forecast.tracker import (
+    load_history, save_history, calibration_factor, update, compute_accuracy,
+)
 from reports.json_export import export_dashboard_json
 
 # 一部銘柄の株主優待情報（手動メンテナンス。yfinanceには優待情報が無いため）
@@ -181,17 +184,29 @@ def main():
         + rotation_out_alerts[:3]
     )[:14]
 
-    print("\n7/8 翌営業日見通し計算中...")
+    print("\n7/8 翌営業日見通し計算・答え合わせ中...")
     outlook = None
+    accuracy = None
     try:
         regime = market["regime"] if market else "unknown"
-        outlook = build_forecasts(top10, regime)
+        # 過去の答え合わせ実績からレンジ補正係数を算出
+        history = load_history()
+        calib = calibration_factor(history)
+        if abs(calib - 1.0) > 1e-6:
+            print(f"  実績ベースのレンジ補正係数: {calib}")
+        outlook = build_forecasts(top10, regime, calib)
         done = sum(1 for s in top10 if s.get("forecast"))
         if outlook:
             print(f"  市場見通し: {outlook['condition']}→東京上昇率{outlook.get('topixUpRate')}%（過去{outlook['n']}回）")
         print(f"  銘柄別見通し: {done}/{len(top10)}銘柄で計算完了")
+        # 答え合わせ（過去予測の照合）＋今回予測の記録
+        history = update(history, top10, outlook)
+        accuracy = compute_accuracy(history)
+        save_history(history)
+        print(f"  答え合わせ蓄積: 銘柄{accuracy['resolvedStockCount']}件・市場{accuracy['resolvedMarketCount']}件 解決済み"
+              + (f"（レンジ的中率{accuracy['rangeHitRate']}%）" if accuracy.get("rangeHitRate") is not None else ""))
     except Exception as e:
-        print(f"  [警告] 見通し計算に失敗しました（表示なしになります）: {e}")
+        print(f"  [警告] 見通し・答え合わせに失敗しました（表示なしになります）: {e}")
 
     print("\n8/8 JSON出力中...")
     try:
@@ -203,6 +218,7 @@ def main():
             backtest=bt,
             market=market,
             market_outlook=outlook,
+            accuracy=accuracy,
             fetched_count=len(stocks),
             universe_total=len(UNIVERSE),
         )

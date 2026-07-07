@@ -437,6 +437,9 @@ body::before {
 <!-- 翌営業日の市場見通し -->
 <div id="outlook-card" style="display:none;padding:12px 14px;border-radius:12px;margin-bottom:12px;font-size:12px;line-height:1.7;background:rgba(59,130,246,0.06);border:1px solid rgba(59,130,246,0.2)"></div>
 
+<!-- 予測の答え合わせ実績 -->
+<div id="accuracy-card" style="display:none;padding:12px 14px;border-radius:12px;margin-bottom:12px;font-size:12px;line-height:1.7;background:rgba(16,185,129,0.05);border:1px solid rgba(16,185,129,0.18)"></div>
+
 <!-- 今日のアクション -->
 <div class="action-section" id="action-section">
   <div class="action-header">
@@ -703,6 +706,7 @@ const DATA = {
   ],
   market: null,
   marketOutlook: null,
+  accuracy: null,
   flow: null,
   themeTrends: [
     { theme:'AI',     mentions: 42, pos: 34, neg: 2,  prevMentions: 26 },
@@ -880,6 +884,42 @@ function renderStocks() {
       ${s.forecast ? renderForecastBox(s) : renderScenario(s)}
     </div>`;
   }).join('');
+}
+
+function renderAccuracy() {
+  const el = document.getElementById('accuracy-card');
+  if (!el) return;
+  const a = DATA.accuracy;
+  if (!a || (a.resolvedStockCount === 0 && a.resolvedMarketCount === 0)) {
+    el.style.display = 'block';
+    el.innerHTML = `<div style="font-weight:800;margin-bottom:4px">予測の答え合わせ（蓄積開始）</div>`
+      + `<div style="color:var(--muted)">毎営業日、前日の予測を実際の終値と照合して的中率を貯めていきます。まだ照合済みデータがないため、翌営業日以降に実績が表示されます。</div>`;
+    return;
+  }
+  const pct = v => (v == null ? '—' : v + '%');
+  let rows = '';
+  if (a.rangeHitRate != null) {
+    const col = a.rangeHitRate >= 60 ? 'var(--green)' : 'var(--yellow)';
+    rows += `<div>予測レンジ（±1σ）的中率: <span style="font-weight:800;color:${col}">${pct(a.rangeHitRate)}</span>
+      <span style="color:var(--muted)">（${a.resolvedStockCount}件・理想の目安は約68%）</span></div>`;
+  }
+  if (a.leanUpN > 0) {
+    rows += `<div>「上昇寄り」と予測した銘柄が実際に上昇: <span style="font-weight:700;color:var(--accent2)">${pct(a.leanUpActualUp)}</span>
+      <span style="color:var(--muted)">（${a.leanUpN}件）</span></div>`;
+  }
+  if (a.leanDownN > 0) {
+    rows += `<div>「下落寄り」と予測した銘柄が実際に上昇: <span style="font-weight:700;color:var(--accent2)">${pct(a.leanDownActualUp)}</span>
+      <span style="color:var(--muted)">（${a.leanDownN}件・低いほど下落予測が当たった）</span></div>`;
+  }
+  if (a.marketHitRate != null) {
+    const col = a.marketHitRate >= 55 ? 'var(--green)' : 'var(--yellow)';
+    rows += `<div>市場全体の方向予測の的中率: <span style="font-weight:800;color:${col}">${pct(a.marketHitRate)}</span>
+      <span style="color:var(--muted)">（${a.resolvedMarketCount}件）</span></div>`;
+  }
+  el.style.display = 'block';
+  el.innerHTML = `<div style="font-weight:800;margin-bottom:4px">予測の答え合わせ実績${a.sinceDate ? `（${a.sinceDate}〜）` : ''}</div>`
+    + rows
+    + `<div style="font-size:10px;color:var(--muted);margin-top:4px">${a.note || ''}</div>`;
 }
 
 function renderForecastBox(s) {
@@ -1181,6 +1221,12 @@ function buildCopyText() {
   } else {
     text += '  データ取得失敗のため表示なし\n';
   }
+  if (DATA.accuracy && (DATA.accuracy.resolvedStockCount > 0 || DATA.accuracy.resolvedMarketCount > 0)) {
+    const a = DATA.accuracy;
+    text += '\n■ 予測の答え合わせ実績（自動蓄積）\n';
+    if (a.rangeHitRate != null) text += `  予測レンジ的中率: ${a.rangeHitRate}%（${a.resolvedStockCount}件・理想約68%）\n`;
+    if (a.marketHitRate != null) text += `  市場方向の的中率: ${a.marketHitRate}%（${a.resolvedMarketCount}件）\n`;
+  }
   text += '\n■ 銘柄別・翌営業日見通し（±1σレンジ / 同条件の過去実績）\n';
   DATA.stocks.forEach(s => {
     if (!s.forecast) return;
@@ -1417,6 +1463,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderActionSection();
   renderRegime();
   renderOutlook();
+  renderAccuracy();
   renderKpis();
   renderStocks();
   renderBacktest();
