@@ -431,11 +431,14 @@ body::before {
   <span id="freshness-time">--</span>
 </div>
 
+<!-- 地合いバナー -->
+<div id="regime-banner" style="display:none;padding:10px 14px;border-radius:12px;margin-bottom:12px;font-size:12px;line-height:1.6"></div>
+
 <!-- 今日のアクション -->
 <div class="action-section" id="action-section">
   <div class="action-header">
     <div>
-      <div class="action-header-title">📌 今日はこれを見てください</div>
+      <div class="action-header-title">今日はこれを見てください</div>
       <div class="action-hint">スコアと売買サインから自動選出した注目銘柄です</div>
     </div>
   </div>
@@ -522,7 +525,7 @@ body::before {
   <div class="section-hint">急変・注目のアラートを優先表示しています。赤＝注意、緑＝好材料、青＝情報</div>
 
   <div class="section-title">機関動向アラート</div>
-  <div style="font-size:11px;color:var(--yellow);margin-bottom:10px;padding:8px 12px;border-radius:8px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2)">⚠️ 逆張り候補は高リスクです。損切りラインを必ず設定してください</div>
+  <div style="font-size:11px;color:var(--yellow);margin-bottom:10px;padding:8px 12px;border-radius:8px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2)">逆張り候補は高リスクです。損切りラインを必ず設定してください</div>
   <div id="alert-list"></div>
 
   <div class="section-title">テーマ注目度<span style="font-size:9px;font-weight:400;text-transform:none;color:var(--muted);margin-left:4px">ニュース言及件数の集計</span></div>
@@ -536,9 +539,9 @@ body::before {
     <div id="news-list"></div>
   </div>
 
-  <div class="section-title">資金フロー（簡易推定）<span style="font-size:9px;font-weight:400;text-transform:none;color:var(--muted);margin-left:4px">実測値ではありません</span></div>
+  <div class="section-title">投資部門別売買（実データ）<span style="font-size:9px;font-weight:400;text-transform:none;color:var(--muted);margin-left:4px">出典: JPX・週次</span></div>
   <div class="card">
-    <div style="font-size:11px;color:var(--muted);margin-bottom:10px">分析対象銘柄の値動きから機械的に推定した参考値です。実際の投資主体別売買データ（JPX公表）ではないため、方向感の目安程度にご覧ください。</div>
+    <div style="font-size:11px;color:var(--muted);margin-bottom:10px">東証プライム市場で「誰が買って誰が売ったか」の週次実測データ（JPX公表・金額ベース）。公表は約2週間遅れです。緑が買い越し、赤が売り越し。</div>
     <div id="flow-bars"></div>
   </div>
 
@@ -643,7 +646,6 @@ body::before {
 <!-- コピーボタン -->
 <div class="copy-section">
   <button class="copy-btn" id="copy-btn" onclick="copyToClipboard()">
-    <span>📋</span>
     <span id="copy-text">分析結果をコピー → Claudeに貼る</span>
   </button>
 </div>
@@ -654,14 +656,21 @@ body::before {
 gsap.registerPlugin(ScrollTrigger);
 
 const DATA = {
-  "updated": "2026年07月07日 06:29",
-  "updatedAtMs": 1783405748105,
+  "updated": "2026年07月07日 20:18",
+  "updatedAtMs": 1783423138737,
   "fetched": 113,
   "universeTotal": 116,
+  "market": {
+    "regime": "bull",
+    "label": "上昇基調",
+    "desc": "市場全体（TOPIX）は200日移動平均の上で推移しており、比較的良好な地合いです。",
+    "priceVsMa200Pct": 15.4,
+    "source": "TOPIX連動ETF(1306.T)終値と200日移動平均から判定"
+  },
   "backtest": {
-    "annual": "+31.5%",
+    "annual": "+31.4%",
     "benchmark": "+30.5%",
-    "sharpe": "1.05",
+    "sharpe": "1.04",
     "dd": "-17.3%",
     "winrate": "60.9%",
     "months": "23ヶ月",
@@ -677,17 +686,19 @@ const DATA = {
       "per": 19.1,
       "pbr": 0.36,
       "roe": 7.1,
-      "value": 0.619,
+      "value": 0.621,
       "quality": 0.306,
-      "momentum": 0.147,
+      "momentum": 0.146,
       "signal": "ホールド",
-      "rsi": 71.3,
+      "rsi": 69.6,
       "conf": "低",
       "strategy": [
         "dividend"
       ],
       "dividend_yield": 4.5,
       "volatility": 0.1566,
+      "short_ratio": null,
+      "regime_adjusted": false,
       "yutai": null,
       "news": [
         {
@@ -705,21 +716,23 @@ const DATA = {
       "name": "アドバンテスト",
       "score": 0.423,
       "f": 7,
-      "per": 56.0,
-      "pbr": 26.29,
+      "per": 56.2,
+      "pbr": 26.35,
       "roe": 57.6,
       "value": 0.0,
       "quality": 1.0,
-      "momentum": 0.347,
+      "momentum": 0.349,
       "signal": "様子見",
-      "rsi": 46.4,
+      "rsi": 46.6,
       "conf": "低",
       "strategy": [
         "swing",
         "dividend"
       ],
       "dividend_yield": 20.0,
-      "volatility": 0.7373,
+      "volatility": 0.7371,
+      "short_ratio": null,
+      "regime_adjusted": false,
       "yutai": null,
       "news": [
         {
@@ -735,22 +748,24 @@ const DATA = {
       "rank": 3,
       "ticker": "7201.T",
       "name": "日産自動車",
-      "score": 0.411,
+      "score": 0.41,
       "f": 1,
       "per": null,
       "pbr": 0.23,
       "roe": -9.9,
-      "value": 0.933,
+      "value": 0.932,
       "quality": 0.074,
       "momentum": 0.1,
       "signal": "様子見",
-      "rsi": 31.5,
+      "rsi": 31.9,
       "conf": "低",
       "strategy": [
         "low_price"
       ],
       "dividend_yield": 0.0,
-      "volatility": 0.4221,
+      "volatility": 0.4222,
+      "short_ratio": 2.88,
+      "regime_adjusted": false,
       "yutai": null,
       "news": [
         {
@@ -768,20 +783,22 @@ const DATA = {
       "name": "ラクス",
       "score": 0.393,
       "f": 6,
-      "per": 28.1,
-      "pbr": 14.1,
+      "per": 28.0,
+      "pbr": 14.08,
       "roe": 55.4,
       "value": 0.011,
       "quality": 0.969,
-      "momentum": 0.181,
+      "momentum": 0.18,
       "signal": "様子見",
-      "rsi": 68.1,
+      "rsi": 67.9,
       "conf": "低",
       "strategy": [
         "swing"
       ],
       "dividend_yield": 0.8,
       "volatility": 0.6033,
+      "short_ratio": 3.32,
+      "regime_adjusted": false,
       "yutai": null,
       "news": [
         {
@@ -804,15 +821,17 @@ const DATA = {
       "roe": 7.7,
       "value": 0.292,
       "quality": 0.315,
-      "momentum": 0.38,
+      "momentum": 0.379,
       "signal": "売り",
-      "rsi": 88.9,
+      "rsi": 88.8,
       "conf": "中",
       "strategy": [
         "swing"
       ],
       "dividend_yield": 2.2,
       "volatility": 0.3035,
+      "short_ratio": null,
+      "regime_adjusted": false,
       "yutai": null,
       "news": [
         {
@@ -844,6 +863,8 @@ const DATA = {
       ],
       "dividend_yield": 0.0,
       "volatility": 0.5446,
+      "short_ratio": 1.77,
+      "regime_adjusted": false,
       "yutai": null,
       "news": [
         {
@@ -866,15 +887,17 @@ const DATA = {
       "roe": 2.8,
       "value": 0.553,
       "quality": 0.248,
-      "momentum": 0.107,
+      "momentum": 0.108,
       "signal": "様子見",
-      "rsi": 53.3,
+      "rsi": 53.6,
       "conf": "低",
       "strategy": [
         "dividend"
       ],
       "dividend_yield": 4.8,
-      "volatility": 0.2744,
+      "volatility": 0.2745,
+      "short_ratio": 1.35,
+      "regime_adjusted": false,
       "yutai": null,
       "news": [
         {
@@ -890,26 +913,28 @@ const DATA = {
       "rank": 8,
       "ticker": "8035.T",
       "name": "東京エレクトロン",
-      "score": 0.373,
+      "score": 0.372,
       "f": 4,
-      "per": 55.6,
-      "pbr": 15.3,
+      "per": 55.5,
+      "pbr": 15.26,
       "roe": 29.3,
       "value": 0.006,
       "quality": 0.611,
-      "momentum": 0.533,
+      "momentum": 0.532,
       "signal": "様子見",
-      "rsi": 46.0,
+      "rsi": 45.8,
       "conf": "低",
       "strategy": [
         "swing"
       ],
       "dividend_yield": 1.0,
-      "volatility": 0.5996,
+      "volatility": 0.5999,
+      "short_ratio": null,
+      "regime_adjusted": false,
       "yutai": null,
       "news": [
         {
-          "title": "Asian Equities Mostly Lower as AI-Led Rally Takes Breather",
+          "title": "Korean Stocks Flirt With Bear Territory, Leading Asian Markets Lower",
           "source": "The Wall Street Journal",
           "url": "https://www.wsj.com/finance/stocks/asian-equities-mostly-lower-as-ai-led-rally-takes-breather-cd0615b1?siteid=yhoof2&yptr=yahoo",
           "sentiment": "neu",
@@ -928,9 +953,9 @@ const DATA = {
       "roe": 18.2,
       "value": 0.175,
       "quality": 0.458,
-      "momentum": 0.268,
+      "momentum": 0.269,
       "signal": "様子見",
-      "rsi": 48.5,
+      "rsi": 48.8,
       "conf": "低",
       "strategy": [
         "swing",
@@ -938,6 +963,8 @@ const DATA = {
       ],
       "dividend_yield": 3.1,
       "volatility": 0.2822,
+      "short_ratio": null,
+      "regime_adjusted": false,
       "yutai": null,
       "news": [
         {
@@ -956,19 +983,21 @@ const DATA = {
       "score": 0.368,
       "f": 5,
       "per": 26.0,
-      "pbr": 6.21,
+      "pbr": 6.2,
       "roe": 33.0,
       "value": 0.032,
       "quality": 0.661,
-      "momentum": 0.352,
+      "momentum": 0.351,
       "signal": "様子見",
-      "rsi": 68.8,
+      "rsi": 68.7,
       "conf": "低",
       "strategy": [
         "swing"
       ],
       "dividend_yield": 0.0,
-      "volatility": 0.4854,
+      "volatility": 0.4852,
+      "short_ratio": 0.79,
+      "regime_adjusted": false,
       "yutai": null,
       "news": [
         {
@@ -983,6 +1012,26 @@ const DATA = {
   ],
   "alerts": [
     {
+      "type": "info",
+      "title": "EDINET大量保有: 新着なし",
+      "desc": "直近3日間に大量保有報告書の提出はありませんでした（出典: EDINET）"
+    },
+    {
+      "type": "info",
+      "title": "空売り残高: マネーフォワード (3994)",
+      "desc": "開示合計10.25%・前回比横ばい（3件・出典JPX 07/07時点）"
+    },
+    {
+      "type": "info",
+      "title": "空売り残高: カバー (5253)",
+      "desc": "開示合計6.31%・前回比横ばい（4件・出典JPX 07/07時点）"
+    },
+    {
+      "type": "warn",
+      "title": "空売り残高: Appier Group (4180)",
+      "desc": "開示合計3.96%・前回比増加中（2件・出典JPX 07/07時点）"
+    },
+    {
       "type": "warn",
       "title": "入替候補OUT: カバー",
       "desc": "スコア下位15% (score=0.236)"
@@ -996,105 +1045,30 @@ const DATA = {
       "type": "warn",
       "title": "入替候補OUT: ファナック",
       "desc": "スコア下位15% (score=0.234)"
-    },
-    {
-      "type": "warn",
-      "title": "入替候補OUT: ネクソン",
-      "desc": "スコア下位15% (score=0.227)"
-    },
-    {
-      "type": "warn",
-      "title": "入替候補OUT: 資生堂",
-      "desc": "スコア下位15% (score=0.215)"
-    },
-    {
-      "type": "warn",
-      "title": "入替候補OUT: ソシオネクスト",
-      "desc": "スコア下位15% (score=0.215)"
-    },
-    {
-      "type": "warn",
-      "title": "入替候補OUT: Sansan",
-      "desc": "スコア下位15% (score=0.213)"
-    },
-    {
-      "type": "warn",
-      "title": "入替候補OUT: メドレー",
-      "desc": "スコア下位15% (score=0.204)"
-    },
-    {
-      "type": "warn",
-      "title": "入替候補OUT: サイバーダイン",
-      "desc": "スコア下位15% (score=0.2)"
-    },
-    {
-      "type": "warn",
-      "title": "入替候補OUT: イオン",
-      "desc": "スコア下位15% (score=0.195)"
-    },
-    {
-      "type": "warn",
-      "title": "入替候補OUT: マネーフォワード",
-      "desc": "スコア下位15% (score=0.187)"
-    },
-    {
-      "type": "warn",
-      "title": "入替候補OUT: Appier Group",
-      "desc": "スコア下位15% (score=0.185)"
-    },
-    {
-      "type": "warn",
-      "title": "入替候補OUT: 野村総合研究所",
-      "desc": "スコア下位15% (score=0.172)"
-    },
-    {
-      "type": "warn",
-      "title": "入替候補OUT: ネクセラファーマ",
-      "desc": "スコア下位15% (score=0.158)"
-    },
-    {
-      "type": "warn",
-      "title": "入替候補OUT: Kudan",
-      "desc": "スコア下位15% (score=0.146)"
-    },
-    {
-      "type": "warn",
-      "title": "入替候補OUT: freee",
-      "desc": "スコア下位15% (score=0.138)"
-    },
-    {
-      "type": "good",
-      "title": "出来高急増（サンプル）",
-      "desc": "EDINET接続不可のためサンプルアラートを表示中"
-    },
-    {
-      "type": "info",
-      "title": "決算発表シーズン",
-      "desc": "保有銘柄の決算スケジュールを各自IRでご確認ください"
-    },
-    {
-      "type": "warn",
-      "title": "空売り動向（サンプル）",
-      "desc": "最新の機関投資家動向は次回更新時に反映されます"
     }
   ],
-  "flow": [
-    {
-      "label": "外国人",
-      "value": 2686,
-      "max": 8000
-    },
-    {
-      "label": "信託銀行",
-      "value": -806,
-      "max": 3000
-    },
-    {
-      "label": "個人",
-      "value": -1612,
-      "max": 5000
-    }
-  ],
+  "flow": {
+    "week": "06/22～06/26",
+    "flows": [
+      {
+        "label": "海外投資家",
+        "value": -12086
+      },
+      {
+        "label": "個人",
+        "value": 9116
+      },
+      {
+        "label": "信託銀行",
+        "value": 292
+      },
+      {
+        "label": "投資信託",
+        "value": 3271
+      }
+    ],
+    "source": "JPX 投資部門別売買状況（東証プライム・週次・金額ベース）"
+  },
   "themeTrends": [
     {
       "theme": "その他",
@@ -1184,6 +1158,8 @@ const HINTS = {
   pbr:      '資産比較 PBR：株価が純資産の何倍か。1.0以下は超割安の目安。',
   roe:      '稼ぐ力 ROE：自己資本に対する利益率。10%以上が優良の目安。',
   rsi:      '買われすぎ指数 RSI：0〜100で示すテクニカル指標。30以下が底値圏、70以上が過熱圏の目安。',
+  short:    '空売り残高：機関投資家などが公表義務（残高0.5%以上）に基づき開示した空売りポジションの合計割合。高い・増加中は売り圧力が強い目安。出典はJPX公表の実データ。',
+  regimeAdj:'地合いで格下げ：市場全体（TOPIX）が下落基調のため、この銘柄の買いシグナルを自動的に1段階慎重な表示にしています。',
 };
 
 // 今日のアクション生成
@@ -1253,6 +1229,8 @@ function renderStocks() {
         <span class="tag ${s.roe>=10?'green':''}">稼ぐ力 ROE<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.roe}</span></span> ${s.roe}%</span>
         <span class="tag ${s.f>=7?'green':s.f>=5?'':'red'}">財務健全度 F<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.fscore}</span></span>${s.f}/9</span>
         <span class="tag ${s.rsi<30?'green':s.rsi>70?'red':''}">買われすぎ RSI<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.rsi}</span></span>${s.rsi}</span>
+        ${s.short_ratio != null ? `<span class="tag ${s.short_ratio>=3?'red':''}">空売り残高<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.short}</span></span>${s.short_ratio}%</span>` : ''}
+        ${s.regime_adjusted ? `<span class="tag">地合いで格下げ<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.regimeAdj}</span></span></span>` : ''}
       </div>
       <div class="score-bars">
         ${[
@@ -1311,9 +1289,9 @@ function renderThemeTrends() {
     const growth = t.prevMentions ? (t.mentions - t.prevMentions) / t.prevMentions : 0;
     const momentumLabel = growth > 0.1 ? `増加 (+${Math.round(growth*100)}%)` : growth < -0.1 ? `減少 (${Math.round(growth*100)}%)` : '横ばい';
     let flag = '';
-    if (t.mentions / maxMentions > 0.6 && posPct >= 65)   flag = '<span class="theme-flag hot">⚠️ 過熱注意</span>';
-    else if (posPct >= 50 && growth < 0)                   flag = '<span class="theme-flag turn">🔄 転換点の可能性</span>';
-    else if (negPct >= 50 && growth > 0.1)                 flag = '<span class="theme-flag turn">🔄 転換点の可能性</span>';
+    if (t.mentions / maxMentions > 0.6 && posPct >= 65)   flag = '<span class="theme-flag hot">過熱注意</span>';
+    else if (posPct >= 50 && growth < 0)                   flag = '<span class="theme-flag turn">転換点の可能性</span>';
+    else if (negPct >= 50 && growth > 0.1)                 flag = '<span class="theme-flag turn">転換点の可能性</span>';
     return `
     <div class="theme-item">
       <div class="theme-head">
@@ -1358,25 +1336,56 @@ function renderNews() {
 
 function renderFlow() {
   const el = document.getElementById('flow-bars');
-  if (!DATA.flow || !DATA.flow.length) {
+  const f = DATA.flow;
+  if (!f || !f.flows || !f.flows.length) {
     el.innerHTML = '<div style="font-size:11px;color:var(--muted)">データを取得できなかったため表示していません（架空の数値は表示しません）</div>';
     return;
   }
-  el.innerHTML = DATA.flow.map(f => {
-    const pct = Math.min(50, Math.abs(f.value) / f.max * 50);
-    const isPos = f.value >= 0;
+  const maxAbs = Math.max(...f.flows.map(x => Math.abs(x.value)), 1);
+  const rows = f.flows.map(x => {
+    const pct = Math.min(50, Math.abs(x.value) / maxAbs * 50);
+    const isPos = x.value >= 0;
     const color = isPos ? 'var(--green)' : 'var(--red)';
-    // 推定値のため金額単位は付けない（実測データではない）
+    const sign = isPos ? '+' : '';
     return `
     <div class="flow-row">
-      <span class="flow-label">${f.label}</span>
+      <span class="flow-label">${x.label}</span>
       <div class="flow-bar-wrap">
         <div class="flow-center"></div>
         <div class="flow-fill ${isPos?'positive':'negative'}" data-pct="${pct}"></div>
       </div>
-      <span class="flow-val" style="color:${color}">${isPos?'買い優勢':'売り優勢'}</span>
+      <span class="flow-val" style="color:${color}">${sign}${x.value.toLocaleString()}億円</span>
     </div>`;
   }).join('');
+  el.innerHTML = `<div style="font-size:11px;color:var(--accent2);margin-bottom:8px;font-weight:700">対象週: ${f.week}</div>` + rows
+    + `<div style="font-size:10px;color:var(--muted);margin-top:8px">${f.source || ''}</div>`;
+}
+
+function renderRegime() {
+  const el = document.getElementById('regime-banner');
+  if (!el) return;
+  const m = DATA.market;
+  if (!m) {
+    el.style.display = 'block';
+    el.style.background = 'rgba(122,155,191,0.08)';
+    el.style.border = '1px solid var(--border)';
+    el.style.color = 'var(--muted)';
+    el.textContent = '市場全体の地合い: 判定不能（データ取得失敗のため、シグナルは地合い無調整です）';
+    return;
+  }
+  const styles = {
+    bull:    { bg: 'rgba(16,185,129,0.08)',  bd: 'rgba(16,185,129,0.25)',  col: 'var(--green)' },
+    neutral: { bg: 'rgba(245,158,11,0.08)',  bd: 'rgba(245,158,11,0.25)',  col: 'var(--yellow)' },
+    bear:    { bg: 'rgba(239,68,68,0.10)',   bd: 'rgba(239,68,68,0.35)',   col: 'var(--red)' },
+  };
+  const s = styles[m.regime] || styles.neutral;
+  el.style.display = 'block';
+  el.style.background = s.bg;
+  el.style.border = `1px solid ${s.bd}`;
+  el.innerHTML = `<span style="font-weight:800;color:${s.col}">市場の地合い: ${m.label}</span>`
+    + `<span style="color:var(--muted)">（TOPIX 200日線比 ${m.priceVsMa200Pct >= 0 ? '+' : ''}${m.priceVsMa200Pct}%）</span><br>`
+    + `<span style="font-size:11px;color:var(--muted)">${m.desc} 出典: ${m.source}</span>`
+    + (m.regime === 'bear' ? '<br><span style="font-size:11px;color:var(--red);font-weight:700">下落基調のため買いシグナルは自動的に1段階慎重にしています</span>' : '');
 }
 
 function renderAlerts() {
@@ -1484,11 +1493,22 @@ function buildCopyText() {
   if (DATA.backtest.note) text += `  注記: ${DATA.backtest.note}\n`;
   text += '\n■ 機関動向アラート\n';
   DATA.alerts.forEach(a => { text += `  ${a.title}: ${a.desc}\n`; });
-  text += '\n■ 資金フロー（値動きからの簡易推定・実測値ではない）\n';
-  DATA.flow.forEach(f => {
-    const trend = f.value >= 0 ? '買い優勢' : '売り優勢';
-    text += `  ${f.label}: ${trend}（推定）\n`;
-  });
+  text += '\n■ 市場の地合い\n';
+  if (DATA.market) {
+    text += `  ${DATA.market.label}（TOPIX 200日線比 ${DATA.market.priceVsMa200Pct >= 0 ? '+' : ''}${DATA.market.priceVsMa200Pct}%・${DATA.market.source}）\n`;
+  } else {
+    text += '  判定不能（データ取得失敗）\n';
+  }
+  text += '\n■ 投資部門別売買（出典JPX・東証プライム週次実データ）\n';
+  if (DATA.flow && DATA.flow.flows) {
+    text += `  対象週: ${DATA.flow.week}\n`;
+    DATA.flow.flows.forEach(x => {
+      const trend = x.value >= 0 ? '買い越し' : '売り越し';
+      text += `  ${x.label}: ${x.value >= 0 ? '+' : ''}${x.value.toLocaleString()}億円（${trend}）\n`;
+    });
+  } else {
+    text += '  データ取得失敗のため表示なし\n';
+  }
   text += '\n' + '='.repeat(55) + '\n';
   text += '【Claudeへの分析依頼】\n';
   text += '上記の結果を機関投資家の視点で分析してください。\n\n';
@@ -1507,14 +1527,14 @@ function copyToClipboard() {
   navigator.clipboard.writeText(text).then(() => {
     btn.classList.add('copied');
     label.textContent = 'コピー完了！Claudeに貼り付けてください';
-    setTimeout(() => { btn.classList.remove('copied'); label.textContent = '📋 分析結果をコピー → Claudeに貼る'; }, 3000);
+    setTimeout(() => { btn.classList.remove('copied'); label.textContent = '分析結果をコピー → Claudeに貼る'; }, 3000);
   }).catch(() => {
     const ta = document.createElement('textarea');
     ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
     document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
     btn.classList.add('copied');
     label.textContent = 'コピー完了！';
-    setTimeout(() => { btn.classList.remove('copied'); label.textContent = '📋 分析結果をコピー → Claudeに貼る'; }, 3000);
+    setTimeout(() => { btn.classList.remove('copied'); label.textContent = '分析結果をコピー → Claudeに貼る'; }, 3000);
   });
 }
 
@@ -1705,6 +1725,7 @@ function renderHoldings() {
 // ── 初期化 ──
 document.addEventListener('DOMContentLoaded', () => {
   renderActionSection();
+  renderRegime();
   renderKpis();
   renderStocks();
   renderBacktest();

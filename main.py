@@ -13,6 +13,9 @@ from data.universe import UNIVERSE
 from data.fetch_prices import fetch_universe
 from data.edinet import fetch_edinet_alerts
 from data.news import fetch_news_for_ticker, build_theme_trends
+from data.market_regime import fetch_market_regime
+from data.jpx_flow import fetch_investor_flow
+from data.jpx_short import fetch_short_positions
 from screening.score import score_universe
 from signals.signal import judge_all
 from backtest.backtest import run_backtest
@@ -24,22 +27,6 @@ YUTAI_MAP = {
     "8801.T": "保有株数に応じ宿泊優待割引券（要IR確認・手動更新）",
     "9432.T": "なし（過去はdポイント優待）",
 }
-
-
-def _estimate_flow(stocks: list[dict]) -> list[dict]:
-    """無料の投資主体別売買代金データは公開APIが無いため、モメンタム平均からの簡易推定値。"""
-    if not stocks:
-        raise ValueError("no stocks")
-    moms = [s.get("momentum_raw", 0) or 0 for s in stocks]
-    avg_mom = sum(moms) / len(moms)
-    foreign = round(avg_mom * 20000)
-    trust = round(-avg_mom * 6000)
-    individual = round(-avg_mom * 12000)
-    return [
-        {"label": "外国人", "value": foreign, "max": 8000},
-        {"label": "信託銀行", "value": trust, "max": 3000},
-        {"label": "個人", "value": individual, "max": 5000},
-    ]
 
 
 def main():
@@ -60,9 +47,19 @@ def main():
     except Exception as e:
         print(f"  [エラー] スコアリングに失敗しました: {e}")
 
-    print("\n3/7 シグナル判定中...")
+    print("\n3/7 地合い判定・シグナル判定中...")
+    market = None
     try:
-        stocks = judge_all(stocks)
+        market = fetch_market_regime()
+        if market:
+            print(f"  地合い: {market['label']}（TOPIX 200日線比 {market['priceVsMa200Pct']:+.1f}%）")
+        else:
+            print("  [警告] 地合い判定不能（シグナルは無調整・画面に地合い不明と表示）")
+    except Exception as e:
+        print(f"  [警告] 地合い判定に失敗しました: {e}")
+    try:
+        regime = market["regime"] if market else "unknown"
+        stocks = judge_all(stocks, regime)
         print("  シグナル判定完了")
     except Exception as e:
         print(f"  [エラー] シグナル判定に失敗しました: {e}")
@@ -82,15 +79,25 @@ def main():
     except Exception as e:
         print(f"  [エラー] ニュース取得に失敗しました: {e}")
 
-    print("\n5/7 EDINETアラート・テーマトレンド集計中...")
+    print("\n5/7 EDINET・空売り残高・テーマトレンド集計中...")
     edinet_alerts = []
+    short_alerts = []
+    short_ratios = {}
     theme_trends = []
+    universe_map = dict(UNIVERSE)
     try:
-        tickers = {s["ticker"] for s in top10}
-        edinet_alerts = fetch_edinet_alerts(tickers)
-        print(f"  アラート件数: {len(edinet_alerts)}")
+        edinet_alerts = fetch_edinet_alerts(universe_map)
+        print(f"  EDINETアラート件数: {len(edinet_alerts)}")
     except Exception as e:
         print(f"  [エラー] EDINETアラート取得に失敗しました: {e}")
+    try:
+        short_alerts, short_ratios = fetch_short_positions(universe_map)
+        print(f"  空売り残高: {len(short_ratios)}銘柄で開示あり")
+        for s in top10:
+            if s["ticker"] in short_ratios:
+                s["short_ratio"] = short_ratios[s["ticker"]]
+    except Exception as e:
+        print(f"  [警告] 空売り残高取得に失敗しました: {e}")
     try:
         theme_trends = build_theme_trends(all_news)
         if not theme_trends:
@@ -101,15 +108,17 @@ def main():
         print(f"  [警告] テーマ集計に失敗（表示なしになります）: {e}")
         theme_trends = []
 
-    print("\n6/7 投資主体別フロー推定・バックテスト実行中...")
-    flow = []
+    print("\n6/7 投資部門別フロー取得・バックテスト実行中...")
+    flow = None
     try:
-        flow = _estimate_flow(stocks)
-        print("  フロー推定完了")
+        flow = fetch_investor_flow()
+        if flow:
+            print(f"  フロー取得完了（{flow['week']}週・JPX実データ）")
+        else:
+            print("  [警告] JPXフロー取得不能（表示なしになります・架空値は出しません）")
     except Exception as e:
-        # 架空のフロー数値は表示しない
-        print(f"  [警告] フロー推定に失敗（表示なしになります）: {e}")
-        flow = []
+        print(f"  [警告] フロー取得に失敗（表示なしになります）: {e}")
+        flow = None
 
     bt = {}
     try:
@@ -125,8 +134,11 @@ def main():
             "unavailable": True,
         }
 
-    # 急騰・落ちナイフ・ローテーションアラート生成
-    extra_alerts = []
+    # 急騰・落ちナイフ・ローテーションアラート生成。
+    # 動き（急騰・逆張り）を最優先、次に入替IN、入替OUTは最後（多くて埋め尽くすため件数制限）
+    move_alerts = []
+    rotation_in_alerts = []
+    rotation_out_alerts = []
     for s in stocks:
         dc = s.get("day_change_pct", 0) or 0
         vr = s.get("volume_ratio", 1) or 1
@@ -134,32 +146,39 @@ def main():
         rsi = s.get("rsi", 50) or 50
         name = s.get("name", s.get("ticker", ""))
         if dc >= 0.05 and vr >= 2.0:
-            extra_alerts.append({
+            move_alerts.append({
                 "type": "good",
                 "title": f"急騰: {name}",
                 "desc": f"+{dc:.1%}・出来高{vr:.1f}倍",
             })
         if rsi <= 28 and wc <= -0.12 and vr >= 1.5:
-            extra_alerts.append({
+            move_alerts.append({
                 "type": "warn",
                 "title": f"逆張り候補: {name}",
                 "desc": f"RSI{rsi}・週次{wc:.1%}・要リスク管理",
             })
     for s in stocks:
         name = s.get("name", s.get("ticker", ""))
-        if s.get("rotation_out"):
-            extra_alerts.append({
-                "type": "warn",
-                "title": f"入替候補OUT: {name}",
-                "desc": f"スコア下位15% (score={s.get('score', 0)})",
-            })
         if s.get("rotation_in"):
-            extra_alerts.append({
+            rotation_in_alerts.append({
                 "type": "good",
                 "title": f"入替候補IN: {name}",
                 "desc": f"高スコア+モメンタム (score={s.get('score', 0)})",
             })
-    combined_alerts = extra_alerts + edinet_alerts
+        if s.get("rotation_out"):
+            rotation_out_alerts.append({
+                "type": "warn",
+                "title": f"入替候補OUT: {name}",
+                "desc": f"スコア下位15% (score={s.get('score', 0)})",
+            })
+    # 優先度順: 実データ系（EDINET大量保有・空売り）→ 値動き → 入替IN → 入替OUT（各上限あり）
+    combined_alerts = (
+        edinet_alerts
+        + short_alerts
+        + move_alerts
+        + rotation_in_alerts[:3]
+        + rotation_out_alerts[:3]
+    )[:14]
 
     print("\n7/7 JSON出力中...")
     try:
@@ -169,6 +188,7 @@ def main():
             flow=flow,
             theme_trends=theme_trends,
             backtest=bt,
+            market=market,
             fetched_count=len(stocks),
             universe_total=len(UNIVERSE),
         )

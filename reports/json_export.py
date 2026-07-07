@@ -7,9 +7,10 @@ from datetime import datetime
 def export_dashboard_json(
     stocks: list[dict],
     alerts: list[dict],
-    flow: list[dict],
+    flow: dict | None,
     theme_trends: list[dict],
     backtest: dict,
+    market: dict | None = None,
     fetched_count: int | None = None,
     universe_total: int | None = None,
     output_path: str = "output/dashboard_data.json",
@@ -34,6 +35,8 @@ def export_dashboard_json(
             "strategy": s["strategy"],
             "dividend_yield": round(s.get("dividend_yield", 0), 1),
             "volatility": round(s["volatility"], 4) if s.get("volatility") else None,
+            "short_ratio": s.get("short_ratio"),
+            "regime_adjusted": s.get("regime_adjusted", False),
             "yutai": s.get("yutai"),
             "news": s.get("news", []),
         })
@@ -43,6 +46,7 @@ def export_dashboard_json(
         "updatedAtMs": int(datetime.now().timestamp() * 1000),
         "fetched": fetched_count,
         "universeTotal": universe_total,
+        "market": market,
         "backtest": backtest,
         "stocks": out_stocks,
         "alerts": alerts,
