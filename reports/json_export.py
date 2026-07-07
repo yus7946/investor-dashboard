@@ -11,6 +11,7 @@ def export_dashboard_json(
     theme_trends: list[dict],
     backtest: dict,
     market: dict | None = None,
+    market_outlook: dict | None = None,
     fetched_count: int | None = None,
     universe_total: int | None = None,
     output_path: str = "output/dashboard_data.json",
@@ -37,6 +38,7 @@ def export_dashboard_json(
             "volatility": round(s["volatility"], 4) if s.get("volatility") else None,
             "short_ratio": s.get("short_ratio"),
             "regime_adjusted": s.get("regime_adjusted", False),
+            "forecast": s.get("forecast"),
             "yutai": s.get("yutai"),
             "news": s.get("news", []),
         })
@@ -47,6 +49,7 @@ def export_dashboard_json(
         "fetched": fetched_count,
         "universeTotal": universe_total,
         "market": market,
+        "marketOutlook": market_outlook,
         "backtest": backtest,
         "stocks": out_stocks,
         "alerts": alerts,

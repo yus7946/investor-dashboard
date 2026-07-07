@@ -434,6 +434,9 @@ body::before {
 <!-- 地合いバナー -->
 <div id="regime-banner" style="display:none;padding:10px 14px;border-radius:12px;margin-bottom:12px;font-size:12px;line-height:1.6"></div>
 
+<!-- 翌営業日の市場見通し -->
+<div id="outlook-card" style="display:none;padding:12px 14px;border-radius:12px;margin-bottom:12px;font-size:12px;line-height:1.7;background:rgba(59,130,246,0.06);border:1px solid rgba(59,130,246,0.2)"></div>
+
 <!-- 今日のアクション -->
 <div class="action-section" id="action-section">
   <div class="action-header">
@@ -699,6 +702,7 @@ const DATA = {
     { type:'info',  title:'決算予定：8306.T',            desc:'2026-07-31 第1Q決算予定' },
   ],
   market: null,
+  marketOutlook: null,
   flow: null,
   themeTrends: [
     { theme:'AI',     mentions: 42, pos: 34, neg: 2,  prevMentions: 26 },
@@ -873,9 +877,38 @@ function renderStocks() {
         <span style="font-weight:700;color:${s.dividend_yield>=3?'var(--green)':'var(--text)'}">${s.dividend_yield}%</span>
       </div>
       ${yutaiBox}
-      ${renderScenario(s)}
+      ${s.forecast ? renderForecastBox(s) : renderScenario(s)}
     </div>`;
   }).join('');
+}
+
+function renderForecastBox(s) {
+  const f = s.forecast;
+  if (!f) return '';
+  const fmt = n => n.toLocaleString();
+  const condStr = f.cond
+    ? (f.cond.upRate != null
+        ? `同条件（${f.cond.condition}）だった過去の日の翌日上昇実績: <span style="font-weight:800;color:var(--accent2)">${f.cond.upRate}%</span>（${f.cond.n}回）`
+        : `${f.cond.condition} … ${f.cond.note}`)
+    : '';
+  const factorChips = (f.factors || []).map(x => {
+    const col = x.dir === '+' ? 'var(--green)' : x.dir === '-' ? 'var(--red)' : 'var(--muted)';
+    const bg  = x.dir === '+' ? 'rgba(16,185,129,0.08)' : x.dir === '-' ? 'rgba(239,68,68,0.08)' : 'rgba(255,255,255,0.04)';
+    return `<div style="font-size:10px;color:${col};background:${bg};border:1px solid ${col}33;border-radius:6px;padding:3px 7px;margin-top:4px">${x.dir === '+' ? '↑' : x.dir === '-' ? '↓' : '・'} ${x.label}</div>`;
+  }).join('');
+  return `
+  <div class="scenario-box">
+    <div class="scenario-title">翌営業日の見通し（統計・実績ベース）</div>
+    <div class="scenario-range">
+      <span class="lo">${fmt(f.rangeLow)}円</span>
+      <div class="scenario-track"><div class="scenario-cur" style="left:50%"></div></div>
+      <span class="hi">${fmt(f.rangeHigh)}円</span>
+    </div>
+    <div class="scenario-note">±1σ想定レンジ（過去実績では約3回に2回この範囲）。±2σでは ${fmt(f.rangeLow2)}〜${fmt(f.rangeHigh2)}円。</div>
+    ${condStr ? `<div style="font-size:11px;margin-top:6px">${condStr}</div>` : ''}
+    ${factorChips}
+    <div style="font-size:9px;color:var(--muted);margin-top:6px">${f.basis}</div>
+  </div>`;
 }
 
 function renderScenario(s) {
@@ -1010,6 +1043,25 @@ function renderRegime() {
     + (m.regime === 'bear' ? '<br><span style="font-size:11px;color:var(--red);font-weight:700">下落基調のため買いシグナルは自動的に1段階慎重にしています</span>' : '');
 }
 
+function renderOutlook() {
+  const el = document.getElementById('outlook-card');
+  if (!el) return;
+  const o = DATA.marketOutlook;
+  if (!o) { el.style.display = 'none'; return; }
+  const spxCol = o.spxChangePct >= 0 ? 'var(--green)' : 'var(--red)';
+  const fxCol  = o.usdjpyChangePct >= 0 ? 'var(--green)' : 'var(--red)';
+  const rateStr = (o.topixUpRate != null)
+    ? `過去2年、${o.condition}した翌営業日に東京市場（TOPIX）が上昇した割合は <span style="font-weight:800;color:var(--accent2)">${o.topixUpRate}%</span>（${o.n}回の実績）`
+    : 'サンプル数不足のため実績確率は表示しません';
+  el.style.display = 'block';
+  el.innerHTML = `
+    <div style="font-weight:800;margin-bottom:4px">翌営業日の市場見通し（統計・実績ベース）</div>
+    <div>前夜の米S&P500: <span style="font-weight:700;color:${spxCol}">${o.spxChangePct >= 0 ? '+' : ''}${o.spxChangePct}%</span>（${o.spxDate}）
+    ／ ドル円: <span style="font-weight:700;color:${fxCol}">${o.usdjpy}円（${o.usdjpyChangePct >= 0 ? '+' : ''}${o.usdjpyChangePct}%）</span></div>
+    <div>${rateStr}</div>
+    <div style="font-size:10px;color:var(--muted);margin-top:4px">${o.basis}</div>`;
+}
+
 function renderAlerts() {
   const el = document.getElementById('alert-list');
   el.innerHTML = DATA.alerts.map(a => `
@@ -1121,6 +1173,22 @@ function buildCopyText() {
   } else {
     text += '  判定不能（データ取得失敗）\n';
   }
+  text += '\n■ 翌営業日の市場見通し（統計・実績ベース）\n';
+  if (DATA.marketOutlook) {
+    const o = DATA.marketOutlook;
+    text += `  前夜の米S&P500: ${o.spxChangePct >= 0 ? '+' : ''}${o.spxChangePct}%（${o.spxDate}）／ドル円 ${o.usdjpy}円（${o.usdjpyChangePct >= 0 ? '+' : ''}${o.usdjpyChangePct}%）\n`;
+    if (o.topixUpRate != null) text += `  ${o.condition}した翌営業日の東京上昇実績: ${o.topixUpRate}%（過去2年・${o.n}回）\n`;
+  } else {
+    text += '  データ取得失敗のため表示なし\n';
+  }
+  text += '\n■ 銘柄別・翌営業日見通し（±1σレンジ / 同条件の過去実績）\n';
+  DATA.stocks.forEach(s => {
+    if (!s.forecast) return;
+    const f = s.forecast;
+    let line = `  ${s.name}: ${f.rangeLow.toLocaleString()}〜${f.rangeHigh.toLocaleString()}円`;
+    if (f.cond && f.cond.upRate != null) line += ` / ${f.cond.condition}の翌日上昇実績${f.cond.upRate}%（${f.cond.n}回）`;
+    text += line + '\n';
+  });
   text += '\n■ 投資部門別売買（出典JPX・東証プライム週次実データ）\n';
   if (DATA.flow && DATA.flow.flows) {
     text += `  対象週: ${DATA.flow.week}\n`;
@@ -1348,6 +1416,7 @@ function renderHoldings() {
 document.addEventListener('DOMContentLoaded', () => {
   renderActionSection();
   renderRegime();
+  renderOutlook();
   renderKpis();
   renderStocks();
   renderBacktest();

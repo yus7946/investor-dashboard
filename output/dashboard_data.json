@@ -1,6 +1,6 @@
 {
-  "updated": "2026年07月07日 20:18",
-  "updatedAtMs": 1783423138737,
+  "updated": "2026年07月07日 20:39",
+  "updatedAtMs": 1783424367598,
   "fetched": 113,
   "universeTotal": 116,
   "market": {
@@ -9,6 +9,17 @@
     "desc": "市場全体（TOPIX）は200日移動平均の上で推移しており、比較的良好な地合いです。",
     "priceVsMa200Pct": 15.4,
     "source": "TOPIX連動ETF(1306.T)終値と200日移動平均から判定"
+  },
+  "marketOutlook": {
+    "spxChangePct": 0.72,
+    "spxDate": "2026-07-06",
+    "usdjpy": 161.92,
+    "usdjpyChangePct": 0.29,
+    "condition": "米S&P500が直近上昇",
+    "topixUpRate": 64.5,
+    "n": 279,
+    "regime": "bull",
+    "basis": "過去2年で「米国市場が上昇/下落した翌営業日に東京(TOPIX ETF)が上昇した割合」を実際に集計。統計的傾向であり将来を保証しません。出典: Yahoo Finance価格データ。"
   },
   "backtest": {
     "annual": "+31.4%",
@@ -42,13 +53,35 @@
       "volatility": 0.1566,
       "short_ratio": null,
       "regime_adjusted": false,
+      "forecast": {
+        "price": 95200.0,
+        "rangeLow": 94327,
+        "rangeHigh": 96073,
+        "rangeLow2": 93453,
+        "rangeHigh2": 96947,
+        "volDPct": 0.92,
+        "cond": {
+          "upRate": 47.6,
+          "n": 189,
+          "condition": "RSI中立圏×5日上昇局面",
+          "note": null
+        },
+        "factors": [
+          {
+            "label": "直近ニュースがポジティブ寄り（1件/簡易判定）",
+            "dir": "+"
+          }
+        ],
+        "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
+      },
       "yutai": null,
       "news": [
         {
-          "title": "Japan Prime Realty Investment (TSE:8955): How Fair Is Its Valuation After Recent Quiet Gains?",
-          "source": "Simply Wall St.",
-          "url": "https://finance.yahoo.com/news/japan-prime-realty-investment-tse-120632104.html",
-          "sentiment": "neu",
+          "title": "三菱UFJ信託銀行株式会社がフロンティア不動産投資法人＜8964＞株式の変更報告書を提出（保有増加）",
+          "source": "ｄメニューニュース",
+          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQQ2xRODhrVjF2YmFOU3JzczBUc18ycVpfN0owRUxuTlRFV2dNc1hWVFR1LUhMWXZoNUVPTUwzcFRhVC1NWVJXV1AyczJYdDNrTzY1RWxUMl9CRTBGOTJmZVp5M0FmaXRWWnZaNkpLRmpPaWstaG1hQ09xZ0diVUVkRlNWeTNoZzFVM2fSAYoBQVVfeXFMUENsUTg4a1YxdmJhTlNyc3MwVHNfMnFaXzdKMEVMbk5URVdnTXNYVlRUdS1ITFl2aDVFT01MM3BUYVQtTVlSV1dQMnMyWHQza082NUVsVDJfQkUwRjkyZmVaeTNBZml0Vlp2WjZKS0ZqT2lrLWhtYUNPcWdHYlVFZEZTVnkzaGcxVTNn?oc=5",
+          "pubDate": "Mon, 06 Jul 2026 01:49:00 GMT",
+          "sentiment": "pos",
           "theme": "その他"
         }
       ]
@@ -76,12 +109,29 @@
       "volatility": 0.7371,
       "short_ratio": null,
       "regime_adjusted": false,
+      "forecast": {
+        "price": 28900.0,
+        "rangeLow": 27651,
+        "rangeHigh": 30149,
+        "rangeLow2": 26402,
+        "rangeHigh2": 31398,
+        "volDPct": 4.32,
+        "cond": {
+          "upRate": 56.0,
+          "n": 166,
+          "condition": "RSI中立圏×5日下落局面",
+          "note": null
+        },
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
+      },
       "yutai": null,
       "news": [
         {
-          "title": "Should You Buy, Sell, or Hold TER Stock After a 38% Rise in 3 Months?",
-          "source": "Zacks",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/buy-sell-hold-ter-stock-160900531.html",
+          "title": "(株)アドバンテスト【6857】：現物信用売買内訳時系列",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBSNXB5M2ZCWkFhbHdTRXdxaFN4M3FqVTRyTWpMMjZUNGV1OUN4THA4ZmRsTVNaZVQ0WWt4VHdQajE2X2hDTHk4M001Mjc1cERoMWJBZHRBLXlNOWVKU29J?oc=5",
+          "pubDate": "Thu, 02 Jul 2026 20:45:46 GMT",
           "sentiment": "neu",
           "theme": "その他"
         }
@@ -109,12 +159,34 @@
       "volatility": 0.4222,
       "short_ratio": 2.88,
       "regime_adjusted": false,
+      "forecast": {
+        "price": 321.8,
+        "rangeLow": 312,
+        "rangeHigh": 332,
+        "rangeLow2": 302,
+        "rangeHigh2": 342,
+        "volDPct": 3.1,
+        "cond": {
+          "upRate": 45.2,
+          "n": 188,
+          "condition": "RSI中立圏×5日上昇局面",
+          "note": null
+        },
+        "factors": [
+          {
+            "label": "空売り残高2.88%（売り圧力・踏み上げ両方の要因）",
+            "dir": "-"
+          }
+        ],
+        "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
+      },
       "yutai": null,
       "news": [
         {
-          "title": "Nissan wants to 'lead the intelligent car': CEO discusses AI integration",
-          "source": "Yahoo Finance Video",
-          "url": "https://finance.yahoo.com/video/nissan-wants-lead-intelligent-car-120000646.html",
+          "title": "日産自動車(株)【7201】：今の株価の理由は？値動きの背景をAIが解説",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1Xakk0RENsUE81UDNRR1l0SEFiekF4NktsSHRjZlcyemhIWnFKRTBlNHdDZkpPc3FkNmluQjdONzZOaW92T1JLZ2V2WV9hRVBkZTlZeklXWFR6ZmJwSFU4?oc=5",
+          "pubDate": "Tue, 07 Jul 2026 06:55:04 GMT",
           "sentiment": "neu",
           "theme": "AI"
         }
@@ -142,14 +214,36 @@
       "volatility": 0.6033,
       "short_ratio": 3.32,
       "regime_adjusted": false,
+      "forecast": {
+        "price": 1035.0,
+        "rangeLow": 1006,
+        "rangeHigh": 1064,
+        "rangeLow2": 977,
+        "rangeHigh2": 1093,
+        "volDPct": 2.82,
+        "cond": {
+          "upRate": 48.0,
+          "n": 171,
+          "condition": "RSI中立圏×5日上昇局面",
+          "note": null
+        },
+        "factors": [
+          {
+            "label": "空売り残高3.32%（売り圧力・踏み上げ両方の要因）",
+            "dir": "-"
+          }
+        ],
+        "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
+      },
       "yutai": null,
       "news": [
         {
-          "title": "Asian Market Value Estimates For June 2026",
-          "source": "Simply Wall St.",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/asian-market-value-estimates-june-043803166.html",
+          "title": "(株)ラクス【3923】：今の株価の理由は？値動きの背景をAIが解説",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBWS0dzZ19QUFY4NGpjNmEzcVVXVy01MGlRT3JfUjd2dGJLNnVYaTRqaDRsWjFJNThvSlY0RTBOQ2R5aDAtQmc1WXBpbDlubmY3NnNLWjFERlkzNi1lMjJv?oc=5",
+          "pubDate": "Mon, 06 Jul 2026 06:59:43 GMT",
           "sentiment": "neu",
-          "theme": "その他"
+          "theme": "AI"
         }
       ]
     },
@@ -175,14 +269,36 @@
       "volatility": 0.3035,
       "short_ratio": null,
       "regime_adjusted": false,
+      "forecast": {
+        "price": 3234.0,
+        "rangeLow": 3178,
+        "rangeHigh": 3290,
+        "rangeLow2": 3122,
+        "rangeHigh2": 3346,
+        "volDPct": 1.72,
+        "cond": {
+          "upRate": 53.8,
+          "n": 78,
+          "condition": "RSI70以上（買われすぎ圏）×5日上昇局面",
+          "note": null
+        },
+        "factors": [
+          {
+            "label": "RSI 88.8（買われすぎ圏・反落しやすい傾向）",
+            "dir": "-"
+          }
+        ],
+        "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
+      },
       "yutai": null,
       "news": [
         {
-          "title": "Ecowende’s 760MW offshore wind farm delivers first power to Dutch grid",
-          "source": "Power Technology",
-          "url": "https://www.power-technology.com/news/ecowendes-760mw-offshore-wind-farm-first-power/",
+          "title": "中部電力(株)【9502】：今の株価の理由は？値動きの背景をAIが解説",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1OMjJONVk3eS1ZbnZFc3RYc2gtbnVjMVlnWVdoUktIZWRTOEJyMzhkZmFRMlRVQlZkZzdkSGNNeEdBZHlMcUdvcFgwWHVkTFRQYkJ6ZWFDaHltSFAyWnhB?oc=5",
+          "pubDate": "Mon, 06 Jul 2026 07:03:14 GMT",
           "sentiment": "neu",
-          "theme": "その他"
+          "theme": "AI"
         }
       ]
     },
@@ -208,14 +324,31 @@
       "volatility": 0.5446,
       "short_ratio": 1.77,
       "regime_adjusted": false,
+      "forecast": {
+        "price": 462.3,
+        "rangeLow": 448,
+        "rangeHigh": 477,
+        "rangeLow2": 433,
+        "rangeHigh2": 492,
+        "volDPct": 3.18,
+        "cond": {
+          "upRate": 47.6,
+          "n": 164,
+          "condition": "RSI中立圏×5日上昇局面",
+          "note": null
+        },
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
+      },
       "yutai": null,
       "news": [
         {
-          "title": "Cameco Corporation (CCJ): 7 Best Fusion Energy Development Stocks to Buy",
-          "source": "Insider Monkey",
-          "url": "https://finance.yahoo.com/energy/articles/cameco-corporation-ccj-7-best-172018020.html",
+          "title": "東京電力ホールディングス(株)【9501】：今の株価の理由は？値動きの背景をAIが解説",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1TeEloR3d0c1dTUFZfODhnbWtmM0JraUxPb2hCQUlhSGE3Z0xkVllmQTR1ZXotYWV5eXg5NGFSRGlaakJYMHBJQUNST1lRb09NWUpBMk91WW43MVRUTzZJ?oc=5",
+          "pubDate": "Tue, 07 Jul 2026 06:53:14 GMT",
           "sentiment": "neu",
-          "theme": "その他"
+          "theme": "AI"
         }
       ]
     },
@@ -241,14 +374,31 @@
       "volatility": 0.2745,
       "short_ratio": 1.35,
       "regime_adjusted": false,
+      "forecast": {
+        "price": 1654.0,
+        "rangeLow": 1627,
+        "rangeHigh": 1681,
+        "rangeLow2": 1600,
+        "rangeHigh2": 1708,
+        "volDPct": 1.64,
+        "cond": {
+          "upRate": 49.7,
+          "n": 169,
+          "condition": "RSI中立圏×5日上昇局面",
+          "note": null
+        },
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
+      },
       "yutai": null,
       "news": [
         {
-          "title": "Assessing JFE Holdings Shares After Five Year 200% Surge and Demand Optimism",
-          "source": "Simply Wall St.",
-          "url": "https://finance.yahoo.com/news/assessing-jfe-holdings-shares-five-105712178.html",
+          "title": "ＪＦＥホールディングス(株)【5411】：今の株価の理由は？値動きの背景をAIが解説",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1jNnY0VE9Ocm5YY1NwVkVsdW82bUtBdWE5S3U2ei0tak14OXhZeU5xeVRXVXR1anlxWW11QkRpMmtqNDUwYVkyVkJhTUVGSnpyZ2k4U2ppS2FpcDR5STdn?oc=5",
+          "pubDate": "Tue, 07 Jul 2026 06:58:39 GMT",
           "sentiment": "neu",
-          "theme": "その他"
+          "theme": "AI"
         }
       ]
     },
@@ -274,14 +424,31 @@
       "volatility": 0.5999,
       "short_ratio": null,
       "regime_adjusted": false,
+      "forecast": {
+        "price": 69470.0,
+        "rangeLow": 67012,
+        "rangeHigh": 71928,
+        "rangeLow2": 64554,
+        "rangeHigh2": 74386,
+        "volDPct": 3.54,
+        "cond": {
+          "upRate": 53.7,
+          "n": 162,
+          "condition": "RSI中立圏×5日下落局面",
+          "note": null
+        },
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
+      },
       "yutai": null,
       "news": [
         {
-          "title": "Korean Stocks Flirt With Bear Territory, Leading Asian Markets Lower",
-          "source": "The Wall Street Journal",
-          "url": "https://www.wsj.com/finance/stocks/asian-equities-mostly-lower-as-ai-led-rally-takes-breather-cd0615b1?siteid=yhoof2&yptr=yahoo",
+          "title": "東京エレクトロン(株)【8035】：現物信用売買内訳時系列",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5qWk0wczNvNHgxVzdEbklLVHpkaWpQRGhGelNtdEpvZEh6M1N1dkNSYnBMMnhwUm5oYnhyWnN1LU1Pc1ZtVEdhRHMzcTd5QW9BRnp1dEZ6eEprME5FZkNz?oc=5",
+          "pubDate": "Fri, 03 Jul 2026 07:00:00 GMT",
           "sentiment": "neu",
-          "theme": "AI"
+          "theme": "その他"
         }
       ]
     },
@@ -291,7 +458,7 @@
       "name": "MS&ADインシュアランス",
       "score": 0.37,
       "f": 7,
-      "per": 8.3,
+      "per": 8.4,
       "pbr": 1.38,
       "roe": 18.2,
       "value": 0.175,
@@ -308,14 +475,31 @@
       "volatility": 0.2822,
       "short_ratio": null,
       "regime_adjusted": false,
+      "forecast": {
+        "price": 4534.0,
+        "rangeLow": 4435,
+        "rangeHigh": 4633,
+        "rangeLow2": 4336,
+        "rangeHigh2": 4732,
+        "volDPct": 2.18,
+        "cond": {
+          "upRate": 53.6,
+          "n": 192,
+          "condition": "RSI中立圏×5日上昇局面",
+          "note": null
+        },
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
+      },
       "yutai": null,
       "news": [
         {
-          "title": "Assessing MS&AD Insurance Group Holdings (TSE:8725) Valuation After Recent Share Price Momentum",
-          "source": "Simply Wall St.",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/assessing-ms-ad-insurance-group-181248061.html",
+          "title": "ＭＳ＆ＡＤインシュアランスグループホールディングス(株)【8725】：今の株価の理由は？値動きの背景をAIが解説",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9KWmdLUTRqbnN3Qnp3N0E2ZkZvRGdqNHY4Tm5YeE0yVEtlY2g5WHVnd1FkZ29XM29Yb0szcnpPRnU2RW0yT2plRjFOcy1PTDFXaDlyRE9HNWtUZEZfdHY0?oc=5",
+          "pubDate": "Mon, 06 Jul 2026 06:58:59 GMT",
           "sentiment": "neu",
-          "theme": "その他"
+          "theme": "AI"
         }
       ]
     },
@@ -341,14 +525,31 @@
       "volatility": 0.4852,
       "short_ratio": 0.79,
       "regime_adjusted": false,
+      "forecast": {
+        "price": 4512.0,
+        "rangeLow": 4365,
+        "rangeHigh": 4659,
+        "rangeLow2": 4218,
+        "rangeHigh2": 4806,
+        "volDPct": 3.25,
+        "cond": {
+          "upRate": 45.4,
+          "n": 185,
+          "condition": "RSI中立圏×5日上昇局面",
+          "note": null
+        },
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
+      },
       "yutai": null,
       "news": [
         {
-          "title": "Optimism Around US Government Shutdown End, China Inflation Views Lift Asian Stock Markets",
-          "source": "MT Newswires",
-          "url": "https://finance.yahoo.com/news/optimism-around-us-government-shutdown-103813252.html",
+          "title": "(株)メルカリ【4385】：今の株価の理由は？値動きの背景をAIが解説",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5lcVVrWExfWFdXQ3pCVWFPN2t6eGZFYTlWbW1ySGsyYm96MU9lSWpxTW1SRm5PcUVRWi1VQ2RQMkhMNU5vNEhBSm81S1Jka1BEZlpsbzhrbl9DQmRRbTcw?oc=5",
+          "pubDate": "Tue, 07 Jul 2026 07:07:31 GMT",
           "sentiment": "neu",
-          "theme": "その他"
+          "theme": "AI"
         }
       ]
     }
@@ -414,18 +615,18 @@
   },
   "themeTrends": [
     {
-      "theme": "その他",
-      "mentions": 8,
+      "theme": "AI",
+      "mentions": 7,
       "pos": 0,
       "neg": 0,
-      "prevMentions": 8
+      "prevMentions": 7
     },
     {
-      "theme": "AI",
-      "mentions": 2,
-      "pos": 0,
+      "theme": "その他",
+      "mentions": 3,
+      "pos": 1,
       "neg": 0,
-      "prevMentions": 2
+      "prevMentions": 3
     }
   ]
 }

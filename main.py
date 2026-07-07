@@ -19,6 +19,7 @@ from data.jpx_short import fetch_short_positions
 from screening.score import score_universe
 from signals.signal import judge_all
 from backtest.backtest import run_backtest
+from forecast.next_day import build_forecasts
 from reports.json_export import export_dashboard_json
 
 # 一部銘柄の株主優待情報（手動メンテナンス。yfinanceには優待情報が無いため）
@@ -32,7 +33,7 @@ YUTAI_MAP = {
 def main():
     print("=== 機関投資家型AIエージェント バックエンド処理 開始 ===")
 
-    print("\n1/7 株価・財務データ取得中...")
+    print("\n1/8 株価・財務データ取得中...")
     stocks = []
     try:
         stocks = fetch_universe(UNIVERSE)
@@ -40,14 +41,14 @@ def main():
     except Exception as e:
         print(f"  [エラー] 株価取得に失敗しました: {e}")
 
-    print("\n2/7 スコアリング中...")
+    print("\n2/8 スコアリング中...")
     try:
         stocks = score_universe(stocks)
         print(f"  スコアリング完了: {len(stocks)} 銘柄")
     except Exception as e:
         print(f"  [エラー] スコアリングに失敗しました: {e}")
 
-    print("\n3/7 地合い判定・シグナル判定中...")
+    print("\n3/8 地合い判定・シグナル判定中...")
     market = None
     try:
         market = fetch_market_regime()
@@ -66,7 +67,7 @@ def main():
 
     top10 = stocks[:10] if stocks else []
 
-    print("\n4/7 銘柄ニュース取得中...")
+    print("\n4/8 銘柄ニュース取得中...")
     all_news = []
     try:
         for s in top10:
@@ -79,7 +80,7 @@ def main():
     except Exception as e:
         print(f"  [エラー] ニュース取得に失敗しました: {e}")
 
-    print("\n5/7 EDINET・空売り残高・テーマトレンド集計中...")
+    print("\n5/8 EDINET・空売り残高・テーマトレンド集計中...")
     edinet_alerts = []
     short_alerts = []
     short_ratios = {}
@@ -108,7 +109,7 @@ def main():
         print(f"  [警告] テーマ集計に失敗（表示なしになります）: {e}")
         theme_trends = []
 
-    print("\n6/7 投資部門別フロー取得・バックテスト実行中...")
+    print("\n6/8 投資部門別フロー取得・バックテスト実行中...")
     flow = None
     try:
         flow = fetch_investor_flow()
@@ -180,7 +181,19 @@ def main():
         + rotation_out_alerts[:3]
     )[:14]
 
-    print("\n7/7 JSON出力中...")
+    print("\n7/8 翌営業日見通し計算中...")
+    outlook = None
+    try:
+        regime = market["regime"] if market else "unknown"
+        outlook = build_forecasts(top10, regime)
+        done = sum(1 for s in top10 if s.get("forecast"))
+        if outlook:
+            print(f"  市場見通し: {outlook['condition']}→東京上昇率{outlook.get('topixUpRate')}%（過去{outlook['n']}回）")
+        print(f"  銘柄別見通し: {done}/{len(top10)}銘柄で計算完了")
+    except Exception as e:
+        print(f"  [警告] 見通し計算に失敗しました（表示なしになります）: {e}")
+
+    print("\n8/8 JSON出力中...")
     try:
         path = export_dashboard_json(
             stocks=top10 if top10 else stocks[:10],
@@ -189,6 +202,7 @@ def main():
             theme_trends=theme_trends,
             backtest=bt,
             market=market,
+            market_outlook=outlook,
             fetched_count=len(stocks),
             universe_total=len(UNIVERSE),
         )
