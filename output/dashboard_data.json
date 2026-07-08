@@ -1,20 +1,20 @@
 {
-  "updated": "2026年07月08日 01:00",
-  "updatedAtMs": 1783472449738,
+  "updated": "2026年07月08日 05:35",
+  "updatedAtMs": 1783488946641,
   "fetched": 113,
   "universeTotal": 116,
   "market": {
     "regime": "bull",
     "label": "上昇基調",
     "desc": "市場全体（TOPIX）は200日移動平均の上で推移しており、比較的良好な地合いです。",
-    "priceVsMa200Pct": 14.7,
+    "priceVsMa200Pct": 14.4,
     "source": "TOPIX連動ETF(1306.T)終値と200日移動平均から判定"
   },
   "marketOutlook": {
     "spxChangePct": -0.45,
     "spxDate": "2026-07-07",
-    "usdjpy": 162.32,
-    "usdjpyChangePct": 0.14,
+    "usdjpy": 162.3,
+    "usdjpyChangePct": 0.13,
     "condition": "米S&P500が直近下落",
     "topixUpRate": 41.5,
     "n": 207,
@@ -34,43 +34,43 @@
     "note": "予測と実際の答え合わせを毎営業日ぶん蓄積した実績です。件数が増えるほど信頼度が上がります。将来を保証するものではありません。"
   },
   "backtest": {
-    "annual": "+30.8%",
-    "benchmark": "+30.1%",
-    "sharpe": "1.02",
+    "annual": "+30.6%",
+    "benchmark": "+30.0%",
+    "sharpe": "1.01",
     "dd": "-17.3%",
     "winrate": "60.9%",
     "months": "23ヶ月",
-    "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+30.1%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
+    "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+30.0%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
   },
   "stocks": [
     {
       "rank": 1,
       "ticker": "8955.T",
       "name": "日本プライムリアルティ投資法人",
-      "score": 0.467,
+      "score": 0.471,
       "f": 4,
-      "per": 19.0,
-      "pbr": 0.35,
+      "per": 19.1,
+      "pbr": 0.36,
       "roe": 7.1,
-      "value": 0.634,
+      "value": 0.642,
       "quality": 0.306,
-      "momentum": 0.161,
+      "momentum": 0.167,
       "signal": "ホールド",
-      "rsi": 70.2,
+      "rsi": 72.4,
       "conf": "低",
       "strategy": [
         "dividend"
       ],
       "dividend_yield": 4.5,
-      "volatility": 0.1564,
+      "volatility": 0.1563,
       "short_ratio": null,
       "regime_adjusted": false,
       "forecast": {
-        "price": 94800.0,
-        "rangeLow": 93931,
-        "rangeHigh": 95669,
-        "rangeLow2": 93062,
-        "rangeHigh2": 96538,
+        "price": 95100.0,
+        "rangeLow": 94228,
+        "rangeHigh": 95972,
+        "rangeLow2": 93357,
+        "rangeHigh2": 96843,
         "volDPct": 0.92,
         "calibrated": false,
         "cond": {
@@ -81,7 +81,7 @@
         },
         "factors": [
           {
-            "label": "RSI 70.2（買われすぎ圏・反落しやすい傾向）",
+            "label": "RSI 72.4（買われすぎ圏・反落しやすい傾向）",
             "dir": "-"
           },
           {
@@ -105,67 +105,16 @@
     },
     {
       "rank": 2,
-      "ticker": "6857.T",
-      "name": "アドバンテスト",
-      "score": 0.428,
-      "f": 6,
-      "per": 56.5,
-      "pbr": 26.5,
-      "roe": 57.6,
-      "value": 0.0,
-      "quality": 1.0,
-      "momentum": 0.369,
-      "signal": "様子見",
-      "rsi": 46.4,
-      "conf": "低",
-      "strategy": [
-        "swing"
-      ],
-      "dividend_yield": 0.2,
-      "volatility": 0.7359,
-      "short_ratio": null,
-      "regime_adjusted": false,
-      "forecast": {
-        "price": 29010.0,
-        "rangeLow": 27758,
-        "rangeHigh": 30262,
-        "rangeLow2": 26505,
-        "rangeHigh2": 31515,
-        "volDPct": 4.32,
-        "calibrated": false,
-        "cond": {
-          "upRate": 56.3,
-          "n": 167,
-          "condition": "RSI中立圏×5日下落局面",
-          "note": null
-        },
-        "factors": [],
-        "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
-      },
-      "yutai": null,
-      "news": [
-        {
-          "title": "アドバンテスト株価に急ブレーキ、TurboQuantショックは一時的か - 日経ヴェリタス",
-          "source": "日本経済新聞",
-          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5WTTQyWVRGbWZGZ3NGYTFrQWdLWDhaVnNNVGFJZ0dFN3VYQU1KZ0VPTkxQZ01fX3JiSHhrc1BiTzZYd2N5b2dyS0NHX1pvX1FqZlJudy1VZGxaLVVMRHlCLVJCZmdzT0FmVVhxUlBLUEctN2tWeWFnZU9odHVRUQ?oc=5",
-          "pubDate": "Mon, 06 Apr 2026 07:00:00 GMT",
-          "sentiment": "neu",
-          "theme": "その他"
-        }
-      ]
-    },
-    {
-      "rank": 3,
       "ticker": "7201.T",
       "name": "日産自動車",
-      "score": 0.423,
+      "score": 0.429,
       "f": 1,
       "per": null,
       "pbr": 0.23,
       "roe": -9.9,
-      "value": 0.97,
+      "value": 0.986,
       "quality": 0.074,
-      "momentum": 0.105,
+      "momentum": 0.11,
       "signal": "様子見",
       "rsi": 31.5,
       "conf": "低",
@@ -177,10 +126,10 @@
       "short_ratio": 2.88,
       "regime_adjusted": false,
       "forecast": {
-        "price": 313.7,
+        "price": 314.0,
         "rangeLow": 304,
-        "rangeHigh": 323,
-        "rangeLow2": 294,
+        "rangeHigh": 324,
+        "rangeLow2": 295,
         "rangeHigh2": 333,
         "volDPct": 3.09,
         "calibrated": false,
@@ -211,33 +160,135 @@
       ]
     },
     {
+      "rank": 3,
+      "ticker": "6857.T",
+      "name": "アドバンテスト",
+      "score": 0.425,
+      "f": 6,
+      "per": 55.0,
+      "pbr": 25.82,
+      "roe": 57.6,
+      "value": 0.0,
+      "quality": 1.0,
+      "momentum": 0.36,
+      "signal": "様子見",
+      "rsi": 44.3,
+      "conf": "低",
+      "strategy": [
+        "swing"
+      ],
+      "dividend_yield": 0.2,
+      "volatility": 0.7368,
+      "short_ratio": null,
+      "regime_adjusted": false,
+      "forecast": {
+        "price": 28300.0,
+        "rangeLow": 27078,
+        "rangeHigh": 29522,
+        "rangeLow2": 25856,
+        "rangeHigh2": 30744,
+        "volDPct": 4.32,
+        "calibrated": false,
+        "cond": {
+          "upRate": 55.7,
+          "n": 167,
+          "condition": "RSI中立圏×5日下落局面",
+          "note": null
+        },
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
+      },
+      "yutai": null,
+      "news": [
+        {
+          "title": "アドバンスト・マイクロ・デバイセズ【AMD】：株価・株式情報",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1XMlFpV2lBbGlNY0ZmdVpmamxPWHFnNWhzSW4xVW16SXpNbllBRmtGWHZ5QzB6VGNfODRrWGp3dWFhXzBhaENZanoxcjg3dw?oc=5",
+          "pubDate": "Wed, 08 Jul 2026 01:52:07 GMT",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
+    },
+    {
       "rank": 4,
+      "ticker": "5411.T",
+      "name": "JFEホールディングス",
+      "score": 0.393,
+      "f": 4,
+      "per": 15.7,
+      "pbr": 0.4,
+      "roe": 2.8,
+      "value": 0.571,
+      "quality": 0.248,
+      "momentum": 0.132,
+      "signal": "様子見",
+      "rsi": 52.0,
+      "conf": "低",
+      "strategy": [
+        "dividend"
+      ],
+      "dividend_yield": 4.8,
+      "volatility": 0.2742,
+      "short_ratio": 1.35,
+      "regime_adjusted": false,
+      "forecast": {
+        "price": 1653.0,
+        "rangeLow": 1626,
+        "rangeHigh": 1680,
+        "rangeLow2": 1599,
+        "rangeHigh2": 1707,
+        "volDPct": 1.64,
+        "calibrated": false,
+        "cond": {
+          "upRate": 49.7,
+          "n": 169,
+          "condition": "RSI中立圏×5日上昇局面",
+          "note": null
+        },
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
+      },
+      "yutai": null,
+      "news": [
+        {
+          "title": "ＪＦＥホールディングス(株)【5411】：今の株価の理由は？値動きの背景をAIが解説",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1jNnY0VE9Ocm5YY1NwVkVsdW82bUtBdWE5S3U2ei0tak14OXhZeU5xeVRXVXR1anlxWW11QkRpMmtqNDUwYVkyVkJhTUVGSnpyZ2k4U2ppS2FpcDR5STdn?oc=5",
+          "pubDate": "Tue, 07 Jul 2026 06:58:39 GMT",
+          "sentiment": "neu",
+          "theme": "AI"
+        }
+      ]
+    },
+    {
+      "rank": 5,
       "ticker": "3923.T",
       "name": "ラクス",
-      "score": 0.392,
+      "score": 0.393,
       "f": 5,
-      "per": 27.5,
-      "pbr": 13.84,
+      "per": 27.6,
+      "pbr": 13.87,
       "roe": 55.4,
       "value": 0.012,
       "quality": 0.969,
-      "momentum": 0.175,
+      "momentum": 0.181,
       "signal": "様子見",
-      "rsi": 63.1,
+      "rsi": 63.6,
       "conf": "低",
       "strategy": [
         "swing"
       ],
       "dividend_yield": 0.8,
-      "volatility": 0.6026,
+      "volatility": 0.6025,
       "short_ratio": 3.32,
       "regime_adjusted": false,
       "forecast": {
-        "price": 1015.0,
-        "rangeLow": 986,
-        "rangeHigh": 1044,
-        "rangeLow2": 958,
-        "rangeHigh2": 1072,
+        "price": 1020.5,
+        "rangeLow": 992,
+        "rangeHigh": 1049,
+        "rangeLow2": 963,
+        "rangeHigh2": 1078,
         "volDPct": 2.82,
         "calibrated": false,
         "cond": {
@@ -267,84 +318,33 @@
       ]
     },
     {
-      "rank": 5,
-      "ticker": "5411.T",
-      "name": "JFEホールディングス",
-      "score": 0.389,
-      "f": 4,
-      "per": 15.6,
-      "pbr": 0.4,
-      "roe": 2.8,
-      "value": 0.563,
-      "quality": 0.248,
-      "momentum": 0.125,
-      "signal": "様子見",
-      "rsi": 50.9,
-      "conf": "低",
-      "strategy": [
-        "dividend"
-      ],
-      "dividend_yield": 4.8,
-      "volatility": 0.2742,
-      "short_ratio": 1.35,
-      "regime_adjusted": false,
-      "forecast": {
-        "price": 1646.5,
-        "rangeLow": 1620,
-        "rangeHigh": 1673,
-        "rangeLow2": 1593,
-        "rangeHigh2": 1700,
-        "volDPct": 1.64,
-        "calibrated": false,
-        "cond": {
-          "upRate": 49.4,
-          "n": 170,
-          "condition": "RSI中立圏×5日上昇局面",
-          "note": null
-        },
-        "factors": [],
-        "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
-      },
-      "yutai": null,
-      "news": [
-        {
-          "title": "ＪＦＥホールディングス(株)【5411】：今の株価の理由は？値動きの背景をAIが解説",
-          "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1jNnY0VE9Ocm5YY1NwVkVsdW82bUtBdWE5S3U2ei0tak14OXhZeU5xeVRXVXR1anlxWW11QkRpMmtqNDUwYVkyVkJhTUVGSnpyZ2k4U2ppS2FpcDR5STdn?oc=5",
-          "pubDate": "Tue, 07 Jul 2026 06:58:39 GMT",
-          "sentiment": "neu",
-          "theme": "AI"
-        }
-      ]
-    },
-    {
       "rank": 6,
       "ticker": "9501.T",
       "name": "東京電力HD",
-      "score": 0.385,
+      "score": 0.388,
       "f": 1,
       "per": null,
-      "pbr": 0.22,
+      "pbr": 0.23,
       "roe": -12.6,
       "value": 1.0,
       "quality": 0.036,
-      "momentum": 0.047,
+      "momentum": 0.057,
       "signal": "様子見",
-      "rsi": 33.3,
+      "rsi": 37.4,
       "conf": "低",
       "strategy": [
         "low_price"
       ],
       "dividend_yield": 0.0,
-      "volatility": 0.5429,
+      "volatility": 0.5447,
       "short_ratio": 1.77,
       "regime_adjusted": false,
       "forecast": {
-        "price": 468.6,
-        "rangeLow": 454,
-        "rangeHigh": 484,
-        "rangeLow2": 439,
-        "rangeHigh2": 498,
+        "price": 477.4,
+        "rangeLow": 462,
+        "rangeHigh": 493,
+        "rangeLow2": 447,
+        "rangeHigh2": 508,
         "volDPct": 3.18,
         "calibrated": false,
         "cond": {
@@ -372,30 +372,30 @@
       "rank": 7,
       "ticker": "9502.T",
       "name": "中部電力",
-      "score": 0.384,
+      "score": 0.388,
       "f": 5,
       "per": 10.7,
-      "pbr": 0.77,
+      "pbr": 0.78,
       "roe": 7.7,
-      "value": 0.299,
+      "value": 0.303,
       "quality": 0.315,
-      "momentum": 0.369,
+      "momentum": 0.376,
       "signal": "売り",
-      "rsi": 85.8,
+      "rsi": 87.4,
       "conf": "中",
       "strategy": [
         "swing"
       ],
       "dividend_yield": 2.2,
-      "volatility": 0.3033,
+      "volatility": 0.3031,
       "short_ratio": null,
       "regime_adjusted": false,
       "forecast": {
-        "price": 3214.0,
-        "rangeLow": 3159,
-        "rangeHigh": 3269,
-        "rangeLow2": 3103,
-        "rangeHigh2": 3325,
+        "price": 3225.0,
+        "rangeLow": 3169,
+        "rangeHigh": 3281,
+        "rangeLow2": 3114,
+        "rangeHigh2": 3336,
         "volDPct": 1.72,
         "calibrated": false,
         "cond": {
@@ -406,7 +406,7 @@
         },
         "factors": [
           {
-            "label": "RSI 85.8（買われすぎ圏・反落しやすい傾向）",
+            "label": "RSI 87.4（買われすぎ圏・反落しやすい傾向）",
             "dir": "-"
           }
         ],
@@ -418,7 +418,7 @@
           "title": "中部電力(株)【9502】：今の株価の理由は？値動きの背景をAIが解説",
           "source": "Yahoo!ファイナンス",
           "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1OMjJONVk3eS1ZbnZFc3RYc2gtbnVjMVlnWVdoUktIZWRTOEJyMzhkZmFRMlRVQlZkZzdkSGNNeEdBZHlMcUdvcFgwWHVkTFRQYkJ6ZWFDaHltSFAyWnhB?oc=5",
-          "pubDate": "Mon, 06 Jul 2026 07:03:14 GMT",
+          "pubDate": "Tue, 07 Jul 2026 07:03:09 GMT",
           "sentiment": "neu",
           "theme": "AI"
         }
@@ -428,30 +428,30 @@
       "rank": 8,
       "ticker": "8035.T",
       "name": "東京エレクトロン",
-      "score": 0.376,
+      "score": 0.378,
       "f": 5,
-      "per": 54.9,
-      "pbr": 15.07,
+      "per": 54.8,
+      "pbr": 15.06,
       "roe": 29.3,
-      "value": 0.007,
+      "value": 0.006,
       "quality": 0.611,
-      "momentum": 0.546,
+      "momentum": 0.551,
       "signal": "様子見",
-      "rsi": 39.5,
+      "rsi": 39.4,
       "conf": "低",
       "strategy": [
         "swing"
       ],
       "dividend_yield": 1.0,
-      "volatility": 0.5968,
+      "volatility": 0.5969,
       "short_ratio": null,
       "regime_adjusted": false,
       "forecast": {
-        "price": 68700.0,
-        "rangeLow": 66271,
-        "rangeHigh": 71129,
-        "rangeLow2": 63842,
-        "rangeHigh2": 73558,
+        "price": 68400.0,
+        "rangeLow": 65982,
+        "rangeHigh": 70818,
+        "rangeLow2": 63563,
+        "rangeHigh2": 73237,
         "volDPct": 3.54,
         "calibrated": false,
         "cond": {
@@ -477,88 +477,32 @@
     },
     {
       "rank": 9,
-      "ticker": "6920.T",
-      "name": "レーザーテック",
-      "score": 0.37,
-      "f": 5,
-      "per": 45.2,
-      "pbr": 17.32,
-      "roe": 44.1,
-      "value": 0.005,
-      "quality": 0.814,
-      "momentum": 0.36,
-      "signal": "様子見",
-      "rsi": 25.4,
-      "conf": "低",
-      "strategy": [
-        "swing"
-      ],
-      "dividend_yield": 0.8,
-      "volatility": 0.7495,
-      "short_ratio": null,
-      "regime_adjusted": false,
-      "forecast": {
-        "price": 43580.0,
-        "rangeLow": 41713,
-        "rangeHigh": 45447,
-        "rangeLow2": 39846,
-        "rangeHigh2": 47314,
-        "volDPct": 4.28,
-        "calibrated": false,
-        "cond": {
-          "upRate": 46.3,
-          "n": 67,
-          "condition": "RSI30以下（売られすぎ圏）×5日下落局面",
-          "note": null
-        },
-        "factors": [
-          {
-            "label": "RSI 25.4（売られすぎ圏・反発しやすい傾向）",
-            "dir": "+"
-          }
-        ],
-        "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
-      },
-      "yutai": null,
-      "news": [
-        {
-          "title": "レーザーテック(株)【6920】：今の株価の理由は？値動きの背景をAIが解説",
-          "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB6ZlBYUThNX0VUQ29MMkE1eEUtQjc5TlZDZDFCOG9qaDg4SEtFNkpTWEtEbFNoakQzcHU2cG5waElnVG80QW8zWUxRQ3hXaWI5SzF6LU1GV0tGS0Ixa2xB?oc=5",
-          "pubDate": "Tue, 07 Jul 2026 06:54:02 GMT",
-          "sentiment": "neu",
-          "theme": "AI"
-        }
-      ]
-    },
-    {
-      "rank": 10,
       "ticker": "4385.T",
       "name": "メルカリ",
-      "score": 0.37,
+      "score": 0.374,
       "f": 5,
-      "per": 26.3,
-      "pbr": 6.27,
+      "per": 26.7,
+      "pbr": 6.38,
       "roe": 33.0,
-      "value": 0.032,
+      "value": 0.031,
       "quality": 0.661,
-      "momentum": 0.359,
+      "momentum": 0.375,
       "signal": "売り",
-      "rsi": 73.6,
+      "rsi": 74.9,
       "conf": "中",
       "strategy": [
         "swing"
       ],
       "dividend_yield": 0.0,
-      "volatility": 0.4854,
+      "volatility": 0.4867,
       "short_ratio": 0.79,
       "regime_adjusted": false,
       "forecast": {
-        "price": 4562.0,
-        "rangeLow": 4414,
-        "rangeHigh": 4710,
-        "rangeLow2": 4265,
-        "rangeHigh2": 4859,
+        "price": 4644.0,
+        "rangeLow": 4493,
+        "rangeHigh": 4795,
+        "rangeLow2": 4342,
+        "rangeHigh2": 4946,
         "volDPct": 3.25,
         "calibrated": false,
         "cond": {
@@ -569,7 +513,7 @@
         },
         "factors": [
           {
-            "label": "RSI 73.6（買われすぎ圏・反落しやすい傾向）",
+            "label": "RSI 74.9（買われすぎ圏・反落しやすい傾向）",
             "dir": "-"
           }
         ],
@@ -584,6 +528,57 @@
           "pubDate": "Tue, 07 Jul 2026 07:07:31 GMT",
           "sentiment": "neu",
           "theme": "AI"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "ticker": "7735.T",
+      "name": "SCREENホールディングス",
+      "score": 0.372,
+      "f": 5,
+      "per": 35.3,
+      "pbr": 6.69,
+      "roe": 20.3,
+      "value": 0.028,
+      "quality": 0.487,
+      "momentum": 0.701,
+      "signal": "様子見",
+      "rsi": 53.5,
+      "conf": "低",
+      "strategy": [
+        "swing"
+      ],
+      "dividend_yield": 1.4,
+      "volatility": 0.6841,
+      "short_ratio": null,
+      "regime_adjusted": false,
+      "forecast": {
+        "price": 17225.0,
+        "rangeLow": 16589,
+        "rangeHigh": 17861,
+        "rangeLow2": 15953,
+        "rangeHigh2": 18497,
+        "volDPct": 3.69,
+        "calibrated": false,
+        "cond": {
+          "upRate": 50.0,
+          "n": 176,
+          "condition": "RSI中立圏×5日下落局面",
+          "note": null
+        },
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
+      },
+      "yutai": null,
+      "news": [
+        {
+          "title": "(株)ＳＣＲＥＥＮホールディングス【7735】：現物信用売買内訳時系列",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBKNVlQU2N2d2hyMEZCS2Q4Z2FDcG84X2Rhd09vUFNobkxWQm5vcWVLbHFwUXJTQ055Mzk0R0pTTENEaW1YSmJuNGZDOC1VbnZPbU5fdVpfbjNzOW1uZFNN?oc=5",
+          "pubDate": "Thu, 02 Jul 2026 11:40:49 GMT",
+          "sentiment": "neu",
+          "theme": "その他"
         }
       ]
     }
@@ -617,12 +612,12 @@
     {
       "type": "warn",
       "title": "入替候補OUT: カバー",
-      "desc": "スコア下位15% (score=0.233)"
+      "desc": "スコア下位15% (score=0.236)"
     },
     {
       "type": "warn",
       "title": "入替候補OUT: ネクソン",
-      "desc": "スコア下位15% (score=0.232)"
+      "desc": "スコア下位15% (score=0.234)"
     }
   ],
   "flow": {
@@ -650,17 +645,17 @@
   "themeTrends": [
     {
       "theme": "AI",
-      "mentions": 7,
+      "mentions": 6,
       "pos": 0,
       "neg": 0,
-      "prevMentions": 7
+      "prevMentions": 6
     },
     {
       "theme": "その他",
-      "mentions": 3,
+      "mentions": 4,
       "pos": 1,
       "neg": 0,
-      "prevMentions": 3
+      "prevMentions": 4
     }
   ]
 }

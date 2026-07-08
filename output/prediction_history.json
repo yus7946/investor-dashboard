@@ -299,6 +299,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-07",
+      "ticker": "7735.T",
+      "name": "SCREENホールディングス",
+      "basePrice": 17225.0,
+      "rangeLow": 16589,
+      "rangeHigh": 17861,
+      "predUpRate": 50.0,
+      "condN": 176,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
