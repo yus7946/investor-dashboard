@@ -90,39 +90,53 @@ body::before {
   display: inline-block; margin-right: 6px; animation: pulse 2s infinite;
 }
 
-/* ── 今日のアクション ── */
-.action-section {
-  background: linear-gradient(135deg, rgba(16,185,129,0.12) 0%, rgba(59,130,246,0.08) 100%);
+/* ── 今日の結論（ヒーロー） ── */
+.verdict {
+  background: linear-gradient(135deg, rgba(16,185,129,0.14) 0%, rgba(59,130,246,0.10) 100%);
   border: 1px solid rgba(16,185,129,0.3);
-  border-radius: 20px; padding: 18px; margin-bottom: 16px;
+  border-radius: 20px; padding: 18px; margin-bottom: 12px;
   opacity: 0; transform: translateY(20px);
 }
-.action-header {
-  display: flex; align-items: center; gap: 8px; margin-bottom: 14px;
+.verdict-headline {
+  font-size: 17px; font-weight: 800; line-height: 1.5; margin-bottom: 14px;
 }
-.action-header-title {
-  font-size: 16px; font-weight: 800; color: var(--text);
+.verdict-groups { display: flex; flex-direction: column; gap: 12px; }
+.verdict-group-label {
+  font-size: 12px; font-weight: 800; margin-bottom: 8px;
+  display: flex; align-items: center; gap: 6px;
 }
-.action-hint { font-size: 11px; color: var(--muted); margin-top: 2px; }
-.action-cards { display: flex; flex-direction: column; gap: 10px; }
-.action-card {
-  background: rgba(255,255,255,0.05); border-radius: 14px; padding: 14px;
-  display: flex; align-items: center; gap: 12px;
-  border: 1px solid rgba(255,255,255,0.08);
+.verdict-group-label.buy  { color: #34d399; }
+.verdict-group-label.sell { color: var(--red); }
+.verdict-chip {
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(255,255,255,0.05); border-radius: 12px; padding: 12px 14px;
+  margin-bottom: 8px; border: 1px solid rgba(255,255,255,0.08);
+  cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.verdict-chip:last-child { margin-bottom: 0; }
+.verdict-chip.buy  { border-color: rgba(16,185,129,0.35); background: rgba(16,185,129,0.08); }
+.verdict-chip.sell { border-color: rgba(239,68,68,0.3); background: rgba(239,68,68,0.07); }
+.verdict-badge {
+  font-size: 12px; font-weight: 800; padding: 5px 11px; border-radius: 99px; flex-shrink: 0;
+}
+.verdict-badge.buy  { background: rgba(16,185,129,0.25); color: #34d399; }
+.verdict-badge.sell { background: rgba(239,68,68,0.2); color: var(--red); }
+.verdict-chip-body { flex: 1; min-width: 0; }
+.verdict-chip-name { font-size: 15px; font-weight: 800; }
+.verdict-chip-reason { font-size: 11px; color: var(--muted); margin-top: 2px; line-height: 1.4; }
+.verdict-chip-stars { font-size: 15px; flex-shrink: 0; }
+.verdict-empty { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+/* ── 市場全体（折りたたみ） ── */
+.market-toggle {
+  width: 100%; padding: 11px 16px; border: 1px solid var(--border);
+  background: var(--surface); color: var(--muted); font-size: 12px; font-weight: 700;
+  border-radius: 12px; cursor: pointer; text-align: left; margin-bottom: 14px;
+  display: flex; justify-content: space-between; align-items: center;
   -webkit-tap-highlight-color: transparent;
 }
-.action-card.strong { border-color: rgba(16,185,129,0.4); background: rgba(16,185,129,0.08); }
-.action-card.buy    { border-color: rgba(59,130,246,0.4); background: rgba(59,130,246,0.08); }
-.action-card.caution{ border-color: rgba(245,158,11,0.4); background: rgba(245,158,11,0.08); }
-.action-signal-icon { font-size: 24px; flex-shrink: 0; }
-.action-body { flex: 1; min-width: 0; }
-.action-name { font-size: 16px; font-weight: 800; }
-.action-code { font-size: 11px; color: var(--muted); }
-.action-reason { font-size: 12px; margin-top: 3px; }
-.action-reason.strong { color: #34d399; }
-.action-reason.buy    { color: var(--accent2); }
-.action-reason.caution{ color: var(--yellow); }
-.action-stars { font-size: 20px; flex-shrink: 0; }
+.market-collapse { display: none; margin-bottom: 14px; }
+.market-collapse.open { display: block; }
 
 /* ── タブ ── */
 .tabs {
@@ -221,13 +235,35 @@ body::before {
 /* ── シグナルバッジ ── */
 .signal {
   display: inline-flex; align-items: center; gap: 5px;
-  font-size: 13px; font-weight: 800; padding: 6px 14px; border-radius: 99px;
-  margin-bottom: 10px;
+  font-size: 14px; font-weight: 800; padding: 7px 16px; border-radius: 99px;
+  flex-shrink: 0;
 }
 .signal.buy        { background: rgba(16,185,129,0.15); color: var(--green); border: 1px solid rgba(16,185,129,0.3); }
 .signal.sell       { background: rgba(239,68,68,0.15);  color: var(--red);   border: 1px solid rgba(239,68,68,0.3); }
 .signal.hold       { background: rgba(245,158,11,0.15); color: var(--yellow);border: 1px solid rgba(245,158,11,0.3); }
 .signal.strong-buy { background: rgba(16,185,129,0.25); color: #34d399; border: 1px solid rgba(16,185,129,0.5); box-shadow: 0 0 14px rgba(16,185,129,0.25); }
+
+/* ── 銘柄カード：判定行・一言・想定レンジ・詳細折りたたみ ── */
+.stock-verdict-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+.stock-oneliner { font-size: 12px; color: var(--text); line-height: 1.4; flex: 1; min-width: 140px; }
+.stock-range {
+  font-size: 12px; color: var(--muted); margin-bottom: 10px;
+  padding: 8px 10px; border-radius: 8px;
+  background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.14);
+}
+.stock-range b { color: var(--accent2); }
+.detail-toggle {
+  width: 100%; padding: 9px; border: 1px solid var(--border);
+  background: var(--surface2); color: var(--muted); font-size: 11px; font-weight: 700;
+  border-radius: 8px; cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.detail-collapse { display: none; margin-top: 12px; }
+.detail-collapse.open { display: block; }
+.stock-card.flash { animation: cardflash 1.6s ease; }
+@keyframes cardflash {
+  0%, 100% { box-shadow: 0 0 0 rgba(99,179,237,0); }
+  30% { box-shadow: 0 0 0 2px rgba(99,179,237,0.6); border-color: var(--accent); }
+}
 
 /* ── 指標タグ ── */
 .stock-tags { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 10px; }
@@ -417,8 +453,8 @@ body::before {
 <!-- ヘッダー -->
 <div class="header">
   <div class="header-badge" id="badge">● LIVE ANALYSIS</div>
-  <h1 id="title">機関投資家型<br>AIエージェント</h1>
-  <div class="header-meta" id="meta">分析結果をClaudeに貼るだけで無料AI分析</div>
+  <h1 id="title">今日の株、<br>どれが買い？</h1>
+  <div class="header-meta" id="meta">実データだけで作った、初心者向けの売買サイン</div>
 </div>
 
 <!-- 更新バー -->
@@ -431,24 +467,21 @@ body::before {
   <span id="freshness-time">--</span>
 </div>
 
-<!-- 地合いバナー -->
-<div id="regime-banner" style="display:none;padding:10px 14px;border-radius:12px;margin-bottom:12px;font-size:12px;line-height:1.6"></div>
+<!-- 今日の結論（ヒーロー） -->
+<div class="verdict" id="verdict">
+  <div class="verdict-headline" id="verdict-headline">読み込み中…</div>
+  <div class="verdict-groups" id="verdict-groups"></div>
+</div>
 
-<!-- 翌営業日の市場見通し -->
-<div id="outlook-card" style="display:none;padding:12px 14px;border-radius:12px;margin-bottom:12px;font-size:12px;line-height:1.7;background:rgba(59,130,246,0.06);border:1px solid rgba(59,130,246,0.2)"></div>
-
-<!-- 予測の答え合わせ実績 -->
-<div id="accuracy-card" style="display:none;padding:12px 14px;border-radius:12px;margin-bottom:12px;font-size:12px;line-height:1.7;background:rgba(16,185,129,0.05);border:1px solid rgba(16,185,129,0.18)"></div>
-
-<!-- 今日のアクション -->
-<div class="action-section" id="action-section">
-  <div class="action-header">
-    <div>
-      <div class="action-header-title">今日はこれを見てください</div>
-      <div class="action-hint">スコアと売買サインから自動選出した注目銘柄です</div>
-    </div>
-  </div>
-  <div class="action-cards" id="action-cards"></div>
+<!-- 市場全体の状況（折りたたみ） -->
+<button class="market-toggle" onclick="toggleMarket(this)">
+  <span>市場全体の状況・予測の答え合わせを見る</span>
+  <span id="market-arrow">▼</span>
+</button>
+<div class="market-collapse" id="market-collapse">
+  <div id="regime-banner" style="display:none;padding:10px 14px;border-radius:12px;margin-bottom:10px;font-size:12px;line-height:1.6"></div>
+  <div id="outlook-card" style="display:none;padding:12px 14px;border-radius:12px;margin-bottom:10px;font-size:12px;line-height:1.7;background:rgba(59,130,246,0.06);border:1px solid rgba(59,130,246,0.2)"></div>
+  <div id="accuracy-card" style="display:none;padding:12px 14px;border-radius:12px;margin-bottom:10px;font-size:12px;line-height:1.7;background:rgba(16,185,129,0.05);border:1px solid rgba(16,185,129,0.18)"></div>
 </div>
 
 <!-- タブ -->
@@ -461,7 +494,7 @@ body::before {
 <!-- ── タブ1：銘柄チェック ── -->
 <div class="tab-content active" id="tab-screening">
 
-  <div class="section-hint">スコアが高い順に並んでいます。緑が買いサインです。各指標名をタップすると説明が出ます。</div>
+  <div class="section-hint">評価の高い順に並んでいます。緑の「買い」バッジが買いサイン、赤の「売り」が売りサイン、黄の「様子見」は急がず待つ目安です。もっと詳しく見たいときは各銘柄の「数字で詳しく見る」を開いてください。</div>
 
   <div class="strategy-filter">
     <button class="sf-btn active" data-strategy="all" onclick="setStrategy('all')">すべて</button>
@@ -792,36 +825,83 @@ const HINTS = {
   regimeAdj:'地合いで格下げ：市場全体（TOPIX）が下落基調のため、この銘柄の買いシグナルを自動的に1段階慎重な表示にしています。',
 };
 
-// 今日のアクション生成
-function renderActionSection() {
-  const el = document.getElementById('action-cards');
-  const strongBuys = DATA.stocks.filter(s => s.signal.includes('強い買い'));
-  const buys       = DATA.stocks.filter(s => s.signal.includes('買い') && !s.signal.includes('強い'));
-  const cautions   = DATA.stocks.filter(s => s.signal.includes('様子見') || s.signal.includes('売り'));
+// 今日の結論（ヒーロー）
+function renderVerdict() {
+  const headEl = document.getElementById('verdict-headline');
+  const groupsEl = document.getElementById('verdict-groups');
 
-  const items = [];
+  const buysAll = DATA.stocks.filter(s => s.signal.includes('買い'));
+  const sells   = DATA.stocks.filter(s => s.signal.includes('売り'));
+  const cautions= DATA.stocks.filter(s => s.signal.includes('様子見'));
 
-  strongBuys.slice(0, 2).forEach(s => {
-    items.push({ s, type:'strong', reason: '割安で機関投資家が注目中。財務も健全です。' });
-  });
-  if (items.length < 3) {
-    buys.slice(0, 3 - items.length).forEach(s => {
-      items.push({ s, type:'buy', reason: '買いサイン点灯。スコア上位で値頃感あり。' });
-    });
+  // 一言サマリー（地合い＋買い候補数）
+  let regimeLine = '';
+  if (DATA.market) {
+    const m = DATA.market;
+    const emoji = m.regime === 'bull' ? '追い風' : m.regime === 'bear' ? '逆風' : '中立';
+    regimeLine = `今日の相場全体は<b style="color:${m.regime==='bear'?'var(--red)':m.regime==='bull'?'#34d399':'var(--yellow)'}">${m.label}（${emoji}）</b>。`;
   }
-  if (items.length === 0 && cautions.length > 0) {
-    items.push({ s: cautions[0], type:'caution', reason: '様子見推奨。急いで買わないほうが無難です。' });
+  const buyCount = buysAll.length;
+  headEl.innerHTML = regimeLine +
+    (buyCount > 0
+      ? `注目の<b style="color:#34d399">買い候補は${buyCount}銘柄</b>、下の一覧から選びました。`
+      : `今日は自信を持って「買い」と言える銘柄が<b>見当たりません</b>。無理に動かないのも選択です。`);
+
+  // 買い候補（上位3）
+  const buyPicks = buysAll.slice(0, 3);
+  const sellPicks = [...sells, ...cautions].slice(0, 2);
+
+  function reasonFor(s) {
+    const bits = [];
+    if (s.rsi <= 30) bits.push('売られすぎ圏で反発期待');
+    else if (s.rsi >= 70) bits.push('買われすぎ圏で過熱注意');
+    if (s.dividend_yield >= 3) bits.push(`高配当${s.dividend_yield}%`);
+    if (s.short_ratio != null && s.short_ratio >= 3) bits.push('空売り多め');
+    if (s.regime_adjusted) bits.push('地合い悪化で慎重評価');
+    if (s.forecast) bits.push(`明日の想定 ${s.forecast.rangeLow.toLocaleString()}〜${s.forecast.rangeHigh.toLocaleString()}円`);
+    return bits.slice(0, 2).join(' / ') || 'スコア上位で総合評価が良好';
   }
 
-  el.innerHTML = items.map(({ s, type, reason }) => `
-    <div class="action-card ${type}">
-      <div class="action-body">
-        <div class="action-name">${s.name}</div>
-        <div class="action-code">${s.ticker}</div>
-        <div class="action-reason ${type}">${reason}</div>
+  function chip(s, kind) {
+    const badge = kind === 'buy' ? '買い' : (s.signal.includes('売り') ? '売り' : '様子見');
+    const badgeCls = kind === 'buy' ? 'buy' : 'sell';
+    return `
+    <div class="verdict-chip ${badgeCls}" onclick="jumpToStock('${s.ticker}')">
+      <span class="verdict-badge ${badgeCls}">${badge}</span>
+      <div class="verdict-chip-body">
+        <div class="verdict-chip-name">${s.name}</div>
+        <div class="verdict-chip-reason">${reasonFor(s)}</div>
       </div>
-      <div class="action-stars">${scoreToStars(s.score)}</div>
-    </div>`).join('');
+      <span class="verdict-chip-stars">${scoreToStars(s.score)}</span>
+    </div>`;
+  }
+
+  let html = '';
+  if (buyPicks.length) {
+    html += `<div><div class="verdict-group-label buy">▲ 買いを検討できる銘柄</div>${buyPicks.map(s => chip(s, 'buy')).join('')}</div>`;
+  }
+  if (sellPicks.length) {
+    html += `<div><div class="verdict-group-label sell">▼ 今は避けたい・様子見の銘柄</div>${sellPicks.map(s => chip(s, 'sell')).join('')}</div>`;
+  }
+  if (!buyPicks.length && !sellPicks.length) {
+    html = `<div class="verdict-empty">今日は明確な売買サインが出ていません。下の一覧で個別に確認できます。</div>`;
+  }
+  html += `<div class="verdict-empty" style="margin-top:4px">※ タップすると詳しい数字にジャンプします。これは投資助言ではなく、データに基づく目安です。</div>`;
+  groupsEl.innerHTML = html;
+}
+
+function jumpToStock(ticker) {
+  switchTab('screening');
+  setTimeout(() => {
+    const el = document.getElementById('stock-' + ticker);
+    if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); el.classList.add('flash'); setTimeout(()=>el.classList.remove('flash'), 1600); }
+  }, 120);
+}
+
+function toggleMarket(btn) {
+  const c = document.getElementById('market-collapse');
+  c.classList.toggle('open');
+  document.getElementById('market-arrow').textContent = c.classList.contains('open') ? '▲' : '▼';
 }
 
 // 銘柄リスト
@@ -836,8 +916,16 @@ function renderStocks() {
                s.signal.includes('売り') ? 'sell' : 'hold';
     const yutaiBox = s.yutai ? `<div class="yutai-box">株主優待: ${s.yutai}</div>` : '';
     const stars = scoreToStars(s.score);
+    // 一言まとめ
+    const oneLiner = s.rsi <= 30 ? '売られすぎ圏。反発を狙える局面。'
+      : s.rsi >= 70 ? '買われすぎ圏。高値づかみに注意。'
+      : s.signal.includes('買い') ? 'スコア上位で買いサイン点灯中。'
+      : s.signal.includes('売り') ? '過熱感あり。利益確定・売りを検討。'
+      : '今は様子見。急がず次のサインを待つ局面。';
+    const rangeLine = s.forecast
+      ? `<div class="stock-range">明日の想定レンジ <b>${s.forecast.rangeLow.toLocaleString()}〜${s.forecast.rangeHigh.toLocaleString()}円</b></div>` : '';
     return `
-    <div class="stock-card" style="opacity:0;transform:translateY(16px)">
+    <div class="stock-card" id="stock-${s.ticker}" style="opacity:0;transform:translateY(16px)">
       <div class="stock-card-header">
         <div class="rank-badge ${isTop?'top':isTop5?'top2':''}">${s.rank}</div>
         <div class="stock-main">
@@ -846,44 +934,57 @@ function renderStocks() {
         </div>
         <div class="stock-score-area">
           <div class="star-display">${stars}</div>
-          <div class="score-small">${s.score.toFixed(3)}</div>
-          <div class="composite-label">総合評価
-            <span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.score}</span></span>
-          </div>
+          <div class="composite-label">5段階評価</div>
         </div>
       </div>
-      <div><span class="signal ${sc}">${s.signal}</span></div>
-      <div class="stock-tags">
-        <span class="tag">割安度 PER<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.per}</span></span> ${s.per}</span>
-        <span class="tag">資産比較 PBR<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.pbr}</span></span> ${s.pbr}</span>
-        <span class="tag ${s.roe>=10?'green':''}">稼ぐ力 ROE<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.roe}</span></span> ${s.roe}%</span>
-        <span class="tag ${s.f>=7?'green':s.f>=5?'':'red'}">財務健全度 F<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.fscore}</span></span>${s.f}/9</span>
-        <span class="tag ${s.rsi<30?'green':s.rsi>70?'red':''}">買われすぎ RSI<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.rsi}</span></span>${s.rsi}</span>
-        ${s.short_ratio != null ? `<span class="tag ${s.short_ratio>=3?'red':''}">空売り残高<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.short}</span></span>${s.short_ratio}%</span>` : ''}
-        ${s.regime_adjusted ? `<span class="tag">地合いで格下げ<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.regimeAdj}</span></span></span>` : ''}
+      <div class="stock-verdict-row">
+        <span class="signal ${sc}">${s.signal}</span>
+        <span class="stock-oneliner">${oneLiner}</span>
       </div>
-      <div class="score-bars">
-        ${[
-          ['割安スコア value',   s.value,    '#3b82f6', HINTS.value],
-          ['品質スコア quality', s.quality,  '#10b981', HINTS.quality],
-          ['勢いスコア momentum',s.momentum, '#f59e0b', HINTS.momentum],
-        ].map(([lbl,val,col,hint]) => `
-        <div class="score-row">
-          <span class="score-row-label">${lbl}<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${hint}</span></span></span>
-          <div class="score-bar-track">
-            <div class="score-bar-fill" style="background:${col}" data-width="${Math.round(val*100)}"></div>
-          </div>
-          <span class="score-row-val">${val.toFixed(2)}</span>
-        </div>`).join('')}
+      ${rangeLine}
+      <button class="detail-toggle" onclick="toggleDetail(this)">数字で詳しく見る ▼</button>
+      <div class="detail-collapse">
+        <div class="stock-tags">
+          <span class="tag">割安度 PER<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.per}</span></span> ${s.per}</span>
+          <span class="tag">資産比較 PBR<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.pbr}</span></span> ${s.pbr}</span>
+          <span class="tag ${s.roe>=10?'green':''}">稼ぐ力 ROE<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.roe}</span></span> ${s.roe}%</span>
+          <span class="tag ${s.f>=7?'green':s.f>=5?'':'red'}">財務健全度 F<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.fscore}</span></span>${s.f}/9</span>
+          <span class="tag ${s.rsi<30?'green':s.rsi>70?'red':''}">買われすぎ RSI<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.rsi}</span></span>${s.rsi}</span>
+          ${s.short_ratio != null ? `<span class="tag ${s.short_ratio>=3?'red':''}">空売り残高<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.short}</span></span>${s.short_ratio}%</span>` : ''}
+          ${s.regime_adjusted ? `<span class="tag">地合いで格下げ<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.regimeAdj}</span></span></span>` : ''}
+        </div>
+        <div class="score-bars">
+          ${[
+            ['割安スコア value',   s.value,    '#3b82f6', HINTS.value],
+            ['品質スコア quality', s.quality,  '#10b981', HINTS.quality],
+            ['勢いスコア momentum',s.momentum, '#f59e0b', HINTS.momentum],
+          ].map(([lbl,val,col,hint]) => `
+          <div class="score-row">
+            <span class="score-row-label">${lbl}<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${hint}</span></span></span>
+            <div class="score-bar-track">
+              <div class="score-bar-fill" style="background:${col}" data-width="${Math.round(val*100)}"></div>
+            </div>
+            <span class="score-row-val">${val.toFixed(2)}</span>
+          </div>`).join('')}
+        </div>
+        <div class="div-row">
+          <span style="color:var(--muted)">配当利回り</span>
+          <span style="font-weight:700;color:${s.dividend_yield>=3?'var(--green)':'var(--text)'}">${s.dividend_yield}%</span>
+        </div>
+        ${yutaiBox}
+        ${s.forecast ? renderForecastBox(s) : renderScenario(s)}
       </div>
-      <div class="div-row">
-        <span style="color:var(--muted)">配当利回り</span>
-        <span style="font-weight:700;color:${s.dividend_yield>=3?'var(--green)':'var(--text)'}">${s.dividend_yield}%</span>
-      </div>
-      ${yutaiBox}
-      ${s.forecast ? renderForecastBox(s) : renderScenario(s)}
     </div>`;
   }).join('');
+}
+
+function toggleDetail(btn) {
+  const c = btn.nextElementSibling;
+  const open = c.classList.toggle('open');
+  btn.textContent = open ? '詳細を閉じる ▲' : '数字で詳しく見る ▼';
+  if (open) {
+    c.querySelectorAll('.score-bar-fill').forEach(f => { f.style.width = (f.dataset.width||0) + '%'; });
+  }
 }
 
 function renderAccuracy() {
@@ -1460,7 +1561,7 @@ function renderHoldings() {
 
 // ── 初期化 ──
 document.addEventListener('DOMContentLoaded', () => {
-  renderActionSection();
+  renderVerdict();
   renderRegime();
   renderOutlook();
   renderAccuracy();
@@ -1477,7 +1578,7 @@ document.addEventListener('DOMContentLoaded', () => {
   tl.to('#badge',           { opacity: 1, y: 0, duration: 0.5 })
     .to('#title',           { opacity: 1, y: 0, duration: 0.7 }, '-=0.2')
     .to('#meta',            { opacity: 1, y: 0, duration: 0.5 }, '-=0.3')
-    .to('#action-section',  { opacity: 1, y: 0, duration: 0.6 }, '-=0.1');
+    .to('#verdict',         { opacity: 1, y: 0, duration: 0.6 }, '-=0.1');
 
   setTimeout(animateVisible, 600);
   setTimeout(animateCounters, 800);
