@@ -438,6 +438,11 @@ body::before {
 }
 .copy-btn:active { transform: scale(0.97); box-shadow: 0 4px 12px rgba(59,130,246,0.3); }
 .copy-btn.copied { background: linear-gradient(135deg, var(--green), #059669); box-shadow: 0 8px 24px rgba(16,185,129,0.4); }
+.copy-hint {
+  margin-top: 8px; font-size: 11px; line-height: 1.5; text-align: center;
+  color: var(--muted); padding: 0 8px;
+}
+.copy-hint a { color: var(--accent2); }
 
 /* ── ntfy ── */
 .ntfy-section { margin-top: 16px; }
@@ -682,11 +687,12 @@ body::before {
   </div>
 </div>
 
-<!-- コピーボタン -->
+<!-- コピー/共有ボタン -->
 <div class="copy-section">
   <button class="copy-btn" id="copy-btn" onclick="copyToClipboard()">
-    <span id="copy-text">分析結果をコピー → Claudeに貼る</span>
+    <span id="copy-text">分析結果を共有・コピー</span>
   </button>
+  <div class="copy-hint">スマホは共有メニューから「Claude」アプリを選ぶと詳しく解説してもらえます。PCは<a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a>に貼り付けてください。</div>
 </div>
 
 </div><!-- /wrap -->
@@ -1357,21 +1363,31 @@ function buildCopyText() {
   return text;
 }
 
+const COPY_BTN_DEFAULT = '分析結果を共有・コピー';
+
 function copyToClipboard() {
   const text = buildCopyText();
   const btn = document.getElementById('copy-btn');
   const label = document.getElementById('copy-text');
+
+  // スマホ（Web Share API対応）: LINE・メモ・Claudeアプリなど好きな送り先を選べる共有シートを出す
+  if (navigator.share) {
+    navigator.share({ text }).catch(() => {}); // キャンセル時は何もしない
+    return;
+  }
+
+  // PC等（共有API非対応）: クリップボードにコピー
   navigator.clipboard.writeText(text).then(() => {
     btn.classList.add('copied');
-    label.textContent = 'コピー完了！Claudeに貼り付けてください';
-    setTimeout(() => { btn.classList.remove('copied'); label.textContent = '分析結果をコピー → Claudeに貼る'; }, 3000);
+    label.textContent = 'コピー完了！claude.aiに貼り付けてください';
+    setTimeout(() => { btn.classList.remove('copied'); label.textContent = COPY_BTN_DEFAULT; }, 3000);
   }).catch(() => {
     const ta = document.createElement('textarea');
     ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
     document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
     btn.classList.add('copied');
     label.textContent = 'コピー完了！';
-    setTimeout(() => { btn.classList.remove('copied'); label.textContent = '分析結果をコピー → Claudeに貼る'; }, 3000);
+    setTimeout(() => { btn.classList.remove('copied'); label.textContent = COPY_BTN_DEFAULT; }, 3000);
   });
 }
 
