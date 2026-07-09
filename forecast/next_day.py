@@ -133,6 +133,29 @@ def build_forecasts(top_stocks: list[dict], regime: str = "unknown", calib: floa
             basis = "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
             if calibrated:
                 basis += f"（過去の答え合わせ実績に基づきレンジ幅を{calib:.2f}倍に自動補正済み）"
+
+            # 売買目安3点セット: 1日の実績振れ幅(σ)を単位に機械的に算出
+            unit = price * vol_d
+            entry = round(price - 0.5 * unit)
+            target = round(entry + 2.0 * unit)
+            stop = round(entry - 1.5 * unit)
+            hi3m = float(close.iloc[-60:].max())
+            lo3m = float(close.iloc[-60:].min())
+            plan = {
+                "entry": entry,
+                "target": target,
+                "stop": stop,
+                "rr": round((target - entry) / max(1, entry - stop), 2),
+                "hi3m": round(hi3m),
+                "lo3m": round(lo3m),
+                "basis": (
+                    f"1日の実績振れ幅σ={vol_d*100:.1f}%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出"
+                    f"（利益:損失の比率 {round((target-entry)/max(1,entry-stop),1)}:1）。"
+                    f"参考: 直近3ヶ月の高値{round(hi3m):,}円 / 安値{round(lo3m):,}円。"
+                    "この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+                ),
+            }
+
             s["forecast"] = {
                 "price": round(price, 1),
                 "rangeLow": round(price * (1 - vol_d)),
@@ -141,6 +164,7 @@ def build_forecasts(top_stocks: list[dict], regime: str = "unknown", calib: floa
                 "rangeHigh2": round(price * (1 + 2 * vol_d)),
                 "volDPct": round(vol_d * 100, 2),
                 "calibrated": calibrated,
+                "plan": plan,
                 "cond": cond,
                 "factors": _stock_factors(s),
                 "basis": basis,

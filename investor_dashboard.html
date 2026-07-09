@@ -252,6 +252,31 @@ body::before {
   background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.14);
 }
 .stock-range b { color: var(--accent2); }
+
+/* ── 売買目安3点セット ── */
+.plan-box {
+  margin-bottom: 10px; padding: 12px; border-radius: 12px;
+  background: var(--surface2); border: 1px solid var(--border);
+}
+.plan-box.active { border-color: rgba(16,185,129,0.3); background: rgba(16,185,129,0.05); }
+.plan-title { font-size: 11px; font-weight: 800; color: var(--text); margin-bottom: 10px; }
+.plan-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+.plan-cell {
+  text-align: center; padding: 10px 6px; border-radius: 10px;
+  border: 1px solid var(--border);
+}
+.plan-cell.buy    { background: rgba(59,130,246,0.08);  border-color: rgba(59,130,246,0.25); }
+.plan-cell.target { background: rgba(16,185,129,0.08);  border-color: rgba(16,185,129,0.25); }
+.plan-cell.stop   { background: rgba(239,68,68,0.08);   border-color: rgba(239,68,68,0.25); }
+.plan-label { font-size: 10px; font-weight: 700; margin-bottom: 4px; }
+.plan-cell.buy .plan-label    { color: var(--accent2); }
+.plan-cell.target .plan-label { color: var(--green); }
+.plan-cell.stop .plan-label   { color: var(--red); }
+.plan-price { font-size: 17px; font-weight: 800; line-height: 1; letter-spacing: -0.02em; }
+.plan-price span { font-size: 10px; font-weight: 600; margin-left: 1px; color: var(--muted); }
+.plan-sub { font-size: 9px; color: var(--muted); margin-top: 4px; line-height: 1.3; }
+.plan-note { font-size: 10px; color: var(--muted); line-height: 1.5; margin-top: 8px; }
+.plan-note b { color: var(--text); }
 .detail-toggle {
   width: 100%; padding: 9px; border: 1px solid var(--border);
   background: var(--surface2); color: var(--muted); font-size: 11px; font-weight: 700;
@@ -910,6 +935,38 @@ function toggleMarket(btn) {
   document.getElementById('market-arrow').textContent = c.classList.contains('open') ? '▲' : '▼';
 }
 
+// 売買目安3点セット（買い目安・利確・損切り）
+function renderPlanBox(s) {
+  const p = s.forecast && s.forecast.plan;
+  if (!p) return '';
+  const isBuy = (s.signal || '').includes('買い');
+  // 買いサイン以外は参考扱いで淡く
+  const cls = isBuy ? 'plan-box active' : 'plan-box';
+  const fmt = n => n.toLocaleString();
+  return `
+  <div class="${cls}">
+    <div class="plan-title">${isBuy ? '売買の目安（自動計算）' : '売買の目安（参考・今は買いサインなし）'}</div>
+    <div class="plan-row">
+      <div class="plan-cell buy">
+        <div class="plan-label">買い目安</div>
+        <div class="plan-price">${fmt(p.entry)}<span>円</span></div>
+        <div class="plan-sub">ここまで下がったら</div>
+      </div>
+      <div class="plan-cell target">
+        <div class="plan-label">利確目安</div>
+        <div class="plan-price">${fmt(p.target)}<span>円</span></div>
+        <div class="plan-sub">+${Math.round((p.target/p.entry-1)*100)}%で利益確定</div>
+      </div>
+      <div class="plan-cell stop">
+        <div class="plan-label">損切り</div>
+        <div class="plan-price">${fmt(p.stop)}<span>円</span></div>
+        <div class="plan-sub">${Math.round((p.stop/p.entry-1)*100)}%で撤退</div>
+      </div>
+    </div>
+    <div class="plan-note">利益：損失の比率 <b>${p.rr}：1</b>（損失1に対し利益${p.rr}を狙う設計）。直近3ヶ月 安値${fmt(p.lo3m)}〜高値${fmt(p.hi3m)}円。損切りは必ず守る前提の目安で、投資助言ではありません。</div>
+  </div>`;
+}
+
 // 銘柄リスト
 function renderStocks() {
   const el = document.getElementById('stock-list');
@@ -930,6 +987,7 @@ function renderStocks() {
       : '今は様子見。急がず次のサインを待つ局面。';
     const rangeLine = s.forecast
       ? `<div class="stock-range">明日の想定レンジ <b>${s.forecast.rangeLow.toLocaleString()}〜${s.forecast.rangeHigh.toLocaleString()}円</b></div>` : '';
+    const planBox = renderPlanBox(s);
     return `
     <div class="stock-card" id="stock-${s.ticker}" style="opacity:0;transform:translateY(16px)">
       <div class="stock-card-header">
@@ -948,6 +1006,7 @@ function renderStocks() {
         <span class="stock-oneliner">${oneLiner}</span>
       </div>
       ${rangeLine}
+      ${planBox}
       <button class="detail-toggle" onclick="toggleDetail(this)">数字で詳しく見る ▼</button>
       <div class="detail-collapse">
         <div class="stock-tags">
@@ -1022,6 +1081,13 @@ function renderAccuracy() {
     const col = a.marketHitRate >= 55 ? 'var(--green)' : 'var(--yellow)';
     rows += `<div>市場全体の方向予測の的中率: <span style="font-weight:800;color:${col}">${pct(a.marketHitRate)}</span>
       <span style="color:var(--muted)">（${a.resolvedMarketCount}件）</span></div>`;
+  }
+  if (a.planTargetRate != null && a.planDecided > 0) {
+    const col = a.planTargetRate >= 50 ? 'var(--green)' : 'var(--yellow)';
+    rows += `<div>売買目安の成績: 買い目安に到達後、<span style="font-weight:800;color:${col}">${pct(a.planTargetRate)}</span>が損切りより先に利確に到達
+      <span style="color:var(--muted)">（決着${a.planDecided}件）</span></div>`;
+  } else if (a.planEntered > 0) {
+    rows += `<div style="color:var(--muted)">売買目安: ${a.planEntered}件が買い目安に到達、決着待ち（利確/損切りの実績は蓄積中）</div>`;
   }
   el.style.display = 'block';
   el.innerHTML = `<div style="font-weight:800;margin-bottom:4px">予測の答え合わせ実績${a.sinceDate ? `（${a.sinceDate}〜）` : ''}</div>`
@@ -1302,9 +1368,13 @@ function buildCopyText() {
     text += `     総合評価:${s.score.toFixed(3)} 財務健全度:${s.f}/9 割安度PER:${s.per} 資産比較PBR:${s.pbr} 稼ぐ力ROE:${s.roe}%\n`;
     text += `     割安スコア:${s.value.toFixed(2)} 品質スコア:${s.quality.toFixed(2)} 勢いスコア:${s.momentum.toFixed(2)}\n`;
   });
-  text += '\n■ 売買シグナル\n';
+  text += '\n■ 売買シグナルと売買目安（買い目安/利確/損切り）\n';
   DATA.stocks.forEach(s => {
-    text += `  ${s.ticker} ${s.name}: ${s.signal} 買われすぎ指数RSI:${s.rsi} 信頼度:${s.conf}\n`;
+    text += `  ${s.ticker} ${s.name}: ${s.signal} RSI:${s.rsi} 信頼度:${s.conf}\n`;
+    const p = s.forecast && s.forecast.plan;
+    if (p) {
+      text += `     買い目安:${p.entry.toLocaleString()}円 / 利確:${p.target.toLocaleString()}円 / 損切り:${p.stop.toLocaleString()}円（利益:損失=${p.rr}:1）\n`;
+    }
   });
   text += `\n■ バックテスト結果（モメンタム成分のみの近似検証・先読みなし）\n`;
   text += `  年率リターン: ${DATA.backtest.annual}（同期間TOPIX: ${DATA.backtest.benchmark || '—'}）\n`;

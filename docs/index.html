@@ -252,6 +252,31 @@ body::before {
   background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.14);
 }
 .stock-range b { color: var(--accent2); }
+
+/* ── 売買目安3点セット ── */
+.plan-box {
+  margin-bottom: 10px; padding: 12px; border-radius: 12px;
+  background: var(--surface2); border: 1px solid var(--border);
+}
+.plan-box.active { border-color: rgba(16,185,129,0.3); background: rgba(16,185,129,0.05); }
+.plan-title { font-size: 11px; font-weight: 800; color: var(--text); margin-bottom: 10px; }
+.plan-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+.plan-cell {
+  text-align: center; padding: 10px 6px; border-radius: 10px;
+  border: 1px solid var(--border);
+}
+.plan-cell.buy    { background: rgba(59,130,246,0.08);  border-color: rgba(59,130,246,0.25); }
+.plan-cell.target { background: rgba(16,185,129,0.08);  border-color: rgba(16,185,129,0.25); }
+.plan-cell.stop   { background: rgba(239,68,68,0.08);   border-color: rgba(239,68,68,0.25); }
+.plan-label { font-size: 10px; font-weight: 700; margin-bottom: 4px; }
+.plan-cell.buy .plan-label    { color: var(--accent2); }
+.plan-cell.target .plan-label { color: var(--green); }
+.plan-cell.stop .plan-label   { color: var(--red); }
+.plan-price { font-size: 17px; font-weight: 800; line-height: 1; letter-spacing: -0.02em; }
+.plan-price span { font-size: 10px; font-weight: 600; margin-left: 1px; color: var(--muted); }
+.plan-sub { font-size: 9px; color: var(--muted); margin-top: 4px; line-height: 1.3; }
+.plan-note { font-size: 10px; color: var(--muted); line-height: 1.5; margin-top: 8px; }
+.plan-note b { color: var(--text); }
 .detail-toggle {
   width: 100%; padding: 9px; border: 1px solid var(--border);
   background: var(--surface2); color: var(--muted); font-size: 11px; font-weight: 700;
@@ -701,25 +726,25 @@ body::before {
 gsap.registerPlugin(ScrollTrigger);
 
 const DATA = {
-  "updated": "2026年07月09日 06:26",
-  "updatedAtMs": 1783578388594,
+  "updated": "2026年07月10日 07:13",
+  "updatedAtMs": 1783635215403,
   "fetched": 113,
   "universeTotal": 116,
   "market": {
     "regime": "bull",
     "label": "上昇基調",
     "desc": "市場全体（TOPIX）は200日移動平均の上で推移しており、比較的良好な地合いです。",
-    "priceVsMa200Pct": 11.6,
+    "priceVsMa200Pct": 11.7,
     "source": "TOPIX連動ETF(1306.T)終値と200日移動平均から判定"
   },
   "marketOutlook": {
-    "spxChangePct": -0.28,
-    "spxDate": "2026-07-08",
-    "usdjpy": 162.26,
-    "usdjpyChangePct": -0.07,
-    "condition": "米S&P500が直近下落",
-    "topixUpRate": 41.3,
-    "n": 208,
+    "spxChangePct": 0.81,
+    "spxDate": "2026-07-09",
+    "usdjpy": 162.38,
+    "usdjpyChangePct": 0.01,
+    "condition": "米S&P500が直近上昇",
+    "topixUpRate": 64.3,
+    "n": 277,
     "regime": "bull",
     "basis": "過去2年で「米国市場が上昇/下落した翌営業日に東京(TOPIX ETF)が上昇した割合」を実際に集計。統計的傾向であり将来を保証しません。出典: Yahoo Finance価格データ。"
   },
@@ -732,17 +757,21 @@ const DATA = {
     "leanDownActualUp": 100.0,
     "leanDownN": 1,
     "marketHitRate": 0.0,
+    "planEntered": 0,
+    "planDecided": 0,
+    "planTargetRate": null,
+    "planExpired": 0,
     "sinceDate": "2026-07-06",
     "note": "予測と実際の答え合わせを毎営業日ぶん蓄積した実績です。件数が増えるほど信頼度が上がります。将来を保証するものではありません。"
   },
   "backtest": {
     "annual": "+31.7%",
-    "benchmark": "+28.4%",
-    "sharpe": "1.06",
+    "benchmark": "+28.5%",
+    "sharpe": "1.05",
     "dd": "-17.3%",
     "winrate": "60.9%",
     "months": "23ヶ月",
-    "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+28.4%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
+    "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+28.5%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
   },
   "stocks": [
     {
@@ -754,11 +783,11 @@ const DATA = {
       "per": 19.0,
       "pbr": 0.35,
       "roe": 7.1,
-      "value": 0.634,
+      "value": 0.633,
       "quality": 0.306,
-      "momentum": 0.166,
+      "momentum": 0.168,
       "signal": "様子見",
-      "rsi": 70.9,
+      "rsi": 71.6,
       "conf": "低",
       "strategy": [
         "dividend"
@@ -775,6 +804,15 @@ const DATA = {
         "rangeHigh2": 96436,
         "volDPct": 0.92,
         "calibrated": false,
+        "plan": {
+          "entry": 94366,
+          "target": 96104,
+          "stop": 93063,
+          "rr": 1.33,
+          "hi3m": 98947,
+          "lo3m": 89659,
+          "basis": "1日の実績振れ幅σ=0.9%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値98,947円 / 安値89,659円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
         "cond": {
           "upRate": 47.6,
           "n": 82,
@@ -783,7 +821,7 @@ const DATA = {
         },
         "factors": [
           {
-            "label": "RSI 70.9（買われすぎ圏・反落しやすい傾向）",
+            "label": "RSI 71.6（買われすぎ圏・反落しやすい傾向）",
             "dir": "-"
           },
           {
@@ -816,7 +854,7 @@ const DATA = {
       "roe": -9.9,
       "value": 1.0,
       "quality": 0.074,
-      "momentum": 0.098,
+      "momentum": 0.099,
       "signal": "買い",
       "rsi": 34.0,
       "conf": "中",
@@ -825,16 +863,25 @@ const DATA = {
       ],
       "dividend_yield": 0.0,
       "volatility": 0.4234,
-      "short_ratio": 7.69,
+      "short_ratio": 3.5,
       "regime_adjusted": false,
       "forecast": {
-        "price": 304.6,
+        "price": 304.5,
         "rangeLow": 295,
         "rangeHigh": 314,
         "rangeLow2": 286,
         "rangeHigh2": 323,
         "volDPct": 3.1,
         "calibrated": false,
+        "plan": {
+          "entry": 300,
+          "target": 319,
+          "stop": 286,
+          "rr": 1.36,
+          "hi3m": 399,
+          "lo3m": 300,
+          "basis": "1日の実績振れ幅σ=3.1%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.4:1）。参考: 直近3ヶ月の高値399円 / 安値300円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
         "cond": {
           "upRate": 52.2,
           "n": 182,
@@ -843,7 +890,7 @@ const DATA = {
         },
         "factors": [
           {
-            "label": "空売り残高7.69%（売り圧力・踏み上げ両方の要因）",
+            "label": "空売り残高3.5%（売り圧力・踏み上げ両方の要因）",
             "dir": "-"
           }
         ],
@@ -855,7 +902,7 @@ const DATA = {
           "title": "日産自動車(株)【7201】：今の株価の理由は？値動きの背景をAIが解説",
           "source": "Yahoo!ファイナンス",
           "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1Xakk0RENsUE81UDNRR1l0SEFiekF4NktsSHRjZlcyemhIWnFKRTBlNHdDZkpPc3FkNmluQjdONzZOaW92T1JLZ2V2WV9hRVBkZTlZeklXWFR6ZmJwSFU4?oc=5",
-          "pubDate": "Wed, 08 Jul 2026 06:55:10 GMT",
+          "pubDate": "Thu, 09 Jul 2026 06:55:23 GMT",
           "sentiment": "neu",
           "theme": "AI"
         }
@@ -867,30 +914,39 @@ const DATA = {
       "name": "アドバンテスト",
       "score": 0.427,
       "f": 6,
-      "per": 56.8,
-      "pbr": 26.67,
+      "per": 56.6,
+      "pbr": 26.59,
       "roe": 57.6,
       "value": 0.0,
       "quality": 1.0,
-      "momentum": 0.371,
+      "momentum": 0.37,
       "signal": "強い買い",
-      "rsi": 43.3,
+      "rsi": 43.0,
       "conf": "高",
       "strategy": [
         "swing"
       ],
       "dividend_yield": 0.2,
-      "volatility": 0.7444,
+      "volatility": 0.7438,
       "short_ratio": null,
       "regime_adjusted": false,
       "forecast": {
-        "price": 29210.0,
-        "rangeLow": 27946,
-        "rangeHigh": 30474,
-        "rangeLow2": 26682,
-        "rangeHigh2": 31738,
+        "price": 29160.0,
+        "rangeLow": 27898,
+        "rangeHigh": 30422,
+        "rangeLow2": 26637,
+        "rangeHigh2": 31683,
         "volDPct": 4.33,
         "calibrated": false,
+        "plan": {
+          "entry": 28529,
+          "target": 31052,
+          "stop": 26636,
+          "rr": 1.33,
+          "hi3m": 35900,
+          "lo3m": 24880,
+          "basis": "1日の実績振れ幅σ=4.3%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値35,900円 / 安値24,880円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
         "cond": {
           "upRate": 56.7,
           "n": 180,
@@ -918,30 +974,39 @@ const DATA = {
       "name": "ラクス",
       "score": 0.394,
       "f": 5,
-      "per": 28.0,
-      "pbr": 14.03,
+      "per": 27.9,
+      "pbr": 14.0,
       "roe": 55.4,
       "value": 0.012,
       "quality": 0.969,
-      "momentum": 0.187,
+      "momentum": 0.186,
       "signal": "様子見",
-      "rsi": 69.2,
+      "rsi": 68.9,
       "conf": "低",
       "strategy": [
         "swing"
       ],
       "dividend_yield": 0.8,
-      "volatility": 0.6026,
-      "short_ratio": 3.81,
+      "volatility": 0.6025,
+      "short_ratio": 2.26,
       "regime_adjusted": false,
       "forecast": {
-        "price": 1031.5,
-        "rangeLow": 1002,
-        "rangeHigh": 1061,
-        "rangeLow2": 973,
-        "rangeHigh2": 1090,
+        "price": 1029.0,
+        "rangeLow": 1000,
+        "rangeHigh": 1058,
+        "rangeLow2": 971,
+        "rangeHigh2": 1087,
         "volDPct": 2.82,
         "calibrated": false,
+        "plan": {
+          "entry": 1014,
+          "target": 1072,
+          "stop": 970,
+          "rr": 1.32,
+          "hi3m": 1052,
+          "lo3m": 753,
+          "basis": "1日の実績振れ幅σ=2.8%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値1,052円 / 安値753円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
         "cond": {
           "upRate": 48.0,
           "n": 173,
@@ -950,7 +1015,7 @@ const DATA = {
         },
         "factors": [
           {
-            "label": "空売り残高3.81%（売り圧力・踏み上げ両方の要因）",
+            "label": "空売り残高2.26%（売り圧力・踏み上げ両方の要因）",
             "dir": "-"
           }
         ],
@@ -981,46 +1046,50 @@ const DATA = {
       "quality": 0.248,
       "momentum": 0.121,
       "signal": "買い",
-      "rsi": 51.2,
+      "rsi": 51.3,
       "conf": "中",
       "strategy": [
         "dividend"
       ],
       "dividend_yield": 4.9,
-      "volatility": 0.2724,
-      "short_ratio": 4.53,
+      "volatility": 0.2723,
+      "short_ratio": 1.42,
       "regime_adjusted": false,
       "forecast": {
-        "price": 1619.5,
+        "price": 1620.0,
         "rangeLow": 1593,
-        "rangeHigh": 1646,
-        "rangeLow2": 1566,
+        "rangeHigh": 1647,
+        "rangeLow2": 1567,
         "rangeHigh2": 1673,
         "volDPct": 1.64,
         "calibrated": false,
+        "plan": {
+          "entry": 1607,
+          "target": 1660,
+          "stop": 1567,
+          "rr": 1.32,
+          "hi3m": 1836,
+          "lo3m": 1546,
+          "basis": "1日の実績振れ幅σ=1.6%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値1,836円 / 安値1,546円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
         "cond": {
           "upRate": 49.1,
           "n": 171,
           "condition": "RSI中立圏×5日上昇局面",
           "note": null
         },
-        "factors": [
-          {
-            "label": "空売り残高4.53%（売り圧力・踏み上げ両方の要因）",
-            "dir": "-"
-          }
-        ],
+        "factors": [],
         "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
       },
       "yutai": null,
       "news": [
         {
-          "title": "ＪＦＥホールディングス(株)【5411】：今の株価の理由は？値動きの背景をAIが解説",
+          "title": "ＪＦＥホールディングス(株)【5411】：板気配",
           "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1jNnY0VE9Ocm5YY1NwVkVsdW82bUtBdWE5S3U2ei0tak14OXhZeU5xeVRXVXR1anlxWW11QkRpMmtqNDUwYVkyVkJhTUVGSnpyZ2k4U2ppS2FpcDR5STdn?oc=5",
-          "pubDate": "Wed, 08 Jul 2026 06:57:32 GMT",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB5eENqNUQ5MzBCdUxTU3ZEV3dXOV9XZzh5TktJTEppb2dvWHQ0STBjMzU5N2tTeVB2bUt3X0ZUZUNGV2szSzlOeWdycll1eXZMOUYzVXJFcm9kU2JEVXY4?oc=5",
+          "pubDate": "Fri, 03 Jul 2026 07:00:00 GMT",
           "sentiment": "neu",
-          "theme": "AI"
+          "theme": "その他"
         }
       ]
     },
@@ -1030,30 +1099,39 @@ const DATA = {
       "name": "中部電力",
       "score": 0.387,
       "f": 5,
-      "per": 10.7,
+      "per": 10.8,
       "pbr": 0.78,
       "roe": 7.7,
-      "value": 0.296,
+      "value": 0.295,
       "quality": 0.315,
-      "momentum": 0.382,
+      "momentum": 0.385,
       "signal": "売り",
-      "rsi": 89.5,
+      "rsi": 89.7,
       "conf": "中",
       "strategy": [
         "swing"
       ],
       "dividend_yield": 2.2,
-      "volatility": 0.3023,
+      "volatility": 0.3024,
       "short_ratio": null,
       "regime_adjusted": false,
       "forecast": {
-        "price": 3238.0,
-        "rangeLow": 3182,
-        "rangeHigh": 3294,
-        "rangeLow2": 3126,
-        "rangeHigh2": 3350,
+        "price": 3250.0,
+        "rangeLow": 3194,
+        "rangeHigh": 3306,
+        "rangeLow2": 3138,
+        "rangeHigh2": 3362,
         "volDPct": 1.72,
         "calibrated": false,
+        "plan": {
+          "entry": 3222,
+          "target": 3334,
+          "stop": 3138,
+          "rr": 1.33,
+          "hi3m": 3250,
+          "lo3m": 2572,
+          "basis": "1日の実績振れ幅σ=1.7%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値3,250円 / 安値2,572円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
         "cond": {
           "upRate": 53.8,
           "n": 80,
@@ -1062,7 +1140,7 @@ const DATA = {
         },
         "factors": [
           {
-            "label": "RSI 89.5（買われすぎ圏・反落しやすい傾向）",
+            "label": "RSI 89.7（買われすぎ圏・反落しやすい傾向）",
             "dir": "-"
           }
         ],
@@ -1073,8 +1151,8 @@ const DATA = {
         {
           "title": "中部電力(株)【9502】：今の株価の理由は？値動きの背景をAIが解説",
           "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE92TXdkTGNzVFowbGZoU1FhdzBJUWg0a2I2RFAwTzItY0JwelhULUNaQUtXelNvb3NTN3lSZ2lDLW5sellmN3RlcFg3ZHl2Y0JTSEVvNWtZVURCTE15X2c0?oc=5",
-          "pubDate": "Tue, 07 Jul 2026 07:03:09 GMT",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1OMjJONVk3eS1ZbnZFc3RYc2gtbnVjMVlnWVdoUktIZWRTOEJyMzhkZmFRMlRVQlZkZzdkSGNNeEdBZHlMcUdvcFgwWHVkTFRQYkJ6ZWFDaHltSFAyWnhB?oc=5",
+          "pubDate": "Thu, 09 Jul 2026 07:08:50 GMT",
           "sentiment": "neu",
           "theme": "AI"
         }
@@ -1100,7 +1178,7 @@ const DATA = {
       ],
       "dividend_yield": 0.0,
       "volatility": 0.5453,
-      "short_ratio": 0.49,
+      "short_ratio": 1.32,
       "regime_adjusted": false,
       "forecast": {
         "price": 479.1,
@@ -1110,6 +1188,15 @@ const DATA = {
         "rangeHigh2": 510,
         "volDPct": 3.19,
         "calibrated": false,
+        "plan": {
+          "entry": 471,
+          "target": 502,
+          "stop": 448,
+          "rr": 1.35,
+          "hi3m": 651,
+          "lo3m": 455,
+          "basis": "1日の実績振れ幅σ=3.2%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値651円 / 安値455円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
         "cond": {
           "upRate": 47.6,
           "n": 166,
@@ -1125,7 +1212,7 @@ const DATA = {
           "title": "東京電力ホールディングス(株)【9501】：今の株価の理由は？値動きの背景をAIが解説",
           "source": "Yahoo!ファイナンス",
           "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1TeEloR3d0c1dTUFZfODhnbWtmM0JraUxPb2hCQUlhSGE3Z0xkVllmQTR1ZXotYWV5eXg5NGFSRGlaakJYMHBJQUNST1lRb09NWUpBMk91WW43MVRUTzZJ?oc=5",
-          "pubDate": "Wed, 08 Jul 2026 06:53:54 GMT",
+          "pubDate": "Thu, 09 Jul 2026 06:54:05 GMT",
           "sentiment": "neu",
           "theme": "AI"
         }
@@ -1142,7 +1229,7 @@ const DATA = {
       "roe": 29.3,
       "value": 0.006,
       "quality": 0.611,
-      "momentum": 0.544,
+      "momentum": 0.545,
       "signal": "強い買い",
       "rsi": 44.6,
       "conf": "高",
@@ -1154,30 +1241,44 @@ const DATA = {
       "short_ratio": null,
       "regime_adjusted": false,
       "forecast": {
-        "price": 70910.0,
-        "rangeLow": 68399,
-        "rangeHigh": 73421,
-        "rangeLow2": 65887,
-        "rangeHigh2": 75933,
+        "price": 71060.0,
+        "rangeLow": 68543,
+        "rangeHigh": 73577,
+        "rangeLow2": 66025,
+        "rangeHigh2": 76095,
         "volDPct": 3.54,
         "calibrated": false,
+        "plan": {
+          "entry": 69801,
+          "target": 74836,
+          "stop": 66025,
+          "rr": 1.33,
+          "hi3m": 78800,
+          "lo3m": 42460,
+          "basis": "1日の実績振れ幅σ=3.5%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値78,800円 / 安値42,460円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
         "cond": {
           "upRate": 53.7,
           "n": 164,
           "condition": "RSI中立圏×5日下落局面",
           "note": null
         },
-        "factors": [],
+        "factors": [
+          {
+            "label": "直近ニュースがポジティブ寄り（1件/簡易判定）",
+            "dir": "+"
+          }
+        ],
         "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
       },
       "yutai": null,
       "news": [
         {
-          "title": "東京エレクトロン(株)【8035】：現物信用売買内訳時系列",
-          "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5qWk0wczNvNHgxVzdEbklLVHpkaWpQRGhGelNtdEpvZEh6M1N1dkNSYnBMMnhwUm5oYnhyWnN1LU1Pc1ZtVEdhRHMzcTd5QW9BRnp1dEZ6eEprME5FZkNz?oc=5",
-          "pubDate": "Fri, 03 Jul 2026 07:00:00 GMT",
-          "sentiment": "neu",
+          "title": "東京エレクトロン株価上場来高値 米AMATの急伸で連想買い",
+          "source": "日本経済新聞",
+          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE8ycWhIR181MjZYT0hJNFhoel9lYjBmVjY5S1JMMXVOUU90SU1kSzRiMldLdUN6MnFsaFYwVFNnRHh0RFZ5Sm5ISWV5aC10RG1MV1hXM21lQlBQSURmaWFQV3A2MF9QUkdOMEd1Rg?oc=5",
+          "pubDate": "Tue, 30 Jun 2026 07:00:00 GMT",
+          "sentiment": "pos",
           "theme": "その他"
         }
       ]
@@ -1188,30 +1289,39 @@ const DATA = {
       "name": "レーザーテック",
       "score": 0.37,
       "f": 5,
-      "per": 44.7,
-      "pbr": 17.16,
+      "per": 44.5,
+      "pbr": 17.1,
       "roe": 44.1,
       "value": 0.006,
       "quality": 0.814,
-      "momentum": 0.363,
+      "momentum": 0.362,
       "signal": "強い買い",
-      "rsi": 28.4,
+      "rsi": 28.0,
       "conf": "高",
       "strategy": [
         "swing"
       ],
       "dividend_yield": 0.8,
-      "volatility": 0.7533,
+      "volatility": 0.753,
       "short_ratio": null,
       "regime_adjusted": false,
       "forecast": {
-        "price": 43130.0,
-        "rangeLow": 41279,
-        "rangeHigh": 44981,
-        "rangeLow2": 39429,
-        "rangeHigh2": 46831,
+        "price": 43020.0,
+        "rangeLow": 41174,
+        "rangeHigh": 44866,
+        "rangeLow2": 39329,
+        "rangeHigh2": 46711,
         "volDPct": 4.29,
         "calibrated": false,
+        "plan": {
+          "entry": 42097,
+          "target": 45788,
+          "stop": 39328,
+          "rr": 1.33,
+          "hi3m": 57263,
+          "lo3m": 35510,
+          "basis": "1日の実績振れ幅σ=4.3%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値57,263円 / 安値35,510円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
         "cond": {
           "upRate": 46.3,
           "n": 67,
@@ -1220,7 +1330,7 @@ const DATA = {
         },
         "factors": [
           {
-            "label": "RSI 28.4（売られすぎ圏・反発しやすい傾向）",
+            "label": "RSI 28.0（売られすぎ圏・反発しやすい傾向）",
             "dir": "+"
           }
         ],
@@ -1232,7 +1342,7 @@ const DATA = {
           "title": "レーザーテック(株)【6920】：今の株価の理由は？値動きの背景をAIが解説",
           "source": "Yahoo!ファイナンス",
           "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5GdUcyS2tma3g1cjRqN0l0Q3Z0ZDhLZk5RcmI5T2ZpcloyN0d4Z2pTdVZHMVl6dEV2ZTI4QTR2NlozREhvN2RHOFJFRUdPWklMZUExZXZZMUpoTFVwVmZj?oc=5",
-          "pubDate": "Thu, 09 Jul 2026 02:54:03 GMT",
+          "pubDate": "Thu, 09 Jul 2026 06:54:38 GMT",
           "sentiment": "neu",
           "theme": "AI"
         }
@@ -1245,13 +1355,13 @@ const DATA = {
       "score": 0.37,
       "f": 5,
       "per": 26.6,
-      "pbr": 6.35,
+      "pbr": 6.34,
       "roe": 33.0,
       "value": 0.031,
       "quality": 0.661,
-      "momentum": 0.361,
+      "momentum": 0.362,
       "signal": "様子見",
-      "rsi": 73.1,
+      "rsi": 72.8,
       "conf": "低",
       "strategy": [
         "swing"
@@ -1261,13 +1371,22 @@ const DATA = {
       "short_ratio": null,
       "regime_adjusted": false,
       "forecast": {
-        "price": 4622.0,
-        "rangeLow": 4472,
-        "rangeHigh": 4772,
-        "rangeLow2": 4321,
-        "rangeHigh2": 4923,
+        "price": 4617.0,
+        "rangeLow": 4467,
+        "rangeHigh": 4767,
+        "rangeLow2": 4316,
+        "rangeHigh2": 4918,
         "volDPct": 3.25,
         "calibrated": false,
+        "plan": {
+          "entry": 4542,
+          "target": 4843,
+          "stop": 4317,
+          "rr": 1.34,
+          "hi3m": 4665,
+          "lo3m": 3602,
+          "basis": "1日の実績振れ幅σ=3.3%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値4,665円 / 安値3,602円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
         "cond": {
           "upRate": 46.9,
           "n": 64,
@@ -1276,7 +1395,7 @@ const DATA = {
         },
         "factors": [
           {
-            "label": "RSI 73.1（買われすぎ圏・反落しやすい傾向）",
+            "label": "RSI 72.8（買われすぎ圏・反落しやすい傾向）",
             "dir": "-"
           }
         ],
@@ -1288,7 +1407,7 @@ const DATA = {
           "title": "(株)メルカリ【4385】：今の株価の理由は？値動きの背景をAIが解説",
           "source": "Yahoo!ファイナンス",
           "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5lcVVrWExfWFdXQ3pCVWFPN2t6eGZFYTlWbW1ySGsyYm96MU9lSWpxTW1SRm5PcUVRWi1VQ2RQMkhMNU5vNEhBSm81S1Jka1BEZlpsbzhrbl9DQmRRbTcw?oc=5",
-          "pubDate": "Wed, 08 Jul 2026 07:05:58 GMT",
+          "pubDate": "Thu, 09 Jul 2026 07:08:14 GMT",
           "sentiment": "neu",
           "theme": "AI"
         }
@@ -1304,17 +1423,17 @@ const DATA = {
     {
       "type": "info",
       "title": "空売り残高: マネーフォワード (3994)",
-      "desc": "開示合計11.90%・前回比横ばい（4件・出典JPX 07/08時点）"
+      "desc": "開示合計11.95%・前回比横ばい（4件・出典JPX 07/09時点）"
     },
     {
       "type": "warn",
-      "title": "空売り残高: 日産自動車 (7201)",
-      "desc": "開示合計7.69%・前回比増加中（5件・出典JPX 07/08時点）"
+      "title": "空売り残高: メドレー (4480)",
+      "desc": "開示合計6.47%・前回比増加中（3件・出典JPX 07/09時点）"
     },
     {
       "type": "info",
-      "title": "空売り残高: カバー (5253)",
-      "desc": "開示合計7.62%・前回比減少中（6件・出典JPX 07/08時点）"
+      "title": "空売り残高: 川崎汽船 (9107)",
+      "desc": "開示合計6.27%・前回比減少中（3件・出典JPX 07/09時点）"
     },
     {
       "type": "warn",
@@ -1324,7 +1443,12 @@ const DATA = {
     {
       "type": "warn",
       "title": "入替候補OUT: ファナック",
-      "desc": "スコア下位15% (score=0.234)"
+      "desc": "スコア下位15% (score=0.235)"
+    },
+    {
+      "type": "warn",
+      "title": "入替候補OUT: ネクソン",
+      "desc": "スコア下位15% (score=0.235)"
     },
     {
       "type": "warn",
@@ -1333,23 +1457,23 @@ const DATA = {
     }
   ],
   "flow": {
-    "week": "06/22～06/26",
+    "week": "06/29～07/03",
     "flows": [
       {
         "label": "海外投資家",
-        "value": -12086
+        "value": 3666
       },
       {
         "label": "個人",
-        "value": 9116
+        "value": -6375
       },
       {
         "label": "信託銀行",
-        "value": 292
+        "value": 87
       },
       {
         "label": "投資信託",
-        "value": 3271
+        "value": 646
       }
     ],
     "source": "JPX 投資部門別売買状況（東証プライム・週次・金額ベース）"
@@ -1364,8 +1488,8 @@ const DATA = {
     },
     {
       "theme": "その他",
-      "mentions": 3,
-      "pos": 1,
+      "mentions": 4,
+      "pos": 2,
       "neg": 0,
       "prevMentions": 3
     }
@@ -1526,6 +1650,38 @@ function toggleMarket(btn) {
   document.getElementById('market-arrow').textContent = c.classList.contains('open') ? '▲' : '▼';
 }
 
+// 売買目安3点セット（買い目安・利確・損切り）
+function renderPlanBox(s) {
+  const p = s.forecast && s.forecast.plan;
+  if (!p) return '';
+  const isBuy = (s.signal || '').includes('買い');
+  // 買いサイン以外は参考扱いで淡く
+  const cls = isBuy ? 'plan-box active' : 'plan-box';
+  const fmt = n => n.toLocaleString();
+  return `
+  <div class="${cls}">
+    <div class="plan-title">${isBuy ? '売買の目安（自動計算）' : '売買の目安（参考・今は買いサインなし）'}</div>
+    <div class="plan-row">
+      <div class="plan-cell buy">
+        <div class="plan-label">買い目安</div>
+        <div class="plan-price">${fmt(p.entry)}<span>円</span></div>
+        <div class="plan-sub">ここまで下がったら</div>
+      </div>
+      <div class="plan-cell target">
+        <div class="plan-label">利確目安</div>
+        <div class="plan-price">${fmt(p.target)}<span>円</span></div>
+        <div class="plan-sub">+${Math.round((p.target/p.entry-1)*100)}%で利益確定</div>
+      </div>
+      <div class="plan-cell stop">
+        <div class="plan-label">損切り</div>
+        <div class="plan-price">${fmt(p.stop)}<span>円</span></div>
+        <div class="plan-sub">${Math.round((p.stop/p.entry-1)*100)}%で撤退</div>
+      </div>
+    </div>
+    <div class="plan-note">利益：損失の比率 <b>${p.rr}：1</b>（損失1に対し利益${p.rr}を狙う設計）。直近3ヶ月 安値${fmt(p.lo3m)}〜高値${fmt(p.hi3m)}円。損切りは必ず守る前提の目安で、投資助言ではありません。</div>
+  </div>`;
+}
+
 // 銘柄リスト
 function renderStocks() {
   const el = document.getElementById('stock-list');
@@ -1546,6 +1702,7 @@ function renderStocks() {
       : '今は様子見。急がず次のサインを待つ局面。';
     const rangeLine = s.forecast
       ? `<div class="stock-range">明日の想定レンジ <b>${s.forecast.rangeLow.toLocaleString()}〜${s.forecast.rangeHigh.toLocaleString()}円</b></div>` : '';
+    const planBox = renderPlanBox(s);
     return `
     <div class="stock-card" id="stock-${s.ticker}" style="opacity:0;transform:translateY(16px)">
       <div class="stock-card-header">
@@ -1564,6 +1721,7 @@ function renderStocks() {
         <span class="stock-oneliner">${oneLiner}</span>
       </div>
       ${rangeLine}
+      ${planBox}
       <button class="detail-toggle" onclick="toggleDetail(this)">数字で詳しく見る ▼</button>
       <div class="detail-collapse">
         <div class="stock-tags">
@@ -1638,6 +1796,13 @@ function renderAccuracy() {
     const col = a.marketHitRate >= 55 ? 'var(--green)' : 'var(--yellow)';
     rows += `<div>市場全体の方向予測の的中率: <span style="font-weight:800;color:${col}">${pct(a.marketHitRate)}</span>
       <span style="color:var(--muted)">（${a.resolvedMarketCount}件）</span></div>`;
+  }
+  if (a.planTargetRate != null && a.planDecided > 0) {
+    const col = a.planTargetRate >= 50 ? 'var(--green)' : 'var(--yellow)';
+    rows += `<div>売買目安の成績: 買い目安に到達後、<span style="font-weight:800;color:${col}">${pct(a.planTargetRate)}</span>が損切りより先に利確に到達
+      <span style="color:var(--muted)">（決着${a.planDecided}件）</span></div>`;
+  } else if (a.planEntered > 0) {
+    rows += `<div style="color:var(--muted)">売買目安: ${a.planEntered}件が買い目安に到達、決着待ち（利確/損切りの実績は蓄積中）</div>`;
   }
   el.style.display = 'block';
   el.innerHTML = `<div style="font-weight:800;margin-bottom:4px">予測の答え合わせ実績${a.sinceDate ? `（${a.sinceDate}〜）` : ''}</div>`
@@ -1918,9 +2083,13 @@ function buildCopyText() {
     text += `     総合評価:${s.score.toFixed(3)} 財務健全度:${s.f}/9 割安度PER:${s.per} 資産比較PBR:${s.pbr} 稼ぐ力ROE:${s.roe}%\n`;
     text += `     割安スコア:${s.value.toFixed(2)} 品質スコア:${s.quality.toFixed(2)} 勢いスコア:${s.momentum.toFixed(2)}\n`;
   });
-  text += '\n■ 売買シグナル\n';
+  text += '\n■ 売買シグナルと売買目安（買い目安/利確/損切り）\n';
   DATA.stocks.forEach(s => {
-    text += `  ${s.ticker} ${s.name}: ${s.signal} 買われすぎ指数RSI:${s.rsi} 信頼度:${s.conf}\n`;
+    text += `  ${s.ticker} ${s.name}: ${s.signal} RSI:${s.rsi} 信頼度:${s.conf}\n`;
+    const p = s.forecast && s.forecast.plan;
+    if (p) {
+      text += `     買い目安:${p.entry.toLocaleString()}円 / 利確:${p.target.toLocaleString()}円 / 損切り:${p.stop.toLocaleString()}円（利益:損失=${p.rr}:1）\n`;
+    }
   });
   text += `\n■ バックテスト結果（モメンタム成分のみの近似検証・先読みなし）\n`;
   text += `  年率リターン: ${DATA.backtest.annual}（同期間TOPIX: ${DATA.backtest.benchmark || '—'}）\n`;
