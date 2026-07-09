@@ -9,8 +9,8 @@ try:
 except Exception:
     pass
 
-from data.universe import UNIVERSE
-from data.fetch_prices import fetch_universe
+from data.universe import UNIVERSE, MASTER, EXTRA_HOLDINGS
+from data.fetch_prices import fetch_universe, fetch_stock_data
 from data.edinet import fetch_edinet_alerts
 from data.news import fetch_news_for_ticker, build_theme_trends
 from data.market_regime import fetch_market_regime
@@ -25,12 +25,52 @@ from forecast.tracker import (
 )
 from reports.json_export import export_dashboard_json
 
-# 一部銘柄の株主優待情報（手動メンテナンス。yfinanceには優待情報が無いため）
+# 一部銘柄の株主優待情報（手動メンテナンス。yfinanceには優待情報が無いため。要IR確認）
 YUTAI_MAP = {
     "7203.T": "なし（株主優待は廃止）",
     "8801.T": "保有株数に応じ宿泊優待割引券（要IR確認・手動更新）",
     "9432.T": "なし（過去はdポイント優待）",
+    "2181.T": "なし（パーソルHDは株主優待制度なし・配当のみ）",
+    "2914.T": "100株以上でJT関連商品の詰め合わせ（年1回・要IR確認）",
+    "8591.T": "2024年に株主優待は廃止済み",
+    "9433.T": "100株以上でカタログギフト等（長期保有優遇・要IR確認）",
+    "7974.T": "なし（任天堂は株主優待制度なし）",
+    "9101.T": "なし（日本郵船は株主優待制度なし）",
 }
+
+
+def _build_stock_master(fetched_stocks: list[dict]) -> list[dict]:
+    """持ち株ページ用の銘柄マスタを作る。
+
+    UNIVERSEで取得済みの銘柄はその実データを再利用し、EXTRA_HOLDINGSの未取得分だけ個別取得。
+    各エントリ: code, name, price, divPerShare, exDivDate, dividendYield, yutai。
+    取得できなかったフィールドはnull（架空値は入れない）。
+    """
+    by_code = {s["ticker"]: s for s in fetched_stocks}
+    master = []
+    seen = set()
+    for code, name in MASTER:
+        if code in seen:
+            continue
+        seen.add(code)
+        s = by_code.get(code)
+        if s is None:
+            # ユニバース外（EXTRA）で未取得のものだけ個別に取りに行く
+            try:
+                s = fetch_stock_data(code, name)
+            except Exception:
+                s = None
+        entry = {
+            "code": code,
+            "name": name,
+            "price": round(s["price"], 1) if s and s.get("price") else None,
+            "divPerShare": s.get("div_per_share") if s else None,
+            "exDivDate": s.get("ex_div_date") if s else None,
+            "dividendYield": round(s.get("dividend_yield", 0), 2) if s and s.get("dividend_yield") else None,
+            "yutai": YUTAI_MAP.get(code),
+        }
+        master.append(entry)
+    return master
 
 
 def main():
@@ -208,6 +248,11 @@ def main():
     except Exception as e:
         print(f"  [警告] 見通し・答え合わせに失敗しました（表示なしになります）: {e}")
 
+    # 持ち株ページ用の銘柄マスタ（オートコンプリート・価格/配当/優待の自動反映用）
+    print("\n銘柄マスタ生成中（持ち株ページ用）...")
+    stock_master = _build_stock_master(stocks)
+    print(f"  マスタ登録: {len(stock_master)}銘柄")
+
     print("\n8/8 JSON出力中...")
     try:
         path = export_dashboard_json(
@@ -219,6 +264,7 @@ def main():
             market=market,
             market_outlook=outlook,
             accuracy=accuracy,
+            stock_master=stock_master,
             fetched_count=len(stocks),
             universe_total=len(UNIVERSE),
         )

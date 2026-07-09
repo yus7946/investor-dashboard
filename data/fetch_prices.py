@@ -2,6 +2,8 @@
 
 取得に失敗した銘柄は表示対象から除外する（架空データでの補完は行わない）。
 """
+from datetime import datetime, timezone
+
 import pandas as pd
 
 try:
@@ -45,6 +47,18 @@ def fetch_stock_data(ticker: str, name: str) -> dict | None:
         if dy > 20:
             dy /= 100
 
+        # 一株配当（年間予想）と権利確定日
+        div_per_share = info.get("dividendRate")
+        if not div_per_share and dy and price:
+            div_per_share = round(price * dy / 100, 1)  # 利回りからの推定
+        ex_div = info.get("exDividendDate")
+        ex_div_date = None
+        if ex_div:
+            try:
+                ex_div_date = datetime.fromtimestamp(int(ex_div), tz=timezone.utc).strftime("%Y-%m-%d")
+            except Exception:
+                ex_div_date = None
+
         return {
             "ticker": ticker,
             "name": name,
@@ -53,6 +67,8 @@ def fetch_stock_data(ticker: str, name: str) -> dict | None:
             "pbr": info.get("priceToBook"),
             "roe": (info.get("returnOnEquity") or 0) * 100,
             "dividend_yield": dy,
+            "div_per_share": div_per_share,
+            "ex_div_date": ex_div_date,
             "market_cap": info.get("marketCap"),
             "rsi": round(rsi, 1),
             "momentum_raw": momentum,

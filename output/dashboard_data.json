@@ -1,6 +1,6 @@
 {
-  "updated": "2026年07月10日 07:13",
-  "updatedAtMs": 1783635215403,
+  "updated": "2026年07月10日 07:29",
+  "updatedAtMs": 1783636160717,
   "fetched": 113,
   "universeTotal": 116,
   "market": {
@@ -13,8 +13,8 @@
   "marketOutlook": {
     "spxChangePct": 0.81,
     "spxDate": "2026-07-09",
-    "usdjpy": 162.38,
-    "usdjpyChangePct": 0.01,
+    "usdjpy": 162.34,
+    "usdjpyChangePct": -0.01,
     "condition": "米S&P500が直近上昇",
     "topixUpRate": 64.3,
     "n": 277,
@@ -70,11 +70,11 @@
       "short_ratio": null,
       "regime_adjusted": false,
       "forecast": {
-        "price": 94700.0,
-        "rangeLow": 93832,
-        "rangeHigh": 95568,
-        "rangeLow2": 92964,
-        "rangeHigh2": 96436,
+        "price": 94800.0,
+        "rangeLow": 93931,
+        "rangeHigh": 95669,
+        "rangeLow2": 93062,
+        "rangeHigh2": 96538,
         "volDPct": 0.92,
         "calibrated": false,
         "plan": {
@@ -172,12 +172,12 @@
       "yutai": null,
       "news": [
         {
-          "title": "日産自動車(株)【7201】：今の株価の理由は？値動きの背景をAIが解説",
-          "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1Xakk0RENsUE81UDNRR1l0SEFiekF4NktsSHRjZlcyemhIWnFKRTBlNHdDZkpPc3FkNmluQjdONzZOaW92T1JLZ2V2WV9hRVBkZTlZeklXWFR6ZmJwSFU4?oc=5",
-          "pubDate": "Thu, 09 Jul 2026 06:55:23 GMT",
+          "title": "【無料公開】《独自》日産株、旧村上ファンドとは「別の物言う株主」も保有判明！業績ジリ貧でも狙われる「意外な理由」とは？",
+          "source": "ダイヤモンド・オンライン",
+          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFB6TTNkQ2VyX1h4MWI1VVB5cHZYRzhCNU93MjdrcGtXNl9PWHJhTGhZQUg5V2xYbFBaM1d2YVgzdEdabUJCZ01uUVVZS3LSAU9BVV95cUxOaThTWVc2ZmdIT1RHS0NmcHZOVndoR3ZySnFoM1FmdFZ4bnBfMFRVamgtZEJGRmoxSHE0U25FLXN0WnlIendIZHNXQVFyRThz?oc=5",
+          "pubDate": "Wed, 08 Jul 2026 20:30:00 GMT",
           "sentiment": "neu",
-          "theme": "AI"
+          "theme": "その他"
         }
       ]
     },
@@ -497,7 +497,7 @@
       "name": "東京エレクトロン",
       "score": 0.375,
       "f": 5,
-      "per": 56.7,
+      "per": 56.8,
       "pbr": 15.61,
       "roe": 29.3,
       "value": 0.006,
@@ -687,6 +687,1070 @@
       ]
     }
   ],
+  "stockMaster": [
+    {
+      "code": "6861.T",
+      "name": "キーエンス",
+      "price": 75600.0,
+      "divPerShare": 550.0,
+      "exDivDate": "2026-09-17",
+      "dividendYield": 0.74,
+      "yutai": null
+    },
+    {
+      "code": "7203.T",
+      "name": "トヨタ自動車",
+      "price": 2824.0,
+      "divPerShare": 100.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 3.46,
+      "yutai": "なし（株主優待は廃止）"
+    },
+    {
+      "code": "6758.T",
+      "name": "ソニーグループ",
+      "price": 3409.0,
+      "divPerShare": 35.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.01,
+      "yutai": null
+    },
+    {
+      "code": "4063.T",
+      "name": "信越化学",
+      "price": 7010.0,
+      "divPerShare": 106.0,
+      "exDivDate": "2026-03-30",
+      "dividendYield": 1.53,
+      "yutai": null
+    },
+    {
+      "code": "6326.T",
+      "name": "クボタ",
+      "price": 2724.5,
+      "divPerShare": 52.0,
+      "exDivDate": "2026-12-29",
+      "dividendYield": 1.92,
+      "yutai": null
+    },
+    {
+      "code": "8035.T",
+      "name": "東京エレクトロン",
+      "price": 71060.0,
+      "divPerShare": 722.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.07,
+      "yutai": null
+    },
+    {
+      "code": "6501.T",
+      "name": "日立製作所",
+      "price": 4758.0,
+      "divPerShare": 55.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.15,
+      "yutai": null
+    },
+    {
+      "code": "6902.T",
+      "name": "デンソー",
+      "price": 1928.0,
+      "divPerShare": 74.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 3.8,
+      "yutai": null
+    },
+    {
+      "code": "5108.T",
+      "name": "ブリヂストン",
+      "price": 3572.0,
+      "divPerShare": 130.0,
+      "exDivDate": "2026-12-29",
+      "dividendYield": 3.6,
+      "yutai": null
+    },
+    {
+      "code": "4543.T",
+      "name": "テルモ",
+      "price": 2227.5,
+      "divPerShare": 36.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.58,
+      "yutai": null
+    },
+    {
+      "code": "6857.T",
+      "name": "アドバンテスト",
+      "price": 29160.0,
+      "divPerShare": 60.0,
+      "exDivDate": "2026-03-30",
+      "dividendYield": 0.22,
+      "yutai": null
+    },
+    {
+      "code": "7741.T",
+      "name": "HOYA",
+      "price": 24780.0,
+      "divPerShare": 295.0,
+      "exDivDate": "2026-03-30",
+      "dividendYield": 1.23,
+      "yutai": null
+    },
+    {
+      "code": "6920.T",
+      "name": "レーザーテック",
+      "price": 43020.0,
+      "divPerShare": 329.0,
+      "exDivDate": "2026-06-29",
+      "dividendYield": 0.78,
+      "yutai": null
+    },
+    {
+      "code": "7267.T",
+      "name": "ホンダ",
+      "price": 1502.0,
+      "divPerShare": 70.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 4.66,
+      "yutai": null
+    },
+    {
+      "code": "6954.T",
+      "name": "ファナック",
+      "price": 6851.0,
+      "divPerShare": 107.09,
+      "exDivDate": "2026-03-30",
+      "dividendYield": 1.6,
+      "yutai": null
+    },
+    {
+      "code": "7751.T",
+      "name": "キヤノン",
+      "price": 4304.0,
+      "divPerShare": 160.0,
+      "exDivDate": "2026-12-29",
+      "dividendYield": 3.73,
+      "yutai": null
+    },
+    {
+      "code": "6971.T",
+      "name": "京セラ",
+      "price": 3726.0,
+      "divPerShare": 56.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.53,
+      "yutai": null
+    },
+    {
+      "code": "6367.T",
+      "name": "ダイキン工業",
+      "price": 25175.0,
+      "divPerShare": 360.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.41,
+      "yutai": null
+    },
+    {
+      "code": "6723.T",
+      "name": "ルネサスエレクトロニクス",
+      "price": 4817.0,
+      "divPerShare": 28.0,
+      "exDivDate": "2025-12-29",
+      "dividendYield": 0.6,
+      "yutai": null
+    },
+    {
+      "code": "6752.T",
+      "name": "パナソニックHD",
+      "price": 4455.0,
+      "divPerShare": 54.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.25,
+      "yutai": null
+    },
+    {
+      "code": "6770.T",
+      "name": "アルプスアルパイン",
+      "price": 2060.0,
+      "divPerShare": 64.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 3.13,
+      "yutai": null
+    },
+    {
+      "code": "7735.T",
+      "name": "SCREENホールディングス",
+      "price": 17750.0,
+      "divPerShare": 175.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.04,
+      "yutai": null
+    },
+    {
+      "code": "6146.T",
+      "name": "ディスコ",
+      "price": 71510.0,
+      "divPerShare": 505.0,
+      "exDivDate": "2026-03-30",
+      "dividendYield": 0.74,
+      "yutai": null
+    },
+    {
+      "code": "4452.T",
+      "name": "花王",
+      "price": 3280.0,
+      "divPerShare": 117.0,
+      "exDivDate": "2026-12-29",
+      "dividendYield": 3.51,
+      "yutai": null
+    },
+    {
+      "code": "4911.T",
+      "name": "資生堂",
+      "price": 2749.5,
+      "divPerShare": 60.0,
+      "exDivDate": "2026-12-29",
+      "dividendYield": 2.15,
+      "yutai": null
+    },
+    {
+      "code": "8306.T",
+      "name": "三菱UFJ",
+      "price": 3414.0,
+      "divPerShare": 96.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 2.8,
+      "yutai": null
+    },
+    {
+      "code": "8316.T",
+      "name": "三井住友FG",
+      "price": 6816.0,
+      "divPerShare": 135.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.98,
+      "yutai": null
+    },
+    {
+      "code": "8411.T",
+      "name": "みずほFG",
+      "price": 8214.0,
+      "divPerShare": 150.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.82,
+      "yutai": null
+    },
+    {
+      "code": "8604.T",
+      "name": "野村HD",
+      "price": 1526.0,
+      "divPerShare": 51.0,
+      "exDivDate": "2026-03-30",
+      "dividendYield": 3.31,
+      "yutai": null
+    },
+    {
+      "code": "8630.T",
+      "name": "SOMPOホールディングス",
+      "price": 6645.0,
+      "divPerShare": 200.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 3.01,
+      "yutai": null
+    },
+    {
+      "code": "8725.T",
+      "name": "MS&ADインシュアランス",
+      "price": 4505.0,
+      "divPerShare": 140.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 3.1,
+      "yutai": null
+    },
+    {
+      "code": "8750.T",
+      "name": "第一生命HD",
+      "price": 1877.0,
+      "divPerShare": 72.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 3.86,
+      "yutai": null
+    },
+    {
+      "code": "8766.T",
+      "name": "東京海上HD",
+      "price": 7870.0,
+      "divPerShare": 245.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 3.11,
+      "yutai": null
+    },
+    {
+      "code": "7182.T",
+      "name": "ゆうちょ銀行",
+      "price": 3289.0,
+      "divPerShare": 93.0,
+      "exDivDate": "2027-03-30",
+      "dividendYield": 2.83,
+      "yutai": null
+    },
+    {
+      "code": "8303.T",
+      "name": "新生銀行",
+      "price": 1440.0,
+      "divPerShare": 42.0,
+      "exDivDate": "2026-03-30",
+      "dividendYield": 2.86,
+      "yutai": null
+    },
+    {
+      "code": "9984.T",
+      "name": "ソフトバンクG",
+      "price": 5757.0,
+      "divPerShare": 11.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 19.0,
+      "yutai": null
+    },
+    {
+      "code": "9432.T",
+      "name": "NTT",
+      "price": 149.0,
+      "divPerShare": 5.4,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 3.61,
+      "yutai": "なし（過去はdポイント優待）"
+    },
+    {
+      "code": "9433.T",
+      "name": "KDDI",
+      "price": 2805.0,
+      "divPerShare": 84.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 2.99,
+      "yutai": "100株以上でカタログギフト等（長期保有優遇・要IR確認）"
+    },
+    {
+      "code": "9434.T",
+      "name": "ソフトバンク",
+      "price": 214.4,
+      "divPerShare": 8.8,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 4.13,
+      "yutai": null
+    },
+    {
+      "code": "6098.T",
+      "name": "リクルートHD",
+      "price": 12505.0,
+      "divPerShare": 26.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 0.21,
+      "yutai": null
+    },
+    {
+      "code": "4307.T",
+      "name": "野村総合研究所",
+      "price": 5018.0,
+      "divPerShare": 84.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.68,
+      "yutai": null
+    },
+    {
+      "code": "9613.T",
+      "name": "NTTデータグループ",
+      "price": null,
+      "divPerShare": null,
+      "exDivDate": null,
+      "dividendYield": null,
+      "yutai": null
+    },
+    {
+      "code": "4704.T",
+      "name": "トレンドマイクロ",
+      "price": 6257.0,
+      "divPerShare": 185.0,
+      "exDivDate": "2025-12-29",
+      "dividendYield": 2.96,
+      "yutai": null
+    },
+    {
+      "code": "3659.T",
+      "name": "ネクソン",
+      "price": 2269.5,
+      "divPerShare": 60.0,
+      "exDivDate": "2026-12-29",
+      "dividendYield": 2.61,
+      "yutai": null
+    },
+    {
+      "code": "9735.T",
+      "name": "セコム",
+      "price": 6700.0,
+      "divPerShare": 120.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.8,
+      "yutai": null
+    },
+    {
+      "code": "4519.T",
+      "name": "中外製薬",
+      "price": 7359.0,
+      "divPerShare": 132.0,
+      "exDivDate": "2026-12-29",
+      "dividendYield": 1.79,
+      "yutai": null
+    },
+    {
+      "code": "4502.T",
+      "name": "武田薬品工業",
+      "price": 5398.0,
+      "divPerShare": 204.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 3.74,
+      "yutai": null
+    },
+    {
+      "code": "4568.T",
+      "name": "第一三共",
+      "price": 2733.0,
+      "divPerShare": 100.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 3.68,
+      "yutai": null
+    },
+    {
+      "code": "4523.T",
+      "name": "エーザイ",
+      "price": 4286.0,
+      "divPerShare": 160.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 3.73,
+      "yutai": null
+    },
+    {
+      "code": "4506.T",
+      "name": "住友ファーマ",
+      "price": 1432.5,
+      "divPerShare": null,
+      "exDivDate": "2023-03-30",
+      "dividendYield": null,
+      "yutai": null
+    },
+    {
+      "code": "4021.T",
+      "name": "日産化学",
+      "price": 8158.0,
+      "divPerShare": 212.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 2.59,
+      "yutai": null
+    },
+    {
+      "code": "7832.T",
+      "name": "バンダイナムコHD",
+      "price": 4043.0,
+      "divPerShare": 48.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.18,
+      "yutai": null
+    },
+    {
+      "code": "8058.T",
+      "name": "三菱商事",
+      "price": 4411.0,
+      "divPerShare": 125.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 2.8,
+      "yutai": null
+    },
+    {
+      "code": "8031.T",
+      "name": "三井物産",
+      "price": 4614.0,
+      "divPerShare": 140.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 3.01,
+      "yutai": null
+    },
+    {
+      "code": "8001.T",
+      "name": "伊藤忠商事",
+      "price": 1891.5,
+      "divPerShare": 44.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 2.34,
+      "yutai": null
+    },
+    {
+      "code": "8002.T",
+      "name": "丸紅",
+      "price": 4924.0,
+      "divPerShare": 115.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 2.32,
+      "yutai": null
+    },
+    {
+      "code": "8053.T",
+      "name": "住友商事",
+      "price": 1565.5,
+      "divPerShare": 40.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 2.56,
+      "yutai": null
+    },
+    {
+      "code": "8015.T",
+      "name": "豊田通商",
+      "price": 6110.0,
+      "divPerShare": 125.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 2.04,
+      "yutai": null
+    },
+    {
+      "code": "8801.T",
+      "name": "三井不動産",
+      "price": 1522.0,
+      "divPerShare": 37.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 2.4,
+      "yutai": "保有株数に応じ宿泊優待割引券（要IR確認・手動更新）"
+    },
+    {
+      "code": "8802.T",
+      "name": "三菱地所",
+      "price": 4197.0,
+      "divPerShare": 50.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.17,
+      "yutai": null
+    },
+    {
+      "code": "8830.T",
+      "name": "住友不動産",
+      "price": 3795.0,
+      "divPerShare": 52.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.35,
+      "yutai": null
+    },
+    {
+      "code": "3003.T",
+      "name": "ヒューリック",
+      "price": 1758.0,
+      "divPerShare": 67.0,
+      "exDivDate": "2026-12-29",
+      "dividendYield": 3.74,
+      "yutai": null
+    },
+    {
+      "code": "8955.T",
+      "name": "日本プライムリアルティ投資法人",
+      "price": 94800.0,
+      "divPerShare": 4250.0,
+      "exDivDate": "2026-06-29",
+      "dividendYield": 4.48,
+      "yutai": null
+    },
+    {
+      "code": "5020.T",
+      "name": "ENEOS",
+      "price": 1256.0,
+      "divPerShare": 34.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 2.71,
+      "yutai": null
+    },
+    {
+      "code": "5019.T",
+      "name": "出光興産",
+      "price": 1243.0,
+      "divPerShare": 36.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 2.9,
+      "yutai": null
+    },
+    {
+      "code": "9501.T",
+      "name": "東京電力HD",
+      "price": 479.1,
+      "divPerShare": null,
+      "exDivDate": "2011-03-29",
+      "dividendYield": null,
+      "yutai": null
+    },
+    {
+      "code": "9502.T",
+      "name": "中部電力",
+      "price": 3250.0,
+      "divPerShare": 70.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 2.17,
+      "yutai": null
+    },
+    {
+      "code": "9503.T",
+      "name": "関西電力",
+      "price": 2290.0,
+      "divPerShare": 80.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 3.49,
+      "yutai": null
+    },
+    {
+      "code": "9531.T",
+      "name": "東京ガス",
+      "price": 6089.0,
+      "divPerShare": 120.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.95,
+      "yutai": null
+    },
+    {
+      "code": "9101.T",
+      "name": "日本郵船",
+      "price": 5421.0,
+      "divPerShare": 200.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 3.73,
+      "yutai": "なし（日本郵船は株主優待制度なし）"
+    },
+    {
+      "code": "9104.T",
+      "name": "商船三井",
+      "price": 5478.0,
+      "divPerShare": 205.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 3.78,
+      "yutai": null
+    },
+    {
+      "code": "9107.T",
+      "name": "川崎汽船",
+      "price": 2581.0,
+      "divPerShare": 120.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 4.71,
+      "yutai": null
+    },
+    {
+      "code": "9983.T",
+      "name": "ファーストリテイリング",
+      "price": 85170.0,
+      "divPerShare": 640.0,
+      "exDivDate": "2026-08-28",
+      "dividendYield": 0.73,
+      "yutai": null
+    },
+    {
+      "code": "3038.T",
+      "name": "神戸物産",
+      "price": 2697.5,
+      "divPerShare": 32.0,
+      "exDivDate": "2026-10-29",
+      "dividendYield": 1.17,
+      "yutai": null
+    },
+    {
+      "code": "4661.T",
+      "name": "オリエンタルランド",
+      "price": 2603.0,
+      "divPerShare": 16.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 0.61,
+      "yutai": null
+    },
+    {
+      "code": "7974.T",
+      "name": "任天堂",
+      "price": 7120.0,
+      "divPerShare": 219.0,
+      "exDivDate": "2026-03-30",
+      "dividendYield": 3.09,
+      "yutai": "なし（任天堂は株主優待制度なし）"
+    },
+    {
+      "code": "2914.T",
+      "name": "JT",
+      "price": 6186.0,
+      "divPerShare": 242.0,
+      "exDivDate": "2026-12-29",
+      "dividendYield": 3.9,
+      "yutai": "100株以上でJT関連商品の詰め合わせ（年1回・要IR確認）"
+    },
+    {
+      "code": "2502.T",
+      "name": "アサヒグループHD",
+      "price": 1626.5,
+      "divPerShare": 62.0,
+      "exDivDate": "2026-12-29",
+      "dividendYield": 3.73,
+      "yutai": null
+    },
+    {
+      "code": "2503.T",
+      "name": "キリンHD",
+      "price": 2920.5,
+      "divPerShare": 76.0,
+      "exDivDate": "2026-12-29",
+      "dividendYield": 2.62,
+      "yutai": null
+    },
+    {
+      "code": "2802.T",
+      "name": "味の素",
+      "price": 5721.0,
+      "divPerShare": 50.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 0.88,
+      "yutai": null
+    },
+    {
+      "code": "7201.T",
+      "name": "日産自動車",
+      "price": 304.5,
+      "divPerShare": null,
+      "exDivDate": "2024-03-28",
+      "dividendYield": null,
+      "yutai": null
+    },
+    {
+      "code": "2269.T",
+      "name": "明治HD",
+      "price": 3844.0,
+      "divPerShare": 110.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 2.81,
+      "yutai": null
+    },
+    {
+      "code": "3382.T",
+      "name": "セブン＆アイHD",
+      "price": 2029.0,
+      "divPerShare": 60.0,
+      "exDivDate": "2026-08-28",
+      "dividendYield": 2.96,
+      "yutai": null
+    },
+    {
+      "code": "8267.T",
+      "name": "イオン",
+      "price": 1414.5,
+      "divPerShare": 14.0,
+      "exDivDate": "2026-08-28",
+      "dividendYield": 0.96,
+      "yutai": null
+    },
+    {
+      "code": "9201.T",
+      "name": "日本航空",
+      "price": 2983.5,
+      "divPerShare": 96.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 3.15,
+      "yutai": null
+    },
+    {
+      "code": "9202.T",
+      "name": "ANAホールディングス",
+      "price": 3053.0,
+      "divPerShare": 60.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.92,
+      "yutai": null
+    },
+    {
+      "code": "4751.T",
+      "name": "サイバーエージェント",
+      "price": 1497.5,
+      "divPerShare": 19.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.24,
+      "yutai": null
+    },
+    {
+      "code": "6753.T",
+      "name": "シャープ",
+      "price": 647.1,
+      "divPerShare": null,
+      "exDivDate": "2022-03-30",
+      "dividendYield": null,
+      "yutai": null
+    },
+    {
+      "code": "7270.T",
+      "name": "SUBARU",
+      "price": 2488.5,
+      "divPerShare": 116.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 4.59,
+      "yutai": null
+    },
+    {
+      "code": "5714.T",
+      "name": "DOWAホールディングス",
+      "price": 8257.0,
+      "divPerShare": 338.0,
+      "exDivDate": "2027-03-30",
+      "dividendYield": 4.01,
+      "yutai": null
+    },
+    {
+      "code": "5401.T",
+      "name": "日本製鉄",
+      "price": 556.0,
+      "divPerShare": 24.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 4.32,
+      "yutai": null
+    },
+    {
+      "code": "5411.T",
+      "name": "JFEホールディングス",
+      "price": 1620.0,
+      "divPerShare": 80.0,
+      "exDivDate": "2026-03-30",
+      "dividendYield": 4.86,
+      "yutai": null
+    },
+    {
+      "code": "3436.T",
+      "name": "SUMCO",
+      "price": 4544.0,
+      "divPerShare": 20.0,
+      "exDivDate": "2026-06-29",
+      "dividendYield": 0.44,
+      "yutai": null
+    },
+    {
+      "code": "4385.T",
+      "name": "メルカリ",
+      "price": 4617.0,
+      "divPerShare": null,
+      "exDivDate": null,
+      "dividendYield": null,
+      "yutai": null
+    },
+    {
+      "code": "4565.T",
+      "name": "ネクセラファーマ",
+      "price": 900.0,
+      "divPerShare": null,
+      "exDivDate": "2015-03-27",
+      "dividendYield": null,
+      "yutai": null
+    },
+    {
+      "code": "3692.T",
+      "name": "FFRIセキュリティ",
+      "price": 5260.0,
+      "divPerShare": 18.0,
+      "exDivDate": "2027-03-30",
+      "dividendYield": 0.35,
+      "yutai": null
+    },
+    {
+      "code": "4180.T",
+      "name": "Appier Group",
+      "price": 893.0,
+      "divPerShare": 2.3,
+      "exDivDate": "2026-12-29",
+      "dividendYield": 0.26,
+      "yutai": null
+    },
+    {
+      "code": "4493.T",
+      "name": "サイバーセキュリティクラウド",
+      "price": 1881.0,
+      "divPerShare": 6.0,
+      "exDivDate": "2026-12-29",
+      "dividendYield": 0.31,
+      "yutai": null
+    },
+    {
+      "code": "7779.T",
+      "name": "サイバーダイン",
+      "price": 226.0,
+      "divPerShare": null,
+      "exDivDate": null,
+      "dividendYield": null,
+      "yutai": null
+    },
+    {
+      "code": "4382.T",
+      "name": "HEROZ",
+      "price": 693.0,
+      "divPerShare": null,
+      "exDivDate": null,
+      "dividendYield": null,
+      "yutai": null
+    },
+    {
+      "code": "4478.T",
+      "name": "freee",
+      "price": 2243.0,
+      "divPerShare": null,
+      "exDivDate": null,
+      "dividendYield": null,
+      "yutai": null
+    },
+    {
+      "code": "3923.T",
+      "name": "ラクス",
+      "price": 1029.0,
+      "divPerShare": 8.0,
+      "exDivDate": "2027-03-30",
+      "dividendYield": 0.78,
+      "yutai": null
+    },
+    {
+      "code": "4443.T",
+      "name": "Sansan",
+      "price": 1693.0,
+      "divPerShare": 5.0,
+      "exDivDate": "2026-05-28",
+      "dividendYield": 0.3,
+      "yutai": null
+    },
+    {
+      "code": "5253.T",
+      "name": "カバー",
+      "price": 1632.0,
+      "divPerShare": null,
+      "exDivDate": null,
+      "dividendYield": null,
+      "yutai": null
+    },
+    {
+      "code": "4480.T",
+      "name": "メドレー",
+      "price": 2027.0,
+      "divPerShare": null,
+      "exDivDate": null,
+      "dividendYield": null,
+      "yutai": null
+    },
+    {
+      "code": "3994.T",
+      "name": "マネーフォワード",
+      "price": 5010.0,
+      "divPerShare": null,
+      "exDivDate": null,
+      "dividendYield": null,
+      "yutai": null
+    },
+    {
+      "code": "6521.T",
+      "name": "オキサイド",
+      "price": 4200.0,
+      "divPerShare": null,
+      "exDivDate": null,
+      "dividendYield": null,
+      "yutai": null
+    },
+    {
+      "code": "4051.T",
+      "name": "GMOフィナンシャルゲート",
+      "price": 6780.0,
+      "divPerShare": 125.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.84,
+      "yutai": null
+    },
+    {
+      "code": "7342.T",
+      "name": "ウェルスナビ",
+      "price": null,
+      "divPerShare": null,
+      "exDivDate": null,
+      "dividendYield": null,
+      "yutai": null
+    },
+    {
+      "code": "4485.T",
+      "name": "JTOWER",
+      "price": null,
+      "divPerShare": null,
+      "exDivDate": null,
+      "dividendYield": null,
+      "yutai": null
+    },
+    {
+      "code": "6526.T",
+      "name": "ソシオネクスト",
+      "price": 2663.5,
+      "divPerShare": 50.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.92,
+      "yutai": null
+    },
+    {
+      "code": "6532.T",
+      "name": "ベイカレント・コンサルティング",
+      "price": 6670.0,
+      "divPerShare": 130.0,
+      "exDivDate": "2026-08-28",
+      "dividendYield": 1.95,
+      "yutai": null
+    },
+    {
+      "code": "6038.T",
+      "name": "イード",
+      "price": 819.0,
+      "divPerShare": 23.0,
+      "exDivDate": "2026-06-29",
+      "dividendYield": 2.83,
+      "yutai": null
+    },
+    {
+      "code": "4425.T",
+      "name": "Kudan",
+      "price": 1880.0,
+      "divPerShare": null,
+      "exDivDate": null,
+      "dividendYield": null,
+      "yutai": null
+    },
+    {
+      "code": "6027.T",
+      "name": "弁護士ドットコム",
+      "price": 2340.0,
+      "divPerShare": null,
+      "exDivDate": null,
+      "dividendYield": null,
+      "yutai": null
+    },
+    {
+      "code": "3696.T",
+      "name": "セレス",
+      "price": 2134.0,
+      "divPerShare": 180.0,
+      "exDivDate": "2026-12-29",
+      "dividendYield": 8.4,
+      "yutai": null
+    },
+    {
+      "code": "2181.T",
+      "name": "パーソルホールディングス",
+      "price": 257.2,
+      "divPerShare": 13.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 5.01,
+      "yutai": "なし（パーソルHDは株主優待制度なし・配当のみ）"
+    },
+    {
+      "code": "8591.T",
+      "name": "オリックス",
+      "price": 6449.0,
+      "divPerShare": 156.1,
+      "exDivDate": "2026-03-30",
+      "dividendYield": 2.45,
+      "yutai": "2024年に株主優待は廃止済み"
+    }
+  ],
   "alerts": [
     {
       "type": "info",
@@ -707,11 +1771,6 @@
       "type": "info",
       "title": "空売り残高: 川崎汽船 (9107)",
       "desc": "開示合計6.27%・前回比減少中（3件・出典JPX 07/09時点）"
-    },
-    {
-      "type": "warn",
-      "title": "入替候補OUT: ネクソン",
-      "desc": "スコア下位15% (score=0.235)"
     },
     {
       "type": "warn",
@@ -753,18 +1812,18 @@
   },
   "themeTrends": [
     {
-      "theme": "AI",
-      "mentions": 7,
-      "pos": 0,
-      "neg": 0,
-      "prevMentions": 7
-    },
-    {
       "theme": "その他",
-      "mentions": 4,
+      "mentions": 5,
       "pos": 2,
       "neg": 0,
-      "prevMentions": 3
+      "prevMentions": 5
+    },
+    {
+      "theme": "AI",
+      "mentions": 5,
+      "pos": 0,
+      "neg": 0,
+      "prevMentions": 5
     }
   ]
 }

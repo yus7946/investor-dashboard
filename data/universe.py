@@ -139,3 +139,30 @@ for item in UNIVERSE:
         _seen.add(item[0])
         _deduped.append(item)
 UNIVERSE = _deduped
+
+# 持ち株登録の補完用に、ユニバース外でも個人がよく保有する銘柄を追加した「銘柄マスタ用リスト」。
+# スクリーニング対象(UNIVERSE)ではなく、あくまで持ち株ページのオートコンプリート/価格自動反映のためのもの。
+EXTRA_HOLDINGS = [
+    ("2181.T", "パーソルホールディングス"),
+    ("9101.T", "日本郵船"),
+    ("8591.T", "オリックス"),
+    ("9433.T", "KDDI"),
+    ("2914.T", "JT"),
+    ("8058.T", "三菱商事"),
+    ("7182.T", "ゆうちょ銀行"),
+    ("8306.T", "三菱UFJ"),
+    ("9432.T", "NTT"),
+    ("4502.T", "武田薬品工業"),
+    ("8306.T", "三菱UFJ"),
+    ("7974.T", "任天堂"),
+    ("6758.T", "ソニーグループ"),
+    ("9984.T", "ソフトバンクグループ"),
+]
+
+# マスタ = UNIVERSE + EXTRA（重複除去）
+_m_seen = set()
+MASTER = []
+for item in list(UNIVERSE) + EXTRA_HOLDINGS:
+    if item[0] not in _m_seen:
+        _m_seen.add(item[0])
+        MASTER.append(item)

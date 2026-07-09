@@ -420,6 +420,10 @@ body::before {
   width: 26px; height: 26px; border-radius: 6px;
   border: 1px solid var(--border); background: var(--surface2); color: var(--muted); font-size: 12px; cursor: pointer;
 }
+.holding-yutai {
+  margin-top: 8px; padding: 7px 10px; border-radius: 8px; font-size: 11px; line-height: 1.5;
+  background: rgba(251,191,36,0.08); border: 1px solid rgba(251,191,36,0.2); color: var(--gold);
+}
 .holding-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; font-size: 11px; margin-top: 4px; }
 .holding-grid .lbl { color: var(--muted); }
 .holding-grid .val { font-weight: 700; text-align: right; }
@@ -431,6 +435,39 @@ body::before {
   border: 1px solid var(--border); background: var(--surface2); color: var(--text); font-size: 13px;
 }
 .asset-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+
+/* ── 銘柄オートコンプリート ── */
+.ac-wrap { position: relative; }
+.ac-list {
+  display: none; position: absolute; top: 100%; left: 0; right: 0; z-index: 30;
+  background: var(--surface2); border: 1px solid var(--border); border-radius: 10px;
+  margin-top: 4px; max-height: 240px; overflow-y: auto; box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+.ac-list.open { display: block; }
+.ac-item {
+  padding: 10px 12px; cursor: pointer; border-bottom: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center; gap: 8px;
+  -webkit-tap-highlight-color: transparent;
+}
+.ac-item:last-child { border-bottom: none; }
+.ac-item:active, .ac-item.active { background: rgba(59,130,246,0.15); }
+.ac-item-name { font-size: 13px; font-weight: 700; }
+.ac-item-code { font-size: 11px; color: var(--muted); }
+.ac-item-price { font-size: 12px; color: var(--accent2); font-weight: 700; white-space: nowrap; }
+.hf-selected {
+  padding: 10px 12px; border-radius: 8px; margin-top: 4px;
+  background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.25);
+  font-size: 12px; line-height: 1.6;
+}
+.hf-selected b { color: var(--text); }
+.hf-preview {
+  padding: 10px 12px; border-radius: 8px;
+  background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.15);
+  font-size: 12px; line-height: 1.7;
+}
+.hf-preview .row { display: flex; justify-content: space-between; }
+.hf-preview .row b { font-weight: 800; }
+
 .asset-type-toggle { display: flex; gap: 6px; }
 .asset-type-toggle button {
   flex: 1; padding: 8px; border-radius: 8px; border: 1px solid var(--border);
@@ -634,7 +671,7 @@ body::before {
 <!-- ── タブ3：自分の資産 ── -->
 <div class="tab-content" id="tab-assets">
 
-  <div class="section-hint">保有銘柄の評価額・損益・配当予想をまとめて管理できます。データはこの端末にのみ保存されます。</div>
+  <div class="section-hint">保有銘柄の評価額・損益・配当・優待をまとめて管理できます。銘柄名を数文字入れて候補を選ぶだけで、現在株価・配当・権利確定日は自動で反映されます（毎日の更新で最新化）。データはこの端末にのみ保存されます。</div>
 
   <div class="kpi-grid">
     <div class="kpi-card" id="asset-kpi1">
@@ -671,18 +708,17 @@ body::before {
         <button type="button" id="type-btn-normal" class="active" onclick="setHoldingType('normal')">通常保有</button>
         <button type="button" id="type-btn-mochikabu" onclick="setHoldingType('mochikabu')">持株会</button>
       </div>
-      <div>
-        <label>銘柄名</label>
-        <input id="hf-name" type="text" placeholder="例: パーソルホールディングス">
-      </div>
-      <div>
-        <label>証券コード</label>
-        <input id="hf-code" type="text" placeholder="例: 2181.T">
+      <div class="ac-wrap">
+        <label>銘柄名（一部を入力すると候補が出ます）</label>
+        <input id="hf-name" type="text" autocomplete="off" placeholder="例: パーソル と入力" oninput="onStockInput(this.value)" onfocus="onStockInput(this.value)">
+        <input id="hf-code" type="hidden">
+        <div id="ac-list" class="ac-list"></div>
+        <div id="hf-selected" class="hf-selected" style="display:none"></div>
       </div>
       <div id="normal-fields">
         <div class="asset-form-row">
-          <div><label>保有株数</label><input id="hf-shares" type="number" min="0" placeholder="例: 100"></div>
-          <div><label>取得単価（円）</label><input id="hf-cost-price" type="number" min="0" placeholder="例: 2500"></div>
+          <div><label>保有株数</label><input id="hf-shares" type="number" min="0" placeholder="例: 100" oninput="updateFormPreview()"></div>
+          <div><label>取得単価（円・任意）</label><input id="hf-cost-price" type="number" min="0" placeholder="例: 2500" oninput="updateFormPreview()"></div>
         </div>
       </div>
       <div id="mochikabu-fields" class="field-optional">
@@ -694,16 +730,10 @@ body::before {
           <label><input id="hf-reinvest" type="checkbox" style="width:auto;margin-right:6px"> 配当を再投資している</label>
         </div>
       </div>
-      <div class="asset-form-row">
-        <div>
-          <label>現在株価（円）<span style="font-weight:400">・未入力時はDATAの株価情報を利用</span></label>
-          <input id="hf-current-price" type="number" min="0" placeholder="例: 2800">
-        </div>
-        <div>
-          <label>一株配当予想（円）</label>
-          <input id="hf-div-per-share" type="number" min="0" step="0.1" placeholder="例: 40">
-        </div>
-      </div>
+      <!-- 現在株価・一株配当は選択した銘柄から自動反映（手入力不要）。編集用に隠しフィールドで保持 -->
+      <input id="hf-current-price" type="hidden">
+      <input id="hf-div-per-share" type="hidden">
+      <div id="hf-preview" class="hf-preview" style="display:none"></div>
       <div class="asset-form-actions">
         <button class="btn-primary" onclick="submitHoldingForm()" id="hf-submit-btn">追加する</button>
         <button class="btn-secondary" id="hf-cancel-btn" style="display:none" onclick="cancelEditHolding()">キャンセル</button>
@@ -771,6 +801,7 @@ const DATA = {
   market: null,
   marketOutlook: null,
   accuracy: null,
+  stockMaster: [],
   flow: null,
   themeTrends: [
     { theme:'AI',     mentions: 42, pos: 34, neg: 2,  prevMentions: 26 },
@@ -1470,10 +1501,100 @@ function loadHoldings() {
   try { return JSON.parse(localStorage.getItem(HOLDINGS_KEY) || '[]'); } catch(e) { return []; }
 }
 function saveHoldings(list) { localStorage.setItem(HOLDINGS_KEY, JSON.stringify(list)); }
-function findStockByCode(code) {
+
+// 銘柄マスタ（コード→情報）。持ち株ページの補完・価格/配当/優待の自動反映に使う。
+const STOCK_MASTER = (DATA.stockMaster || []);
+const MASTER_BY_CODE = {};
+STOCK_MASTER.forEach(m => { MASTER_BY_CODE[m.code] = m; });
+
+// コードから最新情報を引く（マスタ優先、無ければTOP10のstocksから）
+function findMasterByCode(code) {
   if (!code) return null;
-  return DATA.stocks.find(s => s.ticker === code) || null;
+  if (MASTER_BY_CODE[code]) return MASTER_BY_CODE[code];
+  const s = DATA.stocks.find(x => x.ticker === code);
+  if (s) return { code, name: s.name, price: s.price, divPerShare: null, dividendYield: s.dividend_yield, exDivDate: null, yutai: s.yutai };
+  return null;
 }
+
+// 選択中の銘柄（フォーム）
+let selectedStock = null;
+
+// オートコンプリート: 入力に応じて候補を出す
+function onStockInput(q) {
+  const listEl = document.getElementById('ac-list');
+  q = (q || '').trim().toLowerCase();
+  if (!q) { listEl.classList.remove('open'); listEl.innerHTML = ''; return; }
+  const matches = STOCK_MASTER.filter(m =>
+    m.name.toLowerCase().includes(q) || m.code.toLowerCase().includes(q)
+  ).slice(0, 8);
+  if (!matches.length) {
+    listEl.innerHTML = `<div class="ac-item" style="cursor:default"><span class="ac-item-name" style="color:var(--muted);font-weight:400">候補なし（正式名称の一部かコードで検索）</span></div>`;
+    listEl.classList.add('open');
+    return;
+  }
+  listEl.innerHTML = matches.map(m => `
+    <div class="ac-item" onclick="selectStock('${m.code}')">
+      <div>
+        <div class="ac-item-name">${m.name}</div>
+        <div class="ac-item-code">${m.code}</div>
+      </div>
+      <div class="ac-item-price">${m.price ? '¥' + m.price.toLocaleString() : '—'}</div>
+    </div>`).join('');
+  listEl.classList.add('open');
+}
+
+// 候補を選択 → コード・価格・配当を自動反映
+function selectStock(code) {
+  const m = findMasterByCode(code);
+  if (!m) return;
+  selectedStock = m;
+  document.getElementById('hf-name').value = m.name;
+  document.getElementById('hf-code').value = m.code;
+  document.getElementById('hf-current-price').value = m.price ?? '';
+  document.getElementById('hf-div-per-share').value = m.divPerShare ?? '';
+  document.getElementById('ac-list').classList.remove('open');
+
+  const sel = document.getElementById('hf-selected');
+  const bits = [`<b>${m.name}</b>（${m.code}）`];
+  bits.push(m.price ? `現在株価 <b>¥${m.price.toLocaleString()}</b>（自動反映）` : '現在株価: 取得できず');
+  if (m.divPerShare) bits.push(`一株配当 <b>¥${m.divPerShare}</b>／年`);
+  if (m.exDivDate) bits.push(`次の権利確定日 <b>${m.exDivDate}</b>`);
+  if (m.yutai) bits.push(`優待: ${m.yutai}`);
+  sel.innerHTML = bits.join('<br>');
+  sel.style.display = 'block';
+  updateFormPreview();
+}
+
+// 株数入力に応じて評価額・配当予想をリアルタイム表示
+function updateFormPreview() {
+  const pv = document.getElementById('hf-preview');
+  if (!selectedStock || currentHoldingType !== 'normal') { pv.style.display = 'none'; return; }
+  const shares = parseFloat(document.getElementById('hf-shares').value) || 0;
+  const cost   = parseFloat(document.getElementById('hf-cost-price').value) || 0;
+  if (!shares) { pv.style.display = 'none'; return; }
+  const price = selectedStock.price || 0;
+  const value = price * shares;
+  const div   = (selectedStock.divPerShare || 0) * shares;
+  let rows = `<div class="row"><span>いまの評価額（自動）</span><b>${price?('¥'+Math.round(value).toLocaleString()):'—'}</b></div>`;
+  if (cost) {
+    const pl = value - cost * shares;
+    const plPct = cost > 0 ? (pl / (cost*shares) * 100) : 0;
+    const col = pl >= 0 ? 'var(--green)' : 'var(--red)';
+    rows += `<div class="row"><span>評価損益</span><b style="color:${col}">${pl>=0?'+':''}¥${Math.round(pl).toLocaleString()}（${pl>=0?'+':''}${plPct.toFixed(1)}%）</b></div>`;
+  }
+  if (div) rows += `<div class="row"><span>年間配当予想</span><b style="color:var(--green)">¥${Math.round(div).toLocaleString()}</b></div>`;
+  pv.innerHTML = rows;
+  pv.style.display = 'block';
+}
+
+// 外側タップで候補を閉じる
+document.addEventListener('click', (e) => {
+  const wrap = document.querySelector('.ac-wrap');
+  if (wrap && !wrap.contains(e.target)) {
+    const l = document.getElementById('ac-list');
+    if (l) l.classList.remove('open');
+  }
+});
 
 function setHoldingType(type) {
   currentHoldingType = type;
@@ -1488,6 +1609,10 @@ function clearHoldingForm() {
   ['hf-name','hf-code','hf-shares','hf-cost-price','hf-acquired-total','hf-incentive-rate','hf-current-price','hf-div-per-share']
     .forEach(id => document.getElementById(id).value = '');
   document.getElementById('hf-reinvest').checked = false;
+  selectedStock = null;
+  document.getElementById('hf-selected').style.display = 'none';
+  document.getElementById('hf-preview').style.display = 'none';
+  document.getElementById('ac-list').classList.remove('open');
   setHoldingType('normal');
   editingHoldingId = null;
   document.getElementById('hf-submit-btn').textContent = '追加する';
@@ -1504,6 +1629,8 @@ function submitHoldingForm() {
     type: currentHoldingType, name, code,
     currentPrice: parseFloat(document.getElementById('hf-current-price').value) || null,
     divPerShare:  parseFloat(document.getElementById('hf-div-per-share').value)  || 0,
+    exDivDate: selectedStock ? (selectedStock.exDivDate || null) : null,
+    yutai: selectedStock ? (selectedStock.yutai || null) : null,
   };
   if (currentHoldingType === 'normal') {
     holding.shares    = parseFloat(document.getElementById('hf-shares').value)     || 0;
@@ -1526,10 +1653,14 @@ function editHolding(id) {
   if (!h) return;
   editingHoldingId = id;
   setHoldingType(h.type);
+  // 保存時の情報より、マスタの最新価格を優先（評価額を常に最新に）
+  const m = findMasterByCode(h.code);
+  selectedStock = m || { code: h.code, name: h.name, price: h.currentPrice, divPerShare: h.divPerShare, exDivDate: h.exDivDate, yutai: h.yutai };
   document.getElementById('hf-name').value  = h.name  || '';
   document.getElementById('hf-code').value  = h.code  || '';
-  document.getElementById('hf-current-price').value = h.currentPrice ?? '';
-  document.getElementById('hf-div-per-share').value  = h.divPerShare  ?? '';
+  document.getElementById('hf-current-price').value = (m && m.price != null) ? m.price : (h.currentPrice ?? '');
+  document.getElementById('hf-div-per-share').value  = (m && m.divPerShare != null) ? m.divPerShare : (h.divPerShare ?? '');
+  if (selectedStock) selectStock(h.code);
   if (h.type === 'normal') {
     document.getElementById('hf-shares').value    = h.shares    ?? '';
     document.getElementById('hf-cost-price').value = h.costPrice ?? '';
@@ -1552,17 +1683,29 @@ function deleteHolding(id) {
   renderHoldings();
 }
 
+// 最新株価: マスタにあればそれを優先（自動反映）、無ければ保存値
+function livePrice(h) {
+  const m = findMasterByCode(h.code);
+  if (m && m.price != null) return m.price;
+  return h.currentPrice ?? null;
+}
+function liveDivPerShare(h) {
+  const m = findMasterByCode(h.code);
+  if (m && m.divPerShare != null) return m.divPerShare;
+  return h.divPerShare || 0;
+}
+
 function calcHolding(h) {
   if (h.type === 'normal') {
     const shares    = h.shares    || 0;
     const costPrice = h.costPrice || 0;
     const costTotal = shares * costPrice;
-    const curPrice  = h.currentPrice;
+    const curPrice  = livePrice(h);
     const value     = curPrice ? shares * curPrice : null;
     const pl        = value !== null ? value - costTotal : null;
     const plPct     = (value !== null && costTotal > 0) ? (pl / costTotal) * 100 : null;
-    const divForecast = shares * (h.divPerShare || 0);
-    return { costTotal, value, pl, plPct, divForecast };
+    const divForecast = shares * liveDivPerShare(h);
+    return { costTotal, value, pl, plPct, divForecast, curPrice };
   } else {
     const acquiredTotal   = h.acquiredTotal  || 0;
     const incentiveRate   = h.incentiveRate  || 0;
@@ -1597,10 +1740,12 @@ function renderHoldings() {
         : `<span class="tag">通常保有</span>`;
       const detailRows = h.type === 'normal'
         ? `<div class="lbl">保有株数</div><div class="val">${(h.shares||0).toLocaleString()}株</div>
-           <div class="lbl">取得単価</div><div class="val">${fmtYen(h.costPrice)}</div>
-           <div class="lbl">現在株価</div><div class="val">${h.currentPrice ? fmtYen(h.currentPrice) : '未入力'}</div>`
+           <div class="lbl">取得単価</div><div class="val">${h.costPrice?fmtYen(h.costPrice):'未入力'}</div>
+           <div class="lbl">現在株価<span style="font-weight:400;font-size:9px">（自動）</span></div><div class="val">${c.curPrice ? fmtYen(c.curPrice) : '取得できず'}</div>`
         : `<div class="lbl">取得累計額</div><div class="val">${fmtYen(h.acquiredTotal)}</div>
            <div class="lbl">奨励金率</div><div class="val">${h.incentiveRate||0}%（${fmtYen(c.incentiveAmount)}）</div>`;
+      const exDiv = h.exDivDate ? `<div class="lbl">次の権利確定日</div><div class="val">${h.exDivDate}</div>` : '';
+      const yutaiRow = h.yutai ? `<div class="holding-yutai">優待: ${h.yutai}</div>` : '';
       return `
       <div class="card holding-card">
         <div class="holding-head">
@@ -1617,8 +1762,10 @@ function renderHoldings() {
           ${detailRows}
           <div class="lbl">評価額</div><div class="val">${fmtYen(c.value)}</div>
           <div class="lbl">評価損益</div><div class="val ${plClass}">${c.pl===null?'―':plSign+fmtYen(c.pl)}${c.plPct!==null?` (${plSign}${c.plPct.toFixed(1)}%)`:''}</div>
-          <div class="lbl">今期配当予想</div><div class="val up">${fmtYen(c.divForecast)}</div>
+          <div class="lbl">年間配当予想</div><div class="val up">${fmtYen(c.divForecast)}</div>
+          ${exDiv}
         </div>
+        ${yutaiRow}
       </div>`;
     }).join('');
   }
