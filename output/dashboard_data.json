@@ -1,6 +1,6 @@
 {
-  "updated": "2026年07月10日 07:29",
-  "updatedAtMs": 1783636160717,
+  "updated": "2026年07月10日 07:52",
+  "updatedAtMs": 1783637523463,
   "fetched": 113,
   "universeTotal": 116,
   "market": {
@@ -14,7 +14,7 @@
     "spxChangePct": 0.81,
     "spxDate": "2026-07-09",
     "usdjpy": 162.34,
-    "usdjpyChangePct": -0.01,
+    "usdjpyChangePct": -0.02,
     "condition": "米S&P500が直近上昇",
     "topixUpRate": 64.3,
     "n": 277,
@@ -51,7 +51,7 @@
       "rank": 1,
       "ticker": "8955.T",
       "name": "日本プライムリアルティ投資法人",
-      "score": 0.468,
+      "score": 0.438,
       "f": 4,
       "per": 19.0,
       "pbr": 0.35,
@@ -118,66 +118,61 @@
     },
     {
       "rank": 2,
-      "ticker": "7201.T",
-      "name": "日産自動車",
-      "score": 0.43,
-      "f": 1,
+      "ticker": "3436.T",
+      "name": "SUMCO",
+      "score": 0.421,
+      "f": 3,
       "per": null,
-      "pbr": 0.22,
-      "roe": -9.9,
-      "value": 1.0,
-      "quality": 0.074,
-      "momentum": 0.099,
-      "signal": "買い",
-      "rsi": 34.0,
-      "conf": "中",
+      "pbr": 2.79,
+      "roe": -3.5,
+      "value": 0.068,
+      "quality": 0.162,
+      "momentum": 1.0,
+      "signal": "強い買い",
+      "rsi": 55.0,
+      "conf": "高",
       "strategy": [
-        "low_price"
+        "swing"
       ],
-      "dividend_yield": 0.0,
-      "volatility": 0.4234,
-      "short_ratio": 3.5,
+      "dividend_yield": 0.4,
+      "volatility": 0.9365,
+      "short_ratio": 0.69,
       "regime_adjusted": false,
       "forecast": {
-        "price": 304.5,
-        "rangeLow": 295,
-        "rangeHigh": 314,
-        "rangeLow2": 286,
-        "rangeHigh2": 323,
-        "volDPct": 3.1,
+        "price": 4544.0,
+        "rangeLow": 4347,
+        "rangeHigh": 4741,
+        "rangeLow2": 4150,
+        "rangeHigh2": 4938,
+        "volDPct": 4.34,
         "calibrated": false,
         "plan": {
-          "entry": 300,
-          "target": 319,
-          "stop": 286,
-          "rr": 1.36,
-          "hi3m": 399,
-          "lo3m": 300,
-          "basis": "1日の実績振れ幅σ=3.1%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.4:1）。参考: 直近3ヶ月の高値399円 / 安値300円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+          "entry": 4445,
+          "target": 4839,
+          "stop": 4149,
+          "rr": 1.33,
+          "hi3m": 5171,
+          "lo3m": 2090,
+          "basis": "1日の実績振れ幅σ=4.3%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値5,171円 / 安値2,090円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
         },
         "cond": {
-          "upRate": 52.2,
-          "n": 182,
+          "upRate": 53.9,
+          "n": 165,
           "condition": "RSI中立圏×5日下落局面",
           "note": null
         },
-        "factors": [
-          {
-            "label": "空売り残高3.5%（売り圧力・踏み上げ両方の要因）",
-            "dir": "-"
-          }
-        ],
+        "factors": [],
         "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
       },
       "yutai": null,
       "news": [
         {
-          "title": "【無料公開】《独自》日産株、旧村上ファンドとは「別の物言う株主」も保有判明！業績ジリ貧でも狙われる「意外な理由」とは？",
-          "source": "ダイヤモンド・オンライン",
-          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFB6TTNkQ2VyX1h4MWI1VVB5cHZYRzhCNU93MjdrcGtXNl9PWHJhTGhZQUg5V2xYbFBaM1d2YVgzdEdabUJCZ01uUVVZS3LSAU9BVV95cUxOaThTWVc2ZmdIT1RHS0NmcHZOVndoR3ZySnFoM1FmdFZ4bnBfMFRVamgtZEJGRmoxSHE0U25FLXN0WnlIendIZHNXQVFyRThz?oc=5",
-          "pubDate": "Wed, 08 Jul 2026 20:30:00 GMT",
+          "title": "(株)ＳＵＭＣＯ【3436】：今の株価の理由は？値動きの背景をAIが解説",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE84emI5NTVaMXZZQ2xsMGJrZ2lQdXQ1NW9FNW94VkRORlloby1tcnhjS0FrdkJFVW56RGRGczBtTW5YLVBpdUJkdzRMNHlvNXh3UnZjU0w0ejJWOVd0WkJZ?oc=5",
+          "pubDate": "Thu, 09 Jul 2026 06:54:49 GMT",
           "sentiment": "neu",
-          "theme": "その他"
+          "theme": "AI"
         }
       ]
     },
@@ -185,7 +180,7 @@
       "rank": 3,
       "ticker": "6857.T",
       "name": "アドバンテスト",
-      "score": 0.427,
+      "score": 0.414,
       "f": 6,
       "per": 56.6,
       "pbr": 26.59,
@@ -243,112 +238,47 @@
     },
     {
       "rank": 4,
-      "ticker": "3923.T",
-      "name": "ラクス",
-      "score": 0.394,
+      "ticker": "7735.T",
+      "name": "SCREENホールディングス",
+      "score": 0.411,
       "f": 5,
-      "per": 27.9,
-      "pbr": 14.0,
-      "roe": 55.4,
-      "value": 0.012,
-      "quality": 0.969,
-      "momentum": 0.186,
-      "signal": "様子見",
-      "rsi": 68.9,
-      "conf": "低",
+      "per": 36.5,
+      "pbr": 6.9,
+      "roe": 20.3,
+      "value": 0.026,
+      "quality": 0.487,
+      "momentum": 0.688,
+      "signal": "強い買い",
+      "rsi": 54.2,
+      "conf": "高",
       "strategy": [
         "swing"
       ],
-      "dividend_yield": 0.8,
-      "volatility": 0.6025,
-      "short_ratio": 2.26,
+      "dividend_yield": 1.0,
+      "volatility": 0.6867,
+      "short_ratio": null,
       "regime_adjusted": false,
       "forecast": {
-        "price": 1029.0,
-        "rangeLow": 1000,
-        "rangeHigh": 1058,
-        "rangeLow2": 971,
-        "rangeHigh2": 1087,
-        "volDPct": 2.82,
+        "price": 17750.0,
+        "rangeLow": 17094,
+        "rangeHigh": 18406,
+        "rangeLow2": 16438,
+        "rangeHigh2": 19062,
+        "volDPct": 3.7,
         "calibrated": false,
         "plan": {
-          "entry": 1014,
-          "target": 1072,
-          "stop": 970,
-          "rr": 1.32,
-          "hi3m": 1052,
-          "lo3m": 753,
-          "basis": "1日の実績振れ幅σ=2.8%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値1,052円 / 安値753円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+          "entry": 17422,
+          "target": 18734,
+          "stop": 16438,
+          "rr": 1.33,
+          "hi3m": 19490,
+          "lo3m": 10230,
+          "basis": "1日の実績振れ幅σ=3.7%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値19,490円 / 安値10,230円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
         },
         "cond": {
-          "upRate": 48.0,
-          "n": 173,
-          "condition": "RSI中立圏×5日上昇局面",
-          "note": null
-        },
-        "factors": [
-          {
-            "label": "空売り残高2.26%（売り圧力・踏み上げ両方の要因）",
-            "dir": "-"
-          }
-        ],
-        "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
-      },
-      "yutai": null,
-      "news": [
-        {
-          "title": "(株)ラクス【3923】：今の株価の理由は？値動きの背景をAIが解説",
-          "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBWS0dzZ19QUFY4NGpjNmEzcVVXVy01MGlRT3JfUjd2dGJLNnVYaTRqaDRsWjFJNThvSlY0RTBOQ2R5aDAtQmc1WXBpbDlubmY3NnNLWjFERlkzNi1lMjJv?oc=5",
-          "pubDate": "Thu, 09 Jul 2026 03:06:38 GMT",
-          "sentiment": "neu",
-          "theme": "AI"
-        }
-      ]
-    },
-    {
-      "rank": 5,
-      "ticker": "5411.T",
-      "name": "JFEホールディングス",
-      "score": 0.391,
-      "f": 4,
-      "per": 15.4,
-      "pbr": 0.39,
-      "roe": 2.8,
-      "value": 0.573,
-      "quality": 0.248,
-      "momentum": 0.121,
-      "signal": "買い",
-      "rsi": 51.3,
-      "conf": "中",
-      "strategy": [
-        "dividend"
-      ],
-      "dividend_yield": 4.9,
-      "volatility": 0.2723,
-      "short_ratio": 1.42,
-      "regime_adjusted": false,
-      "forecast": {
-        "price": 1620.0,
-        "rangeLow": 1593,
-        "rangeHigh": 1647,
-        "rangeLow2": 1567,
-        "rangeHigh2": 1673,
-        "volDPct": 1.64,
-        "calibrated": false,
-        "plan": {
-          "entry": 1607,
-          "target": 1660,
-          "stop": 1567,
-          "rr": 1.32,
-          "hi3m": 1836,
-          "lo3m": 1546,
-          "basis": "1日の実績振れ幅σ=1.6%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値1,836円 / 安値1,546円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
-        },
-        "cond": {
-          "upRate": 49.1,
-          "n": 171,
-          "condition": "RSI中立圏×5日上昇局面",
+          "upRate": 49.7,
+          "n": 177,
+          "condition": "RSI中立圏×5日下落局面",
           "note": null
         },
         "factors": [],
@@ -357,20 +287,145 @@
       "yutai": null,
       "news": [
         {
-          "title": "ＪＦＥホールディングス(株)【5411】：板気配",
+          "title": "(株)ＳＣＲＥＥＮホールディングス【7735】：今の株価の理由は？値動きの背景をAIが解説",
           "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB5eENqNUQ5MzBCdUxTU3ZEV3dXOV9XZzh5TktJTEppb2dvWHQ0STBjMzU5N2tTeVB2bUt3X0ZUZUNGV2szSzlOeWdycll1eXZMOUYzVXJFcm9kU2JEVXY4?oc=5",
-          "pubDate": "Fri, 03 Jul 2026 07:00:00 GMT",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5fazZiVVZvX3V6eXlMTGlUMGFRRWlQTGdyWDdkbXJkR3FnX0VNUGdDTXVWUVVwVjB5XzM0LU5xcFRsVGV1NXBBUzZfd1BnamlncWswZ2RjZ2hyU2lvYzZj?oc=5",
+          "pubDate": "Thu, 09 Jul 2026 06:55:49 GMT",
           "sentiment": "neu",
+          "theme": "AI"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "ticker": "8035.T",
+      "name": "東京エレクトロン",
+      "score": 0.399,
+      "f": 5,
+      "per": 56.8,
+      "pbr": 15.61,
+      "roe": 29.3,
+      "value": 0.006,
+      "quality": 0.611,
+      "momentum": 0.545,
+      "signal": "強い買い",
+      "rsi": 44.6,
+      "conf": "高",
+      "strategy": [
+        "swing"
+      ],
+      "dividend_yield": 1.0,
+      "volatility": 0.6014,
+      "short_ratio": null,
+      "regime_adjusted": false,
+      "forecast": {
+        "price": 71060.0,
+        "rangeLow": 68543,
+        "rangeHigh": 73577,
+        "rangeLow2": 66025,
+        "rangeHigh2": 76095,
+        "volDPct": 3.54,
+        "calibrated": false,
+        "plan": {
+          "entry": 69801,
+          "target": 74836,
+          "stop": 66025,
+          "rr": 1.33,
+          "hi3m": 78800,
+          "lo3m": 42460,
+          "basis": "1日の実績振れ幅σ=3.5%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値78,800円 / 安値42,460円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
+        "cond": {
+          "upRate": 53.7,
+          "n": 164,
+          "condition": "RSI中立圏×5日下落局面",
+          "note": null
+        },
+        "factors": [
+          {
+            "label": "直近ニュースがポジティブ寄り（1件/簡易判定）",
+            "dir": "+"
+          }
+        ],
+        "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
+      },
+      "yutai": null,
+      "news": [
+        {
+          "title": "東京エレクトロン株価上場来高値 米AMATの急伸で連想買い",
+          "source": "日本経済新聞",
+          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE8ycWhIR181MjZYT0hJNFhoel9lYjBmVjY5S1JMMXVOUU90SU1kSzRiMldLdUN6MnFsaFYwVFNnRHh0RFZ5Sm5ISWV5aC10RG1MV1hXM21lQlBQSURmaWFQV3A2MF9QUkdOMEd1Rg?oc=5",
+          "pubDate": "Tue, 30 Jun 2026 07:00:00 GMT",
+          "sentiment": "pos",
           "theme": "その他"
         }
       ]
     },
     {
       "rank": 6,
+      "ticker": "6752.T",
+      "name": "パナソニックHD",
+      "score": 0.395,
+      "f": 4,
+      "per": 54.9,
+      "pbr": 2.0,
+      "roe": 4.1,
+      "value": 0.104,
+      "quality": 0.265,
+      "momentum": 0.665,
+      "signal": "強い買い",
+      "rsi": 51.0,
+      "conf": "高",
+      "strategy": [
+        "swing"
+      ],
+      "dividend_yield": 1.2,
+      "volatility": 0.5004,
+      "short_ratio": null,
+      "regime_adjusted": false,
+      "forecast": {
+        "price": 4455.0,
+        "rangeLow": 4336,
+        "rangeHigh": 4574,
+        "rangeLow2": 4218,
+        "rangeHigh2": 4692,
+        "volDPct": 2.66,
+        "calibrated": false,
+        "plan": {
+          "entry": 4396,
+          "target": 4633,
+          "stop": 4218,
+          "rr": 1.33,
+          "hi3m": 4770,
+          "lo3m": 2879,
+          "basis": "1日の実績振れ幅σ=2.7%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値4,770円 / 安値2,879円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
+        "cond": {
+          "upRate": 48.6,
+          "n": 148,
+          "condition": "RSI中立圏×5日下落局面",
+          "note": null
+        },
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
+      },
+      "yutai": null,
+      "news": [
+        {
+          "title": "パナソニック ホールディングス(株)【6752】：今の株価の理由は？値動きの背景をAIが解説",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE0taWJqemFNNG4zbFRhMm1SOG9qTnRYbnQ0dVRCVl84b1AxWkctR3Z0N0l2RG1pdWVxZ1hEY1NDdW1JcTh3TmxJZFV2V0xmendwejJZd281NHVsQ25KbXlJ?oc=5",
+          "pubDate": "Thu, 09 Jul 2026 06:54:19 GMT",
+          "sentiment": "neu",
+          "theme": "AI"
+        }
+      ]
+    },
+    {
+      "rank": 7,
       "ticker": "9502.T",
       "name": "中部電力",
-      "score": 0.387,
+      "score": 0.395,
       "f": 5,
       "per": 10.8,
       "pbr": 0.78,
@@ -432,114 +487,54 @@
       ]
     },
     {
-      "rank": 7,
-      "ticker": "9501.T",
-      "name": "東京電力HD",
-      "score": 0.384,
+      "rank": 8,
+      "ticker": "7201.T",
+      "name": "日産自動車",
+      "score": 0.386,
       "f": 1,
       "per": null,
-      "pbr": 0.23,
-      "roe": -12.6,
-      "value": 0.979,
-      "quality": 0.036,
-      "momentum": 0.068,
+      "pbr": 0.22,
+      "roe": -9.9,
+      "value": 1.0,
+      "quality": 0.074,
+      "momentum": 0.099,
       "signal": "買い",
-      "rsi": 36.5,
+      "rsi": 34.0,
       "conf": "中",
       "strategy": [
         "low_price"
       ],
       "dividend_yield": 0.0,
-      "volatility": 0.5453,
-      "short_ratio": 1.32,
+      "volatility": 0.4234,
+      "short_ratio": 3.5,
       "regime_adjusted": false,
       "forecast": {
-        "price": 479.1,
-        "rangeLow": 464,
-        "rangeHigh": 494,
-        "rangeLow2": 449,
-        "rangeHigh2": 510,
-        "volDPct": 3.19,
+        "price": 304.5,
+        "rangeLow": 295,
+        "rangeHigh": 314,
+        "rangeLow2": 286,
+        "rangeHigh2": 323,
+        "volDPct": 3.1,
         "calibrated": false,
         "plan": {
-          "entry": 471,
-          "target": 502,
-          "stop": 448,
-          "rr": 1.35,
-          "hi3m": 651,
-          "lo3m": 455,
-          "basis": "1日の実績振れ幅σ=3.2%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値651円 / 安値455円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+          "entry": 300,
+          "target": 319,
+          "stop": 286,
+          "rr": 1.36,
+          "hi3m": 399,
+          "lo3m": 300,
+          "basis": "1日の実績振れ幅σ=3.1%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.4:1）。参考: 直近3ヶ月の高値399円 / 安値300円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
         },
         "cond": {
-          "upRate": 47.6,
-          "n": 166,
-          "condition": "RSI中立圏×5日上昇局面",
-          "note": null
-        },
-        "factors": [],
-        "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
-      },
-      "yutai": null,
-      "news": [
-        {
-          "title": "東京電力ホールディングス(株)【9501】：今の株価の理由は？値動きの背景をAIが解説",
-          "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1TeEloR3d0c1dTUFZfODhnbWtmM0JraUxPb2hCQUlhSGE3Z0xkVllmQTR1ZXotYWV5eXg5NGFSRGlaakJYMHBJQUNST1lRb09NWUpBMk91WW43MVRUTzZJ?oc=5",
-          "pubDate": "Thu, 09 Jul 2026 06:54:05 GMT",
-          "sentiment": "neu",
-          "theme": "AI"
-        }
-      ]
-    },
-    {
-      "rank": 8,
-      "ticker": "8035.T",
-      "name": "東京エレクトロン",
-      "score": 0.375,
-      "f": 5,
-      "per": 56.8,
-      "pbr": 15.61,
-      "roe": 29.3,
-      "value": 0.006,
-      "quality": 0.611,
-      "momentum": 0.545,
-      "signal": "強い買い",
-      "rsi": 44.6,
-      "conf": "高",
-      "strategy": [
-        "swing"
-      ],
-      "dividend_yield": 1.1,
-      "volatility": 0.6014,
-      "short_ratio": null,
-      "regime_adjusted": false,
-      "forecast": {
-        "price": 71060.0,
-        "rangeLow": 68543,
-        "rangeHigh": 73577,
-        "rangeLow2": 66025,
-        "rangeHigh2": 76095,
-        "volDPct": 3.54,
-        "calibrated": false,
-        "plan": {
-          "entry": 69801,
-          "target": 74836,
-          "stop": 66025,
-          "rr": 1.33,
-          "hi3m": 78800,
-          "lo3m": 42460,
-          "basis": "1日の実績振れ幅σ=3.5%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値78,800円 / 安値42,460円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
-        },
-        "cond": {
-          "upRate": 53.7,
-          "n": 164,
+          "upRate": 52.2,
+          "n": 182,
           "condition": "RSI中立圏×5日下落局面",
           "note": null
         },
         "factors": [
           {
-            "label": "直近ニュースがポジティブ寄り（1件/簡易判定）",
-            "dir": "+"
+            "label": "空売り残高3.5%（売り圧力・踏み上げ両方の要因）",
+            "dir": "-"
           }
         ],
         "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
@@ -547,85 +542,20 @@
       "yutai": null,
       "news": [
         {
-          "title": "東京エレクトロン株価上場来高値 米AMATの急伸で連想買い",
-          "source": "日本経済新聞",
-          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE8ycWhIR181MjZYT0hJNFhoel9lYjBmVjY5S1JMMXVOUU90SU1kSzRiMldLdUN6MnFsaFYwVFNnRHh0RFZ5Sm5ISWV5aC10RG1MV1hXM21lQlBQSURmaWFQV3A2MF9QUkdOMEd1Rg?oc=5",
-          "pubDate": "Tue, 30 Jun 2026 07:00:00 GMT",
-          "sentiment": "pos",
-          "theme": "その他"
-        }
-      ]
-    },
-    {
-      "rank": 9,
-      "ticker": "6920.T",
-      "name": "レーザーテック",
-      "score": 0.37,
-      "f": 5,
-      "per": 44.5,
-      "pbr": 17.1,
-      "roe": 44.1,
-      "value": 0.006,
-      "quality": 0.814,
-      "momentum": 0.362,
-      "signal": "強い買い",
-      "rsi": 28.0,
-      "conf": "高",
-      "strategy": [
-        "swing"
-      ],
-      "dividend_yield": 0.8,
-      "volatility": 0.753,
-      "short_ratio": null,
-      "regime_adjusted": false,
-      "forecast": {
-        "price": 43020.0,
-        "rangeLow": 41174,
-        "rangeHigh": 44866,
-        "rangeLow2": 39329,
-        "rangeHigh2": 46711,
-        "volDPct": 4.29,
-        "calibrated": false,
-        "plan": {
-          "entry": 42097,
-          "target": 45788,
-          "stop": 39328,
-          "rr": 1.33,
-          "hi3m": 57263,
-          "lo3m": 35510,
-          "basis": "1日の実績振れ幅σ=4.3%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値57,263円 / 安値35,510円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
-        },
-        "cond": {
-          "upRate": 46.3,
-          "n": 67,
-          "condition": "RSI30以下（売られすぎ圏）×5日下落局面",
-          "note": null
-        },
-        "factors": [
-          {
-            "label": "RSI 28.0（売られすぎ圏・反発しやすい傾向）",
-            "dir": "+"
-          }
-        ],
-        "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
-      },
-      "yutai": null,
-      "news": [
-        {
-          "title": "レーザーテック(株)【6920】：今の株価の理由は？値動きの背景をAIが解説",
+          "title": "日産自動車(株)【7201】：今の株価の理由は？値動きの背景をAIが解説",
           "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5GdUcyS2tma3g1cjRqN0l0Q3Z0ZDhLZk5RcmI5T2ZpcloyN0d4Z2pTdVZHMVl6dEV2ZTI4QTR2NlozREhvN2RHOFJFRUdPWklMZUExZXZZMUpoTFVwVmZj?oc=5",
-          "pubDate": "Thu, 09 Jul 2026 06:54:38 GMT",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1Xakk0RENsUE81UDNRR1l0SEFiekF4NktsSHRjZlcyemhIWnFKRTBlNHdDZkpPc3FkNmluQjdONzZOaW92T1JLZ2V2WV9hRVBkZTlZeklXWFR6ZmJwSFU4?oc=5",
+          "pubDate": "Thu, 09 Jul 2026 06:55:23 GMT",
           "sentiment": "neu",
           "theme": "AI"
         }
       ]
     },
     {
-      "rank": 10,
+      "rank": 9,
       "ticker": "4385.T",
       "name": "メルカリ",
-      "score": 0.37,
+      "score": 0.372,
       "f": 5,
       "per": 26.6,
       "pbr": 6.34,
@@ -685,6 +615,67 @@
           "theme": "AI"
         }
       ]
+    },
+    {
+      "rank": 10,
+      "ticker": "4021.T",
+      "name": "日産化学",
+      "score": 0.366,
+      "f": 6,
+      "per": 22.1,
+      "pbr": 4.29,
+      "roe": 20.4,
+      "value": 0.05,
+      "quality": 0.489,
+      "momentum": 0.409,
+      "signal": "強い買い",
+      "rsi": 51.6,
+      "conf": "高",
+      "strategy": [
+        "swing",
+        "dividend"
+      ],
+      "dividend_yield": 2.6,
+      "volatility": 0.3961,
+      "short_ratio": 0.32,
+      "regime_adjusted": false,
+      "forecast": {
+        "price": 8158.0,
+        "rangeLow": 8002,
+        "rangeHigh": 8314,
+        "rangeLow2": 7846,
+        "rangeHigh2": 8470,
+        "volDPct": 1.91,
+        "calibrated": false,
+        "plan": {
+          "entry": 8080,
+          "target": 8392,
+          "stop": 7846,
+          "rr": 1.33,
+          "hi3m": 8647,
+          "lo3m": 6424,
+          "basis": "1日の実績振れ幅σ=1.9%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値8,647円 / 安値6,424円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
+        "cond": {
+          "upRate": 52.7,
+          "n": 146,
+          "condition": "RSI中立圏×5日下落局面",
+          "note": null
+        },
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
+      },
+      "yutai": null,
+      "news": [
+        {
+          "title": "日産化学(株)【4021】：株つぶやき",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9FU1ZjTWNxUW80Zkl1eWlMdEFjT2wxcElzS1Y4dEVRSVlBdG5uRlk4Mml3a3RmaHdEbGZPTXhja3JwQ2R5aG52a1VFWnJjMGNRaERaRDl2M3c?oc=5",
+          "pubDate": "Mon, 06 Jul 2026 20:21:09 GMT",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
     }
   ],
   "stockMaster": [
@@ -694,7 +685,12 @@
       "price": 75600.0,
       "divPerShare": 550.0,
       "exDivDate": "2026-09-17",
-      "dividendYield": 0.74,
+      "dividendYield": 0.73,
+      "per": 41.2,
+      "pbr": 5.28,
+      "roe": 13.5,
+      "rsi": 44.2,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -703,7 +699,12 @@
       "price": 2824.0,
       "divPerShare": 100.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 3.46,
+      "dividendYield": 3.54,
+      "per": 9.6,
+      "pbr": 0.92,
+      "roe": 10.2,
+      "rsi": 54.2,
+      "inTop": false,
       "yutai": "なし（株主優待は廃止）"
     },
     {
@@ -712,7 +713,12 @@
       "price": 3409.0,
       "divPerShare": 35.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 1.01,
+      "dividendYield": 1.03,
+      "per": 19.9,
+      "pbr": 2.48,
+      "roe": 12.3,
+      "rsi": 69.0,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -722,6 +728,11 @@
       "divPerShare": 106.0,
       "exDivDate": "2026-03-30",
       "dividendYield": 1.53,
+      "per": 27.8,
+      "pbr": 2.92,
+      "roe": 10.7,
+      "rsi": 43.6,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -731,6 +742,11 @@
       "divPerShare": 52.0,
       "exDivDate": "2026-12-29",
       "dividendYield": 1.92,
+      "per": 16.7,
+      "pbr": 1.15,
+      "roe": 8.9,
+      "rsi": 39.9,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -739,7 +755,12 @@
       "price": 71060.0,
       "divPerShare": 722.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 1.07,
+      "dividendYield": 1.02,
+      "per": 56.8,
+      "pbr": 15.61,
+      "roe": 29.3,
+      "rsi": 44.6,
+      "inTop": true,
       "yutai": null
     },
     {
@@ -749,6 +770,11 @@
       "divPerShare": 55.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 1.15,
+      "per": 26.9,
+      "pbr": 3.26,
+      "roe": 13.3,
+      "rsi": 49.8,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -758,6 +784,11 @@
       "divPerShare": 74.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 3.8,
+      "per": 7.5,
+      "pbr": 0.94,
+      "roe": 8.9,
+      "rsi": 55.1,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -766,7 +797,12 @@
       "price": 3572.0,
       "divPerShare": 130.0,
       "exDivDate": "2026-12-29",
-      "dividendYield": 3.6,
+      "dividendYield": 3.64,
+      "per": 30.0,
+      "pbr": 1.23,
+      "roe": 9.3,
+      "rsi": 69.7,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -776,6 +812,11 @@
       "divPerShare": 36.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 1.58,
+      "per": 24.2,
+      "pbr": 2.07,
+      "roe": 9.2,
+      "rsi": 50.3,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -785,6 +826,11 @@
       "divPerShare": 60.0,
       "exDivDate": "2026-03-30",
       "dividendYield": 0.22,
+      "per": 56.6,
+      "pbr": 26.59,
+      "roe": 57.6,
+      "rsi": 43.0,
+      "inTop": true,
       "yutai": null
     },
     {
@@ -794,6 +840,11 @@
       "divPerShare": 295.0,
       "exDivDate": "2026-03-30",
       "dividendYield": 1.23,
+      "per": 33.3,
+      "pbr": 8.15,
+      "roe": 25.1,
+      "rsi": 28.7,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -802,7 +853,12 @@
       "price": 43020.0,
       "divPerShare": 329.0,
       "exDivDate": "2026-06-29",
-      "dividendYield": 0.78,
+      "dividendYield": 0.76,
+      "per": 44.4,
+      "pbr": 17.1,
+      "roe": 44.1,
+      "rsi": 28.0,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -812,6 +868,11 @@
       "divPerShare": 70.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 4.66,
+      "per": null,
+      "pbr": 0.49,
+      "roe": -2.8,
+      "rsi": 63.1,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -821,6 +882,11 @@
       "divPerShare": 107.09,
       "exDivDate": "2026-03-30",
       "dividendYield": 1.6,
+      "per": 38.4,
+      "pbr": 3.43,
+      "roe": 9.4,
+      "rsi": 40.3,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -830,6 +896,11 @@
       "divPerShare": 160.0,
       "exDivDate": "2026-12-29",
       "dividendYield": 3.73,
+      "per": 11.7,
+      "pbr": 1.09,
+      "roe": 9.4,
+      "rsi": 57.0,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -839,6 +910,11 @@
       "divPerShare": 56.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 1.53,
+      "per": 36.3,
+      "pbr": 1.47,
+      "roe": 4.4,
+      "rsi": 51.9,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -848,6 +924,11 @@
       "divPerShare": 360.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 1.41,
+      "per": 26.8,
+      "pbr": 2.27,
+      "roe": 9.3,
+      "rsi": 65.8,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -857,6 +938,11 @@
       "divPerShare": 28.0,
       "exDivDate": "2025-12-29",
       "dividendYield": 0.6,
+      "per": null,
+      "pbr": 3.44,
+      "roe": -0.4,
+      "rsi": 52.3,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -865,7 +951,12 @@
       "price": 4455.0,
       "divPerShare": 54.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 1.25,
+      "dividendYield": 1.21,
+      "per": 54.9,
+      "pbr": 2.0,
+      "roe": 4.1,
+      "rsi": 51.0,
+      "inTop": true,
       "yutai": null
     },
     {
@@ -874,7 +965,12 @@
       "price": 2060.0,
       "divPerShare": 64.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 3.13,
+      "dividendYield": 3.11,
+      "per": 15.3,
+      "pbr": 0.9,
+      "roe": 6.3,
+      "rsi": 38.6,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -884,6 +980,11 @@
       "divPerShare": 175.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 1.04,
+      "per": 36.5,
+      "pbr": 6.9,
+      "roe": 20.3,
+      "rsi": 54.2,
+      "inTop": true,
       "yutai": null
     },
     {
@@ -892,16 +993,26 @@
       "price": 71510.0,
       "divPerShare": 505.0,
       "exDivDate": "2026-03-30",
-      "dividendYield": 0.74,
+      "dividendYield": 0.71,
+      "per": 57.3,
+      "pbr": 13.2,
+      "roe": 25.1,
+      "rsi": 37.7,
+      "inTop": false,
       "yutai": null
     },
     {
       "code": "4452.T",
       "name": "花王",
       "price": 3280.0,
-      "divPerShare": 117.0,
+      "divPerShare": 78.0,
       "exDivDate": "2026-12-29",
-      "dividendYield": 3.51,
+      "dividendYield": 2.38,
+      "per": 28.2,
+      "pbr": 2.77,
+      "roe": 11.9,
+      "rsi": 70.7,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -911,6 +1022,11 @@
       "divPerShare": 60.0,
       "exDivDate": "2026-12-29",
       "dividendYield": 2.15,
+      "per": null,
+      "pbr": 1.81,
+      "roe": -5.6,
+      "rsi": 69.0,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -920,6 +1036,11 @@
       "divPerShare": 96.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 2.8,
+      "per": 16.1,
+      "pbr": 1.73,
+      "roe": 11.9,
+      "rsi": 62.8,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -929,6 +1050,11 @@
       "divPerShare": 135.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 1.98,
+      "per": 16.5,
+      "pbr": 1.64,
+      "roe": 6.9,
+      "rsi": 66.1,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -938,6 +1064,11 @@
       "divPerShare": 150.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 1.82,
+      "per": 16.3,
+      "pbr": 1.77,
+      "roe": 11.4,
+      "rsi": 62.4,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -947,6 +1078,11 @@
       "divPerShare": 51.0,
       "exDivDate": "2026-03-30",
       "dividendYield": 3.31,
+      "per": 12.8,
+      "pbr": 1.19,
+      "roe": 10.1,
+      "rsi": 74.2,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -956,6 +1092,11 @@
       "divPerShare": 200.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 3.01,
+      "per": 26.5,
+      "pbr": 1.15,
+      "roe": 13.5,
+      "rsi": 60.8,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -965,6 +1106,11 @@
       "divPerShare": 140.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 3.1,
+      "per": 8.3,
+      "pbr": 1.44,
+      "roe": 9.8,
+      "rsi": 47.4,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -973,7 +1119,12 @@
       "price": 1877.0,
       "divPerShare": 72.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 3.86,
+      "dividendYield": 3.84,
+      "per": 15.5,
+      "pbr": 1.59,
+      "roe": 11.3,
+      "rsi": 58.9,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -983,6 +1134,11 @@
       "divPerShare": 245.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 3.11,
+      "per": 28.2,
+      "pbr": 1.86,
+      "roe": 8.7,
+      "rsi": 66.4,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -992,6 +1148,11 @@
       "divPerShare": 93.0,
       "exDivDate": "2027-03-30",
       "dividendYield": 2.83,
+      "per": 22.4,
+      "pbr": 1.27,
+      "roe": 5.9,
+      "rsi": 58.2,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1001,6 +1162,11 @@
       "divPerShare": 42.0,
       "exDivDate": "2026-03-30",
       "dividendYield": 2.86,
+      "per": 10.5,
+      "pbr": 1.04,
+      "roe": 10.3,
+      "rsi": 47.4,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1010,6 +1176,11 @@
       "divPerShare": 11.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 19.0,
+      "per": 6.6,
+      "pbr": 1.86,
+      "roe": 32.7,
+      "rsi": 30.3,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1019,6 +1190,11 @@
       "divPerShare": 5.4,
       "exDivDate": "2026-09-29",
       "dividendYield": 3.61,
+      "per": 11.8,
+      "pbr": 1.25,
+      "roe": 10.0,
+      "rsi": 64.9,
+      "inTop": false,
       "yutai": "なし（過去はdポイント優待）"
     },
     {
@@ -1028,6 +1204,11 @@
       "divPerShare": 84.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 2.99,
+      "per": 15.3,
+      "pbr": 2.1,
+      "roe": 14.0,
+      "rsi": 58.3,
+      "inTop": false,
       "yutai": "100株以上でカタログギフト等（長期保有優遇・要IR確認）"
     },
     {
@@ -1036,7 +1217,12 @@
       "price": 214.4,
       "divPerShare": 8.8,
       "exDivDate": "2026-09-29",
-      "dividendYield": 4.13,
+      "dividendYield": 4.1,
+      "per": 19.0,
+      "pbr": 3.46,
+      "roe": 16.3,
+      "rsi": 58.0,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1046,6 +1232,11 @@
       "divPerShare": 26.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 0.21,
+      "per": 36.0,
+      "pbr": 11.03,
+      "roe": 30.8,
+      "rsi": 85.2,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1054,7 +1245,12 @@
       "price": 5018.0,
       "divPerShare": 84.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 1.68,
+      "dividendYield": 1.67,
+      "per": 188.6,
+      "pbr": 6.64,
+      "roe": 3.6,
+      "rsi": 72.6,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1064,6 +1260,11 @@
       "divPerShare": null,
       "exDivDate": null,
       "dividendYield": null,
+      "per": null,
+      "pbr": null,
+      "roe": null,
+      "rsi": null,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1073,6 +1274,11 @@
       "divPerShare": 185.0,
       "exDivDate": "2025-12-29",
       "dividendYield": 2.96,
+      "per": 24.0,
+      "pbr": 7.11,
+      "roe": 33.8,
+      "rsi": 71.7,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1081,7 +1287,12 @@
       "price": 2269.5,
       "divPerShare": 60.0,
       "exDivDate": "2026-12-29",
-      "dividendYield": 2.61,
+      "dividendYield": 2.64,
+      "per": 19.9,
+      "pbr": 1.69,
+      "roe": 11.6,
+      "rsi": 57.6,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1091,6 +1302,11 @@
       "divPerShare": 120.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 1.8,
+      "per": 24.3,
+      "pbr": 2.06,
+      "roe": 8.7,
+      "rsi": 64.1,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1100,6 +1316,11 @@
       "divPerShare": 132.0,
       "exDivDate": "2026-12-29",
       "dividendYield": 1.79,
+      "per": 27.9,
+      "pbr": 6.35,
+      "roe": 23.7,
+      "rsi": 46.2,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1108,7 +1329,12 @@
       "price": 5398.0,
       "divPerShare": 204.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 3.74,
+      "dividendYield": 3.78,
+      "per": null,
+      "pbr": 1.15,
+      "roe": -2.1,
+      "rsi": 77.0,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1118,6 +1344,11 @@
       "divPerShare": 100.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 3.68,
+      "per": 19.5,
+      "pbr": 2.99,
+      "roe": 15.8,
+      "rsi": 71.3,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1127,6 +1358,11 @@
       "divPerShare": 160.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 3.73,
+      "per": 31.3,
+      "pbr": 1.34,
+      "roe": 4.5,
+      "rsi": 81.3,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1136,6 +1372,11 @@
       "divPerShare": null,
       "exDivDate": "2023-03-30",
       "dividendYield": null,
+      "per": 5.3,
+      "pbr": 1.95,
+      "roe": 46.3,
+      "rsi": 46.5,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1145,6 +1386,11 @@
       "divPerShare": 212.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 2.59,
+      "per": 22.1,
+      "pbr": 4.29,
+      "roe": 20.4,
+      "rsi": 51.6,
+      "inTop": true,
       "yutai": null
     },
     {
@@ -1154,6 +1400,11 @@
       "divPerShare": 48.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 1.18,
+      "per": 18.6,
+      "pbr": 3.01,
+      "roe": 17.0,
+      "rsi": 82.8,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1163,6 +1414,11 @@
       "divPerShare": 125.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 2.8,
+      "per": 21.0,
+      "pbr": 1.71,
+      "roe": 9.0,
+      "rsi": 39.6,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1171,7 +1427,12 @@
       "price": 4614.0,
       "divPerShare": 140.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 3.01,
+      "dividendYield": 3.03,
+      "per": 15.9,
+      "pbr": 1.49,
+      "roe": 10.3,
+      "rsi": 43.3,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1181,6 +1442,11 @@
       "divPerShare": 44.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 2.34,
+      "per": 14.8,
+      "pbr": 2.01,
+      "roe": 13.9,
+      "rsi": 63.2,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1189,7 +1455,12 @@
       "price": 4924.0,
       "divPerShare": 115.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 2.32,
+      "dividendYield": 2.34,
+      "per": 14.9,
+      "pbr": 1.85,
+      "roe": 13.5,
+      "rsi": 51.5,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1199,6 +1470,11 @@
       "divPerShare": 40.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 2.56,
+      "per": 12.6,
+      "pbr": 1.61,
+      "roe": 13.5,
+      "rsi": 38.3,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1207,7 +1483,12 @@
       "price": 6110.0,
       "divPerShare": 125.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 2.04,
+      "dividendYield": 2.05,
+      "per": 17.4,
+      "pbr": 2.04,
+      "roe": 13.2,
+      "rsi": 44.5,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1217,6 +1498,11 @@
       "divPerShare": 37.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 2.4,
+      "per": 15.1,
+      "pbr": 1.26,
+      "roe": 8.2,
+      "rsi": 52.0,
+      "inTop": false,
       "yutai": "保有株数に応じ宿泊優待割引券（要IR確認・手動更新）"
     },
     {
@@ -1225,7 +1511,12 @@
       "price": 4197.0,
       "divPerShare": 50.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 1.17,
+      "dividendYield": 1.19,
+      "per": 23.1,
+      "pbr": 1.88,
+      "roe": 8.4,
+      "rsi": 56.0,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1234,7 +1525,12 @@
       "price": 3795.0,
       "divPerShare": 52.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 1.35,
+      "dividendYield": 1.37,
+      "per": 16.6,
+      "pbr": 1.42,
+      "roe": 9.2,
+      "rsi": 61.3,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1243,7 +1539,12 @@
       "price": 1758.0,
       "divPerShare": 67.0,
       "exDivDate": "2026-12-29",
-      "dividendYield": 3.74,
+      "dividendYield": 3.81,
+      "per": 11.7,
+      "pbr": 1.47,
+      "roe": 13.0,
+      "rsi": 64.9,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1253,6 +1554,11 @@
       "divPerShare": 4250.0,
       "exDivDate": "2026-06-29",
       "dividendYield": 4.48,
+      "per": 19.0,
+      "pbr": 0.35,
+      "roe": 7.1,
+      "rsi": 71.6,
+      "inTop": true,
       "yutai": null
     },
     {
@@ -1262,6 +1568,11 @@
       "divPerShare": 34.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 2.71,
+      "per": 13.1,
+      "pbr": 1.0,
+      "roe": 8.5,
+      "rsi": 48.1,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1271,6 +1582,11 @@
       "divPerShare": 36.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 2.9,
+      "per": 8.9,
+      "pbr": 0.79,
+      "roe": 9.0,
+      "rsi": 45.2,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1280,6 +1596,11 @@
       "divPerShare": null,
       "exDivDate": "2011-03-29",
       "dividendYield": null,
+      "per": null,
+      "pbr": 0.23,
+      "roe": -12.6,
+      "rsi": 36.5,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1289,6 +1610,11 @@
       "divPerShare": 70.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 2.17,
+      "per": 10.8,
+      "pbr": 0.78,
+      "roe": 7.7,
+      "rsi": 89.7,
+      "inTop": true,
       "yutai": null
     },
     {
@@ -1298,6 +1624,11 @@
       "divPerShare": 80.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 3.49,
+      "per": 6.7,
+      "pbr": 0.74,
+      "roe": 11.6,
+      "rsi": 43.5,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1307,6 +1638,11 @@
       "divPerShare": 120.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 1.95,
+      "per": 9.3,
+      "pbr": 1.18,
+      "roe": 12.8,
+      "rsi": 43.9,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1316,6 +1652,11 @@
       "divPerShare": 200.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 3.73,
+      "per": 10.7,
+      "pbr": 0.72,
+      "roe": 7.1,
+      "rsi": 62.4,
+      "inTop": false,
       "yutai": "なし（日本郵船は株主優待制度なし）"
     },
     {
@@ -1325,6 +1666,11 @@
       "divPerShare": 205.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 3.78,
+      "per": 8.8,
+      "pbr": 0.65,
+      "roe": 7.6,
+      "rsi": 60.3,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1334,6 +1680,11 @@
       "divPerShare": 120.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 4.71,
+      "per": 12.3,
+      "pbr": 0.9,
+      "roe": 7.8,
+      "rsi": 58.1,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1343,6 +1694,11 @@
       "divPerShare": 640.0,
       "exDivDate": "2026-08-28",
       "dividendYield": 0.73,
+      "per": 54.6,
+      "pbr": 9.93,
+      "roe": 20.6,
+      "rsi": 56.3,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1352,6 +1708,11 @@
       "divPerShare": 32.0,
       "exDivDate": "2026-10-29",
       "dividendYield": 1.17,
+      "per": 17.6,
+      "pbr": 3.47,
+      "roe": 21.7,
+      "rsi": 63.0,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1361,6 +1722,11 @@
       "divPerShare": 16.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 0.61,
+      "per": 35.0,
+      "pbr": 3.88,
+      "roe": 11.7,
+      "rsi": 78.5,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1370,6 +1736,11 @@
       "divPerShare": 219.0,
       "exDivDate": "2026-03-30",
       "dividendYield": 3.09,
+      "per": 19.5,
+      "pbr": 2.78,
+      "roe": 14.9,
+      "rsi": 51.4,
+      "inTop": false,
       "yutai": "なし（任天堂は株主優待制度なし）"
     },
     {
@@ -1379,6 +1750,11 @@
       "divPerShare": 242.0,
       "exDivDate": "2026-12-29",
       "dividendYield": 3.9,
+      "per": 22.0,
+      "pbr": 2.69,
+      "roe": 13.6,
+      "rsi": 65.2,
+      "inTop": false,
       "yutai": "100株以上でJT関連商品の詰め合わせ（年1回・要IR確認）"
     },
     {
@@ -1387,7 +1763,12 @@
       "price": 1626.5,
       "divPerShare": 62.0,
       "exDivDate": "2026-12-29",
-      "dividendYield": 3.73,
+      "dividendYield": 3.81,
+      "per": 20.0,
+      "pbr": 0.87,
+      "roe": 5.8,
+      "rsi": 69.5,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1397,6 +1778,11 @@
       "divPerShare": 76.0,
       "exDivDate": "2026-12-29",
       "dividendYield": 2.62,
+      "per": 16.0,
+      "pbr": 1.79,
+      "roe": 12.2,
+      "rsi": 71.2,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1405,7 +1791,12 @@
       "price": 5721.0,
       "divPerShare": 50.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 0.88,
+      "dividendYield": 0.87,
+      "per": 41.3,
+      "pbr": 7.11,
+      "roe": 17.5,
+      "rsi": 48.6,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1415,6 +1806,11 @@
       "divPerShare": null,
       "exDivDate": "2024-03-28",
       "dividendYield": null,
+      "per": null,
+      "pbr": 0.22,
+      "roe": -9.9,
+      "rsi": 34.0,
+      "inTop": true,
       "yutai": null
     },
     {
@@ -1423,7 +1819,12 @@
       "price": 3844.0,
       "divPerShare": 110.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 2.81,
+      "dividendYield": 2.86,
+      "per": 29.7,
+      "pbr": 1.35,
+      "roe": 4.8,
+      "rsi": 75.0,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1433,6 +1834,11 @@
       "divPerShare": 60.0,
       "exDivDate": "2026-08-28",
       "dividendYield": 2.96,
+      "per": 17.1,
+      "pbr": 1.3,
+      "roe": 7.6,
+      "rsi": 63.0,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1441,7 +1847,12 @@
       "price": 1414.5,
       "divPerShare": 14.0,
       "exDivDate": "2026-08-28",
-      "dividendYield": 0.96,
+      "dividendYield": 0.99,
+      "per": 52.6,
+      "pbr": 3.21,
+      "roe": 5.8,
+      "rsi": 62.2,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1451,6 +1862,11 @@
       "divPerShare": 96.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 3.15,
+      "per": 9.7,
+      "pbr": 0.99,
+      "roe": 12.3,
+      "rsi": 67.9,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1460,6 +1876,11 @@
       "divPerShare": 60.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 1.92,
+      "per": 9.5,
+      "pbr": 0.93,
+      "roe": 12.9,
+      "rsi": 58.9,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1469,6 +1890,11 @@
       "divPerShare": 19.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 1.24,
+      "per": 18.7,
+      "pbr": 3.82,
+      "roe": 21.1,
+      "rsi": 73.9,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1478,6 +1904,11 @@
       "divPerShare": null,
       "exDivDate": "2022-03-30",
       "dividendYield": null,
+      "per": 8.9,
+      "pbr": 1.49,
+      "roe": 20.9,
+      "rsi": 63.1,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1487,6 +1918,11 @@
       "divPerShare": 116.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 4.59,
+      "per": 19.8,
+      "pbr": 0.64,
+      "roe": 3.3,
+      "rsi": 55.9,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1496,6 +1932,11 @@
       "divPerShare": 338.0,
       "exDivDate": "2027-03-30",
       "dividendYield": 4.01,
+      "per": 7.9,
+      "pbr": 1.07,
+      "roe": 14.5,
+      "rsi": 24.5,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1505,6 +1946,11 @@
       "divPerShare": 24.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 4.32,
+      "per": 169.5,
+      "pbr": 0.53,
+      "roe": 0.8,
+      "rsi": 47.4,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1514,6 +1960,11 @@
       "divPerShare": 80.0,
       "exDivDate": "2026-03-30",
       "dividendYield": 4.86,
+      "per": 15.4,
+      "pbr": 0.39,
+      "roe": 2.8,
+      "rsi": 51.3,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1523,6 +1974,11 @@
       "divPerShare": 20.0,
       "exDivDate": "2026-06-29",
       "dividendYield": 0.44,
+      "per": null,
+      "pbr": 2.79,
+      "roe": -3.5,
+      "rsi": 55.0,
+      "inTop": true,
       "yutai": null
     },
     {
@@ -1532,6 +1988,11 @@
       "divPerShare": null,
       "exDivDate": null,
       "dividendYield": null,
+      "per": 26.6,
+      "pbr": 6.34,
+      "roe": 33.0,
+      "rsi": 72.8,
+      "inTop": true,
       "yutai": null
     },
     {
@@ -1541,6 +2002,11 @@
       "divPerShare": null,
       "exDivDate": "2015-03-27",
       "dividendYield": null,
+      "per": null,
+      "pbr": 1.28,
+      "roe": -15.3,
+      "rsi": 39.2,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1550,6 +2016,11 @@
       "divPerShare": 18.0,
       "exDivDate": "2027-03-30",
       "dividendYield": 0.35,
+      "per": 37.8,
+      "pbr": 11.02,
+      "roe": 33.5,
+      "rsi": 54.7,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1559,6 +2030,11 @@
       "divPerShare": 2.3,
       "exDivDate": "2026-12-29",
       "dividendYield": 0.26,
+      "per": 35.7,
+      "pbr": 2.42,
+      "roe": 7.4,
+      "rsi": 61.4,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1567,7 +2043,12 @@
       "price": 1881.0,
       "divPerShare": 6.0,
       "exDivDate": "2026-12-29",
-      "dividendYield": 0.31,
+      "dividendYield": 0.32,
+      "per": 23.1,
+      "pbr": 4.15,
+      "roe": 22.1,
+      "rsi": 64.5,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1577,6 +2058,11 @@
       "divPerShare": null,
       "exDivDate": null,
       "dividendYield": null,
+      "per": 313.9,
+      "pbr": 1.2,
+      "roe": 0.4,
+      "rsi": 38.4,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1586,6 +2072,11 @@
       "divPerShare": null,
       "exDivDate": null,
       "dividendYield": null,
+      "per": 30.5,
+      "pbr": 2.08,
+      "roe": 11.2,
+      "rsi": 38.6,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1595,6 +2086,11 @@
       "divPerShare": null,
       "exDivDate": null,
       "dividendYield": null,
+      "per": 151.6,
+      "pbr": 6.53,
+      "roe": 3.5,
+      "rsi": 65.2,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1604,6 +2100,11 @@
       "divPerShare": 8.0,
       "exDivDate": "2027-03-30",
       "dividendYield": 0.78,
+      "per": 27.9,
+      "pbr": 14.0,
+      "roe": 55.4,
+      "rsi": 68.9,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1613,6 +2114,11 @@
       "divPerShare": 5.0,
       "exDivDate": "2026-05-28",
       "dividendYield": 0.3,
+      "per": 105.3,
+      "pbr": 11.3,
+      "roe": 15.7,
+      "rsi": 69.3,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1622,6 +2128,11 @@
       "divPerShare": null,
       "exDivDate": null,
       "dividendYield": null,
+      "per": 36.3,
+      "pbr": 5.37,
+      "roe": 16.3,
+      "rsi": 74.7,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1631,6 +2142,11 @@
       "divPerShare": null,
       "exDivDate": null,
       "dividendYield": null,
+      "per": 66.5,
+      "pbr": 4.67,
+      "roe": 6.3,
+      "rsi": 49.9,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1640,6 +2156,11 @@
       "divPerShare": null,
       "exDivDate": null,
       "dividendYield": null,
+      "per": 175.0,
+      "pbr": 6.17,
+      "roe": 8.7,
+      "rsi": 69.9,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1649,6 +2170,11 @@
       "divPerShare": null,
       "exDivDate": null,
       "dividendYield": null,
+      "per": null,
+      "pbr": 10.35,
+      "roe": -10.6,
+      "rsi": 31.5,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1658,6 +2184,11 @@
       "divPerShare": 125.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 1.84,
+      "per": 34.0,
+      "pbr": 8.62,
+      "roe": 26.1,
+      "rsi": 54.6,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1667,6 +2198,11 @@
       "divPerShare": null,
       "exDivDate": null,
       "dividendYield": null,
+      "per": null,
+      "pbr": null,
+      "roe": null,
+      "rsi": null,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1676,6 +2212,11 @@
       "divPerShare": null,
       "exDivDate": null,
       "dividendYield": null,
+      "per": null,
+      "pbr": null,
+      "roe": null,
+      "rsi": null,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1685,6 +2226,11 @@
       "divPerShare": 50.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 1.92,
+      "per": 53.8,
+      "pbr": 3.51,
+      "roe": 6.5,
+      "rsi": 51.5,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1694,6 +2240,11 @@
       "divPerShare": 130.0,
       "exDivDate": "2026-08-28",
       "dividendYield": 1.95,
+      "per": 26.8,
+      "pbr": 8.65,
+      "roe": 35.8,
+      "rsi": 81.3,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1703,6 +2254,11 @@
       "divPerShare": 23.0,
       "exDivDate": "2026-06-29",
       "dividendYield": 2.83,
+      "per": 9.0,
+      "pbr": 0.79,
+      "roe": 7.0,
+      "rsi": 23.1,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1712,6 +2268,11 @@
       "divPerShare": null,
       "exDivDate": null,
       "dividendYield": null,
+      "per": null,
+      "pbr": 8.04,
+      "roe": -6.5,
+      "rsi": 50.7,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1721,6 +2282,11 @@
       "divPerShare": null,
       "exDivDate": null,
       "dividendYield": null,
+      "per": 35.4,
+      "pbr": 7.42,
+      "roe": 23.9,
+      "rsi": 56.0,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1729,7 +2295,12 @@
       "price": 2134.0,
       "divPerShare": 180.0,
       "exDivDate": "2026-12-29",
-      "dividendYield": 8.4,
+      "dividendYield": 8.43,
+      "per": 9.9,
+      "pbr": 1.86,
+      "roe": 14.0,
+      "rsi": 77.8,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -1739,6 +2310,11 @@
       "divPerShare": 13.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 5.01,
+      "per": 13.4,
+      "pbr": 2.61,
+      "roe": 20.1,
+      "rsi": 74.6,
+      "inTop": false,
       "yutai": "なし（パーソルHDは株主優待制度なし・配当のみ）"
     },
     {
@@ -1748,6 +2324,11 @@
       "divPerShare": 156.1,
       "exDivDate": "2026-03-30",
       "dividendYield": 2.45,
+      "per": 16.2,
+      "pbr": 1.58,
+      "roe": 10.4,
+      "rsi": 56.9,
+      "inTop": false,
       "yutai": "2024年に株主優待は廃止済み"
     }
   ],
@@ -1774,18 +2355,18 @@
     },
     {
       "type": "warn",
-      "title": "入替候補OUT: ファナック",
-      "desc": "スコア下位15% (score=0.235)"
+      "title": "入替候補OUT: 任天堂",
+      "desc": "スコア下位15% (score=0.236)"
     },
     {
       "type": "warn",
-      "title": "入替候補OUT: ネクソン",
-      "desc": "スコア下位15% (score=0.235)"
+      "title": "入替候補OUT: FFRIセキュリティ",
+      "desc": "スコア下位15% (score=0.23)"
     },
     {
       "type": "warn",
-      "title": "入替候補OUT: カバー",
-      "desc": "スコア下位15% (score=0.232)"
+      "title": "入替候補OUT: 資生堂",
+      "desc": "スコア下位15% (score=0.229)"
     }
   ],
   "flow": {
@@ -1812,18 +2393,18 @@
   },
   "themeTrends": [
     {
-      "theme": "その他",
-      "mentions": 5,
-      "pos": 2,
-      "neg": 0,
-      "prevMentions": 5
-    },
-    {
       "theme": "AI",
-      "mentions": 5,
+      "mentions": 6,
       "pos": 0,
       "neg": 0,
-      "prevMentions": 5
+      "prevMentions": 6
+    },
+    {
+      "theme": "その他",
+      "mentions": 4,
+      "pos": 2,
+      "neg": 0,
+      "prevMentions": 4
     }
   ]
 }

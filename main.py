@@ -67,6 +67,11 @@ def _build_stock_master(fetched_stocks: list[dict]) -> list[dict]:
             "divPerShare": s.get("div_per_share") if s else None,
             "exDivDate": s.get("ex_div_date") if s else None,
             "dividendYield": round(s.get("dividend_yield", 0), 2) if s and s.get("dividend_yield") else None,
+            "per": round(s["per"], 1) if s and s.get("per") else None,
+            "pbr": round(s["pbr"], 2) if s and s.get("pbr") else None,
+            "roe": round(s.get("roe", 0), 1) if s and s.get("roe") else None,
+            "rsi": s.get("rsi") if s else None,
+            "inTop": code in {t["ticker"] for t in fetched_stocks[:10]},
             "yutai": YUTAI_MAP.get(code),
         }
         master.append(entry)

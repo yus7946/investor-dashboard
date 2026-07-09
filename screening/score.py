@@ -27,8 +27,10 @@ def score_universe(stocks: list[dict]) -> list[dict]:
         s["value"] = round(value_n[i], 3)
         s["quality"] = round(quality_n[i], 3)
         s["momentum"] = round(momentum_n[i], 3)
+        # 勢い(momentum)を最大比重に。財務指標(value/quality)は決算ごとにしか変わらず日々ほぼ不変のため、
+        # これらを主にするとTOP10が固定化する。日々の値動きを主軸にしつつ、割安・品質も50%残してバランスを取る。
         s["score"] = round(
-            value_n[i] * 0.30 + quality_n[i] * 0.30 + momentum_n[i] * 0.25 + lowvol_n[i] * 0.15, 3
+            value_n[i] * 0.25 + quality_n[i] * 0.25 + momentum_n[i] * 0.35 + lowvol_n[i] * 0.15, 3
         )
 
         f = 0

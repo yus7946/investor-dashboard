@@ -436,6 +436,32 @@ body::before {
 }
 .asset-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 
+/* ── 銘柄検索 ── */
+.stock-search { margin-bottom: 12px; }
+.stock-search input {
+  width: 100%; padding: 12px 14px; border-radius: 12px;
+  border: 1px solid var(--border); background: var(--surface2); color: var(--text); font-size: 14px;
+}
+.search-card {
+  background: var(--surface); border: 1px solid var(--accent); border-radius: var(--r);
+  padding: 16px; margin-bottom: 14px; position: relative;
+}
+.search-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 10px; }
+.search-card-name { font-size: 16px; font-weight: 800; }
+.search-card-code { font-size: 11px; color: var(--muted); }
+.search-card-close {
+  width: 26px; height: 26px; border-radius: 6px; flex-shrink: 0;
+  border: 1px solid var(--border); background: var(--surface2); color: var(--muted); font-size: 13px; cursor: pointer;
+}
+.search-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 14px; font-size: 12px; margin-bottom: 10px; }
+.search-grid .lbl { color: var(--muted); }
+.search-grid .val { font-weight: 700; text-align: right; }
+.search-links { display: flex; gap: 6px; flex-wrap: wrap; }
+.search-links a {
+  font-size: 11px; font-weight: 700; padding: 7px 11px; border-radius: 8px; text-decoration: none;
+  background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.25); color: var(--accent2);
+}
+
 /* ── 銘柄オートコンプリート ── */
 .ac-wrap { position: relative; }
 .ac-list {
@@ -562,6 +588,13 @@ body::before {
 <div class="tab-content active" id="tab-screening">
 
   <div class="section-hint">評価の高い順に並んでいます。緑の「買い」バッジが買いサイン、赤の「売り」が売りサイン、黄の「様子見」は急がず待つ目安です。もっと詳しく見たいときは各銘柄の「数字で詳しく見る」を開いてください。</div>
+
+  <!-- 銘柄検索 -->
+  <div class="stock-search ac-wrap">
+    <input id="search-input" type="text" autocomplete="off" placeholder="🔍 銘柄を検索（例: トヨタ / 2181）" oninput="onSearchInput(this.value)" onfocus="onSearchInput(this.value)">
+    <div id="search-ac" class="ac-list"></div>
+  </div>
+  <div id="search-result"></div>
 
   <div class="strategy-filter">
     <button class="sf-btn active" data-strategy="all" onclick="setStrategy('all')">すべて</button>
@@ -873,7 +906,7 @@ function scoreToStars(score) {
 }
 
 const HINTS = {
-  score:    '総合評価 composite score：割安30%・品質30%・勢い25%・低ボラ15%を合成した点数（0〜1）。分析対象銘柄の中での相対評価であり、相場全体が悪い時でも高スコア銘柄は出る点に注意。',
+  score:    '総合評価 composite score：勢い35%・割安25%・品質25%・低ボラ15%を合成した点数（0〜1）。日々の値動きを主軸にしているので毎日順位が入れ替わります。分析対象銘柄の中での相対評価で、相場全体が悪い時でも高スコア銘柄は出る点に注意。',
   fscore:   '財務健全度 F：当アプリ独自の9点満点の簡易チェック（ROE・PER・PBR・勢い・配当など）。正式なピオトロスキーF-Scoreとは異なります。7以上が良好の目安。',
   value:    '割安スコア value：株価が割安かどうかの度合い。高いほど「割安」と判定。',
   quality:  '品質スコア quality：収益性や財務の安定性。高いほど「優良企業」寄り。',
@@ -1393,7 +1426,7 @@ function buildCopyText() {
   let text = `【機関投資家型AIエージェント 分析結果】${now}\n`;
   text += '='.repeat(55) + '\n\n';
   text += '■ マルチファクタースクリーニング TOP10\n';
-  text += '  因子: 割安スコア30% / 品質スコア30% / 勢いスコア25% / 低ボラ15%（分析対象内の相対評価）\n\n';
+  text += '  因子: 勢いスコア35% / 割安スコア25% / 品質スコア25% / 低ボラ15%（分析対象内の相対評価）\n\n';
   DATA.stocks.forEach(s => {
     text += `  ${s.rank}位 ${s.ticker} ${s.name}\n`;
     text += `     総合評価:${s.score.toFixed(3)} 財務健全度:${s.f}/9 割安度PER:${s.per} 資産比較PBR:${s.pbr} 稼ぐ力ROE:${s.roe}%\n`;
@@ -1515,6 +1548,82 @@ function findMasterByCode(code) {
   if (s) return { code, name: s.name, price: s.price, divPerShare: null, dividendYield: s.dividend_yield, exDivDate: null, yutai: s.yutai };
   return null;
 }
+
+// ── 銘柄検索（銘柄チェックタブ） ──
+function onSearchInput(q) {
+  const listEl = document.getElementById('search-ac');
+  q = (q || '').trim().toLowerCase();
+  if (!q) { listEl.classList.remove('open'); listEl.innerHTML = ''; return; }
+  const matches = STOCK_MASTER.filter(m =>
+    m.name.toLowerCase().includes(q) || m.code.toLowerCase().includes(q)
+  ).slice(0, 8);
+  if (!matches.length) {
+    listEl.innerHTML = `<div class="ac-item" style="cursor:default"><span class="ac-item-name" style="color:var(--muted);font-weight:400">候補なし</span></div>`;
+    listEl.classList.add('open'); return;
+  }
+  listEl.innerHTML = matches.map(m => `
+    <div class="ac-item" onclick="showSearchResult('${m.code}')">
+      <div><div class="ac-item-name">${m.name}</div><div class="ac-item-code">${m.code}</div></div>
+      <div class="ac-item-price">${m.price ? '¥' + m.price.toLocaleString() : '—'}</div>
+    </div>`).join('');
+  listEl.classList.add('open');
+}
+
+function showSearchResult(code) {
+  const m = findMasterByCode(code);
+  document.getElementById('search-ac').classList.remove('open');
+  document.getElementById('search-input').value = '';
+  if (!m) return;
+  const el = document.getElementById('search-result');
+  const code4 = code.split('.')[0];
+  const yf = `https://finance.yahoo.co.jp/quote/${code}`;
+  const minkabu = `https://minkabu.jp/stock/${code4}`;
+  const kabutan = `https://kabutan.jp/stock/?code=${code4}`;
+  const row = (l, v) => v != null && v !== '' ? `<div class="lbl">${l}</div><div class="val">${v}</div>` : '';
+  // TOP10入りならシグナルも表示
+  const inTop = DATA.stocks.find(s => s.ticker === code);
+  const sigLine = inTop ? `<div style="margin-bottom:8px"><span class="signal ${inTop.signal.includes('強い買い')?'strong-buy':inTop.signal.includes('買い')?'buy':inTop.signal.includes('売り')?'sell':'hold'}">${inTop.signal}</span> <span style="font-size:11px;color:var(--muted)">本日のTOP10入り銘柄</span></div>` : '';
+  el.innerHTML = `
+  <div class="search-card">
+    <div class="search-card-head">
+      <div>
+        <div class="search-card-name">${m.name}</div>
+        <div class="search-card-code">${m.code}</div>
+      </div>
+      <button class="search-card-close" onclick="closeSearchResult()">✕</button>
+    </div>
+    ${sigLine}
+    <div class="search-grid">
+      ${row('現在株価', m.price ? '¥' + m.price.toLocaleString() : '取得できず')}
+      ${row('配当利回り', m.dividendYield != null ? m.dividendYield + '%' : '')}
+      ${row('一株配当', m.divPerShare != null ? '¥' + m.divPerShare + '／年' : '')}
+      ${row('次の権利確定日', m.exDivDate || '')}
+      ${row('割安度 PER', m.per != null ? m.per + '倍' : '')}
+      ${row('資産比較 PBR', m.pbr != null ? m.pbr + '倍' : '')}
+      ${row('稼ぐ力 ROE', m.roe != null ? m.roe + '%' : '')}
+      ${row('買われすぎ RSI', m.rsi != null ? m.rsi : '')}
+    </div>
+    ${m.yutai ? `<div class="yutai-box" style="margin-bottom:10px">株主優待: ${m.yutai}</div>` : ''}
+    <div class="search-links">
+      <a href="${yf}" target="_blank" rel="noopener">Yahoo!ファイナンス</a>
+      <a href="${minkabu}" target="_blank" rel="noopener">みんかぶ</a>
+      <a href="${kabutan}" target="_blank" rel="noopener">株探</a>
+    </div>
+    <div style="font-size:10px;color:var(--muted);margin-top:8px">株価・配当は毎日の自動更新時点の値です。最新の詳細は各リンク先でご確認ください。</div>
+  </div>`;
+  el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function closeSearchResult() { document.getElementById('search-result').innerHTML = ''; }
+
+// 外側タップで検索候補を閉じる
+document.addEventListener('click', (e) => {
+  const w = document.querySelector('.stock-search');
+  if (w && !w.contains(e.target)) {
+    const l = document.getElementById('search-ac');
+    if (l) l.classList.remove('open');
+  }
+});
 
 // 選択中の銘柄（フォーム）
 let selectedStock = null;
