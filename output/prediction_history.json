@@ -660,6 +660,18 @@
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-07-09",
+      "ticker": "8955.T",
+      "name": "日本プライムリアルティ投資法人",
+      "basePrice": 94300.0,
+      "entry": 93868,
+      "target": 95597,
+      "stop": 92571,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
     }
   ]
 }
