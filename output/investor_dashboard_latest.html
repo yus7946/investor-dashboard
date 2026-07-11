@@ -423,8 +423,27 @@ body::before {
 /* ── 資産 ── */
 .holding-card { display: flex; flex-direction: column; gap: 6px; }
 .holding-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
-.holding-name { font-size: 14px; font-weight: 700; }
+.holding-name { font-size: 15px; font-weight: 800; }
 .holding-code { font-size: 11px; color: var(--muted); }
+
+/* 株数 → 現在価値 のヒーロー表示 */
+.holding-hero {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  padding: 12px 0; margin: 4px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+.holding-hero-shares { text-align: left; }
+.holding-hero-shares .num { font-size: 24px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
+.holding-hero-shares .unit { font-size: 12px; color: var(--muted); margin-left: 2px; }
+.holding-hero-shares .lbl { font-size: 10px; color: var(--muted); margin-top: 4px; }
+.holding-hero-value { text-align: right; }
+.holding-hero-value .num { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; color: var(--accent); }
+.holding-hero-value .lbl { font-size: 10px; color: var(--muted); margin-top: 4px; }
+.holding-sub {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5px 12px; font-size: 12px;
+}
+.holding-sub .lbl { color: var(--muted); }
+.holding-sub .val { font-weight: 700; text-align: right; }
+.holding-hint-cost { font-size: 11px; color: var(--muted); padding: 4px 0; }
 .holding-actions { display: flex; gap: 6px; flex-shrink: 0; }
 .holding-actions button {
   width: 26px; height: 26px; border-radius: 6px;
@@ -4813,8 +4832,9 @@ function calcHolding(h) {
     const costTotal = shares * costPrice;
     const curPrice  = livePrice(h);
     const value     = curPrice ? shares * curPrice : null;
-    const pl        = value !== null ? value - costTotal : null;
-    const plPct     = (value !== null && costTotal > 0) ? (pl / costTotal) * 100 : null;
+    // 取得単価が未登録(costTotal=0)なら損益は計算不能とし null（評価額をそのまま損益にしない）
+    const pl        = (value !== null && costTotal > 0) ? value - costTotal : null;
+    const plPct     = (pl !== null && costTotal > 0) ? (pl / costTotal) * 100 : null;
     const divForecast = shares * liveDivPerShare(h);
     return { costTotal, value, pl, plPct, divForecast, curPrice };
   } else {
@@ -5084,14 +5104,52 @@ function renderHoldings() {
       const typeTag = h.type === 'mochikabu'
         ? `<span class="tag blue">持株会${h.reinvest ? '・配当再投資' : ''}</span>`
         : `<span class="tag">通常保有</span>`;
-      const detailRows = h.type === 'normal'
-        ? `<div class="lbl">保有株数</div><div class="val">${(h.shares||0).toLocaleString()}株</div>
-           <div class="lbl">取得単価</div><div class="val">${h.costPrice?fmtYen(h.costPrice):'未入力'}</div>
-           <div class="lbl">現在株価<span style="font-weight:400;font-size:9px">（自動）</span></div><div class="val">${c.curPrice ? fmtYen(c.curPrice) : '取得できず'}</div>`
-        : `<div class="lbl">取得累計額</div><div class="val">${fmtYen(h.acquiredTotal)}</div>
-           <div class="lbl">奨励金率</div><div class="val">${h.incentiveRate||0}%（${fmtYen(c.incentiveAmount)}）</div>`;
       const exDiv = h.exDivDate ? `<div class="lbl">次の権利確定日</div><div class="val">${h.exDivDate}</div>` : '';
       const yutaiRow = h.yutai ? `<div class="holding-yutai">優待: ${h.yutai}</div>` : '';
+
+      let body;
+      if (h.type === 'normal') {
+        // 株数 → 現在価値 を主役に
+        const plRow = c.pl === null
+          ? `<div class="holding-hint-cost">取得単価を登録すると、損益（+○円）も自動で表示されます。</div>`
+          : `<div class="lbl">評価損益</div><div class="val ${plClass}">${plSign}${fmtYen(c.pl)}${c.plPct!==null?`（${plSign}${c.plPct.toFixed(1)}%）`:''}</div>`;
+        body = `
+        <div class="holding-hero">
+          <div class="holding-hero-shares">
+            <div><span class="num">${(h.shares||0).toLocaleString()}</span><span class="unit">株</span></div>
+            <div class="lbl">保有株数</div>
+          </div>
+          <div class="holding-hero-value">
+            <div class="num">${c.value !== null ? fmtYen(c.value) : '―'}</div>
+            <div class="lbl">現在価値（自動更新）</div>
+          </div>
+        </div>
+        <div class="holding-sub">
+          <div class="lbl">現在株価</div><div class="val">${c.curPrice ? fmtYen(c.curPrice) : '取得できず'}</div>
+          <div class="lbl">取得単価</div><div class="val">${h.costPrice ? fmtYen(h.costPrice) : '未登録'}</div>
+          ${plRow}
+          <div class="lbl">年間配当予想</div><div class="val up">${fmtYen(c.divForecast)}</div>
+          ${exDiv}
+        </div>`;
+      } else {
+        body = `
+        <div class="holding-hero">
+          <div class="holding-hero-shares">
+            <div><span class="num">${fmtYen(h.acquiredTotal)}</span></div>
+            <div class="lbl">取得累計額</div>
+          </div>
+          <div class="holding-hero-value">
+            <div class="num">${fmtYen(c.value)}</div>
+            <div class="lbl">現在価値（奨励金込み）</div>
+          </div>
+        </div>
+        <div class="holding-sub">
+          <div class="lbl">奨励金率</div><div class="val">${h.incentiveRate||0}%（${fmtYen(c.incentiveAmount)}）</div>
+          <div class="lbl">評価損益</div><div class="val ${plClass}">${c.pl===null?'―':plSign+fmtYen(c.pl)}${c.plPct!==null?`（${plSign}${c.plPct.toFixed(1)}%）`:''}</div>
+          <div class="lbl">年間配当予想</div><div class="val up">${fmtYen(c.divForecast)}</div>
+          ${exDiv}
+        </div>`;
+      }
       return `
       <div class="card holding-card">
         <div class="holding-head">
@@ -5104,13 +5162,7 @@ function renderHoldings() {
             <button onclick="deleteHolding('${h.id}')">✕</button>
           </div>
         </div>
-        <div class="holding-grid">
-          ${detailRows}
-          <div class="lbl">評価額</div><div class="val">${fmtYen(c.value)}</div>
-          <div class="lbl">評価損益</div><div class="val ${plClass}">${c.pl===null?'―':plSign+fmtYen(c.pl)}${c.plPct!==null?` (${plSign}${c.plPct.toFixed(1)}%)`:''}</div>
-          <div class="lbl">年間配当予想</div><div class="val up">${fmtYen(c.divForecast)}</div>
-          ${exDiv}
-        </div>
+        ${body}
         ${yutaiRow}
       </div>`;
     }).join('');
