@@ -444,6 +444,8 @@ body::before {
 .holding-sub .lbl { color: var(--muted); }
 .holding-sub .val { font-weight: 700; text-align: right; }
 .holding-hint-cost { font-size: 11px; color: var(--muted); padding: 4px 0; }
+.backup-card { margin-bottom: 14px; }
+.backup-card .btn-secondary { flex: 1; }
 .holding-actions { display: flex; gap: 6px; flex-shrink: 0; }
 .holding-actions button {
   width: 26px; height: 26px; border-radius: 6px;
@@ -796,6 +798,20 @@ body::before {
 
   <!-- 資産推移（このページを開いた日ごとに自動記録） -->
   <div id="asset-trend"></div>
+
+  <!-- バックアップ（データ消失対策） -->
+  <div class="card backup-card">
+    <div style="font-size:12px;font-weight:800;margin-bottom:6px">データのバックアップ</div>
+    <div style="font-size:11px;color:var(--muted);line-height:1.6;margin-bottom:10px">
+      保有銘柄・目標・資産推移はこの端末のブラウザだけに保存されています。ホーム画面のアイコンとSafariを使い分けると、iPhoneの仕様上それぞれ別の保存領域として扱われ「消えたように見える」ことがあります。バックアップを取っておくと、別の端末・別のアクセス方法でも復元できます。
+    </div>
+    <div class="asset-form-actions">
+      <button class="btn-primary" onclick="exportBackup()">バックアップを書き出す</button>
+      <button class="btn-secondary" onclick="document.getElementById('backup-file').click()">読み込む</button>
+    </div>
+    <input type="file" id="backup-file" accept="application/json" style="display:none" onchange="importBackup(this.files[0])">
+    <div id="backup-status" style="font-size:11px;margin-top:8px"></div>
+  </div>
 
   <div class="section-title">保有銘柄一覧</div>
   <div id="holding-list"></div>
@@ -1614,6 +1630,63 @@ function loadHoldings() {
   try { return JSON.parse(localStorage.getItem(HOLDINGS_KEY) || '[]'); } catch(e) { return []; }
 }
 function saveHoldings(list) { localStorage.setItem(HOLDINGS_KEY, JSON.stringify(list)); }
+
+// ── データバックアップ（保有銘柄・目標・資産推移をJSONファイルに書き出し/読み込み） ──
+const BACKUP_KEYS = ['my_holdings', 'profit_goal_v1', 'asset_history_v1'];
+
+async function exportBackup() {
+  const payload = { exportedAt: new Date().toISOString(), data: {} };
+  BACKUP_KEYS.forEach(k => { payload.data[k] = localStorage.getItem(k); });
+  const json = JSON.stringify(payload, null, 2);
+  const filename = `investor-dashboard-backup-${new Date().toISOString().slice(0,10)}.json`;
+  const statusEl = document.getElementById('backup-status');
+
+  // スマホ: ファイル共有に対応していればOSの共有シート経由で保存（iCloud/ファイル等に保存可）
+  try {
+    const file = new File([json], filename, { type: 'application/json' });
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      await navigator.share({ files: [file], title: 'バックアップ' });
+      statusEl.textContent = '';
+      return;
+    }
+  } catch (e) { /* キャンセル時など。下のダウンロードにフォールバック */ }
+
+  // PC等: ダウンロードリンクで保存
+  const blob = new Blob([json], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  statusEl.style.color = 'var(--green)';
+  statusEl.textContent = `保存しました: ${filename}`;
+}
+
+function importBackup(file) {
+  const statusEl = document.getElementById('backup-status');
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const payload = JSON.parse(reader.result);
+      const data = payload.data || payload;  // 素のJSONを渡された場合にも対応
+      let restored = 0;
+      BACKUP_KEYS.forEach(k => {
+        if (data[k] != null) { localStorage.setItem(k, data[k]); restored++; }
+      });
+      if (!restored) throw new Error('復元可能なデータが見つかりませんでした');
+      renderHoldings();
+      restoreGoalForm();
+      renderAssetTrend();
+      statusEl.style.color = 'var(--green)';
+      statusEl.textContent = `復元しました（${payload.exportedAt ? payload.exportedAt.slice(0,10) + '時点の' : ''}バックアップ）`;
+    } catch (e) {
+      statusEl.style.color = 'var(--red)';
+      statusEl.textContent = '読み込みに失敗しました。正しいバックアップファイルか確認してください。';
+    }
+  };
+  reader.readAsText(file);
+}
 
 // 銘柄マスタ（コード→情報）。持ち株ページの補完・価格/配当/優待の自動反映に使う。
 const STOCK_MASTER = (DATA.stockMaster || []);

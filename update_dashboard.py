@@ -50,6 +50,13 @@ def update_dashboard():
     shutil.copy2(OUTPUT_HTML, docs_index)
     print(f"コピー完了: {docs_index}")
 
+    # PWA関連ファイル（manifest.json / sw.js / icon.svg）もdocs/に同期する。
+    # これが無いとホーム画面追加時にmanifestが404し、正しいPWAとしてインストールされない。
+    for asset in ("manifest.json", "sw.js", "icon.svg"):
+        if os.path.exists(asset):
+            shutil.copy2(asset, os.path.join(docs_dir, asset))
+    print("PWA関連ファイル(manifest.json/sw.js/icon.svg)を同期しました")
+
 
 if __name__ == "__main__":
     update_dashboard()
