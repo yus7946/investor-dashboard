@@ -277,6 +277,16 @@ body::before {
 .plan-sub { font-size: 9px; color: var(--muted); margin-top: 4px; line-height: 1.3; }
 .plan-note { font-size: 10px; color: var(--muted); line-height: 1.5; margin-top: 8px; }
 .plan-note b { color: var(--text); }
+.plan-dist {
+  font-size: 11px; color: var(--muted); margin-bottom: 8px;
+  padding: 6px 9px; border-radius: 7px;
+  background: rgba(245,158,11,0.07); border: 1px solid rgba(245,158,11,0.18);
+}
+.plan-dist b { color: var(--yellow); }
+.plan-dist.in {
+  background: rgba(16,185,129,0.07); border-color: rgba(16,185,129,0.22);
+  color: var(--green); font-weight: 700;
+}
 .detail-toggle {
   width: 100%; padding: 9px; border: 1px solid var(--border);
   background: var(--surface2); color: var(--muted); font-size: 11px; font-weight: 700;
@@ -591,7 +601,7 @@ body::before {
 
   <!-- 銘柄検索 -->
   <div class="stock-search ac-wrap">
-    <input id="search-input" type="text" autocomplete="off" placeholder="🔍 銘柄を検索（例: トヨタ / 2181）" oninput="onSearchInput(this.value)" onfocus="onSearchInput(this.value)">
+    <input id="search-input" type="text" autocomplete="off" placeholder="銘柄を検索（例: トヨタ / 2181）" oninput="onSearchInput(this.value)" onfocus="onSearchInput(this.value)">
     <div id="search-ac" class="ac-list"></div>
   </div>
   <div id="search-result"></div>
@@ -705,6 +715,9 @@ body::before {
 <div class="tab-content" id="tab-assets">
 
   <div class="section-hint">保有銘柄の評価額・損益・配当・優待をまとめて管理できます。銘柄名を数文字入れて候補を選ぶだけで、現在株価・配当・権利確定日は自動で反映されます（毎日の更新で最新化）。データはこの端末にのみ保存されます。</div>
+
+  <!-- 持ち株の今日の判定 -->
+  <div id="holding-actions"></div>
 
   <div class="kpi-grid">
     <div class="kpi-card" id="asset-kpi1">
@@ -3375,9 +3388,21 @@ function renderPlanBox(s) {
   // 買いサイン以外は参考扱いで淡く
   const cls = isBuy ? 'plan-box active' : 'plan-box';
   const fmt = n => n.toLocaleString();
+  // 高値追い防止: 現在値と買い目安の距離
+  const cur = s.forecast.price;
+  let distLine = '';
+  if (cur && p.entry) {
+    if (cur <= p.entry) {
+      distLine = `<div class="plan-dist in">現在値 ${fmt(Math.round(cur))}円は買い目安ゾーン内です</div>`;
+    } else {
+      const d = ((cur - p.entry) / cur * 100).toFixed(1);
+      distLine = `<div class="plan-dist">買い目安まであと <b>-${d}%</b>（現在値 ${fmt(Math.round(cur))}円。焦って高値を追わないための目安）</div>`;
+    }
+  }
   return `
   <div class="${cls}">
     <div class="plan-title">${isBuy ? '売買の目安（自動計算）' : '売買の目安（参考・今は買いサインなし）'}</div>
+    ${distLine}
     <div class="plan-row">
       <div class="plan-cell buy">
         <div class="plan-label">買い目安</div>
@@ -4202,6 +4227,60 @@ function fmtYen(n) {
   return '¥' + Math.round(n).toLocaleString();
 }
 
+// 持ち株の今日の判定（機械的な目安・投資助言ではない）
+function renderHoldingActions() {
+  const el = document.getElementById('holding-actions');
+  if (!el) return;
+  const list = loadHoldings().filter(h => h.type === 'normal' && h.code);
+  if (!list.length) { el.innerHTML = ''; return; }
+
+  const rows = list.map(h => {
+    const c = calcHolding(h);
+    const live = findMasterByCode(h.code);
+    const rsi = live ? live.rsi : null;
+    const plPct = c.plPct;
+
+    let badge = 'ホールド', color = 'var(--muted)', bg = 'rgba(255,255,255,0.04)', reason = '特に急ぐサインはありません。';
+    if (plPct !== null && plPct <= -10) {
+      badge = '損切り確認'; color = 'var(--red)'; bg = 'rgba(239,68,68,0.08)';
+      reason = `含み損${plPct.toFixed(1)}%。損失を広げないルール（例: -10%で機械的に売る）を確認する局面です。`;
+    } else if (plPct !== null && plPct >= 15 && rsi != null && rsi >= 70) {
+      badge = '利確検討'; color = 'var(--green)'; bg = 'rgba(16,185,129,0.08)';
+      reason = `含み益+${plPct.toFixed(1)}%かつRSI${rsi}（過熱圏）。一部利益確定も選択肢です。`;
+    } else if (rsi != null && rsi >= 75) {
+      badge = '過熱注意'; color = 'var(--yellow)'; bg = 'rgba(245,158,11,0.08)';
+      reason = `RSI${rsi}と買われすぎ圏。急落に備え利確ラインを決めておくと安心です。`;
+    } else if (rsi != null && rsi <= 30) {
+      badge = '売られすぎ圏'; color = 'var(--accent2)'; bg = 'rgba(59,130,246,0.08)';
+      reason = `RSI${rsi}と売られすぎ圏の目安。慌てて投げ売りする局面ではない可能性があります。`;
+    } else if (plPct !== null) {
+      reason = `損益${plPct >= 0 ? '+' : ''}${plPct.toFixed(1)}%・RSI${rsi ?? '—'}。特に急ぐサインはありません。`;
+    }
+
+    // 権利確定日が30日以内なら追記
+    if (h.exDivDate) {
+      const days = Math.round((new Date(h.exDivDate) - Date.now()) / 86400000);
+      if (days >= 0 && days <= 30) reason += ` 権利確定日が近いです（${h.exDivDate}・あと${days}日）。`;
+    }
+
+    return `
+    <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-radius:10px;background:${bg};border:1px solid ${color}33;margin-bottom:8px">
+      <span style="font-size:11px;font-weight:800;color:${color};padding:4px 10px;border-radius:99px;background:${bg};border:1px solid ${color}55;white-space:nowrap;flex-shrink:0">${badge}</span>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:13px;font-weight:800">${h.name}</div>
+        <div style="font-size:11px;color:var(--text);line-height:1.5;margin-top:2px">${reason}</div>
+      </div>
+    </div>`;
+  }).join('');
+
+  el.innerHTML = `
+  <div class="card" style="margin-bottom:14px">
+    <div style="font-size:13px;font-weight:800;margin-bottom:10px">持ち株の今日の判定（自動）</div>
+    ${rows}
+    <div style="font-size:10px;color:var(--muted)">最新株価・RSI・あなたの損益から機械的に判定した目安です。投資助言ではありません。</div>
+  </div>`;
+}
+
 function renderHoldings() {
   const list = loadHoldings();
   const el   = document.getElementById('holding-list');
@@ -4266,6 +4345,7 @@ function renderHoldings() {
   document.getElementById('asset-div-total').textContent    = fmtYen(totalDiv);
   document.getElementById('asset-count').textContent        = list.length;
 
+  renderHoldingActions();
   setTimeout(() => animateVisible(), 50);
 }
 
