@@ -744,6 +744,9 @@ body::before {
     </div>
   </div>
 
+  <!-- 資産推移（このページを開いた日ごとに自動記録） -->
+  <div id="asset-trend"></div>
+
   <div class="section-title">保有銘柄一覧</div>
   <div id="holding-list"></div>
 
@@ -1859,6 +1862,59 @@ function fmtYen(n) {
   return '¥' + Math.round(n).toLocaleString();
 }
 
+// ── 資産推移（開いた日ごとに評価額をこの端末に記録し、推移を可視化） ──
+const ASSET_HISTORY_KEY = 'asset_history_v1';
+
+function recordAssetSnapshot(totalValue) {
+  if (!totalValue || totalValue <= 0) return;
+  let hist = {};
+  try { hist = JSON.parse(localStorage.getItem(ASSET_HISTORY_KEY) || '{}'); } catch (e) {}
+  const today = new Date().toISOString().slice(0, 10);
+  hist[today] = Math.round(totalValue);  // 同日は上書き（最新値）
+  // 直近180日分に制限
+  const keys = Object.keys(hist).sort();
+  keys.slice(0, Math.max(0, keys.length - 180)).forEach(k => delete hist[k]);
+  localStorage.setItem(ASSET_HISTORY_KEY, JSON.stringify(hist));
+}
+
+function renderAssetTrend() {
+  const el = document.getElementById('asset-trend');
+  if (!el) return;
+  let hist = {};
+  try { hist = JSON.parse(localStorage.getItem(ASSET_HISTORY_KEY) || '{}'); } catch (e) {}
+  const dates = Object.keys(hist).sort();
+  if (dates.length < 2) {
+    el.innerHTML = dates.length === 1
+      ? `<div class="card" style="margin-bottom:14px;font-size:11px;color:var(--muted)">資産推移: 記録を開始しました（${dates[0]}）。日を置いてこのページを開くたびに自動で記録され、グラフになります。</div>`
+      : '';
+    return;
+  }
+  const vals = dates.map(d => hist[d]);
+  const min = Math.min(...vals), max = Math.max(...vals);
+  const range = (max - min) || 1;
+  const W = 300, H = 60, PAD = 4;
+  const pts = vals.map((v, i) => {
+    const x = PAD + (W - 2 * PAD) * (i / (vals.length - 1));
+    const y = H - PAD - (H - 2 * PAD) * ((v - min) / range);
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(' ');
+  const first = vals[0], last = vals[vals.length - 1];
+  const chg = last - first;
+  const chgPct = first > 0 ? (chg / first * 100) : 0;
+  const col = chg >= 0 ? 'var(--green)' : 'var(--red)';
+  el.innerHTML = `
+  <div class="card" style="margin-bottom:14px">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px">
+      <span style="font-size:12px;font-weight:800">資産推移（${dates[0]}〜）</span>
+      <span style="font-size:12px;font-weight:800;color:${col}">${chg >= 0 ? '+' : ''}${Math.round(chg).toLocaleString()}円（${chg >= 0 ? '+' : ''}${chgPct.toFixed(1)}%）</span>
+    </div>
+    <svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;display:block">
+      <polyline points="${pts}" fill="none" stroke="${chg >= 0 ? '#10b981' : '#ef4444'}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+    <div style="font-size:9px;color:var(--muted);margin-top:4px">このページを開いた日の評価額を自動記録した推移です（記録${dates.length}回・この端末のみ）</div>
+  </div>`;
+}
+
 // 持ち株の今日の判定（機械的な目安・投資助言ではない）
 function renderHoldingActions() {
   const el = document.getElementById('holding-actions');
@@ -1895,12 +1951,22 @@ function renderHoldingActions() {
       if (days >= 0 && days <= 30) reason += ` 権利確定日が近いです（${h.exDivDate}・あと${days}日）。`;
     }
 
+    // この銘柄の値動き実績(σ)から利確/損切りの具体価格目安（現在値基準・機械算出）
+    let levels = '';
+    if (live && live.price && live.vol) {
+      const sd = live.vol / Math.sqrt(252);  // 年率ボラ→日次σ
+      const tgt = Math.round(live.price * (1 + 2 * sd));
+      const stp = Math.round(live.price * (1 - 1.5 * sd));
+      levels = `<div style="font-size:10px;color:var(--muted);margin-top:4px">価格目安: 利確 <b style="color:var(--green)">${tgt.toLocaleString()}円</b> / 損切り <b style="color:var(--red)">${stp.toLocaleString()}円</b>（現在値${Math.round(live.price).toLocaleString()}円・実績値動きσから機械算出）</div>`;
+    }
+
     return `
     <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-radius:10px;background:${bg};border:1px solid ${color}33;margin-bottom:8px">
       <span style="font-size:11px;font-weight:800;color:${color};padding:4px 10px;border-radius:99px;background:${bg};border:1px solid ${color}55;white-space:nowrap;flex-shrink:0">${badge}</span>
       <div style="flex:1;min-width:0">
         <div style="font-size:13px;font-weight:800">${h.name}</div>
         <div style="font-size:11px;color:var(--text);line-height:1.5;margin-top:2px">${reason}</div>
+        ${levels}
       </div>
     </div>`;
   }).join('');
@@ -1978,6 +2044,8 @@ function renderHoldings() {
   document.getElementById('asset-count').textContent        = list.length;
 
   renderHoldingActions();
+  recordAssetSnapshot(totalValue);
+  renderAssetTrend();
   setTimeout(() => animateVisible(), 50);
 }
 

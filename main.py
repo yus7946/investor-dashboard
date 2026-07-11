@@ -71,6 +71,7 @@ def _build_stock_master(fetched_stocks: list[dict]) -> list[dict]:
             "pbr": round(s["pbr"], 2) if s and s.get("pbr") else None,
             "roe": round(s.get("roe", 0), 1) if s and s.get("roe") else None,
             "rsi": s.get("rsi") if s else None,
+            "vol": round(s["volatility"], 4) if s and s.get("volatility") else None,
             "inTop": code in {t["ticker"] for t in fetched_stocks[:10]},
             "yutai": YUTAI_MAP.get(code),
         }
