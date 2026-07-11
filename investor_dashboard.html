@@ -1078,7 +1078,7 @@ function renderStocks() {
       : s.signal.includes('売り') ? '過熱感あり。利益確定・売りを検討。'
       : '今は様子見。急がず次のサインを待つ局面。';
     const rangeLine = s.forecast
-      ? `<div class="stock-range">明日の想定レンジ <b>${s.forecast.rangeLow.toLocaleString()}〜${s.forecast.rangeHigh.toLocaleString()}円</b></div>` : '';
+      ? `<div class="stock-range">明日の想定レンジ <b>${s.forecast.rangeLow.toLocaleString()}〜${s.forecast.rangeHigh.toLocaleString()}円</b> <span style="color:var(--muted);font-weight:400">（現値±${Math.round((s.forecast.rangeHigh-s.forecast.rangeLow)/2/s.forecast.price*1000)/10}%）</span></div>` : '';
     const planBox = renderPlanBox(s);
     return `
     <div class="stock-card" id="stock-${s.ticker}" style="opacity:0;transform:translateY(16px)">
@@ -1158,8 +1158,8 @@ function renderAccuracy() {
   let rows = '';
   if (a.rangeHitRate != null) {
     const col = a.rangeHitRate >= 60 ? 'var(--green)' : 'var(--yellow)';
-    rows += `<div>予測レンジ（±1σ）的中率: <span style="font-weight:800;color:${col}">${pct(a.rangeHitRate)}</span>
-      <span style="color:var(--muted)">（${a.resolvedStockCount}件・理想の目安は約68%）</span></div>`;
+    rows += `<div>予測レンジ的中率: <span style="font-weight:800;color:${col}">${pct(a.rangeHitRate)}</span>
+      <span style="color:var(--muted)">（${a.resolvedStockCount}件・目標カバー率は約75%。高すぎる場合はレンジを自動で狭めます）</span></div>`;
   }
   if (a.leanUpN > 0) {
     rows += `<div>「上昇寄り」と予測した銘柄が実際に上昇: <span style="font-weight:700;color:var(--accent2)">${pct(a.leanUpActualUp)}</span>
@@ -1209,7 +1209,7 @@ function renderForecastBox(s) {
       <div class="scenario-track"><div class="scenario-cur" style="left:50%"></div></div>
       <span class="hi">${fmt(f.rangeHigh)}円</span>
     </div>
-    <div class="scenario-note">±1σ想定レンジ（過去実績では約3回に2回この範囲）。±2σでは ${fmt(f.rangeLow2)}〜${fmt(f.rangeHigh2)}円。</div>
+    <div class="scenario-note">想定レンジ（答え合わせ実績で幅を補正・目標カバー率約75%＝4回に3回この範囲の狙い）。より広く見るなら ${fmt(f.rangeLow2)}〜${fmt(f.rangeHigh2)}円。</div>
     ${condStr ? `<div style="font-size:11px;margin-top:6px">${condStr}</div>` : ''}
     ${factorChips}
     <div style="font-size:9px;color:var(--muted);margin-top:6px">${f.basis}</div>

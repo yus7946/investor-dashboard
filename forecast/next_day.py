@@ -130,9 +130,9 @@ def build_forecasts(top_stocks: list[dict], regime: str = "unknown", calib: floa
             vol_d = float(r.std()) * calib  # 実績に基づくレンジ補正
             price = float(close.iloc[-1])
             cond = _conditional_uprate(close, s.get("rsi", 50), s.get("week_change_pct", 0) or 0)
-            basis = "レンジは過去2年の日次値動きの標準偏差、実績確率は同条件だった過去の日の翌日騰落を実際に集計したもの。統計的傾向であり将来を保証しません。"
+            basis = "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。"
             if calibrated:
-                basis += f"（過去の答え合わせ実績に基づきレンジ幅を{calib:.2f}倍に自動補正済み）"
+                basis += f"（答え合わせ実績に基づきレンジ幅を{calib:.2f}倍に自動補正済み。目標カバー率は約75%）"
 
             # 売買目安3点セット: 1日の実績振れ幅(σ)を単位に機械的に算出
             unit = price * vol_d

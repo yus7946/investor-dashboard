@@ -14,6 +14,7 @@ import io
 import json
 import os
 from datetime import datetime, timezone, timedelta
+from statistics import NormalDist
 
 import pandas as pd
 
@@ -25,9 +26,9 @@ except ImportError:
 HISTORY_PATH = "output/prediction_history.json"
 TOPIX_ETF = "1306.T"
 SPX = "^GSPC"
-IDEAL_HIT = 0.68          # ±1σの理想的中率
+IDEAL_HIT = 0.75          # 目標カバー率（4回に3回この範囲に収まる想定）。狭すぎず広すぎずの実用的な狙い。
 MIN_FOR_CALIB = 30        # レンジ補正を有効化する最小解決済み件数
-CALIB_BOUNDS = (0.8, 1.3) # 補正係数の範囲
+CALIB_BOUNDS = (0.45, 1.6)  # 補正係数の範囲（実績が広すぎ/狭すぎを示せば大きめに補正できる）
 
 
 def _jst_today() -> "datetime.date":
@@ -55,20 +56,24 @@ def save_history(history: dict, path: str = HISTORY_PATH) -> None:
 
 
 def calibration_factor(history: dict) -> float:
-    """解決済みレンジ予測の実績的中率から、σ幅の補正係数を算出。
+    """解決済みレンジ予測の実績的中率から、σ幅の補正係数を正規分位点ベースで算出。
 
-    的中率が理想より低ければ（レンジが狭すぎ）幅を広げ、高すぎれば狭める。
+    考え方: 現在の「±1σ帯」が実績で hit の割合を捉えているなら、その帯は実際には
+    z_hit=Φ⁻¹((1+hit)/2) 本ぶんの真のσに相当する。これを目標カバー率のσ本数
+    z_target=Φ⁻¹((1+IDEAL_HIT)/2) に合わせてスケールし直す（factor=z_target/z_hit）。
+    的中率が高すぎ（帯が広すぎ）なら factor<1 で狭め、低すぎれば広げる。自己補正で収束する。
     件数が少ない間は 1.0（無補正）。
     """
     resolved = [p for p in history.get("stockPredictions", []) if p.get("inRange") is not None]
     if len(resolved) < MIN_FOR_CALIB:
         return 1.0
     hit = sum(1 for p in resolved if p["inRange"]) / len(resolved)
-    if hit <= 0:
-        return CALIB_BOUNDS[1]
-    # 正規分布近似で「的中率hitを与える幅」と「理想68%を与える幅」の比。
-    # ラフに hit と ideal の比の逆数でスケール（過補正を避け緩やかに）。
-    factor = (1 - hit + 0.5) / (1 - IDEAL_HIT + 0.5)
+    hit = min(0.995, max(0.30, hit))  # 分位点が発散しないようクリップ
+    z_hit = NormalDist().inv_cdf((1 + hit) / 2)
+    z_target = NormalDist().inv_cdf((1 + IDEAL_HIT) / 2)
+    if z_hit <= 0:
+        return 1.0
+    factor = z_target / z_hit
     factor = max(CALIB_BOUNDS[0], min(CALIB_BOUNDS[1], factor))
     return round(factor, 3)
 
