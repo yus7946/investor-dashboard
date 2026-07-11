@@ -822,12 +822,14 @@ body::before {
       </div>
       <div id="mochikabu-fields" class="field-optional">
         <div class="asset-form-row">
-          <div><label>取得累計額（円）</label><input id="hf-acquired-total" type="number" min="0" placeholder="例: 500000"></div>
-          <div><label>奨励金率（%）</label><input id="hf-incentive-rate" type="number" min="0" step="0.1" placeholder="例: 15"></div>
+          <div><label>持株数</label><input id="mk-shares" type="number" min="0" placeholder="例: 500" oninput="updateFormPreview()"></div>
+          <div><label>取得単価（円・平均）</label><input id="mk-cost-price" type="number" min="0" placeholder="例: 2500" oninput="updateFormPreview()"></div>
         </div>
-        <div>
-          <label><input id="hf-reinvest" type="checkbox" style="width:auto;margin-right:6px"> 配当を再投資している</label>
+        <div class="asset-form-row">
+          <div><label>奨励金率（%・任意）</label><input id="hf-incentive-rate" type="number" min="0" step="0.1" placeholder="例: 15" oninput="updateFormPreview()"></div>
+          <div><label><input id="hf-reinvest" type="checkbox" style="width:auto;margin-right:6px"> 配当を再投資</label></div>
         </div>
+        <div style="font-size:10px;color:var(--muted)">奨励金は会社からの上乗せ分として、取得コストの割引（含み益のプラス要因）に加算します。現在価値は持株数×最新株価で自動計算されます。</div>
       </div>
       <!-- 現在株価・一株配当は選択した銘柄から自動反映（手入力不要）。編集用に隠しフィールドで保持 -->
       <input id="hf-current-price" type="hidden">
@@ -4698,18 +4700,25 @@ function selectStock(code) {
 // 株数入力に応じて評価額・配当予想をリアルタイム表示
 function updateFormPreview() {
   const pv = document.getElementById('hf-preview');
-  if (!selectedStock || currentHoldingType !== 'normal') { pv.style.display = 'none'; return; }
-  const shares = parseFloat(document.getElementById('hf-shares').value) || 0;
-  const cost   = parseFloat(document.getElementById('hf-cost-price').value) || 0;
+  if (!selectedStock) { pv.style.display = 'none'; return; }
+  const isMochikabu = currentHoldingType === 'mochikabu';
+  const shares = parseFloat(document.getElementById(isMochikabu ? 'mk-shares' : 'hf-shares').value) || 0;
+  const cost   = parseFloat(document.getElementById(isMochikabu ? 'mk-cost-price' : 'hf-cost-price').value) || 0;
   if (!shares) { pv.style.display = 'none'; return; }
   const price = selectedStock.price || 0;
   const value = price * shares;
   const div   = (selectedStock.divPerShare || 0) * shares;
+  const incentiveRate = isMochikabu ? (parseFloat(document.getElementById('hf-incentive-rate').value) || 0) : 0;
   let rows = `<div class="row"><span>いまの評価額（自動）</span><b>${price?('¥'+Math.round(value).toLocaleString()):'—'}</b></div>`;
   if (cost) {
-    const pl = value - cost * shares;
-    const plPct = cost > 0 ? (pl / (cost*shares) * 100) : 0;
+    const costTotal = cost * shares;
+    const incentiveAmount = costTotal * (incentiveRate / 100);
+    const pl = value + incentiveAmount - costTotal;
+    const plPct = costTotal > 0 ? (pl / costTotal * 100) : 0;
     const col = pl >= 0 ? 'var(--green)' : 'var(--red)';
+    if (isMochikabu && incentiveAmount) {
+      rows += `<div class="row"><span>奨励金（自動）</span><b style="color:var(--green)">+¥${Math.round(incentiveAmount).toLocaleString()}</b></div>`;
+    }
     rows += `<div class="row"><span>評価損益</span><b style="color:${col}">${pl>=0?'+':''}¥${Math.round(pl).toLocaleString()}（${pl>=0?'+':''}${plPct.toFixed(1)}%）</b></div>`;
   }
   if (div) rows += `<div class="row"><span>年間配当予想</span><b style="color:var(--green)">¥${Math.round(div).toLocaleString()}</b></div>`;
@@ -4733,10 +4742,11 @@ function setHoldingType(type) {
   document.getElementById('normal-fields').classList.toggle('field-optional', type !== 'normal');
   document.getElementById('normal-fields').classList.toggle('show', type === 'normal');
   document.getElementById('mochikabu-fields').classList.toggle('show', type === 'mochikabu');
+  updateFormPreview();
 }
 
 function clearHoldingForm() {
-  ['hf-name','hf-code','hf-shares','hf-cost-price','hf-acquired-total','hf-incentive-rate','hf-current-price','hf-div-per-share']
+  ['hf-name','hf-code','hf-shares','hf-cost-price','mk-shares','mk-cost-price','hf-incentive-rate','hf-current-price','hf-div-per-share']
     .forEach(id => document.getElementById(id).value = '');
   document.getElementById('hf-reinvest').checked = false;
   selectedStock = null;
@@ -4766,7 +4776,8 @@ function submitHoldingForm() {
     holding.shares    = parseFloat(document.getElementById('hf-shares').value)     || 0;
     holding.costPrice = parseFloat(document.getElementById('hf-cost-price').value) || 0;
   } else {
-    holding.acquiredTotal  = parseFloat(document.getElementById('hf-acquired-total').value)  || 0;
+    holding.shares         = parseFloat(document.getElementById('mk-shares').value)     || 0;
+    holding.costPrice      = parseFloat(document.getElementById('mk-cost-price').value) || 0;
     holding.incentiveRate  = parseFloat(document.getElementById('hf-incentive-rate').value)  || 0;
     holding.reinvest       = document.getElementById('hf-reinvest').checked;
   }
@@ -4795,10 +4806,16 @@ function editHolding(id) {
     document.getElementById('hf-shares').value    = h.shares    ?? '';
     document.getElementById('hf-cost-price').value = h.costPrice ?? '';
   } else {
-    document.getElementById('hf-acquired-total').value = h.acquiredTotal ?? '';
+    // 旧データ(取得累計額のみ)からの移行: 株数が分かれば逆算して埋める
+    let shares = h.shares ?? '';
+    let costPrice = h.costPrice ?? '';
+    if (!shares && h.acquiredTotal && h.costPrice) shares = Math.round(h.acquiredTotal / h.costPrice);
+    document.getElementById('mk-shares').value    = shares;
+    document.getElementById('mk-cost-price').value = costPrice;
     document.getElementById('hf-incentive-rate').value = h.incentiveRate ?? '';
     document.getElementById('hf-reinvest').checked = !!h.reinvest;
   }
+  updateFormPreview();
   document.getElementById('hf-submit-btn').textContent = '更新する';
   document.getElementById('hf-cancel-btn').style.display = 'block';
   document.getElementById('asset-form-title').textContent = '銘柄を編集';
@@ -4838,16 +4855,29 @@ function calcHolding(h) {
     const divForecast = shares * liveDivPerShare(h);
     return { costTotal, value, pl, plPct, divForecast, curPrice };
   } else {
+    const incentiveRate = h.incentiveRate || 0;
+    // 新形式: 持株数×取得単価で評価（通常保有と同じ考え方）。旧形式(取得累計額のみ)は互換のためフォールバック。
+    if (h.shares && h.costPrice) {
+      const shares    = h.shares;
+      const costPrice = h.costPrice;
+      const costTotal = shares * costPrice;
+      const incentiveAmount = costTotal * (incentiveRate / 100);
+      const curPrice  = livePrice(h);
+      const marketValue = curPrice ? shares * curPrice : null;
+      const value     = marketValue !== null ? marketValue + incentiveAmount : null;
+      const pl        = value !== null ? value - costTotal : null;
+      const plPct     = (pl !== null && costTotal > 0) ? (pl / costTotal) * 100 : null;
+      const divForecast = shares * liveDivPerShare(h);
+      return { costTotal, value, pl, plPct, divForecast, incentiveAmount, curPrice, shares };
+    }
+    // 旧形式（取得累計額のみ登録・現在株価を反映しない簡易版）
     const acquiredTotal   = h.acquiredTotal  || 0;
-    const incentiveRate   = h.incentiveRate  || 0;
     const incentiveAmount = acquiredTotal * (incentiveRate / 100);
-    let divForecast = 0;
-    if (h.reinvest && h.divPerShare && h.acquiredTotal) divForecast = h.divPerShare;
     const costTotal = acquiredTotal;
     const value     = acquiredTotal + incentiveAmount;
     const pl        = value - costTotal;
     const plPct     = costTotal > 0 ? (pl / costTotal) * 100 : null;
-    return { costTotal, value, pl, plPct, divForecast, incentiveAmount };
+    return { costTotal, value, pl, plPct, divForecast: 0, incentiveAmount };
   }
 }
 
@@ -5131,7 +5161,30 @@ function renderHoldings() {
           <div class="lbl">年間配当予想</div><div class="val up">${fmtYen(c.divForecast)}</div>
           ${exDiv}
         </div>`;
+      } else if (h.shares && h.costPrice) {
+        // 新形式: 持株数×取得単価×現在株価で評価（奨励金は含み益のプラス要因として加算）
+        body = `
+        <div class="holding-hero">
+          <div class="holding-hero-shares">
+            <div><span class="num">${h.shares.toLocaleString()}</span><span class="unit">株</span></div>
+            <div class="lbl">持株数</div>
+          </div>
+          <div class="holding-hero-value">
+            <div class="num">${c.value !== null ? fmtYen(c.value) : '―'}</div>
+            <div class="lbl">現在価値（奨励金込み・自動更新）</div>
+          </div>
+        </div>
+        <div class="holding-sub">
+          <div class="lbl">現在株価</div><div class="val">${c.curPrice ? fmtYen(c.curPrice) : '取得できず'}</div>
+          <div class="lbl">取得単価</div><div class="val">${fmtYen(h.costPrice)}</div>
+          <div class="lbl">取得累計額</div><div class="val">${fmtYen(c.costTotal)}</div>
+          <div class="lbl">奨励金率</div><div class="val">${h.incentiveRate||0}%（${fmtYen(c.incentiveAmount)}）</div>
+          <div class="lbl">評価損益</div><div class="val ${plClass}">${c.pl===null?'―':plSign+fmtYen(c.pl)}${c.plPct!==null?`（${plSign}${c.plPct.toFixed(1)}%）`:''}</div>
+          <div class="lbl">年間配当予想</div><div class="val up">${fmtYen(c.divForecast)}</div>
+          ${exDiv}
+        </div>`;
       } else {
+        // 旧形式（取得累計額のみ登録・要移行）
         body = `
         <div class="holding-hero">
           <div class="holding-hero-shares">
@@ -5148,7 +5201,8 @@ function renderHoldings() {
           <div class="lbl">評価損益</div><div class="val ${plClass}">${c.pl===null?'―':plSign+fmtYen(c.pl)}${c.plPct!==null?`（${plSign}${c.plPct.toFixed(1)}%）`:''}</div>
           <div class="lbl">年間配当予想</div><div class="val up">${fmtYen(c.divForecast)}</div>
           ${exDiv}
-        </div>`;
+        </div>
+        <div class="holding-hint-cost">持株数・取得単価を登録すると、最新株価を反映した評価損益が見られます。「編集」から更新してください。</div>`;
       }
       return `
       <div class="card holding-card">
