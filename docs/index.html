@@ -446,6 +446,19 @@ body::before {
 }
 .asset-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 
+/* ── 利益目標 ── */
+.goal-form { margin-bottom: 6px; }
+.goal-line {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-size: 12px; padding: 5px 0; border-bottom: 1px solid var(--border);
+}
+.goal-line:last-of-type { border-bottom: none; }
+.goal-line span { color: var(--muted); }
+.goal-line b { font-size: 14px; font-weight: 800; }
+.goal-verdict {
+  margin-top: 10px; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border);
+}
+
 /* ── 銘柄検索 ── */
 .stock-search { margin-bottom: 12px; }
 .stock-search input {
@@ -742,6 +755,24 @@ body::before {
       <div class="kpi-value" id="asset-count">0</div>
       <div class="kpi-sub">通常 + 持株会</div>
     </div>
+  </div>
+
+  <!-- 目標設定 -->
+  <div class="section-title">利益目標</div>
+  <div class="card" style="margin-bottom:14px">
+    <div class="goal-form">
+      <div class="asset-form-row">
+        <div>
+          <label>月の目標利益（円）</label>
+          <input id="goal-monthly" type="number" min="0" step="10000" placeholder="例: 200000" oninput="onGoalChange()">
+        </div>
+        <div>
+          <label>投資元本（円・任意）</label>
+          <input id="goal-capital" type="number" min="0" step="100000" placeholder="例: 3000000" oninput="onGoalChange()">
+        </div>
+      </div>
+    </div>
+    <div id="goal-assessment"></div>
   </div>
 
   <!-- 資産推移（このページを開いた日ごとに自動記録） -->
@@ -4805,6 +4836,90 @@ function fmtYen(n) {
   return '¥' + Math.round(n).toLocaleString();
 }
 
+// ── 利益目標（必要年利を逆算し、正直・厳しめに現実性を評価） ──
+const GOAL_KEY = 'profit_goal_v1';
+const MARKET_AVG_RETURN = 7;  // 長期の株式市場平均リターンの目安（年率%）
+
+function loadGoal() {
+  try { return JSON.parse(localStorage.getItem(GOAL_KEY) || '{}'); } catch (e) { return {}; }
+}
+function saveGoal(g) { localStorage.setItem(GOAL_KEY, JSON.stringify(g)); }
+
+function onGoalChange() {
+  const monthly = parseFloat(document.getElementById('goal-monthly').value) || 0;
+  const capital = parseFloat(document.getElementById('goal-capital').value) || 0;
+  saveGoal({ monthly, capital });
+  renderGoalAssessment();
+  renderAssetTrend();  // グラフの目標ラインも更新
+}
+
+function restoreGoalForm() {
+  const g = loadGoal();
+  const mEl = document.getElementById('goal-monthly');
+  const cEl = document.getElementById('goal-capital');
+  if (mEl && g.monthly) mEl.value = g.monthly;
+  if (cEl && g.capital) cEl.value = g.capital;
+  renderGoalAssessment();
+}
+
+// 現在の投資元本の推定（未入力なら保有取得額合計、それも無ければ資産推移の記録開始値）
+function estimateCapital() {
+  const g = loadGoal();
+  if (g.capital && g.capital > 0) return g.capital;
+  const list = loadHoldings();
+  let cost = 0;
+  list.forEach(h => { const c = calcHolding(h); cost += c.costTotal || 0; });
+  if (cost > 0) return cost;
+  let hist = {};
+  try { hist = JSON.parse(localStorage.getItem(ASSET_HISTORY_KEY) || '{}'); } catch (e) {}
+  const dates = Object.keys(hist).sort();
+  return dates.length ? hist[dates[0]] : 0;
+}
+
+function renderGoalAssessment() {
+  const el = document.getElementById('goal-assessment');
+  if (!el) return;
+  const g = loadGoal();
+  const monthly = g.monthly || 0;
+  if (!monthly) { el.innerHTML = '<div style="font-size:11px;color:var(--muted);margin-top:8px">月の目標利益を入れると、達成に必要な年利と現実性を計算します。</div>'; return; }
+
+  const annual = monthly * 12;
+  const capital = estimateCapital();
+
+  let block = `<div class="goal-line"><span>年間目標利益</span><b>¥${annual.toLocaleString()}</b></div>`;
+
+  if (capital > 0) {
+    const reqReturn = annual / capital * 100;
+    let verdict, color, advice;
+    if (reqReturn <= MARKET_AVG_RETURN) {
+      verdict = '現実的な水準'; color = 'var(--green)';
+      advice = `必要年利は市場平均(約${MARKET_AVG_RETURN}%)以内。無理のない範囲で、長期・分散でも十分狙える目標です。`;
+    } else if (reqReturn <= 15) {
+      verdict = 'やや高め・努力目標'; color = 'var(--yellow)';
+      advice = `市場平均(約${MARKET_AVG_RETURN}%)を上回る必要があります。優秀な運用が続けば届き得ますが、毎年安定して出すのは簡単ではありません。`;
+    } else if (reqReturn <= 30) {
+      verdict = 'かなり高い・難易度大'; color = 'var(--yellow)';
+      advice = `プロの投資家でも継続的な達成は難しい水準です。元本を増やすか、目標額か期間の見直しを強くおすすめします。`;
+    } else {
+      verdict = '非現実的な水準'; color = 'var(--red)';
+      advice = `一般に持続は困難です。この年利を狙うと大きな損失リスクを取ることになります。元本の増額か目標の引き下げが現実的です。`;
+    }
+    // 現実的な年利(12%)で目標を狙う場合の必要元本
+    const needCapital12 = Math.round(annual / 0.12);
+    block += `
+      <div class="goal-line"><span>推定元本</span><b>¥${capital.toLocaleString()}</b></div>
+      <div class="goal-line"><span>達成に必要な年利</span><b style="color:${color}">${reqReturn.toFixed(1)}%／年</b></div>
+      <div class="goal-verdict" style="border-color:${color}55;background:${color}12">
+        <div style="font-weight:800;color:${color};margin-bottom:3px">${verdict}</div>
+        <div style="font-size:11px;color:var(--text);line-height:1.6">${advice}</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:5px">参考: 現実的な年利12%で月¥${monthly.toLocaleString()}を狙うなら、元本の目安は<b style="color:var(--text)">¥${needCapital12.toLocaleString()}</b>です。</div>
+      </div>`;
+  } else {
+    block += `<div style="font-size:11px;color:var(--muted);margin-top:6px">投資元本を入力すると、達成に必要な年利と現実性を評価します（保有銘柄の取得額があれば自動推定します）。</div>`;
+  }
+  el.innerHTML = block;
+}
+
 // ── 資産推移（開いた日ごとに評価額をこの端末に記録し、推移を可視化） ──
 const ASSET_HISTORY_KEY = 'asset_history_v1';
 
@@ -4833,18 +4948,50 @@ function renderAssetTrend() {
     return;
   }
   const vals = dates.map(d => hist[d]);
-  const min = Math.min(...vals), max = Math.max(...vals);
-  const range = (max - min) || 1;
-  const W = 300, H = 60, PAD = 4;
-  const pts = vals.map((v, i) => {
-    const x = PAD + (W - 2 * PAD) * (i / (vals.length - 1));
-    const y = H - PAD - (H - 2 * PAD) * ((v - min) / range);
-    return `${x.toFixed(1)},${y.toFixed(1)}`;
-  }).join(' ');
   const first = vals[0], last = vals[vals.length - 1];
   const chg = last - first;
   const chgPct = first > 0 ? (chg / first * 100) : 0;
   const col = chg >= 0 ? 'var(--green)' : 'var(--red)';
+
+  // 目標ライン: 記録開始日の資産を起点に、月の目標利益ペースで直線を引く
+  const g = loadGoal();
+  const monthly = g.monthly || 0;
+  const d0 = new Date(dates[0]);
+  const goalVals = monthly > 0 ? dates.map(d => {
+    const months = (new Date(d) - d0) / (86400000 * 30.4);
+    return first + monthly * months;
+  }) : null;
+
+  // グラフのY範囲は実績と目標ラインの両方を含める
+  const allVals = goalVals ? vals.concat(goalVals) : vals;
+  const min = Math.min(...allVals), max = Math.max(...allVals);
+  const range = (max - min) || 1;
+  const W = 300, H = 70, PAD = 4;
+  const toPts = arr => arr.map((v, i) => {
+    const x = PAD + (W - 2 * PAD) * (i / (arr.length - 1));
+    const y = H - PAD - (H - 2 * PAD) * ((v - min) / range);
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(' ');
+  const pts = toPts(vals);
+  const goalLine = goalVals
+    ? `<polyline points="${toPts(goalVals)}" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.8"/>` : '';
+
+  // 進捗: 目標ラインに対して実績がどれだけ上/下か
+  let progressLine = '';
+  if (goalVals) {
+    const targetNow = goalVals[goalVals.length - 1];
+    const diff = last - targetNow;
+    const onPace = diff >= 0;
+    const monthsElapsed = (new Date(dates[dates.length-1]) - d0) / (86400000 * 30.4);
+    const expectedProfit = monthly * monthsElapsed;
+    progressLine = `
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;padding-top:8px;border-top:1px solid var(--border)">
+        <span style="font-size:11px;color:var(--muted)">目標ペース比（黄の点線）</span>
+        <span style="font-size:12px;font-weight:800;color:${onPace ? 'var(--green)' : 'var(--yellow)'}">${onPace ? '達成ペース ' : 'あと ' }${onPace ? '+' : ''}${Math.round(diff).toLocaleString()}円</span>
+      </div>
+      <div style="font-size:10px;color:var(--muted);margin-top:3px">記録期間(${monthsElapsed.toFixed(1)}ヶ月)の目標利益は約¥${Math.round(expectedProfit).toLocaleString()}。実際の増減は¥${Math.round(chg).toLocaleString()}です。</div>`;
+  }
+
   el.innerHTML = `
   <div class="card" style="margin-bottom:14px">
     <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px">
@@ -4852,9 +4999,11 @@ function renderAssetTrend() {
       <span style="font-size:12px;font-weight:800;color:${col}">${chg >= 0 ? '+' : ''}${Math.round(chg).toLocaleString()}円（${chg >= 0 ? '+' : ''}${chgPct.toFixed(1)}%）</span>
     </div>
     <svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;display:block">
+      ${goalLine}
       <polyline points="${pts}" fill="none" stroke="${chg >= 0 ? '#10b981' : '#ef4444'}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
     </svg>
-    <div style="font-size:9px;color:var(--muted);margin-top:4px">このページを開いた日の評価額を自動記録した推移です（記録${dates.length}回・この端末のみ）</div>
+    <div style="font-size:9px;color:var(--muted);margin-top:4px">実線=あなたの資産・黄の点線=月¥${monthly.toLocaleString()}ペースの目標。開いた日ごとに自動記録（記録${dates.length}回・この端末のみ）</div>
+    ${progressLine}
   </div>`;
 }
 
@@ -5005,6 +5154,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderAlerts();
   renderThemeTrends();
   renderNews();
+  restoreGoalForm();
   renderHoldings();
 
   const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
