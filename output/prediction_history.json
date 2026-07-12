@@ -659,6 +659,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-10",
+      "ticker": "8035.T",
+      "name": "東京エレクトロン",
+      "basePrice": 72940.0,
+      "rangeLow": 71366,
+      "rangeHigh": 74514,
+      "predUpRate": 53.9,
+      "condN": 165,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-10",
+      "ticker": "6857.T",
+      "name": "アドバンテスト",
+      "basePrice": 29830.0,
+      "rangeLow": 29044,
+      "rangeHigh": 30616,
+      "predUpRate": 56.9,
+      "condN": 181,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -936,6 +966,30 @@
       "entry": 2296,
       "target": 2392,
       "stop": 2224,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-07-10",
+      "ticker": "8035.T",
+      "name": "東京エレクトロン",
+      "basePrice": 72940.0,
+      "entry": 72153,
+      "target": 75301,
+      "stop": 69792,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-07-10",
+      "ticker": "6857.T",
+      "name": "アドバンテスト",
+      "basePrice": 29830.0,
+      "entry": 29437,
+      "target": 31009,
+      "stop": 28258,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null

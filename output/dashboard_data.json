@@ -1,8 +1,8 @@
 {
-  "updated": "2026年07月11日 15:40",
-  "updatedAtMs": 1783752002653,
-  "fetched": 147,
-  "universeTotal": 150,
+  "updated": "2026年07月12日 23:08",
+  "updatedAtMs": 1783865327630,
+  "fetched": 163,
+  "universeTotal": 166,
   "market": {
     "regime": "bull",
     "label": "上昇基調",
@@ -38,25 +38,145 @@
     "note": "予測と実際の答え合わせを毎営業日ぶん蓄積した実績です。件数が増えるほど信頼度が上がります。将来を保証するものではありません。"
   },
   "backtest": {
-    "annual": "+45.0%",
+    "annual": "+38.4%",
     "benchmark": "+30.2%",
-    "sharpe": "1.31",
-    "dd": "-19.2%",
-    "winrate": "69.6%",
+    "sharpe": "1.15",
+    "dd": "-16.0%",
+    "winrate": "60.9%",
     "months": "23ヶ月",
     "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+30.2%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
   },
   "stocks": [
     {
       "rank": 1,
+      "ticker": "3436.T",
+      "name": "SUMCO",
+      "score": 0.524,
+      "f": 3,
+      "per": null,
+      "pbr": 3.22,
+      "roe": -3.5,
+      "value": 0.075,
+      "quality": 0.416,
+      "momentum": 1.0,
+      "signal": "強い買い",
+      "rsi": 64.0,
+      "conf": "高",
+      "strategy": [
+        "swing"
+      ],
+      "dividend_yield": 0.4,
+      "volatility": 0.9578,
+      "short_ratio": 1.1,
+      "regime_adjusted": false,
+      "forecast": {
+        "price": 5244.0,
+        "rangeLow": 5104,
+        "rangeHigh": 5384,
+        "rangeLow2": 4964,
+        "rangeHigh2": 5524,
+        "volDPct": 2.67,
+        "calibrated": true,
+        "plan": {
+          "entry": 5174,
+          "target": 5454,
+          "stop": 4964,
+          "rr": 1.33,
+          "hi3m": 5244,
+          "lo3m": 2090,
+          "basis": "1日の実績振れ幅σ=2.7%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値5,244円 / 安値2,090円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
+        "cond": {
+          "upRate": 56.5,
+          "n": 186,
+          "condition": "RSI中立圏×5日上昇局面",
+          "note": null
+        },
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.61倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "yutai": null,
+      "news": [
+        {
+          "title": "話題株ピックアップ【夕刊】（1）：ＡＩメカ、ＳＵＭＣＯ、三菱自",
+          "source": "株探",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE4tRVdoTy1EMEx0WXNELW1ZY19VUUF4dFRlczQ4ZWdZVFAwZEdxVzR4WnBRTXBnQzJDYjFlMVRXTEp4bnc2eEc3NlNUVF9nbTRwRHBERHU2VWNlRGVQb0VobA?oc=5",
+          "pubDate": "Fri, 10 Jul 2026 06:43:41 GMT",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "ticker": "6981.T",
+      "name": "村田製作所",
+      "score": 0.512,
+      "f": 4,
+      "per": 77.5,
+      "pbr": 6.6,
+      "roe": 8.8,
+      "value": 0.042,
+      "quality": 0.533,
+      "momentum": 0.871,
+      "signal": "強い買い",
+      "rsi": 35.8,
+      "conf": "高",
+      "strategy": [
+        "swing"
+      ],
+      "dividend_yield": 0.7,
+      "volatility": 0.799,
+      "short_ratio": null,
+      "regime_adjusted": false,
+      "forecast": {
+        "price": 9860.0,
+        "rangeLow": 9654,
+        "rangeHigh": 10066,
+        "rangeLow2": 9448,
+        "rangeHigh2": 10272,
+        "volDPct": 2.09,
+        "calibrated": true,
+        "plan": {
+          "entry": 9757,
+          "target": 10169,
+          "stop": 9448,
+          "rr": 1.33,
+          "hi3m": 12250,
+          "lo3m": 4329,
+          "basis": "1日の実績振れ幅σ=2.1%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値12,250円 / 安値4,329円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
+        "cond": {
+          "upRate": 56.6,
+          "n": 175,
+          "condition": "RSI中立圏×5日下落局面",
+          "note": null
+        },
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.61倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "yutai": null,
+      "news": [
+        {
+          "title": "村田製作所株価反発 シティG証券が目標大幅引き上げ、最上位判断に",
+          "source": "日本経済新聞",
+          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1nZzdGUkhhVm11Vy1CSnU1djZGNXFmRExGV2pNTVcwMURPMVVGNkhjTldsM1NTUGlnUU4xbWswWkVVM0czRE12Rmd3SWw5TkYzUUNqMzJjYXF1QXcwOWRhR1hUV1ZHT05SNFl1VQ?oc=5",
+          "pubDate": "Tue, 30 Jun 2026 07:00:00 GMT",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
+    },
+    {
+      "rank": 3,
       "ticker": "8955.T",
       "name": "日本プライムリアルティ投資法人",
-      "score": 0.487,
+      "score": 0.49,
       "f": 5,
       "per": 18.9,
       "pbr": 0.35,
       "roe": 7.1,
-      "value": 0.65,
+      "value": 0.656,
       "quality": 0.516,
       "momentum": 0.146,
       "signal": "買い",
@@ -113,130 +233,10 @@
       ]
     },
     {
-      "rank": 2,
-      "ticker": "3436.T",
-      "name": "SUMCO",
-      "score": 0.48,
-      "f": 3,
-      "per": null,
-      "pbr": 3.22,
-      "roe": -3.5,
-      "value": 0.059,
-      "quality": 0.416,
-      "momentum": 1.0,
-      "signal": "強い買い",
-      "rsi": 64.0,
-      "conf": "高",
-      "strategy": [
-        "swing"
-      ],
-      "dividend_yield": 0.4,
-      "volatility": 0.9578,
-      "short_ratio": 1.1,
-      "regime_adjusted": false,
-      "forecast": {
-        "price": 5244.0,
-        "rangeLow": 5104,
-        "rangeHigh": 5384,
-        "rangeLow2": 4964,
-        "rangeHigh2": 5524,
-        "volDPct": 2.67,
-        "calibrated": true,
-        "plan": {
-          "entry": 5174,
-          "target": 5454,
-          "stop": 4964,
-          "rr": 1.33,
-          "hi3m": 5244,
-          "lo3m": 2090,
-          "basis": "1日の実績振れ幅σ=2.7%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値5,244円 / 安値2,090円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
-        },
-        "cond": {
-          "upRate": 56.5,
-          "n": 186,
-          "condition": "RSI中立圏×5日上昇局面",
-          "note": null
-        },
-        "factors": [],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.61倍に自動補正済み。目標カバー率は約75%）"
-      },
-      "yutai": null,
-      "news": [
-        {
-          "title": "話題株ピックアップ【夕刊】（1）：ＡＩメカ、ＳＵＭＣＯ、三菱自",
-          "source": "株探",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE4tRVdoTy1EMEx0WXNELW1ZY19VUUF4dFRlczQ4ZWdZVFAwZEdxVzR4WnBRTXBnQzJDYjFlMVRXTEp4bnc2eEc3NlNUVF9nbTRwRHBERHU2VWNlRGVQb0VobA?oc=5",
-          "pubDate": "Fri, 10 Jul 2026 06:43:41 GMT",
-          "sentiment": "neu",
-          "theme": "その他"
-        }
-      ]
-    },
-    {
-      "rank": 3,
-      "ticker": "6981.T",
-      "name": "村田製作所",
-      "score": 0.472,
-      "f": 4,
-      "per": 77.5,
-      "pbr": 6.6,
-      "roe": 8.8,
-      "value": 0.025,
-      "quality": 0.533,
-      "momentum": 0.871,
-      "signal": "強い買い",
-      "rsi": 35.8,
-      "conf": "高",
-      "strategy": [
-        "swing"
-      ],
-      "dividend_yield": 0.7,
-      "volatility": 0.799,
-      "short_ratio": null,
-      "regime_adjusted": false,
-      "forecast": {
-        "price": 9860.0,
-        "rangeLow": 9654,
-        "rangeHigh": 10066,
-        "rangeLow2": 9448,
-        "rangeHigh2": 10272,
-        "volDPct": 2.09,
-        "calibrated": true,
-        "plan": {
-          "entry": 9757,
-          "target": 10169,
-          "stop": 9448,
-          "rr": 1.33,
-          "hi3m": 12250,
-          "lo3m": 4329,
-          "basis": "1日の実績振れ幅σ=2.1%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値12,250円 / 安値4,329円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
-        },
-        "cond": {
-          "upRate": 56.6,
-          "n": 175,
-          "condition": "RSI中立圏×5日下落局面",
-          "note": null
-        },
-        "factors": [],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.61倍に自動補正済み。目標カバー率は約75%）"
-      },
-      "yutai": null,
-      "news": [
-        {
-          "title": "村田製作所株価反発 シティG証券が目標大幅引き上げ、最上位判断に",
-          "source": "日本経済新聞",
-          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1nZzdGUkhhVm11Vy1CSnU1djZGNXFmRExGV2pNTVcwMURPMVVGNkhjTldsM1NTUGlnUU4xbWswWkVVM0czRE12Rmd3SWw5TkYzUUNqMzJjYXF1QXcwOWRhR1hUV1ZHT05SNFl1VQ?oc=5",
-          "pubDate": "Tue, 30 Jun 2026 07:00:00 GMT",
-          "sentiment": "neu",
-          "theme": "その他"
-        }
-      ]
-    },
-    {
       "rank": 4,
       "ticker": "7201.T",
       "name": "日産自動車",
-      "score": 0.453,
+      "score": 0.472,
       "f": 2,
       "per": null,
       "pbr": 0.23,
@@ -283,25 +283,85 @@
       "yutai": null,
       "news": [
         {
-          "title": "日産自動車(株)【7201】：今の株価の理由は？値動きの背景をAIが解説",
+          "title": "日産自動車(株)【7201】：株価・株式情報（夜間PTS含む）",
           "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1Xakk0RENsUE81UDNRR1l0SEFiekF4NktsSHRjZlcyemhIWnFKRTBlNHdDZkpPc3FkNmluQjdONzZOaW92T1JLZ2V2WV9hRVBkZTlZeklXWFR6ZmJwSFU4?oc=5",
-          "pubDate": "Fri, 10 Jul 2026 06:55:15 GMT",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9qNzFSX0ZTeVdFM1dnTWo5aDRUVVNwdVFpWGlkeXdwYXJnYTNTMm00N19UN3ZOOXpUR0l2eG5yUnFjM0lydGxiaEI1bkVDMU84S0E?oc=5",
+          "pubDate": "Fri, 10 Jul 2026 07:00:00 GMT",
           "sentiment": "neu",
-          "theme": "AI"
+          "theme": "自動車"
         }
       ]
     },
     {
       "rank": 5,
+      "ticker": "7735.T",
+      "name": "SCREENホールディングス",
+      "score": 0.457,
+      "f": 5,
+      "per": 37.3,
+      "pbr": 7.05,
+      "roe": 20.3,
+      "value": 0.043,
+      "quality": 0.643,
+      "momentum": 0.607,
+      "signal": "強い買い",
+      "rsi": 54.7,
+      "conf": "高",
+      "strategy": [
+        "swing"
+      ],
+      "dividend_yield": 1.0,
+      "volatility": 0.6864,
+      "short_ratio": null,
+      "regime_adjusted": false,
+      "forecast": {
+        "price": 18150.0,
+        "rangeLow": 17741,
+        "rangeHigh": 18559,
+        "rangeLow2": 17333,
+        "rangeHigh2": 18967,
+        "volDPct": 2.25,
+        "calibrated": true,
+        "plan": {
+          "entry": 17946,
+          "target": 18763,
+          "stop": 17333,
+          "rr": 1.33,
+          "hi3m": 19490,
+          "lo3m": 10230,
+          "basis": "1日の実績振れ幅σ=2.3%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値19,490円 / 安値10,230円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
+        "cond": {
+          "upRate": 50.0,
+          "n": 178,
+          "condition": "RSI中立圏×5日下落局面",
+          "note": null
+        },
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.61倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "yutai": null,
+      "news": [
+        {
+          "title": "(株)ＳＣＲＥＥＮホールディングス【7735】：掲示板",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBXVEQ5MmtvS05kb1hiVnhUYU8wRVpNc2tlRFROcmFZWnJDYWM1OE1LX0FFOWJUUkZKVHVrdnJyR05lOFNJaXJNYVJwQ2RMRXVnT09YbVNJN0FSQQ?oc=5",
+          "pubDate": "Fri, 10 Jul 2026 07:02:26 GMT",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
+    },
+    {
+      "rank": 6,
       "ticker": "9502.T",
       "name": "中部電力",
-      "score": 0.433,
+      "score": 0.449,
       "f": 6,
       "per": 10.6,
       "pbr": 0.77,
       "roe": 7.7,
-      "value": 0.306,
+      "value": 0.318,
       "quality": 0.523,
       "momentum": 0.338,
       "signal": "売り",
@@ -351,54 +411,54 @@
           "title": "中部電力(株)【9502】：今の株価の理由は？値動きの背景をAIが解説",
           "source": "Yahoo!ファイナンス",
           "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1OMjJONVk3eS1ZbnZFc3RYc2gtbnVjMVlnWVdoUktIZWRTOEJyMzhkZmFRMlRVQlZkZzdkSGNNeEdBZHlMcUdvcFgwWHVkTFRQYkJ6ZWFDaHltSFAyWnhB?oc=5",
-          "pubDate": "Thu, 09 Jul 2026 07:08:50 GMT",
+          "pubDate": "Fri, 10 Jul 2026 07:07:20 GMT",
           "sentiment": "neu",
           "theme": "AI"
         }
       ]
     },
     {
-      "rank": 6,
-      "ticker": "7735.T",
-      "name": "SCREENホールディングス",
-      "score": 0.422,
+      "rank": 7,
+      "ticker": "6752.T",
+      "name": "パナソニックHD",
+      "score": 0.44,
       "f": 5,
-      "per": 37.3,
-      "pbr": 7.05,
-      "roe": 20.3,
-      "value": 0.026,
-      "quality": 0.643,
-      "momentum": 0.607,
+      "per": 55.2,
+      "pbr": 2.01,
+      "roe": 4.1,
+      "value": 0.121,
+      "quality": 0.488,
+      "momentum": 0.556,
       "signal": "強い買い",
-      "rsi": 54.7,
+      "rsi": 52.4,
       "conf": "高",
       "strategy": [
         "swing"
       ],
-      "dividend_yield": 1.0,
-      "volatility": 0.6864,
+      "dividend_yield": 1.2,
+      "volatility": 0.4957,
       "short_ratio": null,
       "regime_adjusted": false,
       "forecast": {
-        "price": 18150.0,
-        "rangeLow": 17741,
-        "rangeHigh": 18559,
-        "rangeLow2": 17333,
-        "rangeHigh2": 18967,
-        "volDPct": 2.25,
+        "price": 4480.0,
+        "rangeLow": 4407,
+        "rangeHigh": 4553,
+        "rangeLow2": 4335,
+        "rangeHigh2": 4625,
+        "volDPct": 1.62,
         "calibrated": true,
         "plan": {
-          "entry": 17946,
-          "target": 18763,
-          "stop": 17333,
+          "entry": 4444,
+          "target": 4589,
+          "stop": 4335,
           "rr": 1.33,
-          "hi3m": 19490,
-          "lo3m": 10230,
-          "basis": "1日の実績振れ幅σ=2.3%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値19,490円 / 安値10,230円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+          "hi3m": 4770,
+          "lo3m": 2879,
+          "basis": "1日の実績振れ幅σ=1.6%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値4,770円 / 安値2,879円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
         },
         "cond": {
-          "upRate": 50.0,
-          "n": 178,
+          "upRate": 49.3,
+          "n": 150,
           "condition": "RSI中立圏×5日下落局面",
           "note": null
         },
@@ -408,77 +468,12 @@
       "yutai": null,
       "news": [
         {
-          "title": "(株)ＳＣＲＥＥＮホールディングス【7735】：今の株価の理由は？値動きの背景をAIが解説",
+          "title": "パナソニック ホールディングス(株)【PCRHY】：株価・株式情報",
           "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5fazZiVVZvX3V6eXlMTGlUMGFRRWlQTGdyWDdkbXJkR3FnX0VNUGdDTXVWUVVwVjB5XzM0LU5xcFRsVGV1NXBBUzZfd1BnamlncWswZ2RjZ2hyU2lvYzZj?oc=5",
-          "pubDate": "Fri, 10 Jul 2026 06:55:32 GMT",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1ZMEtyWmxsUnBma3lZd1JJUWRMRE5BR1NkWWpLSnJFQ203bEFjdGJoQmt5M1ZScGJSOS1WVldZYjkzeVhYYnlZbjh4ZVNtMC14?oc=5",
+          "pubDate": "Sat, 11 Jul 2026 14:12:28 GMT",
           "sentiment": "neu",
-          "theme": "AI"
-        }
-      ]
-    },
-    {
-      "rank": 7,
-      "ticker": "5411.T",
-      "name": "JFEホールディングス",
-      "score": 0.416,
-      "f": 5,
-      "per": 15.4,
-      "pbr": 0.39,
-      "roe": 2.8,
-      "value": 0.583,
-      "quality": 0.476,
-      "momentum": 0.103,
-      "signal": "買い",
-      "rsi": 53.5,
-      "conf": "中",
-      "strategy": [
-        "dividend"
-      ],
-      "dividend_yield": 4.9,
-      "volatility": 0.271,
-      "short_ratio": 4.4,
-      "regime_adjusted": false,
-      "forecast": {
-        "price": 1623.0,
-        "rangeLow": 1607,
-        "rangeHigh": 1639,
-        "rangeLow2": 1591,
-        "rangeHigh2": 1655,
-        "volDPct": 1.0,
-        "calibrated": true,
-        "plan": {
-          "entry": 1615,
-          "target": 1647,
-          "stop": 1591,
-          "rr": 1.33,
-          "hi3m": 1830,
-          "lo3m": 1546,
-          "basis": "1日の実績振れ幅σ=1.0%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値1,830円 / 安値1,546円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
-        },
-        "cond": {
-          "upRate": 49.4,
-          "n": 172,
-          "condition": "RSI中立圏×5日上昇局面",
-          "note": null
-        },
-        "factors": [
-          {
-            "label": "空売り残高4.4%（売り圧力・踏み上げ両方の要因）",
-            "dir": "-"
-          }
-        ],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.61倍に自動補正済み。目標カバー率は約75%）"
-      },
-      "yutai": null,
-      "news": [
-        {
-          "title": "ＪＦＥホールディングス(株)【5411】：今の株価の理由は？値動きの背景をAIが解説",
-          "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1jNnY0VE9Ocm5YY1NwVkVsdW82bUtBdWE5S3U2ei0tak14OXhZeU5xeVRXVXR1anlxWW11QkRpMmtqNDUwYVkyVkJhTUVGSnpyZ2k4U2ppS2FpcDR5STdn?oc=5",
-          "pubDate": "Fri, 10 Jul 2026 06:57:01 GMT",
-          "sentiment": "neu",
-          "theme": "AI"
+          "theme": "その他"
         }
       ]
     },
@@ -486,7 +481,7 @@
       "rank": 8,
       "ticker": "9501.T",
       "name": "東京電力HD",
-      "score": 0.414,
+      "score": 0.44,
       "f": 2,
       "per": null,
       "pbr": 0.23,
@@ -538,57 +533,57 @@
       "yutai": null,
       "news": [
         {
-          "title": "東京電力ホールディングス(株)【9501】：今の株価の理由は？値動きの背景をAIが解説",
+          "title": "東京電力ホールディングス(株)【9501】：株価・株式情報（夜間PTS含む）",
           "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1TeEloR3d0c1dTUFZfODhnbWtmM0JraUxPb2hCQUlhSGE3Z0xkVllmQTR1ZXotYWV5eXg5NGFSRGlaakJYMHBJQUNST1lRb09NWUpBMk91WW43MVRUTzZJ?oc=5",
-          "pubDate": "Fri, 10 Jul 2026 06:53:50 GMT",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5PU0dPVjMtYXJuN0JVN0p2bkNBMlNwT3hLU0lyN0g1U2s5UnNiU2E1UFhxMTdDS2dJS25kdnlMVWZpWE5JbGFkTkNOS3RZdFNyRWc?oc=5",
+          "pubDate": "Fri, 10 Jul 2026 07:00:00 GMT",
           "sentiment": "neu",
-          "theme": "AI"
+          "theme": "その他"
         }
       ]
     },
     {
       "rank": 9,
-      "ticker": "6752.T",
-      "name": "パナソニックHD",
-      "score": 0.413,
+      "ticker": "8035.T",
+      "name": "東京エレクトロン",
+      "score": 0.428,
       "f": 5,
-      "per": 55.2,
-      "pbr": 2.01,
-      "roe": 4.1,
-      "value": 0.106,
-      "quality": 0.488,
-      "momentum": 0.556,
+      "per": 58.5,
+      "pbr": 16.03,
+      "roe": 29.3,
+      "value": 0.023,
+      "quality": 0.729,
+      "momentum": 0.45,
       "signal": "強い買い",
-      "rsi": 52.4,
+      "rsi": 43.8,
       "conf": "高",
       "strategy": [
         "swing"
       ],
-      "dividend_yield": 1.2,
-      "volatility": 0.4957,
+      "dividend_yield": 1.0,
+      "volatility": 0.5918,
       "short_ratio": null,
       "regime_adjusted": false,
       "forecast": {
-        "price": 4480.0,
-        "rangeLow": 4407,
-        "rangeHigh": 4553,
-        "rangeLow2": 4335,
-        "rangeHigh2": 4625,
-        "volDPct": 1.62,
+        "price": 72940.0,
+        "rangeLow": 71366,
+        "rangeHigh": 74514,
+        "rangeLow2": 69792,
+        "rangeHigh2": 76088,
+        "volDPct": 2.16,
         "calibrated": true,
         "plan": {
-          "entry": 4444,
-          "target": 4589,
-          "stop": 4335,
+          "entry": 72153,
+          "target": 75301,
+          "stop": 69792,
           "rr": 1.33,
-          "hi3m": 4770,
-          "lo3m": 2879,
-          "basis": "1日の実績振れ幅σ=1.6%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値4,770円 / 安値2,879円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+          "hi3m": 78800,
+          "lo3m": 43500,
+          "basis": "1日の実績振れ幅σ=2.2%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値78,800円 / 安値43,500円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
         },
         "cond": {
-          "upRate": 49.3,
-          "n": 150,
+          "upRate": 53.9,
+          "n": 165,
           "condition": "RSI中立圏×5日下落局面",
           "note": null
         },
@@ -598,58 +593,58 @@
       "yutai": null,
       "news": [
         {
-          "title": "パナソニック ホールディングス(株)【6752】：今の株価の理由は？値動きの背景をAIが解説",
+          "title": "東京エレクトロン(株)【8035】：掲示板",
           "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE0taWJqemFNNG4zbFRhMm1SOG9qTnRYbnQ0dVRCVl84b1AxWkctR3Z0N0l2RG1pdWVxZ1hEY1NDdW1JcTh3TmxJZFV2V0xmendwejJZd281NHVsQ25KbXlJ?oc=5",
-          "pubDate": "Fri, 10 Jul 2026 06:54:14 GMT",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE81eGhwWHlpZ3JBSERhNXE1dHVMZzBLTXUyNklITnVTLWJVMXRZcF94UXFIaTJ6VmtUeTZMQlZ4RnZuYV9GYl95QU1UQjIzTUN6d05tczJwbFFZUQ?oc=5",
+          "pubDate": "Fri, 10 Jul 2026 07:02:26 GMT",
           "sentiment": "neu",
-          "theme": "AI"
+          "theme": "その他"
         }
       ]
     },
     {
       "rank": 10,
-      "ticker": "6178.T",
-      "name": "日本郵政",
-      "score": 0.411,
-      "f": 6,
-      "per": 18.0,
-      "pbr": 0.67,
-      "roe": 4.7,
-      "value": 0.342,
-      "quality": 0.494,
-      "momentum": 0.277,
+      "ticker": "6857.T",
+      "name": "アドバンテスト",
+      "score": 0.428,
+      "f": 7,
+      "per": 57.8,
+      "pbr": 27.2,
+      "roe": 57.6,
+      "value": 0.017,
+      "quality": 1.0,
+      "momentum": 0.299,
       "signal": "強い買い",
-      "rsi": 62.6,
+      "rsi": 43.7,
       "conf": "高",
       "strategy": [
         "swing",
         "dividend"
       ],
-      "dividend_yield": 2.6,
-      "volatility": 0.3139,
+      "dividend_yield": 20.0,
+      "volatility": 0.7349,
       "short_ratio": null,
       "regime_adjusted": false,
       "forecast": {
-        "price": 2319.5,
-        "rangeLow": 2290,
-        "rangeHigh": 2349,
-        "rangeLow2": 2261,
-        "rangeHigh2": 2378,
-        "volDPct": 1.26,
+        "price": 29830.0,
+        "rangeLow": 29044,
+        "rangeHigh": 30616,
+        "rangeLow2": 28258,
+        "rangeHigh2": 31402,
+        "volDPct": 2.64,
         "calibrated": true,
         "plan": {
-          "entry": 2305,
-          "target": 2363,
-          "stop": 2261,
-          "rr": 1.32,
-          "hi3m": 2370,
-          "lo3m": 1758,
-          "basis": "1日の実績振れ幅σ=1.3%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値2,370円 / 安値1,758円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+          "entry": 29437,
+          "target": 31009,
+          "stop": 28258,
+          "rr": 1.33,
+          "hi3m": 35900,
+          "lo3m": 25175,
+          "basis": "1日の実績振れ幅σ=2.6%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値35,900円 / 安値25,175円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
         },
         "cond": {
-          "upRate": 51.9,
-          "n": 214,
+          "upRate": 56.9,
+          "n": 181,
           "condition": "RSI中立圏×5日上昇局面",
           "note": null
         },
@@ -659,12 +654,12 @@
       "yutai": null,
       "news": [
         {
-          "title": "日本郵政(株)【6178】：今の株価の理由は？値動きの背景をAIが解説",
+          "title": "(株)アドバンテスト【6857】：掲示板",
           "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9weTZpQndfV29lTnozNGdRb0lqby1nY1lMN1hUUUVEa2FvNHEzbVdWQ1FIcTllaGRnZV9iZURybTdKeWhobU91UGtEcGd2Z0MwdVBrRUZzYW1JV1BsNk1Z?oc=5",
-          "pubDate": "Fri, 10 Jul 2026 06:57:26 GMT",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9Fc3I2YXlDdnRrNTlEanF5RlhIaWI0QWZwNFplYVB2U280bEdUV0VabTJDWlJrUVBTNll0QWFuLVllejVHeTlDYktvQVNvTmRhQ1VlWFBpR0tGdw?oc=5",
+          "pubDate": "Fri, 10 Jul 2026 07:02:26 GMT",
           "sentiment": "neu",
-          "theme": "AI"
+          "theme": "その他"
         }
       ]
     }
@@ -757,7 +752,7 @@
       "roe": 29.3,
       "rsi": 43.8,
       "vol": 0.5918,
-      "inTop": false,
+      "inTop": true,
       "yutai": null
     },
     {
@@ -832,7 +827,7 @@
       "roe": 57.6,
       "rsi": 43.7,
       "vol": 0.7349,
-      "inTop": false,
+      "inTop": true,
       "yutai": null
     },
     {
@@ -1025,8 +1020,8 @@
       "per": 27.8,
       "pbr": 2.72,
       "roe": 11.9,
-      "rsi": 61.6,
-      "vol": 0.2303,
+      "rsi": 66.8,
+      "vol": 0.2301,
       "inTop": false,
       "yutai": null
     },
@@ -1128,7 +1123,7 @@
       "exDivDate": "2026-09-29",
       "dividendYield": 3.16,
       "per": 12.9,
-      "pbr": 1.42,
+      "pbr": 1.01,
       "roe": 9.8,
       "rsi": 37.9,
       "vol": 0.2828,
@@ -1520,8 +1515,8 @@
       "per": 12.5,
       "pbr": 1.6,
       "roe": 13.5,
-      "rsi": 39.5,
-      "vol": 0.458,
+      "rsi": 37.9,
+      "vol": 0.4576,
       "inTop": false,
       "yutai": null
     },
@@ -1759,7 +1754,7 @@
       "dividendYield": 0.78,
       "per": 52.6,
       "pbr": 9.57,
-      "roe": 20.6,
+      "roe": 22.5,
       "rsi": 51.6,
       "vol": 0.3513,
       "inTop": false,
@@ -1908,8 +1903,8 @@
       "exDivDate": "2026-08-28",
       "dividendYield": 2.97,
       "per": 17.0,
-      "pbr": 1.29,
-      "roe": 7.6,
+      "pbr": 1.27,
+      "roe": 8.0,
       "rsi": 72.9,
       "vol": 0.2732,
       "inTop": false,
@@ -1924,7 +1919,7 @@
       "dividendYield": 1.02,
       "per": 51.3,
       "pbr": 3.12,
-      "roe": 5.8,
+      "roe": 7.2,
       "rsi": 58.4,
       "vol": 0.3898,
       "inTop": false,
@@ -2047,7 +2042,7 @@
       "roe": 2.8,
       "rsi": 53.5,
       "vol": 0.271,
-      "inTop": true,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -2675,8 +2670,8 @@
       "per": 21.8,
       "pbr": 2.94,
       "roe": 15.0,
-      "rsi": 19.9,
-      "vol": 0.7897,
+      "rsi": 19.7,
+      "vol": 0.7818,
       "inTop": false,
       "yutai": null
     },
@@ -2737,7 +2732,7 @@
       "roe": 4.7,
       "rsi": 62.6,
       "vol": 0.3139,
-      "inTop": true,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -2919,6 +2914,246 @@
       "vol": 0.3686,
       "inTop": false,
       "yutai": null
+    },
+    {
+      "code": "3791.T",
+      "name": "IGポート",
+      "price": 1389.0,
+      "divPerShare": 17.0,
+      "exDivDate": "2026-05-28",
+      "dividendYield": 1.22,
+      "per": 44.2,
+      "pbr": 2.72,
+      "roe": 12.3,
+      "rsi": 64.8,
+      "vol": 0.388,
+      "inTop": false,
+      "yutai": null
+    },
+    {
+      "code": "9166.T",
+      "name": "GENDA",
+      "price": 580.0,
+      "divPerShare": 8.0,
+      "exDivDate": "2026-07-30",
+      "dividendYield": 1.38,
+      "per": 27.2,
+      "pbr": 1.62,
+      "roe": 5.5,
+      "rsi": 51.3,
+      "vol": 0.6528,
+      "inTop": false,
+      "yutai": null
+    },
+    {
+      "code": "5599.T",
+      "name": "S&J",
+      "price": 1101.0,
+      "divPerShare": 17.0,
+      "exDivDate": "2027-03-30",
+      "dividendYield": 1.54,
+      "per": 15.1,
+      "pbr": 2.85,
+      "roe": 19.5,
+      "rsi": 65.3,
+      "vol": 0.7402,
+      "inTop": false,
+      "yutai": null
+    },
+    {
+      "code": "4420.T",
+      "name": "イーソル",
+      "price": 849.0,
+      "divPerShare": 5.5,
+      "exDivDate": "2026-12-29",
+      "dividendYield": 0.65,
+      "per": 27.2,
+      "pbr": 2.77,
+      "roe": 13.1,
+      "rsi": 58.5,
+      "vol": 0.6216,
+      "inTop": false,
+      "yutai": null
+    },
+    {
+      "code": "9412.T",
+      "name": "スカパーJSAT",
+      "price": 2530.0,
+      "divPerShare": 48.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.9,
+      "per": 30.8,
+      "pbr": 2.36,
+      "roe": 8.0,
+      "rsi": 27.4,
+      "vol": 0.6358,
+      "inTop": false,
+      "yutai": null
+    },
+    {
+      "code": "9602.T",
+      "name": "東宝",
+      "price": 1346.0,
+      "divPerShare": 22.0,
+      "exDivDate": "2026-08-28",
+      "dividendYield": 1.63,
+      "per": 22.0,
+      "pbr": 2.19,
+      "roe": 10.3,
+      "rsi": 70.0,
+      "vol": 0.3129,
+      "inTop": false,
+      "yutai": null
+    },
+    {
+      "code": "4816.T",
+      "name": "東映アニメーション",
+      "price": 2699.0,
+      "divPerShare": 44.0,
+      "exDivDate": "2027-03-30",
+      "dividendYield": 1.63,
+      "per": 22.0,
+      "pbr": 3.22,
+      "roe": 15.5,
+      "rsi": 80.9,
+      "vol": 0.3704,
+      "inTop": false,
+      "yutai": null
+    },
+    {
+      "code": "2432.T",
+      "name": "ディー・エヌ・エー",
+      "price": 2517.0,
+      "divPerShare": 66.0,
+      "exDivDate": "2026-03-30",
+      "dividendYield": 2.62,
+      "per": 14.7,
+      "pbr": 1.16,
+      "roe": 7.5,
+      "rsi": 57.0,
+      "vol": 0.3315,
+      "inTop": false,
+      "yutai": null
+    },
+    {
+      "code": "3765.T",
+      "name": "ガンホー・オンライン・エンターテイメント",
+      "price": 2363.0,
+      "divPerShare": 90.0,
+      "exDivDate": "2025-12-29",
+      "dividendYield": 3.81,
+      "per": 92.6,
+      "pbr": 1.08,
+      "roe": 3.3,
+      "rsi": 64.9,
+      "vol": 0.2695,
+      "inTop": false,
+      "yutai": null
+    },
+    {
+      "code": "6460.T",
+      "name": "セガサミーホールディングス",
+      "price": 2400.0,
+      "divPerShare": 55.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 2.29,
+      "per": null,
+      "pbr": 1.37,
+      "roe": -1.6,
+      "rsi": 75.9,
+      "vol": 0.3604,
+      "inTop": false,
+      "yutai": null
+    },
+    {
+      "code": "9401.T",
+      "name": "TBSホールディングス",
+      "price": 6370.0,
+      "divPerShare": 100.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.57,
+      "per": 19.2,
+      "pbr": 0.89,
+      "roe": 5.1,
+      "rsi": 53.8,
+      "vol": 0.2959,
+      "inTop": false,
+      "yutai": null
+    },
+    {
+      "code": "9404.T",
+      "name": "日本テレビホールディングス",
+      "price": 2885.0,
+      "divPerShare": 45.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.56,
+      "per": 12.8,
+      "pbr": 0.72,
+      "roe": 6.1,
+      "rsi": 63.1,
+      "vol": 0.2338,
+      "inTop": false,
+      "yutai": null
+    },
+    {
+      "code": "1928.T",
+      "name": "積水ハウス",
+      "price": 3455.0,
+      "divPerShare": 146.0,
+      "exDivDate": "2026-07-30",
+      "dividendYield": 4.23,
+      "per": 8.7,
+      "pbr": 1.04,
+      "roe": 12.6,
+      "rsi": 74.2,
+      "vol": 0.1966,
+      "inTop": false,
+      "yutai": null
+    },
+    {
+      "code": "1925.T",
+      "name": "大和ハウス工業",
+      "price": 4506.0,
+      "divPerShare": 131.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 2.91,
+      "per": 8.0,
+      "pbr": 0.96,
+      "roe": 12.5,
+      "rsi": 71.0,
+      "vol": 0.193,
+      "inTop": false,
+      "yutai": null
+    },
+    {
+      "code": "6740.T",
+      "name": "ジャパンディスプレイ",
+      "price": 52.0,
+      "divPerShare": null,
+      "exDivDate": null,
+      "dividendYield": null,
+      "per": null,
+      "pbr": -43.41,
+      "roe": null,
+      "rsi": 48.9,
+      "vol": 2.1397,
+      "inTop": false,
+      "yutai": null
+    },
+    {
+      "code": "6963.T",
+      "name": "ローム",
+      "price": 5600.0,
+      "divPerShare": 50.0,
+      "exDivDate": "2026-03-30",
+      "dividendYield": 0.89,
+      "per": null,
+      "pbr": 2.85,
+      "roe": -19.2,
+      "rsi": 48.7,
+      "vol": 0.6884,
+      "inTop": false,
+      "yutai": null
     }
   ],
   "alerts": [
@@ -2944,18 +3179,18 @@
     },
     {
       "type": "warn",
-      "title": "入替候補OUT: 川崎重工業",
-      "desc": "スコア下位15% (score=0.285)"
-    },
-    {
-      "type": "warn",
-      "title": "入替候補OUT: 資生堂",
-      "desc": "スコア下位15% (score=0.282)"
+      "title": "入替候補OUT: ソシオネクスト",
+      "desc": "スコア下位15% (score=0.311)"
     },
     {
       "type": "warn",
       "title": "入替候補OUT: ファナック",
-      "desc": "スコア下位15% (score=0.28)"
+      "desc": "スコア下位15% (score=0.31)"
+    },
+    {
+      "type": "warn",
+      "title": "入替候補OUT: HEROZ",
+      "desc": "スコア下位15% (score=0.308)"
     }
   ],
   "flow": {
@@ -2982,18 +3217,25 @@
   },
   "themeTrends": [
     {
-      "theme": "AI",
-      "mentions": 7,
-      "pos": 0,
-      "neg": 0,
-      "prevMentions": 7
-    },
-    {
       "theme": "その他",
-      "mentions": 3,
+      "mentions": 8,
       "pos": 1,
       "neg": 0,
-      "prevMentions": 3
+      "prevMentions": 8
+    },
+    {
+      "theme": "自動車",
+      "mentions": 1,
+      "pos": 0,
+      "neg": 0,
+      "prevMentions": 1
+    },
+    {
+      "theme": "AI",
+      "mentions": 1,
+      "pos": 0,
+      "neg": 0,
+      "prevMentions": 1
     }
   ]
 }
