@@ -831,6 +831,17 @@ body::before {
         <input id="hf-code" type="hidden">
         <div id="ac-list" class="ac-list"></div>
         <div id="hf-selected" class="hf-selected" style="display:none"></div>
+        <div id="manual-toggle-wrap" style="margin-top:6px">
+          <a href="#" onclick="toggleManualEntry(event)" style="font-size:11px;color:var(--accent2)">候補に出てこない銘柄はこちら（証券コードで手動登録）</a>
+        </div>
+        <div id="manual-fields" style="display:none;margin-top:8px">
+          <div class="asset-form-row">
+            <div><label>証券コード（任意）</label><input id="manual-code" type="text" placeholder="例: 1234.T"></div>
+            <div><label>現在株価（円・任意）</label><input id="manual-price" type="number" min="0" placeholder="例: 1500" oninput="updateFormPreview()"></div>
+          </div>
+          <div><label>一株配当（円・任意）</label><input id="manual-div" type="number" min="0" step="0.1" placeholder="例: 40" oninput="updateFormPreview()"></div>
+          <div style="font-size:10px;color:var(--muted)">分析対象150銘柄に無い銘柄です。現在株価・配当は自動更新されないため、ご自身で確認のうえ入力してください（未入力でも登録は可能です）。</div>
+        </div>
       </div>
       <div id="normal-fields">
         <div class="asset-form-row">
@@ -1817,6 +1828,7 @@ function selectStock(code) {
   document.getElementById('hf-current-price').value = m.price ?? '';
   document.getElementById('hf-div-per-share').value = m.divPerShare ?? '';
   document.getElementById('ac-list').classList.remove('open');
+  setManualEntry(false);
 
   const sel = document.getElementById('hf-selected');
   const bits = [`<b>${m.name}</b>（${m.code}）`];
@@ -1829,17 +1841,45 @@ function selectStock(code) {
   updateFormPreview();
 }
 
+// 分析対象150銘柄に無い銘柄用: 手動入力欄の表示切り替え
+function setManualEntry(on) {
+  document.getElementById('manual-fields').style.display = on ? 'block' : 'none';
+  if (on) {
+    selectedStock = null;
+    document.getElementById('hf-code').value = '';
+    document.getElementById('hf-current-price').value = '';
+    document.getElementById('hf-div-per-share').value = '';
+    document.getElementById('hf-selected').style.display = 'none';
+    document.getElementById('ac-list').classList.remove('open');
+  } else {
+    document.getElementById('manual-code').value = '';
+    document.getElementById('manual-price').value = '';
+    document.getElementById('manual-div').value = '';
+  }
+  updateFormPreview();
+}
+function toggleManualEntry(e) {
+  e.preventDefault();
+  const showing = document.getElementById('manual-fields').style.display === 'block';
+  setManualEntry(!showing);
+}
+
 // 株数入力に応じて評価額・配当予想をリアルタイム表示
 function updateFormPreview() {
   const pv = document.getElementById('hf-preview');
-  if (!selectedStock) { pv.style.display = 'none'; return; }
+  const manualOn = document.getElementById('manual-fields').style.display === 'block';
+  const stock = selectedStock || (manualOn ? {
+    price: parseFloat(document.getElementById('manual-price').value) || 0,
+    divPerShare: parseFloat(document.getElementById('manual-div').value) || 0,
+  } : null);
+  if (!stock) { pv.style.display = 'none'; return; }
   const isMochikabu = currentHoldingType === 'mochikabu';
   const shares = parseFloat(document.getElementById(isMochikabu ? 'mk-shares' : 'hf-shares').value) || 0;
   const cost   = parseFloat(document.getElementById(isMochikabu ? 'mk-cost-price' : 'hf-cost-price').value) || 0;
   if (!shares) { pv.style.display = 'none'; return; }
-  const price = selectedStock.price || 0;
+  const price = stock.price || 0;
   const value = price * shares;
-  const div   = (selectedStock.divPerShare || 0) * shares;
+  const div   = (stock.divPerShare || 0) * shares;
   const incentiveRate = isMochikabu ? (parseFloat(document.getElementById('hf-incentive-rate').value) || 0) : 0;
   let rows = `<div class="row"><span>いまの評価額（自動）</span><b>${price?('¥'+Math.round(value).toLocaleString()):'—'}</b></div>`;
   if (cost) {
@@ -1878,13 +1918,14 @@ function setHoldingType(type) {
 }
 
 function clearHoldingForm() {
-  ['hf-name','hf-code','hf-shares','hf-cost-price','mk-shares','mk-cost-price','hf-incentive-rate','hf-current-price','hf-div-per-share']
+  ['hf-name','hf-code','hf-shares','hf-cost-price','mk-shares','mk-cost-price','hf-incentive-rate','hf-current-price','hf-div-per-share','manual-code','manual-price','manual-div']
     .forEach(id => document.getElementById(id).value = '');
   document.getElementById('hf-reinvest').checked = false;
   selectedStock = null;
   document.getElementById('hf-selected').style.display = 'none';
   document.getElementById('hf-preview').style.display = 'none';
   document.getElementById('ac-list').classList.remove('open');
+  document.getElementById('manual-fields').style.display = 'none';
   setHoldingType('normal');
   editingHoldingId = null;
   document.getElementById('hf-submit-btn').textContent = '追加する';
@@ -1894,15 +1935,23 @@ function clearHoldingForm() {
 
 function submitHoldingForm() {
   const name = document.getElementById('hf-name').value.trim();
-  const code  = document.getElementById('hf-code').value.trim();
+  const manualOn = document.getElementById('manual-fields').style.display === 'block';
+  const code = manualOn
+    ? document.getElementById('manual-code').value.trim()
+    : document.getElementById('hf-code').value.trim();
   if (!name) { alert('銘柄名を入力してください'); return; }
   const holding = {
     id: editingHoldingId || (Date.now() + '_' + Math.random().toString(36).slice(2, 7)),
     type: currentHoldingType, name, code,
-    currentPrice: parseFloat(document.getElementById('hf-current-price').value) || null,
-    divPerShare:  parseFloat(document.getElementById('hf-div-per-share').value)  || 0,
+    currentPrice: manualOn
+      ? (parseFloat(document.getElementById('manual-price').value) || null)
+      : (parseFloat(document.getElementById('hf-current-price').value) || null),
+    divPerShare: manualOn
+      ? (parseFloat(document.getElementById('manual-div').value) || 0)
+      : (parseFloat(document.getElementById('hf-div-per-share').value) || 0),
     exDivDate: selectedStock ? (selectedStock.exDivDate || null) : null,
     yutai: selectedStock ? (selectedStock.yutai || null) : null,
+    manual: manualOn,
   };
   if (currentHoldingType === 'normal') {
     holding.shares    = parseFloat(document.getElementById('hf-shares').value)     || 0;
@@ -1928,12 +1977,16 @@ function editHolding(id) {
   setHoldingType(h.type);
   // 保存時の情報より、マスタの最新価格を優先（評価額を常に最新に）
   const m = findMasterByCode(h.code);
-  selectedStock = m || { code: h.code, name: h.name, price: h.currentPrice, divPerShare: h.divPerShare, exDivDate: h.exDivDate, yutai: h.yutai };
   document.getElementById('hf-name').value  = h.name  || '';
-  document.getElementById('hf-code').value  = h.code  || '';
-  document.getElementById('hf-current-price').value = (m && m.price != null) ? m.price : (h.currentPrice ?? '');
-  document.getElementById('hf-div-per-share').value  = (m && m.divPerShare != null) ? m.divPerShare : (h.divPerShare ?? '');
-  if (selectedStock) selectStock(h.code);
+  if (m) {
+    selectStock(m.code);
+  } else {
+    // 対象150銘柄に無い（手動登録した）銘柄
+    setManualEntry(true);
+    document.getElementById('manual-code').value  = h.code || '';
+    document.getElementById('manual-price').value = h.currentPrice ?? '';
+    document.getElementById('manual-div').value   = h.divPerShare ?? '';
+  }
   if (h.type === 'normal') {
     document.getElementById('hf-shares').value    = h.shares    ?? '';
     document.getElementById('hf-cost-price').value = h.costPrice ?? '';
