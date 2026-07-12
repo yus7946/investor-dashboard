@@ -1,12 +1,12 @@
 {
-  "name": "機関投資家型 AIエージェント",
-  "short_name": "投資AI",
-  "description": "機関投資家の動き分析・売買シグナルダッシュボード",
+  "name": "株コンパス",
+  "short_name": "株コンパス",
+  "description": "実データで導く、今日の売買判断ダッシュボード",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#070b14",
-  "theme_color": "#070b14",
+  "background_color": "#FAF6EC",
+  "theme_color": "#FAF6EC",
   "orientation": "portrait",
   "icons": [
     { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }

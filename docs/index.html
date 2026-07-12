@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#070b14">
+<meta name="theme-color" content="#FAF6EC">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon.svg">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>機関投資家型 AIエージェント</title>
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>株コンパス</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <style>
@@ -17,18 +17,19 @@
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 
 :root {
-  --bg: #070b14;
-  --surface: #0d1526;
-  --surface2: #121d35;
-  --border: rgba(99,179,237,0.12);
-  --text: #e8f4fd;
-  --muted: #7a9bbf;
-  --accent: #3b82f6;
-  --accent2: #06b6d4;
-  --green: #10b981;
-  --red: #ef4444;
-  --yellow: #f59e0b;
-  --gold: #fbbf24;
+  --bg: #FAF6EC;
+  --surface: #FFFFFF;
+  --surface2: #F2ECDD;
+  --border: rgba(42,38,32,0.10);
+  --text: #2A2620;
+  --muted: #8A8272;
+  --accent: #2C3E63;
+  --accent2: #4A6FA5;
+  --green: #1F6F4A;
+  --red: #B0413E;
+  --stop: #B8611F;
+  --yellow: #C08A2E;
+  --gold: #C9A227;
   --r: 16px;
 }
 
@@ -46,8 +47,8 @@ body::before {
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(59,130,246,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(42,38,32,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(42,38,32,0.025) 1px, transparent 1px);
   background-size: 40px 40px;
   pointer-events: none;
   z-index: 0;
@@ -72,7 +73,7 @@ body::before {
 .header h1 {
   font-size: clamp(20px, 5vw, 26px); font-weight: 800; line-height: 1.2;
   letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #e8f4fd 0%, #63b3ed 50%, #06b6d4 100%);
+  background: linear-gradient(135deg, #2A2620 0%, #2C3E63 45%, #C9A227 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   opacity: 0;
 }
@@ -92,9 +93,10 @@ body::before {
 
 /* ── 今日の結論（ヒーロー） ── */
 .verdict {
-  background: linear-gradient(135deg, rgba(16,185,129,0.14) 0%, rgba(59,130,246,0.10) 100%);
-  border: 1px solid rgba(16,185,129,0.3);
+  background: linear-gradient(135deg, rgba(201,162,39,0.10) 0%, rgba(250,246,236,0.6) 100%);
+  border: 1px solid rgba(201,162,39,0.35);
   border-radius: 20px; padding: 18px; margin-bottom: 12px;
+  box-shadow: 0 4px 16px rgba(42,38,32,0.06);
   opacity: 0; transform: translateY(20px);
 }
 .verdict-headline {
@@ -105,26 +107,27 @@ body::before {
   font-size: 12px; font-weight: 800; margin-bottom: 8px;
   display: flex; align-items: center; gap: 6px;
 }
-.verdict-group-label.buy  { color: #34d399; }
+.verdict-group-label.buy  { color: var(--green); }
 .verdict-group-label.sell { color: var(--red); }
 .verdict-chip {
   display: flex; align-items: center; gap: 10px;
-  background: rgba(255,255,255,0.05); border-radius: 12px; padding: 12px 14px;
-  margin-bottom: 8px; border: 1px solid rgba(255,255,255,0.08);
+  background: var(--surface); border-radius: 12px; padding: 12px 14px;
+  margin-bottom: 8px; border: 1px solid var(--border);
+  box-shadow: 0 1px 4px rgba(42,38,32,0.05);
   cursor: pointer; -webkit-tap-highlight-color: transparent;
 }
 .verdict-chip:last-child { margin-bottom: 0; }
-.verdict-chip.buy  { border-color: rgba(16,185,129,0.35); background: rgba(16,185,129,0.08); }
-.verdict-chip.sell { border-color: rgba(239,68,68,0.3); background: rgba(239,68,68,0.07); }
+.verdict-chip.buy  { border-left: 3px solid var(--green); }
+.verdict-chip.sell { border-left: 3px solid var(--red); }
 .verdict-badge {
   font-size: 12px; font-weight: 800; padding: 5px 11px; border-radius: 99px; flex-shrink: 0;
 }
-.verdict-badge.buy  { background: rgba(16,185,129,0.25); color: #34d399; }
-.verdict-badge.sell { background: rgba(239,68,68,0.2); color: var(--red); }
+.verdict-badge.buy  { background: rgba(31,111,74,0.12); color: var(--green); }
+.verdict-badge.sell { background: rgba(176,65,62,0.12); color: var(--red); }
 .verdict-chip-body { flex: 1; min-width: 0; }
 .verdict-chip-name { font-size: 15px; font-weight: 800; }
 .verdict-chip-reason { font-size: 11px; color: var(--muted); margin-top: 2px; line-height: 1.4; }
-.verdict-chip-stars { font-size: 15px; flex-shrink: 0; }
+.verdict-chip-stars { font-size: 15px; flex-shrink: 0; color: var(--gold); }
 .verdict-empty { font-size: 12px; color: var(--muted); line-height: 1.6; }
 
 /* ── 市場全体（折りたたみ） ── */
@@ -140,16 +143,15 @@ body::before {
 
 /* ── タブ ── */
 .tabs {
-  display: flex; gap: 4px; margin-bottom: 16px;
-  background: var(--surface); border-radius: 14px; padding: 5px;
+  display: flex; gap: 8px; margin-bottom: 16px;
 }
 .tab {
-  flex: 1; padding: 10px 4px; border: none; background: transparent;
+  flex: 1; padding: 11px 4px; border: 1px solid var(--border); background: var(--surface);
   color: var(--muted); font-size: 11px; font-weight: 700;
-  border-radius: 10px; cursor: pointer; transition: all 0.2s;
+  border-radius: 12px; cursor: pointer; transition: all 0.2s;
   -webkit-tap-highlight-color: transparent; line-height: 1.3;
 }
-.tab.active { background: var(--surface2); color: var(--text); box-shadow: 0 1px 4px rgba(0,0,0,0.4); }
+.tab.active { background: var(--accent); color: #FFFFFF; border-color: var(--accent); box-shadow: 0 2px 8px rgba(44,62,99,0.25); }
 
 .tab-content { display: none; }
 .tab-content.active { display: block; }
@@ -166,7 +168,7 @@ body::before {
 .section-hint {
   font-size: 11px; color: var(--muted); margin-bottom: 12px;
   padding: 7px 10px; border-radius: 8px;
-  background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.12);
+  background: rgba(74,111,165,0.06); border: 1px solid rgba(74,111,165,0.12);
   line-height: 1.5;
 }
 
@@ -204,7 +206,7 @@ body::before {
   background: var(--surface); color: var(--muted); font-size: 11px; font-weight: 700;
   border-radius: 10px; cursor: pointer; -webkit-tap-highlight-color: transparent;
 }
-.sf-btn.active { background: rgba(59,130,246,0.15); border-color: var(--accent); color: var(--text); }
+.sf-btn.active { background: rgba(74,111,165,0.15); border-color: var(--accent); color: var(--text); }
 
 /* ── 銘柄カード ── */
 .stock-card {
@@ -220,8 +222,8 @@ body::before {
   border: 1px solid var(--border); display: flex; align-items: center; justify-content: center;
   font-size: 12px; font-weight: 800; color: var(--muted); flex-shrink: 0;
 }
-.rank-badge.top  { background: rgba(251,191,36,0.15); border-color: rgba(251,191,36,0.3); color: var(--gold); }
-.rank-badge.top2 { background: rgba(59,130,246,0.1);  border-color: rgba(59,130,246,0.25); color: var(--accent); }
+.rank-badge.top  { background: rgba(201,162,39,0.15); border-color: rgba(201,162,39,0.35); color: var(--gold); }
+.rank-badge.top2 { background: rgba(74,111,165,0.1);  border-color: rgba(74,111,165,0.25); color: var(--accent); }
 
 .stock-main { flex: 1; min-width: 0; }
 .stock-name { font-size: 15px; font-weight: 800; margin-bottom: 2px; }
@@ -238,10 +240,10 @@ body::before {
   font-size: 14px; font-weight: 800; padding: 7px 16px; border-radius: 99px;
   flex-shrink: 0;
 }
-.signal.buy        { background: rgba(16,185,129,0.15); color: var(--green); border: 1px solid rgba(16,185,129,0.3); }
-.signal.sell       { background: rgba(239,68,68,0.15);  color: var(--red);   border: 1px solid rgba(239,68,68,0.3); }
-.signal.hold       { background: rgba(245,158,11,0.15); color: var(--yellow);border: 1px solid rgba(245,158,11,0.3); }
-.signal.strong-buy { background: rgba(16,185,129,0.25); color: #34d399; border: 1px solid rgba(16,185,129,0.5); box-shadow: 0 0 14px rgba(16,185,129,0.25); }
+.signal.buy        { background: rgba(31,111,74,0.12);  color: var(--green); border: 1px solid rgba(31,111,74,0.3); }
+.signal.sell       { background: rgba(176,65,62,0.12);  color: var(--red);   border: 1px solid rgba(176,65,62,0.3); }
+.signal.hold       { background: rgba(192,138,46,0.12); color: var(--yellow);border: 1px solid rgba(192,138,46,0.3); }
+.signal.strong-buy { background: var(--green); color: #FFFFFF; border: 1px solid var(--green); box-shadow: 0 2px 8px rgba(31,111,74,0.25); }
 
 /* ── 銘柄カード：判定行・一言・想定レンジ・詳細折りたたみ ── */
 .stock-verdict-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
@@ -249,7 +251,7 @@ body::before {
 .stock-range {
   font-size: 12px; color: var(--muted); margin-bottom: 10px;
   padding: 8px 10px; border-radius: 8px;
-  background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.14);
+  background: rgba(74,111,165,0.07); border: 1px solid rgba(74,111,165,0.16);
 }
 .stock-range b { color: var(--accent2); }
 
@@ -258,20 +260,20 @@ body::before {
   margin-bottom: 10px; padding: 12px; border-radius: 12px;
   background: var(--surface2); border: 1px solid var(--border);
 }
-.plan-box.active { border-color: rgba(16,185,129,0.3); background: rgba(16,185,129,0.05); }
+.plan-box.active { border-color: rgba(31,111,74,0.3); background: rgba(31,111,74,0.05); }
 .plan-title { font-size: 11px; font-weight: 800; color: var(--text); margin-bottom: 10px; }
 .plan-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
 .plan-cell {
   text-align: center; padding: 10px 6px; border-radius: 10px;
   border: 1px solid var(--border);
 }
-.plan-cell.buy    { background: rgba(59,130,246,0.08);  border-color: rgba(59,130,246,0.25); }
-.plan-cell.target { background: rgba(16,185,129,0.08);  border-color: rgba(16,185,129,0.25); }
-.plan-cell.stop   { background: rgba(239,68,68,0.08);   border-color: rgba(239,68,68,0.25); }
+.plan-cell.buy    { background: rgba(74,111,165,0.08);  border-color: rgba(74,111,165,0.25); }
+.plan-cell.target { background: rgba(31,111,74,0.08);   border-color: rgba(31,111,74,0.25); }
+.plan-cell.stop   { background: rgba(184,97,31,0.08);   border-color: rgba(184,97,31,0.25); }
 .plan-label { font-size: 10px; font-weight: 700; margin-bottom: 4px; }
 .plan-cell.buy .plan-label    { color: var(--accent2); }
 .plan-cell.target .plan-label { color: var(--green); }
-.plan-cell.stop .plan-label   { color: var(--red); }
+.plan-cell.stop .plan-label   { color: var(--stop); }
 .plan-price { font-size: 17px; font-weight: 800; line-height: 1; letter-spacing: -0.02em; }
 .plan-price span { font-size: 10px; font-weight: 600; margin-left: 1px; color: var(--muted); }
 .plan-sub { font-size: 9px; color: var(--muted); margin-top: 4px; line-height: 1.3; }
@@ -280,11 +282,11 @@ body::before {
 .plan-dist {
   font-size: 11px; color: var(--muted); margin-bottom: 8px;
   padding: 6px 9px; border-radius: 7px;
-  background: rgba(245,158,11,0.07); border: 1px solid rgba(245,158,11,0.18);
+  background: rgba(192,138,46,0.07); border: 1px solid rgba(192,138,46,0.18);
 }
 .plan-dist b { color: var(--yellow); }
 .plan-dist.in {
-  background: rgba(16,185,129,0.07); border-color: rgba(16,185,129,0.22);
+  background: rgba(31,111,74,0.07); border-color: rgba(31,111,74,0.22);
   color: var(--green); font-weight: 700;
 }
 .detail-toggle {
@@ -306,15 +308,15 @@ body::before {
   font-size: 10px; padding: 3px 7px; border-radius: 5px;
   border: 1px solid var(--border); color: var(--muted); white-space: nowrap;
 }
-.tag.green { border-color: rgba(16,185,129,0.3); color: var(--green); background: rgba(16,185,129,0.08); }
-.tag.blue  { border-color: rgba(59,130,246,0.3); color: var(--accent); background: rgba(59,130,246,0.08); }
-.tag.red   { border-color: rgba(239,68,68,0.3);  color: var(--red);   background: rgba(239,68,68,0.08); }
+.tag.green { border-color: rgba(31,111,74,0.3); color: var(--green); background: rgba(31,111,74,0.08); }
+.tag.blue  { border-color: rgba(74,111,165,0.3); color: var(--accent); background: rgba(74,111,165,0.08); }
+.tag.red   { border-color: rgba(176,65,62,0.3);  color: var(--red);   background: rgba(176,65,62,0.08); }
 
 /* ── スコアバー ── */
 .score-bars { display: flex; flex-direction: column; gap: 7px; margin-bottom: 10px; }
 .score-row { display: flex; align-items: center; gap: 8px; }
 .score-row-label { font-size: 11px; color: var(--muted); width: 80px; flex-shrink: 0; line-height: 1.3; }
-.score-bar-track { flex: 1; height: 5px; background: rgba(255,255,255,0.06); border-radius: 99px; overflow: hidden; }
+.score-bar-track { flex: 1; height: 5px; background: rgba(42,38,32,0.08); border-radius: 99px; overflow: hidden; }
 .score-bar-fill { height: 100%; border-radius: 99px; width: 0%; transition: width 1.2s cubic-bezier(0.16,1,0.3,1); }
 .score-row-val { font-size: 11px; color: var(--text); width: 30px; text-align: right; flex-shrink: 0; }
 
@@ -322,7 +324,7 @@ body::before {
 .div-row { display: flex; gap: 10px; font-size: 11px; margin-top: 4px; margin-bottom: 8px; }
 .yutai-box {
   margin-top: 8px; padding: 8px 10px;
-  background: rgba(251,191,36,0.08); border: 1px solid rgba(251,191,36,0.2);
+  background: rgba(201,162,39,0.08); border: 1px solid rgba(201,162,39,0.2);
   border-radius: 8px; font-size: 11px; color: var(--gold);
 }
 
@@ -335,7 +337,7 @@ body::before {
 .scenario-range { display: flex; align-items: center; gap: 6px; font-size: 11px; margin-bottom: 4px; }
 .scenario-range .lo { color: var(--red); font-weight: 700; }
 .scenario-range .hi { color: var(--green); font-weight: 700; }
-.scenario-track { flex: 1; height: 4px; background: rgba(255,255,255,0.06); border-radius: 99px; position: relative; }
+.scenario-track { flex: 1; height: 4px; background: rgba(42,38,32,0.08); border-radius: 99px; position: relative; }
 .scenario-cur { position: absolute; top: -3px; width: 2px; height: 10px; background: var(--text); border-radius: 1px; }
 .scenario-note { font-size: 10px; color: var(--muted); }
 
@@ -360,9 +362,9 @@ body::before {
   display: flex; gap: 12px; align-items: flex-start;
   opacity: 0; transform: translateY(16px);
 }
-.alert-card-big.warn { background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.3); }
-.alert-card-big.good { background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); }
-.alert-card-big.info { background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.2); }
+.alert-card-big.warn { background: rgba(192,138,46,0.1); border: 1px solid rgba(192,138,46,0.3); }
+.alert-card-big.good { background: rgba(31,111,74,0.1); border: 1px solid rgba(31,111,74,0.3); }
+.alert-card-big.info { background: rgba(74,111,165,0.08); border: 1px solid rgba(74,111,165,0.2); }
 .alert-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
 .alert-body { flex: 1; }
 .alert-title { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
@@ -371,10 +373,10 @@ body::before {
 /* ── フローバー ── */
 .flow-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
 .flow-label { font-size: 11px; color: var(--muted); width: 70px; flex-shrink: 0; }
-.flow-bar-wrap { flex: 1; height: 8px; background: rgba(255,255,255,0.06); border-radius: 99px; overflow: hidden; position: relative; }
-.flow-center { position: absolute; left: 50%; top: 0; width: 1px; height: 100%; background: rgba(255,255,255,0.15); }
+.flow-bar-wrap { flex: 1; height: 8px; background: rgba(42,38,32,0.08); border-radius: 99px; overflow: hidden; position: relative; }
+.flow-center { position: absolute; left: 50%; top: 0; width: 1px; height: 100%; background: rgba(42,38,32,0.12); }
 .flow-fill { position: absolute; height: 100%; border-radius: 99px; width: 0; transition: width 1.4s cubic-bezier(0.16,1,0.3,1); }
-.flow-fill.positive { left: 50%; background: linear-gradient(90deg, var(--green), #34d399); }
+.flow-fill.positive { left: 50%; background: linear-gradient(90deg, var(--green), #3C8F63); }
 .flow-fill.negative { right: 50%; background: linear-gradient(270deg, var(--red), #f87171); }
 .flow-val { font-size: 11px; font-weight: 700; width: 60px; text-align: right; flex-shrink: 0; }
 
@@ -385,9 +387,9 @@ body::before {
 .theme-name { font-size: 13px; font-weight: 700; }
 .theme-count { font-size: 10px; color: var(--muted); }
 .theme-flag { font-size: 10px; padding: 2px 7px; border-radius: 99px; font-weight: 700; flex-shrink: 0; }
-.theme-flag.hot  { background: rgba(239,68,68,0.15); color: var(--red); }
-.theme-flag.turn { background: rgba(251,191,36,0.15); color: var(--gold); }
-.theme-bar-track { height: 6px; background: rgba(255,255,255,0.06); border-radius: 99px; overflow: hidden; display: flex; }
+.theme-flag.hot  { background: rgba(176,65,62,0.15); color: var(--red); }
+.theme-flag.turn { background: rgba(201,162,39,0.15); color: var(--gold); }
+.theme-bar-track { height: 6px; background: rgba(42,38,32,0.08); border-radius: 99px; overflow: hidden; display: flex; }
 .theme-bar-pos { background: var(--green); height: 100%; }
 .theme-bar-neg { background: var(--red); height: 100%; }
 .theme-bar-neu { background: var(--muted); opacity: 0.4; height: 100%; }
@@ -399,8 +401,8 @@ body::before {
 .news-head { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; }
 .news-meta { font-size: 10px; color: var(--muted); margin-top: 2px; }
 .sentiment { font-size: 9px; padding: 1px 6px; border-radius: 99px; font-weight: 700; flex-shrink: 0; }
-.sentiment.pos { background: rgba(16,185,129,0.15); color: var(--green); }
-.sentiment.neg { background: rgba(239,68,68,0.15); color: var(--red); }
+.sentiment.pos { background: rgba(31,111,74,0.15); color: var(--green); }
+.sentiment.neg { background: rgba(176,65,62,0.15); color: var(--red); }
 .sentiment.neu { background: rgba(122,155,191,0.15); color: var(--muted); }
 .x-search-link { font-size: 10px; color: var(--accent2); text-decoration: none; }
 
@@ -416,7 +418,7 @@ body::before {
   display: none; position: absolute; bottom: 130%; left: 50%; transform: translateX(-50%);
   width: 200px; background: var(--surface2); border: 1px solid var(--border);
   border-radius: 10px; padding: 10px 12px; font-size: 11px; font-weight: 400;
-  color: var(--text); line-height: 1.6; z-index: 20; box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  color: var(--text); line-height: 1.6; z-index: 20; box-shadow: 0 8px 20px rgba(42,38,32,0.18);
 }
 .hint:hover .hint-pop, .hint:active .hint-pop, .hint.open .hint-pop { display: block; }
 
@@ -453,7 +455,7 @@ body::before {
 }
 .holding-yutai {
   margin-top: 8px; padding: 7px 10px; border-radius: 8px; font-size: 11px; line-height: 1.5;
-  background: rgba(251,191,36,0.08); border: 1px solid rgba(251,191,36,0.2); color: var(--gold);
+  background: rgba(201,162,39,0.08); border: 1px solid rgba(201,162,39,0.2); color: var(--gold);
 }
 .holding-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; font-size: 11px; margin-top: 4px; }
 .holding-grid .lbl { color: var(--muted); }
@@ -503,7 +505,7 @@ body::before {
 .search-links { display: flex; gap: 6px; flex-wrap: wrap; }
 .search-links a {
   font-size: 11px; font-weight: 700; padding: 7px 11px; border-radius: 8px; text-decoration: none;
-  background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.25); color: var(--accent2);
+  background: rgba(74,111,165,0.1); border: 1px solid rgba(74,111,165,0.25); color: var(--accent2);
 }
 
 /* ── 銘柄オートコンプリート ── */
@@ -511,7 +513,7 @@ body::before {
 .ac-list {
   display: none; position: absolute; top: 100%; left: 0; right: 0; z-index: 30;
   background: var(--surface2); border: 1px solid var(--border); border-radius: 10px;
-  margin-top: 4px; max-height: 240px; overflow-y: auto; box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  margin-top: 4px; max-height: 240px; overflow-y: auto; box-shadow: 0 8px 24px rgba(42,38,32,0.18);
 }
 .ac-list.open { display: block; }
 .ac-item {
@@ -520,19 +522,19 @@ body::before {
   -webkit-tap-highlight-color: transparent;
 }
 .ac-item:last-child { border-bottom: none; }
-.ac-item:active, .ac-item.active { background: rgba(59,130,246,0.15); }
+.ac-item:active, .ac-item.active { background: rgba(74,111,165,0.15); }
 .ac-item-name { font-size: 13px; font-weight: 700; }
 .ac-item-code { font-size: 11px; color: var(--muted); }
 .ac-item-price { font-size: 12px; color: var(--accent2); font-weight: 700; white-space: nowrap; }
 .hf-selected {
   padding: 10px 12px; border-radius: 8px; margin-top: 4px;
-  background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.25);
+  background: rgba(31,111,74,0.08); border: 1px solid rgba(31,111,74,0.25);
   font-size: 12px; line-height: 1.6;
 }
 .hf-selected b { color: var(--text); }
 .hf-preview {
   padding: 10px 12px; border-radius: 8px;
-  background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.15);
+  background: rgba(74,111,165,0.06); border: 1px solid rgba(74,111,165,0.15);
   font-size: 12px; line-height: 1.7;
 }
 .hf-preview .row { display: flex; justify-content: space-between; }
@@ -543,7 +545,7 @@ body::before {
   flex: 1; padding: 8px; border-radius: 8px; border: 1px solid var(--border);
   background: var(--surface2); color: var(--muted); font-size: 12px; font-weight: 700; cursor: pointer;
 }
-.asset-type-toggle button.active { background: rgba(59,130,246,0.15); border-color: var(--accent); color: var(--text); }
+.asset-type-toggle button.active { background: rgba(74,111,165,0.15); border-color: var(--accent); color: var(--text); }
 .asset-form-actions { display: flex; gap: 8px; margin-top: 4px; }
 .btn-primary {
   flex: 1; padding: 11px; border-radius: 8px; border: none;
@@ -565,11 +567,11 @@ body::before {
   border: none; border-radius: var(--r); color: white;
   font-size: 15px; font-weight: 700; cursor: pointer;
   display: flex; align-items: center; justify-content: center; gap: 8px;
-  box-shadow: 0 8px 24px rgba(59,130,246,0.4);
+  box-shadow: 0 8px 24px rgba(74,111,165,0.4);
   transition: transform 0.2s, box-shadow 0.2s; -webkit-tap-highlight-color: transparent;
 }
-.copy-btn:active { transform: scale(0.97); box-shadow: 0 4px 12px rgba(59,130,246,0.3); }
-.copy-btn.copied { background: linear-gradient(135deg, var(--green), #059669); box-shadow: 0 8px 24px rgba(16,185,129,0.4); }
+.copy-btn:active { transform: scale(0.97); box-shadow: 0 4px 12px rgba(74,111,165,0.3); }
+.copy-btn.copied { background: linear-gradient(135deg, var(--green), #154934); box-shadow: 0 8px 24px rgba(31,111,74,0.4); }
 .copy-hint {
   margin-top: 8px; font-size: 11px; line-height: 1.5; text-align: center;
   color: var(--muted); padding: 0 8px;
@@ -589,9 +591,9 @@ body::before {
 
 <!-- ヘッダー -->
 <div class="header">
-  <div class="header-badge" id="badge">● LIVE ANALYSIS</div>
-  <h1 id="title">今日の株、<br>どれが買い？</h1>
-  <div class="header-meta" id="meta">実データだけで作った、初心者向けの売買サイン</div>
+  <div class="header-badge" id="badge">LIVE</div>
+  <h1 id="title">株コンパス</h1>
+  <div class="header-meta" id="meta">実データで導く、今日の売買判断</div>
 </div>
 
 <!-- 更新バー -->
@@ -617,8 +619,8 @@ body::before {
 </button>
 <div class="market-collapse" id="market-collapse">
   <div id="regime-banner" style="display:none;padding:10px 14px;border-radius:12px;margin-bottom:10px;font-size:12px;line-height:1.6"></div>
-  <div id="outlook-card" style="display:none;padding:12px 14px;border-radius:12px;margin-bottom:10px;font-size:12px;line-height:1.7;background:rgba(59,130,246,0.06);border:1px solid rgba(59,130,246,0.2)"></div>
-  <div id="accuracy-card" style="display:none;padding:12px 14px;border-radius:12px;margin-bottom:10px;font-size:12px;line-height:1.7;background:rgba(16,185,129,0.05);border:1px solid rgba(16,185,129,0.18)"></div>
+  <div id="outlook-card" style="display:none;padding:12px 14px;border-radius:12px;margin-bottom:10px;font-size:12px;line-height:1.7;background:rgba(74,111,165,0.06);border:1px solid rgba(74,111,165,0.2)"></div>
+  <div id="accuracy-card" style="display:none;padding:12px 14px;border-radius:12px;margin-bottom:10px;font-size:12px;line-height:1.7;background:rgba(31,111,74,0.05);border:1px solid rgba(31,111,74,0.18)"></div>
 </div>
 
 <!-- タブ -->
@@ -708,7 +710,7 @@ body::before {
   <div class="section-hint">急変・注目のアラートを優先表示しています。赤＝注意、緑＝好材料、青＝情報</div>
 
   <div class="section-title">機関動向アラート</div>
-  <div style="font-size:11px;color:var(--yellow);margin-bottom:10px;padding:8px 12px;border-radius:8px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2)">逆張り候補は高リスクです。損切りラインを必ず設定してください</div>
+  <div style="font-size:11px;color:var(--yellow);margin-bottom:10px;padding:8px 12px;border-radius:8px;background:rgba(192,138,46,0.08);border:1px solid rgba(192,138,46,0.2)">逆張り候補は高リスクです。損切りラインを必ず設定してください</div>
   <div id="alert-list"></div>
 
   <div class="section-title">テーマ注目度<span style="font-size:9px;font-weight:400;text-transform:none;color:var(--muted);margin-left:4px">ニュース言及件数の集計</span></div>
@@ -3961,12 +3963,12 @@ function renderVerdict() {
   if (DATA.market) {
     const m = DATA.market;
     const emoji = m.regime === 'bull' ? '追い風' : m.regime === 'bear' ? '逆風' : '中立';
-    regimeLine = `今日の相場全体は<b style="color:${m.regime==='bear'?'var(--red)':m.regime==='bull'?'#34d399':'var(--yellow)'}">${m.label}（${emoji}）</b>。`;
+    regimeLine = `今日の相場全体は<b style="color:${m.regime==='bear'?'var(--red)':m.regime==='bull'?'var(--green)':'var(--yellow)'}">${m.label}（${emoji}）</b>。`;
   }
   const buyCount = buysAll.length;
   headEl.innerHTML = regimeLine +
     (buyCount > 0
-      ? `注目の<b style="color:#34d399">買い候補は${buyCount}銘柄</b>、下の一覧から選びました。`
+      ? `注目の<b style="color:var(--green)">買い候補は${buyCount}銘柄</b>、下の一覧から選びました。`
       : `今日は自信を持って「買い」と言える銘柄が<b>見当たりません</b>。無理に動かないのも選択です。`);
 
   // 買い候補（上位3）
@@ -4123,9 +4125,9 @@ function renderStocks() {
         </div>
         <div class="score-bars">
           ${[
-            ['割安スコア value',   s.value,    '#3b82f6', HINTS.value],
-            ['品質スコア quality', s.quality,  '#10b981', HINTS.quality],
-            ['勢いスコア momentum',s.momentum, '#f59e0b', HINTS.momentum],
+            ['割安スコア value',   s.value,    '#4A6FA5', HINTS.value],
+            ['品質スコア quality', s.quality,  '#1F6F4A', HINTS.quality],
+            ['勢いスコア momentum',s.momentum, '#C08A2E', HINTS.momentum],
           ].map(([lbl,val,col,hint]) => `
           <div class="score-row">
             <span class="score-row-label">${lbl}<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${hint}</span></span></span>
@@ -4209,7 +4211,7 @@ function renderForecastBox(s) {
     : '';
   const factorChips = (f.factors || []).map(x => {
     const col = x.dir === '+' ? 'var(--green)' : x.dir === '-' ? 'var(--red)' : 'var(--muted)';
-    const bg  = x.dir === '+' ? 'rgba(16,185,129,0.08)' : x.dir === '-' ? 'rgba(239,68,68,0.08)' : 'rgba(255,255,255,0.04)';
+    const bg  = x.dir === '+' ? 'rgba(31,111,74,0.08)' : x.dir === '-' ? 'rgba(176,65,62,0.08)' : 'rgba(42,38,32,0.05)';
     return `<div style="font-size:10px;color:${col};background:${bg};border:1px solid ${col}33;border-radius:6px;padding:3px 7px;margin-top:4px">${x.dir === '+' ? '↑' : x.dir === '-' ? '↓' : '・'} ${x.label}</div>`;
   }).join('');
   return `
@@ -4345,9 +4347,9 @@ function renderRegime() {
     return;
   }
   const styles = {
-    bull:    { bg: 'rgba(16,185,129,0.08)',  bd: 'rgba(16,185,129,0.25)',  col: 'var(--green)' },
-    neutral: { bg: 'rgba(245,158,11,0.08)',  bd: 'rgba(245,158,11,0.25)',  col: 'var(--yellow)' },
-    bear:    { bg: 'rgba(239,68,68,0.10)',   bd: 'rgba(239,68,68,0.35)',   col: 'var(--red)' },
+    bull:    { bg: 'rgba(31,111,74,0.08)',  bd: 'rgba(31,111,74,0.25)',  col: 'var(--green)' },
+    neutral: { bg: 'rgba(192,138,46,0.08)',  bd: 'rgba(192,138,46,0.25)',  col: 'var(--yellow)' },
+    bear:    { bg: 'rgba(176,65,62,0.10)',   bd: 'rgba(176,65,62,0.35)',   col: 'var(--red)' },
   };
   const s = styles[m.regime] || styles.neutral;
   el.style.display = 'block';
@@ -5097,7 +5099,7 @@ function renderAssetTrend() {
   }).join(' ');
   const pts = toPts(vals);
   const goalLine = goalVals
-    ? `<polyline points="${toPts(goalVals)}" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.8"/>` : '';
+    ? `<polyline points="${toPts(goalVals)}" fill="none" stroke="#C9A227" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.9"/>` : '';
 
   // 進捗: 目標ラインに対して実績がどれだけ上/下か
   let progressLine = '';
@@ -5123,9 +5125,9 @@ function renderAssetTrend() {
     </div>
     <svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;display:block">
       ${goalLine}
-      <polyline points="${pts}" fill="none" stroke="${chg >= 0 ? '#10b981' : '#ef4444'}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+      <polyline points="${pts}" fill="none" stroke="${chg >= 0 ? '#1F6F4A' : '#B0413E'}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
     </svg>
-    <div style="font-size:9px;color:var(--muted);margin-top:4px">実線=あなたの資産・黄の点線=月¥${monthly.toLocaleString()}ペースの目標。開いた日ごとに自動記録（記録${dates.length}回・この端末のみ）</div>
+    <div style="font-size:9px;color:var(--muted);margin-top:4px">実線=あなたの資産・金の点線=月¥${monthly.toLocaleString()}ペースの目標。開いた日ごとに自動記録（記録${dates.length}回・この端末のみ）</div>
     ${progressLine}
   </div>`;
 }
@@ -5143,18 +5145,18 @@ function renderHoldingActions() {
     const rsi = live ? live.rsi : null;
     const plPct = c.plPct;
 
-    let badge = 'ホールド', color = 'var(--muted)', bg = 'rgba(255,255,255,0.04)', reason = '特に急ぐサインはありません。';
+    let badge = 'ホールド', color = 'var(--muted)', bg = 'rgba(42,38,32,0.04)', reason = '特に急ぐサインはありません。';
     if (plPct !== null && plPct <= -10) {
-      badge = '損切り確認'; color = 'var(--red)'; bg = 'rgba(239,68,68,0.08)';
+      badge = '損切り確認'; color = 'var(--stop)'; bg = 'rgba(184,97,31,0.08)';
       reason = `含み損${plPct.toFixed(1)}%。損失を広げないルール（例: -10%で機械的に売る）を確認する局面です。`;
     } else if (plPct !== null && plPct >= 15 && rsi != null && rsi >= 70) {
-      badge = '利確検討'; color = 'var(--green)'; bg = 'rgba(16,185,129,0.08)';
+      badge = '利確検討'; color = 'var(--green)'; bg = 'rgba(31,111,74,0.08)';
       reason = `含み益+${plPct.toFixed(1)}%かつRSI${rsi}（過熱圏）。一部利益確定も選択肢です。`;
     } else if (rsi != null && rsi >= 75) {
-      badge = '過熱注意'; color = 'var(--yellow)'; bg = 'rgba(245,158,11,0.08)';
+      badge = '過熱注意'; color = 'var(--yellow)'; bg = 'rgba(192,138,46,0.08)';
       reason = `RSI${rsi}と買われすぎ圏。急落に備え利確ラインを決めておくと安心です。`;
     } else if (rsi != null && rsi <= 30) {
-      badge = '売られすぎ圏'; color = 'var(--accent2)'; bg = 'rgba(59,130,246,0.08)';
+      badge = '売られすぎ圏'; color = 'var(--accent2)'; bg = 'rgba(74,111,165,0.08)';
       reason = `RSI${rsi}と売られすぎ圏の目安。慌てて投げ売りする局面ではない可能性があります。`;
     } else if (plPct !== null) {
       reason = `損益${plPct >= 0 ? '+' : ''}${plPct.toFixed(1)}%・RSI${rsi ?? '—'}。特に急ぐサインはありません。`;
@@ -5172,12 +5174,12 @@ function renderHoldingActions() {
       const sd = live.vol / Math.sqrt(252);  // 年率ボラ→日次σ
       const tgt = Math.round(live.price * (1 + 2 * sd));
       const stp = Math.round(live.price * (1 - 1.5 * sd));
-      levels = `<div style="font-size:10px;color:var(--muted);margin-top:4px">価格目安: 利確 <b style="color:var(--green)">${tgt.toLocaleString()}円</b> / 損切り <b style="color:var(--red)">${stp.toLocaleString()}円</b>（現在値${Math.round(live.price).toLocaleString()}円・実績値動きσから機械算出）</div>`;
+      levels = `<div style="font-size:10px;color:var(--muted);margin-top:4px">価格目安: 利確 <b style="color:var(--green)">${tgt.toLocaleString()}円</b> / 損切り <b style="color:var(--stop)">${stp.toLocaleString()}円</b>（現在値${Math.round(live.price).toLocaleString()}円・実績値動きσから機械算出）</div>`;
     }
 
     return `
-    <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-radius:10px;background:${bg};border:1px solid ${color}33;margin-bottom:8px">
-      <span style="font-size:11px;font-weight:800;color:${color};padding:4px 10px;border-radius:99px;background:${bg};border:1px solid ${color}55;white-space:nowrap;flex-shrink:0">${badge}</span>
+    <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-radius:10px;background:${bg};border:1px solid var(--border);border-left:3px solid ${color};margin-bottom:8px">
+      <span style="font-size:11px;font-weight:800;color:${color};padding:4px 10px;border-radius:99px;background:var(--surface);border:1px solid var(--border);white-space:nowrap;flex-shrink:0">${badge}</span>
       <div style="flex:1;min-width:0">
         <div style="font-size:13px;font-weight:800">${h.name}</div>
         <div style="font-size:11px;color:var(--text);line-height:1.5;margin-top:2px">${reason}</div>
