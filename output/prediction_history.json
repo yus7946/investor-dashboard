@@ -1020,6 +1020,18 @@
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-07-10",
+      "ticker": "9502.T",
+      "name": "中部電力",
+      "basePrice": 3015.0,
+      "entry": 2999,
+      "target": 3063,
+      "stop": 2951,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
     }
   ]
 }
