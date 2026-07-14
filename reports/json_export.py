@@ -1,7 +1,9 @@
 """分析結果をHTMLダッシュボード用JSON (output/dashboard_data.json) に出力する。"""
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
+
+JST = timezone(timedelta(hours=9))
 
 
 def export_dashboard_json(
@@ -45,9 +47,12 @@ def export_dashboard_json(
             "news": s.get("news", []),
         })
 
+    now_jst = datetime.now(JST)
     data = {
-        "updated": datetime.now().strftime("%Y年%m月%d日 %H:%M"),
-        "updatedAtMs": int(datetime.now().timestamp() * 1000),
+        # 表示用文字列は必ずJSTで統一する（GitHub ActionsのランナーはUTCで動くため、
+        # タイムゾーン変換せずに表示すると「経過時間」の計算結果と9時間ズレて見える）。
+        "updated": now_jst.strftime("%Y年%m月%d日 %H:%M"),
+        "updatedAtMs": int(now_jst.timestamp() * 1000),
         "fetched": fetched_count,
         "universeTotal": universe_total,
         "market": market,
