@@ -989,6 +989,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-14",
+      "ticker": "8035.T",
+      "name": "東京エレクトロン",
+      "basePrice": 73670.0,
+      "rangeLow": 71533,
+      "rangeHigh": 75807,
+      "predUpRate": 50.9,
+      "condN": 161,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -1515,6 +1530,18 @@
       "entry": 4157,
       "target": 4328,
       "stop": 4029,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-07-14",
+      "ticker": "8035.T",
+      "name": "東京エレクトロン",
+      "basePrice": 73670.0,
+      "entry": 72602,
+      "target": 76875,
+      "stop": 69397,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
