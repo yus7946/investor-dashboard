@@ -22,10 +22,15 @@ TOP_BUY = 0.35     # 上位35%
 BOTTOM = 0.85      # 下位15%
 
 
+SMART_ACCUM = 0.25   # これ以上は買い集めの兆候
+SMART_DISTRIB = -0.25  # これ以下は売り抜けの兆候
+
+
 def judge_signal(stock: dict, pct_rank: float, regime: str = "unknown") -> dict:
     """pct_rank: ユニバース内の相対順位（0=最上位, 1=最下位）。"""
     rsi = stock.get("rsi", 50) or 50
     mom = stock.get("momentum_raw", 0) or 0
+    sm = (stock.get("smart_money") or {}).get("score")
 
     if rsi >= RSI_SELL:
         signal, conf = "売り", "中"
@@ -39,6 +44,21 @@ def judge_signal(stock: dict, pct_rank: float, regime: str = "unknown") -> dict:
         signal, conf = "様子見", "低"
     else:
         signal, conf = "ホールド", "低"
+
+    # 機関の資金フローで補正:
+    #  - 明確な売り抜けの兆候がある銘柄は、上位でも買いを1段階格下げ（機関が降りている所を買わない）
+    #  - 買い集めの兆候がある「ホールド」は「買い」に格上げ（機関が仕込んでいる初動を拾う）
+    if sm is not None:
+        if sm <= SMART_DISTRIB:
+            if signal == "強い買い":
+                signal, conf = "買い", "中"
+                stock["smart_adjusted"] = "売り抜けの兆候で格下げ"
+            elif signal == "買い":
+                signal, conf = "ホールド", "低"
+                stock["smart_adjusted"] = "売り抜けの兆候で格下げ"
+        elif sm >= SMART_ACCUM and signal == "ホールド" and rsi < RSI_HOT:
+            signal, conf = "買い", "中"
+            stock["smart_adjusted"] = "買い集めの兆候で格上げ"
 
     # 市場全体が下落基調なら買い系を1段階慎重に
     if regime == "bear":

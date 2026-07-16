@@ -1,4 +1,4 @@
-"""バリュー・クオリティ・モメンタムの3因子スコアリングとF-Score、戦略タグ付け。"""
+"""スコアリング（機関の資金フローを主軸に、割安・品質・勢い・低ボラを合成）とF-Score、戦略タグ付け。"""
 
 
 def _normalize(values: list[float]) -> list[float]:
@@ -17,20 +17,25 @@ def score_universe(stocks: list[dict]) -> list[dict]:
     roes = [s["roe"] or 0 for s in stocks]
     moms = [s["momentum_raw"] or 0 for s in stocks]
     vols = [1 / (1 + (s["volatility"] or 0)) for s in stocks]
+    # 機関の資金フロースコア(-1〜1)。取得できない銘柄は0(中立)扱い。
+    smarts = [((s.get("smart_money") or {}).get("score") or 0.0) for s in stocks]
 
     value_n = _normalize([(a + b) / 2 for a, b in zip(pers, pbrs)])
     quality_n = _normalize(roes)
     momentum_n = _normalize(moms)
     lowvol_n = _normalize(vols)
+    smart_n = _normalize(smarts)  # ユニバース内の相対位置に正規化
 
     for i, s in enumerate(stocks):
         s["value"] = round(value_n[i], 3)
         s["quality"] = round(quality_n[i], 3)
         s["momentum"] = round(momentum_n[i], 3)
-        # 勢い(momentum)を最大比重に。財務指標(value/quality)は決算ごとにしか変わらず日々ほぼ不変のため、
-        # これらを主にするとTOP10が固定化する。日々の値動きを主軸にしつつ、割安・品質も50%残してバランスを取る。
+        s["smart"] = round(smart_n[i], 3)
+        # 機関の資金フロー(買い集め/売り抜け)を最大比重に据え、名実ともに機関投資家分析へ寄せる。
+        # 勢い・割安・品質・低ボラを補助的に合成。
         s["score"] = round(
-            value_n[i] * 0.25 + quality_n[i] * 0.25 + momentum_n[i] * 0.35 + lowvol_n[i] * 0.15, 3
+            smart_n[i] * 0.30 + momentum_n[i] * 0.25 + value_n[i] * 0.20
+            + quality_n[i] * 0.15 + lowvol_n[i] * 0.10, 3
         )
 
         f = 0

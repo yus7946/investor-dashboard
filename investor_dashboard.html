@@ -255,6 +255,24 @@ body::before {
 }
 .stock-range b { color: var(--accent2); }
 
+/* ── 機関の資金フロー ── */
+.smart-box {
+  margin-bottom: 10px; padding: 11px 12px; border-radius: 12px;
+  border: 1px solid var(--border); background: var(--surface2);
+}
+.smart-box.accum   { border-color: rgba(31,111,74,0.3);  background: rgba(31,111,74,0.05); }
+.smart-box.distrib { border-color: rgba(176,65,62,0.3);  background: rgba(176,65,62,0.05); }
+.smart-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.smart-badge { font-size: 12px; font-weight: 800; }
+.smart-badge.accum   { color: var(--green); }
+.smart-badge.distrib { color: var(--red); }
+.smart-badge.neutral { color: var(--muted); }
+.smart-strength { font-size: 10px; color: var(--muted); margin-left: auto; }
+.smart-factors { margin: 7px 0 0; padding-left: 16px; font-size: 11px; color: var(--text); line-height: 1.6; }
+.smart-metrics { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 7px; font-size: 10px; color: var(--muted); }
+.smart-adjusted { margin-top: 6px; font-size: 10px; color: var(--accent2); font-weight: 700; }
+.smart-note { margin-top: 5px; font-size: 9px; color: var(--muted); }
+
 /* ── 売買目安3点セット ── */
 .plan-box {
   margin-bottom: 10px; padding: 12px; border-radius: 12px;
@@ -1003,7 +1021,8 @@ function scoreToStars(score) {
 }
 
 const HINTS = {
-  score:    '総合評価 composite score：勢い35%・割安25%・品質25%・低ボラ15%を合成した点数（0〜1）。日々の値動きを主軸にしているので毎日順位が入れ替わります。分析対象銘柄の中での相対評価で、相場全体が悪い時でも高スコア銘柄は出る点に注意。',
+  score:    '総合評価 composite score：機関の資金フロー30%・勢い25%・割安20%・品質15%・低ボラ10%を合成した点数（0〜1）。機関の需給を主軸にしつつ日々の値動きも反映するので順位が入れ替わります。分析対象銘柄の中での相対評価で、相場全体が悪い時でも高スコア銘柄は出る点に注意。',
+  smart:    '機関の動き（資金フロー）：日足の出来高と値動きから、大口が買い集めているか利確・売り抜けしているかを推測します。CMF（安値でも買われるか）、OBV（上昇日に出来高が集中するか）、VWAP乖離（平均取得コストより上か）、出来高の方向、空売り残高などを合成した「兆候」で、確定情報ではありません。板情報や大口クロス取引は無料では取得できないため含みません。',
   fscore:   '財務健全度 F：当アプリ独自の9点満点の簡易チェック（ROE・PER・PBR・勢い・配当など）。正式なピオトロスキーF-Scoreとは異なります。7以上が良好の目安。',
   value:    '割安スコア value：株価が割安かどうかの度合い。高いほど「割安」と判定。',
   quality:  '品質スコア quality：収益性や財務の安定性。高いほど「優良企業」寄り。',
@@ -1045,12 +1064,14 @@ function renderVerdict() {
 
   function reasonFor(s) {
     const bits = [];
+    // 機関の動きを最優先で提示
+    if (s.smartMoney && s.smartMoney.tone === 'pos') bits.push('機関が買い集めの兆候');
+    else if (s.smartMoney && s.smartMoney.tone === 'neg') bits.push('機関が売り抜けの兆候');
     if (s.rsi <= 30) bits.push('売られすぎ圏で反発期待');
     else if (s.rsi >= 70) bits.push('買われすぎ圏で過熱注意');
     if (s.dividend_yield >= 3) bits.push(`高配当${s.dividend_yield}%`);
     if (s.short_ratio != null && s.short_ratio >= 3) bits.push('空売り多め');
     if (s.regime_adjusted) bits.push('地合い悪化で慎重評価');
-    if (s.forecast) bits.push(`明日の想定 ${s.forecast.rangeLow.toLocaleString()}〜${s.forecast.rangeHigh.toLocaleString()}円`);
     return bits.slice(0, 2).join(' / ') || 'スコア上位で総合評価が良好';
   }
 
@@ -1094,6 +1115,35 @@ function toggleMarket(btn) {
   const c = document.getElementById('market-collapse');
   c.classList.toggle('open');
   document.getElementById('market-arrow').textContent = c.classList.contains('open') ? '▲' : '▼';
+}
+
+// 機関の資金フロー（買い集め / 利確・売り抜けの兆候）
+function renderSmartMoney(s) {
+  const sm = s.smartMoney;
+  if (!sm) return '';
+  const toneCls = sm.tone === 'pos' ? 'accum' : sm.tone === 'neg' ? 'distrib' : 'neutral';
+  const icon = sm.tone === 'pos' ? '▲' : sm.tone === 'neg' ? '▼' : '＝';
+  // 強度を0〜100%で（絶対値）
+  const strength = Math.round(Math.abs(sm.score) * 100);
+  const bars = (s.smartMoney.factors || []).map(f => `<li>${f}</li>`).join('');
+  const shortNote = (s.short_ratio != null && s.short_ratio >= 3)
+    ? `<li>空売り残高${s.short_ratio}%（売り圧力の要因）</li>` : '';
+  return `
+  <div class="smart-box ${toneCls}">
+    <div class="smart-head">
+      <span class="smart-badge ${toneCls}">${icon} 機関の動き: ${sm.label}</span>
+      <span class="smart-strength">確度の目安 ${strength}%</span>
+      <span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.smart}</span></span>
+    </div>
+    ${(bars || shortNote) ? `<ul class="smart-factors">${bars}${shortNote}</ul>` : ''}
+    <div class="smart-metrics">
+      <span title="資金の流入出">資金フロー CMF ${sm.cmf >= 0 ? '+' : ''}${sm.cmf}</span>
+      <span title="出来高加重の過熱度">MFI ${sm.mfi}</span>
+      <span title="平均コスト(VWAP)との差">VWAP乖離 ${sm.vwapDevPct >= 0 ? '+' : ''}${sm.vwapDevPct}%</span>
+    </div>
+    ${s.smartAdjusted ? `<div class="smart-adjusted">※ この判定でサインを「${s.smartAdjusted}」しています</div>` : ''}
+    <div class="smart-note">日足の出来高・値動きから推測した機関の需給の「兆候」です。確定情報ではありません。</div>
+  </div>`;
 }
 
 // 売買目安3点セット（買い目安・利確・損切り）
@@ -1178,6 +1228,7 @@ function renderStocks() {
         <span class="signal ${sc}">${s.signal}</span>
         <span class="stock-oneliner">${oneLiner}</span>
       </div>
+      ${renderSmartMoney(s)}
       ${rangeLine}
       ${planBox}
       <button class="detail-toggle" onclick="toggleDetail(this)">数字で詳しく見る ▼</button>
@@ -1193,10 +1244,11 @@ function renderStocks() {
         </div>
         <div class="score-bars">
           ${[
+            ['機関フロー smart',   s.smart,    '#C9A227', HINTS.smart],
             ['割安スコア value',   s.value,    '#4A6FA5', HINTS.value],
             ['品質スコア quality', s.quality,  '#1F6F4A', HINTS.quality],
             ['勢いスコア momentum',s.momentum, '#C08A2E', HINTS.momentum],
-          ].map(([lbl,val,col,hint]) => `
+          ].filter(([,val]) => val != null).map(([lbl,val,col,hint]) => `
           <div class="score-row">
             <span class="score-row-label">${lbl}<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${hint}</span></span></span>
             <div class="score-bar-track">
@@ -1541,9 +1593,12 @@ function buildCopyText() {
     text += `     総合評価:${s.score.toFixed(3)} 財務健全度:${s.f}/9 割安度PER:${s.per} 資産比較PBR:${s.pbr} 稼ぐ力ROE:${s.roe}%\n`;
     text += `     割安スコア:${s.value.toFixed(2)} 品質スコア:${s.quality.toFixed(2)} 勢いスコア:${s.momentum.toFixed(2)}\n`;
   });
-  text += '\n■ 売買シグナルと売買目安（買い目安/利確/損切り）\n';
+  text += '\n■ 売買シグナル・機関の資金フロー・売買目安\n';
   DATA.stocks.forEach(s => {
     text += `  ${s.ticker} ${s.name}: ${s.signal} RSI:${s.rsi} 信頼度:${s.conf}\n`;
+    if (s.smartMoney) {
+      text += `     機関の動き: ${s.smartMoney.label}（CMF:${s.smartMoney.cmf} MFI:${s.smartMoney.mfi} VWAP乖離:${s.smartMoney.vwapDevPct}%）${(s.smartMoney.factors||[]).length? ' / '+s.smartMoney.factors.join('・') : ''}\n`;
+    }
     const p = s.forecast && s.forecast.plan;
     if (p) {
       text += `     買い目安:${p.entry.toLocaleString()}円 / 利確:${p.target.toLocaleString()}円 / 損切り:${p.stop.toLocaleString()}円（利益:損失=${p.rr}:1）\n`;

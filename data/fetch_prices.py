@@ -6,6 +6,8 @@ from datetime import datetime, timezone
 
 import pandas as pd
 
+from screening.smart_money import compute_smart_money
+
 try:
     import yfinance as yf
 except ImportError:
@@ -59,6 +61,9 @@ def fetch_stock_data(ticker: str, name: str) -> dict | None:
             except Exception:
                 ex_div_date = None
 
+        # 機関の資金フロー（買い集め/売り抜け）を同じ6ヶ月データから算出（追加通信なし）
+        smart_money = compute_smart_money(hist)
+
         return {
             "ticker": ticker,
             "name": name,
@@ -76,6 +81,7 @@ def fetch_stock_data(ticker: str, name: str) -> dict | None:
             "day_change_pct": round(day_change_pct, 4),
             "volume_ratio": round(volume_ratio, 2),
             "week_change_pct": round(week_change_pct, 4),
+            "smart_money": smart_money,
         }
     except Exception:
         return None
