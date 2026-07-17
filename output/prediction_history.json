@@ -849,11 +849,11 @@
       "rangeHigh": 19463,
       "predUpRate": 56.9,
       "condN": 197,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-07-15",
+      "actualClose": 18930.0,
+      "actualReturn": 0.0,
+      "inRange": true,
+      "wentUp": false
     },
     {
       "baseDate": "2026-07-14",
@@ -864,11 +864,11 @@
       "rangeHigh": 5243,
       "predUpRate": 56.8,
       "condN": 185,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-07-15",
+      "actualClose": 5074.0,
+      "actualReturn": 0.0,
+      "inRange": true,
+      "wentUp": false
     },
     {
       "baseDate": "2026-07-14",
@@ -879,11 +879,11 @@
       "rangeHigh": 521,
       "predUpRate": 48.8,
       "condN": 170,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-07-15",
+      "actualClose": 508.7,
+      "actualReturn": 0.0,
+      "inRange": true,
+      "wentUp": true
     },
     {
       "baseDate": "2026-07-14",
@@ -894,11 +894,11 @@
       "rangeHigh": 2445,
       "predUpRate": 43.1,
       "condN": 65,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-07-15",
+      "actualClose": 2407.5,
+      "actualReturn": 0.0,
+      "inRange": true,
+      "wentUp": false
     },
     {
       "baseDate": "2026-07-14",
@@ -909,11 +909,11 @@
       "rangeHigh": 3742,
       "predUpRate": 50.7,
       "condN": 75,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-07-15",
+      "actualClose": 3694.0,
+      "actualReturn": 0.0,
+      "inRange": true,
+      "wentUp": false
     },
     {
       "baseDate": "2026-07-14",
@@ -924,11 +924,11 @@
       "rangeHigh": 96770,
       "predUpRate": 48.1,
       "condN": 187,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-07-15",
+      "actualClose": 96100.0,
+      "actualReturn": 0.0,
+      "inRange": true,
+      "wentUp": false
     },
     {
       "baseDate": "2026-07-14",
@@ -939,11 +939,11 @@
       "rangeHigh": 1812,
       "predUpRate": 50.8,
       "condN": 59,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-07-15",
+      "actualClose": 1792.5,
+      "actualReturn": 0.0,
+      "inRange": true,
+      "wentUp": false
     },
     {
       "baseDate": "2026-07-14",
@@ -954,11 +954,11 @@
       "rangeHigh": 1657,
       "predUpRate": 51.7,
       "condN": 87,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-07-15",
+      "actualClose": 1626.0,
+      "actualReturn": 0.0,
+      "inRange": true,
+      "wentUp": false
     },
     {
       "baseDate": "2026-07-14",
@@ -969,11 +969,11 @@
       "rangeHigh": 3137,
       "predUpRate": 52.9,
       "condN": 170,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-07-15",
+      "actualClose": 3096.0,
+      "actualReturn": 0.0,
+      "inRange": true,
+      "wentUp": false
     },
     {
       "baseDate": "2026-07-14",
@@ -984,6 +984,156 @@
       "rangeHigh": 2883,
       "predUpRate": 52.4,
       "condN": 42,
+      "actualDate": "2026-07-15",
+      "actualClose": 2852.5,
+      "actualReturn": 0.0,
+      "inRange": true,
+      "wentUp": false
+    },
+    {
+      "baseDate": "2026-07-16",
+      "ticker": "5108.T",
+      "name": "ブリヂストン",
+      "basePrice": 3726.0,
+      "rangeLow": 3675,
+      "rangeHigh": 3777,
+      "predUpRate": 50.9,
+      "condN": 55,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-16",
+      "ticker": "9022.T",
+      "name": "JR東海",
+      "basePrice": 3775.0,
+      "rangeLow": 3722,
+      "rangeHigh": 3828,
+      "predUpRate": 51.9,
+      "condN": 77,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-16",
+      "ticker": "8955.T",
+      "name": "日本プライムリアルティ投資法人",
+      "basePrice": 96400.0,
+      "rangeLow": 95674,
+      "rangeHigh": 97126,
+      "predUpRate": 48.1,
+      "condN": 189,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-16",
+      "ticker": "5411.T",
+      "name": "JFEホールディングス",
+      "basePrice": 1694.0,
+      "rangeLow": 1671,
+      "rangeHigh": 1717,
+      "predUpRate": 50.9,
+      "condN": 55,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-16",
+      "ticker": "1928.T",
+      "name": "積水ハウス",
+      "basePrice": 3588.0,
+      "rangeLow": 3541,
+      "rangeHigh": 3635,
+      "predUpRate": 50.8,
+      "condN": 63,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-16",
+      "ticker": "9101.T",
+      "name": "日本郵船",
+      "basePrice": 5720.0,
+      "rangeLow": 5626,
+      "rangeHigh": 5814,
+      "predUpRate": 59.0,
+      "condN": 188,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-16",
+      "ticker": "7201.T",
+      "name": "日産自動車",
+      "basePrice": 326.8,
+      "rangeLow": 318,
+      "rangeHigh": 335,
+      "predUpRate": 44.8,
+      "condN": 192,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-16",
+      "ticker": "6178.T",
+      "name": "日本郵政",
+      "basePrice": 2378.0,
+      "rangeLow": 2338,
+      "rangeHigh": 2418,
+      "predUpRate": 41.8,
+      "condN": 67,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-16",
+      "ticker": "3003.T",
+      "name": "ヒューリック",
+      "basePrice": 1809.5,
+      "rangeLow": 1789,
+      "rangeHigh": 1830,
+      "predUpRate": 55.1,
+      "condN": 196,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-16",
+      "ticker": "4704.T",
+      "name": "トレンドマイクロ",
+      "basePrice": 6622.0,
+      "rangeLow": 6488,
+      "rangeHigh": 6756,
+      "predUpRate": 48.8,
+      "condN": 43,
       "actualDate": null,
       "actualClose": null,
       "actualReturn": null,
@@ -1042,6 +1192,15 @@
       "spxUp": true,
       "predUpRate": 63.8,
       "n": 279,
+      "actualDate": "2026-07-16",
+      "topixReturn": -1.39,
+      "wentUp": false
+    },
+    {
+      "baseDate": "2026-07-16",
+      "spxUp": false,
+      "predUpRate": 41.8,
+      "n": 208,
       "actualDate": null,
       "topixReturn": null,
       "wentUp": null
@@ -1140,9 +1299,9 @@
       "entry": 17422,
       "target": 18734,
       "stop": 16438,
-      "status": "entered",
+      "status": "target",
       "enteredDate": "2026-07-14",
-      "resolvedDate": null
+      "resolvedDate": "2026-07-15"
     },
     {
       "baseDate": "2026-07-09",
@@ -1200,9 +1359,9 @@
       "entry": 5129,
       "target": 5589,
       "stop": 4784,
-      "status": "entered",
+      "status": "stop",
       "enteredDate": "2026-07-14",
-      "resolvedDate": null
+      "resolvedDate": "2026-07-16"
     },
     {
       "baseDate": "2026-07-10",
@@ -1224,9 +1383,9 @@
       "entry": 306,
       "target": 325,
       "stop": 292,
-      "status": "entered",
+      "status": "target",
       "enteredDate": "2026-07-13",
-      "resolvedDate": null
+      "resolvedDate": "2026-07-16"
     },
     {
       "baseDate": "2026-07-10",
@@ -1320,9 +1479,9 @@
       "entry": 76122,
       "target": 78433,
       "stop": 74388,
-      "status": "entered",
+      "status": "stop",
       "enteredDate": "2026-07-14",
-      "resolvedDate": null
+      "resolvedDate": "2026-07-16"
     },
     {
       "baseDate": "2026-07-13",
@@ -1356,9 +1515,9 @@
       "entry": 7283,
       "target": 7510,
       "stop": 7113,
-      "status": "entered",
+      "status": "target",
       "enteredDate": "2026-07-14",
-      "resolvedDate": null
+      "resolvedDate": "2026-07-15"
     },
     {
       "baseDate": "2026-07-13",
@@ -1380,9 +1539,9 @@
       "entry": 70531,
       "target": 73606,
       "stop": 68225,
-      "status": "entered",
+      "status": "target",
       "enteredDate": "2026-07-14",
-      "resolvedDate": null
+      "resolvedDate": "2026-07-15"
     },
     {
       "baseDate": "2026-07-13",
@@ -1392,9 +1551,9 @@
       "entry": 4672,
       "target": 4847,
       "stop": 4541,
-      "status": "entered",
+      "status": "target",
       "enteredDate": "2026-07-15",
-      "resolvedDate": null
+      "resolvedDate": "2026-07-16"
     },
     {
       "baseDate": "2026-07-13",
@@ -1440,8 +1599,8 @@
       "entry": 95865,
       "target": 97207,
       "stop": 94859,
-      "status": "waiting",
-      "enteredDate": null,
+      "status": "entered",
+      "enteredDate": "2026-07-16",
       "resolvedDate": null
     },
     {
@@ -1452,9 +1611,9 @@
       "entry": 8815,
       "target": 9282,
       "stop": 8464,
-      "status": "entered",
+      "status": "stop",
       "enteredDate": "2026-07-15",
-      "resolvedDate": null
+      "resolvedDate": "2026-07-16"
     },
     {
       "baseDate": "2026-07-14",
@@ -1476,9 +1635,9 @@
       "entry": 17875,
       "target": 18895,
       "stop": 17110,
-      "status": "waiting",
-      "enteredDate": null,
-      "resolvedDate": null
+      "status": "target",
+      "enteredDate": "2026-07-16",
+      "resolvedDate": "2026-07-16"
     },
     {
       "baseDate": "2026-07-14",
@@ -1488,9 +1647,9 @@
       "entry": 3086,
       "target": 3169,
       "stop": 3024,
-      "status": "entered",
+      "status": "stop",
       "enteredDate": "2026-07-15",
-      "resolvedDate": null
+      "resolvedDate": "2026-07-16"
     },
     {
       "baseDate": "2026-07-14",
@@ -1536,9 +1695,9 @@
       "entry": 72602,
       "target": 76875,
       "stop": 69397,
-      "status": "entered",
+      "status": "stop",
       "enteredDate": "2026-07-15",
-      "resolvedDate": null
+      "resolvedDate": "2026-07-16"
     },
     {
       "baseDate": "2026-07-15",
@@ -1548,8 +1707,8 @@
       "entry": 4635,
       "target": 4975,
       "stop": 4380,
-      "status": "waiting",
-      "enteredDate": null,
+      "status": "entered",
+      "enteredDate": "2026-07-16",
       "resolvedDate": null
     },
     {
@@ -1560,9 +1719,9 @@
       "entry": 96138,
       "target": 97587,
       "stop": 95051,
-      "status": "waiting",
-      "enteredDate": null,
-      "resolvedDate": null
+      "status": "stop",
+      "enteredDate": "2026-07-16",
+      "resolvedDate": "2026-07-16"
     },
     {
       "baseDate": "2026-07-15",
@@ -1572,8 +1731,8 @@
       "entry": 8476,
       "target": 8961,
       "stop": 8112,
-      "status": "waiting",
-      "enteredDate": null,
+      "status": "entered",
+      "enteredDate": "2026-07-16",
       "resolvedDate": null
     },
     {
@@ -1584,8 +1743,8 @@
       "entry": 318,
       "target": 334,
       "stop": 306,
-      "status": "waiting",
-      "enteredDate": null,
+      "status": "entered",
+      "enteredDate": "2026-07-16",
       "resolvedDate": null
     },
     {
@@ -1596,8 +1755,8 @@
       "entry": 3047,
       "target": 3135,
       "stop": 2981,
-      "status": "waiting",
-      "enteredDate": null,
+      "status": "entered",
+      "enteredDate": "2026-07-16",
       "resolvedDate": null
     },
     {
@@ -1608,9 +1767,9 @@
       "entry": 17668,
       "target": 18758,
       "stop": 16851,
-      "status": "waiting",
-      "enteredDate": null,
-      "resolvedDate": null
+      "status": "target",
+      "enteredDate": "2026-07-16",
+      "resolvedDate": "2026-07-16"
     },
     {
       "baseDate": "2026-07-15",
@@ -1620,8 +1779,8 @@
       "entry": 4218,
       "target": 4405,
       "stop": 4078,
-      "status": "waiting",
-      "enteredDate": null,
+      "status": "entered",
+      "enteredDate": "2026-07-16",
       "resolvedDate": null
     },
     {
@@ -1632,9 +1791,9 @@
       "entry": 18664,
       "target": 19730,
       "stop": 17865,
-      "status": "waiting",
-      "enteredDate": null,
-      "resolvedDate": null
+      "status": "stop",
+      "enteredDate": "2026-07-15",
+      "resolvedDate": "2026-07-16"
     },
     {
       "baseDate": "2026-07-14",
@@ -1644,9 +1803,9 @@
       "entry": 4989,
       "target": 5328,
       "stop": 4735,
-      "status": "waiting",
-      "enteredDate": null,
-      "resolvedDate": null
+      "status": "stop",
+      "enteredDate": "2026-07-16",
+      "resolvedDate": "2026-07-16"
     },
     {
       "baseDate": "2026-07-14",
@@ -1656,8 +1815,8 @@
       "entry": 503,
       "target": 528,
       "stop": 484,
-      "status": "waiting",
-      "enteredDate": null,
+      "status": "entered",
+      "enteredDate": "2026-07-15",
       "resolvedDate": null
     },
     {
@@ -1668,8 +1827,8 @@
       "entry": 95765,
       "target": 97105,
       "stop": 94760,
-      "status": "waiting",
-      "enteredDate": null,
+      "status": "entered",
+      "enteredDate": "2026-07-16",
       "resolvedDate": null
     },
     {
@@ -1680,6 +1839,30 @@
       "entry": 3075,
       "target": 3158,
       "stop": 3013,
+      "status": "stop",
+      "enteredDate": "2026-07-15",
+      "resolvedDate": "2026-07-16"
+    },
+    {
+      "baseDate": "2026-07-16",
+      "ticker": "8955.T",
+      "name": "日本プライムリアルティ投資法人",
+      "basePrice": 96400.0,
+      "entry": 96037,
+      "target": 97488,
+      "stop": 94949,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-07-16",
+      "ticker": "7201.T",
+      "name": "日産自動車",
+      "basePrice": 326.8,
+      "entry": 323,
+      "target": 340,
+      "stop": 311,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
