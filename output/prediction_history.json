@@ -1139,6 +1139,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-16",
+      "ticker": "3092.T",
+      "name": "ZOZO",
+      "basePrice": 1200.0,
+      "rangeLow": 1183,
+      "rangeHigh": 1217,
+      "predUpRate": 51.8,
+      "condN": 195,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-16",
+      "ticker": "9107.T",
+      "name": "川崎汽船",
+      "basePrice": 2699.5,
+      "rangeLow": 2649,
+      "rangeHigh": 2750,
+      "predUpRate": 54.0,
+      "condN": 189,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -1863,6 +1893,42 @@
       "entry": 323,
       "target": 340,
       "stop": 311,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-07-16",
+      "ticker": "9101.T",
+      "name": "日本郵船",
+      "basePrice": 5669.0,
+      "entry": 5625,
+      "target": 5800,
+      "stop": 5493,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-07-16",
+      "ticker": "3092.T",
+      "name": "ZOZO",
+      "basePrice": 1200.0,
+      "entry": 1191,
+      "target": 1225,
+      "stop": 1165,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-07-16",
+      "ticker": "9107.T",
+      "name": "川崎汽船",
+      "basePrice": 2699.5,
+      "entry": 2674,
+      "target": 2775,
+      "stop": 2598,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
