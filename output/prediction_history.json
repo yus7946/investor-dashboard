@@ -1319,6 +1319,51 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-17",
+      "ticker": "7261.T",
+      "name": "マツダ",
+      "basePrice": 1149.0,
+      "rangeLow": 1124,
+      "rangeHigh": 1174,
+      "predUpRate": 46.6,
+      "condN": 221,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-17",
+      "ticker": "9433.T",
+      "name": "KDDI",
+      "basePrice": 2910.5,
+      "rangeLow": 2879,
+      "rangeHigh": 2942,
+      "predUpRate": 50.5,
+      "condN": 202,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-17",
+      "ticker": "5401.T",
+      "name": "日本製鉄",
+      "basePrice": 594.0,
+      "rangeLow": 586,
+      "rangeHigh": 602,
+      "predUpRate": 53.1,
+      "condN": 49,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -2136,6 +2181,18 @@
       "entry": 2698,
       "target": 2800,
       "stop": 2621,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-07-17",
+      "ticker": "7261.T",
+      "name": "マツダ",
+      "basePrice": 1149.0,
+      "entry": 1137,
+      "target": 1186,
+      "stop": 1100,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
