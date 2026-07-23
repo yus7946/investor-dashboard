@@ -1664,6 +1664,51 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-22",
+      "ticker": "9107.T",
+      "name": "川崎汽船",
+      "basePrice": 2779.0,
+      "rangeLow": 2724,
+      "rangeHigh": 2834,
+      "predUpRate": 51.4,
+      "condN": 74,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-22",
+      "ticker": "8306.T",
+      "name": "三菱UFJ",
+      "basePrice": 3767.0,
+      "rangeLow": 3695,
+      "rangeHigh": 3839,
+      "predUpRate": 47.2,
+      "condN": 72,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-22",
+      "ticker": "8725.T",
+      "name": "MS&ADインシュアランス",
+      "basePrice": 4868.0,
+      "rangeLow": 4782,
+      "rangeHigh": 4954,
+      "predUpRate": 51.4,
+      "condN": 70,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
