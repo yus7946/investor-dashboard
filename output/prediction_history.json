@@ -2189,6 +2189,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-27",
+      "ticker": "7201.T",
+      "name": "日産自動車",
+      "basePrice": 335.4,
+      "rangeLow": 328,
+      "rangeHigh": 343,
+      "predUpRate": 45.3,
+      "condN": 192,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -3183,6 +3198,18 @@
       "entry": 3652,
       "target": 3785,
       "stop": 3552,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-07-27",
+      "ticker": "7201.T",
+      "name": "日産自動車",
+      "basePrice": 335.4,
+      "entry": 332,
+      "target": 348,
+      "stop": 320,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
