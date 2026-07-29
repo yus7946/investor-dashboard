@@ -18,6 +18,9 @@ def export_dashboard_json(
     stock_master: list[dict] | None = None,
     fetched_count: int | None = None,
     universe_total: int | None = None,
+    low_risk_plan: dict | None = None,
+    earnings_board: dict | None = None,
+    update_mode: str = "full",
     output_path: str = "output/dashboard_data.json",
 ) -> str:
     out_stocks = []
@@ -46,6 +49,8 @@ def export_dashboard_json(
             "short_ratio": s.get("short_ratio"),
             "regime_adjusted": s.get("regime_adjusted", False),
             "forecast": s.get("forecast"),
+            "risk": s.get("risk"),
+            "earnings": s.get("earnings"),
             "yutai": s.get("yutai"),
             "news": s.get("news", []),
         })
@@ -56,8 +61,11 @@ def export_dashboard_json(
         # タイムゾーン変換せずに表示すると「経過時間」の計算結果と9時間ズレて見える）。
         "updated": now_jst.strftime("%Y年%m月%d日 %H:%M"),
         "updatedAtMs": int(now_jst.timestamp() * 1000),
+        "updateMode": update_mode,  # full=朝の全取得 / light=取引時間中の毎時更新（値動き系のみ）
         "fetched": fetched_count,
         "universeTotal": universe_total,
+        "lowRiskPlan": low_risk_plan,
+        "earningsBoard": earnings_board,
         "market": market,
         "marketOutlook": market_outlook,
         "accuracy": accuracy,

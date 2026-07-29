@@ -1,6 +1,15 @@
 """分析パイプラインの統合実行エントリーポイント。
 各ステップはtry/exceptで保護し、エラーが起きても可能な限り処理を継続する。
+
+実行モード（環境変数 DASHBOARD_LIGHT=1 でライト更新）:
+  - フル: 全データ取得（寄付き前の1日1回。EDINET/JPX/ニュース/決算日/バックテスト含む）
+  - ライト: 株価・スコア・シグナル・リスク・見通しのみ毎時更新。
+    日中に更新されない重いデータ（EDINET/JPX/ニュース等）は朝のフル更新の
+    キャッシュを再利用し、各データの出典・対象期間ラベルはそのまま保つ。
+    （高頻度アクセスによるIPブロック回避と実行時間短縮のため）
 """
+import json
+import os
 import sys
 
 try:
@@ -12,11 +21,13 @@ except Exception:
 from data.universe import UNIVERSE, MASTER, EXTRA_HOLDINGS
 from data.fetch_prices import fetch_universe, fetch_stock_data
 from data.edinet import fetch_edinet_alerts
+from data.earnings import annotate_earnings, build_earnings_board
 from data.news import fetch_news_for_ticker, build_theme_trends
 from data.market_regime import fetch_market_regime
 from data.jpx_flow import fetch_investor_flow
 from data.jpx_short import fetch_short_positions
 from screening.score import score_universe
+from screening.risk import annotate_risk, build_low_risk_plan
 from signals.signal import judge_all
 from backtest.backtest import run_backtest
 from forecast.next_day import build_forecasts
@@ -24,6 +35,25 @@ from forecast.tracker import (
     load_history, save_history, calibration_factor, update, compute_accuracy,
 )
 from reports.json_export import export_dashboard_json
+
+HEAVY_CACHE_PATH = "output/heavy_cache.json"
+
+
+def _load_heavy_cache() -> dict:
+    try:
+        with open(HEAVY_CACHE_PATH, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+
+def _save_heavy_cache(cache: dict) -> None:
+    try:
+        os.makedirs("output", exist_ok=True)
+        with open(HEAVY_CACHE_PATH, "w", encoding="utf-8") as f:
+            json.dump(cache, f, ensure_ascii=False, indent=1)
+    except Exception as e:
+        print(f"  [警告] 重データキャッシュの保存に失敗: {e}")
 
 # 一部銘柄の株主優待情報（手動メンテナンス。yfinanceには優待情報が無いため。要IR確認）
 YUTAI_MAP = {
@@ -80,15 +110,28 @@ def _build_stock_master(fetched_stocks: list[dict]) -> list[dict]:
 
 
 def main():
-    print("=== 機関投資家型AIエージェント バックエンド処理 開始 ===")
+    light = os.environ.get("DASHBOARD_LIGHT") == "1"
+    mode_label = "ライト（毎時・値動き系のみ）" if light else "フル（全データ取得）"
+    print(f"=== 機関投資家型AIエージェント バックエンド処理 開始 [{mode_label}] ===")
+    cache = _load_heavy_cache() if light else {}
 
     print("\n1/8 株価・財務データ取得中...")
     stocks = []
     try:
-        stocks = fetch_universe(UNIVERSE)
+        # ライト時は決算日カレンダー取得(銘柄ごと+1リクエスト)を省略しキャッシュを使う
+        stocks = fetch_universe(UNIVERSE, with_earnings=not light)
         print(f"  取得件数: {len(stocks)} / {len(UNIVERSE)}")
     except Exception as e:
         print(f"  [エラー] 株価取得に失敗しました: {e}")
+
+    # 決算日の紐付け（フル: 新規取得しキャッシュ保存 / ライト: 朝のキャッシュで補完）
+    try:
+        date_map = annotate_earnings(stocks, cached_dates=cache.get("earnings_dates"))
+        if not light:
+            cache["earnings_dates"] = date_map
+        print(f"  決算日ひもづけ: {sum(1 for s in stocks if s.get('earnings'))}銘柄")
+    except Exception as e:
+        print(f"  [警告] 決算日ひもづけに失敗しました: {e}")
 
     print("\n2/8 スコアリング中...")
     try:
@@ -118,16 +161,26 @@ def main():
 
     print("\n4/8 銘柄ニュース取得中...")
     all_news = []
-    try:
+    if light:
+        # ライト時: 朝のフル更新時のニュースを再利用（Google Newsへの毎時アクセスを避ける）
+        cached_news = cache.get("news_by_ticker") or {}
         for s in top10:
-            news = fetch_news_for_ticker(s["ticker"], s["name"], limit=1)
-            s["news"] = news
-            all_news.extend(news)
-        for s in top10:
+            s["news"] = cached_news.get(s["ticker"], [])
+            all_news.extend(s["news"])
             s["yutai"] = YUTAI_MAP.get(s["ticker"])
-        print(f"  ニュース取得完了（{len(all_news)}件）")
-    except Exception as e:
-        print(f"  [エラー] ニュース取得に失敗しました: {e}")
+        print(f"  ニュースはキャッシュ再利用（{len(all_news)}件）")
+    else:
+        try:
+            for s in top10:
+                news = fetch_news_for_ticker(s["ticker"], s["name"], limit=1)
+                s["news"] = news
+                all_news.extend(news)
+            for s in top10:
+                s["yutai"] = YUTAI_MAP.get(s["ticker"])
+            cache["news_by_ticker"] = {s["ticker"]: s.get("news", []) for s in top10}
+            print(f"  ニュース取得完了（{len(all_news)}件）")
+        except Exception as e:
+            print(f"  [エラー] ニュース取得に失敗しました: {e}")
 
     print("\n5/8 EDINET・空売り残高・テーマトレンド集計中...")
     edinet_alerts = []
@@ -135,54 +188,80 @@ def main():
     short_ratios = {}
     theme_trends = []
     universe_map = dict(UNIVERSE)
-    try:
-        edinet_alerts = fetch_edinet_alerts(universe_map)
-        print(f"  EDINETアラート件数: {len(edinet_alerts)}")
-    except Exception as e:
-        print(f"  [エラー] EDINETアラート取得に失敗しました: {e}")
-    try:
-        short_alerts, short_ratios = fetch_short_positions(universe_map)
-        print(f"  空売り残高: {len(short_ratios)}銘柄で開示あり")
+    if light:
+        # ライト時: EDINET/JPXは日中更新されないため朝のキャッシュを再利用
+        edinet_alerts = cache.get("edinet_alerts") or []
+        short_alerts = cache.get("short_alerts") or []
+        short_ratios = cache.get("short_ratios") or {}
+        theme_trends = cache.get("theme_trends") or []
         for s in top10:
             if s["ticker"] in short_ratios:
                 s["short_ratio"] = short_ratios[s["ticker"]]
-    except Exception as e:
-        print(f"  [警告] 空売り残高取得に失敗しました: {e}")
-    try:
-        theme_trends = build_theme_trends(all_news)
-        if not theme_trends:
-            raise ValueError("テーマ集計結果が0件")
-        print(f"  テーマ件数: {len(theme_trends)}")
-    except Exception as e:
-        # 架空のテーマ数値は表示しない。取得できなければ空のままUI側で「データなし」を表示する。
-        print(f"  [警告] テーマ集計に失敗（表示なしになります）: {e}")
-        theme_trends = []
+        print(f"  EDINET/空売り/テーマはキャッシュ再利用（EDINET{len(edinet_alerts)}件・空売り{len(short_ratios)}銘柄）")
+    else:
+        try:
+            edinet_alerts = fetch_edinet_alerts(universe_map)
+            print(f"  EDINETアラート件数: {len(edinet_alerts)}")
+        except Exception as e:
+            print(f"  [エラー] EDINETアラート取得に失敗しました: {e}")
+        try:
+            short_alerts, short_ratios = fetch_short_positions(universe_map)
+            print(f"  空売り残高: {len(short_ratios)}銘柄で開示あり")
+            for s in top10:
+                if s["ticker"] in short_ratios:
+                    s["short_ratio"] = short_ratios[s["ticker"]]
+        except Exception as e:
+            print(f"  [警告] 空売り残高取得に失敗しました: {e}")
+        try:
+            theme_trends = build_theme_trends(all_news)
+            if not theme_trends:
+                raise ValueError("テーマ集計結果が0件")
+            print(f"  テーマ件数: {len(theme_trends)}")
+        except Exception as e:
+            # 架空のテーマ数値は表示しない。取得できなければ空のままUI側で「データなし」を表示する。
+            print(f"  [警告] テーマ集計に失敗（表示なしになります）: {e}")
+            theme_trends = []
+        cache["edinet_alerts"] = edinet_alerts
+        cache["short_alerts"] = short_alerts
+        cache["short_ratios"] = short_ratios
+        cache["theme_trends"] = theme_trends
 
     print("\n6/8 投資部門別フロー取得・バックテスト実行中...")
     flow = None
-    try:
-        flow = fetch_investor_flow()
-        if flow:
-            print(f"  フロー取得完了（{flow['week']}週・JPX実データ）")
-        else:
-            print("  [警告] JPXフロー取得不能（表示なしになります・架空値は出しません）")
-    except Exception as e:
-        print(f"  [警告] フロー取得に失敗（表示なしになります）: {e}")
-        flow = None
+    if light:
+        flow = cache.get("flow")
+        print("  JPXフローはキャッシュ再利用" if flow else "  JPXフローのキャッシュなし（表示なし）")
+    else:
+        try:
+            flow = fetch_investor_flow()
+            if flow:
+                print(f"  フロー取得完了（{flow['week']}週・JPX実データ）")
+            else:
+                print("  [警告] JPXフロー取得不能（表示なしになります・架空値は出しません）")
+        except Exception as e:
+            print(f"  [警告] フロー取得に失敗（表示なしになります）: {e}")
+            flow = None
+        cache["flow"] = flow
 
     bt = {}
-    try:
-        # 現在のスコア上位だけに絞ると選択バイアスが入るため、取得できた全銘柄で検証する
-        bt = run_backtest([s["ticker"] for s in stocks])
-        print(f"  バックテスト完了: 年率{bt.get('annual')} シャープ{bt.get('sharpe')}")
-    except Exception as e:
-        print(f"  [エラー] バックテストに失敗しました: {e}")
-        bt = {
-            "annual": "—", "benchmark": "—", "sharpe": "—", "dd": "—",
-            "winrate": "—", "months": "—",
-            "note": "データ取得に失敗したため計測できませんでした（架空の数値は表示しません）",
-            "unavailable": True,
-        }
+    if light and cache.get("backtest"):
+        bt = cache["backtest"]
+        print("  バックテストはキャッシュ再利用（当日中は不変のため）")
+    else:
+        try:
+            # 現在のスコア上位だけに絞ると選択バイアスが入るため、取得できた全銘柄で検証する
+            bt = run_backtest([s["ticker"] for s in stocks])
+            print(f"  バックテスト完了: 年率{bt.get('annual')} シャープ{bt.get('sharpe')}")
+        except Exception as e:
+            print(f"  [エラー] バックテストに失敗しました: {e}")
+            bt = {
+                "annual": "—", "benchmark": "—", "sharpe": "—", "dd": "—",
+                "winrate": "—", "months": "—",
+                "note": "データ取得に失敗したため計測できませんでした（架空の数値は表示しません）",
+                "unavailable": True,
+            }
+        if not light and not bt.get("unavailable"):
+            cache["backtest"] = bt
 
     # 急騰・落ちナイフ・ローテーションアラート生成。
     # 動き（急騰・逆張り）を最優先、次に入替IN、入替OUTは最後（多くて埋め尽くすため件数制限）
@@ -254,6 +333,26 @@ def main():
     except Exception as e:
         print(f"  [警告] 見通し・答え合わせに失敗しました（表示なしになります）: {e}")
 
+    # リスク管理レイヤー（安全度・低リスク運用プラン・決算速報ボード）
+    print("\nリスク評価・低リスクプラン生成中...")
+    low_risk_plan = None
+    earnings_board = None
+    try:
+        regime = market["regime"] if market else "unknown"
+        annotate_risk(top10)
+        low_risk_plan = build_low_risk_plan(top10, regime)
+        print(f"  安全度評価: {sum(1 for s in top10 if s.get('risk'))}銘柄 / 低リスク候補: {len(low_risk_plan['basket'])}銘柄")
+    except Exception as e:
+        print(f"  [警告] リスク評価に失敗しました（表示なしになります）: {e}")
+    try:
+        earnings_board = build_earnings_board(stocks)
+        if earnings_board:
+            print(f"  決算速報: 本日/直後{len(earnings_board['today'])}件・5営業日以内{len(earnings_board['soon'])}件")
+        else:
+            print("  決算速報: 至近の決算予定なし（取得できた範囲で）")
+    except Exception as e:
+        print(f"  [警告] 決算速報の生成に失敗しました: {e}")
+
     # 持ち株ページ用の銘柄マスタ（オートコンプリート・価格/配当/優待の自動反映用）
     print("\n銘柄マスタ生成中（持ち株ページ用）...")
     stock_master = _build_stock_master(stocks)
@@ -273,11 +372,18 @@ def main():
             stock_master=stock_master,
             fetched_count=len(stocks),
             universe_total=len(UNIVERSE),
+            low_risk_plan=low_risk_plan,
+            earnings_board=earnings_board,
+            update_mode="light" if light else "full",
         )
         print(f"  出力完了: {path}")
     except Exception as e:
         print(f"  [致命的エラー] JSON出力に失敗しました: {e}")
         sys.exit(1)
+
+    if not light:
+        _save_heavy_cache(cache)
+        print(f"  重データキャッシュ保存: {HEAVY_CACHE_PATH}（ライト更新時に再利用）")
 
     print("\n=== 処理完了 ===")
 

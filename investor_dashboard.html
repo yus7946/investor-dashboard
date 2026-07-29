@@ -599,6 +599,48 @@ body::before {
 /* ── ntfy ── */
 .ntfy-section { margin-top: 16px; }
 
+/* ── 低リスク運用プラン ── */
+.lowrisk-stance {
+  font-size: 12px; line-height: 1.7; padding: 10px 12px; border-radius: 10px;
+  background: rgba(74,111,165,0.06); border: 1px solid rgba(74,111,165,0.2); margin-bottom: 10px;
+}
+.lowrisk-rules { margin: 0 0 10px; padding-left: 18px; font-size: 11.5px; line-height: 1.8; color: var(--muted); }
+.lowrisk-rules li b { color: var(--text); }
+.lr-item {
+  border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; margin-bottom: 8px;
+  background: var(--surface2);
+}
+.lr-head { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.lr-name { font-weight: 800; font-size: 13px; }
+.lr-safety { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 999px; }
+.lr-safety.lv-low { background: rgba(31,111,74,0.12); color: var(--green); }
+.lr-safety.lv-mid { background: rgba(192,138,46,0.12); color: var(--yellow); }
+.lr-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; font-size: 11px; }
+.lr-grid .cell { text-align: center; padding: 6px 4px; border-radius: 8px; background: var(--surface); }
+.lr-grid .cell b { display: block; font-size: 13px; }
+.lr-shares { margin-top: 6px; font-size: 11px; color: var(--muted); line-height: 1.6; }
+.lr-shares b { color: var(--text); }
+.risk-badge {
+  font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 999px; white-space: nowrap;
+}
+.risk-badge.lv-low { background: rgba(31,111,74,0.1); color: var(--green); }
+.risk-badge.lv-mid { background: rgba(192,138,46,0.12); color: var(--yellow); }
+.risk-badge.lv-high { background: rgba(178,58,58,0.1); color: var(--red); }
+.earn-badge {
+  font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 999px; white-space: nowrap;
+  background: rgba(178,58,58,0.1); color: var(--red); border: 1px dashed rgba(178,58,58,0.4);
+}
+/* ── 決算速報 ── */
+.earn-row {
+  display: flex; align-items: baseline; gap: 8px; padding: 8px 0;
+  border-bottom: 1px solid var(--border); font-size: 12px; flex-wrap: wrap;
+}
+.earn-row:last-child { border-bottom: none; }
+.earn-date { font-weight: 800; font-size: 11px; color: var(--accent); min-width: 74px; }
+.earn-growth { font-size: 11px; color: var(--muted); }
+.earn-growth b.pos { color: var(--green); }
+.earn-growth b.neg { color: var(--red); }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
@@ -616,7 +658,7 @@ body::before {
 
 <!-- 更新バー -->
 <div class="update-bar">
-  <span><span class="live-dot"></span>データ取得済み</span>
+  <span><span class="live-dot"></span>データ取得済み<span id="update-mode-note" style="font-weight:400;color:var(--muted)"></span></span>
   <span id="update-time">--</span>
 </div>
 <div class="update-bar" id="freshness-bar">
@@ -679,6 +721,12 @@ body::before {
     </div>
   </div>
 
+  <!-- 低リスク運用プラン -->
+  <div id="lowrisk-section" style="display:none">
+    <div class="section-title">低リスク運用プラン<span style="font-size:9px;font-weight:400;text-transform:none;color:var(--muted);margin-left:4px">負けを小さく固定する規律</span></div>
+    <div class="card" id="lowrisk-card"></div>
+  </div>
+
   <div class="section-title">TOP 10 銘柄</div>
   <div id="stock-list"></div>
 
@@ -726,6 +774,12 @@ body::before {
 <div class="tab-content" id="tab-watch">
 
   <div class="section-hint">急変・注目のアラートを優先表示しています。赤＝注意、緑＝好材料、青＝情報</div>
+
+  <!-- 決算速報 -->
+  <div id="earnings-section" style="display:none">
+    <div class="section-title">決算速報・決算前警戒<span style="font-size:9px;font-weight:400;text-transform:none;color:var(--muted);margin-left:4px">出典: yfinance</span></div>
+    <div class="card" id="earnings-card"></div>
+  </div>
 
   <div class="section-title">機関動向アラート</div>
   <div style="font-size:11px;color:var(--yellow);margin-bottom:10px;padding:8px 12px;border-radius:8px;background:rgba(192,138,46,0.08);border:1px solid rgba(192,138,46,0.2)">逆張り候補は高リスクです。損切りラインを必ず設定してください</div>
@@ -961,6 +1015,13 @@ const DATA = {
 };
 
 document.getElementById('update-time').textContent = DATA.updated;
+// 更新モード表示: 平日の取引時間中は毎時自動更新（ページ再読み込みで最新化）
+(function () {
+  const el = document.getElementById('update-mode-note');
+  if (!el) return;
+  if (DATA.updateMode === 'light') el.textContent = '（取引時間中は毎時更新・再読み込みで最新化）';
+  else if (DATA.updateMode === 'full') el.textContent = '（朝の全データ更新）';
+})();
 
 const updatedAt = DATA.updatedAtMs ? new Date(DATA.updatedAtMs) : new Date();
 function renderFreshness() {
@@ -1034,6 +1095,8 @@ const HINTS = {
   rsi:      '買われすぎ指数 RSI：0〜100で示すテクニカル指標。30以下が底値圏、70以上が過熱圏の目安。',
   short:    '空売り残高：機関投資家などが公表義務（残高0.5%以上）に基づき開示した空売りポジションの合計割合。高い・増加中は売り圧力が強い目安。出典はJPX公表の実データ。',
   regimeAdj:'地合いで格下げ：市場全体（TOPIX）が下落基調のため、この銘柄の買いシグナルを自動的に1段階慎重な表示にしています。',
+  safety:   '安全度：値動きの荒さ・機関の売り抜け兆候・過熱（RSI）・空売り残高・決算接近から「今エントリーした場合のリスクの大きさ」を0〜100で示した相対的な目安です。将来の勝敗を予測するものではありません。数字が低いほど、損切りに当たりやすい・想定外に動きやすい状態です。',
+  earnSoon: '決算接近：決算発表の前後は株価が窓（ギャップ）を開けて動きやすく、損切りラインを飛び越えて想定以上の損失になることがあります。低リスク運用では決算をまたぐ新規買いは原則避けます。決算日はyfinance取得で、変更されることがあります。',
 };
 
 // 今日の結論（ヒーロー）
@@ -1190,6 +1253,117 @@ function renderPlanBox(s) {
   </div>`;
 }
 
+// ── 低リスク運用プラン（負けを資金の1〜2%に固定する規律） ──
+function renderLowRiskPlan() {
+  const plan = DATA.lowRiskPlan;
+  const sec = document.getElementById('lowrisk-section');
+  const card = document.getElementById('lowrisk-card');
+  if (!plan || !sec || !card) return;
+  sec.style.display = 'block';
+
+  const capital = estimateCapital();
+  const budgets = plan.riskBudget || { conservative: 0.01, standard: 0.02 };
+  const goal = loadGoal();
+  const monthly = goal.monthly || plan.monthlyTarget || 0;
+
+  // 月目標に対する正直な位置づけ（保証はできない前提を明示）
+  let goalLine = '';
+  if (monthly > 0 && capital > 0) {
+    const riskC = Math.round(capital * budgets.conservative);
+    const riskS = Math.round(capital * budgets.standard);
+    goalLine = `
+    <div style="font-size:11.5px;line-height:1.7;margin-bottom:10px;padding:8px 12px;border-radius:10px;background:rgba(201,162,39,0.07);border:1px solid rgba(201,162,39,0.25)">
+      月の目標利益 <b>¥${monthly.toLocaleString()}</b> に対し、この設計では1トレードの損失上限を
+      <b>¥${riskC.toLocaleString()}</b>（守り1%）〜<b>¥${riskS.toLocaleString()}</b>（標準2%）に固定します。
+      目標は相場次第で達成できない月もあります。<b>先に守るのは目標額ではなく損失上限</b>です。
+    </div>`;
+  } else if (monthly > 0) {
+    goalLine = `<div style="font-size:11px;color:var(--muted);margin-bottom:10px">「自分の資産」タブで投資元本を入力すると、あなたの資金に合わせた1トレードの損失上限と推奨株数を計算します。</div>`;
+  }
+
+  // 推奨株数（単元100株・損切り幅から逆算）
+  const shareCalc = (b) => {
+    if (!capital || !b.entry || !b.stop || b.entry <= b.stop) return '';
+    const perShareRisk = b.entry - b.stop;
+    const calc = (budget, label) => {
+      const shares = Math.floor((capital * budget) / perShareRisk / 100) * 100;
+      if (shares >= 100) {
+        const cost = shares * b.entry;
+        return `${label}: <b>${shares.toLocaleString()}株</b>（約¥${Math.round(cost).toLocaleString()}・損切り時 -¥${Math.round(shares * perShareRisk).toLocaleString()}）`;
+      }
+      const minRiskPct = (perShareRisk * 100 / capital * 100).toFixed(1);
+      return `${label}: 最小単元100株でも損切り時のリスクが資金の${minRiskPct}%となり上限を超えます（見送りが規律通り）`;
+    };
+    return `<div class="lr-shares">${calc(budgets.conservative, '守り1%')}<br>${calc(budgets.standard, '標準2%')}</div>`;
+  };
+
+  const basketHtml = (plan.basket || []).length
+    ? plan.basket.map(b => `
+      <div class="lr-item">
+        <div class="lr-head">
+          <span class="lr-name">${b.name}</span>
+          <span style="font-size:10px;color:var(--muted)">${b.ticker}</span>
+          <span class="lr-safety ${b.safety >= 70 ? 'lv-low' : 'lv-mid'}">安全度 ${b.safety}</span>
+          <span style="font-size:10px;color:var(--muted)">${b.signal}</span>
+        </div>
+        <div class="lr-grid">
+          <div class="cell">買い目安<b>${(b.entry || 0).toLocaleString()}円</b></div>
+          <div class="cell">利確<b style="color:var(--green)">${(b.target || 0).toLocaleString()}円</b></div>
+          <div class="cell">損切り<b style="color:var(--red)">${(b.stop || 0).toLocaleString()}円</b></div>
+        </div>
+        ${shareCalc(b)}
+      </div>`).join('')
+    : `<div style="font-size:12px;color:var(--muted);padding:8px 0">今日は低リスク条件（買いサイン・安全度60以上・売り抜け兆候なし・決算至近でない・利益:損失1.5倍以上）をすべて満たす銘柄がありません。<b style="color:var(--text)">条件が揃わない日は買わない</b>のがこの設計の規律です。</div>`;
+
+  card.innerHTML = `
+    <div class="lowrisk-stance">${plan.stance}</div>
+    ${goalLine}
+    <ul class="lowrisk-rules">${(plan.rules || []).map(r => `<li>${r}</li>`).join('')}</ul>
+    <div style="font-size:11px;font-weight:700;margin-bottom:8px;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em">今日の低リスク買い候補（厳選・最大5）</div>
+    ${basketHtml}
+    <div style="font-size:10.5px;color:var(--muted);line-height:1.7;margin-top:10px;padding-top:8px;border-top:1px solid var(--border)">${plan.note}</div>`;
+}
+
+// ── 決算速報・決算前警戒 ──
+function renderEarningsBoard() {
+  const board = DATA.earningsBoard;
+  const sec = document.getElementById('earnings-section');
+  const card = document.getElementById('earnings-card');
+  if (!board || !sec || !card) return;
+  sec.style.display = 'block';
+
+  const growth = (r) => {
+    const parts = [];
+    if (r.revGrowthPct != null) parts.push(`売上 前年比 <b class="${r.revGrowthPct >= 0 ? 'pos' : 'neg'}">${r.revGrowthPct >= 0 ? '+' : ''}${r.revGrowthPct}%</b>`);
+    if (r.epsGrowthPct != null) parts.push(`利益 前年比 <b class="${r.epsGrowthPct >= 0 ? 'pos' : 'neg'}">${r.epsGrowthPct >= 0 ? '+' : ''}${r.epsGrowthPct}%</b>`);
+    return parts.length ? `<span class="earn-growth">${parts.join('・')}</span>` : '<span class="earn-growth">実績値は発表後の更新で反映</span>';
+  };
+  const row = (r, tag) => `
+    <div class="earn-row">
+      <span class="earn-date">${r.date}</span>
+      <b>${r.name}</b><span style="font-size:10px;color:var(--muted)">${r.ticker}</span>
+      ${tag}${growth(r)}
+    </div>`;
+
+  // 決算シーズンは対象が数十銘柄になるため、先頭だけ見せて残りは折りたたむ（スマホ配慮）
+  const capped = (rows, tagFn, cap, id) => {
+    const html = rows.map(r => row(r, tagFn(r)));
+    if (html.length <= cap) return html.join('');
+    return html.slice(0, cap).join('')
+      + `<div id="${id}" style="display:none">${html.slice(cap).join('')}</div>`
+      + `<button onclick="const d=document.getElementById('${id}');const open=d.style.display==='none';d.style.display=open?'block':'none';this.textContent=open?'折りたたむ ▲':'残り${html.length - cap}件を表示 ▼'" style="width:100%;padding:8px;margin-top:4px;border:1px dashed var(--border);border-radius:8px;background:none;color:var(--accent);font-size:11px;font-weight:700;cursor:pointer">残り${html.length - cap}件を表示 ▼</button>`;
+  };
+  const todayHtml = capped(board.today || [],
+    r => `<span class="earn-badge">${r.daysTo === 0 ? '本日発表' : '発表直後'}</span>`, 8, 'earn-more-today');
+  const soonHtml = capped(board.soon || [],
+    r => `<span class="earn-badge" style="background:rgba(192,138,46,0.1);color:var(--yellow);border-color:rgba(192,138,46,0.4)">あと${r.daysTo}営業日</span>`, 8, 'earn-more-soon');
+
+  card.innerHTML = `
+    ${todayHtml ? `<div style="font-size:11px;font-weight:700;margin-bottom:4px">本日発表・発表直後（${(board.today || []).length}件）</div>${todayHtml}` : ''}
+    ${soonHtml ? `<div style="font-size:11px;font-weight:700;margin:${todayHtml ? '10px' : '0'} 0 4px">5営業日以内に発表予定（${(board.soon || []).length}件）</div>${soonHtml}` : ''}
+    <div style="font-size:10.5px;color:var(--muted);line-height:1.7;margin-top:10px;padding-top:8px;border-top:1px solid var(--border)">${board.note}</div>`;
+}
+
 // 銘柄リスト
 function renderStocks() {
   const el = document.getElementById('stock-list');
@@ -1211,6 +1385,14 @@ function renderStocks() {
     const rangeLine = s.forecast
       ? `<div class="stock-range">明日の想定レンジ <b>${s.forecast.rangeLow.toLocaleString()}〜${s.forecast.rangeHigh.toLocaleString()}円</b> <span style="color:var(--muted);font-weight:400">（現値±${Math.round((s.forecast.rangeHigh-s.forecast.rangeLow)/2/s.forecast.price*1000)/10}%）</span></div>` : '';
     const planBox = renderPlanBox(s);
+    // 安全度バッジ（低=緑/中=黄/高=赤）と決算接近の警戒バッジ
+    const riskBadge = (s.risk && s.risk.safety != null)
+      ? `<span class="risk-badge lv-${s.risk.safety >= 70 ? 'low' : s.risk.safety >= 45 ? 'mid' : 'high'}">安全度 ${s.risk.safety}<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.safety}</span></span></span>` : '';
+    const earnBadge = (s.earnings && s.earnings.isSoon)
+      ? `<span class="earn-badge">決算${s.earnings.daysTo === 0 ? '本日' : s.earnings.daysTo < 0 ? '直後' : `あと${s.earnings.daysTo}営業日`}<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.earnSoon}</span></span></span>` : '';
+    // 安全度を下げている主因（あれば1件だけ簡潔に表示）
+    const riskWarn = (s.risk && s.risk.penalties && s.risk.penalties.length && s.risk.safety < 70)
+      ? `<div style="font-size:11px;color:var(--yellow);margin:4px 0 0;line-height:1.6">⚠ ${s.risk.penalties[0]}</div>` : '';
     return `
     <div class="stock-card" id="stock-${s.ticker}" style="opacity:0;transform:translateY(16px)">
       <div class="stock-card-header">
@@ -1226,8 +1408,10 @@ function renderStocks() {
       </div>
       <div class="stock-verdict-row">
         <span class="signal ${sc}">${s.signal}</span>
+        ${riskBadge}${earnBadge}
         <span class="stock-oneliner">${oneLiner}</span>
       </div>
+      ${riskWarn}
       ${renderSmartMoney(s)}
       ${rangeLine}
       ${planBox}
@@ -2141,6 +2325,7 @@ function onGoalChange() {
   saveGoal({ monthly, capital });
   renderGoalAssessment();
   renderAssetTrend();  // グラフの目標ラインも更新
+  renderLowRiskPlan(); // 元本変更で推奨株数も更新
 }
 
 function restoreGoalForm() {
@@ -2494,7 +2679,9 @@ document.addEventListener('DOMContentLoaded', () => {
   renderOutlook();
   renderAccuracy();
   renderKpis();
+  renderLowRiskPlan();
   renderStocks();
+  renderEarningsBoard();
   renderBacktest();
   renderFlow();
   renderAlerts();

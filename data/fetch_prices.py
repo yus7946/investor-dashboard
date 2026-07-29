@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 import pandas as pd
 
 from screening.smart_money import compute_smart_money
+from data.earnings import extract_earnings_date
 
 try:
     import yfinance as yf
@@ -14,7 +15,7 @@ except ImportError:
     yf = None
 
 
-def fetch_stock_data(ticker: str, name: str) -> dict | None:
+def fetch_stock_data(ticker: str, name: str, with_earnings: bool = True) -> dict | None:
     if yf is None:
         return None
     try:
@@ -64,6 +65,9 @@ def fetch_stock_data(ticker: str, name: str) -> dict | None:
         # 機関の資金フロー（買い集め/売り抜け）を同じ6ヶ月データから算出（追加通信なし）
         smart_money = compute_smart_money(hist)
 
+        # 決算日（yfinance calendar・追加1リクエスト）。ライト更新時はスキップしキャッシュを使う。
+        earnings_date = extract_earnings_date(t) if with_earnings else None
+
         return {
             "ticker": ticker,
             "name": name,
@@ -82,16 +86,20 @@ def fetch_stock_data(ticker: str, name: str) -> dict | None:
             "volume_ratio": round(volume_ratio, 2),
             "week_change_pct": round(week_change_pct, 4),
             "smart_money": smart_money,
+            "earnings_date": earnings_date,
+            # 決算実績（前年同期比）。yfinanceが提供する場合のみ（架空値なし）
+            "revenue_growth": info.get("revenueGrowth"),
+            "earnings_growth": info.get("earningsGrowth"),
         }
     except Exception:
         return None
 
 
-def fetch_universe(universe: list[tuple[str, str]]) -> list[dict]:
+def fetch_universe(universe: list[tuple[str, str]], with_earnings: bool = True) -> list[dict]:
     results = []
     failed = []
     for ticker, name in universe:
-        d = fetch_stock_data(ticker, name)
+        d = fetch_stock_data(ticker, name, with_earnings=with_earnings)
         if d:
             results.append(d)
         else:
