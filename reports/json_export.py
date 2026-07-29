@@ -49,6 +49,7 @@ def export_dashboard_json(
             "short_ratio": s.get("short_ratio"),
             "regime_adjusted": s.get("regime_adjusted", False),
             "forecast": s.get("forecast"),
+            "impact": s.get("impact"),
             "risk": s.get("risk"),
             "earnings": s.get("earnings"),
             "yutai": s.get("yutai"),

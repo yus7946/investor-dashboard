@@ -630,6 +630,33 @@ body::before {
   font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 999px; white-space: nowrap;
   background: rgba(178,58,58,0.1); color: var(--red); border: 1px dashed rgba(178,58,58,0.4);
 }
+/* ── 材料インパクト実績 ── */
+.impact-box {
+  margin-top: 8px; padding: 10px 12px; border-radius: 10px;
+  background: rgba(74,111,165,0.05); border: 1px solid rgba(74,111,165,0.18);
+}
+.impact-title { font-size: 11px; font-weight: 800; margin-bottom: 6px; display: flex; align-items: center; gap: 4px; }
+.impact-rows { display: grid; gap: 4px; font-size: 11.5px; line-height: 1.6; }
+.impact-rows .ir { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.impact-rows .ir span:first-child { color: var(--muted); }
+.impact-rows .ir b { white-space: nowrap; }
+.impact-note { font-size: 10px; color: var(--muted); line-height: 1.6; margin-top: 6px; }
+/* ── リサーチメモ ── */
+.memo-box { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border); }
+.memo-box textarea {
+  width: 100%; min-height: 72px; padding: 8px 10px; border-radius: 8px; resize: vertical;
+  border: 1px solid var(--border); background: var(--surface2); color: var(--text);
+  font-size: 12px; line-height: 1.6; font-family: inherit;
+}
+.memo-actions { display: flex; gap: 8px; align-items: center; margin-top: 6px; flex-wrap: wrap; }
+.memo-actions button {
+  padding: 7px 12px; border-radius: 8px; border: none; cursor: pointer;
+  font-size: 11px; font-weight: 700;
+}
+.memo-save { background: var(--accent); color: #fff; }
+.memo-prompt { background: none; border: 1px solid var(--border) !important; color: var(--accent); }
+.memo-status { font-size: 10.5px; color: var(--muted); }
+.memo-status.stale { color: var(--yellow); }
 /* ── 決算速報 ── */
 .earn-row {
   display: flex; align-items: baseline; gap: 8px; padding: 8px 0;
@@ -1097,6 +1124,7 @@ const HINTS = {
   regimeAdj:'地合いで格下げ：市場全体（TOPIX）が下落基調のため、この銘柄の買いシグナルを自動的に1段階慎重な表示にしています。',
   safety:   '安全度：値動きの荒さ・機関の売り抜け兆候・過熱（RSI）・空売り残高・決算接近から「今エントリーした場合のリスクの大きさ」を0〜100で示した相対的な目安です。将来の勝敗を予測するものではありません。数字が低いほど、損切りに当たりやすい・想定外に動きやすい状態です。',
   earnSoon: '決算接近：決算発表の前後は株価が窓（ギャップ）を開けて動きやすく、損切りラインを飛び越えて想定以上の損失になることがあります。低リスク運用では決算をまたぐ新規買いは原則避けます。決算日はyfinance取得で、変更されることがあります。',
+  impact:   '材料の株価インパクト実績：ニュースや決算が出たとき「この銘柄は過去に実際どれくらい動いたか」の実測値です。ふだんの1日（過去2年の値動きの標準偏差）、出来高が普段の2倍以上に膨らんだ日（材料が出た日の目安）、過去の決算発表の翌営業日、それぞれの実績を現在の株価で円換算しています。個別のニュースが何円分かを事前に当てることは誰にもできないため、「同種の場面での過去の実績幅」として使ってください。将来を保証するものではありません。',
 };
 
 // 今日の結論（ヒーロー）
@@ -1364,6 +1392,82 @@ function renderEarningsBoard() {
     <div style="font-size:10.5px;color:var(--muted);line-height:1.7;margin-top:10px;padding-top:8px;border-top:1px solid var(--border)">${board.note}</div>`;
 }
 
+// ── 材料の株価インパクト実績（過去実測のみ・円換算） ──
+function renderImpactBox(s) {
+  const im = s.impact;
+  if (!im) return '';
+  const yen = n => Math.round(n).toLocaleString();
+  const rows = [];
+  rows.push(`<div class="ir"><span>ふだんの1日の値動き</span><b>±${yen(im.normalYen)}円（±${im.normalPct}%）</b></div>`);
+  if (im.bigVol) {
+    rows.push(`<div class="ir"><span>材料が出た日（出来高2倍以上・過去${im.bigVol.n}回）</span><b>平均±${yen(im.bigVol.avgYen)}円・最大±${im.bigVol.maxAbsPct}%</b></div>`);
+  }
+  if (im.earnings) {
+    const e = im.earnings;
+    const recent = (e.recentPct || []).map(p => `${p >= 0 ? '+' : ''}${p}%`).join(' / ');
+    rows.push(`<div class="ir"><span>決算発表の翌営業日（過去${e.n}回）</span><b>平均±${yen(e.avgYen)}円・最大±${yen(e.maxYen)}円</b></div>`);
+    rows.push(`<div class="ir"><span>決算翌日に上昇した回数</span><b>${e.upCount}/${e.n}回${recent ? `（直近: ${recent}）` : ''}</b></div>`);
+  }
+  return `
+  <div class="impact-box">
+    <div class="impact-title">材料はいくら株価に反映される？（この銘柄の過去実績）<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.impact}</span></span></div>
+    <div class="impact-rows">${rows.join('')}</div>
+    <div class="impact-note">${im.basis}</div>
+  </div>`;
+}
+
+// ── リサーチメモ（Perplexity等の調査結果を銘柄ごとに保存・端末内のみ） ──
+const MEMO_KEY = 'research_notes_v1';
+function loadMemos() {
+  try { return JSON.parse(localStorage.getItem(MEMO_KEY) || '{}'); } catch (e) { return {}; }
+}
+function memoStatusText(m) {
+  if (!m || !m.savedAt) return '';
+  const days = Math.floor((Date.now() - m.savedAt) / 86400000);
+  return days === 0 ? '保存: 今日' : `保存: ${days}日前${days >= 7 ? '（情報が古い可能性）' : ''}`;
+}
+function saveMemo(ticker) {
+  const ta = document.getElementById(`memo-ta-${ticker}`);
+  const st = document.getElementById(`memo-st-${ticker}`);
+  if (!ta) return;
+  const memos = loadMemos();
+  const text = ta.value.trim();
+  if (text) { memos[ticker] = { text, savedAt: Date.now() }; }
+  else { delete memos[ticker]; }
+  localStorage.setItem(MEMO_KEY, JSON.stringify(memos));
+  if (st) { st.textContent = text ? '保存しました（この端末のみ・バックアップ対象）' : '削除しました'; st.classList.remove('stale'); }
+}
+function copyResearchPrompt(ticker, name) {
+  const s = DATA.stocks.find(x => x.ticker === ticker) || {};
+  const prompt = [
+    `日本株「${name}（${ticker}）」について、直近1ヶ月の以下を出典付きで調べてください。`,
+    `1. 決算・業績修正・IR発表の要点`,
+    `2. 株価に影響しうる材料（受注・提携・不祥事・規制など）`,
+    `3. アナリストや機関投資家の見方（強気/弱気の根拠）`,
+    `4. 想定されるリスク要因`,
+    `参考: 現在の株価は${s.forecast ? Math.round(s.forecast.price).toLocaleString() + '円' : '不明'}、当方の分析ではシグナル「${s.signal || '不明'}」です。`,
+    `推測と事実を区別し、それぞれ出典URLを付けてください。`,
+  ].join('\n');
+  navigator.clipboard.writeText(prompt).then(() => {
+    const st = document.getElementById(`memo-st-${ticker}`);
+    if (st) st.textContent = 'リサーチ依頼文をコピーしました。Perplexity等に貼り付けて、結果をこの欄に保存してください。';
+  }).catch(() => {});
+}
+function renderMemoBox(s) {
+  const m = loadMemos()[s.ticker];
+  const staleCls = m && (Date.now() - m.savedAt) / 86400000 >= 7 ? ' stale' : '';
+  return `
+  <div class="memo-box">
+    <div style="font-size:11px;font-weight:800;margin-bottom:6px">リサーチメモ<span style="font-weight:400;color:var(--muted);margin-left:4px">Perplexity等の調査結果を貼り付け（この端末に保存）</span></div>
+    <textarea id="memo-ta-${s.ticker}" placeholder="外部AIで調べた内容を貼り付けて保存すると、次回もこのカードに表示されます">${m ? m.text.replace(/</g, '&lt;') : ''}</textarea>
+    <div class="memo-actions">
+      <button class="memo-save" onclick="saveMemo('${s.ticker}')">保存</button>
+      <button class="memo-prompt" onclick="copyResearchPrompt('${s.ticker}','${s.name}')">リサーチ依頼文をコピー</button>
+      <span class="memo-status${staleCls}" id="memo-st-${s.ticker}">${memoStatusText(m)}</span>
+    </div>
+  </div>`;
+}
+
 // 銘柄リスト
 function renderStocks() {
   const el = document.getElementById('stock-list');
@@ -1415,6 +1519,7 @@ function renderStocks() {
       ${renderSmartMoney(s)}
       ${rangeLine}
       ${planBox}
+      ${renderImpactBox(s)}
       <button class="detail-toggle" onclick="toggleDetail(this)">数字で詳しく見る ▼</button>
       <div class="detail-collapse">
         <div class="stock-tags">
@@ -1447,6 +1552,7 @@ function renderStocks() {
         </div>
         ${yutaiBox}
         ${s.forecast ? renderForecastBox(s) : renderScenario(s)}
+        ${renderMemoBox(s)}
       </div>
     </div>`;
   }).join('');
@@ -1884,7 +1990,7 @@ function loadHoldings() {
 function saveHoldings(list) { localStorage.setItem(HOLDINGS_KEY, JSON.stringify(list)); }
 
 // ── データバックアップ（保有銘柄・目標・資産推移をJSONファイルに書き出し/読み込み） ──
-const BACKUP_KEYS = ['my_holdings', 'profit_goal_v1', 'asset_history_v1'];
+const BACKUP_KEYS = ['my_holdings', 'profit_goal_v1', 'asset_history_v1', 'research_notes_v1'];
 
 async function exportBackup() {
   const payload = { exportedAt: new Date().toISOString(), data: {} };

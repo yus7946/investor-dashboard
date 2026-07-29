@@ -101,10 +101,53 @@ def _stock_factors(s: dict) -> list[dict]:
     return f
 
 
-def build_forecasts(top_stocks: list[dict], regime: str = "unknown", calib: float = 1.0) -> dict | None:
+def _earnings_event_moves(close: pd.Series, past_dates: list[str]) -> dict | None:
+    """過去の決算発表日について「発表後の最初の取引日」の騰落実績を集計する。
+
+    決算は通常15時の引け後発表のため、発表日より後の最初の営業日リターンを使う。
+    実績のみ・3回未満なら統計を出さない（架空値なし）。
+    """
+    try:
+        if not past_dates:
+            return None
+        idx = close.index
+        if getattr(idx, "tz", None) is not None:
+            idx = idx.tz_localize(None)
+            close = pd.Series(close.values, index=idx)
+        r = close.pct_change()
+        moves = []
+        for ds in past_dates:
+            try:
+                d = pd.Timestamp(ds)
+            except Exception:
+                continue
+            after = idx[idx.normalize() > d.normalize()]
+            if len(after) == 0:
+                continue
+            v = r.loc[after[0]]
+            if pd.notna(v):
+                moves.append(float(v))
+        if len(moves) < 3:
+            return None
+        s = pd.Series(moves)
+        return {
+            "n": int(len(s)),
+            "avgAbsPct": round(float(s.abs().mean()) * 100, 1),
+            "maxAbsPct": round(float(s.abs().max()) * 100, 1),
+            "upCount": int((s > 0).sum()),
+            # 直近3回の実績（新しい順・符号付き）
+            "recentPct": [round(m * 100, 1) for m in moves[:3]],
+        }
+    except Exception:
+        return None
+
+
+def build_forecasts(top_stocks: list[dict], regime: str = "unknown", calib: float = 1.0,
+                    past_earnings: dict[str, list[str]] | None = None) -> dict | None:
     """各銘柄のforecastをin-placeで付与し、市場全体見通しを返す。
 
     calib: 過去の答え合わせ実績から算出したレンジ幅の補正係数（1.0=無補正）。
+    past_earnings: {ticker: [過去の決算発表日ISO,...]}（材料インパクト実績の計算用）。
     """
     if yf is None or not top_stocks:
         return None
@@ -168,6 +211,35 @@ def build_forecasts(top_stocks: list[dict], regime: str = "unknown", calib: floa
                 "cond": cond,
                 "factors": _stock_factors(s),
                 "basis": basis,
+            }
+
+            # 材料の株価インパクト実績（すべて過去の実測値・円換算は現値ベース）
+            raw_sigma = float(r.std())  # 補正前の素のσ（実測の1日振れ幅）
+            earn_ev = _earnings_event_moves(close, (past_earnings or {}).get(s["ticker"], []))
+            bm = s.get("big_move")
+            s["impact"] = {
+                "price": round(price, 1),
+                "normalYen": round(price * raw_sigma),
+                "normalPct": round(raw_sigma * 100, 1),
+                "bigVol": ({
+                    "n": bm["n"],
+                    "avgAbsPct": bm["avgAbsPct"],
+                    "maxAbsPct": bm["maxAbsPct"],
+                    "avgYen": round(price * bm["avgAbsPct"] / 100),
+                } if bm else None),
+                "earnings": ({
+                    "n": earn_ev["n"],
+                    "avgAbsPct": earn_ev["avgAbsPct"],
+                    "maxAbsPct": earn_ev["maxAbsPct"],
+                    "avgYen": round(price * earn_ev["avgAbsPct"] / 100),
+                    "maxYen": round(price * earn_ev["maxAbsPct"] / 100),
+                    "upCount": earn_ev["upCount"],
+                    "recentPct": earn_ev["recentPct"],
+                } if earn_ev else None),
+                "basis": (
+                    "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、"
+                    "決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
+                ),
             }
         except Exception:
             continue

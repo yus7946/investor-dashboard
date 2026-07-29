@@ -630,6 +630,33 @@ body::before {
   font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 999px; white-space: nowrap;
   background: rgba(178,58,58,0.1); color: var(--red); border: 1px dashed rgba(178,58,58,0.4);
 }
+/* ── 材料インパクト実績 ── */
+.impact-box {
+  margin-top: 8px; padding: 10px 12px; border-radius: 10px;
+  background: rgba(74,111,165,0.05); border: 1px solid rgba(74,111,165,0.18);
+}
+.impact-title { font-size: 11px; font-weight: 800; margin-bottom: 6px; display: flex; align-items: center; gap: 4px; }
+.impact-rows { display: grid; gap: 4px; font-size: 11.5px; line-height: 1.6; }
+.impact-rows .ir { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.impact-rows .ir span:first-child { color: var(--muted); }
+.impact-rows .ir b { white-space: nowrap; }
+.impact-note { font-size: 10px; color: var(--muted); line-height: 1.6; margin-top: 6px; }
+/* ── リサーチメモ ── */
+.memo-box { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border); }
+.memo-box textarea {
+  width: 100%; min-height: 72px; padding: 8px 10px; border-radius: 8px; resize: vertical;
+  border: 1px solid var(--border); background: var(--surface2); color: var(--text);
+  font-size: 12px; line-height: 1.6; font-family: inherit;
+}
+.memo-actions { display: flex; gap: 8px; align-items: center; margin-top: 6px; flex-wrap: wrap; }
+.memo-actions button {
+  padding: 7px 12px; border-radius: 8px; border: none; cursor: pointer;
+  font-size: 11px; font-weight: 700;
+}
+.memo-save { background: var(--accent); color: #fff; }
+.memo-prompt { background: none; border: 1px solid var(--border) !important; color: var(--accent); }
+.memo-status { font-size: 10.5px; color: var(--muted); }
+.memo-status.stale { color: var(--yellow); }
 /* ── 決算速報 ── */
 .earn-row {
   display: flex; align-items: baseline; gap: 8px; padding: 8px 0;
@@ -958,8 +985,8 @@ body::before {
 gsap.registerPlugin(ScrollTrigger);
 
 const DATA = {
-  "updated": "2026年07月30日 06:45",
-  "updatedAtMs": 1785361554775,
+  "updated": "2026年07月30日 07:11",
+  "updatedAtMs": 1785363064174,
   "updateMode": "light",
   "fetched": 163,
   "universeTotal": 166,
@@ -1734,8 +1761,8 @@ const DATA = {
   "marketOutlook": {
     "spxChangePct": -1.52,
     "spxDate": "2026-07-29",
-    "usdjpy": 163.38,
-    "usdjpyChangePct": -0.24,
+    "usdjpy": 163.43,
+    "usdjpyChangePct": -0.21,
     "condition": "米S&P500が直近下落",
     "topixUpRate": 42.4,
     "n": 205,
@@ -1743,17 +1770,17 @@ const DATA = {
     "basis": "過去2年で「米国市場が上昇/下落した翌営業日に東京(TOPIX ETF)が上昇した割合」を実際に集計。統計的傾向であり将来を保証しません。出典: Yahoo Finance価格データ。"
   },
   "accuracy": {
-    "resolvedStockCount": 66,
-    "resolvedMarketCount": 6,
-    "rangeHitRate": 86.4,
-    "leanUpActualUp": 46.2,
-    "leanUpN": 13,
-    "leanDownActualUp": 66.7,
-    "leanDownN": 3,
-    "marketHitRate": 33.3,
-    "planEntered": 40,
-    "planDecided": 40,
-    "planTargetRate": 45.0,
+    "resolvedStockCount": 158,
+    "resolvedMarketCount": 14,
+    "rangeHitRate": 86.1,
+    "leanUpActualUp": 64.9,
+    "leanUpN": 37,
+    "leanDownActualUp": 75.0,
+    "leanDownN": 8,
+    "marketHitRate": 50.0,
+    "planEntered": 52,
+    "planDecided": 52,
+    "planTargetRate": 53.8,
     "planExpired": 0,
     "sinceDate": "2026-07-06",
     "note": "予測と実際の答え合わせを毎営業日ぶん蓄積した実績です。件数が増えるほど信頼度が上がります。将来を保証するものではありません。"
@@ -1813,7 +1840,7 @@ const DATA = {
         "rangeHigh": 367,
         "rangeLow2": 341,
         "rangeHigh2": 375,
-        "volDPct": 2.39,
+        "volDPct": 2.41,
         "calibrated": true,
         "plan": {
           "entry": 354,
@@ -1844,7 +1871,32 @@ const DATA = {
             "dir": "+"
           }
         ],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.77倍に自動補正済み。目標カバー率は約75%）"
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.78倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "impact": {
+        "price": 358.2,
+        "normalYen": 11,
+        "normalPct": 3.1,
+        "bigVol": {
+          "n": 4,
+          "avgAbsPct": 1.7,
+          "maxAbsPct": 3.3,
+          "avgYen": 6
+        },
+        "earnings": {
+          "n": 7,
+          "avgAbsPct": 3.5,
+          "maxAbsPct": 8.8,
+          "avgYen": 13,
+          "maxYen": 32,
+          "upCount": 5,
+          "recentPct": [
+            0.4,
+            8.8,
+            4.3
+          ]
+        },
+        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
         "safety": 40,
@@ -1921,11 +1973,11 @@ const DATA = {
       "regime_adjusted": false,
       "forecast": {
         "price": 533.7,
-        "rangeLow": 521,
+        "rangeLow": 520,
         "rangeHigh": 547,
         "rangeLow2": 507,
         "rangeHigh2": 560,
-        "volDPct": 2.46,
+        "volDPct": 2.48,
         "calibrated": true,
         "plan": {
           "entry": 527,
@@ -1948,7 +2000,32 @@ const DATA = {
             "dir": "-"
           }
         ],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.77倍に自動補正済み。目標カバー率は約75%）"
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.78倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "impact": {
+        "price": 533.7,
+        "normalYen": 17,
+        "normalPct": 3.2,
+        "bigVol": {
+          "n": 3,
+          "avgAbsPct": 10.6,
+          "maxAbsPct": 16.3,
+          "avgYen": 57
+        },
+        "earnings": {
+          "n": 3,
+          "avgAbsPct": 2.5,
+          "maxAbsPct": 3.1,
+          "avgYen": 13,
+          "maxYen": 17,
+          "upCount": 1,
+          "recentPct": [
+            -3.1,
+            1.8,
+            -2.6
+          ]
+        },
+        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
         "safety": 33,
@@ -2028,19 +2105,19 @@ const DATA = {
       "forecast": {
         "price": 672.8,
         "rangeLow": 664,
-        "rangeHigh": 681,
+        "rangeHigh": 682,
         "rangeLow2": 655,
         "rangeHigh2": 690,
-        "volDPct": 1.29,
+        "volDPct": 1.3,
         "calibrated": true,
         "plan": {
           "entry": 668,
-          "target": 685,
+          "target": 686,
           "stop": 655,
-          "rr": 1.31,
+          "rr": 1.38,
           "hi3m": 673,
           "lo3m": 531,
-          "basis": "1日の実績振れ幅σ=1.3%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値673円 / 安値531円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+          "basis": "1日の実績振れ幅σ=1.3%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.4:1）。参考: 直近3ヶ月の高値673円 / 安値531円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
         },
         "cond": {
           "upRate": 58.2,
@@ -2058,7 +2135,32 @@ const DATA = {
             "dir": "+"
           }
         ],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.77倍に自動補正済み。目標カバー率は約75%）"
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.78倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "impact": {
+        "price": 672.8,
+        "normalYen": 11,
+        "normalPct": 1.7,
+        "bigVol": {
+          "n": 3,
+          "avgAbsPct": 2.0,
+          "maxAbsPct": 2.9,
+          "avgYen": 13
+        },
+        "earnings": {
+          "n": 8,
+          "avgAbsPct": 2.4,
+          "maxAbsPct": 4.0,
+          "avgYen": 16,
+          "maxYen": 27,
+          "upCount": 4,
+          "recentPct": [
+            -0.6,
+            1.5,
+            -3.3
+          ]
+        },
+        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
         "safety": 48,
@@ -2071,7 +2173,7 @@ const DATA = {
           "機関の買い集め兆候"
         ],
         "stopPct": 1.95,
-        "rr": 1.31
+        "rr": 1.38
       },
       "earnings": {
         "date": "2026-08-04",
@@ -2138,15 +2240,15 @@ const DATA = {
         "price": 2482.0,
         "rangeLow": 2442,
         "rangeHigh": 2522,
-        "rangeLow2": 2403,
-        "rangeHigh2": 2561,
-        "volDPct": 1.59,
+        "rangeLow2": 2402,
+        "rangeHigh2": 2562,
+        "volDPct": 1.6,
         "calibrated": true,
         "plan": {
           "entry": 2462,
-          "target": 2541,
-          "stop": 2403,
-          "rr": 1.34,
+          "target": 2542,
+          "stop": 2402,
+          "rr": 1.33,
           "hi3m": 2522,
           "lo3m": 1812,
           "basis": "1日の実績振れ幅σ=1.6%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値2,522円 / 安値1,812円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
@@ -2158,7 +2260,27 @@ const DATA = {
           "note": null
         },
         "factors": [],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.77倍に自動補正済み。目標カバー率は約75%）"
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.78倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "impact": {
+        "price": 2482.0,
+        "normalYen": 51,
+        "normalPct": 2.1,
+        "bigVol": null,
+        "earnings": {
+          "n": 8,
+          "avgAbsPct": 1.7,
+          "maxAbsPct": 5.0,
+          "avgYen": 42,
+          "maxYen": 124,
+          "upCount": 5,
+          "recentPct": [
+            5.0,
+            -2.6,
+            -0.6
+          ]
+        },
+        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
         "safety": 77,
@@ -2169,8 +2291,8 @@ const DATA = {
         "supports": [
           "機関の買い集め兆候"
         ],
-        "stopPct": 2.4,
-        "rr": 1.34
+        "stopPct": 2.44,
+        "rr": 1.33
       },
       "earnings": {
         "date": "2026-08-07",
@@ -2235,17 +2357,17 @@ const DATA = {
       "regime_adjusted": false,
       "forecast": {
         "price": 6141.0,
-        "rangeLow": 6048,
-        "rangeHigh": 6234,
-        "rangeLow2": 5954,
-        "rangeHigh2": 6328,
-        "volDPct": 1.52,
+        "rangeLow": 6047,
+        "rangeHigh": 6235,
+        "rangeLow2": 5953,
+        "rangeHigh2": 6329,
+        "volDPct": 1.53,
         "calibrated": true,
         "plan": {
           "entry": 6094,
-          "target": 6281,
-          "stop": 5954,
-          "rr": 1.34,
+          "target": 6282,
+          "stop": 5953,
+          "rr": 1.33,
           "hi3m": 6141,
           "lo3m": 5080,
           "basis": "1日の実績振れ幅σ=1.5%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値6,141円 / 安値5,080円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
@@ -2262,7 +2384,27 @@ const DATA = {
             "dir": "-"
           }
         ],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.77倍に自動補正済み。目標カバー率は約75%）"
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.78倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "impact": {
+        "price": 6141.0,
+        "normalYen": 121,
+        "normalPct": 2.0,
+        "bigVol": null,
+        "earnings": {
+          "n": 6,
+          "avgAbsPct": 3.3,
+          "maxAbsPct": 4.6,
+          "avgYen": 203,
+          "maxYen": 282,
+          "upCount": 3,
+          "recentPct": [
+            0.2,
+            -3.7,
+            -3.2
+          ]
+        },
+        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
         "safety": 63,
@@ -2274,8 +2416,8 @@ const DATA = {
         "supports": [
           "機関の買い集め兆候"
         ],
-        "stopPct": 2.3,
-        "rr": 1.34
+        "stopPct": 2.31,
+        "rr": 1.33
       },
       "earnings": {
         "date": "2026-08-05",
@@ -2340,16 +2482,16 @@ const DATA = {
       "regime_adjusted": false,
       "forecast": {
         "price": 5050.0,
-        "rangeLow": 4966,
-        "rangeHigh": 5134,
-        "rangeLow2": 4882,
-        "rangeHigh2": 5218,
-        "volDPct": 1.67,
+        "rangeLow": 4965,
+        "rangeHigh": 5135,
+        "rangeLow2": 4881,
+        "rangeHigh2": 5219,
+        "volDPct": 1.68,
         "calibrated": true,
         "plan": {
           "entry": 5008,
-          "target": 5176,
-          "stop": 4882,
+          "target": 5177,
+          "stop": 4881,
           "rr": 1.33,
           "hi3m": 5050,
           "lo3m": 3978,
@@ -2371,7 +2513,15 @@ const DATA = {
             "dir": "+"
           }
         ],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.77倍に自動補正済み。目標カバー率は約75%）"
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.78倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "impact": {
+        "price": 5050.0,
+        "normalYen": 109,
+        "normalPct": 2.2,
+        "bigVol": null,
+        "earnings": null,
+        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
         "safety": 76,
@@ -2382,7 +2532,7 @@ const DATA = {
         "supports": [
           "機関の買い集め兆候"
         ],
-        "stopPct": 2.52,
+        "stopPct": 2.54,
         "rr": 1.33
       },
       "earnings": {
@@ -2452,7 +2602,7 @@ const DATA = {
         "rangeHigh": 1244,
         "rangeLow2": 1167,
         "rangeHigh2": 1270,
-        "volDPct": 2.12,
+        "volDPct": 2.13,
         "calibrated": true,
         "plan": {
           "entry": 1206,
@@ -2475,7 +2625,20 @@ const DATA = {
             "dir": "+"
           }
         ],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.77倍に自動補正済み。目標カバー率は約75%）"
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.78倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "impact": {
+        "price": 1218.5,
+        "normalYen": 33,
+        "normalPct": 2.7,
+        "bigVol": {
+          "n": 3,
+          "avgAbsPct": 4.0,
+          "maxAbsPct": 4.9,
+          "avgYen": 49
+        },
+        "earnings": null,
+        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
         "safety": 54,
@@ -2554,14 +2717,14 @@ const DATA = {
         "price": 2855.0,
         "rangeLow": 2802,
         "rangeHigh": 2908,
-        "rangeLow2": 2749,
-        "rangeHigh2": 2961,
-        "volDPct": 1.85,
+        "rangeLow2": 2748,
+        "rangeHigh2": 2962,
+        "volDPct": 1.87,
         "calibrated": true,
         "plan": {
-          "entry": 2829,
+          "entry": 2828,
           "target": 2935,
-          "stop": 2750,
+          "stop": 2748,
           "rr": 1.34,
           "hi3m": 2855,
           "lo3m": 2418,
@@ -2579,7 +2742,27 @@ const DATA = {
             "dir": "-"
           }
         ],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.77倍に自動補正済み。目標カバー率は約75%）"
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.78倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "impact": {
+        "price": 2855.0,
+        "normalYen": 69,
+        "normalPct": 2.4,
+        "bigVol": null,
+        "earnings": {
+          "n": 5,
+          "avgAbsPct": 1.6,
+          "maxAbsPct": 3.1,
+          "avgYen": 46,
+          "maxYen": 89,
+          "upCount": 2,
+          "recentPct": [
+            -2.2,
+            3.1,
+            -1.2
+          ]
+        },
+        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
         "safety": 47,
@@ -2591,7 +2774,7 @@ const DATA = {
         "supports": [
           "機関の買い集め兆候"
         ],
-        "stopPct": 2.79,
+        "stopPct": 2.83,
         "rr": 1.34
       },
       "earnings": {
@@ -2657,16 +2840,16 @@ const DATA = {
       "regime_adjusted": false,
       "forecast": {
         "price": 5953.0,
-        "rangeLow": 5856,
-        "rangeHigh": 6050,
-        "rangeLow2": 5759,
-        "rangeHigh2": 6147,
-        "volDPct": 1.63,
+        "rangeLow": 5855,
+        "rangeHigh": 6051,
+        "rangeLow2": 5758,
+        "rangeHigh2": 6148,
+        "volDPct": 1.64,
         "calibrated": true,
         "plan": {
-          "entry": 5905,
+          "entry": 5904,
           "target": 6099,
-          "stop": 5760,
+          "stop": 5758,
           "rr": 1.34,
           "hi3m": 5953,
           "lo3m": 5031,
@@ -2684,7 +2867,32 @@ const DATA = {
             "dir": "-"
           }
         ],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.77倍に自動補正済み。目標カバー率は約75%）"
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.78倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "impact": {
+        "price": 5953.0,
+        "normalYen": 125,
+        "normalPct": 2.1,
+        "bigVol": {
+          "n": 3,
+          "avgAbsPct": 5.5,
+          "maxAbsPct": 11.8,
+          "avgYen": 327
+        },
+        "earnings": {
+          "n": 6,
+          "avgAbsPct": 2.4,
+          "maxAbsPct": 4.9,
+          "avgYen": 143,
+          "maxYen": 292,
+          "upCount": 2,
+          "recentPct": [
+            -0.5,
+            -0.1,
+            -4.9
+          ]
+        },
+        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
         "safety": 63,
@@ -2695,7 +2903,7 @@ const DATA = {
         "supports": [
           "機関の買い集め兆候"
         ],
-        "stopPct": 2.46,
+        "stopPct": 2.47,
         "rr": 1.34
       },
       "earnings": {
@@ -2761,16 +2969,16 @@ const DATA = {
       "regime_adjusted": false,
       "forecast": {
         "price": 4243.0,
-        "rangeLow": 4187,
-        "rangeHigh": 4299,
-        "rangeLow2": 4131,
-        "rangeHigh2": 4355,
-        "volDPct": 1.32,
+        "rangeLow": 4186,
+        "rangeHigh": 4300,
+        "rangeLow2": 4130,
+        "rangeHigh2": 4356,
+        "volDPct": 1.33,
         "calibrated": true,
         "plan": {
           "entry": 4215,
-          "target": 4327,
-          "stop": 4131,
+          "target": 4328,
+          "stop": 4130,
           "rr": 1.33,
           "hi3m": 4243,
           "lo3m": 3256,
@@ -2788,7 +2996,32 @@ const DATA = {
             "dir": "-"
           }
         ],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.77倍に自動補正済み。目標カバー率は約75%）"
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.78倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "impact": {
+        "price": 4243.0,
+        "normalYen": 73,
+        "normalPct": 1.7,
+        "bigVol": {
+          "n": 4,
+          "avgAbsPct": 2.8,
+          "maxAbsPct": 8.0,
+          "avgYen": 119
+        },
+        "earnings": {
+          "n": 8,
+          "avgAbsPct": 2.6,
+          "maxAbsPct": 8.0,
+          "avgYen": 110,
+          "maxYen": 339,
+          "upCount": 3,
+          "recentPct": [
+            -8.0,
+            7.2,
+            -1.1
+          ]
+        },
+        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
         "safety": 44,
@@ -2800,7 +3033,7 @@ const DATA = {
         "supports": [
           "機関の買い集め兆候"
         ],
-        "stopPct": 1.99,
+        "stopPct": 2.02,
         "rr": 1.33
       },
       "earnings": {
@@ -2909,7 +3142,7 @@ const DATA = {
       "divPerShare": 722.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 1.29,
-      "per": 39.9,
+      "per": 40.0,
       "pbr": 10.99,
       "roe": 29.3,
       "rsi": 27.2,
@@ -3719,7 +3952,7 @@ const DATA = {
       "divPerShare": 50.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 1.23,
-      "per": 22.5,
+      "per": 22.6,
       "pbr": 1.84,
       "roe": 8.4,
       "rsi": 41.7,
@@ -4079,7 +4312,7 @@ const DATA = {
       "divPerShare": 14.0,
       "exDivDate": "2026-08-28",
       "dividendYield": 0.99,
-      "per": 53.6,
+      "per": 53.5,
       "pbr": 3.29,
       "roe": 7.2,
       "rsi": 47.8,
@@ -4334,7 +4567,7 @@ const DATA = {
       "divPerShare": null,
       "exDivDate": null,
       "dividendYield": null,
-      "per": 181.9,
+      "per": 181.8,
       "pbr": 7.88,
       "roe": 3.5,
       "rsi": 75.8,
@@ -5069,7 +5302,7 @@ const DATA = {
       "divPerShare": 22.0,
       "exDivDate": "2026-03-30",
       "dividendYield": 1.15,
-      "per": 27.3,
+      "per": 27.4,
       "pbr": 3.24,
       "roe": 12.6,
       "rsi": 56.8,
@@ -5520,6 +5753,7 @@ const HINTS = {
   regimeAdj:'地合いで格下げ：市場全体（TOPIX）が下落基調のため、この銘柄の買いシグナルを自動的に1段階慎重な表示にしています。',
   safety:   '安全度：値動きの荒さ・機関の売り抜け兆候・過熱（RSI）・空売り残高・決算接近から「今エントリーした場合のリスクの大きさ」を0〜100で示した相対的な目安です。将来の勝敗を予測するものではありません。数字が低いほど、損切りに当たりやすい・想定外に動きやすい状態です。',
   earnSoon: '決算接近：決算発表の前後は株価が窓（ギャップ）を開けて動きやすく、損切りラインを飛び越えて想定以上の損失になることがあります。低リスク運用では決算をまたぐ新規買いは原則避けます。決算日はyfinance取得で、変更されることがあります。',
+  impact:   '材料の株価インパクト実績：ニュースや決算が出たとき「この銘柄は過去に実際どれくらい動いたか」の実測値です。ふだんの1日（過去2年の値動きの標準偏差）、出来高が普段の2倍以上に膨らんだ日（材料が出た日の目安）、過去の決算発表の翌営業日、それぞれの実績を現在の株価で円換算しています。個別のニュースが何円分かを事前に当てることは誰にもできないため、「同種の場面での過去の実績幅」として使ってください。将来を保証するものではありません。',
 };
 
 // 今日の結論（ヒーロー）
@@ -5787,6 +6021,82 @@ function renderEarningsBoard() {
     <div style="font-size:10.5px;color:var(--muted);line-height:1.7;margin-top:10px;padding-top:8px;border-top:1px solid var(--border)">${board.note}</div>`;
 }
 
+// ── 材料の株価インパクト実績（過去実測のみ・円換算） ──
+function renderImpactBox(s) {
+  const im = s.impact;
+  if (!im) return '';
+  const yen = n => Math.round(n).toLocaleString();
+  const rows = [];
+  rows.push(`<div class="ir"><span>ふだんの1日の値動き</span><b>±${yen(im.normalYen)}円（±${im.normalPct}%）</b></div>`);
+  if (im.bigVol) {
+    rows.push(`<div class="ir"><span>材料が出た日（出来高2倍以上・過去${im.bigVol.n}回）</span><b>平均±${yen(im.bigVol.avgYen)}円・最大±${im.bigVol.maxAbsPct}%</b></div>`);
+  }
+  if (im.earnings) {
+    const e = im.earnings;
+    const recent = (e.recentPct || []).map(p => `${p >= 0 ? '+' : ''}${p}%`).join(' / ');
+    rows.push(`<div class="ir"><span>決算発表の翌営業日（過去${e.n}回）</span><b>平均±${yen(e.avgYen)}円・最大±${yen(e.maxYen)}円</b></div>`);
+    rows.push(`<div class="ir"><span>決算翌日に上昇した回数</span><b>${e.upCount}/${e.n}回${recent ? `（直近: ${recent}）` : ''}</b></div>`);
+  }
+  return `
+  <div class="impact-box">
+    <div class="impact-title">材料はいくら株価に反映される？（この銘柄の過去実績）<span class="hint" onclick="event.stopPropagation();this.classList.toggle('open')">?<span class="hint-pop">${HINTS.impact}</span></span></div>
+    <div class="impact-rows">${rows.join('')}</div>
+    <div class="impact-note">${im.basis}</div>
+  </div>`;
+}
+
+// ── リサーチメモ（Perplexity等の調査結果を銘柄ごとに保存・端末内のみ） ──
+const MEMO_KEY = 'research_notes_v1';
+function loadMemos() {
+  try { return JSON.parse(localStorage.getItem(MEMO_KEY) || '{}'); } catch (e) { return {}; }
+}
+function memoStatusText(m) {
+  if (!m || !m.savedAt) return '';
+  const days = Math.floor((Date.now() - m.savedAt) / 86400000);
+  return days === 0 ? '保存: 今日' : `保存: ${days}日前${days >= 7 ? '（情報が古い可能性）' : ''}`;
+}
+function saveMemo(ticker) {
+  const ta = document.getElementById(`memo-ta-${ticker}`);
+  const st = document.getElementById(`memo-st-${ticker}`);
+  if (!ta) return;
+  const memos = loadMemos();
+  const text = ta.value.trim();
+  if (text) { memos[ticker] = { text, savedAt: Date.now() }; }
+  else { delete memos[ticker]; }
+  localStorage.setItem(MEMO_KEY, JSON.stringify(memos));
+  if (st) { st.textContent = text ? '保存しました（この端末のみ・バックアップ対象）' : '削除しました'; st.classList.remove('stale'); }
+}
+function copyResearchPrompt(ticker, name) {
+  const s = DATA.stocks.find(x => x.ticker === ticker) || {};
+  const prompt = [
+    `日本株「${name}（${ticker}）」について、直近1ヶ月の以下を出典付きで調べてください。`,
+    `1. 決算・業績修正・IR発表の要点`,
+    `2. 株価に影響しうる材料（受注・提携・不祥事・規制など）`,
+    `3. アナリストや機関投資家の見方（強気/弱気の根拠）`,
+    `4. 想定されるリスク要因`,
+    `参考: 現在の株価は${s.forecast ? Math.round(s.forecast.price).toLocaleString() + '円' : '不明'}、当方の分析ではシグナル「${s.signal || '不明'}」です。`,
+    `推測と事実を区別し、それぞれ出典URLを付けてください。`,
+  ].join('\n');
+  navigator.clipboard.writeText(prompt).then(() => {
+    const st = document.getElementById(`memo-st-${ticker}`);
+    if (st) st.textContent = 'リサーチ依頼文をコピーしました。Perplexity等に貼り付けて、結果をこの欄に保存してください。';
+  }).catch(() => {});
+}
+function renderMemoBox(s) {
+  const m = loadMemos()[s.ticker];
+  const staleCls = m && (Date.now() - m.savedAt) / 86400000 >= 7 ? ' stale' : '';
+  return `
+  <div class="memo-box">
+    <div style="font-size:11px;font-weight:800;margin-bottom:6px">リサーチメモ<span style="font-weight:400;color:var(--muted);margin-left:4px">Perplexity等の調査結果を貼り付け（この端末に保存）</span></div>
+    <textarea id="memo-ta-${s.ticker}" placeholder="外部AIで調べた内容を貼り付けて保存すると、次回もこのカードに表示されます">${m ? m.text.replace(/</g, '&lt;') : ''}</textarea>
+    <div class="memo-actions">
+      <button class="memo-save" onclick="saveMemo('${s.ticker}')">保存</button>
+      <button class="memo-prompt" onclick="copyResearchPrompt('${s.ticker}','${s.name}')">リサーチ依頼文をコピー</button>
+      <span class="memo-status${staleCls}" id="memo-st-${s.ticker}">${memoStatusText(m)}</span>
+    </div>
+  </div>`;
+}
+
 // 銘柄リスト
 function renderStocks() {
   const el = document.getElementById('stock-list');
@@ -5838,6 +6148,7 @@ function renderStocks() {
       ${renderSmartMoney(s)}
       ${rangeLine}
       ${planBox}
+      ${renderImpactBox(s)}
       <button class="detail-toggle" onclick="toggleDetail(this)">数字で詳しく見る ▼</button>
       <div class="detail-collapse">
         <div class="stock-tags">
@@ -5870,6 +6181,7 @@ function renderStocks() {
         </div>
         ${yutaiBox}
         ${s.forecast ? renderForecastBox(s) : renderScenario(s)}
+        ${renderMemoBox(s)}
       </div>
     </div>`;
   }).join('');
@@ -6307,7 +6619,7 @@ function loadHoldings() {
 function saveHoldings(list) { localStorage.setItem(HOLDINGS_KEY, JSON.stringify(list)); }
 
 // ── データバックアップ（保有銘柄・目標・資産推移をJSONファイルに書き出し/読み込み） ──
-const BACKUP_KEYS = ['my_holdings', 'profit_goal_v1', 'asset_history_v1'];
+const BACKUP_KEYS = ['my_holdings', 'profit_goal_v1', 'asset_history_v1', 'research_notes_v1'];
 
 async function exportBackup() {
   const payload = { exportedAt: new Date().toISOString(), data: {} };

@@ -21,7 +21,7 @@ except Exception:
 from data.universe import UNIVERSE, MASTER, EXTRA_HOLDINGS
 from data.fetch_prices import fetch_universe, fetch_stock_data
 from data.edinet import fetch_edinet_alerts
-from data.earnings import annotate_earnings, build_earnings_board
+from data.earnings import annotate_earnings, build_earnings_board, fetch_past_earnings_dates
 from data.news import fetch_news_for_ticker, build_theme_trends
 from data.market_regime import fetch_market_regime
 from data.jpx_flow import fetch_investor_flow
@@ -310,6 +310,22 @@ def main():
     )[:14]
 
     print("\n7/8 翌営業日見通し計算・答え合わせ中...")
+    # 過去の決算発表日（材料インパクト実績用）。フル時のみ取得しキャッシュ（top10で+10リクエスト）
+    past_earnings = {}
+    if light:
+        past_earnings = cache.get("past_earnings") or {}
+        if past_earnings:
+            print(f"  過去決算日はキャッシュ再利用（{len(past_earnings)}銘柄）")
+    else:
+        try:
+            for s in top10:
+                dates = fetch_past_earnings_dates(s["ticker"])
+                if dates:
+                    past_earnings[s["ticker"]] = dates
+            cache["past_earnings"] = past_earnings
+            print(f"  過去決算日取得: {len(past_earnings)}/{len(top10)}銘柄")
+        except Exception as e:
+            print(f"  [警告] 過去決算日の取得に失敗: {e}")
     outlook = None
     accuracy = None
     try:
@@ -319,7 +335,7 @@ def main():
         calib = calibration_factor(history)
         if abs(calib - 1.0) > 1e-6:
             print(f"  実績ベースのレンジ補正係数: {calib}")
-        outlook = build_forecasts(top10, regime, calib)
+        outlook = build_forecasts(top10, regime, calib, past_earnings=past_earnings)
         done = sum(1 for s in top10 if s.get("forecast"))
         if outlook:
             print(f"  市場見通し: {outlook['condition']}→東京上昇率{outlook.get('topixUpRate')}%（過去{outlook['n']}回）")

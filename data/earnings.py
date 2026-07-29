@@ -55,6 +55,24 @@ def extract_earnings_date(ticker_obj) -> str | None:
     return d.isoformat() if d else None
 
 
+def fetch_past_earnings_dates(ticker: str, limit: int = 12) -> list[str]:
+    """過去の決算発表日を新しい順で最大8件返す（イベントスタディ用・実績のみ）。
+
+    yfinance の get_earnings_dates() を利用。取得失敗時は空リスト（架空日付なし）。
+    """
+    try:
+        import yfinance as yf
+        df = yf.Ticker(ticker).get_earnings_dates(limit=limit)
+        if df is None or df.empty:
+            return []
+        today = pd.Timestamp.now(tz=df.index.tz) if df.index.tz else pd.Timestamp.now()
+        past = [d for d in df.index if d < today]
+        past.sort(reverse=True)
+        return [d.date().isoformat() for d in past[:8]]
+    except Exception:
+        return []
+
+
 def _business_days_between(a: date, b: date) -> int:
     """a→b の営業日数（土日を除外・祝日は考慮しない簡易版）。b>=aで正、b<aで負。"""
     if a == b:

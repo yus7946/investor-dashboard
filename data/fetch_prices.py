@@ -65,6 +65,24 @@ def fetch_stock_data(ticker: str, name: str, with_earnings: bool = True) -> dict
         # 機関の資金フロー（買い集め/売り抜け）を同じ6ヶ月データから算出（追加通信なし）
         smart_money = compute_smart_money(hist)
 
+        # 出来高急増日（20日平均の2倍以上）の値動き実績。材料が出た日にこの銘柄が
+        # 実際に何%動いてきたかのイベントスタディ（過去実績・追加通信なし）
+        big_move = None
+        try:
+            # 前日までの20日平均に対する倍率（当日自身を分母に含めない。volume_ratioと同じ定義）
+            vol20 = hist["Volume"].rolling(20).mean().shift(1)
+            ratio = hist["Volume"] / vol20
+            rets = hist["Close"].pct_change()
+            spikes = rets[(ratio >= 2.0) & rets.notna()]
+            if len(spikes) >= 3:
+                big_move = {
+                    "n": int(len(spikes)),
+                    "avgAbsPct": round(float(spikes.abs().mean()) * 100, 1),
+                    "maxAbsPct": round(float(spikes.abs().max()) * 100, 1),
+                }
+        except Exception:
+            big_move = None
+
         # 決算日（yfinance calendar・追加1リクエスト）。ライト更新時はスキップしキャッシュを使う。
         earnings_date = extract_earnings_date(t) if with_earnings else None
 
@@ -86,6 +104,7 @@ def fetch_stock_data(ticker: str, name: str, with_earnings: bool = True) -> dict
             "volume_ratio": round(volume_ratio, 2),
             "week_change_pct": round(week_change_pct, 4),
             "smart_money": smart_money,
+            "big_move": big_move,
             "earnings_date": earnings_date,
             # 決算実績（前年同期比）。yfinanceが提供する場合のみ（架空値なし）
             "revenue_growth": info.get("revenueGrowth"),
