@@ -3606,6 +3606,30 @@
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-07-29",
+      "ticker": "9104.T",
+      "name": "商船三井",
+      "basePrice": 5866.0,
+      "entry": 5818,
+      "target": 6010,
+      "stop": 5674,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-07-29",
+      "ticker": "9501.T",
+      "name": "東京電力HD",
+      "basePrice": 504.1,
+      "entry": 498,
+      "target": 523,
+      "stop": 479,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
     }
   ]
 }
