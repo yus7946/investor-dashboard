@@ -2519,6 +2519,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-29",
+      "ticker": "8955.T",
+      "name": "日本プライムリアルティ投資法人",
+      "basePrice": 100000.0,
+      "rangeLow": 99278,
+      "rangeHigh": 100722,
+      "predUpRate": 47.6,
+      "condN": 189,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
