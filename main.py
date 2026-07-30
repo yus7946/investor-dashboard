@@ -24,7 +24,7 @@ from data.edinet import fetch_edinet_alerts
 from data.earnings import annotate_earnings, build_earnings_board, fetch_past_earnings_dates
 from data.news import fetch_news_for_ticker, build_theme_trends
 from data.market_regime import fetch_market_regime
-from data.jpx_flow import fetch_investor_flow
+from data.jpx_flow import fetch_investor_flow, update_flow_history
 from data.jpx_short import fetch_short_positions
 from screening.score import score_universe
 from screening.risk import annotate_risk, build_low_risk_plan
@@ -243,6 +243,9 @@ def main():
             flow = None
         cache["flow"] = flow
 
+    # 個人vs海外投資家等のトレンドを見るための履歴蓄積（新しい週が来た時だけ追記）
+    flow_history = update_flow_history(flow)
+
     bt = {}
     if light and cache.get("backtest"):
         bt = cache["backtest"]
@@ -380,6 +383,7 @@ def main():
             stocks=top10 if top10 else stocks[:10],
             alerts=combined_alerts,
             flow=flow,
+            flow_history=flow_history,
             theme_trends=theme_trends,
             backtest=bt,
             market=market,

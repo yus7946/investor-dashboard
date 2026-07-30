@@ -829,6 +829,12 @@ body::before {
     <div id="flow-bars"></div>
   </div>
 
+  <div class="section-title">機関 vs 個人投資家 トレンド<span style="font-size:9px;font-weight:400;text-transform:none;color:var(--muted);margin-left:4px">JPX週次実データの推移</span></div>
+  <div class="card">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:10px;line-height:1.5">海外投資家・信託銀行（機関の主体）と個人投資家の買い越し／売り越し（億円）の推移です。本物の売買実績のみで、推測は含みません。機関が買い越し・個人が売り越しの局面は「機関が個人から吸い上げている」目安になります。</div>
+    <div id="flow-trend"></div>
+  </div>
+
   <!-- ntfy通知 -->
   <div class="ntfy-section">
     <div class="section-title">プッシュ通知設定（無料・ntfy.sh）</div>
@@ -1742,6 +1748,57 @@ function renderFlow() {
   }).join('');
   el.innerHTML = `<div style="font-size:11px;color:var(--accent2);margin-bottom:8px;font-weight:700">対象週: ${f.week}</div>` + rows
     + `<div style="font-size:10px;color:var(--muted);margin-top:8px">${f.source || ''}</div>`;
+}
+
+// 機関(海外投資家+信託銀行) vs 個人投資家の買い越し/売り越し推移（JPX週次実データの蓄積）
+function renderFlowTrend() {
+  const el = document.getElementById('flow-trend');
+  if (!el) return;
+  const hist = DATA.flowHistory || [];
+  if (hist.length < 2) {
+    el.innerHTML = '<div style="font-size:11px;color:var(--muted)">週次データが2週分以上たまるとトレンドを表示します（データが蓄積中です）</div>';
+    return;
+  }
+  const pick = (flows, label) => {
+    const f = (flows || []).find(x => x.label === label);
+    return f ? f.value : null;
+  };
+  const weeks = hist.map(h => h.week);
+  const inst = hist.map(h => (pick(h.flows, '海外投資家') || 0) + (pick(h.flows, '信託銀行') || 0));
+  const indiv = hist.map(h => pick(h.flows, '個人') || 0);
+
+  const W = 600, H = 160, padL = 44, padR = 10, padT = 10, padB = 20;
+  const allVals = inst.concat(indiv);
+  const maxAbs = Math.max(...allVals.map(Math.abs), 1);
+  const x = i => padL + (i / Math.max(1, weeks.length - 1)) * (W - padL - padR);
+  const y = v => padT + (H - padT - padB) / 2 - (v / maxAbs) * ((H - padT - padB) / 2);
+  const toPts = arr => arr.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(' ');
+  const zeroY = y(0).toFixed(1);
+
+  const lastInst = inst[inst.length - 1], lastIndiv = indiv[indiv.length - 1];
+  const svg = `
+  <svg viewBox="0 0 ${W} ${H}" style="width:100%;height:${H}px">
+    <line x1="${padL}" y1="${zeroY}" x2="${W - padR}" y2="${zeroY}" stroke="var(--border)" stroke-width="1"/>
+    <polyline points="${toPts(inst)}" fill="none" stroke="var(--accent)" stroke-width="2"/>
+    <polyline points="${toPts(indiv)}" fill="none" stroke="#C9A227" stroke-width="2" stroke-dasharray="4 3"/>
+    <text x="${padL}" y="12" font-size="9" fill="var(--muted)">${(maxAbs).toLocaleString()}億円</text>
+    <text x="${padL}" y="${H - padB + 12}" font-size="9" fill="var(--muted)">${weeks[0]}</text>
+    <text x="${W - padR}" y="${H - padB + 12}" font-size="9" fill="var(--muted)" text-anchor="end">${weeks[weeks.length - 1]}</text>
+  </svg>`;
+
+  el.innerHTML = `
+    <div style="display:flex;gap:14px;margin-bottom:6px;font-size:11px">
+      <span><span style="display:inline-block;width:10px;height:2px;background:var(--accent);vertical-align:middle;margin-right:4px"></span>機関（海外投資家＋信託銀行）</span>
+      <span><span style="display:inline-block;width:10px;height:2px;background:#C9A227;vertical-align:middle;margin-right:4px"></span>個人投資家</span>
+    </div>
+    ${svg}
+    <div style="font-size:11px;margin-top:8px;line-height:1.6">
+      直近週: 機関 <b style="color:${lastInst >= 0 ? 'var(--green)' : 'var(--red)'}">${lastInst >= 0 ? '+' : ''}${lastInst.toLocaleString()}億円</b>
+      ／ 個人 <b style="color:${lastIndiv >= 0 ? 'var(--green)' : 'var(--red)'}">${lastIndiv >= 0 ? '+' : ''}${lastIndiv.toLocaleString()}億円</b>
+      ${lastInst > 0 && lastIndiv < 0 ? '<span style="color:var(--muted)">（機関が買い越し・個人が売り越しの局面）</span>' : ''}
+      ${lastInst < 0 && lastIndiv > 0 ? '<span style="color:var(--muted)">（機関が売り越し・個人が買い越しの局面）</span>' : ''}
+    </div>
+    <div style="font-size:10px;color:var(--muted);margin-top:6px">出典: JPX 投資部門別売買状況（週次実データ・蓄積${hist.length}週分）</div>`;
 }
 
 function renderRegime() {
@@ -2790,6 +2847,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderEarningsBoard();
   renderBacktest();
   renderFlow();
+  renderFlowTrend();
   renderAlerts();
   renderThemeTrends();
   renderNews();

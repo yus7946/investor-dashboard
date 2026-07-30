@@ -6,6 +6,8 @@
 取得失敗時は空を返す（架空データは返さない）。
 """
 import io
+import json
+import os
 import re
 
 import pandas as pd
@@ -89,3 +91,35 @@ def fetch_investor_flow() -> dict | None:
         }
     except Exception:
         return None
+
+
+HISTORY_PATH = "output/flow_history.json"
+HISTORY_MAX_WEEKS = 26  # 約6ヶ月分。個人vs海外投資家の綱引きトレンドを見るのに十分な長さ。
+
+
+def update_flow_history(flow: dict | None, path: str = HISTORY_PATH,
+                        max_weeks: int = HISTORY_MAX_WEEKS) -> list[dict]:
+    """今週分のJPXフローを履歴に追記（同じ週は上書き、架空データは追加しない）。
+
+    戻り値は「個人投資家 vs 海外投資家」トレンド表示用に、週の新しい順ではなく古い順で返す。
+    """
+    try:
+        with open(path, encoding="utf-8") as f:
+            history = json.load(f)
+    except Exception:
+        history = []
+
+    if flow and flow.get("week") and flow.get("flows"):
+        history = [h for h in history if h.get("week") != flow["week"]]
+        history.append({"week": flow["week"], "flows": flow["flows"]})
+        # 週ラベル "MM/DD～MM/DD" の開始日でソート（年跨ぎは希少なため簡易ソートで十分）
+        history.sort(key=lambda h: h["week"])
+        history = history[-max_weeks:]
+        try:
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump(history, f, ensure_ascii=False, indent=2)
+        except Exception:
+            pass
+
+    return history

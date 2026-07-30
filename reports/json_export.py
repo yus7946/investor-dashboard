@@ -20,6 +20,7 @@ def export_dashboard_json(
     universe_total: int | None = None,
     low_risk_plan: dict | None = None,
     earnings_board: dict | None = None,
+    flow_history: list[dict] | None = None,
     update_mode: str = "full",
     output_path: str = "output/dashboard_data.json",
 ) -> str:
@@ -75,6 +76,7 @@ def export_dashboard_json(
         "stockMaster": stock_master or [],
         "alerts": alerts,
         "flow": flow,
+        "flowHistory": flow_history or [],
         "themeTrends": theme_trends,
     }
 

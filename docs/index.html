@@ -829,6 +829,12 @@ body::before {
     <div id="flow-bars"></div>
   </div>
 
+  <div class="section-title">機関 vs 個人投資家 トレンド<span style="font-size:9px;font-weight:400;text-transform:none;color:var(--muted);margin-left:4px">JPX週次実データの推移</span></div>
+  <div class="card">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:10px;line-height:1.5">海外投資家・信託銀行（機関の主体）と個人投資家の買い越し／売り越し（億円）の推移です。本物の売買実績のみで、推測は含みません。機関が買い越し・個人が売り越しの局面は「機関が個人から吸い上げている」目安になります。</div>
+    <div id="flow-trend"></div>
+  </div>
+
   <!-- ntfy通知 -->
   <div class="ntfy-section">
     <div class="section-title">プッシュ通知設定（無料・ntfy.sh）</div>
@@ -985,9 +991,9 @@ body::before {
 gsap.registerPlugin(ScrollTrigger);
 
 const DATA = {
-  "updated": "2026年07月30日 17:45",
-  "updatedAtMs": 1785401146573,
-  "updateMode": "light",
+  "updated": "2026年07月30日 23:20",
+  "updatedAtMs": 1785421232228,
+  "updateMode": "full",
   "fetched": 163,
   "universeTotal": 166,
   "lowRiskPlan": {
@@ -1010,14 +1016,6 @@ const DATA = {
   "earningsBoard": {
     "today": [
       {
-        "ticker": "9501.T",
-        "name": "東京電力HD",
-        "date": "2026-07-29",
-        "daysTo": -1,
-        "revGrowthPct": -7.1,
-        "epsGrowthPct": null
-      },
-      {
         "ticker": "2914.T",
         "name": "JT",
         "date": "2026-07-30",
@@ -1032,30 +1030,6 @@ const DATA = {
         "daysTo": 0,
         "revGrowthPct": 0.1,
         "epsGrowthPct": -21.4
-      },
-      {
-        "ticker": "9202.T",
-        "name": "ANAホールディングス",
-        "date": "2026-07-29",
-        "daysTo": -1,
-        "revGrowthPct": 18.4,
-        "epsGrowthPct": 50.3
-      },
-      {
-        "ticker": "6501.T",
-        "name": "日立製作所",
-        "date": "2026-07-29",
-        "daysTo": -1,
-        "revGrowthPct": 11.3,
-        "epsGrowthPct": -10.2
-      },
-      {
-        "ticker": "6301.T",
-        "name": "小松製作所",
-        "date": "2026-07-29",
-        "daysTo": -1,
-        "revGrowthPct": 6.1,
-        "epsGrowthPct": -15.6
       },
       {
         "ticker": "4502.T",
@@ -1082,36 +1056,12 @@ const DATA = {
         "epsGrowthPct": -13.1
       },
       {
-        "ticker": "4507.T",
-        "name": "塩野義製薬",
-        "date": "2026-07-30",
-        "daysTo": 0,
-        "revGrowthPct": 32.8,
-        "epsGrowthPct": 28.1
-      },
-      {
-        "ticker": "8604.T",
-        "name": "野村HD",
-        "date": "2026-07-29",
-        "daysTo": -1,
-        "revGrowthPct": 27.5,
-        "epsGrowthPct": 4.1
-      },
-      {
         "ticker": "9531.T",
         "name": "東京ガス",
         "date": "2026-07-30",
         "daysTo": 0,
         "revGrowthPct": 0.3,
         "epsGrowthPct": 79.9
-      },
-      {
-        "ticker": "9502.T",
-        "name": "中部電力",
-        "date": "2026-07-29",
-        "daysTo": -1,
-        "revGrowthPct": -3.7,
-        "epsGrowthPct": -27.8
       },
       {
         "ticker": "6971.T",
@@ -1138,36 +1088,12 @@ const DATA = {
         "epsGrowthPct": 679.8
       },
       {
-        "ticker": "6857.T",
-        "name": "アドバンテスト",
-        "date": "2026-07-29",
-        "daysTo": -1,
-        "revGrowthPct": 41.2,
-        "epsGrowthPct": 220.6
-      },
-      {
         "ticker": "8035.T",
         "name": "東京エレクトロン",
         "date": "2026-07-30",
         "daysTo": 0,
         "revGrowthPct": 8.6,
         "epsGrowthPct": 50.5
-      },
-      {
-        "ticker": "7735.T",
-        "name": "SCREENホールディングス",
-        "date": "2026-07-28",
-        "daysTo": -2,
-        "revGrowthPct": -10.3,
-        "epsGrowthPct": -37.2
-      },
-      {
-        "ticker": "6526.T",
-        "name": "ソシオネクスト",
-        "date": "2026-07-29",
-        "daysTo": -1,
-        "revGrowthPct": 35.6,
-        "epsGrowthPct": 28.2
       }
     ],
     "soon": [
@@ -1410,6 +1336,14 @@ const DATA = {
         "daysTo": 2,
         "revGrowthPct": 7.1,
         "epsGrowthPct": 24.6
+      },
+      {
+        "ticker": "4507.T",
+        "name": "塩野義製薬",
+        "date": "2026-08-03",
+        "daysTo": 2,
+        "revGrowthPct": 32.8,
+        "epsGrowthPct": 28.1
       },
       {
         "ticker": "8058.T",
@@ -1759,13 +1693,13 @@ const DATA = {
     "source": "TOPIX連動ETF(1306.T)終値と200日移動平均から判定"
   },
   "marketOutlook": {
-    "spxChangePct": -1.52,
-    "spxDate": "2026-07-29",
-    "usdjpy": 163.61,
-    "usdjpyChangePct": -0.16,
-    "condition": "米S&P500が直近下落",
-    "topixUpRate": 42.2,
-    "n": 206,
+    "spxChangePct": 1.17,
+    "spxDate": "2026-07-30",
+    "usdjpy": 158.23,
+    "usdjpyChangePct": -3.44,
+    "condition": "米S&P500が直近上昇",
+    "topixUpRate": 63.9,
+    "n": 280,
     "regime": "bull",
     "basis": "過去2年で「米国市場が上昇/下落した翌営業日に東京(TOPIX ETF)が上昇した割合」を実際に集計。統計的傾向であり将来を保証しません。出典: Yahoo Finance価格データ。"
   },
@@ -1786,13 +1720,13 @@ const DATA = {
     "note": "予測と実際の答え合わせを毎営業日ぶん蓄積した実績です。件数が増えるほど信頼度が上がります。将来を保証するものではありません。"
   },
   "backtest": {
-    "annual": "+18.8%",
-    "benchmark": "+28.2%",
-    "sharpe": "0.46",
-    "dd": "-33.7%",
+    "annual": "+19.2%",
+    "benchmark": "+28.7%",
+    "sharpe": "0.47",
+    "dd": "-33.1%",
     "winrate": "60.9%",
     "months": "23ヶ月",
-    "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+28.2%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
+    "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+28.7%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
   },
   "stocks": [
     {
@@ -1832,7 +1766,7 @@ const DATA = {
       ],
       "dividend_yield": 0.0,
       "volatility": 0.4299,
-      "short_ratio": 3.59,
+      "short_ratio": 2.1,
       "regime_adjusted": false,
       "forecast": {
         "price": 355.0,
@@ -1863,7 +1797,7 @@ const DATA = {
             "dir": "-"
           },
           {
-            "label": "空売り残高3.59%（売り圧力・踏み上げ両方の要因）",
+            "label": "空売り残高2.1%（売り圧力・踏み上げ両方の要因）",
             "dir": "-"
           }
         ],
@@ -1895,11 +1829,11 @@ const DATA = {
         "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
-        "safety": 35,
+        "safety": 39,
         "level": "高",
         "penalties": [
           "買われすぎ（RSI78）→ 反落で損切りに当たりやすい",
-          "空売り残高3.59%（急変動リスク）",
+          "空売り残高2.1%（急変動リスク）",
           "決算が至近（あと2営業日）→ 窓リスク大・またぎ回避推奨"
         ],
         "supports": [
@@ -1967,7 +1901,7 @@ const DATA = {
       ],
       "dividend_yield": 4.5,
       "volatility": 0.4055,
-      "short_ratio": 1.2,
+      "short_ratio": 1.9,
       "regime_adjusted": false,
       "forecast": {
         "price": 1220.5,
@@ -2050,10 +1984,10 @@ const DATA = {
       "yutai": null,
       "news": [
         {
-          "title": "マツダ、タダノなど／新聞からの銘柄材料一覧(フィスコ)",
+          "title": "マツダ、6月の国内生産は前年比17．0％増＝26年上半期は11．3％増(時事通信)",
           "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOWGtBczRtRW8xZzR0cWllcGkxdG52aGNNTVhMd0pub0JZUTVtOFlpaTF4Xzcwbkc2SzNxSzB6ejkzbWdDVlNnZkJpUktKazBBVUxraklmc1lsZlBTbHJCZGlmWjZheW1kOWJMek9oSlJDVTZ6R29URGYxR2ctdTRmVm9pLWJUb1k?oc=5",
-          "pubDate": "Wed, 29 Jul 2026 23:28:37 GMT",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNd0Z6c015SlVtbDlyYThyYkpncFFibE1iZUZtd05uRWlEZVg1ME5UMFl6Q3AtYnFOWU43SkdBQ2dlMUlROXdvbTZJUXJDTF9YWUxIMDVlek5DYnNVTUI0WjhPS3lvcmQyNVFVM28wNm51d2FsSWRyNEZiNWNOY2Y5cXFGdnplYk0?oc=5",
+          "pubDate": "Thu, 30 Jul 2026 08:03:00 GMT",
           "sentiment": "neu",
           "theme": "その他"
         }
@@ -2095,7 +2029,7 @@ const DATA = {
       ],
       "dividend_yield": 0.0,
       "volatility": 0.5143,
-      "short_ratio": 1.62,
+      "short_ratio": 1.94,
       "regime_adjusted": false,
       "forecast": {
         "price": 524.0,
@@ -2154,11 +2088,10 @@ const DATA = {
         "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
-        "safety": 41,
-        "level": "高",
+        "safety": 66,
+        "level": "中",
         "penalties": [
-          "値動きが大きい（年率51%）→ 建玉は小さめに",
-          "決算が至近（あと-1営業日）→ 窓リスク大・またぎ回避推奨"
+          "値動きが大きい（年率51%）→ 建玉は小さめに"
         ],
         "supports": [
           "機関の買い集め兆候"
@@ -2167,11 +2100,11 @@ const DATA = {
         "rr": 1.37
       },
       "earnings": {
-        "date": "2026-07-29",
-        "daysTo": -1,
+        "date": "2026-10-29",
+        "daysTo": 65,
         "isToday": false,
-        "isSoon": true,
-        "passed": true,
+        "isSoon": false,
+        "passed": false,
         "revGrowthPct": -7.1,
         "epsGrowthPct": null,
         "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
@@ -2182,7 +2115,7 @@ const DATA = {
           "title": "東京電力ホールディングス(株)【9501】：今の株価の理由は？値動きの背景をAIが解説",
           "source": "Yahoo!ファイナンス",
           "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1TeEloR3d0c1dTUFZfODhnbWtmM0JraUxPb2hCQUlhSGE3Z0xkVllmQTR1ZXotYWV5eXg5NGFSRGlaakJYMHBJQUNST1lRb09NWUpBMk91WW43MVRUTzZJ?oc=5",
-          "pubDate": "Wed, 29 Jul 2026 06:53:33 GMT",
+          "pubDate": "Thu, 30 Jul 2026 02:53:39 GMT",
           "sentiment": "neu",
           "theme": "AI"
         }
@@ -2225,7 +2158,7 @@ const DATA = {
       ],
       "dividend_yield": 3.6,
       "volatility": 0.2748,
-      "short_ratio": 0.75,
+      "short_ratio": 1.36,
       "regime_adjusted": false,
       "forecast": {
         "price": 660.0,
@@ -2311,8 +2244,8 @@ const DATA = {
         {
           "title": "日本製鉄(株)【5401】：今の株価の理由は？値動きの背景をAIが解説",
           "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9CVmx5TUl6TGxMX0lYTnVadHZ1b256QUpCY1ctQWx5ZFFaOEtGZ0ZkV0FuYlFvM3hDVF91b0J6Tk9kOFZNSVpPSWxBTUNkOUN0S1Y3TmszM2dNMmVHU2xB?oc=5",
-          "pubDate": "Wed, 29 Jul 2026 06:53:15 GMT",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBacjZQcWtoaGdTaTZ3M1BOYldUdU5zWnhHb3pYVWVxcDNTQndrdHRndVYyZ0QzTnIwdEpoWFZIeXlHZDAwenNFWEJrZldFUF96b1VaN3VQc2lGeXZBdEVV?oc=5",
+          "pubDate": "Thu, 30 Jul 2026 02:53:20 GMT",
           "sentiment": "neu",
           "theme": "AI"
         }
@@ -2355,7 +2288,7 @@ const DATA = {
       ],
       "dividend_yield": 4.2,
       "volatility": 0.3527,
-      "short_ratio": 1.26,
+      "short_ratio": null,
       "regime_adjusted": false,
       "forecast": {
         "price": 2861.5,
@@ -2436,8 +2369,8 @@ const DATA = {
         {
           "title": "川崎汽船(株)【9107】：今の株価の理由は？値動きの背景をAIが解説",
           "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1lMld0VXRUR1o2ZzFCZGxkWjlMa1FjN3pKd01QQ1FCLXI2MGF5UVExNmM0emswOTR6aFl6T3BqVXRTaXNYcUZwOXhTU21hTVUwOUpVZGtOa2lVWjFxTDNr?oc=5",
-          "pubDate": "Tue, 28 Jul 2026 06:56:59 GMT",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE43ZzMwY21hcGZQU3dxUkpaQ2Jwcy1vMS1rLWpoNXhEN29ia3VaUmNfRkVCdkdzODU2RFBic2VaM1FXeUlZdWJUOTdjcUpuY0lIU2Y0VmVidDZ3aFdTd2pn?oc=5",
+          "pubDate": "Thu, 30 Jul 2026 06:57:02 GMT",
           "sentiment": "neu",
           "theme": "AI"
         }
@@ -2479,7 +2412,7 @@ const DATA = {
       ],
       "dividend_yield": 3.3,
       "volatility": 0.2984,
-      "short_ratio": 0.87,
+      "short_ratio": null,
       "regime_adjusted": false,
       "forecast": {
         "price": 6101.0,
@@ -2560,8 +2493,8 @@ const DATA = {
         {
           "title": "日本郵船(株)【9101】：今の株価の理由は？値動きの背景をAIが解説",
           "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1OX1F5eENWM3cyWnBjNDdycy1EaC14QmpOeHJlMUhMcVpNRHNQdjBFbXF6dFNZUFBabHB3UVJqWjQxZ1I1R3JheUdqUVV3YS1HOVk1NWt6cU9LRUcyTEs4?oc=5",
-          "pubDate": "Tue, 28 Jul 2026 06:56:22 GMT",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBBWG9vVVE5UDVYOXZrc1FuSkR3cm91WmlSdmJncDlRdFRoMWtJYkNaLWIxWHdfUnhHVERBTDE2WUhqM0pseUZLY01IVk1UMHVkaVBvclpqRWxNaTN5UUdF?oc=5",
+          "pubDate": "Thu, 30 Jul 2026 02:56:39 GMT",
           "sentiment": "neu",
           "theme": "AI"
         }
@@ -2684,7 +2617,7 @@ const DATA = {
           "title": "(株)商船三井【9104】：今の株価の理由は？値動きの背景をAIが解説",
           "source": "Yahoo!ファイナンス",
           "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE03MWhtY3RlZ0tsbGhkZ2MtMThWcGNGTkRRY2RGYnlyREZHbUg5cnVLVVczeVhxRlpTVHpjUjduUm1xNFNBWElSZlZ0NnBES3YxbUZOejdKb1QtTHYxd2sw?oc=5",
-          "pubDate": "Wed, 29 Jul 2026 06:54:58 GMT",
+          "pubDate": "Thu, 30 Jul 2026 02:54:55 GMT",
           "sentiment": "neu",
           "theme": "AI"
         }
@@ -2755,6 +2688,10 @@ const DATA = {
           {
             "label": "RSI 73.0（買われすぎ圏・反落しやすい傾向）",
             "dir": "-"
+          },
+          {
+            "label": "直近ニュースがポジティブ寄り（1件/簡易判定）",
+            "dir": "+"
           }
         ],
         "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.78倍に自動補正済み。目標カバー率は約75%）"
@@ -2794,7 +2731,16 @@ const DATA = {
         "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
       },
       "yutai": null,
-      "news": []
+      "news": [
+        {
+          "title": "日本プライムリアルティ投資法人【8955】：企業情報（決算時期や平均年収、代表者名など）",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9oN3JuX2Y5R3hYYmdfMUJaYm1BVHA2bUowQlZxR0gxMUNGOGJaX3Vrcl82WU9MR0dMNUNFeHpWOXp6Y1BqaHRlUWh1QlA4WENaUnhPLXFpRkRPaUNQ?oc=5",
+          "pubDate": "Fri, 17 Jul 2026 07:00:00 GMT",
+          "sentiment": "pos",
+          "theme": "その他"
+        }
+      ]
     },
     {
       "rank": 9,
@@ -2947,7 +2893,7 @@ const DATA = {
       "strategy": [
         "swing"
       ],
-      "dividend_yield": 0.0,
+      "dividend_yield": 0.8,
       "volatility": 0.3069,
       "short_ratio": null,
       "regime_adjusted": false,
@@ -3036,7 +2982,7 @@ const DATA = {
           "title": "東海旅客鉄道(株)【9022】：今の株価の理由は？値動きの背景をAIが解説",
           "source": "Yahoo!ファイナンス",
           "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE0tNDlhbS1OSk9QWFRta05Fc3g4QUxCTTJTMVJUc2l6YlFoQWRYMHJjMkpfdm5mTWoxOEZuOGRRczhBaVdKMGR4MWNwY0R6cGM3Y1puSFNLRFFsbWJkanRz?oc=5",
-          "pubDate": "Wed, 29 Jul 2026 06:59:52 GMT",
+          "pubDate": "Thu, 30 Jul 2026 07:01:23 GMT",
           "sentiment": "neu",
           "theme": "AI"
         }
@@ -3048,9 +2994,9 @@ const DATA = {
       "code": "6861.T",
       "name": "キーエンス",
       "price": 78970.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 550.0,
+      "exDivDate": "2026-09-17",
+      "dividendYield": 0.71,
       "per": 42.9,
       "pbr": 5.4,
       "roe": null,
@@ -3063,9 +3009,9 @@ const DATA = {
       "code": "7203.T",
       "name": "トヨタ自動車",
       "price": 3126.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 100.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 3.1,
       "per": 10.6,
       "pbr": 1.02,
       "roe": 10.2,
@@ -3078,9 +3024,9 @@ const DATA = {
       "code": "6758.T",
       "name": "ソニーグループ",
       "price": 3809.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 35.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 0.92,
       "per": 22.2,
       "pbr": 2.77,
       "roe": 12.3,
@@ -3123,9 +3069,9 @@ const DATA = {
       "code": "8035.T",
       "name": "東京エレクトロン",
       "price": 52240.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 722.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.44,
       "per": 41.8,
       "pbr": 11.48,
       "roe": 29.3,
@@ -3168,9 +3114,9 @@ const DATA = {
       "code": "5108.T",
       "name": "ブリヂストン",
       "price": 4050.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 130.0,
+      "exDivDate": "2026-12-29",
+      "dividendYield": 3.16,
       "per": 34.0,
       "pbr": 1.39,
       "roe": 9.3,
@@ -3228,9 +3174,9 @@ const DATA = {
       "code": "6920.T",
       "name": "レーザーテック",
       "price": 33620.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 329.0,
+      "exDivDate": "2026-06-29",
+      "dividendYield": 0.96,
       "per": 34.9,
       "pbr": 13.36,
       "roe": 44.1,
@@ -3333,9 +3279,9 @@ const DATA = {
       "code": "6752.T",
       "name": "パナソニックHD",
       "price": 3584.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 54.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.54,
       "per": 44.2,
       "pbr": 1.61,
       "roe": 4.1,
@@ -3348,9 +3294,9 @@ const DATA = {
       "code": "6770.T",
       "name": "アルプスアルパイン",
       "price": 2242.5,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 64.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 2.88,
       "per": 16.6,
       "pbr": 0.98,
       "roe": 6.3,
@@ -3378,9 +3324,9 @@ const DATA = {
       "code": "6146.T",
       "name": "ディスコ",
       "price": 51870.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 547.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.07,
       "per": 41.6,
       "pbr": 9.66,
       "roe": 27.4,
@@ -3393,9 +3339,9 @@ const DATA = {
       "code": "4452.T",
       "name": "花王",
       "price": 3384.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 78.0,
+      "exDivDate": "2026-12-29",
+      "dividendYield": 2.28,
       "per": 29.2,
       "pbr": 2.85,
       "roe": 11.9,
@@ -3513,9 +3459,9 @@ const DATA = {
       "code": "8750.T",
       "name": "第一生命HD",
       "price": 1898.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 72.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 3.72,
       "per": 15.7,
       "pbr": 1.61,
       "roe": 11.3,
@@ -3573,9 +3519,9 @@ const DATA = {
       "code": "9984.T",
       "name": "ソフトバンクG",
       "price": 4622.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 11.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 0.23,
       "per": 5.3,
       "pbr": 1.49,
       "roe": 32.7,
@@ -3618,9 +3564,9 @@ const DATA = {
       "code": "9434.T",
       "name": "ソフトバンク",
       "price": 232.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 8.8,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 3.73,
       "per": 20.6,
       "pbr": 3.75,
       "roe": 16.3,
@@ -3648,9 +3594,9 @@ const DATA = {
       "code": "4307.T",
       "name": "野村総合研究所",
       "price": 5576.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 84.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.53,
       "per": 211.5,
       "pbr": 7.38,
       "roe": 3.6,
@@ -3693,9 +3639,9 @@ const DATA = {
       "code": "3659.T",
       "name": "ネクソン",
       "price": 2603.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 60.0,
+      "exDivDate": "2026-12-29",
+      "dividendYield": 2.32,
       "per": 22.8,
       "pbr": 1.94,
       "roe": 11.6,
@@ -3738,9 +3684,9 @@ const DATA = {
       "code": "4502.T",
       "name": "武田薬品工業",
       "price": 5718.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 204.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 3.49,
       "per": null,
       "pbr": 1.22,
       "roe": -2.1,
@@ -3843,9 +3789,9 @@ const DATA = {
       "code": "8031.T",
       "name": "三井物産",
       "price": 4920.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 140.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 2.85,
       "per": 16.9,
       "pbr": 1.59,
       "roe": 10.3,
@@ -3873,9 +3819,9 @@ const DATA = {
       "code": "8002.T",
       "name": "丸紅",
       "price": 5196.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 115.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 2.21,
       "per": 15.7,
       "pbr": 1.95,
       "roe": 13.5,
@@ -3888,9 +3834,9 @@ const DATA = {
       "code": "8053.T",
       "name": "住友商事",
       "price": 1592.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 40.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 2.5,
       "per": 12.8,
       "pbr": 1.64,
       "roe": 13.5,
@@ -3903,9 +3849,9 @@ const DATA = {
       "code": "8015.T",
       "name": "豊田通商",
       "price": 6625.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 125.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.9,
       "per": 18.9,
       "pbr": 2.22,
       "roe": 13.2,
@@ -3933,9 +3879,9 @@ const DATA = {
       "code": "8802.T",
       "name": "三菱地所",
       "price": 4081.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 50.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.22,
       "per": 22.5,
       "pbr": 1.83,
       "roe": 8.4,
@@ -3948,9 +3894,9 @@ const DATA = {
       "code": "8830.T",
       "name": "住友不動産",
       "price": 3703.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 52.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.39,
       "per": 16.2,
       "pbr": 1.38,
       "roe": 9.2,
@@ -3963,9 +3909,9 @@ const DATA = {
       "code": "3003.T",
       "name": "ヒューリック",
       "price": 1829.5,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 67.0,
+      "exDivDate": "2026-12-29",
+      "dividendYield": 3.51,
       "per": 11.6,
       "pbr": 1.47,
       "roe": 13.1,
@@ -4040,10 +3986,10 @@ const DATA = {
       "price": 2706.0,
       "divPerShare": 70.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 2.44,
+      "dividendYield": 2.49,
       "per": 9.0,
       "pbr": 0.65,
-      "roe": 7.7,
+      "roe": 6.0,
       "rsi": 24.4,
       "vol": 0.3449,
       "inTop": false,
@@ -4053,9 +3999,9 @@ const DATA = {
       "code": "9503.T",
       "name": "関西電力",
       "price": 2450.5,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 80.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 3.25,
       "per": 7.2,
       "pbr": 0.79,
       "roe": 11.6,
@@ -4203,9 +4149,9 @@ const DATA = {
       "code": "2502.T",
       "name": "アサヒグループHD",
       "price": 1749.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 62.0,
+      "exDivDate": "2026-12-29",
+      "dividendYield": 3.49,
       "per": 21.5,
       "pbr": 0.85,
       "roe": 4.3,
@@ -4233,9 +4179,9 @@ const DATA = {
       "code": "2802.T",
       "name": "味の素",
       "price": 4839.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 50.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.03,
       "per": 35.0,
       "pbr": 6.02,
       "roe": 17.5,
@@ -4263,9 +4209,9 @@ const DATA = {
       "code": "2269.T",
       "name": "明治HD",
       "price": 3948.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 110.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 2.77,
       "per": 30.5,
       "pbr": 1.39,
       "roe": 4.8,
@@ -4293,9 +4239,9 @@ const DATA = {
       "code": "8267.T",
       "name": "イオン",
       "price": 1423.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 14.0,
+      "exDivDate": "2026-08-28",
+      "dividendYield": 0.97,
       "per": 52.9,
       "pbr": 3.25,
       "roe": 7.2,
@@ -4428,9 +4374,9 @@ const DATA = {
       "code": "3436.T",
       "name": "SUMCO",
       "price": 2856.5,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 20.0,
+      "exDivDate": "2026-06-29",
+      "dividendYield": 0.68,
       "per": null,
       "pbr": 1.75,
       "roe": -3.5,
@@ -4503,9 +4449,9 @@ const DATA = {
       "code": "4493.T",
       "name": "サイバーセキュリティクラウド",
       "price": 1785.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 6.0,
+      "exDivDate": "2026-12-29",
+      "dividendYield": 0.34,
       "per": 21.9,
       "pbr": 3.94,
       "roe": 22.1,
@@ -4563,9 +4509,9 @@ const DATA = {
       "code": "3923.T",
       "name": "ラクス",
       "price": 1084.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 8.0,
+      "exDivDate": "2027-03-30",
+      "dividendYield": 0.72,
       "per": 29.4,
       "pbr": 14.74,
       "roe": 55.4,
@@ -4578,9 +4524,9 @@ const DATA = {
       "code": "4443.T",
       "name": "Sansan",
       "price": 2014.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 5.0,
+      "exDivDate": "2026-11-27",
+      "dividendYield": 0.24,
       "per": 124.3,
       "pbr": 12.09,
       "roe": 36.5,
@@ -4773,9 +4719,9 @@ const DATA = {
       "code": "3696.T",
       "name": "セレス",
       "price": 2173.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 180.0,
+      "exDivDate": "2026-12-29",
+      "dividendYield": 8.4,
       "per": 10.0,
       "pbr": 1.9,
       "roe": 14.0,
@@ -4848,9 +4794,9 @@ const DATA = {
       "code": "6273.T",
       "name": "SMC",
       "price": 66160.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 1000.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.54,
       "per": 25.0,
       "pbr": 1.97,
       "roe": 8.3,
@@ -4863,9 +4809,9 @@ const DATA = {
       "code": "6594.T",
       "name": "ニデック",
       "price": 2480.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 40.0,
+      "exDivDate": "2026-03-30",
+      "dividendYield": 1.92,
       "per": 23.7,
       "pbr": 1.62,
       "roe": 6.3,
@@ -4893,12 +4839,12 @@ const DATA = {
       "code": "8697.T",
       "name": "日本取引所グループ",
       "price": 2164.0,
-      "divPerShare": 61.0,
+      "divPerShare": 78.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 2.67,
+      "dividendYield": 3.41,
       "per": 36.9,
       "pbr": 6.45,
-      "roe": 23.0,
+      "roe": null,
       "rsi": 52.8,
       "vol": 0.4095,
       "inTop": false,
@@ -4923,9 +4869,9 @@ const DATA = {
       "code": "9022.T",
       "name": "JR東海",
       "price": 4174.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 32.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 0.75,
       "per": 7.3,
       "pbr": 0.79,
       "roe": 11.5,
@@ -4968,9 +4914,9 @@ const DATA = {
       "code": "7269.T",
       "name": "スズキ",
       "price": 2153.5,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 52.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 2.42,
       "per": 9.5,
       "pbr": 1.23,
       "roe": 13.9,
@@ -5028,9 +4974,9 @@ const DATA = {
       "code": "6503.T",
       "name": "三菱電機",
       "price": 5318.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 60.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.16,
       "per": 26.8,
       "pbr": 2.43,
       "roe": 10.0,
@@ -5043,9 +4989,9 @@ const DATA = {
       "code": "5802.T",
       "name": "住友電気工業",
       "price": 2109.5,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 39.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.88,
       "per": 17.8,
       "pbr": 2.4,
       "roe": 15.0,
@@ -5058,9 +5004,9 @@ const DATA = {
       "code": "4901.T",
       "name": "富士フイルムHD",
       "price": 3831.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 75.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.94,
       "per": 16.7,
       "pbr": 1.2,
       "roe": 7.7,
@@ -5103,9 +5049,9 @@ const DATA = {
       "code": "6178.T",
       "name": "日本郵政",
       "price": 2419.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 60.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 2.42,
       "per": 18.7,
       "pbr": 0.7,
       "roe": 4.7,
@@ -5118,9 +5064,9 @@ const DATA = {
       "code": "2801.T",
       "name": "キッコーマン",
       "price": 1719.5,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 25.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.43,
       "per": 26.0,
       "pbr": 2.84,
       "roe": 11.5,
@@ -5193,9 +5139,9 @@ const DATA = {
       "code": "4689.T",
       "name": "LINEヤフー",
       "price": 458.4,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 11.0,
+      "exDivDate": "2027-03-30",
+      "dividendYield": 2.33,
       "per": 16.5,
       "pbr": 1.05,
       "roe": 7.9,
@@ -5223,9 +5169,9 @@ const DATA = {
       "code": "8252.T",
       "name": "丸井グループ",
       "price": 3039.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 134.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 4.33,
       "per": 19.2,
       "pbr": 2.24,
       "roe": 11.7,
@@ -5253,9 +5199,9 @@ const DATA = {
       "code": "2670.T",
       "name": "ABCマート",
       "price": 2819.5,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 80.0,
+      "exDivDate": "2026-08-28",
+      "dividendYield": 2.81,
       "per": 15.1,
       "pbr": 1.74,
       "roe": 12.4,
@@ -5269,7 +5215,7 @@ const DATA = {
       "name": "電通グループ",
       "price": 3763.0,
       "divPerShare": null,
-      "exDivDate": null,
+      "exDivDate": "2025-12-29",
       "dividendYield": null,
       "per": null,
       "pbr": 2.34,
@@ -5283,9 +5229,9 @@ const DATA = {
       "code": "2413.T",
       "name": "エムスリー",
       "price": 1931.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 22.0,
+      "exDivDate": "2026-03-30",
+      "dividendYield": 1.11,
       "per": 26.7,
       "pbr": 3.16,
       "roe": 12.6,
@@ -5298,9 +5244,9 @@ const DATA = {
       "code": "3791.T",
       "name": "IGポート",
       "price": 1057.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 13.0,
+      "exDivDate": "2027-05-28",
+      "dividendYield": 1.25,
       "per": 31.8,
       "pbr": 2.14,
       "roe": 7.5,
@@ -5373,9 +5319,9 @@ const DATA = {
       "code": "9602.T",
       "name": "東宝",
       "price": 1581.5,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 22.0,
+      "exDivDate": "2026-08-28",
+      "dividendYield": 1.38,
       "per": 25.8,
       "pbr": 2.62,
       "roe": 9.7,
@@ -5403,9 +5349,9 @@ const DATA = {
       "code": "2432.T",
       "name": "ディー・エヌ・エー",
       "price": 2507.5,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 66.0,
+      "exDivDate": "2026-03-30",
+      "dividendYield": 2.59,
       "per": 14.7,
       "pbr": 1.16,
       "roe": 7.5,
@@ -5448,9 +5394,9 @@ const DATA = {
       "code": "9401.T",
       "name": "TBSホールディングス",
       "price": 6214.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 100.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.57,
       "per": 18.8,
       "pbr": 0.86,
       "roe": 5.1,
@@ -5463,9 +5409,9 @@ const DATA = {
       "code": "9404.T",
       "name": "日本テレビホールディングス",
       "price": 3004.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 45.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 1.47,
       "per": 13.3,
       "pbr": 0.75,
       "roe": 6.1,
@@ -5478,9 +5424,9 @@ const DATA = {
       "code": "1928.T",
       "name": "積水ハウス",
       "price": 3587.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 146.0,
+      "exDivDate": "2026-07-30",
+      "dividendYield": 3.89,
       "per": 9.0,
       "pbr": 1.08,
       "roe": 12.6,
@@ -5493,9 +5439,9 @@ const DATA = {
       "code": "1925.T",
       "name": "大和ハウス工業",
       "price": 4832.0,
-      "divPerShare": null,
-      "exDivDate": null,
-      "dividendYield": null,
+      "divPerShare": 131.0,
+      "exDivDate": "2026-09-29",
+      "dividendYield": 2.67,
       "per": 8.5,
       "pbr": 1.03,
       "roe": 12.5,
@@ -5544,17 +5490,17 @@ const DATA = {
     {
       "type": "info",
       "title": "空売り残高: マネーフォワード (3994)",
-      "desc": "開示合計9.57%・前回比減少中（3件・出典JPX 07/29時点）"
-    },
-    {
-      "type": "info",
-      "title": "空売り残高: ディー・エヌ・エー (2432)",
-      "desc": "開示合計8.03%・前回比減少中（5件・出典JPX 07/29時点）"
+      "desc": "開示合計10.81%・前回比減少中（4件・出典JPX 07/30時点）"
     },
     {
       "type": "info",
       "title": "空売り残高: セレス (3696)",
-      "desc": "開示合計6.45%・前回比横ばい（3件・出典JPX 07/29時点）"
+      "desc": "開示合計8.11%・前回比横ばい（3件・出典JPX 07/30時点）"
+    },
+    {
+      "type": "info",
+      "title": "空売り残高: ディー・エヌ・エー (2432)",
+      "desc": "開示合計5.99%・前回比減少中（4件・出典JPX 07/30時点）"
     },
     {
       "type": "good",
@@ -5593,27 +5539,50 @@ const DATA = {
     }
   ],
   "flow": {
-    "week": "07/13～07/17",
+    "week": "07/21～07/24",
     "flows": [
       {
         "label": "海外投資家",
-        "value": -2587
+        "value": 3738
       },
       {
         "label": "個人",
-        "value": 3729
+        "value": -4874
       },
       {
         "label": "信託銀行",
-        "value": 617
+        "value": 1959
       },
       {
         "label": "投資信託",
-        "value": -757
+        "value": 384
       }
     ],
     "source": "JPX 投資部門別売買状況（東証プライム・週次・金額ベース）"
   },
+  "flowHistory": [
+    {
+      "week": "07/21～07/24",
+      "flows": [
+        {
+          "label": "海外投資家",
+          "value": 3738
+        },
+        {
+          "label": "個人",
+          "value": -4874
+        },
+        {
+          "label": "信託銀行",
+          "value": 1959
+        },
+        {
+          "label": "投資信託",
+          "value": 384
+        }
+      ]
+    }
+  ],
   "themeTrends": [
     {
       "theme": "AI",
@@ -5625,7 +5594,7 @@ const DATA = {
     {
       "theme": "その他",
       "mentions": 3,
-      "pos": 1,
+      "pos": 2,
       "neg": 0,
       "prevMentions": 3
     },
@@ -6340,6 +6309,57 @@ function renderFlow() {
   }).join('');
   el.innerHTML = `<div style="font-size:11px;color:var(--accent2);margin-bottom:8px;font-weight:700">対象週: ${f.week}</div>` + rows
     + `<div style="font-size:10px;color:var(--muted);margin-top:8px">${f.source || ''}</div>`;
+}
+
+// 機関(海外投資家+信託銀行) vs 個人投資家の買い越し/売り越し推移（JPX週次実データの蓄積）
+function renderFlowTrend() {
+  const el = document.getElementById('flow-trend');
+  if (!el) return;
+  const hist = DATA.flowHistory || [];
+  if (hist.length < 2) {
+    el.innerHTML = '<div style="font-size:11px;color:var(--muted)">週次データが2週分以上たまるとトレンドを表示します（データが蓄積中です）</div>';
+    return;
+  }
+  const pick = (flows, label) => {
+    const f = (flows || []).find(x => x.label === label);
+    return f ? f.value : null;
+  };
+  const weeks = hist.map(h => h.week);
+  const inst = hist.map(h => (pick(h.flows, '海外投資家') || 0) + (pick(h.flows, '信託銀行') || 0));
+  const indiv = hist.map(h => pick(h.flows, '個人') || 0);
+
+  const W = 600, H = 160, padL = 44, padR = 10, padT = 10, padB = 20;
+  const allVals = inst.concat(indiv);
+  const maxAbs = Math.max(...allVals.map(Math.abs), 1);
+  const x = i => padL + (i / Math.max(1, weeks.length - 1)) * (W - padL - padR);
+  const y = v => padT + (H - padT - padB) / 2 - (v / maxAbs) * ((H - padT - padB) / 2);
+  const toPts = arr => arr.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(' ');
+  const zeroY = y(0).toFixed(1);
+
+  const lastInst = inst[inst.length - 1], lastIndiv = indiv[indiv.length - 1];
+  const svg = `
+  <svg viewBox="0 0 ${W} ${H}" style="width:100%;height:${H}px">
+    <line x1="${padL}" y1="${zeroY}" x2="${W - padR}" y2="${zeroY}" stroke="var(--border)" stroke-width="1"/>
+    <polyline points="${toPts(inst)}" fill="none" stroke="var(--accent)" stroke-width="2"/>
+    <polyline points="${toPts(indiv)}" fill="none" stroke="#C9A227" stroke-width="2" stroke-dasharray="4 3"/>
+    <text x="${padL}" y="12" font-size="9" fill="var(--muted)">${(maxAbs).toLocaleString()}億円</text>
+    <text x="${padL}" y="${H - padB + 12}" font-size="9" fill="var(--muted)">${weeks[0]}</text>
+    <text x="${W - padR}" y="${H - padB + 12}" font-size="9" fill="var(--muted)" text-anchor="end">${weeks[weeks.length - 1]}</text>
+  </svg>`;
+
+  el.innerHTML = `
+    <div style="display:flex;gap:14px;margin-bottom:6px;font-size:11px">
+      <span><span style="display:inline-block;width:10px;height:2px;background:var(--accent);vertical-align:middle;margin-right:4px"></span>機関（海外投資家＋信託銀行）</span>
+      <span><span style="display:inline-block;width:10px;height:2px;background:#C9A227;vertical-align:middle;margin-right:4px"></span>個人投資家</span>
+    </div>
+    ${svg}
+    <div style="font-size:11px;margin-top:8px;line-height:1.6">
+      直近週: 機関 <b style="color:${lastInst >= 0 ? 'var(--green)' : 'var(--red)'}">${lastInst >= 0 ? '+' : ''}${lastInst.toLocaleString()}億円</b>
+      ／ 個人 <b style="color:${lastIndiv >= 0 ? 'var(--green)' : 'var(--red)'}">${lastIndiv >= 0 ? '+' : ''}${lastIndiv.toLocaleString()}億円</b>
+      ${lastInst > 0 && lastIndiv < 0 ? '<span style="color:var(--muted)">（機関が買い越し・個人が売り越しの局面）</span>' : ''}
+      ${lastInst < 0 && lastIndiv > 0 ? '<span style="color:var(--muted)">（機関が売り越し・個人が買い越しの局面）</span>' : ''}
+    </div>
+    <div style="font-size:10px;color:var(--muted);margin-top:6px">出典: JPX 投資部門別売買状況（週次実データ・蓄積${hist.length}週分）</div>`;
 }
 
 function renderRegime() {
@@ -7388,6 +7408,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderEarningsBoard();
   renderBacktest();
   renderFlow();
+  renderFlowTrend();
   renderAlerts();
   renderThemeTrends();
   renderNews();
