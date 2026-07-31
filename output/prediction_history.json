@@ -2729,6 +2729,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-30",
+      "ticker": "2914.T",
+      "name": "JT",
+      "basePrice": 7135.0,
+      "rangeLow": 7043,
+      "rangeHigh": 7227,
+      "predUpRate": 60.5,
+      "condN": 81,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -3870,6 +3885,18 @@
       "entry": 1905,
       "target": 1977,
       "stop": 1851,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-07-30",
+      "ticker": "9501.T",
+      "name": "東京電力HD",
+      "basePrice": 520.0,
+      "entry": 513,
+      "target": 539,
+      "stop": 493,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
