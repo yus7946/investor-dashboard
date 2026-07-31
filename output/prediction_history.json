@@ -2684,6 +2684,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-30",
+      "ticker": "9022.T",
+      "name": "JR東海",
+      "basePrice": 4000.0,
+      "rangeLow": 3945,
+      "rangeHigh": 4055,
+      "predUpRate": 49.4,
+      "condN": 158,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-30",
+      "ticker": "3923.T",
+      "name": "ラクス",
+      "basePrice": 1072.0,
+      "rangeLow": 1048,
+      "rangeHigh": 1096,
+      "predUpRate": 47.1,
+      "condN": 172,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -3801,6 +3831,18 @@
       "entry": 1171,
       "target": 1222,
       "stop": 1133,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-07-30",
+      "ticker": "3923.T",
+      "name": "ラクス",
+      "basePrice": 1072.0,
+      "entry": 1060,
+      "target": 1108,
+      "stop": 1024,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
