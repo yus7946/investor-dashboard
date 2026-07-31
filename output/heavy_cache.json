@@ -152,12 +152,32 @@
  "news_by_ticker": {
   "7201.T": [
    {
-    "title": "【アナリスト予想】日産自動車、27年3月期経常予想。対前週0.1%下降。(アイフィス株予報)",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxONlJYbGh0cHhGQ05HQlNaUW9xRDFySmZ5R2tncS1rVzlGajNxc2M3MVBiUVFsRFp5UXpmZ2ZTMkdkVTlYdDlrSlh3NFhhclptTGxsUTNuMkhScUdBY3hUSUkwSzBhZWJpQmhBOHVQWXh5WHl3UWNTRWhwaEVwSTdickROVWY1Sjg?oc=5",
-    "pubDate": "Tue, 28 Jul 2026 13:46:00 GMT",
-    "sentiment": "neu",
+    "title": "【株主総会】業績悪化の日産自動車の総会では株主がカルロス・ゴーン復帰を要求!? 個人投資家が多い｢日産自動車｣と｢ANAホールディングス｣の総会をレポート！",
+    "source": "ダイヤモンド・オンライン",
+    "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9NaXVwa1lHcWJMQUhiNFl3R1cyaTI4SEg1UjFybnM0N21vb0pmbHoyYjFkSGNyWmR1SGJCTlhWcUpkaU9JT0JNTUllalhvNFVYamlF?oc=5",
+    "pubDate": "Tue, 28 Jul 2026 23:00:00 GMT",
+    "sentiment": "pos",
     "theme": "自動車"
+   }
+  ],
+  "9501.T": [
+   {
+    "title": "東京電力ホールディングス(株)【9501】：今の株価の理由は？値動きの背景をAIが解説",
+    "source": "Yahoo!ファイナンス",
+    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1TeEloR3d0c1dTUFZfODhnbWtmM0JraUxPb2hCQUlhSGE3Z0xkVllmQTR1ZXotYWV5eXg5NGFSRGlaakJYMHBJQUNST1lRb09NWUpBMk91WW43MVRUTzZJ?oc=5",
+    "pubDate": "Thu, 30 Jul 2026 06:53:28 GMT",
+    "sentiment": "neu",
+    "theme": "AI"
+   }
+  ],
+  "9107.T": [
+   {
+    "title": "川崎汽船(株)【9107】：今の株価の理由は？値動きの背景をAIが解説",
+    "source": "Yahoo!ファイナンス",
+    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1lMld0VXRUR1o2ZzFCZGxkWjlMa1FjN3pKd01QQ1FCLXI2MGF5UVExNmM0emswOTR6aFl6T3BqVXRTaXNYcUZwOXhTU21hTVUwOUpVZGtOa2lVWjFxTDNr?oc=5",
+    "pubDate": "Tue, 28 Jul 2026 06:56:59 GMT",
+    "sentiment": "neu",
+    "theme": "AI"
    }
   ],
   "7261.T": [
@@ -170,32 +190,12 @@
     "theme": "その他"
    }
   ],
-  "9501.T": [
-   {
-    "title": "東京電力ホールディングス(株)【9501】：今の株価の理由は？値動きの背景をAIが解説",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1TeEloR3d0c1dTUFZfODhnbWtmM0JraUxPb2hCQUlhSGE3Z0xkVllmQTR1ZXotYWV5eXg5NGFSRGlaakJYMHBJQUNST1lRb09NWUpBMk91WW43MVRUTzZJ?oc=5",
-    "pubDate": "Thu, 30 Jul 2026 02:53:39 GMT",
-    "sentiment": "neu",
-    "theme": "AI"
-   }
-  ],
   "5401.T": [
    {
     "title": "日本製鉄(株)【5401】：今の株価の理由は？値動きの背景をAIが解説",
     "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBacjZQcWtoaGdTaTZ3M1BOYldUdU5zWnhHb3pYVWVxcDNTQndrdHRndVYyZ0QzTnIwdEpoWFZIeXlHZDAwenNFWEJrZldFUF96b1VaN3VQc2lGeXZBdEVV?oc=5",
-    "pubDate": "Thu, 30 Jul 2026 02:53:20 GMT",
-    "sentiment": "neu",
-    "theme": "AI"
-   }
-  ],
-  "9107.T": [
-   {
-    "title": "川崎汽船(株)【9107】：今の株価の理由は？値動きの背景をAIが解説",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE43ZzMwY21hcGZQU3dxUkpaQ2Jwcy1vMS1rLWpoNXhEN29ia3VaUmNfRkVCdkdzODU2RFBic2VaM1FXeUlZdWJUOTdjcUpuY0lIU2Y0VmVidDZ3aFdTd2pn?oc=5",
-    "pubDate": "Thu, 30 Jul 2026 06:57:02 GMT",
+    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1WWFNHZ1Z2d1RYa0c5UjE2ZDZhYzFVMVVJd3ZBSFhMeG5jbUVoZlhhUkN4eXJkZ3g0OGNteER4WW1ZQjdBS0V4YkZ4bzJDQlU4X0QzME13b2dxVmJDR05B?oc=5",
+    "pubDate": "Thu, 30 Jul 2026 06:53:26 GMT",
     "sentiment": "neu",
     "theme": "AI"
    }
@@ -220,16 +220,6 @@
     "theme": "AI"
    }
   ],
-  "8955.T": [
-   {
-    "title": "日本プライムリアルティ投資法人【8955】：企業情報（決算時期や平均年収、代表者名など）",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9oN3JuX2Y5R3hYYmdfMUJaYm1BVHA2bUowQlZxR0gxMUNGOGJaX3Vrcl82WU9MR0dMNUNFeHpWOXp6Y1BqaHRlUWh1QlA4WENaUnhPLXFpRkRPaUNQ?oc=5",
-    "pubDate": "Fri, 17 Jul 2026 07:00:00 GMT",
-    "sentiment": "pos",
-    "theme": "その他"
-   }
-  ],
   "8725.T": [
    {
     "title": "MS&ADインシュアランスグループHD、｢増配｣を発表して、配当利回りが3.8％に！ 14期連続の増配となる2027年3月期は前期比10円増の｢1株あたり170",
@@ -240,14 +230,24 @@
     "theme": "その他"
    }
   ],
-  "9022.T": [
+  "8955.T": [
    {
-    "title": "東海旅客鉄道(株)【9022】：今の株価の理由は？値動きの背景をAIが解説",
+    "title": "日本プライムリアルティ投資法人【8955】：掲示板",
     "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE0tNDlhbS1OSk9QWFRta05Fc3g4QUxCTTJTMVJUc2l6YlFoQWRYMHJjMkpfdm5mTWoxOEZuOGRRczhBaVdKMGR4MWNwY0R6cGM3Y1puSFNLRFFsbWJkanRz?oc=5",
-    "pubDate": "Thu, 30 Jul 2026 07:01:23 GMT",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1jcWZkM2Z5S2d0bWRXQThubmRTY05SUE1LZFpTSjd2SEQwdkhtSExZaV9kNHc2bUwxM2p5VklXZGl1TTZQTHhlUVR4OHlKRS1oMjFPQVktd3dRUQ?oc=5",
+    "pubDate": "Tue, 07 Oct 2025 11:05:23 GMT",
+    "sentiment": "pos",
+    "theme": "その他"
+   }
+  ],
+  "5411.T": [
+   {
+    "title": "ＪＦＥホールディングス(株)【5411】：掲示板",
+    "source": "Yahoo!ファイナンス",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9HMVp6YWwycU0tNHVEMmZ2NFVaZVdTeVdscjY0bnduNWEzTnlOQjlodXZPR1RCQTBIaWFPN0lEV0NKS0J4eDFHZmcxTy12aTRNN2ZfMUNfUDA2QQ?oc=5",
+    "pubDate": "Tue, 07 Oct 2025 09:21:53 GMT",
     "sentiment": "neu",
-    "theme": "AI"
+    "theme": "その他"
    }
   ]
  },
@@ -319,22 +319,22 @@
  "theme_trends": [
   {
    "theme": "AI",
-   "mentions": 6,
+   "mentions": 5,
    "pos": 0,
    "neg": 0,
-   "prevMentions": 6
+   "prevMentions": 5
   },
   {
    "theme": "その他",
-   "mentions": 3,
+   "mentions": 4,
    "pos": 2,
    "neg": 0,
-   "prevMentions": 3
+   "prevMentions": 4
   },
   {
    "theme": "自動車",
    "mentions": 1,
-   "pos": 0,
+   "pos": 1,
    "neg": 0,
    "prevMentions": 1
   }
@@ -362,13 +362,13 @@
   "source": "JPX 投資部門別売買状況（東証プライム・週次・金額ベース）"
  },
  "backtest": {
-  "annual": "+19.2%",
-  "benchmark": "+28.7%",
-  "sharpe": "0.47",
-  "dd": "-33.1%",
+  "annual": "+22.3%",
+  "benchmark": "+29.7%",
+  "sharpe": "0.58",
+  "dd": "-28.2%",
   "winrate": "60.9%",
   "months": "23ヶ月",
-  "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+28.7%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
+  "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+29.7%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
  },
  "past_earnings": {
   "7201.T": [
@@ -381,16 +381,6 @@
    "2024-11-07",
    "2024-07-25"
   ],
-  "7261.T": [
-   "2026-05-12",
-   "2026-02-09",
-   "2025-11-06",
-   "2025-08-05",
-   "2025-05-11",
-   "2025-02-06",
-   "2024-11-06",
-   "2024-08-07"
-  ],
   "9501.T": [
    "2026-07-29",
    "2026-04-29",
@@ -401,16 +391,6 @@
    "2023-10-30",
    "2023-08-01"
   ],
-  "5401.T": [
-   "2026-05-13",
-   "2026-02-05",
-   "2025-11-05",
-   "2025-08-01",
-   "2025-05-09",
-   "2025-02-06",
-   "2024-11-06",
-   "2024-08-01"
-  ],
   "9107.T": [
    "2026-05-07",
    "2026-02-02",
@@ -420,6 +400,26 @@
    "2024-02-01",
    "2023-08-02",
    "2023-02-02"
+  ],
+  "7261.T": [
+   "2026-05-12",
+   "2026-02-09",
+   "2025-11-06",
+   "2025-08-05",
+   "2025-05-11",
+   "2025-02-06",
+   "2024-11-06",
+   "2024-08-07"
+  ],
+  "5401.T": [
+   "2026-05-13",
+   "2026-02-05",
+   "2025-11-05",
+   "2025-08-01",
+   "2025-05-09",
+   "2025-02-06",
+   "2024-11-06",
+   "2024-08-01"
   ],
   "9101.T": [
    "2026-02-03",
@@ -451,15 +451,15 @@
    "2023-02-13",
    "2022-11-18"
   ],
-  "9022.T": [
-   "2026-04-28",
-   "2026-02-02",
-   "2025-10-28",
-   "2025-07-29",
-   "2025-04-29",
-   "2025-02-02",
-   "2024-10-28",
-   "2024-07-29"
+  "5411.T": [
+   "2026-05-07",
+   "2026-02-04",
+   "2025-11-05",
+   "2025-08-04",
+   "2025-05-08",
+   "2025-02-06",
+   "2024-11-06",
+   "2024-08-05"
   ]
  }
 }
