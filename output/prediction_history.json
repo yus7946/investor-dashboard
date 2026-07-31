@@ -2714,6 +2714,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-07-30",
+      "ticker": "8750.T",
+      "name": "第一生命HD",
+      "basePrice": 1923.5,
+      "rangeLow": 1887,
+      "rangeHigh": 1960,
+      "predUpRate": 55.9,
+      "condN": 195,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -3843,6 +3858,18 @@
       "entry": 1060,
       "target": 1108,
       "stop": 1024,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-07-30",
+      "ticker": "8750.T",
+      "name": "第一生命HD",
+      "basePrice": 1923.5,
+      "entry": 1905,
+      "target": 1977,
+      "stop": 1851,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
