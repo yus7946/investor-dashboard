@@ -3059,6 +3059,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-03",
+      "ticker": "8750.T",
+      "name": "第一生命HD",
+      "basePrice": 1881.5,
+      "rangeLow": 1847,
+      "rangeHigh": 1916,
+      "predUpRate": 53.0,
+      "condN": 151,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-03",
+      "ticker": "5411.T",
+      "name": "JFEホールディングス",
+      "basePrice": 1796.0,
+      "rangeLow": 1773,
+      "rangeHigh": 1819,
+      "predUpRate": 49.7,
+      "condN": 165,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -4338,6 +4368,18 @@
       "entry": 321,
       "target": 337,
       "stop": 309,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-03",
+      "ticker": "8750.T",
+      "name": "第一生命HD",
+      "basePrice": 1881.5,
+      "entry": 1864,
+      "target": 1932,
+      "stop": 1813,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
