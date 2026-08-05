@@ -4614,6 +4614,18 @@
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-04",
+      "ticker": "9104.T",
+      "name": "商船三井",
+      "basePrice": 5931.0,
+      "entry": 5881,
+      "target": 6079,
+      "stop": 5732,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
     }
   ]
 }
