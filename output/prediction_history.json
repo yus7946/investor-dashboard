@@ -3239,6 +3239,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-04",
+      "ticker": "5411.T",
+      "name": "JFEホールディングス",
+      "basePrice": 1826.0,
+      "rangeLow": 1802,
+      "rangeHigh": 1850,
+      "predUpRate": null,
+      "condN": 7,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
