@@ -4848,6 +4848,18 @@
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-05",
+      "ticker": "9501.T",
+      "name": "東京電力HD",
+      "basePrice": 534.1,
+      "entry": 527,
+      "target": 555,
+      "stop": 506,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
     }
   ]
 }
