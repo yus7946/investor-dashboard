@@ -3419,6 +3419,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-03",
+      "ticker": "6098.T",
+      "name": "リクルートHD",
+      "basePrice": 12820.0,
+      "rangeLow": 12499,
+      "rangeHigh": 13141,
+      "predUpRate": 51.7,
+      "condN": 176,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -4884,6 +4899,18 @@
       "entry": 4876,
       "target": 5144,
       "stop": 4675,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-03",
+      "ticker": "6098.T",
+      "name": "リクルートHD",
+      "basePrice": 12820.0,
+      "entry": 12659,
+      "target": 13301,
+      "stop": 12177,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
