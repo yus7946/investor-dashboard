@@ -3599,6 +3599,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-06",
+      "ticker": "8015.T",
+      "name": "豊田通商",
+      "basePrice": 7462.0,
+      "rangeLow": 7321,
+      "rangeHigh": 7603,
+      "predUpRate": 52.4,
+      "condN": 82,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
