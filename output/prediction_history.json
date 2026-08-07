@@ -3614,6 +3614,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-06",
+      "ticker": "4385.T",
+      "name": "メルカリ",
+      "basePrice": 5048.0,
+      "rangeLow": 4913,
+      "rangeHigh": 5183,
+      "predUpRate": 45.5,
+      "condN": 178,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -5184,6 +5199,18 @@
       "entry": 1673,
       "target": 1735,
       "stop": 1627,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-06",
+      "ticker": "4385.T",
+      "name": "メルカリ",
+      "basePrice": 5048.0,
+      "entry": 4980,
+      "target": 5250,
+      "stop": 4777,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
