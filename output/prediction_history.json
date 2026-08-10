@@ -3779,6 +3779,51 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-07",
+      "ticker": "3923.T",
+      "name": "ラクス",
+      "basePrice": 1084.5,
+      "rangeLow": 1061,
+      "rangeHigh": 1108,
+      "predUpRate": 46.5,
+      "condN": 172,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-07",
+      "ticker": "5108.T",
+      "name": "ブリヂストン",
+      "basePrice": 4376.0,
+      "rangeLow": 4322,
+      "rangeHigh": 4430,
+      "predUpRate": 50.0,
+      "condN": 66,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-07",
+      "ticker": "7832.T",
+      "name": "バンダイナムコHD",
+      "basePrice": 5467.0,
+      "rangeLow": 5370,
+      "rangeHigh": 5564,
+      "predUpRate": 50.0,
+      "condN": 78,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -5454,6 +5499,30 @@
       "entry": 1156,
       "target": 1207,
       "stop": 1118,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-07",
+      "ticker": "5411.T",
+      "name": "JFEホールディングス",
+      "basePrice": 1849.0,
+      "entry": 1837,
+      "target": 1884,
+      "stop": 1801,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-07",
+      "ticker": "3923.T",
+      "name": "ラクス",
+      "basePrice": 1084.5,
+      "entry": 1073,
+      "target": 1121,
+      "stop": 1037,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
