@@ -12,7 +12,7 @@
   "4543.T": "2026-08-07",
   "6857.T": "2026-10-27",
   "7741.T": "2026-10-30",
-  "6920.T": "2026-08-06",
+  "6920.T": "2026-10-29",
   "7267.T": "2026-11-05",
   "6954.T": "2026-10-30",
   "7751.T": "2026-10-26",
@@ -36,10 +36,10 @@
   "7182.T": "2026-08-07",
   "8303.T": "2026-10-30",
   "9984.T": "2026-08-06",
-  "9432.T": "2026-08-06",
+  "9432.T": "2026-11-04",
   "9433.T": "2026-08-07",
   "9434.T": "2026-11-05",
-  "6098.T": "2026-08-07",
+  "6098.T": "2026-11-05",
   "4307.T": "2026-10-29",
   "4704.T": "2026-08-13",
   "3659.T": "2026-08-13",
@@ -50,14 +50,14 @@
   "4523.T": "2026-08-03",
   "4506.T": "2026-10-30",
   "4021.T": "2026-08-07",
-  "7832.T": "2026-08-06",
+  "7832.T": "2026-11-05",
   "8058.T": "2026-11-03",
   "8031.T": "2026-11-05",
   "8001.T": "2026-11-04",
   "8002.T": "2026-11-03",
   "8053.T": "2026-10-29",
   "8015.T": "2026-10-29",
-  "8801.T": "2026-08-07",
+  "8801.T": "2026-11-06",
   "8802.T": "2026-08-07",
   "8830.T": "2026-08-06",
   "3003.T": "2026-10-28",
@@ -74,11 +74,11 @@
   "9983.T": "2026-10-08",
   "3038.T": "2026-09-10",
   "4661.T": "2026-10-29",
-  "7974.T": "2026-08-06",
+  "7974.T": "2026-11-03",
   "2914.T": "2026-10-29",
   "2502.T": "2026-08-14",
   "2503.T": "2026-08-07",
-  "2802.T": "2026-08-06",
+  "2802.T": "2026-11-05",
   "7201.T": "2026-08-03",
   "2269.T": "2026-08-05",
   "3382.T": "2026-10-08",
@@ -93,7 +93,7 @@
   "5411.T": "2026-11-05",
   "3436.T": "2026-08-06",
   "4385.T": "2026-11-05",
-  "4565.T": "2026-08-07",
+  "4565.T": "2026-10-30",
   "4180.T": "2026-08-13",
   "7779.T": "2026-08-13",
   "4478.T": "2026-08-13",
@@ -121,7 +121,7 @@
   "6762.T": "2026-10-30",
   "6503.T": "2026-10-29",
   "5802.T": "2026-10-30",
-  "4901.T": "2026-08-06",
+  "4901.T": "2026-11-05",
   "4578.T": "2026-10-29",
   "4507.T": "2026-10-29",
   "6178.T": "2026-08-07",
@@ -141,7 +141,7 @@
   "9602.T": "2026-10-15",
   "4816.T": "2026-10-30",
   "2432.T": "2026-08-05",
-  "3765.T": "2026-08-07",
+  "3765.T": "2026-11-06",
   "6460.T": "2026-08-07",
   "9401.T": "2026-08-06",
   "9404.T": "2026-07-31",
@@ -155,17 +155,7 @@
     "title": "(株)リクルートホールディングス【6098】：掲示板",
     "source": "Yahoo!ファイナンス",
     "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1kUmgyZzYwekJoQTBsNk40WDBJdnk4N1ZmRnk2ZWd5WnZxdHhUN3Yxdm12NzJWMXdKaW4teXRiUHRaS0V4OTZEbFhyVDlmQzAzR2NuNTdlMkp5Zw?oc=5",
-    "pubDate": "Tue, 07 Oct 2025 12:31:39 GMT",
-    "sentiment": "neu",
-    "theme": "その他"
-   }
-  ],
-  "5401.T": [
-   {
-    "title": "日本製鉄(株)【NPSCY】：株価・株式情報",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1WTFpXQ1pkeU1EU2tnOEs2TEd5SW9ORVNUeGx4N281RUhDTVN5LXZhUVZkWS13Q3pYaWhqcXBYR1I0TUlyQ1Y1bFNzVTZ5UGp2?oc=5",
-    "pubDate": "Thu, 06 Aug 2026 22:08:30 GMT",
+    "pubDate": "Fri, 07 Aug 2026 07:00:00 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
@@ -175,79 +165,89 @@
     "title": "日産自動車(株)【7201】：今の株価の理由は？値動きの背景をAIが解説",
     "source": "Yahoo!ファイナンス",
     "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1Xakk0RENsUE81UDNRR1l0SEFiekF4NktsSHRjZlcyemhIWnFKRTBlNHdDZkpPc3FkNmluQjdONzZOaW92T1JLZ2V2WV9hRVBkZTlZeklXWFR6ZmJwSFU4?oc=5",
-    "pubDate": "Thu, 06 Aug 2026 06:55:10 GMT",
+    "pubDate": "Fri, 07 Aug 2026 06:55:30 GMT",
     "sentiment": "neu",
     "theme": "AI"
    }
   ],
-  "9501.T": [
+  "5401.T": [
    {
-    "title": "東京電力ホールディングス(株)【9501】：今の株価の理由は？値動きの背景をAIが解説",
+    "title": "日本製鉄(株)【5401】：掲示板",
     "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1TeEloR3d0c1dTUFZfODhnbWtmM0JraUxPb2hCQUlhSGE3Z0xkVllmQTR1ZXotYWV5eXg5NGFSRGlaakJYMHBJQUNST1lRb09NWUpBMk91WW43MVRUTzZJ?oc=5",
-    "pubDate": "Thu, 06 Aug 2026 06:54:18 GMT",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1SRHZEM3RPeXhKTXV4bGlhYWJtem5wOWlRZ2VUbjZ5aWQyRGVzc1NmN3N3QmlIdUtLbmZMN2x6R3l5RWdfbVhLa29lQmFIMEhjREtSc1VBN2loQQ?oc=5",
+    "pubDate": "Fri, 07 Aug 2026 07:05:42 GMT",
     "sentiment": "neu",
-    "theme": "AI"
+    "theme": "その他"
    }
   ],
   "5411.T": [
    {
-    "title": "ＪＦＥホールディングス(株)【5411】：今の株価の理由は？値動きの背景をAIが解説",
+    "title": "ＪＦＥホールディングス(株)【5411】：掲示板",
     "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1jNnY0VE9Ocm5YY1NwVkVsdW82bUtBdWE5S3U2ei0tak14OXhZeU5xeVRXVXR1anlxWW11QkRpMmtqNDUwYVkyVkJhTUVGSnpyZ2k4U2ppS2FpcDR5STdn?oc=5",
-    "pubDate": "Thu, 06 Aug 2026 06:57:27 GMT",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9HMVp6YWwycU0tNHVEMmZ2NFVaZVdTeVdscjY0bnduNWEzTnlOQjlodXZPR1RCQTBIaWFPN0lEV0NKS0J4eDFHZmcxTy12aTRNN2ZfMUNfUDA2QQ?oc=5",
+    "pubDate": "Fri, 07 Aug 2026 07:00:00 GMT",
     "sentiment": "neu",
-    "theme": "AI"
+    "theme": "その他"
    }
   ],
   "9104.T": [
    {
-    "title": "(株)商船三井【9104】：今の株価の理由は？値動きの背景をAIが解説",
+    "title": "(株)商船三井【9104】：掲示板",
     "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE03MWhtY3RlZ0tsbGhkZ2MtMThWcGNGTkRRY2RGYnlyREZHbUg5cnVLVVczeVhxRlpTVHpjUjduUm1xNFNBWElSZlZ0NnBES3YxbUZOejdKb1QtTHYxd2sw?oc=5",
-    "pubDate": "Wed, 05 Aug 2026 06:55:23 GMT",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBsQnFQeVZvU3AwM3VvRjlmeGJPM252dWEwV1VNeHlPaEdzdFlwLVAwTXhSajEwX3pXOEgwOWdmZFd0T2hDdXo4QTBuX2tMSEsxTU1EbGJCOC04Zw?oc=5",
+    "pubDate": "Fri, 07 Aug 2026 07:08:53 GMT",
     "sentiment": "neu",
-    "theme": "AI"
+    "theme": "その他"
+   }
+  ],
+  "9501.T": [
+   {
+    "title": "東京電力ホールディングス(株)【9501】：掲示板",
+    "source": "Yahoo!ファイナンス",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE96V0NpR1FaNHk1eDBIbEU1TUYxYzJJUFAzeFB5b2VyMDUwVk5fakxQWXZDaHZnVmMtQ2xvWXBMZFhpaTFCZjM0algweUFRdDQxSlNINUtZVjRvZw?oc=5",
+    "pubDate": "Fri, 07 Aug 2026 07:00:00 GMT",
+    "sentiment": "neu",
+    "theme": "その他"
    }
   ],
   "8750.T": [
    {
-    "title": "第一生命HDの株価続伸 保有債券の一部、減損処理が不要に",
-    "source": "日本経済新聞",
-    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBSaDEweXZiYVFxdzliaFo5enNydEpkMlRHNmEwV2g2UGEyRkVfSURvbjhrb1hhSnBwd1J6eFRpRkIwSTQzR0M3WXgtZkd1T1Z0bmJjN3UzbnczZ3Zwb2Z5NzRjMEF2bWJnQWs3Tw?oc=5",
-    "pubDate": "Wed, 18 Feb 2026 08:00:00 GMT",
+    "title": "(株)第一ライフグループ【8750】：掲示板",
+    "source": "Yahoo!ファイナンス",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1hX21jVWZrYzV3TFROc0M1d1IxbTNZOXlWMzRRcXo3bElwVXpkUGo2bVcway0xNEpjWW5xYnFpQTlGU0U4RnBHZG1HUjVTRjhWR2phM3BpSVhRUQ?oc=5",
+    "pubDate": "Fri, 07 Aug 2026 07:00:00 GMT",
+    "sentiment": "neu",
+    "theme": "その他"
+   }
+  ],
+  "7267.T": [
+   {
+    "title": "ホンダ【7267】：株価・株式情報（夜間PTS含む）",
+    "source": "Yahoo!ファイナンス",
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE51QllHdllFUXNVTzNRWkZJdGN5eHVSNmVRbWt0NnFLbmJPNDF5dldtUVlTazQ5NTkxTUhzaG9lRmJRZEVjLUtFU2RWT3ptTzRqUkE?oc=5",
+    "pubDate": "Fri, 07 Aug 2026 07:00:00 GMT",
+    "sentiment": "neu",
+    "theme": "その他"
+   }
+  ],
+  "4385.T": [
+   {
+    "title": "(株)メルカリ【4385】：掲示板",
+    "source": "Yahoo!ファイナンス",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9oMkFja2pBWnV4YXFLWUdrMXdqY3JaclhNUGVQcndHanJnUV9DdDFuZExwWVRhZEtianhxcGZDakxTM2JFbE82b2tEZGZ2YXlUcHdHTlk5TjNmUQ?oc=5",
+    "pubDate": "Fri, 07 Aug 2026 07:00:00 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
   ],
   "7261.T": [
    {
-    "title": "マツダ(株)【7261】：今の株価の理由は？値動きの背景をAIが解説",
+    "title": "マツダ(株)【7261】：掲示板",
     "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5sR3VTSTNVM2JWNlp4TmlJSkJYV2N3Zl8xY2ViNGJpVU5jQnZLbkdpZWF3ZXVZWWpSaFQxVlhpZGZibXFZM1kwWjNQS3dUN2prcllTelJHWkFsSFlLajYw?oc=5",
-    "pubDate": "Thu, 06 Aug 2026 07:02:22 GMT",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE4wSDdqMGtLNEp0eWtYWXotZGlNT3pNR3M3TEFndDRmZ21sOF9OUHlTbVB2clk3OUZWNGRkTWdrbmk5c25BUFZ4eXUxQWlWTzFwRGM4YzVXRjV0UQ?oc=5",
+    "pubDate": "Fri, 07 Aug 2026 07:00:00 GMT",
     "sentiment": "neu",
-    "theme": "AI"
-   }
-  ],
-  "8053.T": [
-   {
-    "title": "住友商事(株)【8053】：今の株価の理由は？値動きの背景をAIが解説",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB1cHZLYjFzTmFNc2VuYm9rNGpENnl4M3E4N3EzejRRSTVaVkE0UE5TcjRORVQwNEJFRko3anhUcXJSVVpPenJ0Nzg3T1RfYi1ocUZib19LLUF6aUJDYi1J?oc=5",
-    "pubDate": "Thu, 06 Aug 2026 06:56:24 GMT",
-    "sentiment": "neu",
-    "theme": "AI"
-   }
-  ],
-  "7267.T": [
-   {
-    "title": "ホンダ【7267】：今の株価の理由は？値動きの背景をAIが解説",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBHMUtCbzFfN3dPX1pVYUxCRzExSzlDbXd3VDI2RzZiNXQtNnBtcGFWeVBjY3BBZmNxd2FkZ0FHeFN5aFN1TGtUamV2eWthY19IMWk0WTJvcUV2WE8tT0Zv?oc=5",
-    "pubDate": "Thu, 06 Aug 2026 06:54:28 GMT",
-    "sentiment": "neu",
-    "theme": "AI"
+    "theme": "その他"
    }
   ]
  },
@@ -261,71 +261,87 @@
  "short_alerts": [
   {
    "type": "info",
-   "title": "空売り残高: メドレー (4480)",
-   "desc": "開示合計6.52%・前回比横ばい（3件・出典JPX 08/06時点）"
+   "title": "空売り残高: セブン＆アイHD (3382)",
+   "desc": "開示合計7.38%・前回比横ばい（1件・出典JPX 08/07時点）"
+  },
+  {
+   "type": "warn",
+   "title": "空売り残高: カバー (5253)",
+   "desc": "開示合計5.44%・前回比増加中（2件・出典JPX 08/07時点）"
   },
   {
    "type": "info",
-   "title": "空売り残高: ソシオネクスト (6526)",
-   "desc": "開示合計4.36%・前回比減少中（5件・出典JPX 08/06時点）"
-  },
-  {
-   "type": "info",
-   "title": "空売り残高: オキサイド (6521)",
-   "desc": "開示合計4.36%・前回比横ばい（3件・出典JPX 08/06時点）"
+   "title": "空売り残高: セレス (3696)",
+   "desc": "開示合計5.22%・前回比減少中（2件・出典JPX 08/07時点）"
   }
  ],
  "short_ratios": {
-  "4480.T": 6.52,
-  "6526.T": 4.36,
-  "6521.T": 4.36,
-  "9107.T": 3.49,
-  "6770.T": 3.33,
-  "4493.T": 3.24,
-  "6367.T": 3.14,
-  "4324.T": 2.97,
-  "5253.T": 2.64,
-  "4452.T": 2.55,
-  "2432.T": 2.24,
-  "5411.T": 1.93,
-  "4420.T": 1.63,
-  "3994.T": 1.59,
-  "4180.T": 1.53,
-  "9502.T": 1.44,
-  "9501.T": 1.39,
-  "4443.T": 1.33,
-  "3436.T": 1.32,
-  "6753.T": 1.3,
-  "3923.T": 1.05,
-  "6460.T": 0.84,
-  "4751.T": 0.8,
-  "4911.T": 0.77,
-  "4425.T": 0.74,
-  "7201.T": 0.73,
-  "4523.T": 0.7,
-  "4385.T": 0.69,
-  "6532.T": 0.69,
-  "9101.T": 0.69,
-  "8267.T": 0.59,
-  "5714.T": 0.58,
-  "7261.T": 0.53,
-  "6963.T": 0.52,
-  "9412.T": 0.5
+  "3382.T": 7.38,
+  "5253.T": 5.44,
+  "3696.T": 5.22,
+  "7779.T": 3.9,
+  "9107.T": 3.84,
+  "2432.T": 3.41,
+  "4180.T": 3.36,
+  "7201.T": 3.31,
+  "3436.T": 3.21,
+  "3994.T": 3.17,
+  "6770.T": 3.13,
+  "5411.T": 3.1,
+  "6521.T": 2.97,
+  "3923.T": 2.9,
+  "6753.T": 2.82,
+  "4493.T": 2.8,
+  "4565.T": 2.69,
+  "2897.T": 2.53,
+  "6526.T": 2.3,
+  "7261.T": 2.24,
+  "3692.T": 1.95,
+  "6367.T": 1.92,
+  "9501.T": 1.73,
+  "4506.T": 1.62,
+  "4420.T": 1.58,
+  "6963.T": 1.51,
+  "9166.T": 1.43,
+  "4443.T": 1.42,
+  "4911.T": 1.37,
+  "4425.T": 1.33,
+  "6027.T": 1.28,
+  "7013.T": 1.28,
+  "4480.T": 1.22,
+  "6740.T": 1.07,
+  "9104.T": 1.0,
+  "9202.T": 0.89,
+  "9602.T": 0.77,
+  "6460.T": 0.76,
+  "2503.T": 0.75,
+  "9502.T": 0.75,
+  "4385.T": 0.71,
+  "9412.T": 0.71,
+  "4324.T": 0.67,
+  "4452.T": 0.67,
+  "4523.T": 0.67,
+  "8303.T": 0.66,
+  "8267.T": 0.61,
+  "5714.T": 0.6,
+  "8113.T": 0.58,
+  "7269.T": 0.5,
+  "2801.T": 0.49
  },
  "theme_trends": [
   {
-   "theme": "AI",
-   "mentions": 7,
+   "theme": "その他",
+   "mentions": 9,
    "pos": 0,
    "neg": 0,
-   "prevMentions": 7
+   "prevMentions": 9
   },
   {
-   "theme": "その他",
-   "mentions": 3,
+   "theme": "AI",
+   "mentions": 1,
    "pos": 0,
    "neg": 0,
-   "prevMentions": 3
+   "prevMentions": 1
   }
  ],
  "flow": {
@@ -351,34 +367,24 @@
   "source": "JPX 投資部門別売買状況（東証プライム・週次・金額ベース）"
  },
  "backtest": {
-  "annual": "+23.0%",
-  "benchmark": "+31.4%",
-  "sharpe": "0.61",
+  "annual": "+24.2%",
+  "benchmark": "+31.7%",
+  "sharpe": "0.63",
   "dd": "-26.9%",
   "winrate": "60.9%",
   "months": "23ヶ月",
-  "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+31.4%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
+  "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+31.7%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
  },
  "past_earnings": {
   "6098.T": [
+   "2026-08-07",
    "2026-05-14",
    "2026-02-09",
    "2025-11-06",
    "2025-08-05",
    "2025-05-09",
    "2025-02-11",
-   "2024-08-07",
-   "2024-05-15"
-  ],
-  "5401.T": [
-   "2026-08-04",
-   "2026-05-13",
-   "2026-02-05",
-   "2025-11-05",
-   "2025-08-01",
-   "2025-05-09",
-   "2025-02-06",
-   "2024-11-06"
+   "2024-08-07"
   ],
   "7201.T": [
    "2026-08-03",
@@ -390,15 +396,15 @@
    "2025-02-13",
    "2024-11-07"
   ],
-  "9501.T": [
-   "2026-07-29",
-   "2026-04-29",
-   "2026-01-29",
-   "2025-07-30",
-   "2024-04-29",
-   "2024-01-30",
-   "2023-10-30",
-   "2023-08-01"
+  "5401.T": [
+   "2026-08-04",
+   "2026-05-13",
+   "2026-02-05",
+   "2025-11-05",
+   "2025-08-01",
+   "2025-05-09",
+   "2025-02-06",
+   "2024-11-06"
   ],
   "5411.T": [
    "2026-08-05",
@@ -411,44 +417,34 @@
    "2024-11-06"
   ],
   "9104.T": [
+   "2026-08-06",
    "2026-04-29",
    "2026-01-29",
    "2025-11-03",
    "2025-07-31",
    "2025-01-30",
    "2024-10-30",
+   "2024-01-30"
+  ],
+  "9501.T": [
+   "2026-07-29",
+   "2026-04-29",
+   "2026-01-29",
+   "2025-07-30",
+   "2024-04-29",
    "2024-01-30",
-   "2023-10-30"
+   "2023-10-30",
+   "2023-08-01"
   ],
   "8750.T": [
+   "2026-08-06",
    "2026-05-14",
    "2026-02-13",
    "2024-02-14",
    "2023-11-13",
    "2023-08-10",
    "2023-05-14",
-   "2023-02-14",
-   "2022-11-14"
-  ],
-  "7261.T": [
-   "2026-08-04",
-   "2026-05-12",
-   "2026-02-09",
-   "2025-11-06",
-   "2025-08-05",
-   "2025-05-11",
-   "2025-02-06",
-   "2024-11-06"
-  ],
-  "8053.T": [
-   "2026-07-30",
-   "2026-05-01",
-   "2026-02-03",
-   "2025-10-30",
-   "2025-07-31",
-   "2025-06-17",
-   "2025-02-03",
-   "2024-10-31"
+   "2023-02-14"
   ],
   "7267.T": [
    "2026-08-05",
@@ -459,6 +455,26 @@
    "2025-05-13",
    "2025-02-13",
    "2024-11-05"
+  ],
+  "4385.T": [
+   "2026-08-05",
+   "2026-05-11",
+   "2026-02-09",
+   "2025-11-06",
+   "2025-08-04",
+   "2025-05-07",
+   "2025-02-06",
+   "2024-05-08"
+  ],
+  "7261.T": [
+   "2026-08-04",
+   "2026-05-12",
+   "2026-02-09",
+   "2025-11-06",
+   "2025-08-05",
+   "2025-05-11",
+   "2025-02-06",
+   "2024-11-06"
   ]
  }
 }
