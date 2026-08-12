@@ -4034,6 +4034,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-10",
+      "ticker": "4689.T",
+      "name": "LINEヤフー",
+      "basePrice": 499.7,
+      "rangeLow": 492,
+      "rangeHigh": 508,
+      "predUpRate": 54.3,
+      "condN": 46,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-10",
+      "ticker": "4543.T",
+      "name": "テルモ",
+      "basePrice": 2598.5,
+      "rangeLow": 2555,
+      "rangeHigh": 2642,
+      "predUpRate": 35.0,
+      "condN": 20,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
