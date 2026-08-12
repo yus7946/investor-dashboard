@@ -1,7 +1,7 @@
 {
-  "updated": "2026年08月11日 16:24",
-  "updatedAtMs": 1786433062404,
-  "updateMode": "light",
+  "updated": "2026年08月12日 09:08",
+  "updatedAtMs": 1786493325217,
+  "updateMode": "full",
   "fetched": 163,
   "universeTotal": 166,
   "lowRiskPlan": {
@@ -24,204 +24,28 @@
   "earningsBoard": {
     "today": [
       {
-        "ticker": "9104.T",
-        "name": "商船三井",
-        "date": "2026-08-07",
-        "daysTo": -2,
-        "revGrowthPct": 68.9,
-        "epsGrowthPct": 16.2
-      },
-      {
-        "ticker": "5108.T",
-        "name": "ブリヂストン",
-        "date": "2026-08-07",
-        "daysTo": -2,
-        "revGrowthPct": 14.2,
-        "epsGrowthPct": 210.1
-      },
-      {
-        "ticker": "2181.T",
-        "name": "パーソルホールディングス",
-        "date": "2026-08-07",
-        "daysTo": -2,
-        "revGrowthPct": 13.5,
-        "epsGrowthPct": 13.5
-      },
-      {
-        "ticker": "5714.T",
-        "name": "DOWAホールディングス",
-        "date": "2026-08-07",
-        "daysTo": -2,
-        "revGrowthPct": 58.2,
-        "epsGrowthPct": 268.9
-      },
-      {
-        "ticker": "4543.T",
-        "name": "テルモ",
-        "date": "2026-08-07",
-        "daysTo": -2,
-        "revGrowthPct": 19.9,
-        "epsGrowthPct": 68.3
-      },
-      {
-        "ticker": "9843.T",
-        "name": "ニトリホールディングス",
-        "date": "2026-08-07",
-        "daysTo": -2,
-        "revGrowthPct": -2.3,
-        "epsGrowthPct": -1.5
-      },
-      {
-        "ticker": "8750.T",
-        "name": "第一生命HD",
-        "date": "2026-08-07",
-        "daysTo": -2,
-        "revGrowthPct": 28.0,
-        "epsGrowthPct": 278.3
-      },
-      {
-        "ticker": "6460.T",
-        "name": "セガサミーホールディングス",
-        "date": "2026-08-07",
-        "daysTo": -2,
-        "revGrowthPct": 17.3,
-        "epsGrowthPct": null
-      },
-      {
-        "ticker": "6178.T",
-        "name": "日本郵政",
-        "date": "2026-08-07",
-        "daysTo": -2,
-        "revGrowthPct": 7.6,
-        "epsGrowthPct": 97.8
-      },
-      {
         "ticker": "4755.T",
         "name": "楽天グループ",
         "date": "2026-08-10",
-        "daysTo": -1,
-        "revGrowthPct": 14.4,
+        "daysTo": -2,
+        "revGrowthPct": 11.6,
         "epsGrowthPct": null
       },
-      {
-        "ticker": "8593.T",
-        "name": "三菱HCキャピタル",
-        "date": "2026-08-07",
-        "daysTo": -2,
-        "revGrowthPct": -7.8,
-        "epsGrowthPct": -44.8
-      },
-      {
-        "ticker": "6273.T",
-        "name": "SMC",
-        "date": "2026-08-07",
-        "daysTo": -2,
-        "revGrowthPct": 35.4,
-        "epsGrowthPct": 97.9
-      },
-      {
-        "ticker": "5020.T",
-        "name": "ENEOS",
-        "date": "2026-08-07",
-        "daysTo": -2,
-        "revGrowthPct": 18.7,
-        "epsGrowthPct": null
-      },
-      {
-        "ticker": "9433.T",
-        "name": "KDDI",
-        "date": "2026-08-07",
-        "daysTo": -2,
-        "revGrowthPct": 3.6,
-        "epsGrowthPct": 19.4
-      },
-      {
-        "ticker": "5019.T",
-        "name": "出光興産",
-        "date": "2026-08-07",
-        "daysTo": -2,
-        "revGrowthPct": 23.3,
-        "epsGrowthPct": 4095.7
-      },
-      {
-        "ticker": "6753.T",
-        "name": "シャープ",
-        "date": "2026-08-07",
-        "daysTo": -2,
-        "revGrowthPct": -7.9,
-        "epsGrowthPct": -88.6
-      },
-      {
-        "ticker": "2503.T",
-        "name": "キリンHD",
-        "date": "2026-08-07",
-        "daysTo": -2,
-        "revGrowthPct": 9.2,
-        "epsGrowthPct": 164.9
-      },
-      {
-        "ticker": "4021.T",
-        "name": "日産化学",
-        "date": "2026-08-07",
-        "daysTo": -2,
-        "revGrowthPct": 12.8,
-        "epsGrowthPct": 23.0
-      },
-      {
-        "ticker": "9735.T",
-        "name": "セコム",
-        "date": "2026-08-07",
-        "daysTo": -2,
-        "revGrowthPct": 3.6,
-        "epsGrowthPct": -0.7
-      },
-      {
-        "ticker": "7182.T",
-        "name": "ゆうちょ銀行",
-        "date": "2026-08-07",
-        "daysTo": -2,
-        "revGrowthPct": 30.0,
-        "epsGrowthPct": 70.2
-      },
-      {
-        "ticker": "7012.T",
-        "name": "川崎重工業",
-        "date": "2026-08-07",
-        "daysTo": -2,
-        "revGrowthPct": 11.3,
-        "epsGrowthPct": 269.0
-      },
-      {
-        "ticker": "4751.T",
-        "name": "サイバーエージェント",
-        "date": "2026-08-07",
-        "daysTo": -2,
-        "revGrowthPct": 9.4,
-        "epsGrowthPct": 5.8
-      },
-      {
-        "ticker": "8802.T",
-        "name": "三菱地所",
-        "date": "2026-08-07",
-        "daysTo": -2,
-        "revGrowthPct": 39.4,
-        "epsGrowthPct": 207.4
-      }
-    ],
-    "soon": [
       {
         "ticker": "8766.T",
         "name": "東京海上HD",
         "date": "2026-08-12",
-        "daysTo": 1,
+        "daysTo": 0,
         "revGrowthPct": -17.3,
         "epsGrowthPct": null
-      },
+      }
+    ],
+    "soon": [
       {
         "ticker": "4704.T",
         "name": "トレンドマイクロ",
         "date": "2026-08-13",
-        "daysTo": 2,
+        "daysTo": 1,
         "revGrowthPct": 9.4,
         "epsGrowthPct": 34.7
       },
@@ -229,7 +53,7 @@
         "ticker": "4478.T",
         "name": "freee",
         "date": "2026-08-13",
-        "daysTo": 2,
+        "daysTo": 1,
         "revGrowthPct": 26.8,
         "epsGrowthPct": -89.5
       },
@@ -237,7 +61,7 @@
         "ticker": "3659.T",
         "name": "ネクソン",
         "date": "2026-08-13",
-        "daysTo": 2,
+        "daysTo": 1,
         "revGrowthPct": 33.6,
         "epsGrowthPct": 124.6
       },
@@ -245,7 +69,7 @@
         "ticker": "7779.T",
         "name": "サイバーダイン",
         "date": "2026-08-13",
-        "daysTo": 2,
+        "daysTo": 1,
         "revGrowthPct": -21.6,
         "epsGrowthPct": null
       },
@@ -253,7 +77,7 @@
         "ticker": "4180.T",
         "name": "Appier Group",
         "date": "2026-08-13",
-        "daysTo": 2,
+        "daysTo": 1,
         "revGrowthPct": 29.4,
         "epsGrowthPct": 97.1
       },
@@ -261,7 +85,7 @@
         "ticker": "4480.T",
         "name": "メドレー",
         "date": "2026-08-13",
-        "daysTo": 2,
+        "daysTo": 1,
         "revGrowthPct": 25.2,
         "epsGrowthPct": null
       },
@@ -269,7 +93,7 @@
         "ticker": "3923.T",
         "name": "ラクス",
         "date": "2026-08-14",
-        "daysTo": 3,
+        "daysTo": 2,
         "revGrowthPct": 19.7,
         "epsGrowthPct": 55.1
       },
@@ -277,7 +101,7 @@
         "ticker": "8725.T",
         "name": "MS&ADインシュアランス",
         "date": "2026-08-14",
-        "daysTo": 3,
+        "daysTo": 2,
         "revGrowthPct": -19.0,
         "epsGrowthPct": null
       },
@@ -285,7 +109,7 @@
         "ticker": "8630.T",
         "name": "SOMPOホールディングス",
         "date": "2026-08-14",
-        "daysTo": 3,
+        "daysTo": 2,
         "revGrowthPct": 25.0,
         "epsGrowthPct": null
       },
@@ -293,7 +117,7 @@
         "ticker": "2502.T",
         "name": "アサヒグループHD",
         "date": "2026-08-14",
-        "daysTo": 3,
+        "daysTo": 2,
         "revGrowthPct": -4.1,
         "epsGrowthPct": -63.6
       },
@@ -301,7 +125,7 @@
         "ticker": "4324.T",
         "name": "電通グループ",
         "date": "2026-08-14",
-        "daysTo": 3,
+        "daysTo": 2,
         "revGrowthPct": 3.5,
         "epsGrowthPct": 539.7
       },
@@ -309,7 +133,7 @@
         "ticker": "8955.T",
         "name": "日本プライムリアルティ投資法人",
         "date": "2026-08-17",
-        "daysTo": 4,
+        "daysTo": 3,
         "revGrowthPct": null,
         "epsGrowthPct": null
       }
@@ -325,10 +149,10 @@
     "source": "TOPIX連動ETF(1306.T)終値と200日移動平均から判定"
   },
   "marketOutlook": {
-    "spxChangePct": -0.06,
-    "spxDate": "2026-08-10",
-    "usdjpy": 159.29,
-    "usdjpyChangePct": 0.89,
+    "spxChangePct": -0.32,
+    "spxDate": "2026-08-11",
+    "usdjpy": 159.19,
+    "usdjpyChangePct": 0.02,
     "condition": "米S&P500が直近下落",
     "topixUpRate": 43.1,
     "n": 204,
@@ -365,14 +189,14 @@
       "rank": 1,
       "ticker": "6098.T",
       "name": "リクルートHD",
-      "score": 0.699,
+      "score": 0.703,
       "f": 6,
       "per": 46.5,
       "pbr": 12.69,
       "roe": 36.2,
       "value": 0.03,
       "quality": 0.801,
-      "momentum": 0.988,
+      "momentum": 1.0,
       "smart": 0.897,
       "smartMoney": {
         "score": 0.74,
@@ -397,7 +221,7 @@
         "dividend"
       ],
       "dividend_yield": 16.0,
-      "volatility": 0.5927,
+      "volatility": 0.5829,
       "short_ratio": null,
       "regime_adjusted": false,
       "forecast": {
@@ -427,6 +251,10 @@
           {
             "label": "RSI 74.9（買われすぎ圏・反落しやすい傾向）",
             "dir": "-"
+          },
+          {
+            "label": "直近ニュースがポジティブ寄り（1件/簡易判定）",
+            "dir": "+"
           }
         ],
         "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.85倍に自動補正済み。目標カバー率は約75%）"
@@ -457,10 +285,10 @@
         "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
-        "safety": 52,
+        "safety": 53,
         "level": "中",
         "penalties": [
-          "値動きが大きい（年率59%）→ 建玉は小さめに"
+          "値動きが大きい（年率58%）→ 建玉は小さめに"
         ],
         "supports": [
           "機関の買い集め兆候"
@@ -470,7 +298,7 @@
       },
       "earnings": {
         "date": "2026-11-05",
-        "daysTo": 62,
+        "daysTo": 61,
         "isToday": false,
         "isSoon": false,
         "passed": false,
@@ -481,12 +309,12 @@
       "yutai": null,
       "news": [
         {
-          "title": "注目銘柄ダイジェスト（前場）:リクルートHD、三井金属、mbsなど",
-          "source": "株探",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1uSl9aYjFyS2NmWU5wTXJoSDUwQ0ZGU09yeUVBTDllYTEtTjc3UE1SUUZTc2lnMlQ3V2luTGFBMU10QzlhNWZjSFlHaWpGZHFXT0RmQ2ZBN3h6ekJHZGg5cQ?oc=5",
-          "pubDate": "Mon, 10 Aug 2026 02:40:33 GMT",
-          "sentiment": "neu",
-          "theme": "資源"
+          "title": "リクルートHD株価ストップ高 27年3月期純利益を上方修正",
+          "source": "日本経済新聞",
+          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5ZLVNtRDBNRF80YUZYRlFINVhmV2Z3ZFp3NUJveWNLRzE4R2pxQXhCLW5MUmNlZkR5cFVCb2ZmYlNxVGgzRG1sV2c5ZVcySHBlbjVBeTlrd2hQc1ZIQUFLOVZZWHc0SXZfVUNwLQ?oc=5",
+          "pubDate": "Mon, 10 Aug 2026 01:00:32 GMT",
+          "sentiment": "pos",
+          "theme": "その他"
         }
       ]
     },
@@ -494,14 +322,14 @@
       "rank": 2,
       "ticker": "7201.T",
       "name": "日産自動車",
-      "score": 0.641,
+      "score": 0.637,
       "f": 3,
       "per": null,
       "pbr": 0.25,
       "roe": -7.7,
       "value": 0.981,
       "quality": 0.379,
-      "momentum": 0.22,
+      "momentum": 0.201,
       "smart": 0.879,
       "smartMoney": {
         "score": 0.713,
@@ -526,7 +354,7 @@
         "low_price"
       ],
       "dividend_yield": 0.0,
-      "volatility": 0.4326,
+      "volatility": 0.4344,
       "short_ratio": 2.18,
       "regime_adjusted": false,
       "forecast": {
@@ -599,7 +427,7 @@
       },
       "earnings": {
         "date": "2026-08-03",
-        "daysTo": -6,
+        "daysTo": -7,
         "isToday": false,
         "isSoon": false,
         "passed": true,
@@ -623,14 +451,14 @@
       "rank": 3,
       "ticker": "5401.T",
       "name": "日本製鉄",
-      "score": 0.604,
+      "score": 0.595,
       "f": 5,
       "per": 208.3,
       "pbr": 0.64,
       "roe": 5.5,
       "value": 0.39,
       "quality": 0.505,
-      "momentum": 0.318,
+      "momentum": 0.283,
       "smart": 0.951,
       "smartMoney": {
         "score": 0.824,
@@ -655,7 +483,7 @@
         "dividend"
       ],
       "dividend_yield": 3.5,
-      "volatility": 0.2783,
+      "volatility": 0.278,
       "short_ratio": 1.01,
       "regime_adjusted": false,
       "forecast": {
@@ -728,7 +556,7 @@
       },
       "earnings": {
         "date": "2026-11-04",
-        "daysTo": 61,
+        "daysTo": 60,
         "isToday": false,
         "isSoon": false,
         "passed": false,
@@ -739,12 +567,12 @@
       "yutai": null,
       "news": [
         {
-          "title": "日本製鉄(株)【5401】：今の株価の理由は？値動きの背景をAIが解説",
+          "title": "日本製鉄(株)【NPSCY】：株価・株式情報",
           "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBkU2Jjek9TYXNYM3pQUlhyTWc2NGwwRG5tZFRIQVNNYUpEZldqdEFEYjNVcGVkdlQ0N2hBNGQ5cFhXYnNZZkdKOEtZa05mLTNSWG93V0cyemF0TEZpQ084?oc=5",
-          "pubDate": "Mon, 10 Aug 2026 06:53:36 GMT",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1WTFpXQ1pkeU1EU2tnOEs2TEd5SW9ORVNUeGx4N281RUhDTVN5LXZhUVZkWS13Q3pYaWhqcXBYR1I0TUlyQ1Y1bFNzVTZ5UGp2?oc=5",
+          "pubDate": "Tue, 11 Aug 2026 10:40:05 GMT",
           "sentiment": "neu",
-          "theme": "AI"
+          "theme": "その他"
         }
       ]
     },
@@ -752,14 +580,14 @@
       "rank": 4,
       "ticker": "9104.T",
       "name": "商船三井",
-      "score": 0.602,
+      "score": 0.588,
       "f": 6,
       "per": 10.1,
       "pbr": 0.75,
       "roe": 7.9,
       "value": 0.356,
       "quality": 0.528,
-      "momentum": 0.453,
+      "momentum": 0.397,
       "smart": 0.877,
       "smartMoney": {
         "score": 0.71,
@@ -784,7 +612,7 @@
         "dividend"
       ],
       "dividend_yield": 3.3,
-      "volatility": 0.3725,
+      "volatility": 0.3717,
       "short_ratio": null,
       "regime_adjusted": false,
       "forecast": {
@@ -814,10 +642,6 @@
           {
             "label": "RSI 75.7（買われすぎ圏・反落しやすい傾向）",
             "dir": "-"
-          },
-          {
-            "label": "直近ニュースがポジティブ寄り（1件/簡易判定）",
-            "dir": "+"
           }
         ],
         "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.85倍に自動補正済み。目標カバー率は約75%）"
@@ -861,7 +685,7 @@
       },
       "earnings": {
         "date": "2026-08-07",
-        "daysTo": -2,
+        "daysTo": -3,
         "isToday": false,
         "isSoon": false,
         "passed": true,
@@ -872,151 +696,27 @@
       "yutai": null,
       "news": [
         {
-          "title": "【アナリスト予想】商船三井、27年3月期経常予想。対前週7.8%上昇。(アイフィス株予報)",
+          "title": "(株)商船三井【9104】：今の株価の理由は？値動きの背景をAIが解説",
           "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQanVCZklGaEp6NE5EM0lHcHZUYnZIQ1Y0VWs2MEJxTlcwMzhXdWM2bFVDb0JCNzh3aFhuSjRWV0N6Qm8zN0RuQ0Yzck5HeFhhR042dGlqQ0ZtNGttelJJaHlMc1Y2RnBTQkROeEVvdUZGUS14RGFfODFNNFZkd3RiX194UGtoSnM?oc=5",
-          "pubDate": "Mon, 10 Aug 2026 13:46:00 GMT",
-          "sentiment": "pos",
-          "theme": "その他"
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5hM0gxUTdFdnlrME9abHYzMll3bldxN1RFSnJJaVUxYUZOSFJLYzA5QUh4N1paZnpiRmJaX3hWUGhaTU56LVhBRGpFcTEwUWlWYmJ0cno0UjkxWUdvZnQw?oc=5",
+          "pubDate": "Mon, 10 Aug 2026 06:56:08 GMT",
+          "sentiment": "neu",
+          "theme": "AI"
         }
       ]
     },
     {
       "rank": 5,
-      "ticker": "3923.T",
-      "name": "ラクス",
-      "score": 0.587,
-      "f": 6,
-      "per": 29.4,
-      "pbr": 14.76,
-      "roe": 55.4,
-      "value": 0.031,
-      "quality": 0.985,
-      "momentum": 0.462,
-      "smart": 0.861,
-      "smartMoney": {
-        "score": 0.685,
-        "label": "買い集めの兆候",
-        "tone": "pos",
-        "cmf": 0.252,
-        "mfi": 64.8,
-        "obvSlope": 0.04,
-        "vwapDevPct": 5.5,
-        "factors": [
-          "安値圏でも買われている（CMFプラス）",
-          "直近平均コスト(VWAP)を上回って推移",
-          "直近5日は買い方向の出来高が優勢"
-        ]
-      },
-      "smartAdjusted": null,
-      "signal": "強い買い",
-      "rsi": 60.7,
-      "conf": "高",
-      "strategy": [
-        "swing"
-      ],
-      "dividend_yield": 0.7,
-      "volatility": 0.5598,
-      "short_ratio": 1.12,
-      "regime_adjusted": false,
-      "forecast": {
-        "price": 1085.0,
-        "rangeLow": 1060,
-        "rangeHigh": 1110,
-        "rangeLow2": 1036,
-        "rangeHigh2": 1134,
-        "volDPct": 2.27,
-        "calibrated": true,
-        "plan": {
-          "entry": 1073,
-          "target": 1122,
-          "stop": 1036,
-          "rr": 1.32,
-          "hi3m": 1104,
-          "lo3m": 832,
-          "basis": "1日の実績振れ幅σ=2.3%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値1,104円 / 安値832円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
-        },
-        "cond": {
-          "upRate": 46.5,
-          "n": 172,
-          "condition": "RSI中立圏×5日上昇局面",
-          "note": null
-        },
-        "factors": [],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.85倍に自動補正済み。目標カバー率は約75%）"
-      },
-      "impact": {
-        "price": 1085.0,
-        "normalYen": 29,
-        "normalPct": 2.7,
-        "bigVol": {
-          "n": 3,
-          "avgAbsPct": 4.4,
-          "maxAbsPct": 5.5,
-          "avgYen": 48
-        },
-        "earnings": {
-          "n": 7,
-          "avgAbsPct": 2.6,
-          "maxAbsPct": 6.7,
-          "avgYen": 28,
-          "maxYen": 73,
-          "upCount": 1,
-          "recentPct": [
-            -4.3,
-            -6.7,
-            -2.1
-          ]
-        },
-        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
-      },
-      "risk": {
-        "safety": 39,
-        "level": "高",
-        "penalties": [
-          "値動きが大きい（年率56%）→ 建玉は小さめに",
-          "決算が至近（あと3営業日）→ 窓リスク大・またぎ回避推奨"
-        ],
-        "supports": [
-          "機関の買い集め兆候"
-        ],
-        "stopPct": 3.45,
-        "rr": 1.32
-      },
-      "earnings": {
-        "date": "2026-08-14",
-        "daysTo": 3,
-        "isToday": false,
-        "isSoon": true,
-        "passed": false,
-        "revGrowthPct": 19.7,
-        "epsGrowthPct": 55.1,
-        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
-      },
-      "yutai": null,
-      "news": [
-        {
-          "title": "(株)ラクス【3923】：掲示板",
-          "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1ZY1R3d0loSmJIZlpDamhSbHN0eWswTWVCUl83Zlh0Q3d3WmpQVmx1ajV0RHpmTlp4Z05tYWRqZmJicEcxQlp0amFpX19EeVBLWkpJcHVsMkxFZw?oc=5",
-          "pubDate": "Tue, 07 Oct 2025 09:31:59 GMT",
-          "sentiment": "neu",
-          "theme": "その他"
-        }
-      ]
-    },
-    {
-      "rank": 6,
       "ticker": "7261.T",
       "name": "マツダ",
-      "score": 0.587,
+      "score": 0.586,
       "f": 5,
       "per": 21.2,
       "pbr": 0.39,
       "roe": 5.9,
       "value": 0.647,
       "quality": 0.509,
-      "momentum": 0.242,
+      "momentum": 0.239,
       "smart": 0.818,
       "smartMoney": {
         "score": 0.619,
@@ -1041,7 +741,7 @@
         "dividend"
       ],
       "dividend_yield": 4.7,
-      "volatility": 0.3733,
+      "volatility": 0.3722,
       "short_ratio": null,
       "regime_adjusted": false,
       "forecast": {
@@ -1107,7 +807,7 @@
       },
       "earnings": {
         "date": "2026-11-05",
-        "daysTo": 62,
+        "daysTo": 61,
         "isToday": false,
         "isSoon": false,
         "passed": false,
@@ -1121,9 +821,133 @@
           "title": "マツダ(株)【MZDAY】：株価・株式情報",
           "source": "Yahoo!ファイナンス",
           "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBMcnVTNmRGUHVHcHF0dEw2bEwxbExKR3JRNzBURG5vVzUxa3VpTlFOVW5xRFI5ZDNBTHpQajNreXNpSWN3TDdyS3dFWDU2ZkpW?oc=5",
-          "pubDate": "Mon, 10 Aug 2026 17:35:04 GMT",
+          "pubDate": "Tue, 11 Aug 2026 10:38:41 GMT",
           "sentiment": "neu",
           "theme": "その他"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "ticker": "3923.T",
+      "name": "ラクス",
+      "score": 0.585,
+      "f": 6,
+      "per": 29.4,
+      "pbr": 14.76,
+      "roe": 55.4,
+      "value": 0.031,
+      "quality": 0.985,
+      "momentum": 0.454,
+      "smart": 0.861,
+      "smartMoney": {
+        "score": 0.685,
+        "label": "買い集めの兆候",
+        "tone": "pos",
+        "cmf": 0.252,
+        "mfi": 64.8,
+        "obvSlope": 0.04,
+        "vwapDevPct": 5.5,
+        "factors": [
+          "安値圏でも買われている（CMFプラス）",
+          "直近平均コスト(VWAP)を上回って推移",
+          "直近5日は買い方向の出来高が優勢"
+        ]
+      },
+      "smartAdjusted": null,
+      "signal": "強い買い",
+      "rsi": 60.7,
+      "conf": "高",
+      "strategy": [
+        "swing"
+      ],
+      "dividend_yield": 0.7,
+      "volatility": 0.5583,
+      "short_ratio": 1.12,
+      "regime_adjusted": false,
+      "forecast": {
+        "price": 1085.0,
+        "rangeLow": 1060,
+        "rangeHigh": 1110,
+        "rangeLow2": 1036,
+        "rangeHigh2": 1134,
+        "volDPct": 2.27,
+        "calibrated": true,
+        "plan": {
+          "entry": 1073,
+          "target": 1122,
+          "stop": 1036,
+          "rr": 1.32,
+          "hi3m": 1104,
+          "lo3m": 832,
+          "basis": "1日の実績振れ幅σ=2.3%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値1,104円 / 安値832円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
+        "cond": {
+          "upRate": 46.5,
+          "n": 172,
+          "condition": "RSI中立圏×5日上昇局面",
+          "note": null
+        },
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.85倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "impact": {
+        "price": 1085.0,
+        "normalYen": 29,
+        "normalPct": 2.7,
+        "bigVol": {
+          "n": 3,
+          "avgAbsPct": 4.4,
+          "maxAbsPct": 5.5,
+          "avgYen": 48
+        },
+        "earnings": {
+          "n": 7,
+          "avgAbsPct": 2.6,
+          "maxAbsPct": 6.7,
+          "avgYen": 28,
+          "maxYen": 73,
+          "upCount": 1,
+          "recentPct": [
+            -4.3,
+            -6.7,
+            -2.1
+          ]
+        },
+        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
+      },
+      "risk": {
+        "safety": 39,
+        "level": "高",
+        "penalties": [
+          "値動きが大きい（年率56%）→ 建玉は小さめに",
+          "決算が至近（あと2営業日）→ 窓リスク大・またぎ回避推奨"
+        ],
+        "supports": [
+          "機関の買い集め兆候"
+        ],
+        "stopPct": 3.45,
+        "rr": 1.32
+      },
+      "earnings": {
+        "date": "2026-08-14",
+        "daysTo": 2,
+        "isToday": false,
+        "isSoon": true,
+        "passed": false,
+        "revGrowthPct": 19.7,
+        "epsGrowthPct": 55.1,
+        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
+      },
+      "yutai": null,
+      "news": [
+        {
+          "title": "(株)ラクス【3923】：今の株価の理由は？値動きの背景をAIが解説",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBWS0dzZ19QUFY4NGpjNmEzcVVXVy01MGlRT3JfUjd2dGJLNnVYaTRqaDRsWjFJNThvSlY0RTBOQ2R5aDAtQmc1WXBpbDlubmY3NnNLWjFERlkzNi1lMjJv?oc=5",
+          "pubDate": "Mon, 10 Aug 2026 07:06:14 GMT",
+          "sentiment": "neu",
+          "theme": "AI"
         }
       ]
     },
@@ -1131,14 +955,14 @@
       "rank": 7,
       "ticker": "9501.T",
       "name": "東京電力HD",
-      "score": 0.585,
+      "score": 0.577,
       "f": 4,
       "per": null,
       "pbr": 0.25,
       "roe": 12.5,
       "value": 1.0,
       "quality": 0.573,
-      "momentum": 0.2,
+      "momentum": 0.165,
       "smart": 0.618,
       "smartMoney": {
         "score": 0.312,
@@ -1162,7 +986,7 @@
         "swing"
       ],
       "dividend_yield": 0.0,
-      "volatility": 0.5025,
+      "volatility": 0.4991,
       "short_ratio": 1.53,
       "regime_adjusted": false,
       "forecast": {
@@ -1230,7 +1054,7 @@
       },
       "earnings": {
         "date": "2026-10-29",
-        "daysTo": 57,
+        "daysTo": 56,
         "isToday": false,
         "isSoon": false,
         "passed": false,
@@ -1252,16 +1076,138 @@
     },
     {
       "rank": 8,
+      "ticker": "7267.T",
+      "name": "ホンダ",
+      "score": 0.576,
+      "f": 5,
+      "per": null,
+      "pbr": 0.53,
+      "roe": -0.8,
+      "value": 0.465,
+      "quality": 0.445,
+      "momentum": 0.32,
+      "smart": 0.861,
+      "smartMoney": {
+        "score": 0.685,
+        "label": "買い集めの兆候",
+        "tone": "pos",
+        "cmf": 0.308,
+        "mfi": 72.1,
+        "obvSlope": 0.24,
+        "vwapDevPct": 5.9,
+        "factors": [
+          "安値圏でも買われている（CMFプラス）",
+          "上昇日に出来高が集中（OBV上向き）",
+          "直近平均コスト(VWAP)を上回って推移",
+          "直近5日は買い方向の出来高が優勢"
+        ]
+      },
+      "smartAdjusted": null,
+      "signal": "強い買い",
+      "rsi": 65.3,
+      "conf": "高",
+      "strategy": [
+        "dividend"
+      ],
+      "dividend_yield": 4.1,
+      "volatility": 0.3432,
+      "short_ratio": null,
+      "regime_adjusted": false,
+      "forecast": {
+        "price": 1692.0,
+        "rangeLow": 1661,
+        "rangeHigh": 1723,
+        "rangeLow2": 1630,
+        "rangeHigh2": 1754,
+        "volDPct": 1.82,
+        "calibrated": true,
+        "plan": {
+          "entry": 1677,
+          "target": 1739,
+          "stop": 1631,
+          "rr": 1.35,
+          "hi3m": 1692,
+          "lo3m": 1342,
+          "basis": "1日の実績振れ幅σ=1.8%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値1,692円 / 安値1,342円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
+        "cond": {
+          "upRate": 48.1,
+          "n": 181,
+          "condition": "RSI中立圏×5日上昇局面",
+          "note": null
+        },
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.85倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "impact": {
+        "price": 1692.0,
+        "normalYen": 36,
+        "normalPct": 2.1,
+        "bigVol": {
+          "n": 6,
+          "avgAbsPct": 5.2,
+          "maxAbsPct": 8.3,
+          "avgYen": 88
+        },
+        "earnings": {
+          "n": 8,
+          "avgAbsPct": 3.7,
+          "maxAbsPct": 8.3,
+          "avgYen": 63,
+          "maxYen": 140,
+          "upCount": 2,
+          "recentPct": [
+            -0.0,
+            8.3,
+            -3.5
+          ]
+        },
+        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
+      },
+      "risk": {
+        "safety": 86,
+        "level": "低",
+        "penalties": [],
+        "supports": [
+          "機関の買い集め兆候"
+        ],
+        "stopPct": 2.74,
+        "rr": 1.35
+      },
+      "earnings": {
+        "date": "2026-11-05",
+        "daysTo": 61,
+        "isToday": false,
+        "isSoon": false,
+        "passed": false,
+        "revGrowthPct": 13.5,
+        "epsGrowthPct": 147.5,
+        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
+      },
+      "yutai": null,
+      "news": [
+        {
+          "title": "ホンダ【7267】：今の株価の理由は？値動きの背景をAIが解説",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBHMUtCbzFfN3dPX1pVYUxCRzExSzlDbXd3VDI2RzZiNXQtNnBtcGFWeVBjY3BBZmNxd2FkZ0FHeFN5aFN1TGtUamV2eWthY19IMWk0WTJvcUV2WE8tT0Zv?oc=5",
+          "pubDate": "Mon, 10 Aug 2026 06:54:17 GMT",
+          "sentiment": "neu",
+          "theme": "AI"
+        }
+      ]
+    },
+    {
+      "rank": 9,
       "ticker": "5108.T",
       "name": "ブリヂストン",
-      "score": 0.583,
+      "score": 0.575,
       "f": 7,
       "per": 21.9,
       "pbr": 1.48,
       "roe": 11.3,
       "value": 0.182,
       "quality": 0.561,
-      "momentum": 0.399,
+      "momentum": 0.368,
       "smart": 0.924,
       "smartMoney": {
         "score": 0.782,
@@ -1286,7 +1232,7 @@
         "dividend"
       ],
       "dividend_yield": 3.0,
-      "volatility": 0.2758,
+      "volatility": 0.2768,
       "short_ratio": null,
       "regime_adjusted": false,
       "forecast": {
@@ -1357,7 +1303,7 @@
       },
       "earnings": {
         "date": "2026-08-07",
-        "daysTo": -2,
+        "daysTo": -3,
         "isToday": false,
         "isSoon": false,
         "passed": true,
@@ -1368,27 +1314,27 @@
       "yutai": null,
       "news": [
         {
-          "title": "(株)ブリヂストン【BRDCY】：株価・株式情報",
+          "title": "(株)ブリヂストン【5108】：今の株価の理由は？値動きの背景をAIが解説",
           "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1IZDh5S3BZUVd0blFSNEh6azZEUHQ5bXVPSWJIdVBzcE1KYTZKVlNJQXVWMW1HTUtWS0N2N016a19JVXBJM0JSN2hBeEl6Z01C?oc=5",
-          "pubDate": "Sat, 08 Aug 2026 00:09:01 GMT",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1Mdm1PVG1ua3hBQ1dxM3hyektWNDYzLVVLcmRBWXd1eW1uVHJqM0NBNEFHY1l1LXpIVmU0MjllaXpoNWItOHpKd3pZeF9nTUY3bTg1UXA2MVIzZ0I5YWU0?oc=5",
+          "pubDate": "Mon, 10 Aug 2026 06:58:24 GMT",
           "sentiment": "neu",
-          "theme": "その他"
+          "theme": "AI"
         }
       ]
     },
     {
-      "rank": 9,
+      "rank": 10,
       "ticker": "7832.T",
       "name": "バンダイナムコHD",
-      "score": 0.58,
+      "score": 0.575,
       "f": 6,
       "per": 24.9,
       "pbr": 4.05,
       "roe": 18.3,
       "value": 0.076,
       "quality": 0.628,
-      "momentum": 0.484,
+      "momentum": 0.462,
       "smart": 0.912,
       "smartMoney": {
         "score": 0.763,
@@ -1413,7 +1359,7 @@
         "swing"
       ],
       "dividend_yield": 0.9,
-      "volatility": 0.3623,
+      "volatility": 0.3617,
       "short_ratio": null,
       "regime_adjusted": false,
       "forecast": {
@@ -1434,8 +1380,8 @@
           "basis": "1日の実績振れ幅σ=1.8%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値5,429円 / 安値3,589円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
         },
         "cond": {
-          "upRate": 50.6,
-          "n": 77,
+          "upRate": 50.0,
+          "n": 78,
           "condition": "RSI70以上（買われすぎ圏）×5日上昇局面",
           "note": null
         },
@@ -1486,7 +1432,7 @@
       },
       "earnings": {
         "date": "2026-11-05",
-        "daysTo": 62,
+        "daysTo": 61,
         "isToday": false,
         "isSoon": false,
         "passed": false,
@@ -1497,132 +1443,10 @@
       "yutai": null,
       "news": [
         {
-          "title": "【アナリスト評価】バンダイナムコＨ、レーティング弱気を継続、目標株価3,790円に引上げ（米系大手証券）(アイフィス株予報)",
+          "title": "(株)バンダイナムコホールディングス【7832】：今の株価の理由は？値動きの背景をAIが解説",
           "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQN095cklyVl9lT3lRSFJDeWtDa1E4Vy1TSHpIdHg2b1pkMjI1Q3BiYVk2U09XeVNVWWcyXy1Hd3Z5clprMVItLTg0aWV6bWg5ZTVaVXhId0Z0V0VsRmU1OS1pYzd2aFBuMHNaRnlESlF1VVJxbmFRVEF0eVg2Z2xHckJTcnpzRTA?oc=5",
-          "pubDate": "Fri, 07 Aug 2026 08:37:00 GMT",
-          "sentiment": "neu",
-          "theme": "その他"
-        }
-      ]
-    },
-    {
-      "rank": 10,
-      "ticker": "7267.T",
-      "name": "ホンダ",
-      "score": 0.578,
-      "f": 5,
-      "per": null,
-      "pbr": 0.53,
-      "roe": -0.8,
-      "value": 0.465,
-      "quality": 0.445,
-      "momentum": 0.326,
-      "smart": 0.861,
-      "smartMoney": {
-        "score": 0.685,
-        "label": "買い集めの兆候",
-        "tone": "pos",
-        "cmf": 0.308,
-        "mfi": 72.1,
-        "obvSlope": 0.24,
-        "vwapDevPct": 5.9,
-        "factors": [
-          "安値圏でも買われている（CMFプラス）",
-          "上昇日に出来高が集中（OBV上向き）",
-          "直近平均コスト(VWAP)を上回って推移",
-          "直近5日は買い方向の出来高が優勢"
-        ]
-      },
-      "smartAdjusted": null,
-      "signal": "強い買い",
-      "rsi": 65.3,
-      "conf": "高",
-      "strategy": [
-        "dividend"
-      ],
-      "dividend_yield": 4.1,
-      "volatility": 0.3456,
-      "short_ratio": null,
-      "regime_adjusted": false,
-      "forecast": {
-        "price": 1692.0,
-        "rangeLow": 1661,
-        "rangeHigh": 1723,
-        "rangeLow2": 1630,
-        "rangeHigh2": 1754,
-        "volDPct": 1.82,
-        "calibrated": true,
-        "plan": {
-          "entry": 1677,
-          "target": 1739,
-          "stop": 1631,
-          "rr": 1.35,
-          "hi3m": 1692,
-          "lo3m": 1342,
-          "basis": "1日の実績振れ幅σ=1.8%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値1,692円 / 安値1,342円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
-        },
-        "cond": {
-          "upRate": 48.1,
-          "n": 181,
-          "condition": "RSI中立圏×5日上昇局面",
-          "note": null
-        },
-        "factors": [],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.85倍に自動補正済み。目標カバー率は約75%）"
-      },
-      "impact": {
-        "price": 1692.0,
-        "normalYen": 36,
-        "normalPct": 2.1,
-        "bigVol": {
-          "n": 6,
-          "avgAbsPct": 5.2,
-          "maxAbsPct": 8.3,
-          "avgYen": 88
-        },
-        "earnings": {
-          "n": 8,
-          "avgAbsPct": 3.7,
-          "maxAbsPct": 8.3,
-          "avgYen": 63,
-          "maxYen": 140,
-          "upCount": 2,
-          "recentPct": [
-            -0.0,
-            8.3,
-            -3.5
-          ]
-        },
-        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
-      },
-      "risk": {
-        "safety": 85,
-        "level": "低",
-        "penalties": [],
-        "supports": [
-          "機関の買い集め兆候"
-        ],
-        "stopPct": 2.74,
-        "rr": 1.35
-      },
-      "earnings": {
-        "date": "2026-11-05",
-        "daysTo": 62,
-        "isToday": false,
-        "isSoon": false,
-        "passed": false,
-        "revGrowthPct": 13.5,
-        "epsGrowthPct": 147.5,
-        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
-      },
-      "yutai": null,
-      "news": [
-        {
-          "title": "ホンダ【7267】：今の株価の理由は？値動きの背景をAIが解説",
-          "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5tdm84T3ZBR1JDeEhmcmF1blhpSTBSV205Snp4bXdTZHVWQlFiVjZNNDVUMmJ3Vk5uakdyZzR2MDRHeE1ZaTJCMm5UWVBUcUpWMUxnRW9Ma0VCQ2xCY25j?oc=5",
-          "pubDate": "Mon, 10 Aug 2026 06:54:17 GMT",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5GV3RwekRoLWUxRVJXOHJYNWNjX0NXYktCT05qY3NSWlNMM012bzVTbVlQQjU2VHZqR2psODZ6dnFhYXFLU1dIMFpNeU5BS2dtNHRIam9iQnRMYjIyNmdn?oc=5",
+          "pubDate": "Mon, 10 Aug 2026 07:07:49 GMT",
           "sentiment": "neu",
           "theme": "AI"
         }
@@ -1641,7 +1465,7 @@
       "pbr": 5.81,
       "roe": null,
       "rsi": 74.9,
-      "vol": 0.4894,
+      "vol": 0.4914,
       "inTop": false,
       "yutai": null
     },
@@ -1656,7 +1480,7 @@
       "pbr": 0.95,
       "roe": 12.4,
       "rsi": 52.3,
-      "vol": 0.3317,
+      "vol": 0.3331,
       "inTop": false,
       "yutai": "なし（株主優待は廃止）"
     },
@@ -1671,7 +1495,7 @@
       "pbr": 2.64,
       "roe": 13.2,
       "rsi": 66.2,
-      "vol": 0.3669,
+      "vol": 0.368,
       "inTop": false,
       "yutai": null
     },
@@ -1686,7 +1510,7 @@
       "pbr": 2.56,
       "roe": 11.2,
       "rsi": 29.2,
-      "vol": 0.4658,
+      "vol": 0.4616,
       "inTop": false,
       "yutai": null
     },
@@ -1701,7 +1525,7 @@
       "pbr": 1.11,
       "roe": 10.0,
       "rsi": 50.7,
-      "vol": 0.4847,
+      "vol": 0.4079,
       "inTop": false,
       "yutai": null
     },
@@ -1716,7 +1540,7 @@
       "pbr": 12.04,
       "roe": 30.9,
       "rsi": 35.0,
-      "vol": 0.6557,
+      "vol": 0.6583,
       "inTop": false,
       "yutai": null
     },
@@ -1731,7 +1555,7 @@
       "pbr": 3.83,
       "roe": null,
       "rsi": 87.6,
-      "vol": 0.3825,
+      "vol": 0.3836,
       "inTop": false,
       "yutai": null
     },
@@ -1746,7 +1570,7 @@
       "pbr": 0.95,
       "roe": 9.2,
       "rsi": 45.6,
-      "vol": 0.311,
+      "vol": 0.3123,
       "inTop": false,
       "yutai": null
     },
@@ -1761,7 +1585,7 @@
       "pbr": 1.48,
       "roe": 11.3,
       "rsi": 73.7,
-      "vol": 0.2758,
+      "vol": 0.2768,
       "inTop": true,
       "yutai": null
     },
@@ -1776,7 +1600,7 @@
       "pbr": 2.29,
       "roe": 10.9,
       "rsi": 71.5,
-      "vol": 0.4182,
+      "vol": 0.4188,
       "inTop": false,
       "yutai": null
     },
@@ -1791,7 +1615,7 @@
       "pbr": 23.79,
       "roe": 56.9,
       "rsi": 60.5,
-      "vol": 0.8009,
+      "vol": 0.8027,
       "inTop": false,
       "yutai": null
     },
@@ -1806,7 +1630,7 @@
       "pbr": 8.65,
       "roe": 26.5,
       "rsi": 57.2,
-      "vol": 0.3333,
+      "vol": 0.3342,
       "inTop": false,
       "yutai": null
     },
@@ -1821,7 +1645,7 @@
       "pbr": 15.74,
       "roe": 33.9,
       "rsi": 46.1,
-      "vol": 0.8309,
+      "vol": 0.8343,
       "inTop": false,
       "yutai": null
     },
@@ -1836,7 +1660,7 @@
       "pbr": 0.53,
       "roe": -0.8,
       "rsi": 65.3,
-      "vol": 0.3456,
+      "vol": 0.3432,
       "inTop": true,
       "yutai": null
     },
@@ -1851,7 +1675,7 @@
       "pbr": 3.26,
       "roe": 10.0,
       "rsi": 46.0,
-      "vol": 0.6163,
+      "vol": 0.6186,
       "inTop": false,
       "yutai": null
     },
@@ -1866,7 +1690,7 @@
       "pbr": 1.13,
       "roe": 10.4,
       "rsi": 55.5,
-      "vol": 0.2516,
+      "vol": 0.2525,
       "inTop": false,
       "yutai": null
     },
@@ -1881,7 +1705,7 @@
       "pbr": 1.51,
       "roe": 5.1,
       "rsi": 56.1,
-      "vol": 0.399,
+      "vol": 0.4,
       "inTop": false,
       "yutai": null
     },
@@ -1896,7 +1720,7 @@
       "pbr": 2.07,
       "roe": 9.6,
       "rsi": 22.7,
-      "vol": 0.3965,
+      "vol": 0.3953,
       "inTop": false,
       "yutai": null
     },
@@ -1911,7 +1735,7 @@
       "pbr": 2.45,
       "roe": 14.0,
       "rsi": 45.5,
-      "vol": 0.765,
+      "vol": 0.7681,
       "inTop": false,
       "yutai": null
     },
@@ -1926,7 +1750,7 @@
       "pbr": 1.92,
       "roe": 5.2,
       "rsi": 58.8,
-      "vol": 0.5829,
+      "vol": 0.5852,
       "inTop": false,
       "yutai": null
     },
@@ -1941,7 +1765,7 @@
       "pbr": 0.94,
       "roe": 6.2,
       "rsi": 53.6,
-      "vol": 0.4683,
+      "vol": 0.4701,
       "inTop": false,
       "yutai": null
     },
@@ -1956,7 +1780,7 @@
       "pbr": 5.01,
       "roe": 18.9,
       "rsi": 28.4,
-      "vol": 0.7597,
+      "vol": 0.7628,
       "inTop": false,
       "yutai": null
     },
@@ -1971,7 +1795,7 @@
       "pbr": 11.73,
       "roe": 27.4,
       "rsi": 45.8,
-      "vol": 0.733,
+      "vol": 0.7345,
       "inTop": false,
       "yutai": null
     },
@@ -1986,7 +1810,7 @@
       "pbr": 3.02,
       "roe": 12.3,
       "rsi": 72.5,
-      "vol": 0.3018,
+      "vol": 0.3015,
       "inTop": false,
       "yutai": null
     },
@@ -2001,7 +1825,7 @@
       "pbr": 2.27,
       "roe": -3.1,
       "rsi": 62.1,
-      "vol": 0.4967,
+      "vol": 0.4439,
       "inTop": false,
       "yutai": null
     },
@@ -2016,7 +1840,7 @@
       "pbr": 1.74,
       "roe": 9.5,
       "rsi": 45.7,
-      "vol": 0.3328,
+      "vol": 0.3334,
       "inTop": false,
       "yutai": null
     },
@@ -2031,7 +1855,7 @@
       "pbr": 1.56,
       "roe": 8.6,
       "rsi": 40.5,
-      "vol": 0.3692,
+      "vol": 0.3704,
       "inTop": false,
       "yutai": null
     },
@@ -2046,7 +1870,7 @@
       "pbr": 1.74,
       "roe": 12.5,
       "rsi": 48.8,
-      "vol": 0.4565,
+      "vol": 0.4584,
       "inTop": false,
       "yutai": null
     },
@@ -2061,7 +1885,7 @@
       "pbr": 1.18,
       "roe": 11.2,
       "rsi": 45.1,
-      "vol": 0.3773,
+      "vol": 0.3789,
       "inTop": false,
       "yutai": null
     },
@@ -2076,7 +1900,7 @@
       "pbr": 1.2,
       "roe": 13.5,
       "rsi": 50.5,
-      "vol": 0.3525,
+      "vol": 0.3537,
       "inTop": false,
       "yutai": null
     },
@@ -2091,7 +1915,7 @@
       "pbr": 1.09,
       "roe": 9.8,
       "rsi": 56.0,
-      "vol": 0.2927,
+      "vol": 0.2939,
       "inTop": false,
       "yutai": null
     },
@@ -2106,7 +1930,7 @@
       "pbr": 1.45,
       "roe": 13.6,
       "rsi": 45.4,
-      "vol": 0.3344,
+      "vol": 0.3352,
       "inTop": false,
       "yutai": null
     },
@@ -2121,7 +1945,7 @@
       "pbr": 1.83,
       "roe": 8.7,
       "rsi": 46.3,
-      "vol": 0.4448,
+      "vol": 0.4467,
       "inTop": false,
       "yutai": null
     },
@@ -2136,7 +1960,7 @@
       "pbr": 1.19,
       "roe": 6.6,
       "rsi": 32.2,
-      "vol": 0.4078,
+      "vol": 0.4082,
       "inTop": false,
       "yutai": null
     },
@@ -2151,7 +1975,7 @@
       "pbr": 1.12,
       "roe": null,
       "rsi": 63.5,
-      "vol": 0.4061,
+      "vol": 0.4077,
       "inTop": false,
       "yutai": null
     },
@@ -2166,7 +1990,7 @@
       "pbr": 1.71,
       "roe": 32.0,
       "rsi": 46.4,
-      "vol": 0.9631,
+      "vol": 0.9667,
       "inTop": false,
       "yutai": null
     },
@@ -2181,7 +2005,7 @@
       "pbr": 1.32,
       "roe": 10.7,
       "rsi": 62.5,
-      "vol": 0.1593,
+      "vol": 0.1599,
       "inTop": false,
       "yutai": "なし（過去はdポイント優待）"
     },
@@ -2196,7 +2020,7 @@
       "pbr": 2.12,
       "roe": 14.6,
       "rsi": 46.7,
-      "vol": 0.2537,
+      "vol": 0.2509,
       "inTop": false,
       "yutai": "100株以上でカタログギフト等（長期保有優遇・要IR確認）"
     },
@@ -2211,7 +2035,7 @@
       "pbr": 3.75,
       "roe": 16.7,
       "rsi": 55.8,
-      "vol": 0.1916,
+      "vol": 0.1924,
       "inTop": false,
       "yutai": null
     },
@@ -2226,7 +2050,7 @@
       "pbr": 12.69,
       "roe": 36.2,
       "rsi": 74.9,
-      "vol": 0.5927,
+      "vol": 0.5829,
       "inTop": true,
       "yutai": null
     },
@@ -2241,7 +2065,7 @@
       "pbr": 7.45,
       "roe": 4.6,
       "rsi": 47.1,
-      "vol": 0.5545,
+      "vol": 0.5532,
       "inTop": false,
       "yutai": null
     },
@@ -2271,7 +2095,7 @@
       "pbr": 7.86,
       "roe": 33.8,
       "rsi": 64.2,
-      "vol": 0.4844,
+      "vol": 0.4851,
       "inTop": false,
       "yutai": null
     },
@@ -2286,7 +2110,7 @@
       "pbr": 1.84,
       "roe": 11.6,
       "rsi": 61.9,
-      "vol": 0.4487,
+      "vol": 0.4504,
       "inTop": false,
       "yutai": null
     },
@@ -2301,7 +2125,7 @@
       "pbr": 1.95,
       "roe": 8.7,
       "rsi": 39.1,
-      "vol": 0.2607,
+      "vol": 0.2618,
       "inTop": false,
       "yutai": null
     },
@@ -2316,7 +2140,7 @@
       "pbr": 5.77,
       "roe": 23.5,
       "rsi": 42.9,
-      "vol": 0.4393,
+      "vol": 0.44,
       "inTop": false,
       "yutai": null
     },
@@ -2331,7 +2155,7 @@
       "pbr": 1.17,
       "roe": -2.3,
       "rsi": 51.0,
-      "vol": 0.2461,
+      "vol": 0.247,
       "inTop": false,
       "yutai": null
     },
@@ -2346,7 +2170,7 @@
       "pbr": 3.0,
       "roe": 14.8,
       "rsi": 49.4,
-      "vol": 0.4036,
+      "vol": 0.4035,
       "inTop": false,
       "yutai": null
     },
@@ -2361,7 +2185,7 @@
       "pbr": 1.54,
       "roe": 5.0,
       "rsi": 64.2,
-      "vol": 0.3352,
+      "vol": 0.3346,
       "inTop": false,
       "yutai": null
     },
@@ -2376,7 +2200,7 @@
       "pbr": 1.48,
       "roe": 38.5,
       "rsi": 56.5,
-      "vol": 0.752,
+      "vol": 0.755,
       "inTop": false,
       "yutai": null
     },
@@ -2391,7 +2215,7 @@
       "pbr": 4.12,
       "roe": 21.8,
       "rsi": 48.1,
-      "vol": 0.34,
+      "vol": 0.3369,
       "inTop": false,
       "yutai": null
     },
@@ -2406,7 +2230,7 @@
       "pbr": 4.05,
       "roe": 18.3,
       "rsi": 79.4,
-      "vol": 0.3623,
+      "vol": 0.3617,
       "inTop": true,
       "yutai": null
     },
@@ -2421,7 +2245,7 @@
       "pbr": 1.84,
       "roe": 10.1,
       "rsi": 60.5,
-      "vol": 0.3789,
+      "vol": 0.3804,
       "inTop": false,
       "yutai": null
     },
@@ -2436,7 +2260,7 @@
       "pbr": 1.54,
       "roe": 11.4,
       "rsi": 53.4,
-      "vol": 0.3938,
+      "vol": 0.3865,
       "inTop": false,
       "yutai": null
     },
@@ -2451,7 +2275,7 @@
       "pbr": 2.16,
       "roe": 14.1,
       "rsi": 74.0,
-      "vol": 0.2834,
+      "vol": 0.2774,
       "inTop": false,
       "yutai": null
     },
@@ -2466,7 +2290,7 @@
       "pbr": 1.8,
       "roe": 14.2,
       "rsi": 39.1,
-      "vol": 0.3981,
+      "vol": 0.3987,
       "inTop": false,
       "yutai": null
     },
@@ -2481,7 +2305,7 @@
       "pbr": 1.79,
       "roe": 13.6,
       "rsi": 81.2,
-      "vol": 0.4519,
+      "vol": 0.452,
       "inTop": false,
       "yutai": null
     },
@@ -2496,7 +2320,7 @@
       "pbr": 2.67,
       "roe": 16.1,
       "rsi": 74.8,
-      "vol": 0.4685,
+      "vol": 0.4656,
       "inTop": false,
       "yutai": null
     },
@@ -2511,7 +2335,7 @@
       "pbr": 1.22,
       "roe": 6.7,
       "rsi": 35.0,
-      "vol": 0.3514,
+      "vol": 0.3503,
       "inTop": false,
       "yutai": "保有株数に応じ宿泊優待割引券（要IR確認・手動更新）"
     },
@@ -2526,7 +2350,7 @@
       "pbr": 1.64,
       "roe": 10.7,
       "rsi": 26.3,
-      "vol": 0.3871,
+      "vol": 0.3875,
       "inTop": false,
       "yutai": null
     },
@@ -2541,7 +2365,7 @@
       "pbr": 1.28,
       "roe": 9.4,
       "rsi": 22.5,
-      "vol": 0.4041,
+      "vol": 0.4057,
       "inTop": false,
       "yutai": null
     },
@@ -2556,7 +2380,7 @@
       "pbr": 1.39,
       "roe": 13.1,
       "rsi": 40.5,
-      "vol": 0.2684,
+      "vol": 0.2661,
       "inTop": false,
       "yutai": null
     },
@@ -2571,7 +2395,7 @@
       "pbr": 0.36,
       "roe": 7.1,
       "rsi": 42.5,
-      "vol": 0.1609,
+      "vol": 0.1616,
       "inTop": false,
       "yutai": null
     },
@@ -2586,7 +2410,7 @@
       "pbr": 0.9,
       "roe": 19.5,
       "rsi": 44.9,
-      "vol": 0.3884,
+      "vol": 0.389,
       "inTop": false,
       "yutai": null
     },
@@ -2601,7 +2425,7 @@
       "pbr": 0.94,
       "roe": 22.5,
       "rsi": 50.4,
-      "vol": 0.3567,
+      "vol": 0.3573,
       "inTop": false,
       "yutai": null
     },
@@ -2616,7 +2440,7 @@
       "pbr": 0.25,
       "roe": 12.5,
       "rsi": 58.2,
-      "vol": 0.5025,
+      "vol": 0.4991,
       "inTop": true,
       "yutai": null
     },
@@ -2631,7 +2455,7 @@
       "pbr": 0.63,
       "roe": 6.0,
       "rsi": 26.4,
-      "vol": 0.342,
+      "vol": 0.3401,
       "inTop": false,
       "yutai": null
     },
@@ -2646,7 +2470,7 @@
       "pbr": 0.74,
       "roe": 12.5,
       "rsi": 50.8,
-      "vol": 0.3106,
+      "vol": 0.3062,
       "inTop": false,
       "yutai": null
     },
@@ -2661,7 +2485,7 @@
       "pbr": 1.13,
       "roe": 9.6,
       "rsi": 34.3,
-      "vol": 0.2901,
+      "vol": 0.291,
       "inTop": false,
       "yutai": null
     },
@@ -2676,7 +2500,7 @@
       "pbr": 0.8,
       "roe": 7.7,
       "rsi": 66.7,
-      "vol": 0.3045,
+      "vol": 0.3055,
       "inTop": false,
       "yutai": "なし（日本郵船は株主優待制度なし）"
     },
@@ -2691,7 +2515,7 @@
       "pbr": 0.75,
       "roe": 7.9,
       "rsi": 75.7,
-      "vol": 0.3725,
+      "vol": 0.3717,
       "inTop": true,
       "yutai": null
     },
@@ -2706,7 +2530,7 @@
       "pbr": 1.0,
       "roe": 7.6,
       "rsi": 62.2,
-      "vol": 0.361,
+      "vol": 0.3625,
       "inTop": false,
       "yutai": null
     },
@@ -2721,7 +2545,7 @@
       "pbr": 8.85,
       "roe": 22.5,
       "rsi": 44.2,
-      "vol": 0.342,
+      "vol": 0.3434,
       "inTop": false,
       "yutai": null
     },
@@ -2736,7 +2560,7 @@
       "pbr": 3.66,
       "roe": 21.7,
       "rsi": 64.8,
-      "vol": 0.3125,
+      "vol": 0.3129,
       "inTop": false,
       "yutai": null
     },
@@ -2751,7 +2575,7 @@
       "pbr": 4.39,
       "roe": null,
       "rsi": 60.6,
-      "vol": 0.3693,
+      "vol": 0.3703,
       "inTop": false,
       "yutai": null
     },
@@ -2766,7 +2590,7 @@
       "pbr": 3.27,
       "roe": null,
       "rsi": 72.9,
-      "vol": 0.4185,
+      "vol": 0.4176,
       "inTop": false,
       "yutai": "なし（任天堂は株主優待制度なし）"
     },
@@ -2781,7 +2605,7 @@
       "pbr": 2.87,
       "roe": 14.0,
       "rsi": 69.3,
-      "vol": 0.2593,
+      "vol": 0.2595,
       "inTop": false,
       "yutai": "100株以上でJT関連商品の詰め合わせ（年1回・要IR確認）"
     },
@@ -2796,7 +2620,7 @@
       "pbr": 0.82,
       "roe": 4.3,
       "rsi": 57.5,
-      "vol": 0.2292,
+      "vol": 0.23,
       "inTop": false,
       "yutai": null
     },
@@ -2811,7 +2635,7 @@
       "pbr": 1.75,
       "roe": 15.1,
       "rsi": 54.1,
-      "vol": 0.2841,
+      "vol": 0.2848,
       "inTop": false,
       "yutai": null
     },
@@ -2826,7 +2650,7 @@
       "pbr": 6.5,
       "roe": 18.5,
       "rsi": 50.8,
-      "vol": 0.4647,
+      "vol": 0.4664,
       "inTop": false,
       "yutai": null
     },
@@ -2841,7 +2665,7 @@
       "pbr": 0.25,
       "roe": -7.7,
       "rsi": 57.8,
-      "vol": 0.4326,
+      "vol": 0.4344,
       "inTop": true,
       "yutai": null
     },
@@ -2856,7 +2680,7 @@
       "pbr": 1.47,
       "roe": 5.5,
       "rsi": 67.7,
-      "vol": 0.2789,
+      "vol": 0.28,
       "inTop": false,
       "yutai": null
     },
@@ -2871,7 +2695,7 @@
       "pbr": 1.31,
       "roe": 8.0,
       "rsi": 50.9,
-      "vol": 0.2894,
+      "vol": 0.29,
       "inTop": false,
       "yutai": null
     },
@@ -2886,7 +2710,7 @@
       "pbr": 3.18,
       "roe": 7.2,
       "rsi": 53.5,
-      "vol": 0.3636,
+      "vol": 0.3605,
       "inTop": false,
       "yutai": null
     },
@@ -2901,7 +2725,7 @@
       "pbr": 0.91,
       "roe": 9.1,
       "rsi": 61.8,
-      "vol": 0.338,
+      "vol": 0.3393,
       "inTop": false,
       "yutai": null
     },
@@ -2916,7 +2740,7 @@
       "pbr": 0.97,
       "roe": 13.2,
       "rsi": 54.1,
-      "vol": 0.2927,
+      "vol": 0.2937,
       "inTop": false,
       "yutai": null
     },
@@ -2931,7 +2755,7 @@
       "pbr": 3.03,
       "roe": 20.3,
       "rsi": 34.5,
-      "vol": 0.4658,
+      "vol": 0.4604,
       "inTop": false,
       "yutai": null
     },
@@ -2946,7 +2770,7 @@
       "pbr": 1.43,
       "roe": 9.6,
       "rsi": 59.0,
-      "vol": 0.5094,
+      "vol": 0.4785,
       "inTop": false,
       "yutai": null
     },
@@ -2961,7 +2785,7 @@
       "pbr": 0.66,
       "roe": 3.1,
       "rsi": 51.3,
-      "vol": 0.3344,
+      "vol": 0.3358,
       "inTop": false,
       "yutai": null
     },
@@ -2976,7 +2800,7 @@
       "pbr": 1.23,
       "roe": 18.5,
       "rsi": 71.2,
-      "vol": 0.59,
+      "vol": 0.5909,
       "inTop": false,
       "yutai": null
     },
@@ -2991,7 +2815,7 @@
       "pbr": 0.64,
       "roe": 5.5,
       "rsi": 78.3,
-      "vol": 0.2783,
+      "vol": 0.278,
       "inTop": true,
       "yutai": null
     },
@@ -3006,7 +2830,7 @@
       "pbr": 0.45,
       "roe": 3.8,
       "rsi": 64.4,
-      "vol": 0.2742,
+      "vol": 0.2751,
       "inTop": false,
       "yutai": null
     },
@@ -3021,7 +2845,7 @@
       "pbr": 2.15,
       "roe": -4.1,
       "rsi": 41.8,
-      "vol": 1.0593,
+      "vol": 1.0551,
       "inTop": false,
       "yutai": null
     },
@@ -3036,7 +2860,7 @@
       "pbr": 5.84,
       "roe": 29.9,
       "rsi": 57.3,
-      "vol": 0.4845,
+      "vol": 0.4851,
       "inTop": false,
       "yutai": null
     },
@@ -3051,7 +2875,7 @@
       "pbr": 1.3,
       "roe": -11.9,
       "rsi": 53.1,
-      "vol": 0.5645,
+      "vol": 0.5665,
       "inTop": false,
       "yutai": null
     },
@@ -3066,7 +2890,7 @@
       "pbr": 11.37,
       "roe": 33.5,
       "rsi": 66.9,
-      "vol": 0.6462,
+      "vol": 0.6488,
       "inTop": false,
       "yutai": null
     },
@@ -3081,7 +2905,7 @@
       "pbr": 2.62,
       "roe": 7.4,
       "rsi": 61.6,
-      "vol": 0.6932,
+      "vol": 0.6961,
       "inTop": false,
       "yutai": null
     },
@@ -3096,7 +2920,7 @@
       "pbr": 4.21,
       "roe": 22.1,
       "rsi": 56.4,
-      "vol": 0.4784,
+      "vol": 0.4786,
       "inTop": false,
       "yutai": null
     },
@@ -3111,7 +2935,7 @@
       "pbr": 1.27,
       "roe": 0.4,
       "rsi": 64.3,
-      "vol": 0.7283,
+      "vol": 0.7058,
       "inTop": false,
       "yutai": null
     },
@@ -3126,7 +2950,7 @@
       "pbr": 2.21,
       "roe": 11.2,
       "rsi": 68.7,
-      "vol": 0.4118,
+      "vol": 0.4134,
       "inTop": false,
       "yutai": null
     },
@@ -3141,7 +2965,7 @@
       "pbr": 7.93,
       "roe": 3.5,
       "rsi": 66.3,
-      "vol": 0.7126,
+      "vol": 0.7148,
       "inTop": false,
       "yutai": null
     },
@@ -3156,7 +2980,7 @@
       "pbr": 14.76,
       "roe": 55.4,
       "rsi": 60.7,
-      "vol": 0.5598,
+      "vol": 0.5583,
       "inTop": true,
       "yutai": null
     },
@@ -3171,7 +2995,7 @@
       "pbr": 11.72,
       "roe": 36.5,
       "rsi": 64.6,
-      "vol": 0.5781,
+      "vol": 0.5728,
       "inTop": false,
       "yutai": null
     },
@@ -3186,7 +3010,7 @@
       "pbr": 5.29,
       "roe": 16.3,
       "rsi": 48.9,
-      "vol": 0.7095,
+      "vol": 0.7111,
       "inTop": false,
       "yutai": null
     },
@@ -3201,7 +3025,7 @@
       "pbr": 4.78,
       "roe": 6.3,
       "rsi": 48.5,
-      "vol": 0.4832,
+      "vol": 0.4848,
       "inTop": false,
       "yutai": null
     },
@@ -3216,7 +3040,7 @@
       "pbr": 6.7,
       "roe": 8.6,
       "rsi": 52.5,
-      "vol": 0.7703,
+      "vol": 0.7732,
       "inTop": false,
       "yutai": null
     },
@@ -3231,7 +3055,7 @@
       "pbr": 7.77,
       "roe": -3.9,
       "rsi": 43.3,
-      "vol": 1.0502,
+      "vol": 1.0365,
       "inTop": false,
       "yutai": null
     },
@@ -3246,7 +3070,7 @@
       "pbr": 8.4,
       "roe": 26.1,
       "rsi": 51.3,
-      "vol": 0.3907,
+      "vol": 0.3922,
       "inTop": false,
       "yutai": null
     },
@@ -3291,7 +3115,7 @@
       "pbr": 2.69,
       "roe": 6.0,
       "rsi": 23.0,
-      "vol": 0.7063,
+      "vol": 0.7068,
       "inTop": false,
       "yutai": null
     },
@@ -3306,7 +3130,7 @@
       "pbr": 10.08,
       "roe": 38.6,
       "rsi": 68.0,
-      "vol": 0.6365,
+      "vol": 0.6193,
       "inTop": false,
       "yutai": null
     },
@@ -3321,7 +3145,7 @@
       "pbr": 0.79,
       "roe": 7.0,
       "rsi": 41.5,
-      "vol": 0.1707,
+      "vol": 0.1714,
       "inTop": false,
       "yutai": null
     },
@@ -3336,7 +3160,7 @@
       "pbr": 7.06,
       "roe": -6.5,
       "rsi": 35.9,
-      "vol": 0.8651,
+      "vol": 0.8674,
       "inTop": false,
       "yutai": null
     },
@@ -3351,7 +3175,7 @@
       "pbr": 7.69,
       "roe": 23.9,
       "rsi": 59.4,
-      "vol": 0.4804,
+      "vol": 0.4803,
       "inTop": false,
       "yutai": null
     },
@@ -3366,7 +3190,7 @@
       "pbr": 1.78,
       "roe": 14.0,
       "rsi": 38.4,
-      "vol": 0.6076,
+      "vol": 0.6098,
       "inTop": false,
       "yutai": null
     },
@@ -3378,10 +3202,10 @@
       "exDivDate": "2026-09-29",
       "dividendYield": 4.61,
       "per": 14.7,
-      "pbr": 2.81,
+      "pbr": 2.84,
       "roe": 20.7,
       "rsi": 59.7,
-      "vol": 0.283,
+      "vol": 0.2797,
       "inTop": false,
       "yutai": "なし（パーソルHDは株主優待制度なし・配当のみ）"
     },
@@ -3396,7 +3220,7 @@
       "pbr": 4.24,
       "roe": 14.7,
       "rsi": 59.1,
-      "vol": 0.437,
+      "vol": 0.4378,
       "inTop": false,
       "yutai": null
     },
@@ -3411,7 +3235,7 @@
       "pbr": 2.54,
       "roe": 14.4,
       "rsi": 51.1,
-      "vol": 0.5443,
+      "vol": 0.5456,
       "inTop": false,
       "yutai": null
     },
@@ -3426,7 +3250,7 @@
       "pbr": 4.48,
       "roe": 33.4,
       "rsi": 48.8,
-      "vol": 0.5269,
+      "vol": 0.5179,
       "inTop": false,
       "yutai": null
     },
@@ -3441,7 +3265,7 @@
       "pbr": 2.29,
       "roe": 9.8,
       "rsi": 63.7,
-      "vol": 0.5689,
+      "vol": 0.5677,
       "inTop": false,
       "yutai": null
     },
@@ -3456,7 +3280,7 @@
       "pbr": 1.8,
       "roe": 6.3,
       "rsi": 73.3,
-      "vol": 0.5277,
+      "vol": 0.5299,
       "inTop": false,
       "yutai": null
     },
@@ -3471,7 +3295,7 @@
       "pbr": 0.99,
       "roe": 7.2,
       "rsi": 40.8,
-      "vol": 0.2477,
+      "vol": 0.2485,
       "inTop": false,
       "yutai": null
     },
@@ -3486,7 +3310,7 @@
       "pbr": 7.18,
       "roe": null,
       "rsi": 50.4,
-      "vol": 0.3952,
+      "vol": 0.3966,
       "inTop": false,
       "yutai": null
     },
@@ -3501,7 +3325,7 @@
       "pbr": 1.27,
       "roe": 7.9,
       "rsi": 41.2,
-      "vol": 0.2926,
+      "vol": 0.2907,
       "inTop": false,
       "yutai": null
     },
@@ -3516,7 +3340,7 @@
       "pbr": 0.7,
       "roe": 11.2,
       "rsi": 50.4,
-      "vol": 0.299,
+      "vol": 0.2999,
       "inTop": false,
       "yutai": null
     },
@@ -3531,7 +3355,7 @@
       "pbr": 1.89,
       "roe": 11.6,
       "rsi": 71.0,
-      "vol": 0.4455,
+      "vol": 0.4416,
       "inTop": false,
       "yutai": null
     },
@@ -3546,7 +3370,7 @@
       "pbr": 1.29,
       "roe": 10.9,
       "rsi": 60.2,
-      "vol": 0.4092,
+      "vol": 0.4109,
       "inTop": false,
       "yutai": null
     },
@@ -3561,7 +3385,7 @@
       "pbr": 1.11,
       "roe": 15.3,
       "rsi": 48.3,
-      "vol": 0.3818,
+      "vol": 0.3829,
       "inTop": false,
       "yutai": null
     },
@@ -3576,7 +3400,7 @@
       "pbr": 0.39,
       "roe": 5.9,
       "rsi": 52.4,
-      "vol": 0.3733,
+      "vol": 0.3722,
       "inTop": true,
       "yutai": null
     },
@@ -3591,7 +3415,7 @@
       "pbr": 4.82,
       "roe": 10.1,
       "rsi": 43.8,
-      "vol": 0.9072,
+      "vol": 0.9107,
       "inTop": false,
       "yutai": null
     },
@@ -3606,7 +3430,7 @@
       "pbr": 2.51,
       "roe": 11.6,
       "rsi": 48.7,
-      "vol": 0.6407,
+      "vol": 0.6413,
       "inTop": false,
       "yutai": null
     },
@@ -3621,7 +3445,7 @@
       "pbr": 2.62,
       "roe": 10.3,
       "rsi": 55.6,
-      "vol": 0.485,
+      "vol": 0.4871,
       "inTop": false,
       "yutai": null
     },
@@ -3636,7 +3460,7 @@
       "pbr": 2.38,
       "roe": 15.8,
       "rsi": 43.9,
-      "vol": 0.7969,
+      "vol": 0.8002,
       "inTop": false,
       "yutai": null
     },
@@ -3651,7 +3475,7 @@
       "pbr": 0.97,
       "roe": 7.1,
       "rsi": 32.1,
-      "vol": 0.3883,
+      "vol": 0.3899,
       "inTop": false,
       "yutai": null
     },
@@ -3666,7 +3490,7 @@
       "pbr": 2.04,
       "roe": 13.4,
       "rsi": 72.2,
-      "vol": 0.3578,
+      "vol": 0.3593,
       "inTop": false,
       "yutai": null
     },
@@ -3681,7 +3505,7 @@
       "pbr": 1.36,
       "roe": 16.8,
       "rsi": 45.9,
-      "vol": 0.2949,
+      "vol": 0.2955,
       "inTop": false,
       "yutai": null
     },
@@ -3696,7 +3520,7 @@
       "pbr": 0.67,
       "roe": 5.1,
       "rsi": 41.6,
-      "vol": 0.3078,
+      "vol": 0.309,
       "inTop": false,
       "yutai": null
     },
@@ -3711,7 +3535,7 @@
       "pbr": 2.86,
       "roe": 12.1,
       "rsi": 63.4,
-      "vol": 0.3554,
+      "vol": 0.3551,
       "inTop": false,
       "yutai": null
     },
@@ -3726,7 +3550,7 @@
       "pbr": 1.63,
       "roe": 9.6,
       "rsi": 52.9,
-      "vol": 0.2932,
+      "vol": 0.2943,
       "inTop": false,
       "yutai": null
     },
@@ -3738,10 +3562,10 @@
       "exDivDate": "2026-12-29",
       "dividendYield": 2.13,
       "per": 27.7,
-      "pbr": 2.26,
+      "pbr": 2.18,
       "roe": 8.3,
       "rsi": 63.5,
-      "vol": 0.3224,
+      "vol": 0.3235,
       "inTop": false,
       "yutai": null
     },
@@ -3756,7 +3580,7 @@
       "pbr": 10.42,
       "roe": 51.8,
       "rsi": 49.6,
-      "vol": 0.2925,
+      "vol": 0.2933,
       "inTop": false,
       "yutai": null
     },
@@ -3769,9 +3593,9 @@
       "dividendYield": null,
       "per": null,
       "pbr": 2.08,
-      "roe": -5.2,
+      "roe": 0.3,
       "rsi": 66.5,
-      "vol": 0.3558,
+      "vol": 0.3571,
       "inTop": false,
       "yutai": null
     },
@@ -3786,7 +3610,7 @@
       "pbr": 1.11,
       "roe": 8.3,
       "rsi": 66.4,
-      "vol": 0.3314,
+      "vol": 0.3223,
       "inTop": false,
       "yutai": null
     },
@@ -3801,7 +3625,7 @@
       "pbr": 1.74,
       "roe": 9.2,
       "rsi": 76.0,
-      "vol": 0.4443,
+      "vol": 0.4433,
       "inTop": false,
       "yutai": null
     },
@@ -3816,7 +3640,7 @@
       "pbr": 2.24,
       "roe": 12.4,
       "rsi": 47.2,
-      "vol": 0.233,
+      "vol": 0.2333,
       "inTop": false,
       "yutai": null
     },
@@ -3831,7 +3655,7 @@
       "pbr": 1.54,
       "roe": 14.0,
       "rsi": 42.6,
-      "vol": 0.3705,
+      "vol": 0.3689,
       "inTop": false,
       "yutai": "2024年に株主優待は廃止済み"
     },
@@ -3846,7 +3670,7 @@
       "pbr": 1.74,
       "roe": 12.4,
       "rsi": 68.1,
-      "vol": 0.3147,
+      "vol": 0.3156,
       "inTop": false,
       "yutai": null
     },
@@ -3861,7 +3685,7 @@
       "pbr": 2.35,
       "roe": -47.0,
       "rsi": 61.6,
-      "vol": 0.371,
+      "vol": 0.3717,
       "inTop": false,
       "yutai": null
     },
@@ -3876,7 +3700,7 @@
       "pbr": 2.51,
       "roe": null,
       "rsi": 30.4,
-      "vol": 0.4598,
+      "vol": 0.4605,
       "inTop": false,
       "yutai": null
     },
@@ -3891,7 +3715,7 @@
       "pbr": 2.29,
       "roe": 7.5,
       "rsi": 73.2,
-      "vol": 0.5101,
+      "vol": 0.5121,
       "inTop": false,
       "yutai": null
     },
@@ -3906,7 +3730,7 @@
       "pbr": 1.85,
       "roe": 5.5,
       "rsi": 74.0,
-      "vol": 0.6304,
+      "vol": 0.6318,
       "inTop": false,
       "yutai": null
     },
@@ -3921,7 +3745,7 @@
       "pbr": 2.82,
       "roe": 19.5,
       "rsi": 44.8,
-      "vol": 0.7171,
+      "vol": 0.7199,
       "inTop": false,
       "yutai": null
     },
@@ -3936,7 +3760,7 @@
       "pbr": 2.39,
       "roe": 13.1,
       "rsi": 32.1,
-      "vol": 0.6126,
+      "vol": 0.6143,
       "inTop": false,
       "yutai": null
     },
@@ -3951,7 +3775,7 @@
       "pbr": 2.13,
       "roe": 8.8,
       "rsi": 50.8,
-      "vol": 0.6561,
+      "vol": 0.657,
       "inTop": false,
       "yutai": null
     },
@@ -3966,7 +3790,7 @@
       "pbr": 2.51,
       "roe": 9.7,
       "rsi": 56.5,
-      "vol": 0.3549,
+      "vol": 0.3563,
       "inTop": false,
       "yutai": null
     },
@@ -3981,7 +3805,7 @@
       "pbr": 3.62,
       "roe": 16.3,
       "rsi": 61.0,
-      "vol": 0.3909,
+      "vol": 0.3914,
       "inTop": false,
       "yutai": null
     },
@@ -3996,7 +3820,7 @@
       "pbr": 1.05,
       "roe": 16.2,
       "rsi": 52.8,
-      "vol": 0.3195,
+      "vol": 0.3177,
       "inTop": false,
       "yutai": null
     },
@@ -4011,7 +3835,7 @@
       "pbr": 1.08,
       "roe": 4.2,
       "rsi": 54.1,
-      "vol": 0.2869,
+      "vol": 0.2874,
       "inTop": false,
       "yutai": null
     },
@@ -4026,7 +3850,7 @@
       "pbr": 1.6,
       "roe": -0.1,
       "rsi": 65.4,
-      "vol": 0.3879,
+      "vol": 0.389,
       "inTop": false,
       "yutai": null
     },
@@ -4041,7 +3865,7 @@
       "pbr": 0.55,
       "roe": 3.7,
       "rsi": 28.1,
-      "vol": 0.2676,
+      "vol": 0.2683,
       "inTop": false,
       "yutai": null
     },
@@ -4056,7 +3880,7 @@
       "pbr": 0.67,
       "roe": 6.5,
       "rsi": 50.9,
-      "vol": 0.2349,
+      "vol": 0.2343,
       "inTop": false,
       "yutai": null
     },
@@ -4071,7 +3895,7 @@
       "pbr": 1.03,
       "roe": 12.6,
       "rsi": 45.8,
-      "vol": 0.2103,
+      "vol": 0.2096,
       "inTop": false,
       "yutai": null
     },
@@ -4086,7 +3910,7 @@
       "pbr": 0.97,
       "roe": 12.9,
       "rsi": 45.8,
-      "vol": 0.2079,
+      "vol": 0.2065,
       "inTop": false,
       "yutai": null
     },
@@ -4101,7 +3925,7 @@
       "pbr": -41.74,
       "roe": null,
       "rsi": 55.6,
-      "vol": 2.1385,
+      "vol": 2.146,
       "inTop": false,
       "yutai": null
     },
@@ -4116,7 +3940,7 @@
       "pbr": 2.4,
       "roe": null,
       "rsi": 49.5,
-      "vol": 0.7476,
+      "vol": 0.7508,
       "inTop": false,
       "yutai": null
     }
@@ -4155,22 +3979,22 @@
     {
       "type": "good",
       "title": "入替候補IN: リクルートHD",
-      "desc": "高スコア+モメンタム (score=0.699)"
+      "desc": "高スコア+モメンタム (score=0.703)"
+    },
+    {
+      "type": "warn",
+      "title": "入替候補OUT: 東京ガス",
+      "desc": "スコア下位15% (score=0.343)"
     },
     {
       "type": "warn",
       "title": "入替候補OUT: TDK",
-      "desc": "スコア下位15% (score=0.347)"
+      "desc": "スコア下位15% (score=0.343)"
     },
     {
       "type": "warn",
       "title": "入替候補OUT: メドレー",
-      "desc": "スコア下位15% (score=0.344)"
-    },
-    {
-      "type": "warn",
-      "title": "入替候補OUT: SUMCO",
-      "desc": "スコア下位15% (score=0.343)"
+      "desc": "スコア下位15% (score=0.341)"
     }
   ],
   "flow": {
@@ -4241,25 +4065,18 @@
   ],
   "themeTrends": [
     {
+      "theme": "AI",
+      "mentions": 7,
+      "pos": 0,
+      "neg": 0,
+      "prevMentions": 7
+    },
+    {
       "theme": "その他",
-      "mentions": 5,
+      "mentions": 3,
       "pos": 1,
       "neg": 0,
-      "prevMentions": 5
-    },
-    {
-      "theme": "AI",
-      "mentions": 4,
-      "pos": 0,
-      "neg": 0,
-      "prevMentions": 4
-    },
-    {
-      "theme": "資源",
-      "mentions": 1,
-      "pos": 0,
-      "neg": 0,
-      "prevMentions": 1
+      "prevMentions": 3
     }
   ]
 }

@@ -152,12 +152,12 @@
  "news_by_ticker": {
   "6098.T": [
    {
-    "title": "注目銘柄ダイジェスト（前場）:リクルートHD、三井金属、mbsなど",
-    "source": "株探",
-    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1uSl9aYjFyS2NmWU5wTXJoSDUwQ0ZGU09yeUVBTDllYTEtTjc3UE1SUUZTc2lnMlQ3V2luTGFBMU10QzlhNWZjSFlHaWpGZHFXT0RmQ2ZBN3h6ekJHZGg5cQ?oc=5",
-    "pubDate": "Mon, 10 Aug 2026 02:40:33 GMT",
-    "sentiment": "neu",
-    "theme": "資源"
+    "title": "リクルートHD株価ストップ高 27年3月期純利益を上方修正",
+    "source": "日本経済新聞",
+    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5ZLVNtRDBNRF80YUZYRlFINVhmV2Z3ZFp3NUJveWNLRzE4R2pxQXhCLW5MUmNlZkR5cFVCb2ZmYlNxVGgzRG1sV2c5ZVcySHBlbjVBeTlrd2hQc1ZIQUFLOVZZWHc0SXZfVUNwLQ?oc=5",
+    "pubDate": "Mon, 10 Aug 2026 01:00:32 GMT",
+    "sentiment": "pos",
+    "theme": "その他"
    }
   ],
   "7201.T": [
@@ -172,32 +172,22 @@
   ],
   "5401.T": [
    {
-    "title": "日本製鉄(株)【5401】：今の株価の理由は？値動きの背景をAIが解説",
+    "title": "日本製鉄(株)【NPSCY】：株価・株式情報",
     "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBkU2Jjek9TYXNYM3pQUlhyTWc2NGwwRG5tZFRIQVNNYUpEZldqdEFEYjNVcGVkdlQ0N2hBNGQ5cFhXYnNZZkdKOEtZa05mLTNSWG93V0cyemF0TEZpQ084?oc=5",
-    "pubDate": "Mon, 10 Aug 2026 06:53:36 GMT",
+    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1WTFpXQ1pkeU1EU2tnOEs2TEd5SW9ORVNUeGx4N281RUhDTVN5LXZhUVZkWS13Q3pYaWhqcXBYR1I0TUlyQ1Y1bFNzVTZ5UGp2?oc=5",
+    "pubDate": "Tue, 11 Aug 2026 10:40:05 GMT",
     "sentiment": "neu",
-    "theme": "AI"
+    "theme": "その他"
    }
   ],
   "9104.T": [
    {
-    "title": "【アナリスト予想】商船三井、27年3月期経常予想。対前週7.8%上昇。(アイフィス株予報)",
+    "title": "(株)商船三井【9104】：今の株価の理由は？値動きの背景をAIが解説",
     "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQanVCZklGaEp6NE5EM0lHcHZUYnZIQ1Y0VWs2MEJxTlcwMzhXdWM2bFVDb0JCNzh3aFhuSjRWV0N6Qm8zN0RuQ0Yzck5HeFhhR042dGlqQ0ZtNGttelJJaHlMc1Y2RnBTQkROeEVvdUZGUS14RGFfODFNNFZkd3RiX194UGtoSnM?oc=5",
-    "pubDate": "Mon, 10 Aug 2026 13:46:00 GMT",
-    "sentiment": "pos",
-    "theme": "その他"
-   }
-  ],
-  "3923.T": [
-   {
-    "title": "(株)ラクス【3923】：掲示板",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1ZY1R3d0loSmJIZlpDamhSbHN0eWswTWVCUl83Zlh0Q3d3WmpQVmx1ajV0RHpmTlp4Z05tYWRqZmJicEcxQlp0amFpX19EeVBLWkpJcHVsMkxFZw?oc=5",
-    "pubDate": "Tue, 07 Oct 2025 09:31:59 GMT",
+    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5hM0gxUTdFdnlrME9abHYzMll3bldxN1RFSnJJaVUxYUZOSFJLYzA5QUh4N1paZnpiRmJaX3hWUGhaTU56LVhBRGpFcTEwUWlWYmJ0cno0UjkxWUdvZnQw?oc=5",
+    "pubDate": "Mon, 10 Aug 2026 06:56:08 GMT",
     "sentiment": "neu",
-    "theme": "その他"
+    "theme": "AI"
    }
   ],
   "7261.T": [
@@ -205,9 +195,19 @@
     "title": "マツダ(株)【MZDAY】：株価・株式情報",
     "source": "Yahoo!ファイナンス",
     "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBMcnVTNmRGUHVHcHF0dEw2bEwxbExKR3JRNzBURG5vVzUxa3VpTlFOVW5xRFI5ZDNBTHpQajNreXNpSWN3TDdyS3dFWDU2ZkpW?oc=5",
-    "pubDate": "Mon, 10 Aug 2026 17:35:04 GMT",
+    "pubDate": "Tue, 11 Aug 2026 10:38:41 GMT",
     "sentiment": "neu",
     "theme": "その他"
+   }
+  ],
+  "3923.T": [
+   {
+    "title": "(株)ラクス【3923】：今の株価の理由は？値動きの背景をAIが解説",
+    "source": "Yahoo!ファイナンス",
+    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBWS0dzZ19QUFY4NGpjNmEzcVVXVy01MGlRT3JfUjd2dGJLNnVYaTRqaDRsWjFJNThvSlY0RTBOQ2R5aDAtQmc1WXBpbDlubmY3NnNLWjFERlkzNi1lMjJv?oc=5",
+    "pubDate": "Mon, 10 Aug 2026 07:06:14 GMT",
+    "sentiment": "neu",
+    "theme": "AI"
    }
   ],
   "9501.T": [
@@ -220,32 +220,32 @@
     "theme": "AI"
    }
   ],
-  "5108.T": [
-   {
-    "title": "(株)ブリヂストン【BRDCY】：株価・株式情報",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1IZDh5S3BZUVd0blFSNEh6azZEUHQ5bXVPSWJIdVBzcE1KYTZKVlNJQXVWMW1HTUtWS0N2N016a19JVXBJM0JSN2hBeEl6Z01C?oc=5",
-    "pubDate": "Sat, 08 Aug 2026 00:09:01 GMT",
-    "sentiment": "neu",
-    "theme": "その他"
-   }
-  ],
-  "7832.T": [
-   {
-    "title": "【アナリスト評価】バンダイナムコＨ、レーティング弱気を継続、目標株価3,790円に引上げ（米系大手証券）(アイフィス株予報)",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQN095cklyVl9lT3lRSFJDeWtDa1E4Vy1TSHpIdHg2b1pkMjI1Q3BiYVk2U09XeVNVWWcyXy1Hd3Z5clprMVItLTg0aWV6bWg5ZTVaVXhId0Z0V0VsRmU1OS1pYzd2aFBuMHNaRnlESlF1VVJxbmFRVEF0eVg2Z2xHckJTcnpzRTA?oc=5",
-    "pubDate": "Fri, 07 Aug 2026 08:37:00 GMT",
-    "sentiment": "neu",
-    "theme": "その他"
-   }
-  ],
   "7267.T": [
    {
     "title": "ホンダ【7267】：今の株価の理由は？値動きの背景をAIが解説",
     "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5tdm84T3ZBR1JDeEhmcmF1blhpSTBSV205Snp4bXdTZHVWQlFiVjZNNDVUMmJ3Vk5uakdyZzR2MDRHeE1ZaTJCMm5UWVBUcUpWMUxnRW9Ma0VCQ2xCY25j?oc=5",
+    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBHMUtCbzFfN3dPX1pVYUxCRzExSzlDbXd3VDI2RzZiNXQtNnBtcGFWeVBjY3BBZmNxd2FkZ0FHeFN5aFN1TGtUamV2eWthY19IMWk0WTJvcUV2WE8tT0Zv?oc=5",
     "pubDate": "Mon, 10 Aug 2026 06:54:17 GMT",
+    "sentiment": "neu",
+    "theme": "AI"
+   }
+  ],
+  "5108.T": [
+   {
+    "title": "(株)ブリヂストン【5108】：今の株価の理由は？値動きの背景をAIが解説",
+    "source": "Yahoo!ファイナンス",
+    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1Mdm1PVG1ua3hBQ1dxM3hyektWNDYzLVVLcmRBWXd1eW1uVHJqM0NBNEFHY1l1LXpIVmU0MjllaXpoNWItOHpKd3pZeF9nTUY3bTg1UXA2MVIzZ0I5YWU0?oc=5",
+    "pubDate": "Mon, 10 Aug 2026 06:58:24 GMT",
+    "sentiment": "neu",
+    "theme": "AI"
+   }
+  ],
+  "7832.T": [
+   {
+    "title": "(株)バンダイナムコホールディングス【7832】：今の株価の理由は？値動きの背景をAIが解説",
+    "source": "Yahoo!ファイナンス",
+    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5GV3RwekRoLWUxRVJXOHJYNWNjX0NXYktCT05qY3NSWlNMM012bzVTbVlQQjU2VHZqR2psODZ6dnFhYXFLU1dIMFpNeU5BS2dtNHRIam9iQnRMYjIyNmdn?oc=5",
+    "pubDate": "Mon, 10 Aug 2026 07:07:49 GMT",
     "sentiment": "neu",
     "theme": "AI"
    }
@@ -325,25 +325,18 @@
  },
  "theme_trends": [
   {
+   "theme": "AI",
+   "mentions": 7,
+   "pos": 0,
+   "neg": 0,
+   "prevMentions": 7
+  },
+  {
    "theme": "その他",
-   "mentions": 5,
+   "mentions": 3,
    "pos": 1,
    "neg": 0,
-   "prevMentions": 5
-  },
-  {
-   "theme": "AI",
-   "mentions": 4,
-   "pos": 0,
-   "neg": 0,
-   "prevMentions": 4
-  },
-  {
-   "theme": "資源",
-   "mentions": 1,
-   "pos": 0,
-   "neg": 0,
-   "prevMentions": 1
+   "prevMentions": 3
   }
  ],
  "flow": {
@@ -418,16 +411,6 @@
    "2024-10-30",
    "2024-01-30"
   ],
-  "3923.T": [
-   "2026-05-14",
-   "2026-02-12",
-   "2025-11-13",
-   "2025-08-13",
-   "2025-05-14",
-   "2025-02-12",
-   "2024-11-12",
-   "2024-08-12"
-  ],
   "7261.T": [
    "2026-08-04",
    "2026-05-12",
@@ -438,6 +421,16 @@
    "2025-02-06",
    "2024-11-06"
   ],
+  "3923.T": [
+   "2026-05-14",
+   "2026-02-12",
+   "2025-11-13",
+   "2025-08-13",
+   "2025-05-14",
+   "2025-02-12",
+   "2024-11-12",
+   "2024-08-12"
+  ],
   "9501.T": [
    "2026-07-29",
    "2026-04-29",
@@ -447,6 +440,16 @@
    "2024-01-30",
    "2023-10-30",
    "2023-08-01"
+  ],
+  "7267.T": [
+   "2026-08-05",
+   "2026-05-14",
+   "2026-02-10",
+   "2025-11-07",
+   "2025-08-06",
+   "2025-05-13",
+   "2025-02-13",
+   "2024-11-05"
   ],
   "5108.T": [
    "2026-08-07",
@@ -467,16 +470,6 @@
    "2025-02-04",
    "2024-11-05",
    "2024-08-07"
-  ],
-  "7267.T": [
-   "2026-08-05",
-   "2026-05-14",
-   "2026-02-10",
-   "2025-11-07",
-   "2025-08-06",
-   "2025-05-13",
-   "2025-02-13",
-   "2024-11-05"
   ]
  }
 }
