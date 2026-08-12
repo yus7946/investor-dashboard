@@ -4019,6 +4019,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-10",
+      "ticker": "2181.T",
+      "name": "パーソルホールディングス",
+      "basePrice": 284.0,
+      "rangeLow": 280,
+      "rangeHigh": 288,
+      "predUpRate": 51.1,
+      "condN": 188,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -5835,6 +5850,18 @@
       "entry": 6084,
       "target": 6268,
       "stop": 5946,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-10",
+      "ticker": "2181.T",
+      "name": "パーソルホールディングス",
+      "basePrice": 284.0,
+      "entry": 282,
+      "target": 290,
+      "stop": 276,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
