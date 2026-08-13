@@ -4229,6 +4229,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-12",
+      "ticker": "9101.T",
+      "name": "日本郵船",
+      "basePrice": 6211.0,
+      "rangeLow": 6117,
+      "rangeHigh": 6305,
+      "predUpRate": 58.7,
+      "condN": 184,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-12",
+      "ticker": "9107.T",
+      "name": "川崎汽船",
+      "basePrice": 2903.5,
+      "rangeLow": 2854,
+      "rangeHigh": 2953,
+      "predUpRate": 55.1,
+      "condN": 187,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -6114,6 +6144,30 @@
       "entry": 282,
       "target": 290,
       "stop": 276,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-12",
+      "ticker": "9101.T",
+      "name": "日本郵船",
+      "basePrice": 6211.0,
+      "entry": 6164,
+      "target": 6353,
+      "stop": 6023,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-12",
+      "ticker": "9107.T",
+      "name": "川崎汽船",
+      "basePrice": 2903.5,
+      "entry": 2879,
+      "target": 2978,
+      "stop": 2804,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
