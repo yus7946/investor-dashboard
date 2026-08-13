@@ -4214,6 +4214,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-12",
+      "ticker": "6027.T",
+      "name": "弁護士ドットコム",
+      "basePrice": 3120.0,
+      "rangeLow": 3030,
+      "rangeHigh": 3210,
+      "predUpRate": 40.0,
+      "condN": 45,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
