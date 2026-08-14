@@ -4409,6 +4409,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-13",
+      "ticker": "9107.T",
+      "name": "川崎汽船",
+      "basePrice": 3028.0,
+      "rangeLow": 2976,
+      "rangeHigh": 3080,
+      "predUpRate": 55.6,
+      "condN": 187,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-13",
+      "ticker": "9432.T",
+      "name": "NTT",
+      "basePrice": 161.4,
+      "rangeLow": 160,
+      "rangeHigh": 163,
+      "predUpRate": 41.7,
+      "condN": 204,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -6351,6 +6381,30 @@
       "entry": 6164,
       "target": 6352,
       "stop": 6023,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-13",
+      "ticker": "9107.T",
+      "name": "川崎汽船",
+      "basePrice": 3028.0,
+      "entry": 3002,
+      "target": 3107,
+      "stop": 2924,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-13",
+      "ticker": "9432.T",
+      "name": "NTT",
+      "basePrice": 161.4,
+      "entry": 161,
+      "target": 164,
+      "stop": 159,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
