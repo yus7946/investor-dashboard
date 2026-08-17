@@ -4589,6 +4589,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-14",
+      "ticker": "9101.T",
+      "name": "日本郵船",
+      "basePrice": 6446.0,
+      "rangeLow": 6344,
+      "rangeHigh": 6548,
+      "predUpRate": 59.1,
+      "condN": 186,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -6588,6 +6603,54 @@
       "entry": 162,
       "target": 165,
       "stop": 160,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-14",
+      "ticker": "3923.T",
+      "name": "ラクス",
+      "basePrice": 1100.5,
+      "entry": 1087,
+      "target": 1140,
+      "stop": 1048,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-14",
+      "ticker": "4443.T",
+      "name": "Sansan",
+      "basePrice": 2034.0,
+      "entry": 2006,
+      "target": 2119,
+      "stop": 1921,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-14",
+      "ticker": "9101.T",
+      "name": "日本郵船",
+      "basePrice": 6446.0,
+      "entry": 6395,
+      "target": 6599,
+      "stop": 6242,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-14",
+      "ticker": "2181.T",
+      "name": "パーソルホールディングス",
+      "basePrice": 284.8,
+      "entry": 283,
+      "target": 291,
+      "stop": 277,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
