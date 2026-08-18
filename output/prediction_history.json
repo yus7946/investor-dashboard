@@ -4754,6 +4754,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-17",
+      "ticker": "7267.T",
+      "name": "ホンダ",
+      "basePrice": 1704.0,
+      "rangeLow": 1670,
+      "rangeHigh": 1738,
+      "predUpRate": 48.6,
+      "condN": 185,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-17",
+      "ticker": "9501.T",
+      "name": "東京電力HD",
+      "basePrice": 533.8,
+      "rangeLow": 519,
+      "rangeHigh": 549,
+      "predUpRate": 49.1,
+      "condN": 165,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -6870,6 +6900,30 @@
       "entry": 282,
       "target": 290,
       "stop": 276,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-17",
+      "ticker": "7267.T",
+      "name": "ホンダ",
+      "basePrice": 1704.0,
+      "entry": 1687,
+      "target": 1754,
+      "stop": 1636,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-17",
+      "ticker": "9501.T",
+      "name": "東京電力HD",
+      "basePrice": 533.8,
+      "entry": 526,
+      "target": 556,
+      "stop": 503,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
