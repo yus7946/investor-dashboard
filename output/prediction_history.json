@@ -4799,6 +4799,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-17",
+      "ticker": "4478.T",
+      "name": "freee",
+      "basePrice": 3375.0,
+      "rangeLow": 3261,
+      "rangeHigh": 3489,
+      "predUpRate": 42.9,
+      "condN": 63,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
