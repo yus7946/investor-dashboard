@@ -4979,6 +4979,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-18",
+      "ticker": "4478.T",
+      "name": "freee",
+      "basePrice": 3490.0,
+      "rangeLow": 3371,
+      "rangeHigh": 3609,
+      "predUpRate": 43.8,
+      "condN": 64,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-18",
+      "ticker": "2181.T",
+      "name": "パーソルホールディングス",
+      "basePrice": 288.6,
+      "rangeLow": 284,
+      "rangeHigh": 293,
+      "predUpRate": 51.3,
+      "condN": 191,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -7212,6 +7242,18 @@
       "entry": 96599,
       "target": 98204,
       "stop": 95395,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-18",
+      "ticker": "2181.T",
+      "name": "パーソルホールディングス",
+      "basePrice": 288.6,
+      "entry": 287,
+      "target": 295,
+      "stop": 281,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
