@@ -5009,6 +5009,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-18",
+      "ticker": "4689.T",
+      "name": "LINEヤフー",
+      "basePrice": 497.1,
+      "rangeLow": 488,
+      "rangeHigh": 506,
+      "predUpRate": 55.0,
+      "condN": 191,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -7254,6 +7269,18 @@
       "entry": 287,
       "target": 295,
       "stop": 281,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-18",
+      "ticker": "4689.T",
+      "name": "LINEヤフー",
+      "basePrice": 497.1,
+      "entry": 493,
+      "target": 510,
+      "stop": 480,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
