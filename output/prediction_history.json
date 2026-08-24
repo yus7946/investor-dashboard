@@ -5504,6 +5504,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-21",
+      "ticker": "3994.T",
+      "name": "マネーフォワード",
+      "basePrice": 6450.0,
+      "rangeLow": 6224,
+      "rangeHigh": 6676,
+      "predUpRate": 54.2,
+      "condN": 168,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -7920,6 +7935,18 @@
       "entry": 1204,
       "target": 1265,
       "stop": 1158,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-21",
+      "ticker": "3994.T",
+      "name": "マネーフォワード",
+      "basePrice": 6450.0,
+      "entry": 6337,
+      "target": 6788,
+      "stop": 5999,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
