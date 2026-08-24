@@ -5489,6 +5489,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-21",
+      "ticker": "7261.T",
+      "name": "マツダ",
+      "basePrice": 1219.0,
+      "rangeLow": 1189,
+      "rangeHigh": 1249,
+      "predUpRate": 46.7,
+      "condN": 227,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -7893,6 +7908,18 @@
       "entry": 1099,
       "target": 1155,
       "stop": 1057,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-21",
+      "ticker": "7261.T",
+      "name": "マツダ",
+      "basePrice": 1219.0,
+      "entry": 1204,
+      "target": 1265,
+      "stop": 1158,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
