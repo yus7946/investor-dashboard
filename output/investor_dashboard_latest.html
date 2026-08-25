@@ -991,9 +991,9 @@ body::before {
 gsap.registerPlugin(ScrollTrigger);
 
 const DATA = {
-  "updated": "2026年08月25日 16:04",
-  "updatedAtMs": 1787641490394,
-  "updateMode": "light",
+  "updated": "2026年08月26日 08:51",
+  "updatedAtMs": 1787701876321,
+  "updateMode": "full",
   "fetched": 163,
   "universeTotal": 166,
   "lowRiskPlan": {
@@ -1022,25 +1022,25 @@ const DATA = {
     "source": "TOPIX連動ETF(1306.T)終値と200日移動平均から判定"
   },
   "marketOutlook": {
-    "spxChangePct": -0.28,
-    "spxDate": "2026-08-24",
-    "usdjpy": 159.37,
-    "usdjpyChangePct": 0.29,
-    "condition": "米S&P500が直近下落",
-    "topixUpRate": 43.0,
-    "n": 207,
+    "spxChangePct": 0.32,
+    "spxDate": "2026-08-25",
+    "usdjpy": 159.24,
+    "usdjpyChangePct": 0.06,
+    "condition": "米S&P500が直近上昇",
+    "topixUpRate": 64.4,
+    "n": 278,
     "regime": "bull",
     "basis": "過去2年で「米国市場が上昇/下落した翌営業日に東京(TOPIX ETF)が上昇した割合」を実際に集計。統計的傾向であり将来を保証しません。出典: Yahoo Finance価格データ。"
   },
   "accuracy": {
-    "resolvedStockCount": 368,
-    "resolvedMarketCount": 31,
-    "rangeHitRate": 76.9,
-    "leanUpActualUp": 54.9,
-    "leanUpN": 82,
-    "leanDownActualUp": 61.1,
-    "leanDownN": 36,
-    "marketHitRate": 61.3,
+    "resolvedStockCount": 381,
+    "resolvedMarketCount": 32,
+    "rangeHitRate": 76.6,
+    "leanUpActualUp": 54.1,
+    "leanUpN": 85,
+    "leanDownActualUp": 60.0,
+    "leanDownN": 40,
+    "marketHitRate": 62.5,
     "planEntered": 134,
     "planDecided": 134,
     "planTargetRate": 50.0,
@@ -1049,13 +1049,13 @@ const DATA = {
     "note": "予測と実際の答え合わせを毎営業日ぶん蓄積した実績です。件数が増えるほど信頼度が上がります。将来を保証するものではありません。"
   },
   "backtest": {
-    "annual": "+24.4%",
-    "benchmark": "+31.7%",
-    "sharpe": "0.64",
+    "annual": "+24.9%",
+    "benchmark": "+32.0%",
+    "sharpe": "0.65",
     "dd": "-26.9%",
     "winrate": "60.9%",
     "months": "23ヶ月",
-    "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+31.7%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
+    "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+32.0%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
   },
   "stocks": [
     {
@@ -1223,7 +1223,7 @@ const DATA = {
       "strategy": [
         "swing"
       ],
-      "dividend_yield": 2.1,
+      "dividend_yield": 2.0,
       "volatility": 0.324,
       "short_ratio": null,
       "regime_adjusted": false,
@@ -1254,6 +1254,10 @@ const DATA = {
           {
             "label": "RSI 84.3（買われすぎ圏・反落しやすい傾向）",
             "dir": "-"
+          },
+          {
+            "label": "直近ニュースがポジティブ寄り（1件/簡易判定）",
+            "dir": "+"
           }
         ],
         "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.96倍に自動補正済み。目標カバー率は約75%）"
@@ -1308,11 +1312,11 @@ const DATA = {
       "yutai": null,
       "news": [
         {
-          "title": "カカクコム株価続落 LINEヤフー「静観」でTOB価格上げ思惑後退",
-          "source": "日本経済新聞",
-          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9lSFpmM2dDS0RQd2Rtc3QxM0xSV3ZfZEIyUnlvMGZKR2JaY2w1WE1xa3BIUUN5TEU4bm4xVGNTQ21GbjBGUG5taGRYRTdELW1RdExNaWwyeVVyc0l6OHI3bWRLV29ONzJxc3Y0UQ?oc=5",
-          "pubDate": "Mon, 24 Aug 2026 01:08:27 GMT",
-          "sentiment": "neu",
+          "title": "【アナリスト予想】ＬＩＮＥヤフー、27年3月期経常予想。対前週3.1%上昇。(アイフィス株予報)",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNYzhjLXBlQ21yTFFzZ194djU3UnV6NkdTWHFUOVVjMF91RHVvbzVWWk1HY1ppYXpDa0hDZkJFZ2hwVDg4c2QwcXNZWTEtT3VFazA4RHFyVXY0SlVlNURueEhZcy1UaURnSzVlUWFvVnBlVkJaV0c2M2RYZ0YzcVE1ck02R2YwcWM?oc=5",
+          "pubDate": "Tue, 25 Aug 2026 13:46:00 GMT",
+          "sentiment": "pos",
           "theme": "その他"
         }
       ]
@@ -1323,7 +1327,7 @@ const DATA = {
       "name": "Sansan",
       "score": 0.562,
       "f": 4,
-      "per": 40.6,
+      "per": 40.7,
       "pbr": 12.93,
       "roe": 36.5,
       "value": 0.021,
@@ -1354,7 +1358,7 @@ const DATA = {
       ],
       "dividend_yield": 0.2,
       "volatility": 0.5539,
-      "short_ratio": 0.78,
+      "short_ratio": null,
       "regime_adjusted": false,
       "forecast": {
         "price": 2153.0,
@@ -1477,7 +1481,7 @@ const DATA = {
       ],
       "dividend_yield": 0.0,
       "volatility": 0.7119,
-      "short_ratio": 1.46,
+      "short_ratio": 3.17,
       "regime_adjusted": false,
       "forecast": {
         "price": 4345.0,
@@ -1508,6 +1512,10 @@ const DATA = {
             "dir": "-"
           },
           {
+            "label": "空売り残高3.17%（売り圧力・踏み上げ両方の要因）",
+            "dir": "-"
+          },
+          {
             "label": "直近ニュースがポジティブ寄り（1件/簡易判定）",
             "dir": "+"
           }
@@ -1528,11 +1536,12 @@ const DATA = {
         "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
-        "safety": 49,
+        "safety": 45,
         "level": "中",
         "penalties": [
           "値動きが大きい（年率71%）→ 建玉は小さめに",
-          "買われすぎ（RSI76）→ 反落で損切りに当たりやすい"
+          "買われすぎ（RSI76）→ 反落で損切りに当たりやすい",
+          "空売り残高3.17%（急変動リスク）"
         ],
         "supports": [
           "機関の買い集め兆候"
@@ -1662,12 +1671,12 @@ const DATA = {
       "yutai": "なし（パーソルHDは株主優待制度なし・配当のみ）",
       "news": [
         {
-          "title": "パーソルホールディングス(株)【2181】：今の株価の理由は？値動きの背景をAIが解説",
+          "title": "【アナリスト予想】パーソルＨ、27年3月期経常予想。対前週1.3%下降。(アイフィス株予報)",
           "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE94aUdidGlCaDNzTGFUbVgwYVRUWE1qMEVrN0dNUUtKVW1TWmdrclR6QV93QzZkTEoyZlExYlB1MWdaZlYtS083ZGNOeWh0VXZOSkVqRHNoRF8yU0s1d2E0?oc=5",
-          "pubDate": "Mon, 24 Aug 2026 07:01:41 GMT",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdGRZWTNCNG9Td2pzNkI0eU4wT24xREpYNWN2SER4VTQ0eWlycWZQM2hXU05pWTlzMXQ0MWIybGxYUk1LTl9BQXFrWkc4ZElrNGRyN0ExbWdBa0RCOXlwMmdHYjFLd3F4SGRyMUJmSk5XcVRLU04xQm55NlNOVlA4czhEZjMyekk?oc=5",
+          "pubDate": "Tue, 25 Aug 2026 13:46:00 GMT",
           "sentiment": "neu",
-          "theme": "AI"
+          "theme": "その他"
         }
       ]
     },
@@ -1729,8 +1738,8 @@ const DATA = {
           "basis": "1日の実績振れ幅σ=1.0%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.5:1）。参考: 直近3ヶ月の高値169円 / 安値143円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
         },
         "cond": {
-          "upRate": 52.6,
-          "n": 38,
+          "upRate": 51.3,
+          "n": 39,
           "condition": "RSI70以上（買われすぎ圏）×5日上昇局面",
           "note": null
         },
@@ -1752,7 +1761,19 @@ const DATA = {
           "maxAbsPct": 2.5,
           "avgYen": 2
         },
-        "earnings": null,
+        "earnings": {
+          "n": 8,
+          "avgAbsPct": 1.5,
+          "maxAbsPct": 2.6,
+          "avgYen": 3,
+          "maxYen": 4,
+          "upCount": 5,
+          "recentPct": [
+            2.6,
+            -1.2,
+            0.7
+          ]
+        },
         "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
@@ -1779,7 +1800,16 @@ const DATA = {
         "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
       },
       "yutai": "なし（過去はdポイント優待）",
-      "news": []
+      "news": [
+        {
+          "title": "NTT株価一時2年3カ月ぶり高値 AI株からシフト、利回り着目も",
+          "source": "日本経済新聞",
+          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5HbTc4LW5qR013cHdEN3lrOWxzaE53Z0otWncyTEhvMmdQQWN3NjMwMmt4b2VBUnVEbkJFSDhpY25BMGllOFIzZWM0MHVkTGlqaERXWnhlNl9QNEtuZVdILW94VWU5M2oxNDdGVw?oc=5",
+          "pubDate": "Tue, 25 Aug 2026 05:35:07 GMT",
+          "sentiment": "neu",
+          "theme": "AI"
+        }
+      ]
     },
     {
       "rank": 7,
@@ -1816,7 +1846,7 @@ const DATA = {
       ],
       "dividend_yield": 3.3,
       "volatility": 0.3184,
-      "short_ratio": 0.49,
+      "short_ratio": 0.61,
       "regime_adjusted": false,
       "forecast": {
         "price": 7141.0,
@@ -1845,6 +1875,10 @@ const DATA = {
           {
             "label": "RSI 80.5（買われすぎ圏・反落しやすい傾向）",
             "dir": "-"
+          },
+          {
+            "label": "直近ニュースがポジティブ寄り（1件/簡易判定）",
+            "dir": "+"
           }
         ],
         "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.96倍に自動補正済み。目標カバー率は約75%）"
@@ -1894,12 +1928,12 @@ const DATA = {
       "yutai": "なし（日本郵船は株主優待制度なし）",
       "news": [
         {
-          "title": "日本郵船(株)【9101】：今の株価の理由は？値動きの背景をAIが解説",
-          "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1OX1F5eENWM3cyWnBjNDdycy1EaC14QmpOeHJlMUhMcVpNRHNQdjBFbXF6dFNZUFBabHB3UVJqWjQxZ1I1R3JheUdqUVV3YS1HOVk1NWt6cU9LRUcyTEs4?oc=5",
-          "pubDate": "Mon, 24 Aug 2026 06:55:53 GMT",
-          "sentiment": "neu",
-          "theme": "AI"
+          "title": "日本郵船など海運大手株価が上場来高値 海上運賃の上昇続くとの見方",
+          "source": "日本経済新聞",
+          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBxdTdWa2d5a01GWXRrWGFaTjZQNHV3a1V0c2RJeU1WRkViYXVuRUk0UVpYci00Vmw3MVd3aDlRS2sxLWRxbXJMUzRmLWlzTmVlQXlCZl81Z3JtRDZQTERZMnVrTkZ5R3N0SW1RQQ?oc=5",
+          "pubDate": "Tue, 25 Aug 2026 02:02:17 GMT",
+          "sentiment": "pos",
+          "theme": "その他"
         }
       ]
     },
@@ -1909,7 +1943,7 @@ const DATA = {
       "name": "freee",
       "score": 0.547,
       "f": 2,
-      "per": 214.9,
+      "per": 212.8,
       "pbr": 10.86,
       "roe": 5.3,
       "value": 0.02,
@@ -1939,7 +1973,7 @@ const DATA = {
       ],
       "dividend_yield": 0.0,
       "volatility": 0.7301,
-      "short_ratio": 1.33,
+      "short_ratio": 1.28,
       "regime_adjusted": false,
       "forecast": {
         "price": 3875.0,
@@ -2068,7 +2102,7 @@ const DATA = {
       ],
       "dividend_yield": 3.5,
       "volatility": 0.3778,
-      "short_ratio": 3.73,
+      "short_ratio": 5.05,
       "regime_adjusted": false,
       "forecast": {
         "price": 3421.0,
@@ -2099,12 +2133,8 @@ const DATA = {
             "dir": "-"
           },
           {
-            "label": "空売り残高3.73%（売り圧力・踏み上げ両方の要因）",
+            "label": "空売り残高5.05%（売り圧力・踏み上げ両方の要因）",
             "dir": "-"
-          },
-          {
-            "label": "直近ニュースがポジティブ寄り（1件/簡易判定）",
-            "dir": "+"
           }
         ],
         "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.96倍に自動補正済み。目標カバー率は約75%）"
@@ -2130,11 +2160,11 @@ const DATA = {
         "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
-        "safety": 63,
+        "safety": 59,
         "level": "中",
         "penalties": [
           "買われすぎ（RSI79）→ 反落で損切りに当たりやすい",
-          "空売り残高3.73%（急変動リスク）"
+          "空売り残高5.05%（急変動リスク）"
         ],
         "supports": [
           "機関の買い集め兆候"
@@ -2155,12 +2185,12 @@ const DATA = {
       "yutai": null,
       "news": [
         {
-          "title": "川崎汽船－新高値 中東リスク高まり海運株に買い 外資系の目標株価引き上げも材料視(トレーダーズ・ウェブ)",
+          "title": "川崎汽船(株)【9107】：今の株価の理由は？値動きの背景をAIが解説",
           "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNYmpCcmYyRkVUT3dNRkQ0VWt0Y0t0blp2V0xpazNIUVpqRW9XdVJuVW5QeHdmNjhOcHl6eDJ6b180bTBlaTI2TjVpMXJBamgyNWJkY2lJRjc3eW84RHlkRFJJOE5xZC1CV0RpQkFJbUw0WFozR2stUzFvNkxVQWpvdTRfc2lnTTQ?oc=5",
-          "pubDate": "Fri, 21 Aug 2026 04:24:00 GMT",
-          "sentiment": "pos",
-          "theme": "その他"
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1lMld0VXRUR1o2ZzFCZGxkWjlMa1FjN3pKd01QQ1FCLXI2MGF5UVExNmM0emswOTR6aFl6T3BqVXRTaXNYcUZwOXhTU21hTVUwOUpVZGtOa2lVWjFxTDNr?oc=5",
+          "pubDate": "Tue, 25 Aug 2026 06:56:17 GMT",
+          "sentiment": "neu",
+          "theme": "AI"
         }
       ]
     },
@@ -2199,7 +2229,7 @@ const DATA = {
       "strategy": [
         "dividend"
       ],
-      "dividend_yield": 4.5,
+      "dividend_yield": 4.6,
       "volatility": 0.3772,
       "short_ratio": 1.58,
       "regime_adjusted": false,
@@ -2226,7 +2256,12 @@ const DATA = {
           "condition": "RSI中立圏×5日上昇局面",
           "note": null
         },
-        "factors": [],
+        "factors": [
+          {
+            "label": "直近ニュースがポジティブ寄り（1件/簡易判定）",
+            "dir": "+"
+          }
+        ],
         "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.96倍に自動補正済み。目標カバー率は約75%）"
       },
       "impact": {
@@ -2239,7 +2274,19 @@ const DATA = {
           "maxAbsPct": 4.1,
           "avgYen": 40
         },
-        "earnings": null,
+        "earnings": {
+          "n": 8,
+          "avgAbsPct": 4.0,
+          "maxAbsPct": 12.0,
+          "avgYen": 48,
+          "maxYen": 144,
+          "upCount": 5,
+          "recentPct": [
+            3.2,
+            4.4,
+            12.0
+          ]
+        },
         "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
@@ -2263,7 +2310,16 @@ const DATA = {
         "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
       },
       "yutai": null,
-      "news": []
+      "news": [
+        {
+          "title": "【アナリスト予想】マツダ、27年3月期経常予想。対前週2.2%上昇。(アイフィス株予報)",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPNkVOaktkOWo4T045aTBoS1Z4NkV5cTBwQUR4TVoxcDA0c3FLUC1xNUhEMEtITkkzblYtci1sYldaa1JhejZYdUNoTDVrcmx1RXBtR0hIQ0pfTXE2YnBNMVZWd1VuZllDTmx0eENxYXprSTJFTzBPLU5SRXhMM0phVGdGeU5xQlE?oc=5",
+          "pubDate": "Tue, 25 Aug 2026 13:47:00 GMT",
+          "sentiment": "pos",
+          "theme": "その他"
+        }
+      ]
     }
   ],
   "stockMaster": [
@@ -2273,7 +2329,7 @@ const DATA = {
       "price": 82250.0,
       "divPerShare": 550.0,
       "exDivDate": "2026-09-17",
-      "dividendYield": 0.68,
+      "dividendYield": 0.67,
       "per": 44.8,
       "pbr": 5.62,
       "roe": null,
@@ -2288,7 +2344,7 @@ const DATA = {
       "price": 3082.0,
       "divPerShare": 100.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 3.2,
+      "dividendYield": 3.24,
       "per": 8.8,
       "pbr": 0.98,
       "roe": 12.4,
@@ -2333,7 +2389,7 @@ const DATA = {
       "price": 2802.5,
       "divPerShare": 52.0,
       "exDivDate": "2026-12-29",
-      "dividendYield": 1.87,
+      "dividendYield": 1.86,
       "per": 11.9,
       "pbr": 1.13,
       "roe": 10.0,
@@ -2348,8 +2404,8 @@ const DATA = {
       "price": 55410.0,
       "divPerShare": 748.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 1.36,
-      "per": 44.3,
+      "dividendYield": 1.35,
+      "per": 44.2,
       "pbr": 11.76,
       "roe": 30.9,
       "rsi": 46.7,
@@ -2394,7 +2450,7 @@ const DATA = {
       "divPerShare": 130.0,
       "exDivDate": "2026-12-29",
       "dividendYield": 3.14,
-      "per": 20.9,
+      "per": 21.0,
       "pbr": 1.36,
       "roe": 11.3,
       "rsi": 64.3,
@@ -2424,7 +2480,7 @@ const DATA = {
       "divPerShare": 60.0,
       "exDivDate": "2026-03-30",
       "dividendYield": 17.0,
-      "per": 67.0,
+      "per": 66.7,
       "pbr": 23.92,
       "roe": 56.9,
       "rsi": 61.6,
@@ -2468,7 +2524,7 @@ const DATA = {
       "price": 1696.0,
       "divPerShare": 70.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 4.01,
+      "dividendYield": 4.13,
       "per": null,
       "pbr": 0.53,
       "roe": -0.8,
@@ -2498,7 +2554,7 @@ const DATA = {
       "price": 4609.0,
       "divPerShare": 160.0,
       "exDivDate": "2026-12-29",
-      "dividendYield": 3.46,
+      "dividendYield": 3.47,
       "per": 11.7,
       "pbr": 1.12,
       "roe": 10.4,
@@ -2513,7 +2569,7 @@ const DATA = {
       "price": 3602.0,
       "divPerShare": 56.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 1.57,
+      "dividendYield": 1.55,
       "per": 35.1,
       "pbr": 1.41,
       "roe": 5.1,
@@ -2558,7 +2614,7 @@ const DATA = {
       "price": 4311.0,
       "divPerShare": 54.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 1.24,
+      "dividendYield": 1.25,
       "per": 53.0,
       "pbr": 1.86,
       "roe": 5.2,
@@ -2573,7 +2629,7 @@ const DATA = {
       "price": 2180.5,
       "divPerShare": 64.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 2.9,
+      "dividendYield": 2.94,
       "per": 16.2,
       "pbr": 0.96,
       "roe": 6.2,
@@ -2603,8 +2659,8 @@ const DATA = {
       "price": 60700.0,
       "divPerShare": 547.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 0.89,
-      "per": 48.7,
+      "dividendYield": 0.9,
+      "per": 48.8,
       "pbr": 11.31,
       "roe": 27.4,
       "rsi": 49.6,
@@ -2618,7 +2674,7 @@ const DATA = {
       "price": 3614.0,
       "divPerShare": 78.0,
       "exDivDate": "2026-12-29",
-      "dividendYield": 2.19,
+      "dividendYield": 2.16,
       "per": 25.8,
       "pbr": 2.92,
       "roe": 12.3,
@@ -2633,7 +2689,7 @@ const DATA = {
       "price": 3685.0,
       "divPerShare": 60.0,
       "exDivDate": "2026-12-29",
-      "dividendYield": 1.64,
+      "dividendYield": 1.63,
       "per": null,
       "pbr": 2.31,
       "roe": -3.1,
@@ -2648,7 +2704,7 @@ const DATA = {
       "price": 3529.0,
       "divPerShare": 96.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 2.76,
+      "dividendYield": 2.72,
       "per": 16.6,
       "pbr": 1.75,
       "roe": 9.5,
@@ -2663,7 +2719,7 @@ const DATA = {
       "price": 6633.0,
       "divPerShare": 135.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 2.05,
+      "dividendYield": 2.04,
       "per": 16.1,
       "pbr": 1.56,
       "roe": 8.6,
@@ -2678,8 +2734,8 @@ const DATA = {
       "price": 8208.0,
       "divPerShare": 150.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 1.85,
-      "per": 14.7,
+      "dividendYield": 1.83,
+      "per": 14.6,
       "pbr": 1.74,
       "roe": 12.5,
       "rsi": 52.0,
@@ -2693,7 +2749,7 @@ const DATA = {
       "price": 1571.5,
       "divPerShare": 51.0,
       "exDivDate": "2026-03-30",
-      "dividendYield": 3.31,
+      "dividendYield": 3.25,
       "per": 11.8,
       "pbr": 1.2,
       "roe": 11.2,
@@ -2708,7 +2764,7 @@ const DATA = {
       "price": 6803.0,
       "divPerShare": 200.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 2.98,
+      "dividendYield": 2.94,
       "per": 27.1,
       "pbr": 1.14,
       "roe": 14.4,
@@ -2738,7 +2794,7 @@ const DATA = {
       "price": 1802.0,
       "divPerShare": 72.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 4.05,
+      "dividendYield": 4.0,
       "per": 14.9,
       "pbr": 1.42,
       "roe": 13.6,
@@ -2751,9 +2807,9 @@ const DATA = {
       "code": "8766.T",
       "name": "東京海上HD",
       "price": 7408.0,
-      "divPerShare": 245.0,
+      "divPerShare": 16.34,
       "exDivDate": "2026-09-29",
-      "dividendYield": 3.37,
+      "dividendYield": 0.22,
       "per": 26.6,
       "pbr": 1.72,
       "roe": null,
@@ -2768,7 +2824,7 @@ const DATA = {
       "price": 3187.0,
       "divPerShare": 93.0,
       "exDivDate": "2027-03-30",
-      "dividendYield": 2.95,
+      "dividendYield": 2.92,
       "per": 21.7,
       "pbr": 1.23,
       "roe": 6.6,
@@ -2783,7 +2839,7 @@ const DATA = {
       "price": 1540.0,
       "divPerShare": 20.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 1.29,
+      "dividendYield": 1.3,
       "per": 11.2,
       "pbr": 1.12,
       "roe": null,
@@ -2828,7 +2884,7 @@ const DATA = {
       "price": 2909.5,
       "divPerShare": 84.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 2.92,
+      "dividendYield": 2.89,
       "per": 15.9,
       "pbr": 2.16,
       "roe": 14.6,
@@ -2843,7 +2899,7 @@ const DATA = {
       "price": 239.3,
       "divPerShare": 8.8,
       "exDivDate": "2026-09-29",
-      "dividendYield": 3.74,
+      "dividendYield": 3.68,
       "per": 21.2,
       "pbr": 3.93,
       "roe": 16.7,
@@ -2873,8 +2929,8 @@ const DATA = {
       "price": 5113.0,
       "divPerShare": 84.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 1.65,
-      "per": 193.4,
+      "dividendYield": 1.64,
+      "per": 192.3,
       "pbr": 7.66,
       "roe": 4.6,
       "rsi": 68.4,
@@ -2903,7 +2959,7 @@ const DATA = {
       "price": 5554.0,
       "divPerShare": 185.0,
       "exDivDate": "2025-12-29",
-      "dividendYield": 3.31,
+      "dividendYield": 3.33,
       "per": 20.6,
       "pbr": 6.06,
       "roe": 30.0,
@@ -2948,7 +3004,7 @@ const DATA = {
       "price": 6950.0,
       "divPerShare": 132.0,
       "exDivDate": "2026-12-29",
-      "dividendYield": 1.89,
+      "dividendYield": 1.9,
       "per": 24.3,
       "pbr": 5.64,
       "roe": 23.5,
@@ -2963,7 +3019,7 @@ const DATA = {
       "price": 5813.0,
       "divPerShare": 204.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 3.52,
+      "dividendYield": 3.51,
       "per": null,
       "pbr": 1.22,
       "roe": -2.3,
@@ -2978,7 +3034,7 @@ const DATA = {
       "price": 2829.5,
       "divPerShare": 100.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 3.5,
+      "dividendYield": 3.53,
       "per": 20.2,
       "pbr": 3.03,
       "roe": 14.8,
@@ -2993,7 +3049,7 @@ const DATA = {
       "price": 4861.0,
       "divPerShare": 160.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 3.31,
+      "dividendYield": 3.29,
       "per": 35.5,
       "pbr": 1.51,
       "roe": 5.0,
@@ -3023,7 +3079,7 @@ const DATA = {
       "price": 8185.0,
       "divPerShare": 212.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 2.63,
+      "dividendYield": 2.59,
       "per": 22.2,
       "pbr": 4.35,
       "roe": 21.8,
@@ -3038,7 +3094,7 @@ const DATA = {
       "price": 5576.0,
       "divPerShare": 48.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 0.87,
+      "dividendYield": 0.86,
       "per": 25.7,
       "pbr": 4.04,
       "roe": 18.3,
@@ -3053,7 +3109,7 @@ const DATA = {
       "price": 4765.0,
       "divPerShare": 125.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 2.61,
+      "dividendYield": 2.62,
       "per": 22.7,
       "pbr": 1.81,
       "roe": 10.1,
@@ -3098,7 +3154,7 @@ const DATA = {
       "price": 4957.0,
       "divPerShare": 115.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 2.31,
+      "dividendYield": 2.32,
       "per": 15.0,
       "pbr": 1.81,
       "roe": 14.2,
@@ -3128,7 +3184,7 @@ const DATA = {
       "price": 7484.0,
       "divPerShare": 125.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 1.7,
+      "dividendYield": 1.67,
       "per": 21.3,
       "pbr": 2.71,
       "roe": 16.1,
@@ -3173,7 +3229,7 @@ const DATA = {
       "price": 3402.0,
       "divPerShare": 52.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 1.54,
+      "dividendYield": 1.53,
       "per": 14.9,
       "pbr": 1.23,
       "roe": 9.4,
@@ -3188,7 +3244,7 @@ const DATA = {
       "price": 1803.5,
       "divPerShare": 67.0,
       "exDivDate": "2026-12-29",
-      "dividendYield": 3.73,
+      "dividendYield": 3.71,
       "per": 11.5,
       "pbr": 1.45,
       "roe": 13.1,
@@ -3203,7 +3259,7 @@ const DATA = {
       "price": 97800.0,
       "divPerShare": 4297.0,
       "exDivDate": "2026-12-29",
-      "dividendYield": 4.38,
+      "dividendYield": 4.39,
       "per": 19.6,
       "pbr": 0.37,
       "roe": 6.8,
@@ -3218,7 +3274,7 @@ const DATA = {
       "price": 1341.5,
       "divPerShare": 34.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 2.54,
+      "dividendYield": 2.53,
       "per": 14.0,
       "pbr": 0.95,
       "roe": 19.5,
@@ -3278,7 +3334,7 @@ const DATA = {
       "price": 2591.5,
       "divPerShare": 80.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 3.1,
+      "dividendYield": 3.09,
       "per": 7.6,
       "pbr": 0.81,
       "roe": 12.5,
@@ -3398,7 +3454,7 @@ const DATA = {
       "price": 8864.0,
       "divPerShare": 219.0,
       "exDivDate": "2026-03-30",
-      "dividendYield": 2.49,
+      "dividendYield": 2.47,
       "per": 24.3,
       "pbr": 3.5,
       "roe": null,
@@ -3428,7 +3484,7 @@ const DATA = {
       "price": 1688.0,
       "divPerShare": 62.0,
       "exDivDate": "2026-12-29",
-      "dividendYield": 3.71,
+      "dividendYield": 3.67,
       "per": 15.3,
       "pbr": 0.77,
       "roe": 5.6,
@@ -3443,7 +3499,7 @@ const DATA = {
       "price": 3084.0,
       "divPerShare": 76.0,
       "exDivDate": "2026-12-29",
-      "dividendYield": 2.49,
+      "dividendYield": 2.46,
       "per": 12.7,
       "pbr": 1.8,
       "roe": 15.1,
@@ -3458,7 +3514,7 @@ const DATA = {
       "price": 5497.0,
       "divPerShare": 50.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 0.93,
+      "dividendYield": 0.91,
       "per": 39.7,
       "pbr": 6.77,
       "roe": 18.5,
@@ -3488,7 +3544,7 @@ const DATA = {
       "price": 4411.0,
       "divPerShare": 110.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 2.52,
+      "dividendYield": 2.49,
       "per": 34.1,
       "pbr": 1.55,
       "roe": 5.5,
@@ -3518,7 +3574,7 @@ const DATA = {
       "price": 1395.5,
       "divPerShare": 14.0,
       "exDivDate": "2026-08-28",
-      "dividendYield": 1.02,
+      "dividendYield": 1.0,
       "per": 52.1,
       "pbr": 3.19,
       "roe": 7.2,
@@ -3533,8 +3589,8 @@ const DATA = {
       "price": 3023.0,
       "divPerShare": 96.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 3.2,
-      "per": 9.8,
+      "dividendYield": 3.18,
+      "per": 9.9,
       "pbr": 0.9,
       "roe": 9.1,
       "rsi": 62.3,
@@ -3608,7 +3664,7 @@ const DATA = {
       "price": 10095.0,
       "divPerShare": 338.0,
       "exDivDate": "2027-03-30",
-      "dividendYield": 3.27,
+      "dividendYield": 3.35,
       "per": 9.6,
       "pbr": 1.3,
       "roe": 18.5,
@@ -3624,7 +3680,7 @@ const DATA = {
       "divPerShare": 24.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 3.6,
-      "per": 206.2,
+      "per": 204.3,
       "pbr": 0.62,
       "roe": 5.5,
       "rsi": 58.6,
@@ -3638,7 +3694,7 @@ const DATA = {
       "price": 1834.0,
       "divPerShare": 80.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 4.32,
+      "dividendYield": 4.36,
       "per": 17.4,
       "pbr": 0.44,
       "roe": 3.8,
@@ -3653,7 +3709,7 @@ const DATA = {
       "price": 3543.0,
       "divPerShare": 20.0,
       "exDivDate": "2026-06-29",
-      "dividendYield": 0.58,
+      "dividendYield": 0.56,
       "per": null,
       "pbr": 2.18,
       "roe": -4.1,
@@ -3713,7 +3769,7 @@ const DATA = {
       "price": 1282.0,
       "divPerShare": 2.3,
       "exDivDate": "2026-12-29",
-      "dividendYield": 17.0,
+      "dividendYield": 18.0,
       "per": 39.1,
       "pbr": 3.28,
       "roe": 9.3,
@@ -3744,7 +3800,7 @@ const DATA = {
       "divPerShare": null,
       "exDivDate": null,
       "dividendYield": null,
-      "per": 319.2,
+      "per": 323.6,
       "pbr": 1.23,
       "roe": null,
       "rsi": 57.7,
@@ -3774,7 +3830,7 @@ const DATA = {
       "divPerShare": null,
       "exDivDate": null,
       "dividendYield": null,
-      "per": 214.9,
+      "per": 212.8,
       "pbr": 10.86,
       "roe": 5.3,
       "rsi": 91.8,
@@ -3788,7 +3844,7 @@ const DATA = {
       "price": 1101.0,
       "divPerShare": 8.0,
       "exDivDate": "2027-03-30",
-      "dividendYield": 0.71,
+      "dividendYield": 0.73,
       "per": 29.9,
       "pbr": 10.17,
       "roe": 81.3,
@@ -3803,8 +3859,8 @@ const DATA = {
       "price": 2153.0,
       "divPerShare": 5.0,
       "exDivDate": "2026-11-27",
-      "dividendYield": 0.22,
-      "per": 40.6,
+      "dividendYield": 0.23,
+      "per": 40.7,
       "pbr": 12.93,
       "roe": 36.5,
       "rsi": 69.6,
@@ -3849,7 +3905,7 @@ const DATA = {
       "divPerShare": null,
       "exDivDate": null,
       "dividendYield": null,
-      "per": 78.2,
+      "per": 78.1,
       "pbr": 7.65,
       "roe": 8.6,
       "rsi": 64.4,
@@ -3923,8 +3979,8 @@ const DATA = {
       "price": 1962.0,
       "divPerShare": 50.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 2.6,
-      "per": 39.6,
+      "dividendYield": 2.55,
+      "per": 39.7,
       "pbr": 2.68,
       "roe": 6.0,
       "rsi": 42.6,
@@ -3938,7 +3994,7 @@ const DATA = {
       "price": 7810.0,
       "divPerShare": 130.0,
       "exDivDate": "2026-08-28",
-      "dividendYield": 1.67,
+      "dividendYield": 1.66,
       "per": 31.3,
       "pbr": 10.65,
       "roe": 38.6,
@@ -3998,7 +4054,7 @@ const DATA = {
       "price": 2299.0,
       "divPerShare": 180.0,
       "exDivDate": "2026-12-29",
-      "dividendYield": 8.0,
+      "dividendYield": 7.83,
       "per": 12.9,
       "pbr": 1.99,
       "roe": 14.0,
@@ -4043,7 +4099,7 @@ const DATA = {
       "price": 2611.0,
       "divPerShare": 40.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 1.54,
+      "dividendYield": 1.53,
       "per": 20.2,
       "pbr": 2.47,
       "roe": 14.4,
@@ -4118,7 +4174,7 @@ const DATA = {
       "price": 2262.5,
       "divPerShare": 78.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 3.48,
+      "dividendYield": 3.45,
       "per": 38.6,
       "pbr": 7.19,
       "roe": null,
@@ -4148,7 +4204,7 @@ const DATA = {
       "price": 3964.0,
       "divPerShare": 32.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 0.82,
+      "dividendYield": 0.81,
       "per": 6.9,
       "pbr": 0.73,
       "roe": 11.2,
@@ -4163,7 +4219,7 @@ const DATA = {
       "price": 7440.0,
       "divPerShare": 190.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 2.56,
+      "dividendYield": 2.55,
       "per": 18.0,
       "pbr": 1.89,
       "roe": 11.6,
@@ -4208,7 +4264,7 @@ const DATA = {
       "price": 1203.0,
       "divPerShare": 55.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 4.52,
+      "dividendYield": 4.57,
       "per": 21.6,
       "pbr": 0.4,
       "roe": 5.9,
@@ -4224,7 +4280,7 @@ const DATA = {
       "divPerShare": 70.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 0.99,
-      "per": 55.7,
+      "per": 55.9,
       "pbr": 4.7,
       "roe": 10.1,
       "rsi": 50.0,
@@ -4239,7 +4295,7 @@ const DATA = {
       "divPerShare": 40.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 1.31,
-      "per": 29.7,
+      "per": 29.6,
       "pbr": 2.52,
       "roe": 11.6,
       "rsi": 49.8,
@@ -4253,7 +4309,7 @@ const DATA = {
       "price": 5614.0,
       "divPerShare": 60.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 1.08,
+      "dividendYield": 1.07,
       "per": 28.3,
       "pbr": 2.51,
       "roe": 10.3,
@@ -4268,7 +4324,7 @@ const DATA = {
       "price": 2199.5,
       "divPerShare": 39.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 1.81,
+      "dividendYield": 1.77,
       "per": 18.6,
       "pbr": 2.42,
       "roe": 15.8,
@@ -4283,7 +4339,7 @@ const DATA = {
       "price": 3249.0,
       "divPerShare": 75.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 2.29,
+      "dividendYield": 2.31,
       "per": 14.2,
       "pbr": 1.0,
       "roe": 7.1,
@@ -4298,7 +4354,7 @@ const DATA = {
       "price": 12090.0,
       "divPerShare": 200.0,
       "exDivDate": "2026-12-29",
-      "dividendYield": 1.64,
+      "dividendYield": 1.65,
       "per": 15.7,
       "pbr": 1.96,
       "roe": 13.4,
@@ -4328,7 +4384,7 @@ const DATA = {
       "price": 2378.0,
       "divPerShare": 60.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 2.56,
+      "dividendYield": 2.52,
       "per": 18.4,
       "pbr": 0.65,
       "roe": 5.1,
@@ -4343,7 +4399,7 @@ const DATA = {
       "price": 1830.5,
       "divPerShare": 25.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 1.36,
+      "dividendYield": 1.37,
       "per": 27.7,
       "pbr": 2.95,
       "roe": 12.1,
@@ -4373,7 +4429,7 @@ const DATA = {
       "price": 1000.0,
       "divPerShare": 22.0,
       "exDivDate": "2026-12-29",
-      "dividendYield": 2.21,
+      "dividendYield": 2.2,
       "per": 26.9,
       "pbr": 2.12,
       "roe": 8.3,
@@ -4388,7 +4444,7 @@ const DATA = {
       "price": 1148.5,
       "divPerShare": 40.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 3.51,
+      "dividendYield": 3.48,
       "per": 21.2,
       "pbr": 10.27,
       "roe": 51.8,
@@ -4418,7 +4474,7 @@ const DATA = {
       "price": 540.3,
       "divPerShare": 11.0,
       "exDivDate": "2027-03-30",
-      "dividendYield": 2.06,
+      "dividendYield": 2.04,
       "per": 19.4,
       "pbr": 1.23,
       "roe": 8.3,
@@ -4434,7 +4490,7 @@ const DATA = {
       "divPerShare": 32.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 1.04,
-      "per": 19.4,
+      "per": 19.5,
       "pbr": 1.72,
       "roe": 9.2,
       "rsi": 73.0,
@@ -4448,7 +4504,7 @@ const DATA = {
       "price": 3022.0,
       "divPerShare": 134.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 4.48,
+      "dividendYield": 4.43,
       "per": 19.1,
       "pbr": 2.29,
       "roe": 12.4,
@@ -4508,8 +4564,8 @@ const DATA = {
       "price": 1750.0,
       "divPerShare": 22.0,
       "exDivDate": "2026-03-30",
-      "dividendYield": 1.28,
-      "per": 24.1,
+      "dividendYield": 1.26,
+      "per": 24.2,
       "pbr": 2.86,
       "roe": null,
       "rsi": 48.9,
@@ -4523,7 +4579,7 @@ const DATA = {
       "price": 1117.0,
       "divPerShare": 13.0,
       "exDivDate": "2027-05-28",
-      "dividendYield": 1.15,
+      "dividendYield": 1.16,
       "per": 33.6,
       "pbr": 2.26,
       "roe": 7.5,
@@ -4568,7 +4624,7 @@ const DATA = {
       "price": 678.0,
       "divPerShare": 5.5,
       "exDivDate": "2026-12-29",
-      "dividendYield": 0.78,
+      "dividendYield": 0.81,
       "per": 17.8,
       "pbr": 2.17,
       "roe": 13.2,
@@ -4583,7 +4639,7 @@ const DATA = {
       "price": 2209.0,
       "divPerShare": 48.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 2.19,
+      "dividendYield": 2.17,
       "per": 26.9,
       "pbr": 2.04,
       "roe": 8.8,
@@ -4613,7 +4669,7 @@ const DATA = {
       "price": 3015.0,
       "divPerShare": 44.0,
       "exDivDate": "2027-03-30",
-      "dividendYield": 1.47,
+      "dividendYield": 1.46,
       "per": 24.6,
       "pbr": 3.66,
       "roe": 16.3,
@@ -4628,7 +4684,7 @@ const DATA = {
       "price": 2525.0,
       "divPerShare": 66.0,
       "exDivDate": "2026-03-30",
-      "dividendYield": 2.62,
+      "dividendYield": 2.61,
       "per": 14.8,
       "pbr": 1.08,
       "roe": 16.2,
@@ -4658,7 +4714,7 @@ const DATA = {
       "price": 3022.0,
       "divPerShare": 55.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 1.93,
+      "dividendYield": 1.82,
       "per": null,
       "pbr": 1.73,
       "roe": -0.1,
@@ -4688,8 +4744,8 @@ const DATA = {
       "price": 3017.0,
       "divPerShare": 45.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 1.5,
-      "per": 13.3,
+      "dividendYield": 1.49,
+      "per": 13.4,
       "pbr": 0.69,
       "roe": 6.5,
       "rsi": 79.1,
@@ -4703,7 +4759,7 @@ const DATA = {
       "price": 3460.0,
       "divPerShare": 146.0,
       "exDivDate": "2027-01-28",
-      "dividendYield": 4.2,
+      "dividendYield": 4.22,
       "per": 8.7,
       "pbr": 1.04,
       "roe": 12.6,
@@ -4718,7 +4774,7 @@ const DATA = {
       "price": 4709.0,
       "divPerShare": 92.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 1.96,
+      "dividendYield": 1.95,
       "per": 8.3,
       "pbr": 1.0,
       "roe": 12.9,
@@ -4765,19 +4821,19 @@ const DATA = {
       "desc": "直近3日間に大量保有報告書の提出はありませんでした（出典: EDINET）"
     },
     {
-      "type": "info",
-      "title": "空売り残高: マネーフォワード (3994)",
-      "desc": "開示合計5.65%・前回比横ばい（3件・出典JPX 08/24時点）"
+      "type": "warn",
+      "title": "空売り残高: 日産自動車 (7201)",
+      "desc": "開示合計6.85%・前回比増加中（4件・出典JPX 08/25時点）"
     },
     {
       "type": "info",
       "title": "空売り残高: JFEホールディングス (5411)",
-      "desc": "開示合計5.10%・前回比横ばい（3件・出典JPX 08/24時点）"
+      "desc": "開示合計5.19%・前回比横ばい（3件・出典JPX 08/25時点）"
     },
     {
       "type": "info",
-      "title": "空売り残高: オキサイド (6521)",
-      "desc": "開示合計4.93%・前回比横ばい（4件・出典JPX 08/24時点）"
+      "title": "空売り残高: 川崎汽船 (9107)",
+      "desc": "開示合計5.05%・前回比減少中（5件・出典JPX 08/25時点）"
     },
     {
       "type": "good",
@@ -4912,7 +4968,7 @@ const DATA = {
     {
       "theme": "その他",
       "mentions": 7,
-      "pos": 1,
+      "pos": 3,
       "neg": 0,
       "prevMentions": 7
     },
