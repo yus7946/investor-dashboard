@@ -5699,6 +5699,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-24",
+      "ticker": "9104.T",
+      "name": "商船三井",
+      "basePrice": 7318.0,
+      "rangeLow": 7185,
+      "rangeHigh": 7451,
+      "predUpRate": 57.8,
+      "condN": 90,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
