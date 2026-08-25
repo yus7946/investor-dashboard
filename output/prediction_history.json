@@ -5669,6 +5669,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-24",
+      "ticker": "9432.T",
+      "name": "NTT",
+      "basePrice": 169.1,
+      "rangeLow": 167,
+      "rangeHigh": 171,
+      "predUpRate": 52.6,
+      "condN": 38,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-24",
+      "ticker": "7261.T",
+      "name": "マツダ",
+      "basePrice": 1207.0,
+      "rangeLow": 1177,
+      "rangeHigh": 1237,
+      "predUpRate": 46.5,
+      "condN": 228,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -8130,6 +8160,18 @@
       "entry": 6337,
       "target": 6788,
       "stop": 5999,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-24",
+      "ticker": "7261.T",
+      "name": "マツダ",
+      "basePrice": 1207.0,
+      "entry": 1192,
+      "target": 1252,
+      "stop": 1147,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
