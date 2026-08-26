@@ -5864,6 +5864,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-25",
+      "ticker": "7832.T",
+      "name": "バンダイナムコHD",
+      "basePrice": 5675.0,
+      "rangeLow": 5558,
+      "rangeHigh": 5792,
+      "predUpRate": 50.6,
+      "condN": 79,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-25",
+      "ticker": "9104.T",
+      "name": "商船三井",
+      "basePrice": 7093.0,
+      "rangeLow": 6963,
+      "rangeHigh": 7223,
+      "predUpRate": 56.0,
+      "condN": 91,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -8358,6 +8388,18 @@
       "entry": 1188,
       "target": 1248,
       "stop": 1143,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-25",
+      "ticker": "4443.T",
+      "name": "Sansan",
+      "basePrice": 2131.0,
+      "entry": 2099,
+      "target": 2226,
+      "stop": 2004,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
