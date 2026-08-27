@@ -1,6 +1,6 @@
 {
-  "updated": "2026年08月28日 01:38",
-  "updatedAtMs": 1787848730247,
+  "updated": "2026年08月28日 02:36",
+  "updatedAtMs": 1787852207386,
   "updateMode": "light",
   "fetched": 163,
   "universeTotal": 166,
@@ -30,10 +30,10 @@
     "source": "TOPIX連動ETF(1306.T)終値と200日移動平均から判定"
   },
   "marketOutlook": {
-    "spxChangePct": 0.73,
+    "spxChangePct": 0.8,
     "spxDate": "2026-08-27",
-    "usdjpy": 159.25,
-    "usdjpyChangePct": 0.02,
+    "usdjpy": 159.32,
+    "usdjpyChangePct": 0.06,
     "condition": "米S&P500が直近上昇",
     "topixUpRate": 64.4,
     "n": 278,
