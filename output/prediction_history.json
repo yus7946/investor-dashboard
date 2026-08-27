@@ -6059,6 +6059,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-26",
+      "ticker": "6178.T",
+      "name": "日本郵政",
+      "basePrice": 2425.0,
+      "rangeLow": 2384,
+      "rangeHigh": 2466,
+      "predUpRate": 52.4,
+      "condN": 208,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-26",
+      "ticker": "4443.T",
+      "name": "Sansan",
+      "basePrice": 2179.0,
+      "rangeLow": 2113,
+      "rangeHigh": 2245,
+      "predUpRate": 47.8,
+      "condN": 184,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -8586,6 +8616,30 @@
       "entry": 6358,
       "target": 6815,
       "stop": 6016,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-26",
+      "ticker": "6178.T",
+      "name": "日本郵政",
+      "basePrice": 2425.0,
+      "entry": 2404,
+      "target": 2487,
+      "stop": 2342,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-26",
+      "ticker": "4443.T",
+      "name": "Sansan",
+      "basePrice": 2179.0,
+      "entry": 2146,
+      "target": 2277,
+      "stop": 2047,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
