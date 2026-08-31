@@ -6689,6 +6689,51 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-28",
+      "ticker": "6532.T",
+      "name": "ベイカレント・コンサルティング",
+      "basePrice": 8192.0,
+      "rangeLow": 7961,
+      "rangeHigh": 8423,
+      "predUpRate": 52.4,
+      "condN": 63,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-28",
+      "ticker": "9503.T",
+      "name": "関西電力",
+      "basePrice": 2810.5,
+      "rangeLow": 2755,
+      "rangeHigh": 2866,
+      "predUpRate": 48.5,
+      "condN": 68,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-28",
+      "ticker": "7182.T",
+      "name": "ゆうちょ銀行",
+      "basePrice": 3405.0,
+      "rangeLow": 3341,
+      "rangeHigh": 3469,
+      "predUpRate": 51.0,
+      "condN": 100,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
