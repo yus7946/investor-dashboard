@@ -6734,6 +6734,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-28",
+      "ticker": "7832.T",
+      "name": "バンダイナムコHD",
+      "basePrice": 5814.0,
+      "rangeLow": 5698,
+      "rangeHigh": 5930,
+      "predUpRate": 47.2,
+      "condN": 161,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -9603,6 +9618,18 @@
       "entry": 1609,
       "target": 1678,
       "stop": 1557,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-08-28",
+      "ticker": "7832.T",
+      "name": "バンダイナムコHD",
+      "basePrice": 5814.0,
+      "entry": 5756,
+      "target": 5988,
+      "stop": 5582,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
