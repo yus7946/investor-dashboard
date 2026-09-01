@@ -6899,6 +6899,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-08-31",
+      "ticker": "5019.T",
+      "name": "出光興産",
+      "basePrice": 1482.5,
+      "rangeLow": 1458,
+      "rangeHigh": 1507,
+      "predUpRate": 55.3,
+      "condN": 76,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
