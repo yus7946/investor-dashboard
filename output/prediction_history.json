@@ -7064,6 +7064,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-01",
+      "ticker": "7182.T",
+      "name": "ゆうちょ銀行",
+      "basePrice": 3393.0,
+      "rangeLow": 3330,
+      "rangeHigh": 3456,
+      "predUpRate": 55.0,
+      "condN": 200,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -10023,6 +10038,42 @@
       "entry": 1224,
       "target": 1284,
       "stop": 1179,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-01",
+      "ticker": "6178.T",
+      "name": "日本郵政",
+      "basePrice": 2507.5,
+      "entry": 2487,
+      "target": 2568,
+      "stop": 2427,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-01",
+      "ticker": "4689.T",
+      "name": "LINEヤフー",
+      "basePrice": 537.6,
+      "entry": 533,
+      "target": 551,
+      "stop": 519,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-01",
+      "ticker": "7182.T",
+      "name": "ゆうちょ銀行",
+      "basePrice": 3393.0,
+      "entry": 3362,
+      "target": 3487,
+      "stop": 3268,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
