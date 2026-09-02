@@ -7079,6 +7079,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-01",
+      "ticker": "9101.T",
+      "name": "日本郵船",
+      "basePrice": 7097.0,
+      "rangeLow": 6981,
+      "rangeHigh": 7213,
+      "predUpRate": 54.1,
+      "condN": 74,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
