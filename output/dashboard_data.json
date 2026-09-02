@@ -1,6 +1,6 @@
 {
-  "updated": "2026年09月02日 16:13",
-  "updatedAtMs": 1788333197140,
+  "updated": "2026年09月02日 17:02",
+  "updatedAtMs": 1788336173602,
   "updateMode": "light",
   "fetched": 163,
   "universeTotal": 166,
@@ -32,11 +32,11 @@
   "marketOutlook": {
     "spxChangePct": -0.71,
     "spxDate": "2026-09-01",
-    "usdjpy": 159.69,
-    "usdjpyChangePct": -0.04,
+    "usdjpy": 159.7,
+    "usdjpyChangePct": -0.03,
     "condition": "米S&P500が直近下落",
-    "topixUpRate": 43.3,
-    "n": 208,
+    "topixUpRate": 43.0,
+    "n": 207,
     "regime": "bull",
     "basis": "過去2年で「米国市場が上昇/下落した翌営業日に東京(TOPIX ETF)が上昇した割合」を実際に集計。統計的傾向であり将来を保証しません。出典: Yahoo Finance価格データ。"
   },
