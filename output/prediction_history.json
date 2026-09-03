@@ -7244,6 +7244,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-02",
+      "ticker": "2181.T",
+      "name": "パーソルホールディングス",
+      "basePrice": 298.2,
+      "rangeLow": 294,
+      "rangeHigh": 302,
+      "predUpRate": 52.9,
+      "condN": 191,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-02",
+      "ticker": "9502.T",
+      "name": "中部電力",
+      "basePrice": 2976.5,
+      "rangeLow": 2930,
+      "rangeHigh": 3023,
+      "predUpRate": 51.0,
+      "condN": 194,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -10308,6 +10338,30 @@
       "entry": 5610,
       "target": 5832,
       "stop": 5444,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-02",
+      "ticker": "2181.T",
+      "name": "パーソルホールディングス",
+      "basePrice": 298.2,
+      "entry": 296,
+      "target": 304,
+      "stop": 290,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-02",
+      "ticker": "9502.T",
+      "name": "中部電力",
+      "basePrice": 2976.5,
+      "entry": 2953,
+      "target": 3047,
+      "stop": 2883,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
