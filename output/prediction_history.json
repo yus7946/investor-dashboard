@@ -7424,6 +7424,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-03",
+      "ticker": "8306.T",
+      "name": "三菱UFJ",
+      "basePrice": 3771.0,
+      "rangeLow": 3700,
+      "rangeHigh": 3842,
+      "predUpRate": 55.7,
+      "condN": 221,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-03",
+      "ticker": "4443.T",
+      "name": "Sansan",
+      "basePrice": 2220.0,
+      "rangeLow": 2157,
+      "rangeHigh": 2283,
+      "predUpRate": 49.4,
+      "condN": 180,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -10581,6 +10611,30 @@
       "entry": 2911,
       "target": 3004,
       "stop": 2842,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-03",
+      "ticker": "8306.T",
+      "name": "三菱UFJ",
+      "basePrice": 3771.0,
+      "entry": 3736,
+      "target": 3877,
+      "stop": 3630,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-03",
+      "ticker": "4443.T",
+      "name": "Sansan",
+      "basePrice": 2220.0,
+      "entry": 2189,
+      "target": 2315,
+      "stop": 2095,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
