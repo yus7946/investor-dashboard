@@ -7619,6 +7619,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-04",
+      "ticker": "6981.T",
+      "name": "村田製作所",
+      "basePrice": 7575.0,
+      "rangeLow": 7327,
+      "rangeHigh": 7823,
+      "predUpRate": 50.5,
+      "condN": 196,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-04",
+      "ticker": "9984.T",
+      "name": "ソフトバンクG",
+      "basePrice": 6159.0,
+      "rangeLow": 5910,
+      "rangeHigh": 6408,
+      "predUpRate": 50.3,
+      "condN": 193,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -10893,6 +10923,42 @@
       "entry": 2993,
       "target": 3088,
       "stop": 2921,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-04",
+      "ticker": "8604.T",
+      "name": "野村HD",
+      "basePrice": 1659.0,
+      "entry": 1642,
+      "target": 1709,
+      "stop": 1592,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-04",
+      "ticker": "6981.T",
+      "name": "村田製作所",
+      "basePrice": 7575.0,
+      "entry": 7451,
+      "target": 7948,
+      "stop": 7079,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-04",
+      "ticker": "9984.T",
+      "name": "ソフトバンクG",
+      "basePrice": 6159.0,
+      "entry": 6035,
+      "target": 6533,
+      "stop": 5662,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
