@@ -11211,6 +11211,30 @@
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-07",
+      "ticker": "6178.T",
+      "name": "日本郵政",
+      "basePrice": 2445.0,
+      "entry": 2426,
+      "target": 2503,
+      "stop": 2368,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-07",
+      "ticker": "8306.T",
+      "name": "三菱UFJ",
+      "basePrice": 3656.0,
+      "entry": 3622,
+      "target": 3757,
+      "stop": 3521,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
     }
   ]
 }
