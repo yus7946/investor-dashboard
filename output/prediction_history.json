@@ -7799,6 +7799,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-07",
+      "ticker": "5019.T",
+      "name": "出光興産",
+      "basePrice": 1544.0,
+      "rangeLow": 1519,
+      "rangeHigh": 1569,
+      "predUpRate": 55.0,
+      "condN": 80,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-07",
+      "ticker": "9501.T",
+      "name": "東京電力HD",
+      "basePrice": 559.5,
+      "rangeLow": 544,
+      "rangeHigh": 575,
+      "predUpRate": 48.3,
+      "condN": 176,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -11154,6 +11184,30 @@
       "entry": 7205,
       "target": 7686,
       "stop": 6845,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-07",
+      "ticker": "9101.T",
+      "name": "日本郵船",
+      "basePrice": 7340.0,
+      "entry": 7281,
+      "target": 7517,
+      "stop": 7104,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-07",
+      "ticker": "9501.T",
+      "name": "東京電力HD",
+      "basePrice": 559.5,
+      "entry": 552,
+      "target": 583,
+      "stop": 529,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
