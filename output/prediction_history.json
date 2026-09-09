@@ -7979,6 +7979,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-08",
+      "ticker": "5020.T",
+      "name": "ENEOS",
+      "basePrice": 1463.5,
+      "rangeLow": 1437,
+      "rangeHigh": 1490,
+      "predUpRate": 54.7,
+      "condN": 95,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
