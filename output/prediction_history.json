@@ -8144,6 +8144,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-09",
+      "ticker": "6981.T",
+      "name": "村田製作所",
+      "basePrice": 7509.0,
+      "rangeLow": 7266,
+      "rangeHigh": 7752,
+      "predUpRate": 50.8,
+      "condN": 197,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-09",
+      "ticker": "6178.T",
+      "name": "日本郵政",
+      "basePrice": 2430.0,
+      "rangeLow": 2392,
+      "rangeHigh": 2468,
+      "predUpRate": 62.0,
+      "condN": 163,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -11685,6 +11715,30 @@
       "entry": 7282,
       "target": 7516,
       "stop": 7106,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-09",
+      "ticker": "6981.T",
+      "name": "村田製作所",
+      "basePrice": 7509.0,
+      "entry": 7387,
+      "target": 7873,
+      "stop": 7022,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-09",
+      "ticker": "6178.T",
+      "name": "日本郵政",
+      "basePrice": 2430.0,
+      "entry": 2411,
+      "target": 2487,
+      "stop": 2354,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
