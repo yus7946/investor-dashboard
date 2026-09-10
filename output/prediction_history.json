@@ -8174,6 +8174,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-09",
+      "ticker": "6460.T",
+      "name": "セガサミーホールディングス",
+      "basePrice": 3152.0,
+      "rangeLow": 3089,
+      "rangeHigh": 3215,
+      "predUpRate": null,
+      "condN": 9,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
