@@ -8339,6 +8339,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-10",
+      "ticker": "8306.T",
+      "name": "三菱UFJ",
+      "basePrice": 3669.0,
+      "rangeLow": 3602,
+      "rangeHigh": 3736,
+      "predUpRate": 59.6,
+      "condN": 166,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -11961,6 +11976,18 @@
       "entry": 1439,
       "target": 1492,
       "stop": 1399,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-10",
+      "ticker": "8306.T",
+      "name": "三菱UFJ",
+      "basePrice": 3669.0,
+      "entry": 3636,
+      "target": 3770,
+      "stop": 3536,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
