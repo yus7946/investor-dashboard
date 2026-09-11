@@ -8354,6 +8354,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-10",
+      "ticker": "9502.T",
+      "name": "中部電力",
+      "basePrice": 2992.0,
+      "rangeLow": 2946,
+      "rangeHigh": 3038,
+      "predUpRate": 50.8,
+      "condN": 195,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -11988,6 +12003,18 @@
       "entry": 3636,
       "target": 3770,
       "stop": 3536,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-10",
+      "ticker": "9502.T",
+      "name": "中部電力",
+      "basePrice": 2992.0,
+      "entry": 2969,
+      "target": 3061,
+      "stop": 2900,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
