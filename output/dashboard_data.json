@@ -1,6 +1,6 @@
 {
-  "updated": "2026年09月14日 17:01",
-  "updatedAtMs": 1789372869624,
+  "updated": "2026年09月14日 18:09",
+  "updatedAtMs": 1789376960493,
   "updateMode": "light",
   "fetched": 163,
   "universeTotal": 166,
@@ -44,8 +44,8 @@
   "marketOutlook": {
     "spxChangePct": 0.86,
     "spxDate": "2026-09-11",
-    "usdjpy": 154.37,
-    "usdjpyChangePct": -0.07,
+    "usdjpy": 154.51,
+    "usdjpyChangePct": 0.02,
     "condition": "米S&P500が直近上昇",
     "topixUpRate": 65.5,
     "n": 275,
@@ -2388,7 +2388,7 @@
       "divPerShare": 16.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 0.52,
-      "per": 43.1,
+      "per": 41.9,
       "pbr": 4.52,
       "roe": null,
       "rsi": 59.6,
