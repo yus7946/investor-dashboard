@@ -72,7 +72,7 @@
   "9104.T": "2026-11-09",
   "9107.T": "2026-11-04",
   "9983.T": "2026-10-08",
-  "3038.T": "2026-09-11",
+  "3038.T": "2026-12-11",
   "4661.T": "2026-10-29",
   "7974.T": "2026-11-03",
   "2914.T": "2026-10-29",
@@ -101,7 +101,7 @@
   "4443.T": "2026-10-09",
   "4480.T": "2026-11-12",
   "3994.T": "2026-10-15",
-  "6526.T": "2026-10-29",
+  "6526.T": "2026-10-28",
   "6532.T": "2026-10-15",
   "2181.T": "2026-11-11",
   "7011.T": "2026-11-06",
@@ -145,109 +145,109 @@
   "6460.T": "2026-11-13",
   "9401.T": "2026-11-10",
   "9404.T": "2026-11-05",
-  "1928.T": "2026-09-10",
+  "1928.T": "2026-12-10",
   "1925.T": "2026-11-11",
   "6963.T": "2026-11-05"
  },
  "news_by_ticker": {
   "6027.T": [
    {
-    "title": "【解説】弁護士ドットコム株を7割上昇させた「AIプロダクト」の正体",
-    "source": "トウシル",
-    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB5UXktWXZqQ1lHOHdYSEJ1WUwyc3gycUhZS20xbXkyQkFjNWdXUE5wMlBjblJjRS1RYTY2UXZqVWRVV25PV3FCdUNNOVhYZnR5aXdsNWxvTXdTdw?oc=5",
-    "pubDate": "Fri, 21 Aug 2026 07:00:00 GMT",
-    "sentiment": "pos",
-    "theme": "AI"
+    "title": "弁護士ドットコム(株)【6027】：株価チャート",
+    "source": "finance.yahoo.co.jp",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBtY1FJenpmeXNQYWVXV1ZYOXlNZVhLNmpiVEdMc1B4M0hIOGYxZlhRdUMtd0tNM3dXYmF0SkxLcTJsMFlTVTR1NXpxalZsc2oyYVROVWh6STVZZw?oc=5",
+    "pubDate": "Fri, 11 Sep 2026 10:32:31 GMT",
+    "sentiment": "neu",
+    "theme": "その他"
    }
   ],
-  "9984.T": [
+  "6178.T": [
    {
-    "title": "ソフトバンクG株価5日続伸 アーム株高やオープンAIの懸念後退で",
-    "source": "日本経済新聞",
-    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5IZVJTVjFpcW9RNjY0SWZ6akxjTTlCd2ZLWUh6ekkxOFFCQ3dKRS1TU19LcXk2N2g2N0JzSjc0RlFERklQcVVVZjNrRm5nZEdPSFpLVFhXUzhqSzNTS1BraFRIdGt6X0ZrdHljeQ?oc=5",
-    "pubDate": "Wed, 09 Sep 2026 02:05:40 GMT",
+    "title": "日本郵政(株)【6178】：今の株価の理由は？値動きの背景をAIが解説",
+    "source": "finance.yahoo.co.jp",
+    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9weTZpQndfV29lTnozNGdRb0lqby1nY1lMN1hUUUVEa2FvNHEzbVdWQ1FIcTllaGRnZV9iZURybTdKeWhobU91UGtEcGd2Z0MwdVBrRUZzYW1JV1BsNk1Z?oc=5",
+    "pubDate": "Fri, 11 Sep 2026 06:56:07 GMT",
     "sentiment": "neu",
     "theme": "AI"
    }
   ],
   "9432.T": [
    {
-    "title": "｢夜明け｣に近づく通信業界､象徴的なNTTの変化とは？",
-    "source": "四季報オンライン",
-    "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9GdkdCejhCRDdZNm1PcXpZRkRuS3loeHVZNDQzTERwMFYydWNLUTZ2dEJ4cXVhRWs1THVabDU4V1Uwei1jRjhTa2dEdDIwNWRGSEc4RGNiUQ?oc=5",
-    "pubDate": "Mon, 07 Sep 2026 09:30:00 GMT",
+    "title": "ＮＴＴ(株)【9432】：掲示板",
+    "source": "finance.yahoo.co.jp",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5YVV9mSUloR01TOGZGQjlwc0FPeHVzZU5TRW5ib1A3MHFDSWVFVnBRMHhIWW5qQWJGLWwtazB1bktna0RUekVDdmZqV1dRNWVnWEE0SmUtY3d3QQ?oc=5",
+    "pubDate": "Fri, 11 Sep 2026 07:09:05 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
   ],
-  "5019.T": [
-   {
-    "title": "出光興産株価が上場来高値 中東情勢緊迫と原油高「長期化」の見方",
-    "source": "日本経済新聞",
-    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5MakRhb2sxMXVsdE5sSmtpejBuU254Qk1ncVBkN0E1TC1teXZvVWIwWnpQSmctbUYtdEFxWWlDRXhQZE1xUFdiQU1mRFR6aXlhYVFtUDZKWUtrcVZlN2JCY1FmNi1nb2J1aEJ5TQ?oc=5",
-    "pubDate": "Thu, 10 Sep 2026 02:13:59 GMT",
-    "sentiment": "neu",
-    "theme": "資源"
-   }
-  ],
   "9503.T": [
    {
-    "title": "関西電力(株)【9503】：今の株価の理由は？値動きの背景をAIが解説",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1PMmdnUDhJNDU3Yk04X2EwNkgwSlVLcHJnS0xHZDdibU1NR3dILW1Ha2xqSTA2ZXRLeXNDRTlfeTA2RWprRVc0b3R1dDg1NElWWng5Y3NPamVaeG1vVlI4?oc=5",
-    "pubDate": "Mon, 07 Sep 2026 06:59:05 GMT",
-    "sentiment": "neu",
-    "theme": "AI"
-   }
-  ],
-  "6178.T": [
-   {
-    "title": "日本郵政(株)【JPPHY】：株価・株式情報",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9idWpsUkVxeUNvNzYzb2N3T0JjVG5wS0YtZUZWN0NfTTFxeUZTWXdMVUp3bmtlNXVxdjNqVnZyVlFnOTBFVk5RaXJEMXdvMlBG?oc=5",
-    "pubDate": "Thu, 10 Sep 2026 10:44:10 GMT",
+    "title": "関西電力(株)【KAEPY】：株価・株式情報",
+    "source": "finance.yahoo.co.jp",
+    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE54bGVvOG1fOG5leWJWM3N4Tkd4MTZScHlsa0VYRzRpVUhZQ0lHOGNtUVFaU1g1XzBxT1RhR0c4TVlKY1VJTGc5R0pXSzJVRE5r?oc=5",
+    "pubDate": "Sun, 13 Sep 2026 16:42:03 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
   ],
   "6460.T": [
    {
-    "title": "セガサミーホールディングス株価が6%超の急伸、3,000円台へ。2027年3月期1Qの中身は（LIMO）",
-    "source": "news.yahoo.co.jp",
-    "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBEU3J4UVpYYk1fcjNUR0lHM2F2WVBhMzVDdklKelZZM2lNYjRzRDRNOUt2a0Q0NlA5TFNRTkdQbjAxQWdqcTNfUGpJZTRqRVU0d1d0QVBJc0J4OTNIeUxBeFQycTVrenhKWEw3b2xkbXE4RldvSjhoam1yUHZuVWc?oc=5",
-    "pubDate": "Wed, 26 Aug 2026 07:00:00 GMT",
+    "title": "【株式】セガサミーHDが小幅続伸 東海東京証券は目標株価を2630円から3090円に引き上げ(gamebiz)",
+    "source": "finance.yahoo.co.jp",
+    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPR3g3NjlNZHB2LUFjZW1RNkx3bGtaTExJUGxUT2ZkM2V5ekVhTUZDa0RtQ3gxZ0lraDNFM08yZl82NWRlTWpZT1BDQlBtTTBicnZsR242cHNwMU1OR3BOc01xY3ljdGdXWVNDdE5xMU82ZlpLU3k3RWRrMFNIcWFLOFR0a2IzS00?oc=5",
+    "pubDate": "Wed, 09 Sep 2026 01:42:49 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
   ],
   "9433.T": [
    {
-    "title": "ニデック悪材料出尽くしは遠く KDDIなど「改善銘柄」の回復は長期戦 ヴェリタスEYE（9月8日）",
-    "source": "日本経済新聞",
-    "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBYRkVQLW1FbXRRY29uQ1AtcjFTN1JWOTV6clNVcEZYdU5KUE9La1hLR3VVMVFIa2NENnFlQk9JVGVMbHk1bVBxNjF3SzE0S21Bcm5lb0lfeTBhaWNUM1hRdDk4b05aRFRBUnZleWYxQWhnUno3S09ITWJCbldrUQ?oc=5",
-    "pubDate": "Tue, 08 Sep 2026 07:04:50 GMT",
-    "sentiment": "pos",
+    "title": "ＫＤＤＩ (9433) の株価・株式",
+    "source": "QUICK Money World",
+    "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5yVEdkVkc1REgzTDF0WkQyNURCc1RsQ1EwSWFDaF9mOXp3TkNGbjBJeHZmSXdzb2Y5M2NKWXdrblBHaExDU0plRzhWSzBYajhIbDRpbU9IOA?oc=5",
+    "pubDate": "Fri, 11 Sep 2026 07:00:00 GMT",
+    "sentiment": "neu",
     "theme": "その他"
    }
   ],
   "8001.T": [
    {
     "title": "伊藤忠商事(株)【8001】：今の株価の理由は？値動きの背景をAIが解説",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE53d01yREo4QmVld0VxdXNNYWZoUzZWeHVkVHJTN25iMHVzajBrWTY5VUs3eGlZNVJack02ZHp2OVZEQ19PbU14MW9HczA5M19aQ2xPb0xTdXlnbkRGQ1Jv?oc=5",
-    "pubDate": "Wed, 09 Sep 2026 06:53:41 GMT",
+    "source": "finance.yahoo.co.jp",
+    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE45VUdkaVA1ZURmNk5mclBtUkZhTkMzenhiQ0dOTkE1OE01T3BXVHhYUWQtdDkxS1BkcVZVVkVDVzlMSHhxenFEdHNMWnB5eWptcHZYZWpnZFFrdEJDQzFr?oc=5",
+    "pubDate": "Fri, 11 Sep 2026 06:53:39 GMT",
     "sentiment": "neu",
     "theme": "AI"
    }
   ],
-  "5020.T": [
+  "8411.T": [
    {
-    "title": "ＥＮＥＯＳやコスモＨＤは４日続伸、中東情勢緊迫でＷＴＩ価格は上昇基調強める",
+    "title": "寄前【成行注文】買い越しランキング エアトリ、みずほＦＧ、ビルファンド [08:36]",
     "source": "株探",
-    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBPU1dUSEh2eFI2aElmS2NUdUxLUllBVnllY3FVdU1EVmFRdmt6TWpSSVVlX0lGVG1rSkRlQmx1Q2k2LWJ4dW5kd1FuWlI4aEZ1RUE?oc=5",
-    "pubDate": "Thu, 10 Sep 2026 01:09:00 GMT",
+    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBVUEdaWjEzYjNHWDB3Snd3VWlMQkFacGlQMmEta1J2VkdGNWJCclhRV0dEOTdqbVE2bU92MExiUW5xdG5LWFlDd2JzaXM5dGRJaThIcERWazdvZUN1Z0dUQw?oc=5",
+    "pubDate": "Thu, 10 Sep 2026 23:36:44 GMT",
     "sentiment": "pos",
     "theme": "その他"
+   }
+  ],
+  "5019.T": [
+   {
+    "title": "出光興産(株)【5019】：今の株価の理由は？値動きの背景をAIが解説",
+    "source": "finance.yahoo.co.jp",
+    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1EdjNIdE16Z1VRaXNrMG1ubVNfWlZFODRkai13RVptdW9LQnZhTUtJdzNFMU1OZTBWVE5kM1lhMURfSEN4Q3haMzI5Tmx0RUg5cU1BYzlIekhzZG41Q0s4?oc=5",
+    "pubDate": "Fri, 11 Sep 2026 07:00:31 GMT",
+    "sentiment": "neu",
+    "theme": "AI"
+   }
+  ],
+  "8725.T": [
+   {
+    "title": "ＭＳ＆ＡＤインシュアランスグループホールディングス(株)【8725】：今の株価の理由は？値動きの背景をAIが解説",
+    "source": "finance.yahoo.co.jp",
+    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9KWmdLUTRqbnN3Qnp3N0E2ZkZvRGdqNHY4Tm5YeE0yVEtlY2g5WHVnd1FkZ29XM29Yb0szcnpPRnU2RW0yT2plRjFOcy1PTDFXaDlyRE9HNWtUZEZfdHY0?oc=5",
+    "pubDate": "Fri, 11 Sep 2026 06:56:45 GMT",
+    "sentiment": "neu",
+    "theme": "AI"
    }
   ]
  },
@@ -260,95 +260,90 @@
  ],
  "short_alerts": [
   {
-   "type": "warn",
-   "title": "空売り残高: 日産自動車 (7201)",
-   "desc": "開示合計9.31%・前回比増加中（6件・出典JPX 09/10時点）"
-  },
-  {
-   "type": "warn",
-   "title": "空売り残高: ソシオネクスト (6526)",
-   "desc": "開示合計8.05%・前回比増加中（5件・出典JPX 09/10時点）"
-  },
-  {
    "type": "info",
-   "title": "空売り残高: セブン＆アイHD (3382)",
-   "desc": "開示合計6.77%・前回比横ばい（1件・出典JPX 09/10時点）"
+   "title": "空売り残高: ディー・エヌ・エー (2432)",
+   "desc": "開示合計8.15%・前回比横ばい（4件・出典JPX 09/11時点）"
+  },
+  {
+   "type": "warn",
+   "title": "空売り残高: 電通グループ (4324)",
+   "desc": "開示合計5.29%・前回比増加中（4件・出典JPX 09/11時点）"
+  },
+  {
+   "type": "warn",
+   "title": "空売り残高: メドレー (4480)",
+   "desc": "開示合計4.46%・前回比増加中（2件・出典JPX 09/11時点）"
   }
  ],
  "short_ratios": {
-  "7201.T": 9.31,
-  "6526.T": 8.05,
-  "3382.T": 6.77,
-  "4425.T": 4.2,
-  "3692.T": 4.16,
-  "2432.T": 4.05,
-  "3994.T": 4.02,
-  "4385.T": 3.51,
-  "7261.T": 3.19,
-  "6770.T": 3.04,
-  "9501.T": 2.9,
-  "6920.T": 1.92,
-  "7779.T": 1.69,
-  "8750.T": 1.68,
-  "4452.T": 1.67,
-  "6027.T": 1.63,
-  "4420.T": 1.59,
-  "4324.T": 1.54,
-  "6521.T": 1.47,
-  "4565.T": 1.4,
-  "4443.T": 1.34,
-  "4180.T": 1.32,
-  "9202.T": 1.3,
-  "4911.T": 1.28,
-  "4506.T": 1.26,
-  "8697.T": 1.16,
-  "9843.T": 1.14,
-  "7751.T": 0.99,
-  "3923.T": 0.97,
-  "3436.T": 0.89,
-  "8267.T": 0.85,
-  "7012.T": 0.81,
-  "4480.T": 0.76,
-  "8252.T": 0.71,
-  "4021.T": 0.7,
-  "2897.T": 0.69,
-  "6178.T": 0.65,
-  "1928.T": 0.63,
-  "7270.T": 0.63,
-  "9020.T": 0.62,
-  "9166.T": 0.61,
-  "7267.T": 0.6,
-  "2502.T": 0.58,
-  "2503.T": 0.54,
-  "3092.T": 0.53,
-  "8303.T": 0.52,
-  "3659.T": 0.51,
-  "6367.T": 0.5,
-  "6723.T": 0.5,
-  "2670.T": 0.4,
-  "5411.T": 0.38
+  "2432.T": 8.15,
+  "4324.T": 5.29,
+  "4480.T": 4.46,
+  "7201.T": 4.08,
+  "3923.T": 3.73,
+  "2413.T": 3.07,
+  "4425.T": 3.01,
+  "6770.T": 2.94,
+  "5253.T": 2.79,
+  "6526.T": 2.64,
+  "8750.T": 2.54,
+  "4911.T": 2.46,
+  "3436.T": 2.24,
+  "7779.T": 2.01,
+  "6920.T": 2.0,
+  "4478.T": 1.64,
+  "4180.T": 1.61,
+  "4452.T": 1.52,
+  "3791.T": 1.39,
+  "9107.T": 1.35,
+  "6027.T": 1.26,
+  "4565.T": 1.25,
+  "6460.T": 1.16,
+  "4420.T": 1.14,
+  "9501.T": 1.11,
+  "6367.T": 1.09,
+  "8604.T": 0.99,
+  "5020.T": 0.93,
+  "4385.T": 0.91,
+  "9602.T": 0.9,
+  "4443.T": 0.86,
+  "8252.T": 0.84,
+  "2181.T": 0.79,
+  "4502.T": 0.77,
+  "7261.T": 0.77,
+  "9843.T": 0.77,
+  "9202.T": 0.72,
+  "2801.T": 0.7,
+  "4751.T": 0.7,
+  "7270.T": 0.69,
+  "7012.T": 0.67,
+  "8725.T": 0.67,
+  "6532.T": 0.62,
+  "7974.T": 0.61,
+  "8113.T": 0.6,
+  "3659.T": 0.56,
+  "4051.T": 0.55,
+  "8053.T": 0.55,
+  "7751.T": 0.55,
+  "3994.T": 0.5,
+  "6521.T": 0.49,
+  "3092.T": 0.29,
+  "3692.T": 0.0
  },
  "theme_trends": [
   {
    "theme": "その他",
-   "mentions": 5,
-   "pos": 2,
+   "mentions": 6,
+   "pos": 1,
    "neg": 0,
-   "prevMentions": 5
+   "prevMentions": 6
   },
   {
    "theme": "AI",
    "mentions": 4,
-   "pos": 1,
-   "neg": 0,
-   "prevMentions": 4
-  },
-  {
-   "theme": "資源",
-   "mentions": 1,
    "pos": 0,
    "neg": 0,
-   "prevMentions": 1
+   "prevMentions": 4
   }
  ],
  "flow": {
@@ -374,13 +369,13 @@
   "source": "JPX 投資部門別売買状況（東証プライム・週次・金額ベース）"
  },
  "backtest": {
-  "annual": "+21.4%",
-  "benchmark": "+29.3%",
-  "sharpe": "0.55",
-  "dd": "-28.7%",
+  "annual": "+22.6%",
+  "benchmark": "+30.1%",
+  "sharpe": "0.59",
+  "dd": "-27.2%",
   "winrate": "60.9%",
   "months": "23ヶ月",
-  "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+29.3%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
+  "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+30.1%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
  },
  "past_earnings": {
   "6027.T": [
@@ -393,15 +388,15 @@
    "2021-10-26",
    "2021-07-29"
   ],
-  "9984.T": [
+  "6178.T": [
    "2026-08-06",
-   "2026-05-12",
-   "2026-02-12",
-   "2025-11-10",
+   "2026-05-15",
+   "2026-02-13",
+   "2025-11-13",
    "2025-08-07",
-   "2025-05-13",
-   "2025-02-12",
-   "2024-11-12"
+   "2025-05-15",
+   "2025-02-13",
+   "2024-11-13"
   ],
   "9432.T": [
    "2026-08-06",
@@ -413,16 +408,6 @@
    "2025-02-07",
    "2024-11-07"
   ],
-  "5019.T": [
-   "2025-02-11",
-   "2024-08-05",
-   "2024-02-12",
-   "2023-11-14",
-   "2023-08-08",
-   "2023-02-13",
-   "2022-11-08",
-   "2022-08-09"
-  ],
   "9503.T": [
    "2026-07-30",
    "2026-04-29",
@@ -432,16 +417,6 @@
    "2025-04-30",
    "2025-01-30",
    "2024-10-29"
-  ],
-  "6178.T": [
-   "2026-08-06",
-   "2026-05-15",
-   "2026-02-13",
-   "2025-11-13",
-   "2025-08-07",
-   "2025-05-15",
-   "2025-02-13",
-   "2024-11-13"
   ],
   "6460.T": [
    "2026-08-06",
@@ -473,15 +448,35 @@
    "2025-02-05",
    "2024-11-05"
   ],
-  "5020.T": [
-   "2026-08-06",
-   "2026-05-14",
-   "2026-02-12",
-   "2025-11-11",
-   "2025-08-07",
-   "2025-05-12",
-   "2025-02-13",
-   "2024-11-12"
+  "8411.T": [
+   "2026-07-30",
+   "2026-05-15",
+   "2026-02-02",
+   "2025-11-14",
+   "2025-07-31",
+   "2025-05-15",
+   "2025-02-03",
+   "2024-11-14"
+  ],
+  "5019.T": [
+   "2025-02-11",
+   "2024-08-05",
+   "2024-02-12",
+   "2023-11-14",
+   "2023-08-08",
+   "2023-02-13",
+   "2022-11-08",
+   "2022-08-09"
+  ],
+  "8725.T": [
+   "2026-05-20",
+   "2026-02-13",
+   "2024-02-14",
+   "2023-11-17",
+   "2023-08-08",
+   "2023-05-18",
+   "2023-02-13",
+   "2022-11-18"
   ]
  }
 }
