@@ -8714,6 +8714,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-14",
+      "ticker": "9404.T",
+      "name": "日本テレビホールディングス",
+      "basePrice": 3006.0,
+      "rangeLow": 2963,
+      "rangeHigh": 3049,
+      "predUpRate": 51.7,
+      "condN": 174,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -12513,6 +12528,18 @@
       "entry": 560,
       "target": 578,
       "stop": 546,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-14",
+      "ticker": "9404.T",
+      "name": "日本テレビホールディングス",
+      "basePrice": 3006.0,
+      "entry": 2984,
+      "target": 3071,
+      "stop": 2919,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
