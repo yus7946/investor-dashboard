@@ -8909,6 +8909,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-15",
+      "ticker": "9984.T",
+      "name": "ソフトバンクG",
+      "basePrice": 6183.0,
+      "rangeLow": 5942,
+      "rangeHigh": 6424,
+      "predUpRate": 50.9,
+      "condN": 167,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -12825,6 +12840,18 @@
       "entry": 7468,
       "target": 7947,
       "stop": 7109,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-15",
+      "ticker": "9984.T",
+      "name": "ソフトバンクG",
+      "basePrice": 6183.0,
+      "entry": 6062,
+      "target": 6545,
+      "stop": 5700,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
