@@ -8879,6 +8879,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-15",
+      "ticker": "4704.T",
+      "name": "トレンドマイクロ",
+      "basePrice": 6410.0,
+      "rangeLow": 6269,
+      "rangeHigh": 6551,
+      "predUpRate": 52.2,
+      "condN": 161,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-15",
+      "ticker": "6981.T",
+      "name": "村田製作所",
+      "basePrice": 7588.0,
+      "rangeLow": 7349,
+      "rangeHigh": 7827,
+      "predUpRate": 50.5,
+      "condN": 198,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -12759,6 +12789,42 @@
       "entry": 3020,
       "target": 3108,
       "stop": 2954,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-15",
+      "ticker": "9432.T",
+      "name": "NTT",
+      "basePrice": 176.8,
+      "entry": 176,
+      "target": 179,
+      "stop": 174,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-15",
+      "ticker": "4704.T",
+      "name": "トレンドマイクロ",
+      "basePrice": 6410.0,
+      "entry": 6339,
+      "target": 6621,
+      "stop": 6127,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-15",
+      "ticker": "6981.T",
+      "name": "村田製作所",
+      "basePrice": 7588.0,
+      "entry": 7468,
+      "target": 7947,
+      "stop": 7109,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
