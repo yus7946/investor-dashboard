@@ -9074,6 +9074,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-16",
+      "ticker": "9501.T",
+      "name": "東京電力HD",
+      "basePrice": 557.2,
+      "rangeLow": 542,
+      "rangeHigh": 572,
+      "predUpRate": 47.1,
+      "condN": 170,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-16",
+      "ticker": "4704.T",
+      "name": "トレンドマイクロ",
+      "basePrice": 6485.0,
+      "rangeLow": 6343,
+      "rangeHigh": 6627,
+      "predUpRate": 52.5,
+      "condN": 162,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -13071,6 +13101,30 @@
       "entry": 7467,
       "target": 7945,
       "stop": 7108,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-16",
+      "ticker": "9501.T",
+      "name": "東京電力HD",
+      "basePrice": 557.2,
+      "entry": 550,
+      "target": 580,
+      "stop": 528,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-16",
+      "ticker": "4704.T",
+      "name": "トレンドマイクロ",
+      "basePrice": 6485.0,
+      "entry": 6414,
+      "target": 6698,
+      "stop": 6201,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
