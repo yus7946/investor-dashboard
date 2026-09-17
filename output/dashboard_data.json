@@ -1,6 +1,6 @@
 {
-  "updated": "2026年09月17日 17:48",
-  "updatedAtMs": 1789634928300,
+  "updated": "2026年09月17日 18:36",
+  "updatedAtMs": 1789637809049,
   "updateMode": "light",
   "fetched": 163,
   "universeTotal": 166,
@@ -32,8 +32,8 @@
   "marketOutlook": {
     "spxChangePct": -0.45,
     "spxDate": "2026-09-16",
-    "usdjpy": 155.77,
-    "usdjpyChangePct": 0.33,
+    "usdjpy": 155.69,
+    "usdjpyChangePct": 0.27,
     "condition": "米S&P500が直近下落",
     "topixUpRate": 44.1,
     "n": 213,
@@ -379,8 +379,8 @@
           "basis": "1日の実績振れ幅σ=0.9%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.5:1）。参考: 直近3ヶ月の高値180円 / 安値143円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
         },
         "cond": {
-          "upRate": 50.0,
-          "n": 48,
+          "upRate": 51.1,
+          "n": 47,
           "condition": "RSI70以上（買われすぎ圏）×5日上昇局面",
           "note": null
         },
