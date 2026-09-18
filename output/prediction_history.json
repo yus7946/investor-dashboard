@@ -9314,6 +9314,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-17",
+      "ticker": "6971.T",
+      "name": "京セラ",
+      "basePrice": 3637.0,
+      "rangeLow": 3573,
+      "rangeHigh": 3701,
+      "predUpRate": 49.2,
+      "condN": 195,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -13512,6 +13527,18 @@
       "entry": 5959,
       "target": 6094,
       "stop": 5858,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-17",
+      "ticker": "6971.T",
+      "name": "京セラ",
+      "basePrice": 3637.0,
+      "entry": 3605,
+      "target": 3733,
+      "stop": 3509,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
