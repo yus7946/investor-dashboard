@@ -8934,11 +8934,11 @@
       "rangeHigh": 17727,
       "predUpRate": 52.4,
       "condN": 168,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-09-17",
+      "actualClose": 17445.0,
+      "actualReturn": 1.07,
+      "inRange": true,
+      "wentUp": true
     },
     {
       "baseDate": "2026-09-16",
@@ -8949,11 +8949,11 @@
       "rangeHigh": 2572,
       "predUpRate": 53.1,
       "condN": 209,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-09-17",
+      "actualClose": 2539.5,
+      "actualReturn": 0.22,
+      "inRange": true,
+      "wentUp": true
     },
     {
       "baseDate": "2026-09-16",
@@ -8964,11 +8964,11 @@
       "rangeHigh": 180,
       "predUpRate": 42.1,
       "condN": 209,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-09-17",
+      "actualClose": 180.0,
+      "actualReturn": 0.73,
+      "inRange": true,
+      "wentUp": true
     },
     {
       "baseDate": "2026-09-16",
@@ -8979,11 +8979,11 @@
       "rangeHigh": 6480,
       "predUpRate": 51.2,
       "condN": 168,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-09-17",
+      "actualClose": 6247.0,
+      "actualReturn": 0.16,
+      "inRange": true,
+      "wentUp": true
     },
     {
       "baseDate": "2026-09-16",
@@ -8994,11 +8994,11 @@
       "rangeHigh": 3122,
       "predUpRate": 48.9,
       "condN": 47,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-09-17",
+      "actualClose": 3109.0,
+      "actualReturn": 0.81,
+      "inRange": true,
+      "wentUp": true
     },
     {
       "baseDate": "2026-09-16",
@@ -9009,11 +9009,11 @@
       "rangeHigh": 3030,
       "predUpRate": 48.1,
       "condN": 77,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-09-17",
+      "actualClose": 2979.5,
+      "actualReturn": 0.13,
+      "inRange": true,
+      "wentUp": true
     },
     {
       "baseDate": "2026-09-16",
@@ -9024,11 +9024,11 @@
       "rangeHigh": 5734,
       "predUpRate": 47.9,
       "condN": 165,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-09-17",
+      "actualClose": 5550.0,
+      "actualReturn": -0.18,
+      "inRange": true,
+      "wentUp": false
     },
     {
       "baseDate": "2026-09-16",
@@ -9039,11 +9039,11 @@
       "rangeHigh": 2415,
       "predUpRate": 49.1,
       "condN": 55,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-09-17",
+      "actualClose": 2370.0,
+      "actualReturn": -0.4,
+      "inRange": true,
+      "wentUp": false
     },
     {
       "baseDate": "2026-09-16",
@@ -9054,11 +9054,11 @@
       "rangeHigh": 3410,
       "predUpRate": 47.4,
       "condN": 57,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-09-17",
+      "actualClose": 3315.0,
+      "actualReturn": -0.87,
+      "inRange": true,
+      "wentUp": false
     },
     {
       "baseDate": "2026-09-16",
@@ -9069,11 +9069,11 @@
       "rangeHigh": 7826,
       "predUpRate": 50.3,
       "condN": 199,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-09-17",
+      "actualClose": 7431.0,
+      "actualReturn": -2.06,
+      "inRange": true,
+      "wentUp": false
     },
     {
       "baseDate": "2026-09-16",
@@ -9084,11 +9084,11 @@
       "rangeHigh": 572,
       "predUpRate": 47.1,
       "condN": 170,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-09-17",
+      "actualClose": 556.2,
+      "actualReturn": -0.18,
+      "inRange": true,
+      "wentUp": false
     },
     {
       "baseDate": "2026-09-16",
@@ -9099,11 +9099,11 @@
       "rangeHigh": 6627,
       "predUpRate": 52.5,
       "condN": 162,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-09-17",
+      "actualClose": 6454.0,
+      "actualReturn": -0.48,
+      "inRange": true,
+      "wentUp": false
     },
     {
       "baseDate": "2026-09-16",
@@ -9114,6 +9114,156 @@
       "rangeHigh": 3100,
       "predUpRate": 52.3,
       "condN": 176,
+      "actualDate": "2026-09-17",
+      "actualClose": 3056.0,
+      "actualReturn": 0.0,
+      "inRange": true,
+      "wentUp": false
+    },
+    {
+      "baseDate": "2026-09-17",
+      "ticker": "6098.T",
+      "name": "リクルートHD",
+      "basePrice": 17210.0,
+      "rangeLow": 16747,
+      "rangeHigh": 17673,
+      "predUpRate": 51.8,
+      "condN": 168,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-17",
+      "ticker": "6178.T",
+      "name": "日本郵政",
+      "basePrice": 2506.5,
+      "rangeLow": 2469,
+      "rangeHigh": 2544,
+      "predUpRate": 53.1,
+      "condN": 209,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-17",
+      "ticker": "9984.T",
+      "name": "ソフトバンクG",
+      "basePrice": 6395.0,
+      "rangeLow": 6147,
+      "rangeHigh": 6643,
+      "predUpRate": 51.2,
+      "condN": 168,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-17",
+      "ticker": "6981.T",
+      "name": "村田製作所",
+      "basePrice": 7533.0,
+      "rangeLow": 7297,
+      "rangeHigh": 7769,
+      "predUpRate": 50.3,
+      "condN": 199,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-17",
+      "ticker": "4704.T",
+      "name": "トレンドマイクロ",
+      "basePrice": 6508.0,
+      "rangeLow": 6366,
+      "rangeHigh": 6650,
+      "predUpRate": 52.8,
+      "condN": 163,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-17",
+      "ticker": "9432.T",
+      "name": "NTT",
+      "basePrice": 177.6,
+      "rangeLow": 176,
+      "rangeHigh": 179,
+      "predUpRate": 41.8,
+      "condN": 208,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-17",
+      "ticker": "4021.T",
+      "name": "日産化学",
+      "basePrice": 8262.0,
+      "rangeLow": 8132,
+      "rangeHigh": 8392,
+      "predUpRate": 57.8,
+      "condN": 185,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-17",
+      "ticker": "9404.T",
+      "name": "日本テレビホールディングス",
+      "basePrice": 3028.0,
+      "rangeLow": 2985,
+      "rangeHigh": 3071,
+      "predUpRate": 51.7,
+      "condN": 176,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-17",
+      "ticker": "5411.T",
+      "name": "JFEホールディングス",
+      "basePrice": 1875.0,
+      "rangeLow": 1850,
+      "rangeHigh": 1900,
+      "predUpRate": 46.8,
+      "condN": 171,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-17",
+      "ticker": "2181.T",
+      "name": "パーソルホールディングス",
+      "basePrice": 298.7,
+      "rangeLow": 295,
+      "rangeHigh": 303,
+      "predUpRate": 53.1,
+      "condN": 192,
       "actualDate": null,
       "actualClose": null,
       "actualReturn": null,
@@ -9550,6 +9700,15 @@
       "spxUp": false,
       "predUpRate": 44.1,
       "n": 213,
+      "actualDate": "2026-09-17",
+      "topixReturn": 0.83,
+      "wentUp": true
+    },
+    {
+      "baseDate": "2026-09-17",
+      "spxUp": true,
+      "predUpRate": 65.1,
+      "n": 275,
       "actualDate": null,
       "topixReturn": null,
       "wentUp": null
@@ -12336,9 +12495,9 @@
       "entry": 1635,
       "target": 1702,
       "stop": 1585,
-      "status": "entered",
+      "status": "stop",
       "enteredDate": "2026-09-09",
-      "resolvedDate": null
+      "resolvedDate": "2026-09-17"
     },
     {
       "baseDate": "2026-09-03",
@@ -12468,9 +12627,9 @@
       "entry": 1642,
       "target": 1709,
       "stop": 1592,
-      "status": "entered",
+      "status": "stop",
       "enteredDate": "2026-09-08",
-      "resolvedDate": null
+      "resolvedDate": "2026-09-17"
     },
     {
       "baseDate": "2026-09-04",
@@ -12816,9 +12975,9 @@
       "entry": 177,
       "target": 180,
       "stop": 175,
-      "status": "entered",
+      "status": "target",
       "enteredDate": "2026-09-14",
-      "resolvedDate": null
+      "resolvedDate": "2026-09-17"
     },
     {
       "baseDate": "2026-09-11",
@@ -13080,8 +13239,8 @@
       "entry": 2515,
       "target": 2592,
       "stop": 2457,
-      "status": "waiting",
-      "enteredDate": null,
+      "status": "entered",
+      "enteredDate": "2026-09-17",
       "resolvedDate": null
     },
     {
@@ -13104,8 +13263,8 @@
       "entry": 5473,
       "target": 5821,
       "stop": 5212,
-      "status": "waiting",
-      "enteredDate": null,
+      "status": "entered",
+      "enteredDate": "2026-09-17",
       "resolvedDate": null
     },
     {
@@ -13116,8 +13275,8 @@
       "entry": 7467,
       "target": 7945,
       "stop": 7108,
-      "status": "waiting",
-      "enteredDate": null,
+      "status": "entered",
+      "enteredDate": "2026-09-17",
       "resolvedDate": null
     },
     {
@@ -13128,8 +13287,8 @@
       "entry": 550,
       "target": 580,
       "stop": 528,
-      "status": "waiting",
-      "enteredDate": null,
+      "status": "entered",
+      "enteredDate": "2026-09-17",
       "resolvedDate": null
     },
     {
@@ -13140,8 +13299,8 @@
       "entry": 6414,
       "target": 6698,
       "stop": 6201,
-      "status": "waiting",
-      "enteredDate": null,
+      "status": "entered",
+      "enteredDate": "2026-09-17",
       "resolvedDate": null
     },
     {
@@ -13152,6 +13311,126 @@
       "entry": 3034,
       "target": 3121,
       "stop": 2968,
+      "status": "entered",
+      "enteredDate": "2026-09-17",
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-17",
+      "ticker": "6098.T",
+      "name": "リクルートHD",
+      "basePrice": 17210.0,
+      "entry": 16979,
+      "target": 17905,
+      "stop": 16285,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-17",
+      "ticker": "6178.T",
+      "name": "日本郵政",
+      "basePrice": 2506.5,
+      "entry": 2488,
+      "target": 2564,
+      "stop": 2431,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-17",
+      "ticker": "9984.T",
+      "name": "ソフトバンクG",
+      "basePrice": 6395.0,
+      "entry": 6271,
+      "target": 6767,
+      "stop": 5899,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-17",
+      "ticker": "6981.T",
+      "name": "村田製作所",
+      "basePrice": 7533.0,
+      "entry": 7415,
+      "target": 7887,
+      "stop": 7061,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-17",
+      "ticker": "4704.T",
+      "name": "トレンドマイクロ",
+      "basePrice": 6508.0,
+      "entry": 6437,
+      "target": 6722,
+      "stop": 6224,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-17",
+      "ticker": "9432.T",
+      "name": "NTT",
+      "basePrice": 177.6,
+      "entry": 177,
+      "target": 180,
+      "stop": 175,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-17",
+      "ticker": "4021.T",
+      "name": "日産化学",
+      "basePrice": 8262.0,
+      "entry": 8197,
+      "target": 8456,
+      "stop": 8003,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-17",
+      "ticker": "9404.T",
+      "name": "日本テレビホールディングス",
+      "basePrice": 3028.0,
+      "entry": 3006,
+      "target": 3093,
+      "stop": 2941,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-17",
+      "ticker": "5411.T",
+      "name": "JFEホールディングス",
+      "basePrice": 1875.0,
+      "entry": 1862,
+      "target": 1913,
+      "stop": 1824,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-17",
+      "ticker": "2181.T",
+      "name": "パーソルホールディングス",
+      "basePrice": 298.7,
+      "entry": 297,
+      "target": 305,
+      "stop": 291,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
