@@ -1,7 +1,7 @@
 {
-  "updated": "2026年09月21日 10:24",
-  "updatedAtMs": 1789953843351,
-  "updateMode": "full",
+  "updated": "2026年09月21日 15:46",
+  "updatedAtMs": 1789973165967,
+  "updateMode": "light",
   "fetched": 163,
   "universeTotal": 166,
   "lowRiskPlan": {
@@ -44,8 +44,8 @@
   "marketOutlook": {
     "spxChangePct": 0.17,
     "spxDate": "2026-09-18",
-    "usdjpy": 156.7,
-    "usdjpyChangePct": 0.36,
+    "usdjpy": 157.04,
+    "usdjpyChangePct": 0.58,
     "condition": "米S&P500が直近上昇",
     "topixUpRate": 65.0,
     "n": 274,
@@ -119,16 +119,16 @@
       "regime_adjusted": false,
       "forecast": {
         "price": 17350.0,
-        "rangeLow": 16888,
-        "rangeHigh": 17812,
-        "rangeLow2": 16426,
-        "rangeHigh2": 18274,
-        "volDPct": 2.66,
+        "rangeLow": 16890,
+        "rangeHigh": 17810,
+        "rangeLow2": 16430,
+        "rangeHigh2": 18270,
+        "volDPct": 2.65,
         "calibrated": true,
         "plan": {
-          "entry": 17119,
-          "target": 18043,
-          "stop": 16426,
+          "entry": 17120,
+          "target": 18040,
+          "stop": 16430,
           "rr": 1.33,
           "hi3m": 18215,
           "lo3m": 11040,
@@ -177,7 +177,7 @@
         "supports": [
           "機関の買い集め兆候"
         ],
-        "stopPct": 4.05,
+        "stopPct": 4.03,
         "rr": 1.33
       },
       "earnings": {
@@ -244,16 +244,16 @@
       "regime_adjusted": false,
       "forecast": {
         "price": 6315.0,
-        "rangeLow": 6072,
-        "rangeHigh": 6558,
-        "rangeLow2": 5830,
-        "rangeHigh2": 6800,
-        "volDPct": 3.84,
+        "rangeLow": 6074,
+        "rangeHigh": 6556,
+        "rangeLow2": 5832,
+        "rangeHigh2": 6798,
+        "volDPct": 3.82,
         "calibrated": true,
         "plan": {
           "entry": 6194,
-          "target": 6679,
-          "stop": 5830,
+          "target": 6677,
+          "stop": 5832,
           "rr": 1.33,
           "hi3m": 7118,
           "lo3m": 4622,
@@ -302,7 +302,7 @@
         "supports": [
           "機関の買い集め兆候"
         ],
-        "stopPct": 5.88,
+        "stopPct": 5.84,
         "rr": 1.33
       },
       "earnings": {
@@ -376,8 +376,8 @@
         "plan": {
           "entry": 2509,
           "target": 2584,
-          "stop": 2452,
-          "rr": 1.32,
+          "stop": 2453,
+          "rr": 1.34,
           "hi3m": 2554,
           "lo3m": 2153,
           "basis": "1日の実績振れ幅σ=1.5%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値2,554円 / 安値2,153円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
@@ -423,8 +423,8 @@
         "supports": [
           "機関の買い集め兆候"
         ],
-        "stopPct": 2.27,
-        "rr": 1.32
+        "stopPct": 2.23,
+        "rr": 1.34
       },
       "earnings": {
         "date": "2026-11-13",
@@ -489,16 +489,16 @@
       "regime_adjusted": false,
       "forecast": {
         "price": 7763.0,
-        "rangeLow": 7522,
-        "rangeHigh": 8004,
-        "rangeLow2": 7280,
-        "rangeHigh2": 8246,
-        "volDPct": 3.11,
+        "rangeLow": 7523,
+        "rangeHigh": 8003,
+        "rangeLow2": 7282,
+        "rangeHigh2": 8244,
+        "volDPct": 3.1,
         "calibrated": true,
         "plan": {
-          "entry": 7642,
-          "target": 8125,
-          "stop": 7280,
+          "entry": 7643,
+          "target": 8124,
+          "stop": 7282,
           "rr": 1.33,
           "hi3m": 11890,
           "lo3m": 6231,
@@ -547,7 +547,7 @@
         "supports": [
           "機関の買い集め兆候"
         ],
-        "stopPct": 4.74,
+        "stopPct": 4.72,
         "rr": 1.33
       },
       "earnings": {
@@ -616,14 +616,14 @@
         "price": 6609.0,
         "rangeLow": 6466,
         "rangeHigh": 6752,
-        "rangeLow2": 6322,
-        "rangeHigh2": 6896,
-        "volDPct": 2.17,
+        "rangeLow2": 6324,
+        "rangeHigh2": 6894,
+        "volDPct": 2.16,
         "calibrated": true,
         "plan": {
-          "entry": 6537,
-          "target": 6824,
-          "stop": 6322,
+          "entry": 6538,
+          "target": 6823,
+          "stop": 6324,
           "rr": 1.33,
           "hi3m": 6966,
           "lo3m": 5352,
@@ -672,7 +672,7 @@
         "supports": [
           "機関の買い集め兆候"
         ],
-        "stopPct": 3.29,
+        "stopPct": 3.27,
         "rr": 1.33
       },
       "earnings": {
@@ -736,16 +736,16 @@
       "regime_adjusted": false,
       "forecast": {
         "price": 7932.0,
-        "rangeLow": 7726,
-        "rangeHigh": 8138,
-        "rangeLow2": 7520,
-        "rangeHigh2": 8344,
-        "volDPct": 2.6,
+        "rangeLow": 7727,
+        "rangeHigh": 8137,
+        "rangeLow2": 7522,
+        "rangeHigh2": 8342,
+        "volDPct": 2.58,
         "calibrated": true,
         "plan": {
           "entry": 7829,
-          "target": 8241,
-          "stop": 7520,
+          "target": 8239,
+          "stop": 7521,
           "rr": 1.33,
           "hi3m": 8192,
           "lo3m": 5461,
@@ -782,7 +782,7 @@
         "supports": [
           "機関の買い集め兆候"
         ],
-        "stopPct": 3.95,
+        "stopPct": 3.93,
         "rr": 1.33
       },
       "earnings": {
@@ -847,20 +847,20 @@
       "regime_adjusted": false,
       "forecast": {
         "price": 3637.0,
-        "rangeLow": 3573,
-        "rangeHigh": 3701,
-        "rangeLow2": 3509,
-        "rangeHigh2": 3765,
+        "rangeLow": 3574,
+        "rangeHigh": 3700,
+        "rangeLow2": 3510,
+        "rangeHigh2": 3764,
         "volDPct": 1.75,
         "calibrated": true,
         "plan": {
           "entry": 3605,
-          "target": 3733,
-          "stop": 3509,
-          "rr": 1.33,
+          "target": 3732,
+          "stop": 3510,
+          "rr": 1.34,
           "hi3m": 3916,
           "lo3m": 3397,
-          "basis": "1日の実績振れ幅σ=1.8%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値3,916円 / 安値3,397円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+          "basis": "1日の実績振れ幅σ=1.7%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値3,916円 / 安値3,397円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
         },
         "cond": {
           "upRate": 49.2,
@@ -908,8 +908,8 @@
         "supports": [
           "機関の買い集め兆候"
         ],
-        "stopPct": 2.66,
-        "rr": 1.33
+        "stopPct": 2.64,
+        "rr": 1.34
       },
       "earnings": {
         "date": "2026-10-29",
@@ -980,7 +980,7 @@
         "rangeHigh": 179,
         "rangeLow2": 174,
         "rangeHigh2": 180,
-        "volDPct": 0.87,
+        "volDPct": 0.86,
         "calibrated": true,
         "plan": {
           "entry": 177,
@@ -1099,16 +1099,16 @@
       "regime_adjusted": false,
       "forecast": {
         "price": 5650.0,
-        "rangeLow": 5476,
-        "rangeHigh": 5824,
-        "rangeLow2": 5302,
-        "rangeHigh2": 5998,
-        "volDPct": 3.08,
+        "rangeLow": 5477,
+        "rangeHigh": 5823,
+        "rangeLow2": 5304,
+        "rangeHigh2": 5996,
+        "volDPct": 3.06,
         "calibrated": true,
         "plan": {
           "entry": 5563,
-          "target": 5911,
-          "stop": 5302,
+          "target": 5909,
+          "stop": 5303,
           "rr": 1.33,
           "hi3m": 5840,
           "lo3m": 2009,
@@ -1145,7 +1145,7 @@
         "supports": [
           "機関の買い集め兆候"
         ],
-        "stopPct": 4.69,
+        "stopPct": 4.67,
         "rr": 1.33
       },
       "earnings": null,
@@ -1204,18 +1204,18 @@
         "price": 8257.0,
         "rangeLow": 8129,
         "rangeHigh": 8385,
-        "rangeLow2": 8001,
-        "rangeHigh2": 8513,
+        "rangeLow2": 8002,
+        "rangeHigh2": 8512,
         "volDPct": 1.55,
         "calibrated": true,
         "plan": {
           "entry": 8193,
-          "target": 8449,
-          "stop": 8001,
-          "rr": 1.33,
+          "target": 8448,
+          "stop": 8002,
+          "rr": 1.34,
           "hi3m": 8647,
           "lo3m": 7311,
-          "basis": "1日の実績振れ幅σ=1.6%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値8,647円 / 安値7,311円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+          "basis": "1日の実績振れ幅σ=1.5%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値8,647円 / 安値7,311円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
         },
         "cond": {
           "upRate": 57.8,
@@ -1253,8 +1253,8 @@
         "supports": [
           "機関の買い集め兆候"
         ],
-        "stopPct": 2.34,
-        "rr": 1.33
+        "stopPct": 2.33,
+        "rr": 1.34
       },
       "earnings": {
         "date": "2026-11-09",
