@@ -1,7 +1,7 @@
 {
-  "updated": "2026年09月21日 21:41",
-  "updatedAtMs": 1789994465308,
-  "updateMode": "light",
+  "updated": "2026年09月22日 10:45",
+  "updatedAtMs": 1790041509316,
+  "updateMode": "full",
   "fetched": 163,
   "universeTotal": 166,
   "lowRiskPlan": {
@@ -42,13 +42,13 @@
     "source": "TOPIX連動ETF(1306.T)終値と200日移動平均から判定"
   },
   "marketOutlook": {
-    "spxChangePct": 0.17,
-    "spxDate": "2026-09-18",
-    "usdjpy": 157.33,
-    "usdjpyChangePct": 0.77,
+    "spxChangePct": 1.49,
+    "spxDate": "2026-09-21",
+    "usdjpy": 157.5,
+    "usdjpyChangePct": 0.29,
     "condition": "米S&P500が直近上昇",
-    "topixUpRate": 65.0,
-    "n": 274,
+    "topixUpRate": 64.8,
+    "n": 273,
     "regime": "bull",
     "basis": "過去2年で「米国市場が上昇/下落した翌営業日に東京(TOPIX ETF)が上昇した割合」を実際に集計。統計的傾向であり将来を保証しません。出典: Yahoo Finance価格データ。"
   },
@@ -182,7 +182,7 @@
       },
       "earnings": {
         "date": "2026-11-05",
-        "daysTo": 33,
+        "daysTo": 32,
         "isToday": false,
         "isSoon": false,
         "passed": false,
@@ -265,7 +265,12 @@
           "condition": "RSI中立圏×5日下落局面",
           "note": null
         },
-        "factors": [],
+        "factors": [
+          {
+            "label": "直近ニュースがネガティブ寄り（1件/簡易判定）",
+            "dir": "-"
+          }
+        ],
         "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.85倍に自動補正済み。目標カバー率は約75%）"
       },
       "impact": {
@@ -307,7 +312,7 @@
       },
       "earnings": {
         "date": "2026-11-11",
-        "daysTo": 37,
+        "daysTo": 36,
         "isToday": false,
         "isSoon": false,
         "passed": false,
@@ -318,11 +323,11 @@
       "yutai": null,
       "news": [
         {
-          "title": "ソフトバンクグループ(株)【9984】：株価・株式情報（夜間PTS含む）",
+          "title": "ＳＢエナジーがＩＰＯ延期と伝わる＝米国株個別(株探ニュース)",
           "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE55YWlQaEwwWXc5TW9lVHVuTGxCY2hKTnRLZjZTZFRoNVJZenhZUERYZWdxaDJreVdfa3p4Sk9zTHNaRkhHb3FHWUp3MVhmLVJGVEE?oc=5",
-          "pubDate": "Fri, 18 Sep 2026 07:00:00 GMT",
-          "sentiment": "neu",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQU0JOUHllamI3aE5sa3ktalZ3NEtuQnlSYnloS0FJZ0psR090U25BMEJ4M1hvVEtaMTRHU052UVBuUmFqbE5zQUF5SVNld05Qdm9UczdnN2o0VjNRSmZWbXNJVEIzTlhuUzZuMUVSMTFIa2JNX1RpdDJYUjVJckJPa3hFRDNyMXc?oc=5",
+          "pubDate": "Mon, 21 Sep 2026 18:51:30 GMT",
+          "sentiment": "neg",
           "theme": "その他"
         }
       ]
@@ -428,7 +433,7 @@
       },
       "earnings": {
         "date": "2026-11-13",
-        "daysTo": 39,
+        "daysTo": 38,
         "isToday": false,
         "isSoon": false,
         "passed": false,
@@ -552,7 +557,7 @@
       },
       "earnings": {
         "date": "2026-10-30",
-        "daysTo": 29,
+        "daysTo": 28,
         "isToday": false,
         "isSoon": false,
         "passed": false,
@@ -677,7 +682,7 @@
       },
       "earnings": {
         "date": "2026-11-11",
-        "daysTo": 37,
+        "daysTo": 36,
         "isToday": false,
         "isSoon": false,
         "passed": false,
@@ -787,7 +792,7 @@
       },
       "earnings": {
         "date": "2026-10-15",
-        "daysTo": 18,
+        "daysTo": 17,
         "isToday": false,
         "isSoon": false,
         "passed": false,
@@ -799,9 +804,9 @@
       "news": [
         {
           "title": "タイグロンパートナーズ株式会社、株式会社ベイカレント「Baycurrent TOP AGENT 2026」にて「BEST EXPERT HEADHUNTER」を",
-          "source": "日本人材ニュースONLINE",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5VTUxVOW4yZ1kwVWRoNnl1WDFqVkhpWVNHZDlzZlFDSjBhbENyQVBrLVAybDZHTVZ6TGNlZHluMlg2djlDWG9aYTZMdFhOUDZUNFp3QXpDUUEzNnp3?oc=5",
-          "pubDate": "Mon, 14 Sep 2026 07:00:00 GMT",
+          "source": "PR TIMES",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBGVDZ2RnRTaDQ4ZlljVzFmYVUwWlQ2aVpkRHV0TVQ3OEhJV1ZyOE9fbXp2a2hOM0JYbDNTT0lVYXRtOVBqQ016V2dHUm1Db1hCNXR4enB5Mkh0NXZKRE02b2ZYN194eDFLTGc?oc=5",
+          "pubDate": "Mon, 14 Sep 2026 01:30:02 GMT",
           "sentiment": "neu",
           "theme": "その他"
         }
@@ -913,7 +918,7 @@
       },
       "earnings": {
         "date": "2026-10-29",
-        "daysTo": 28,
+        "daysTo": 27,
         "isToday": false,
         "isSoon": false,
         "passed": false,
@@ -1038,7 +1043,7 @@
       },
       "earnings": {
         "date": "2026-11-04",
-        "daysTo": 32,
+        "daysTo": 31,
         "isToday": false,
         "isSoon": false,
         "passed": false,
@@ -1049,10 +1054,10 @@
       "yutai": "なし（過去はdポイント優待）",
       "news": [
         {
-          "title": "ＮＴＴ(株)【9432】：掲示板",
+          "title": "ＮＴＴ(株)【9432】：株価・株式情報（夜間PTS含む）",
           "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5YVV9mSUloR01TOGZGQjlwc0FPeHVzZU5TRW5ib1A3MHFDSWVFVnBRMHhIWW5qQWJGLWwtazB1bktna0RUekVDdmZqV1dRNWVnWEE0SmUtY3d3QQ?oc=5",
-          "pubDate": "Fri, 18 Sep 2026 07:09:09 GMT",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1KVFVQQzhzZDlNZS1nazBUbFllTldtRW85NHh4SEVyN1V0THFtcmFxTzk3NkJqOTdGSGVGdGhtbXdZbEZ0UGtTZnljRkVhYkM3Snc?oc=5",
+          "pubDate": "Sat, 19 Sep 2026 07:00:00 GMT",
           "sentiment": "neu",
           "theme": "その他"
         }
@@ -1152,7 +1157,7 @@
       "yutai": null,
       "news": [
         {
-          "title": "弁護士ドットコム株急伸 「SaaSの死」なんのその、法務AIに脚光 - 日経ヴェリタス",
+          "title": "弁護士ドットコム株急伸 「SaaSの死」なんのその、法務AIに脚光",
           "source": "日本経済新聞",
           "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBlRlYwbTNDZnMwWnBSbjBqbTlHSnBvamtBaUFTVVJjRmE1WG9zX3dRbXNaMVRQRTBSM2tEOFItN0FKNnVrQl9SejdUc0ZoMjZCeUlRR1lDYWROcDdFQVhqZ21fN2w4UmMyTnZOSjdDWWZaUmRUbUYwcm9JbHFVdw?oc=5",
           "pubDate": "Wed, 16 Sep 2026 20:00:00 GMT",
@@ -1258,7 +1263,7 @@
       },
       "earnings": {
         "date": "2026-11-09",
-        "daysTo": 35,
+        "daysTo": 34,
         "isToday": false,
         "isSoon": false,
         "passed": false,
@@ -2383,7 +2388,7 @@
       "exDivDate": "2026-10-29",
       "dividendYield": 1.05,
       "per": 19.8,
-      "pbr": 3.75,
+      "pbr": 3.91,
       "roe": 16.6,
       "rsi": 60.6,
       "vol": 0.3363,
@@ -2966,7 +2971,7 @@
       "price": 830.0,
       "divPerShare": 24.0,
       "exDivDate": "2027-06-29",
-      "dividendYield": 2.88,
+      "dividendYield": 2.89,
       "per": 13.1,
       "pbr": 0.83,
       "roe": 6.8,
@@ -3536,7 +3541,7 @@
       "price": 1050.0,
       "divPerShare": 13.0,
       "exDivDate": "2027-05-28",
-      "dividendYield": 1.24,
+      "dividendYield": 1.25,
       "per": 31.5,
       "pbr": 2.11,
       "roe": 7.5,
@@ -3553,7 +3558,7 @@
       "exDivDate": "2027-01-28",
       "dividendYield": 1.16,
       "per": 39.2,
-      "pbr": 1.93,
+      "pbr": 1.94,
       "roe": 5.2,
       "rsi": 38.8,
       "vol": 0.6227,
@@ -4005,7 +4010,7 @@
       "theme": "その他",
       "mentions": 9,
       "pos": 0,
-      "neg": 0,
+      "neg": 1,
       "prevMentions": 9
     },
     {

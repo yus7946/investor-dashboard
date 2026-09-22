@@ -65,7 +65,7 @@
   "5020.T": "2026-11-11",
   "5019.T": "2026-11-11",
   "9501.T": "2026-10-29",
-  "9502.T": "2026-10-27",
+  "9502.T": "2026-10-29",
   "9503.T": "2026-10-29",
   "9531.T": "2026-10-29",
   "9101.T": "2026-11-05",
@@ -162,11 +162,11 @@
   ],
   "9984.T": [
    {
-    "title": "ソフトバンクグループ(株)【9984】：株価・株式情報（夜間PTS含む）",
+    "title": "ＳＢエナジーがＩＰＯ延期と伝わる＝米国株個別(株探ニュース)",
     "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE55YWlQaEwwWXc5TW9lVHVuTGxCY2hKTnRLZjZTZFRoNVJZenhZUERYZWdxaDJreVdfa3p4Sk9zTHNaRkhHb3FHWUp3MVhmLVJGVEE?oc=5",
-    "pubDate": "Fri, 18 Sep 2026 07:00:00 GMT",
-    "sentiment": "neu",
+    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQU0JOUHllamI3aE5sa3ktalZ3NEtuQnlSYnloS0FJZ0psR090U25BMEJ4M1hvVEtaMTRHU052UVBuUmFqbE5zQUF5SVNld05Qdm9UczdnN2o0VjNRSmZWbXNJVEIzTlhuUzZuMUVSMTFIa2JNX1RpdDJYUjVJckJPa3hFRDNyMXc?oc=5",
+    "pubDate": "Mon, 21 Sep 2026 18:51:30 GMT",
+    "sentiment": "neg",
     "theme": "その他"
    }
   ],
@@ -203,9 +203,9 @@
   "6532.T": [
    {
     "title": "タイグロンパートナーズ株式会社、株式会社ベイカレント「Baycurrent TOP AGENT 2026」にて「BEST EXPERT HEADHUNTER」を",
-    "source": "日本人材ニュースONLINE",
-    "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5VTUxVOW4yZ1kwVWRoNnl1WDFqVkhpWVNHZDlzZlFDSjBhbENyQVBrLVAybDZHTVZ6TGNlZHluMlg2djlDWG9aYTZMdFhOUDZUNFp3QXpDUUEzNnp3?oc=5",
-    "pubDate": "Mon, 14 Sep 2026 07:00:00 GMT",
+    "source": "PR TIMES",
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBGVDZ2RnRTaDQ4ZlljVzFmYVUwWlQ2aVpkRHV0TVQ3OEhJV1ZyOE9fbXp2a2hOM0JYbDNTT0lVYXRtOVBqQ016V2dHUm1Db1hCNXR4enB5Mkh0NXZKRE02b2ZYN194eDFLTGc?oc=5",
+    "pubDate": "Mon, 14 Sep 2026 01:30:02 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
@@ -222,17 +222,17 @@
   ],
   "9432.T": [
    {
-    "title": "ＮＴＴ(株)【9432】：掲示板",
+    "title": "ＮＴＴ(株)【9432】：株価・株式情報（夜間PTS含む）",
     "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5YVV9mSUloR01TOGZGQjlwc0FPeHVzZU5TRW5ib1A3MHFDSWVFVnBRMHhIWW5qQWJGLWwtazB1bktna0RUekVDdmZqV1dRNWVnWEE0SmUtY3d3QQ?oc=5",
-    "pubDate": "Fri, 18 Sep 2026 07:09:09 GMT",
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1KVFVQQzhzZDlNZS1nazBUbFllTldtRW85NHh4SEVyN1V0THFtcmFxTzk3NkJqOTdGSGVGdGhtbXdZbEZ0UGtTZnljRkVhYkM3Snc?oc=5",
+    "pubDate": "Sat, 19 Sep 2026 07:00:00 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
   ],
   "6027.T": [
    {
-    "title": "弁護士ドットコム株急伸 「SaaSの死」なんのその、法務AIに脚光 - 日経ヴェリタス",
+    "title": "弁護士ドットコム株急伸 「SaaSの死」なんのその、法務AIに脚光",
     "source": "日本経済新聞",
     "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBlRlYwbTNDZnMwWnBSbjBqbTlHSnBvamtBaUFTVVJjRmE1WG9zX3dRbXNaMVRQRTBSM2tEOFItN0FKNnVrQl9SejdUc0ZoMjZCeUlRR1lDYWROcDdFQVhqZ21fN2w4UmMyTnZOSjdDWWZaUmRUbUYwcm9JbHFVdw?oc=5",
     "pubDate": "Wed, 16 Sep 2026 20:00:00 GMT",
@@ -329,7 +329,7 @@
    "theme": "その他",
    "mentions": 9,
    "pos": 0,
-   "neg": 0,
+   "neg": 1,
    "prevMentions": 9
   },
   {
