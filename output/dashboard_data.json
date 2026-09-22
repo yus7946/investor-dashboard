@@ -1,6 +1,6 @@
 {
-  "updated": "2026年09月22日 19:11",
-  "updatedAtMs": 1790071862721,
+  "updated": "2026年09月22日 20:29",
+  "updatedAtMs": 1790076551049,
   "updateMode": "light",
   "fetched": 163,
   "universeTotal": 166,
@@ -44,8 +44,8 @@
   "marketOutlook": {
     "spxChangePct": 1.49,
     "spxDate": "2026-09-21",
-    "usdjpy": 156.98,
-    "usdjpyChangePct": -0.04,
+    "usdjpy": 157.14,
+    "usdjpyChangePct": 0.06,
     "condition": "米S&P500が直近上昇",
     "topixUpRate": 64.8,
     "n": 273,
@@ -997,8 +997,8 @@
           "basis": "1日の実績振れ幅σ=0.9%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.5:1）。参考: 直近3ヶ月の高値180円 / 安値143円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
         },
         "cond": {
-          "upRate": 42.0,
-          "n": 207,
+          "upRate": 41.8,
+          "n": 208,
           "condition": "RSI中立圏×5日上昇局面",
           "note": null
         },
@@ -2388,7 +2388,7 @@
       "exDivDate": "2026-10-29",
       "dividendYield": 1.05,
       "per": 19.8,
-      "pbr": 3.75,
+      "pbr": 3.91,
       "roe": 16.6,
       "rsi": 60.6,
       "vol": 0.3363,
@@ -2971,7 +2971,7 @@
       "price": 830.0,
       "divPerShare": 24.0,
       "exDivDate": "2027-06-29",
-      "dividendYield": 2.88,
+      "dividendYield": 2.89,
       "per": 13.1,
       "pbr": 0.83,
       "roe": 6.8,
@@ -3541,7 +3541,7 @@
       "price": 1050.0,
       "divPerShare": 13.0,
       "exDivDate": "2027-05-28",
-      "dividendYield": 1.24,
+      "dividendYield": 1.25,
       "per": 31.5,
       "pbr": 2.11,
       "roe": 7.5,
