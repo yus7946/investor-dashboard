@@ -9494,6 +9494,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-18",
+      "ticker": "6752.T",
+      "name": "パナソニックHD",
+      "basePrice": 4500.0,
+      "rangeLow": 4391,
+      "rangeHigh": 4609,
+      "predUpRate": 53.9,
+      "condN": 193,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-18",
+      "ticker": "6526.T",
+      "name": "ソシオネクスト",
+      "basePrice": 2288.0,
+      "rangeLow": 2210,
+      "rangeHigh": 2366,
+      "predUpRate": 46.8,
+      "condN": 171,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -13833,6 +13863,18 @@
       "entry": 8193,
       "target": 8449,
       "stop": 8001,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-18",
+      "ticker": "6752.T",
+      "name": "パナソニックHD",
+      "basePrice": 4500.0,
+      "entry": 4446,
+      "target": 4663,
+      "stop": 4283,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
