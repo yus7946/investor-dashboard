@@ -9479,6 +9479,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-18",
+      "ticker": "6920.T",
+      "name": "レーザーテック",
+      "basePrice": 39710.0,
+      "rangeLow": 38269,
+      "rangeHigh": 41151,
+      "predUpRate": 50.8,
+      "condN": 61,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [

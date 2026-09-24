@@ -150,31 +150,11 @@
   "6963.T": "2026-11-05"
  },
  "news_by_ticker": {
-  "6098.T": [
-   {
-    "title": "(株)リクルートホールディングス【6098】：株価・株式情報（夜間PTS含む）",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBFZWgxa2JDNHVGV2VHNVd4RUFZVjhWZGhtTjB1TmNWTDFKbGFRMjBmTXE4aUMwVDdxd1pDWllrVE9RTXEtYzBvUTJUd0FkMk5zWEE?oc=5",
-    "pubDate": "Fri, 18 Sep 2026 07:00:00 GMT",
-    "sentiment": "neu",
-    "theme": "その他"
-   }
-  ],
   "9984.T": [
    {
     "title": "ソフトバンクグループ(株)【9984】：株価・株式情報（夜間PTS含む）",
-    "source": "Yahoo!ファイナンス",
+    "source": "finance.yahoo.co.jp",
     "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE55YWlQaEwwWXc5TW9lVHVuTGxCY2hKTnRLZjZTZFRoNVJZenhZUERYZWdxaDJreVdfa3p4Sk9zTHNaRkhHb3FHWUp3MVhmLVJGVEE?oc=5",
-    "pubDate": "Fri, 18 Sep 2026 07:00:00 GMT",
-    "sentiment": "neu",
-    "theme": "その他"
-   }
-  ],
-  "6178.T": [
-   {
-    "title": "日本郵政(株)【6178】：株価・株式情報（夜間PTS含む）",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE82NV9naTZSLTU3S1VmMDkxTHU3bjhmcHJ3YUstSkR5R2M3VUdaME52V0RVRzRpUm9XUVNvMzZMU3RWd0lnRm5acVd2a2RZd29Db0E?oc=5",
     "pubDate": "Fri, 18 Sep 2026 07:00:00 GMT",
     "sentiment": "neu",
     "theme": "その他"
@@ -183,8 +163,18 @@
   "6981.T": [
    {
     "title": "(株)村田製作所【6981】：株価・株式情報（夜間PTS含む）",
-    "source": "Yahoo!ファイナンス",
+    "source": "finance.yahoo.co.jp",
     "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1hNnZTQkgyN0xOVWlMc1hEQ0NyOWZjdDBSRU8zT2dERkZIdjFTWjB0cVhXNFRSQ0RjRXBiR1A0cDY0TzF0ZmFmWGlLcGNyRk1NV1E?oc=5",
+    "pubDate": "Fri, 18 Sep 2026 07:00:00 GMT",
+    "sentiment": "neu",
+    "theme": "その他"
+   }
+  ],
+  "6098.T": [
+   {
+    "title": "(株)リクルートホールディングス【6098】：株価・株式情報（夜間PTS含む）",
+    "source": "finance.yahoo.co.jp",
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBFZWgxa2JDNHVGV2VHNVd4RUFZVjhWZGhtTjB1TmNWTDFKbGFRMjBmTXE4aUMwVDdxd1pDWllrVE9RTXEtYzBvUTJUd0FkMk5zWEE?oc=5",
     "pubDate": "Fri, 18 Sep 2026 07:00:00 GMT",
     "sentiment": "neu",
     "theme": "その他"
@@ -193,39 +183,48 @@
   "4704.T": [
    {
     "title": "トレンドマイクロ(株)【4704】：株価・株式情報（夜間PTS含む）",
-    "source": "Yahoo!ファイナンス",
+    "source": "finance.yahoo.co.jp",
     "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBfb2NmTWFOdjhZZUpRNk0wb2dERy1QeXJqVnBvT1ljZ3ZvbHFKeFNYc2xQeGFHcHJqU0oydWFVV25JZmh3WkktYkx4ajZmeG1JMHc?oc=5",
     "pubDate": "Fri, 18 Sep 2026 07:00:00 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
   ],
-  "6532.T": [
+  "6178.T": [
    {
-    "title": "タイグロンパートナーズ株式会社、株式会社ベイカレント「Baycurrent TOP AGENT 2026」にて「BEST EXPERT HEADHUNTER」を",
-    "source": "PR TIMES",
-    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBGVDZ2RnRTaDQ4ZlljVzFmYVUwWlQ2aVpkRHV0TVQ3OEhJV1ZyOE9fbXp2a2hOM0JYbDNTT0lVYXRtOVBqQ016V2dHUm1Db1hCNXR4enB5Mkh0NXZKRE02b2ZYN194eDFLTGc?oc=5",
-    "pubDate": "Mon, 14 Sep 2026 07:00:00 GMT",
+    "title": "日本郵政(株)【6178】：株価・株式情報（夜間PTS含む）",
+    "source": "finance.yahoo.co.jp",
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE82NV9naTZSLTU3S1VmMDkxTHU3bjhmcHJ3YUstSkR5R2M3VUdaME52V0RVRzRpUm9XUVNvMzZMU3RWd0lnRm5acVd2a2RZd29Db0E?oc=5",
+    "pubDate": "Fri, 18 Sep 2026 07:00:00 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
   ],
   "6971.T": [
    {
-    "title": "京セラの株価は昨秋から水準を切り上げ。保有するKDDI株の簿価は1兆5,309億円（LIMO）",
-    "source": "Yahoo!ニュース",
-    "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5VUkZXdWN2QWhJWGZteGs0c3RGVU1MbW1FRDM2MHpSV210QTF3WmU0MXI4LTNCcjlkeTQ3blNwbThLQjZRMDFwak9sbVNKRm8yVHdzdDIzekpnd09aNGQ0d1J0d1JZckJFaUV0QW14dW5JVHBiYmowVWtQcnJJMlU?oc=5",
-    "pubDate": "Sat, 19 Sep 2026 20:31:19 GMT",
+    "title": "京セラ(株)【6971】：株価・株式情報（夜間PTS含む）",
+    "source": "finance.yahoo.co.jp",
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9uNWp5NHB5SjFObmN3VURBbk9pOEVnSnY1OXBDX1cyOGd5MTgxdUxaQkVrcDhoZ01XdHhNTzJBdHJUZUY5M09SeDRSSUJkYUR0alE?oc=5",
+    "pubDate": "Fri, 18 Sep 2026 07:00:00 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
   ],
-  "9432.T": [
+  "6920.T": [
    {
-    "title": "ＮＴＴ(株)【9432】：株価・株式情報（夜間PTS含む）",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1KVFVQQzhzZDlNZS1nazBUbFllTldtRW85NHh4SEVyN1V0THFtcmFxTzk3NkJqOTdGSGVGdGhtbXdZbEZ0UGtTZnljRkVhYkM3Snc?oc=5",
-    "pubDate": "Sat, 19 Sep 2026 07:00:00 GMT",
+    "title": "レーザーテック(株)【6920】：株価・株式情報（夜間PTS含む）",
+    "source": "finance.yahoo.co.jp",
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9lbGVpZzhvYjZpbjh0cWthOVg4aVVkbXZPRnVlekE4b1hTcVRnQjR1M002SkNodnpiVWN1LWFIcVZYeVBnRWRwUnVaeENUYm55N0E?oc=5",
+    "pubDate": "Fri, 18 Sep 2026 07:00:00 GMT",
+    "sentiment": "neu",
+    "theme": "その他"
+   }
+  ],
+  "4021.T": [
+   {
+    "title": "Nissan Chemical Corp (NNCHY) (Q1 2027) Earnings Call Highlights: Record Sales and Strong ...",
+    "source": "GuruFocus.com",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/nissan-chemical-corp-nnchy-q1-010552446.html",
     "sentiment": "neu",
     "theme": "その他"
    }
@@ -233,19 +232,19 @@
   "6027.T": [
    {
     "title": "弁護士ドットコム(株)【6027】：株価・株式情報（夜間PTS含む）",
-    "source": "Yahoo!ファイナンス",
+    "source": "finance.yahoo.co.jp",
     "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9CR1ppbWJhRFk2eExLZ0ZGN0ZGaFdzaTJiYkdobW1teVB4dUJIVFA3Sk10b0g1V1hPTVJJZnN5X3dNSzNUT2xpR19wQ2d3VkpzeGc?oc=5",
-    "pubDate": "Tue, 22 Sep 2026 17:53:06 GMT",
+    "pubDate": "Wed, 23 Sep 2026 17:46:30 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
   ],
-  "4021.T": [
+  "9432.T": [
    {
-    "title": "日産化学(株)【4021】：株価・株式情報（夜間PTS含む）",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5RNkpFYW9DOXJHUkxJRUhKbVNfZWFwTzAtTEJpYXBNUFJ0TmRTdWloSEpKd0NVOWN6TGxoZDhPWHVxOWRMZ2VxUUxWTkdxRmhfSWc?oc=5",
-    "pubDate": "Fri, 18 Sep 2026 07:00:00 GMT",
+    "title": "ＮＴＴ(株)【9432】：株価・株式情報（夜間PTS含む）",
+    "source": "finance.yahoo.co.jp",
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1KVFVQQzhzZDlNZS1nazBUbFllTldtRW85NHh4SEVyN1V0THFtcmFxTzk3NkJqOTdGSGVGdGhtbXdZbEZ0UGtTZnljRkVhYkM3Snc?oc=5",
+    "pubDate": "Sat, 19 Sep 2026 07:00:00 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
@@ -356,15 +355,35 @@
   "source": "JPX 投資部門別売買状況（東証プライム・週次・金額ベース）"
  },
  "backtest": {
-  "annual": "+24.2%",
-  "benchmark": "+30.8%",
+  "annual": "+24.1%",
+  "benchmark": "+30.9%",
   "sharpe": "0.63",
   "dd": "-26.9%",
   "winrate": "60.9%",
   "months": "23ヶ月",
-  "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+30.8%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
+  "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+30.9%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
  },
  "past_earnings": {
+  "9984.T": [
+   "2026-08-06",
+   "2026-05-12",
+   "2026-02-12",
+   "2025-11-10",
+   "2025-08-07",
+   "2025-05-13",
+   "2025-02-12",
+   "2024-11-12"
+  ],
+  "6981.T": [
+   "2026-07-31",
+   "2026-04-30",
+   "2026-02-02",
+   "2025-10-31",
+   "2025-07-30",
+   "2025-04-30",
+   "2025-02-02",
+   "2024-10-31"
+  ],
   "6098.T": [
    "2026-08-07",
    "2026-05-14",
@@ -375,14 +394,14 @@
    "2025-02-11",
    "2024-08-07"
   ],
-  "9984.T": [
-   "2026-08-06",
-   "2026-05-12",
-   "2026-02-12",
-   "2025-11-10",
-   "2025-08-07",
-   "2025-05-13",
-   "2025-02-12",
+  "4704.T": [
+   "2026-08-12",
+   "2026-05-13",
+   "2026-02-17",
+   "2025-11-12",
+   "2025-08-06",
+   "2025-05-08",
+   "2025-02-17",
    "2024-11-12"
   ],
   "6178.T": [
@@ -395,36 +414,6 @@
    "2025-02-13",
    "2024-11-13"
   ],
-  "6981.T": [
-   "2026-07-31",
-   "2026-04-30",
-   "2026-02-02",
-   "2025-10-31",
-   "2025-07-30",
-   "2025-04-30",
-   "2025-02-02",
-   "2024-10-31"
-  ],
-  "4704.T": [
-   "2026-08-12",
-   "2026-05-13",
-   "2026-02-17",
-   "2025-11-12",
-   "2025-08-06",
-   "2025-05-08",
-   "2025-02-17",
-   "2024-11-12"
-  ],
-  "6532.T": [
-   "2026-07-15",
-   "2024-10-09",
-   "2024-07-10",
-   "2024-04-11",
-   "2024-01-11",
-   "2023-10-12",
-   "2023-07-13",
-   "2023-04-13"
-  ],
   "6971.T": [
    "2026-07-30",
    "2026-04-30",
@@ -435,15 +424,25 @@
    "2025-02-02",
    "2024-10-30"
   ],
-  "9432.T": [
-   "2026-08-06",
-   "2026-05-08",
-   "2026-02-04",
-   "2025-11-03",
+  "6920.T": [
+   "2026-08-05",
+   "2026-04-29",
+   "2026-01-29",
+   "2025-10-30",
    "2025-08-06",
-   "2025-05-09",
+   "2025-04-28",
+   "2025-01-31",
+   "2024-10-31"
+  ],
+  "4021.T": [
+   "2026-08-06",
+   "2026-05-15",
+   "2026-02-09",
+   "2025-11-10",
+   "2025-08-07",
+   "2025-05-15",
    "2025-02-07",
-   "2024-11-07"
+   "2024-11-11"
   ],
   "6027.T": [
    "2023-07-25",
@@ -455,15 +454,15 @@
    "2021-10-26",
    "2021-07-29"
   ],
-  "4021.T": [
+  "9432.T": [
    "2026-08-06",
-   "2026-05-15",
-   "2026-02-09",
-   "2025-11-10",
-   "2025-08-07",
-   "2025-05-15",
+   "2026-05-08",
+   "2026-02-04",
+   "2025-11-03",
+   "2025-08-06",
+   "2025-05-09",
    "2025-02-07",
-   "2024-11-11"
+   "2024-11-07"
   ]
  }
 }
