@@ -1,6 +1,6 @@
 {
-  "updated": "2026年09月25日 19:22",
-  "updatedAtMs": 1790331765534,
+  "updated": "2026年09月25日 20:44",
+  "updatedAtMs": 1790336675679,
   "updateMode": "light",
   "fetched": 163,
   "universeTotal": 166,
@@ -32,8 +32,8 @@
   "marketOutlook": {
     "spxChangePct": -0.02,
     "spxDate": "2026-09-24",
-    "usdjpy": 157.88,
-    "usdjpyChangePct": -0.24,
+    "usdjpy": 157.66,
+    "usdjpyChangePct": -0.38,
     "condition": "米S&P500が直近下落",
     "topixUpRate": 43.7,
     "n": 213,
