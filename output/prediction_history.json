@@ -9674,6 +9674,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-24",
+      "ticker": "4021.T",
+      "name": "日産化学",
+      "basePrice": 8323.0,
+      "rangeLow": 8193,
+      "rangeHigh": 8453,
+      "predUpRate": 57.9,
+      "condN": 183,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -14130,6 +14145,18 @@
       "entry": 55560,
       "target": 58761,
       "stop": 53159,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-24",
+      "ticker": "4021.T",
+      "name": "日産化学",
+      "basePrice": 8323.0,
+      "entry": 8258,
+      "target": 8518,
+      "stop": 8063,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
