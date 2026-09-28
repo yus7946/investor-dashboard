@@ -9839,6 +9839,51 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-25",
+      "ticker": "9201.T",
+      "name": "日本航空",
+      "basePrice": 3115.0,
+      "rangeLow": 3075,
+      "rangeHigh": 3155,
+      "predUpRate": 50.9,
+      "condN": 53,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-25",
+      "ticker": "7735.T",
+      "name": "SCREENホールディングス",
+      "basePrice": 13960.0,
+      "rangeLow": 13528,
+      "rangeHigh": 14392,
+      "predUpRate": 57.7,
+      "condN": 189,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-25",
+      "ticker": "8750.T",
+      "name": "第一生命HD",
+      "basePrice": 1943.5,
+      "rangeLow": 1908,
+      "rangeHigh": 1979,
+      "predUpRate": 53.8,
+      "condN": 197,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -14436,6 +14481,30 @@
       "entry": 1729,
       "target": 1792,
       "stop": 1682,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-25",
+      "ticker": "7735.T",
+      "name": "SCREENホールディングス",
+      "basePrice": 13960.0,
+      "entry": 13744,
+      "target": 14608,
+      "stop": 13096,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-25",
+      "ticker": "8750.T",
+      "name": "第一生命HD",
+      "basePrice": 1943.5,
+      "entry": 1926,
+      "target": 1997,
+      "stop": 1873,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
