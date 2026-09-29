@@ -1,6 +1,6 @@
 {
-  "updated": "2026年09月29日 20:29",
-  "updatedAtMs": 1790681365061,
+  "updated": "2026年09月29日 21:43",
+  "updatedAtMs": 1790685813386,
   "updateMode": "light",
   "fetched": 163,
   "universeTotal": 166,
@@ -1752,8 +1752,8 @@
       "per": 11.7,
       "pbr": 1.13,
       "roe": null,
-      "rsi": 48.3,
-      "vol": 0.3746,
+      "rsi": 49.4,
+      "vol": 0.3733,
       "inTop": false,
       "yutai": null
     },
