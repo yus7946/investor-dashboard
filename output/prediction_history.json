@@ -10034,6 +10034,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-28",
+      "ticker": "4021.T",
+      "name": "日産化学",
+      "basePrice": 8191.0,
+      "rangeLow": 8063,
+      "rangeHigh": 8319,
+      "predUpRate": 57.9,
+      "condN": 183,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-28",
+      "ticker": "6920.T",
+      "name": "レーザーテック",
+      "basePrice": 41000.0,
+      "rangeLow": 39500,
+      "rangeHigh": 42500,
+      "predUpRate": 51.6,
+      "condN": 64,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -14772,6 +14802,18 @@
       "entry": 4821,
       "target": 5096,
       "stop": 4615,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-28",
+      "ticker": "4021.T",
+      "name": "日産化学",
+      "basePrice": 8191.0,
+      "entry": 8127,
+      "target": 8384,
+      "stop": 7935,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
