@@ -10214,6 +10214,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-09-29",
+      "ticker": "6963.T",
+      "name": "ローム",
+      "basePrice": 4940.0,
+      "rangeLow": 4801,
+      "rangeHigh": 5079,
+      "predUpRate": 54.3,
+      "condN": 184,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -15081,6 +15096,18 @@
       "entry": 8200,
       "target": 8459,
       "stop": 8006,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-09-29",
+      "ticker": "6963.T",
+      "name": "ローム",
+      "basePrice": 4940.0,
+      "entry": 4870,
+      "target": 5149,
+      "stop": 4661,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
