@@ -7,6 +7,9 @@ on:
     # 実績上、定期実行は予定より2時間前後遅れて始まるため、9:00の寄付きに間に合うよう早めに置く。
     # 毎時0分/30分は混雑して遅れやすいので避ける。
     - cron: "7 21 * * 0-4"
+    # ── 予備（ライト）: JST 7:17 = UTC 22:17。朝のフル更新が遅延・失敗しても寄付き前に予報を出すため。
+    # 今日の確定予報が既にあれば予報は作り直さない（main.py の is_final_for_today）。
+    - cron: "17 22 * * 0-4"
     # ── ライト更新（株価・スマートマネー・シグナル・見通しのみ。毎時）──
     # 日中はJPX/EDINETが更新されないため、値動き系だけを高頻度で更新する。
     # これによりYahoo/JPX/EDINETへの高頻度アクセス（IPブロック）リスクを避ける。
@@ -28,6 +31,11 @@ on:
         description: "更新モード (full=全取得 / light=値動きのみ)"
         required: false
         default: "full"
+
+# 遅れて起動した定期実行が重なっても、git push が衝突しないよう1本ずつ順番に実行する。
+concurrency:
+  group: update-dashboard
+  cancel-in-progress: false
 
 permissions:
   contents: write
