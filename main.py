@@ -322,7 +322,7 @@ def main():
     if not light or not is_final_for_today(overnight):
         rebuilt_overnight = True
         try:
-            fresh = build_overnight_forecast(MASTER)
+            fresh = build_overnight_forecast(MASTER, earnings=cache.get("earnings_dates"))
             if fresh:
                 overnight = cache["overnight"] = fresh
                 v = overnight["validation"]
