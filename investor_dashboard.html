@@ -671,6 +671,28 @@ body::before {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+
+/* ── 明日の方向予報 ── */
+.on-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px;margin-bottom:12px}
+.on-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+.on-title{font-weight:800;font-size:15px;color:var(--accent)}
+.on-sub{font-size:11px;color:var(--muted)}
+.on-warn{font-size:11px;color:var(--stop);background:rgba(184,97,31,0.08);border-radius:8px;padding:6px 8px;margin-top:8px}
+.on-mkt{display:flex;align-items:center;gap:12px;margin-top:10px;padding:10px;border-radius:12px;background:var(--surface2)}
+.on-mkt-p{font-size:28px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1}
+.on-mkt-lbl{font-size:12px;font-weight:700}
+.on-mkt-note{font-size:11px;color:var(--muted)}
+.on-inputs{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.on-chip{font-size:11px;border:1px solid var(--border);border-radius:999px;padding:3px 9px;font-variant-numeric:tabular-nums}
+.on-sec{font-size:12px;font-weight:800;margin:12px 0 4px}
+.on-row{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:7px 0;border-top:1px solid var(--border);font-size:12px}
+.on-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}
+.on-name small{display:block;font-weight:400;color:var(--muted);font-size:10px}
+.on-p{font-weight:800;font-variant-numeric:tabular-nums;text-align:right}
+.on-p small{display:block;font-weight:400;color:var(--muted);font-size:10px}
+.on-val{font-size:10.5px;color:var(--muted);line-height:1.6;margin-top:10px;border-top:1px dashed var(--border);padding-top:8px}
+.on-val b{color:var(--text)}
+.on-box{font-size:11px;margin-bottom:6px;padding:6px 8px;border-radius:8px;background:var(--surface2)}
 </style>
 </head>
 <body>
@@ -698,6 +720,8 @@ body::before {
   <div class="verdict-headline" id="verdict-headline">読み込み中…</div>
   <div class="verdict-groups" id="verdict-groups"></div>
 </div>
+
+<div id="overnight-card" class="on-card" style="display:none"></div>
 
 <!-- 市場全体の状況（折りたたみ） -->
 <button class="market-toggle" onclick="toggleMarket(this)">
@@ -1630,16 +1654,19 @@ function renderForecastBox(s) {
     const bg  = x.dir === '+' ? 'rgba(31,111,74,0.08)' : x.dir === '-' ? 'rgba(176,65,62,0.08)' : 'rgba(42,38,32,0.05)';
     return `<div style="font-size:10px;color:${col};background:${bg};border:1px solid ${col}33;border-radius:6px;padding:3px 7px;margin-top:4px">${x.dir === '+' ? '↑' : x.dir === '-' ? '↓' : '・'} ${x.label}</div>`;
   }).join('');
+  const on = onFind(s.ticker);
+  const onLine = on ? `<div class="on-box">明日の予報: <b style="color:${onLabel(on.pUp).c}">終値↑${on.pUp}%</b>・寄り↑${on.pGapUp}%（目安${onSigned(on.expGapPct, 1)}）${on.hitRate != null ? `<span style="color:var(--muted)">・過去同帯の的中${on.hitRate}%</span>` : ''}</div>` : '';
   return `
   <div class="scenario-box">
     <div class="scenario-title">翌営業日の見通し（統計・実績ベース）</div>
+    ${onLine}
     <div class="scenario-range">
       <span class="lo">${fmt(f.rangeLow)}円</span>
       <div class="scenario-track"><div class="scenario-cur" style="left:50%"></div></div>
       <span class="hi">${fmt(f.rangeHigh)}円</span>
     </div>
     <div class="scenario-note">想定レンジ（答え合わせ実績で幅を補正・目標カバー率約75%＝4回に3回この範囲の狙い）。より広く見るなら ${fmt(f.rangeLow2)}〜${fmt(f.rangeHigh2)}円。</div>
-    ${condStr ? `<div style="font-size:11px;margin-top:6px">${condStr}</div>` : ''}
+    ${condStr && !on ? `<div style="font-size:11px;margin-top:6px">${condStr}</div>` : ''}
     ${factorChips}
     <div style="font-size:9px;color:var(--muted);margin-top:6px">${f.basis}</div>
   </div>`;
@@ -1828,11 +1855,91 @@ function renderRegime() {
     + (m.regime === 'bear' ? '<br><span style="font-size:11px;color:var(--red);font-weight:700">下落基調のため買いシグナルは自動的に1段階慎重にしています</span>' : '');
 }
 
+// ── 明日の方向予報（夜間の海外情報×銘柄の感応度。先読みなしの答え合わせ付き）──
+function onLabel(p) {
+  if (p >= 70) return { t: '上昇の可能性が高い', c: 'var(--green)' };
+  if (p >= 55) return { t: 'やや上昇寄り', c: 'var(--green)' };
+  if (p > 45) return { t: '五分五分（予報なし）', c: 'var(--muted)' };
+  if (p > 30) return { t: 'やや下落寄り', c: 'var(--red)' };
+  return { t: '下落の可能性が高い', c: 'var(--red)' };
+}
+function onSigned(v, d = 2) { return v == null ? '—' : (v >= 0 ? '+' : '') + v.toFixed(d) + '%'; }
+function onFind(code) {
+  const o = DATA.overnight;
+  if (!o || !code) return null;
+  const c = String(code).replace(/\.T$/, '');
+  return o.stocks.find(x => x.ticker.replace(/\.T$/, '') === c) || null;
+}
+function onRow(x) {
+  const l = onLabel(x.pUp);
+  const hit = x.hitRate != null ? `過去同帯の的中${x.hitRate}%` : '';
+  return `<div class="on-row">
+    <div class="on-name">${x.name}<small>${x.ticker.replace('.T', '')} ・ ${l.t}</small></div>
+    <div class="on-p" style="color:${onLabel(x.pGapUp).c}">寄り↑${x.pGapUp}%<small>目安${onSigned(x.expGapPct, 1)}</small></div>
+    <div class="on-p" style="color:${l.c}">終値↑${x.pUp}%<small>${hit}</small></div>
+  </div>`;
+}
+function renderOvernight() {
+  const el = document.getElementById('overnight-card');
+  const o = DATA.overnight;
+  if (!el) return;
+  if (!o) {
+    el.style.display = 'block';
+    el.innerHTML = `<div class="on-title">明日の方向予報</div><div class="on-sub" style="margin-top:4px">今回は海外データの取得に失敗したため予報を出していません（推測値では埋めません）。</div>`;
+    return;
+  }
+  const todayJst = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+  const md = d => { const [, m, dd] = d.split('-'); return `${+m}/${+dd}`; };
+  let warn = '';
+  if (o.targetDate < todayJst) warn = `この予報は${md(o.targetDate)}向けの古いものです（今朝の更新に失敗した可能性）。参考にしないでください。`;
+  else if (o.provisional) warn = '米国市場の取引終了前の情報で作った暫定予報です。翌朝の更新で確定します。';
+  else if (o.beforeOpen === false) warn = `更新が遅れ、寄付き後（${o.generatedAt.slice(11)}）に作成された予報です。寄付きの予報は答え合わせ用、終値の予報は参考としてご覧ください。`;
+  const m = onLabel(o.market.pUp);
+  const v = o.validation, inp = o.inputs;
+  const chip = (lbl, val) => `<span class="on-chip">${lbl} <b style="color:${val == null ? 'var(--muted)' : val >= 0 ? 'var(--green)' : 'var(--red)'}">${onSigned(val)}</b></span>`;
+  // 保有銘柄（持株ページの登録）に予報があれば最優先で表示
+  let mine = [];
+  try { mine = loadHoldings().map(h => onFind(h.code)).filter(Boolean); } catch (e) { mine = []; }
+  mine = mine.filter((x, i, a) => a.findIndex(y => y.ticker === x.ticker) === i);
+  const ups = o.stocks.filter(x => x.pUp >= 60).sort((a, b) => b.pUp - a.pUp).slice(0, 5);
+  const downs = o.stocks.filter(x => x.pUp <= 40).sort((a, b) => a.pUp - b.pUp).slice(0, 5);
+  const live = o.live;
+  const liveTxt = live && live.n
+    ? `<div style="margin-top:4px"><b>運用開始後の実績</b>（${live.since}〜・${live.days}営業日）: 終値の方向 <b>${live.ccAccuracy}%</b>・寄付き <b>${live.gapAccuracy}%</b>${live.highConfAccuracy != null ? `・高確信時 <b>${live.highConfAccuracy}%</b>（${live.highConfN}件）` : ''}${live.marketAccuracy != null ? `・市場全体 <b>${live.marketAccuracy}%</b>` : ''}</div>`
+    : '<div style="margin-top:4px">運用開始後の実績は、翌営業日から自動で答え合わせして表示します。</div>';
+  el.style.display = 'block';
+  el.innerHTML = `
+    <div class="on-head">
+      <div class="on-title">明日の方向予報 <span style="font-size:12px">${md(o.targetDate)}</span></div>
+      <div class="on-sub">${o.generatedAt.slice(11)}時点の海外情報で算出</div>
+    </div>
+    ${warn ? `<div class="on-warn">${warn}</div>` : ''}
+    <div class="on-mkt">
+      <div class="on-mkt-p" style="color:${m.c}">${Math.round(o.market.pUp)}<span style="font-size:14px">%</span></div>
+      <div><div class="on-mkt-lbl" style="color:${m.c}">東京市場全体：${m.t}</div>
+      <div class="on-mkt-note">各銘柄が前日終値より上がる確率の平均。過去2年の検証で方向的中${v.market.accuracy}%（確率60%以上/40%以下の日は${v.market.strongAccuracy}%）</div></div>
+    </div>
+    <div class="on-inputs">
+      ${chip('米S&P500', inp.spxPct)}${chip('米半導体SOX', inp.soxPct)}${chip('ドル円', inp.usdjpyPct)}${chip('日経先物(東京終値比)', inp.nkdPct)}
+    </div>
+    ${mine.length ? `<div class="on-sec">あなたの保有銘柄</div>${mine.map(onRow).join('')}` : ''}
+    ${ups.length ? `<div class="on-sec" style="color:var(--green)">上がる確率が高い銘柄</div>${ups.map(onRow).join('')}` : ''}
+    ${downs.length ? `<div class="on-sec" style="color:var(--red)">下がる確率が高い銘柄</div>${downs.map(onRow).join('')}` : ''}
+    ${!ups.length && !downs.length ? '<div class="on-sec" style="color:var(--muted)">今日は海外の動きが小さく、方向に自信を持てる銘柄はありません（無理に予報しません）。</div>' : ''}
+    <div class="on-val">
+      <div><b>過去2年の検証</b>（${v.from}〜${v.to}・各時点より前のデータだけで学習して答え合わせ）:
+      終値の方向 <b>${v.y_cc.accuracy}%</b>（「毎日上がる」と言い続けた場合は${v.y_cc.baseline}%）、確率70%以上/30%以下の予報は <b>${v.y_cc.highConfAccuracy}%</b>。
+      寄付きの方向 <b>${v.y_gap.accuracy}%</b>、高確信時 <b>${v.y_gap.highConfAccuracy}%</b>。</div>
+      ${liveTxt}
+      <div style="margin-top:4px">寄付きでほとんどの値動きが織り込まれ、寄付き後〜大引けや数日先は予測力が確認できないため対象外です。確率は保証ではありません。</div>
+    </div>`;
+}
+
 function renderOutlook() {
   const el = document.getElementById('outlook-card');
   if (!el) return;
   const o = DATA.marketOutlook;
-  if (!o) { el.style.display = 'none'; return; }
+  if (!o || DATA.overnight) { el.style.display = 'none'; return; }
   const spxCol = o.spxChangePct >= 0 ? 'var(--green)' : 'var(--red)';
   const fxCol  = o.usdjpyChangePct >= 0 ? 'var(--green)' : 'var(--red)';
   const rateStr = (o.topixUpRate != null)
@@ -1964,6 +2071,14 @@ function buildCopyText() {
     text += `  ${DATA.market.label}（TOPIX 200日線比 ${DATA.market.priceVsMa200Pct >= 0 ? '+' : ''}${DATA.market.priceVsMa200Pct}%・${DATA.market.source}）\n`;
   } else {
     text += '  判定不能（データ取得失敗）\n';
+  }
+  if (DATA.overnight) {
+    const o = DATA.overnight;
+    text += `\n■ 明日の方向予報（${o.targetDate}・夜間の海外情報から算出）\n`;
+    text += `  東京市場全体: 上昇確率${Math.round(o.market.pUp)}%（過去2年の検証で方向的中${o.validation.market.accuracy}%）\n`;
+    o.stocks.filter(x => x.pUp >= 65 || x.pUp <= 35).slice(0, 8).forEach(x => {
+      text += `  ${x.name}: 終値↑${x.pUp}%・寄り↑${x.pGapUp}%\n`;
+    });
   }
   text += '\n■ 翌営業日の市場見通し（統計・実績ベース）\n';
   if (DATA.marketOutlook) {
@@ -2838,6 +2953,7 @@ function renderHoldings() {
 // ── 初期化 ──
 document.addEventListener('DOMContentLoaded', () => {
   renderVerdict();
+  renderOvernight();
   renderRegime();
   renderOutlook();
   renderAccuracy();

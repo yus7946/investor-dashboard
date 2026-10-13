@@ -31,6 +31,7 @@ from screening.risk import annotate_risk, build_low_risk_plan
 from signals.signal import judge_all
 from backtest.backtest import run_backtest
 from forecast.next_day import build_forecasts
+from forecast.overnight import build_overnight_forecast, is_final_for_today
 from forecast.tracker import (
     load_history, save_history, calibration_factor, update, compute_accuracy,
 )
@@ -312,6 +313,24 @@ def main():
         + rotation_out_alerts[:3]
     )[:14]
 
+    # 翌営業日の方向予報（海外夜間情報×銘柄の感応度。検証で唯一高い的中率が確認できた予測）。
+    # 5年分の一括取得と学習を伴うため、朝のフル更新で作り、ライト時は今日の確定予報が既にあれば再利用する。
+    # （GitHubの定期実行は数時間遅れることがあり、朝の更新が失敗・遅延した日は後続の更新で作り直す）
+    print("\n翌営業日の方向予報（寄付き前予報）を計算中...")
+    overnight = cache.get("overnight") if light else None
+    rebuilt_overnight = False
+    if not light or not is_final_for_today(overnight):
+        rebuilt_overnight = True
+        try:
+            fresh = build_overnight_forecast(MASTER)
+            if fresh:
+                overnight = cache["overnight"] = fresh
+                v = overnight["validation"]
+                print(f"  対象日{overnight['targetDate']}: 市場上昇確率{overnight['market']['pUp']}%"
+                      f"・検証的中率 終値{v['y_cc']['accuracy']}%/寄付き{v['y_gap']['accuracy']}%/市場{v['market']['accuracy']}%")
+        except Exception as e:
+            print(f"  [警告] 翌営業日予報に失敗しました（前回の予報があればそれを表示）: {e}")
+
     print("\n7/8 翌営業日見通し計算・答え合わせ中...")
     # 過去の決算発表日（材料インパクト実績用）。フル時のみ取得しキャッシュ（top10で+10リクエスト）
     past_earnings = {}
@@ -388,6 +407,7 @@ def main():
             backtest=bt,
             market=market,
             market_outlook=outlook,
+            overnight=overnight,
             accuracy=accuracy,
             stock_master=stock_master,
             fetched_count=len(stocks),
@@ -401,7 +421,7 @@ def main():
         print(f"  [致命的エラー] JSON出力に失敗しました: {e}")
         sys.exit(1)
 
-    if not light:
+    if not light or rebuilt_overnight:
         _save_heavy_cache(cache)
         print(f"  重データキャッシュ保存: {HEAVY_CACHE_PATH}（ライト更新時に再利用）")
 

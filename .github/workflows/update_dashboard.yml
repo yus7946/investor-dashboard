@@ -3,8 +3,10 @@ name: Update Dashboard
 on:
   schedule:
     # ── フル更新（EDINET/JPX/ニュース/バックテスト/決算日を含む重い処理）──
-    # JST 8:30 = UTC 23:30（前日）。平日のみ。寄付き前に1回だけ重い取得を行う。
-    - cron: "30 23 * * 0-4"
+    # JST 6:07 = UTC 21:07（前日）。平日のみ。寄付き前に1回だけ重い取得を行う。
+    # 実績上、定期実行は予定より2時間前後遅れて始まるため、9:00の寄付きに間に合うよう早めに置く。
+    # 毎時0分/30分は混雑して遅れやすいので避ける。
+    - cron: "7 21 * * 0-4"
     # ── ライト更新（株価・スマートマネー・シグナル・見通しのみ。毎時）──
     # 日中はJPX/EDINETが更新されないため、値動き系だけを高頻度で更新する。
     # これによりYahoo/JPX/EDINETへの高頻度アクセス（IPブロック）リスクを避ける。
@@ -29,6 +31,7 @@ on:
 
 permissions:
   contents: write
+  actions: write  # 下の Keep schedule alive ステップで使用
 
 jobs:
   update:
@@ -47,7 +50,7 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "light=${{ github.event.inputs.mode == 'light' && '1' || '0' }}" >> "$GITHUB_OUTPUT"
-          elif [ "${{ github.event.schedule }}" = "30 23 * * 0-4" ]; then
+          elif [ "${{ github.event.schedule }}" = "7 21 * * 0-4" ]; then
             echo "light=0" >> "$GITHUB_OUTPUT"
           else
             echo "light=1" >> "$GITHUB_OUTPUT"
@@ -63,3 +66,10 @@ jobs:
           git add output/ docs/
           git diff --cached --quiet || git commit -m "chore: update dashboard data"
           git push
+      # GitHubは公開リポジトリで60日間アクティビティがないと定期実行を自動停止する。
+      # Bot のコミットは活動とみなされないため、フル更新のたびにワークフローを「有効化」してタイマーをリセットする。
+      - name: Keep schedule alive
+        if: steps.mode.outputs.light == '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/update_dashboard.yml/enable" || true
