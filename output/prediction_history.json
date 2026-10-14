@@ -10529,6 +10529,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-13",
+      "ticker": "9104.T",
+      "name": "商船三井",
+      "basePrice": 7611.0,
+      "rangeLow": 7491,
+      "rangeHigh": 7731,
+      "predUpRate": 53.3,
+      "condN": 167,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -15510,6 +15525,18 @@
       "entry": 1160,
       "target": 1195,
       "stop": 1133,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-10-13",
+      "ticker": "9104.T",
+      "name": "商船三井",
+      "basePrice": 7611.0,
+      "entry": 7551,
+      "target": 7792,
+      "stop": 7370,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
