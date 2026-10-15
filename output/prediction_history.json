@@ -10694,6 +10694,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-14",
+      "ticker": "4452.T",
+      "name": "花王",
+      "basePrice": 3686.0,
+      "rangeLow": 3642,
+      "rangeHigh": 3730,
+      "predUpRate": 46.6,
+      "condN": 58,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-14",
+      "ticker": "8113.T",
+      "name": "ユニ・チャーム",
+      "basePrice": 996.4,
+      "rangeLow": 982,
+      "rangeHigh": 1011,
+      "predUpRate": 47.8,
+      "condN": 182,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -15732,6 +15762,30 @@
       "entry": 7597,
       "target": 7840,
       "stop": 7415,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-10-14",
+      "ticker": "7267.T",
+      "name": "ホンダ",
+      "basePrice": 1747.5,
+      "entry": 1732,
+      "target": 1794,
+      "stop": 1686,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-10-14",
+      "ticker": "8113.T",
+      "name": "ユニ・チャーム",
+      "basePrice": 996.4,
+      "entry": 989,
+      "target": 1018,
+      "stop": 967,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
