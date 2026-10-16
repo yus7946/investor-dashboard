@@ -10889,6 +10889,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-15",
+      "ticker": "5108.T",
+      "name": "ブリヂストン",
+      "basePrice": 4052.0,
+      "rangeLow": 4002,
+      "rangeHigh": 4102,
+      "predUpRate": 51.5,
+      "condN": 68,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
