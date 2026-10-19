@@ -3,13 +3,13 @@ name: Update Dashboard
 on:
   schedule:
     # ── フル更新（EDINET/JPX/ニュース/バックテスト/決算日を含む重い処理）──
-    # JST 6:07 = UTC 21:07（前日）。平日のみ。寄付き前に1回だけ重い取得を行う。
-    # 実績上、定期実行は予定より2時間前後遅れて始まるため、9:00の寄付きに間に合うよう早めに置く。
-    # 毎時0分/30分は混雑して遅れやすいので避ける。
-    - cron: "7 21 * * 0-4"
-    # ── 予備（ライト）: JST 7:17 = UTC 22:17。朝のフル更新が遅延・失敗しても寄付き前に予報を出すため。
+    # JST 4:37 = UTC 19:37（前日）。平日のみ。寄付き前に1回だけ重い取得を行う。
+    # 実績上、朝の定期実行は予定より2〜3時間遅れて始まる（2026-10-14〜19: 1:57〜3:08の遅れ）。
+    # 早めに置き、米国市場の終了前に始まってしまった場合は下の「Wait for US close」で6:05まで待つ。
+    - cron: "37 19 * * 0-4"
+    # ── 予備（ライト）: JST 6:07 = UTC 21:07。朝のフル更新が遅延・失敗しても予報を出すため。
     # 今日の確定予報が既にあれば予報は作り直さない（main.py の is_final_for_today）。
-    - cron: "17 22 * * 0-4"
+    - cron: "7 21 * * 0-4"
     # ── ライト更新（株価・スマートマネー・シグナル・見通しのみ。毎時）──
     # 日中はJPX/EDINETが更新されないため、値動き系だけを高頻度で更新する。
     # これによりYahoo/JPX/EDINETへの高頻度アクセス（IPブロック）リスクを避ける。
@@ -58,11 +58,21 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "light=${{ github.event.inputs.mode == 'light' && '1' || '0' }}" >> "$GITHUB_OUTPUT"
-          elif [ "${{ github.event.schedule }}" = "7 21 * * 0-4" ]; then
+          elif [ "${{ github.event.schedule }}" = "37 19 * * 0-4" ]; then
             echo "light=0" >> "$GITHUB_OUTPUT"
           else
             echo "light=1" >> "$GITHUB_OUTPUT"
           fi
+      # 米国市場(夏時間5:00/冬時間6:00 JST終了)が閉じる前に始まったら6:05 JSTまで待つ（最大3時間）
+      - name: Wait for US close
+        if: github.event_name == 'schedule' && steps.mode.outputs.light == '0'
+        run: |
+          python -c "
+          import time, datetime as dt
+          now = dt.datetime.now(dt.timezone(dt.timedelta(hours=9)))
+          wait = (now.replace(hour=6, minute=5, second=0, microsecond=0) - now).total_seconds()
+          wait = wait if 0 < wait <= 3 * 3600 else 0
+          print(f'JST {now:%H:%M} / wait {wait:.0f}s'); time.sleep(wait)"
       - name: Run pipeline
         env:
           DASHBOARD_LIGHT: ${{ steps.mode.outputs.light }}

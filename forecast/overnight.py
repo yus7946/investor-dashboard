@@ -30,6 +30,7 @@ warnings.filterwarnings("ignore", category=RuntimeWarning)
 JST = timezone(timedelta(hours=9))
 HISTORY_PATH = "output/overnight_history.json"
 MKT, N225, SPX, SOX, FX, NKD = "1306.T", "^N225", "^GSPC", "^SOX", "JPY=X", "NKD=F"
+N225_ETF = "1321.T"  # 日経225連動ETF。Yahooの^N225は前日分の反映が翌朝に間に合わない日がある
 # 夜間（東京の引け後〜翌寄付き前）に確定する米国の追加指標
 US_EXTRA = {"ixic": "^IXIC", "rut": "^RUT", "vix": "^VIX", "tnx": "^TNX", "oil": "CL=F", "gold": "GC=F",
             "copper": "HG=F", "ewj": "EWJ"}
@@ -65,9 +66,9 @@ HIGH_CONF = 0.7  # p>=0.7 または p<=0.3 を「高確信」とする
 
 
 def _target_date(now: datetime) -> pd.Timestamp:
-    """予報の対象日。大引け(15:30)前ならその日、以降・週末なら次の平日。"""
+    """予報の対象日。16:00（大引け15:30＋Yahooの配信遅延）前ならその日、以降・週末なら次の平日。"""
     d = now.date()
-    if d.weekday() >= 5 or (now.hour, now.minute) >= (15, 30):
+    if d.weekday() >= 5 or (now.hour, now.minute) >= (16, 0):
         d += timedelta(days=1)
         while d.weekday() >= 5:
             d += timedelta(days=1)
@@ -87,6 +88,7 @@ def _roll_beta(y: pd.Series, x: pd.Series, n: int = 250) -> pd.Series:
 
 def build_panel(px: pd.DataFrame, tickers: list[str], target: pd.Timestamp):
     """銘柄×日付の特徴量パネル。行tの海外系特徴は「t翌営業日の寄付き前に既知の値」。"""
+    px = px[px.index < target]  # 対象日当日の値動き（寄付き後の実行時など）を絶対に使わない
     C, O, H, L, V = (px[k] for k in ("Close", "Open", "High", "Low", "Volume"))
     jp = C[MKT].dropna().index
     jp = jp[jp < target]
@@ -94,7 +96,14 @@ def build_panel(px: pd.DataFrame, tickers: list[str], target: pd.Timestamp):
 
     lv = {k: _last_before(C, k, idx) for k in (SPX, SOX, FX, NKD)}
     spx, sox, fx = (lv[k] / lv[k].shift(1) - 1 for k in (SPX, SOX, FX))
-    n225 = C[N225].reindex(idx).ffill()
+    # ^N225 の最新終値が欠けている日は、日経225ETFの騰落率で前回値から補完する。
+    # （2026-10-14〜16に前日終値が未反映のまま1日古い値で埋まり、先物ギャップを最大5%読み違えた）
+    n225 = C[N225].reindex(idx)
+    n225_missing = bool(pd.isna(n225.iloc[-2]))
+    if N225_ETF in C.columns:
+        etf = C[N225_ETF].reindex(idx)
+        n225 = n225.fillna(n225.ffill() * etf / etf.where(n225.notna()).ffill())
+    n225 = n225.ffill()
     nkd_raw = lv[NKD] / n225.shift(1) - 1  # 先物が示す日経の寄付きギャップ
     nkd = nkd_raw - nkd_raw.rolling(60, min_periods=20).median()  # 金利・配当由来のベーシスを除去
     mkt = C[MKT].reindex(idx)
@@ -165,7 +174,7 @@ def build_panel(px: pd.DataFrame, tickers: list[str], target: pd.Timestamp):
     inputs = {
         "spxPct": _pct(spx.iloc[-1]), "soxPct": _pct(sox.iloc[-1]), "usdjpyPct": _pct(fx.iloc[-1]),
         "usdjpy": _round(lv[FX].iloc[-1], 2), "nkdPct": _pct(nkd_raw.iloc[-1]), "nkd": _round(lv[NKD].iloc[-1], 0),
-        "n225": _round(n225.iloc[-2], 0),
+        "n225": _round(n225.iloc[-2], 0), "n225Estimated": n225_missing,
     }
     return panel, inputs
 
@@ -259,23 +268,25 @@ def _update_history(history: dict, panel: pd.DataFrame, today_pred: dict | None)
         base = pd.Timestamp(pend["b"])
         nxt = panel.loc[panel.date > base, "date"].min()  # 予報後の最初の取引日
         rows = panel[panel.date == base].set_index("tk")
-        cc_hit = gap_hit = n = hc_n = hc_hit = 0
+        cc_hit = gap_hit = n = gap_n = hc_n = hc_hit = 0
         for tk, (pc, pg) in pend["preds"].items():
             if tk not in rows.index:
                 continue
             ac, ag = rows.at[tk, "y_cc"], rows.at[tk, "y_gap"]
-            if pd.isna(ac) or pd.isna(ag):
+            if pd.isna(ac) or pd.isna(ag) or ac == 0:
                 continue
             n += 1
             cc_hit += int((pc >= 50) == (ac > 0))
-            gap_hit += int((pg >= 50) == (ag > 0))
+            if ag != 0:  # 寄付きが前日終値と同値の銘柄は寄付きの答え合わせ対象外
+                gap_n += 1
+                gap_hit += int((pg >= 50) == (ag > 0))
             if pc >= HIGH_CONF * 100 or pc <= (1 - HIGH_CONF) * 100:
                 hc_n += 1
                 hc_hit += int((pc >= 50) == (ac > 0))
         if n:
             mret = float(rows["y_cc"].dropna().mean())
             history.setdefault("days", []).append({
-                "d": str(nxt.date()), "n": n, "cc": cc_hit, "gap": gap_hit, "hcN": hc_n, "hc": hc_hit,
+                "d": str(nxt.date()), "n": n, "cc": cc_hit, "gap": gap_hit, "gn": gap_n, "hcN": hc_n, "hc": hc_hit,
                 "mp": pend.get("mkt"), "mUp": mret > 0,
             })
             history["days"] = history["days"][-250:]
@@ -303,17 +314,23 @@ def _health(days: list[dict], val_acc: float) -> dict:
 
 
 def _live_stats(history: dict, val_acc: float | None = None) -> dict | None:
-    days = history.get("days") or []
+    all_days = history.get("days") or []
+    # 原因が判明し修正済みの不具合があった日（"x"に理由）は、記録は残したまま集計から外し、画面で明示する
+    bad = [d for d in all_days if d.get("x")]
+    days = [d for d in all_days if not d.get("x")]
+    excluded = {"days": len(bad), "from": bad[0]["d"], "to": bad[-1]["d"], "reason": bad[0]["x"],
+                "ccAccuracy": round(sum(d["cc"] for d in bad) / sum(d["n"] for d in bad) * 100, 1)} if bad else None
     if not days:
-        return None
+        return {"days": 0, "n": 0, "excluded": excluded} if excluded else None
     n = sum(d["n"] for d in days)
     hc_n = sum(d["hcN"] for d in days)
     mk = [d for d in days if d.get("mp") is not None]
     return {
+        "excluded": excluded,
         "health": _health(days, val_acc) if val_acc is not None else None,
         "days": len(days), "since": days[0]["d"], "n": n,
         "ccAccuracy": round(sum(d["cc"] for d in days) / n * 100, 1),
-        "gapAccuracy": round(sum(d["gap"] for d in days) / n * 100, 1),
+        "gapAccuracy": round(sum(d["gap"] for d in days) / max(1, sum(d.get("gn", d["n"]) for d in days)) * 100, 1),
         "highConfN": hc_n,
         "highConfAccuracy": round(sum(d["hc"] for d in days) / hc_n * 100, 1) if hc_n else None,
         "marketN": len(mk),
@@ -329,7 +346,7 @@ def is_final_for_today(fc: dict | None, now: datetime | None = None) -> bool:
 
 def download(tickers: list[str], period: str = "5y") -> pd.DataFrame:
     """予報に使う全データを1回の一括リクエストで取得する。"""
-    extra = [MKT, N225, SPX, SOX, FX, NKD] + list(US_EXTRA.values()) + list(US_SECTORS.values())
+    extra = [MKT, N225, N225_ETF, SPX, SOX, FX, NKD] + list(US_EXTRA.values()) + list(US_SECTORS.values())
     extra += [ADR[t] for t in tickers if t in ADR]
     return yf.download(list(dict.fromkeys(tickers + extra)), period=period, interval="1d",
                        auto_adjust=True, group_by="column", threads=True, progress=False)

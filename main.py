@@ -11,6 +11,7 @@
 import json
 import os
 import sys
+from datetime import datetime
 
 try:
     sys.stdout.reconfigure(encoding="utf-8")
@@ -31,7 +32,7 @@ from screening.risk import annotate_risk, build_low_risk_plan
 from signals.signal import judge_all
 from backtest.backtest import run_backtest
 from forecast.next_day import build_forecasts
-from forecast.overnight import build_overnight_forecast, is_final_for_today
+from forecast.overnight import build_overnight_forecast, is_final_for_today, JST
 from forecast.tracker import (
     load_history, save_history, calibration_factor, update, compute_accuracy,
 )
@@ -319,7 +320,9 @@ def main():
     print("\n翌営業日の方向予報（寄付き前予報）を計算中...")
     overnight = cache.get("overnight") if light else None
     rebuilt_overnight = False
-    if not light or not is_final_for_today(overnight):
+    now_jst = datetime.now(JST)
+    in_window = (6, 0) <= (now_jst.hour, now_jst.minute) < (15, 30)
+    if not light or (in_window and not is_final_for_today(overnight)):
         rebuilt_overnight = True
         try:
             fresh = build_overnight_forecast(MASTER, earnings=cache.get("earnings_dates"))
