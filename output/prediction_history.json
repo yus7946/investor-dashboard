@@ -11054,6 +11054,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-16",
+      "ticker": "7751.T",
+      "name": "キヤノン",
+      "basePrice": 4815.0,
+      "rangeLow": 4750,
+      "rangeHigh": 4880,
+      "predUpRate": 51.4,
+      "condN": 35,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-16",
+      "ticker": "2801.T",
+      "name": "キッコーマン",
+      "basePrice": 1820.5,
+      "rangeLow": 1791,
+      "rangeHigh": 1850,
+      "predUpRate": 51.5,
+      "condN": 33,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -16134,6 +16164,18 @@
       "entry": 989,
       "target": 1018,
       "stop": 967,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-10-16",
+      "ticker": "4493.T",
+      "name": "サイバーセキュリティクラウド",
+      "basePrice": 3360.0,
+      "entry": 3308,
+      "target": 3516,
+      "stop": 3152,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
