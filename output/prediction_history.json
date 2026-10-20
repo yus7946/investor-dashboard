@@ -11234,6 +11234,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-19",
+      "ticker": "8113.T",
+      "name": "ユニ・チャーム",
+      "basePrice": 1013.0,
+      "rangeLow": 998,
+      "rangeHigh": 1028,
+      "predUpRate": 33.3,
+      "condN": 21,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
