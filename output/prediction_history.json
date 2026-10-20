@@ -11249,6 +11249,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-19",
+      "ticker": "9432.T",
+      "name": "NTT",
+      "basePrice": 177.1,
+      "rangeLow": 176,
+      "rangeHigh": 179,
+      "predUpRate": 51.1,
+      "condN": 47,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
