@@ -11444,6 +11444,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-20",
+      "ticker": "9104.T",
+      "name": "商船三井",
+      "basePrice": 7469.0,
+      "rangeLow": 7348,
+      "rangeHigh": 7590,
+      "predUpRate": 52.0,
+      "condN": 150,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-20",
+      "ticker": "4382.T",
+      "name": "HEROZ",
+      "basePrice": 1631.0,
+      "rangeLow": 1584,
+      "rangeHigh": 1678,
+      "predUpRate": 47.8,
+      "condN": 46,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -16590,6 +16620,18 @@
       "entry": 3165,
       "target": 3366,
       "stop": 3014,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-10-20",
+      "ticker": "9104.T",
+      "name": "商船三井",
+      "basePrice": 7469.0,
+      "entry": 7408,
+      "target": 7650,
+      "stop": 7226,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
