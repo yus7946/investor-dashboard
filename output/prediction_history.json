@@ -11414,6 +11414,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-20",
+      "ticker": "4443.T",
+      "name": "Sansan",
+      "basePrice": 2146.0,
+      "rangeLow": 2088,
+      "rangeHigh": 2204,
+      "predUpRate": 48.2,
+      "condN": 195,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -16539,6 +16554,18 @@
       "status": "stop",
       "enteredDate": "2026-10-20",
       "resolvedDate": "2026-10-20"
+    },
+    {
+      "baseDate": "2026-10-20",
+      "ticker": "4443.T",
+      "name": "Sansan",
+      "basePrice": 2146.0,
+      "entry": 2117,
+      "target": 2233,
+      "stop": 2030,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
     }
   ]
 }
