@@ -11429,6 +11429,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-20",
+      "ticker": "4493.T",
+      "name": "サイバーセキュリティクラウド",
+      "basePrice": 3215.0,
+      "rangeLow": 3115,
+      "rangeHigh": 3315,
+      "predUpRate": 48.5,
+      "condN": 194,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -16563,6 +16578,18 @@
       "entry": 2117,
       "target": 2233,
       "stop": 2030,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-10-20",
+      "ticker": "4493.T",
+      "name": "サイバーセキュリティクラウド",
+      "basePrice": 3215.0,
+      "entry": 3165,
+      "target": 3366,
+      "stop": 3014,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
