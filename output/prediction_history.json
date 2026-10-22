@@ -11624,6 +11624,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-21",
+      "ticker": "4493.T",
+      "name": "サイバーセキュリティクラウド",
+      "basePrice": 3865.0,
+      "rangeLow": 3740,
+      "rangeHigh": 3990,
+      "predUpRate": 48.7,
+      "condN": 193,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-21",
+      "ticker": "2897.T",
+      "name": "日清食品HD",
+      "basePrice": 3071.0,
+      "rangeLow": 3030,
+      "rangeHigh": 3112,
+      "predUpRate": 39.1,
+      "condN": 23,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -16803,6 +16833,18 @@
       "entry": 7408,
       "target": 7650,
       "stop": 7226,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-10-21",
+      "ticker": "4493.T",
+      "name": "サイバーセキュリティクラウド",
+      "basePrice": 3865.0,
+      "entry": 3803,
+      "target": 4053,
+      "stop": 3616,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
