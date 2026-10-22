@@ -11654,6 +11654,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-21",
+      "ticker": "7751.T",
+      "name": "キヤノン",
+      "basePrice": 4898.0,
+      "rangeLow": 4832,
+      "rangeHigh": 4964,
+      "predUpRate": 52.6,
+      "condN": 38,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
