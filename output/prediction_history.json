@@ -11819,6 +11819,51 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-22",
+      "ticker": "6758.T",
+      "name": "ソニーグループ",
+      "basePrice": 4113.0,
+      "rangeLow": 4032,
+      "rangeHigh": 4194,
+      "predUpRate": 45.2,
+      "condN": 42,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-22",
+      "ticker": "2502.T",
+      "name": "アサヒグループHD",
+      "basePrice": 1690.0,
+      "rangeLow": 1670,
+      "rangeHigh": 1710,
+      "predUpRate": 50.0,
+      "condN": 30,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-22",
+      "ticker": "9735.T",
+      "name": "セコム",
+      "basePrice": 6771.0,
+      "rangeLow": 6696,
+      "rangeHigh": 6846,
+      "predUpRate": 50.0,
+      "condN": 48,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
