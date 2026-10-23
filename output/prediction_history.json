@@ -11864,6 +11864,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-22",
+      "ticker": "2801.T",
+      "name": "キッコーマン",
+      "basePrice": 1848.5,
+      "rangeLow": 1819,
+      "rangeHigh": 1878,
+      "predUpRate": 51.4,
+      "condN": 37,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
