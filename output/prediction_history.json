@@ -12074,6 +12074,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-23",
+      "ticker": "7751.T",
+      "name": "キヤノン",
+      "basePrice": 4949.0,
+      "rangeLow": 4882,
+      "rangeHigh": 5016,
+      "predUpRate": 52.5,
+      "condN": 40,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-23",
+      "ticker": "4502.T",
+      "name": "武田薬品工業",
+      "basePrice": 6452.0,
+      "rangeLow": 6378,
+      "rangeHigh": 6526,
+      "predUpRate": 53.2,
+      "condN": 77,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
