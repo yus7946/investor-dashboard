@@ -12254,6 +12254,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-26",
+      "ticker": "9735.T",
+      "name": "セコム",
+      "basePrice": 6723.0,
+      "rangeLow": 6649,
+      "rangeHigh": 6797,
+      "predUpRate": 50.0,
+      "condN": 50,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-26",
+      "ticker": "2897.T",
+      "name": "日清食品HD",
+      "basePrice": 3064.0,
+      "rangeLow": 3024,
+      "rangeHigh": 3104,
+      "predUpRate": 42.3,
+      "condN": 26,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
