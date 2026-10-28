@@ -12479,6 +12479,51 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-27",
+      "ticker": "7203.T",
+      "name": "トヨタ自動車",
+      "basePrice": 3114.0,
+      "rangeLow": 3059,
+      "rangeHigh": 3169,
+      "predUpRate": 50.0,
+      "condN": 42,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-27",
+      "ticker": "9404.T",
+      "name": "日本テレビホールディングス",
+      "basePrice": 3092.0,
+      "rangeLow": 3048,
+      "rangeHigh": 3136,
+      "predUpRate": 54.2,
+      "condN": 72,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-27",
+      "ticker": "4443.T",
+      "name": "Sansan",
+      "basePrice": 2232.0,
+      "rangeLow": 2172,
+      "rangeHigh": 2292,
+      "predUpRate": 49.7,
+      "condN": 199,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -17802,6 +17847,18 @@
       "entry": 1112,
       "target": 1163,
       "stop": 1073,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-10-27",
+      "ticker": "4443.T",
+      "name": "Sansan",
+      "basePrice": 2232.0,
+      "entry": 2202,
+      "target": 2321,
+      "stop": 2113,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
