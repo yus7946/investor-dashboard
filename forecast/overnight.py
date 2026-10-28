@@ -214,6 +214,7 @@ def _validate(panel: pd.DataFrame, quarters: int = 8, feats: list[str] | None = 
     out = {}
     folds = pd.date_range(end=panel.date.max(), periods=quarters + 1, freq="QS")
     mkt_rows = []
+    kept = {}
     for y in ("y_cc", "y_gap"):
         d = _labeled(panel, y)
         preds = []
@@ -227,8 +228,9 @@ def _validate(panel: pd.DataFrame, quarters: int = 8, feats: list[str] | None = 
         P = pd.concat(preds)
         p, lab = P.p.to_numpy(), P.label.to_numpy()
         hc = (p >= HIGH_CONF) | (p <= 1 - HIGH_CONF)
+        kept[y] = P[["date", "tk", "label", "p"]]
         if keep_preds:  # 実験用: 日ごとの比較検定に使う（JSONには出さない）
-            out.setdefault("_preds", {})[y] = P[["date", "tk", "label", "p"]]
+            out.setdefault("_preds", {})[y] = kept[y]
         out[y] = {
             "n": int(len(P)),
             "auc": round(float(roc_auc_score(lab, p)), 4),
@@ -241,6 +243,12 @@ def _validate(panel: pd.DataFrame, quarters: int = 8, feats: list[str] | None = 
         if y == "y_cc":
             mkt_rows = P.groupby("date").agg(p=("p", "mean"), ret=("y_cc", "mean"))
         out["from"], out["to"] = str(P.date.min().date()), str(P.date.max().date())
+    # 寄付きと終値の予報が逆向きの銘柄は終値の的中が約50%（2026-10-28 PDCA#4）。同じ向きの時だけ終値を予報する
+    m = kept["y_cc"].merge(kept["y_gap"][["date", "tk", "p"]], on=["date", "tk"], suffixes=("", "_g"))
+    agree = (m.p > .5) == (m.p_g > .5)
+    out["y_cc"]["agreeShare"] = round(float(agree.mean()) * 100, 1)
+    out["y_cc"]["agreeAccuracy"] = round(float(((m.p > .5) == m.label)[agree].mean()) * 100, 1)
+    out["y_cc"]["splitAccuracy"] = round(float(((m.p > .5) == m.label)[~agree].mean()) * 100, 1)
     hit = (mkt_rows.p > .5) == (mkt_rows.ret > 0)
     strong = (mkt_rows.p >= .6) | (mkt_rows.p <= .4)
     out["market"] = {
@@ -268,7 +276,7 @@ def _update_history(history: dict, panel: pd.DataFrame, today_pred: dict | None)
         base = pd.Timestamp(pend["b"])
         nxt = panel.loc[panel.date > base, "date"].min()  # 予報後の最初の取引日
         rows = panel[panel.date == base].set_index("tk")
-        cc_hit = gap_hit = n = gap_n = hc_n = hc_hit = 0
+        cc_hit = gap_hit = n = gap_n = hc_n = hc_hit = ag_n = ag_hit = 0
         for tk, (pc, pg) in pend["preds"].items():
             if tk not in rows.index:
                 continue
@@ -277,6 +285,9 @@ def _update_history(history: dict, panel: pd.DataFrame, today_pred: dict | None)
                 continue
             n += 1
             cc_hit += int((pc >= 50) == (ac > 0))
+            if (pc >= 50) == (pg >= 50):  # 寄付きと同じ向きの予報（画面で終値を予報する対象）
+                ag_n += 1
+                ag_hit += int((pc >= 50) == (ac > 0))
             if ag != 0:  # 寄付きが前日終値と同値の銘柄は寄付きの答え合わせ対象外
                 gap_n += 1
                 gap_hit += int((pg >= 50) == (ag > 0))
@@ -286,7 +297,7 @@ def _update_history(history: dict, panel: pd.DataFrame, today_pred: dict | None)
         if n:
             mret = float(rows["y_cc"].dropna().mean())
             history.setdefault("days", []).append({
-                "d": str(nxt.date()), "n": n, "cc": cc_hit, "gap": gap_hit, "gn": gap_n, "hcN": hc_n, "hc": hc_hit,
+                "d": str(nxt.date()), "n": n, "cc": cc_hit, "gap": gap_hit, "gn": gap_n, "hcN": hc_n, "hc": hc_hit, "agN": ag_n, "ag": ag_hit,
                 "mp": pend.get("mkt"), "mUp": mret > 0,
             })
             history["days"] = history["days"][-250:]
@@ -324,6 +335,7 @@ def _live_stats(history: dict, val_acc: float | None = None) -> dict | None:
         return {"days": 0, "n": 0, "excluded": excluded} if excluded else None
     n = sum(d["n"] for d in days)
     hc_n = sum(d["hcN"] for d in days)
+    ag_n = sum(d.get("agN", 0) for d in days)
     mk = [d for d in days if d.get("mp") is not None]
     return {
         "excluded": excluded,
@@ -332,6 +344,7 @@ def _live_stats(history: dict, val_acc: float | None = None) -> dict | None:
         "ccAccuracy": round(sum(d["cc"] for d in days) / n * 100, 1),
         "gapAccuracy": round(sum(d["gap"] for d in days) / max(1, sum(d.get("gn", d["n"]) for d in days)) * 100, 1),
         "highConfN": hc_n,
+        "agreeAccuracy": round(sum(d.get("ag", 0) for d in days) / ag_n * 100, 1) if ag_n else None,
         "highConfAccuracy": round(sum(d["hc"] for d in days) / hc_n * 100, 1) if hc_n else None,
         "marketN": len(mk),
         "marketAccuracy": round(sum((d["mp"] >= 50) == d["mUp"] for d in mk) / len(mk) * 100, 1) if mk else None,
@@ -390,6 +403,8 @@ def build_overnight_forecast(universe: list[tuple[str, str]], now: datetime | No
             "gapHitRate": _band_hit(validation["y_gap"]["bands"], pg),
             # 決算発表をまたぐ日は値動きが決算内容で決まり、海外要因の予報は当てにならない
             "earnings": bool(e and base_s <= e <= target_s),
+            # 寄付きと終値の予報が逆向き＝終値は五分五分（検証で的中約50%）なので終値の予報は出さない
+            "split": bool((pc >= .5) != (pg >= .5)),
         })
     stocks.sort(key=lambda s: -abs(s["pUp"] - 50))
     mkt_p = round(float(np.mean(probs["y_cc"])) * 100, 1)

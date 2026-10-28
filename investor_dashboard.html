@@ -1655,7 +1655,7 @@ function renderForecastBox(s) {
     return `<div style="font-size:10px;color:${col};background:${bg};border:1px solid ${col}33;border-radius:6px;padding:3px 7px;margin-top:4px">${x.dir === '+' ? '↑' : x.dir === '-' ? '↓' : '・'} ${x.label}</div>`;
   }).join('');
   const on = onFind(s.ticker);
-  const onLine = on ? `<div class="on-box">明日の予報: <b style="color:${onLabel(on.pUp).c}">終値↑${on.pUp}%</b>・寄り↑${on.pGapUp}%（目安${onSigned(on.expGapPct, 1)}）${on.earnings ? '<b style="color:var(--stop)">・決算発表をまたぐため参考外</b>' : on.hitRate != null ? `<span style="color:var(--muted)">・過去同帯の的中${on.hitRate}%</span>` : ''}</div>` : '';
+  const onLine = on ? `<div class="on-box">明日の予報: ${on.split ? '<b style="color:var(--muted)">終値は予報なし（寄付きと向きが割れている）</b>' : `<b style="color:${onLabel(on.pUp).c}">終値↑${on.pUp}%</b>`}・寄り↑${on.pGapUp}%（目安${onSigned(on.expGapPct, 1)}）${on.earnings ? '<b style="color:var(--stop)">・決算発表をまたぐため参考外</b>' : on.hitRate != null ? `<span style="color:var(--muted)">・過去同帯の的中${on.hitRate}%</span>` : ''}</div>` : '';
   return `
   <div class="scenario-box">
     <div class="scenario-title">翌営業日の見通し（統計・実績ベース）</div>
@@ -1871,12 +1871,12 @@ function onFind(code) {
   return o.stocks.find(x => x.ticker.replace(/\.T$/, '') === c) || null;
 }
 function onRow(x) {
-  const l = onLabel(x.pUp);
-  const hit = x.hitRate != null ? `過去同帯の的中${x.hitRate}%` : '';
+  const l = x.split ? { t: '寄付きと向きが割れ、終値は予報なし', c: 'var(--muted)' } : onLabel(x.pUp);
+  const hit = x.split ? '五分五分' : x.hitRate != null ? `過去同帯の的中${x.hitRate}%` : '';
   return `<div class="on-row">
     <div class="on-name">${x.name}<small>${x.ticker.replace('.T', '')} ・ ${x.earnings ? '<b style="color:var(--stop)">決算発表をまたぐため予報は参考外</b>' : l.t}</small></div>
     <div class="on-p" style="color:${onLabel(x.pGapUp).c}">寄り↑${x.pGapUp}%<small>目安${onSigned(x.expGapPct, 1)}</small></div>
-    <div class="on-p" style="color:${l.c}">終値↑${x.pUp}%<small>${hit}</small></div>
+    <div class="on-p" style="color:${l.c}">${x.split ? '終値 —' : `終値↑${x.pUp}%`}<small>${hit}</small></div>
   </div>`;
 }
 function renderOvernight() {
@@ -1904,11 +1904,11 @@ function renderOvernight() {
   let mine = [];
   try { mine = loadHoldings().map(h => onFind(h.code)).filter(Boolean); } catch (e) { mine = []; }
   mine = mine.filter((x, i, a) => a.findIndex(y => y.ticker === x.ticker) === i);
-  const ups = o.stocks.filter(x => x.pUp >= 60 && !x.earnings).sort((a, b) => b.pUp - a.pUp).slice(0, 5);
-  const downs = o.stocks.filter(x => x.pUp <= 40 && !x.earnings).sort((a, b) => a.pUp - b.pUp).slice(0, 5);
+  const ups = o.stocks.filter(x => x.pUp >= 60 && !x.earnings && !x.split).sort((a, b) => b.pUp - a.pUp).slice(0, 5);
+  const downs = o.stocks.filter(x => x.pUp <= 40 && !x.earnings && !x.split).sort((a, b) => a.pUp - b.pUp).slice(0, 5);
   const live = o.live;
   const liveTxt = live && live.n > 0
-    ? `<div style="margin-top:4px"><b>運用開始後の実績</b>（${live.since}〜・${live.days}営業日）: 終値の方向 <b>${live.ccAccuracy}%</b>・寄付き <b>${live.gapAccuracy}%</b>${live.highConfAccuracy != null ? `・高確信時 <b>${live.highConfAccuracy}%</b>（${live.highConfN}件）` : ''}${live.marketAccuracy != null ? `・市場全体 <b>${live.marketAccuracy}%</b>` : ''}</div>`
+    ? `<div style="margin-top:4px"><b>運用開始後の実績</b>（${live.since}〜・${live.days}営業日）: 終値の方向 <b>${live.ccAccuracy}%</b>・寄付き <b>${live.gapAccuracy}%</b>${live.agreeAccuracy != null ? `・同じ向きの終値予報 <b>${live.agreeAccuracy}%</b>` : ''}${live.highConfAccuracy != null ? `・高確信時 <b>${live.highConfAccuracy}%</b>（${live.highConfN}件）` : ''}${live.marketAccuracy != null ? `・市場全体 <b>${live.marketAccuracy}%</b>` : ''}</div>`
     : '<div style="margin-top:4px">運用開始後の実績は、翌営業日から自動で答え合わせして表示します。</div>';
   const ex = live && live.excluded;
   const exTxt = ex ? `<div style="margin-top:4px;color:var(--stop)">※${ex.from}〜${ex.to}の${ex.days}営業日分は、${ex.reason}ため集計から除外しています（当時の終値的中${ex.ccAccuracy}%）。</div>` : '';
@@ -1941,7 +1941,7 @@ function renderOvernight() {
     ${!ups.length && !downs.length ? '<div class="on-sec" style="color:var(--muted)">今日は海外の動きが小さく、方向に自信を持てる銘柄はありません（無理に予報しません）。</div>' : ''}
     <div class="on-val">
       <div><b>過去2年の検証</b>（${v.from}〜${v.to}・各時点より前のデータだけで学習して答え合わせ）:
-      終値の方向 <b>${v.y_cc.accuracy}%</b>（「毎日上がる」と言い続けた場合は${v.y_cc.baseline}%）、確率70%以上/30%以下の予報は <b>${v.y_cc.highConfAccuracy}%</b>。
+      終値の方向 <b>${v.y_cc.accuracy}%</b>（「毎日上がる」と言い続けた場合は${v.y_cc.baseline}%）${v.y_cc.agreeAccuracy != null ? `、寄付きと同じ向きの予報に限ると <b>${v.y_cc.agreeAccuracy}%</b>（逆向きの時は${v.y_cc.splitAccuracy}%のため予報なし）` : ''}、確率70%以上/30%以下の予報は <b>${v.y_cc.highConfAccuracy}%</b>。
       寄付きの方向 <b>${v.y_gap.accuracy}%</b>、高確信時 <b>${v.y_gap.highConfAccuracy}%</b>。</div>
       ${liveTxt}${exTxt}${healthTxt}
       <div style="margin-top:4px">寄付きでほとんどの値動きが織り込まれ、寄付き後〜大引けや数日先は予測力が確認できないため対象外です。確率は保証ではありません。</div>

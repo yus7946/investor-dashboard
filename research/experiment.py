@@ -37,6 +37,8 @@ EXPERIMENTS = {
     "sec": (BASE + ov.EXTRA_SEC, None),
     "adr": (BASE + ov.EXTRA_ADR, None),
     "sec_adr": (BASE + ov.EXTRA_SEC + ov.EXTRA_ADR, None),
+    "prod": (ov.FEATURES, None),  # 本番で採用中の特徴量
+    "no_stock": (ov.OVERNIGHT + ov.EXTRA_SEC + ov.EXTRA_ADR, None),  # 前日までの値動き（反転傾向など）を除外
     "all": (BASE + ov.EXTRA_MKT + ov.EXTRA_SEC + ov.EXTRA_ADR, None),
     "all_big": (BASE + ov.EXTRA_MKT + ov.EXTRA_SEC + ov.EXTRA_ADR,
                 lambda: HistGradientBoostingClassifier(max_iter=300, learning_rate=0.04, max_leaf_nodes=31,
@@ -73,14 +75,13 @@ def main():
     panel, _ = ov.build_panel(px, [t for t, _ in MASTER], target)
     print(f"panel rows={len(panel)} stocks={panel.tk.nunique()} last={panel.date.max().date()}")
     names = a.names or list(EXPERIMENTS)
-    if "base" not in names:
-        names = ["base"] + names
+    baseline = names[0]  # 先頭の実験を比較の基準にする
     base = None
     for name in names:
         feats, model_fn = EXPERIMENTS[name]
         t0 = time.time()
         v = ov._validate(panel, feats=feats, model_fn=model_fn, keep_preds=True)
-        if name == "base":
+        if name == baseline:
             base = v
         row = {
             "at": datetime.now(ov.JST).strftime("%Y-%m-%d %H:%M"), "name": name, "period": a.period,
@@ -90,13 +91,14 @@ def main():
             "mkt": v["market"]["accuracy"], "mktStrong": v["market"]["strongAccuracy"], "sec": round(time.time() - t0),
             "ccAUC": v["y_cc"]["auc"], "gapAUC": v["y_gap"]["auc"],
         }
-        if name != "base":
+        if name != baseline:
+            row["baseline"] = baseline
             row["ccDiff"], row["ccDiffSE"] = paired(base, v, "y_cc")
             row["gapDiff"], row["gapDiffSE"] = paired(base, v, "y_gap")
         print(f"{name:8s} 終値{row['cc']}%(高確信{row['ccHC']}%/{row['ccHCn']}件) "
               f"寄付き{row['gap']}%(高確信{row['gapHC']}%/{row['gapHCn']}件) 市場{row['mkt']}%(強{row['mktStrong']}%) "
               f"AUC {row['ccAUC']}/{row['gapAUC']} {row['sec']}s"
-              + (f"\n         vs base: 終値{row['ccDiff']:+}pt(±{row['ccDiffSE']}) 寄付き{row['gapDiff']:+}pt(±{row['gapDiffSE']})"
+              + (f"\n         vs {baseline}: 終値{row['ccDiff']:+}pt(±{row['ccDiffSE']}) 寄付き{row['gapDiff']:+}pt(±{row['gapDiffSE']})"
                  if "ccDiff" in row else ""), flush=True)
         with open(RESULTS, "a", encoding="utf-8") as f:
             f.write(json.dumps(row, ensure_ascii=False) + "\n")
