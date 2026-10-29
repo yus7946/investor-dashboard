@@ -12704,6 +12704,51 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-28",
+      "ticker": "9104.T",
+      "name": "商船三井",
+      "basePrice": 7457.0,
+      "rangeLow": 7336,
+      "rangeHigh": 7578,
+      "predUpRate": 52.4,
+      "condN": 166,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-28",
+      "ticker": "9531.T",
+      "name": "東京ガス",
+      "basePrice": 6446.0,
+      "rangeLow": 6344,
+      "rangeHigh": 6548,
+      "predUpRate": 53.8,
+      "condN": 78,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-28",
+      "ticker": "7203.T",
+      "name": "トヨタ自動車",
+      "basePrice": 3077.0,
+      "rangeLow": 3022,
+      "rangeHigh": 3132,
+      "predUpRate": null,
+      "condN": 7,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -18120,6 +18165,18 @@
       "entry": 6868,
       "target": 7112,
       "stop": 6685,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-10-28",
+      "ticker": "9104.T",
+      "name": "商船三井",
+      "basePrice": 7457.0,
+      "entry": 7397,
+      "target": 7639,
+      "stop": 7216,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
