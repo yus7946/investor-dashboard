@@ -12899,6 +12899,51 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-29",
+      "ticker": "4661.T",
+      "name": "オリエンタルランド",
+      "basePrice": 3438.0,
+      "rangeLow": 3380,
+      "rangeHigh": 3496,
+      "predUpRate": 53.8,
+      "condN": 39,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-29",
+      "ticker": "9022.T",
+      "name": "JR東海",
+      "basePrice": 3951.0,
+      "rangeLow": 3896,
+      "rangeHigh": 4006,
+      "predUpRate": 53.4,
+      "condN": 88,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-29",
+      "ticker": "9107.T",
+      "name": "川崎汽船",
+      "basePrice": 3520.0,
+      "rangeLow": 3461,
+      "rangeHigh": 3579,
+      "predUpRate": 55.1,
+      "condN": 185,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -18360,6 +18405,18 @@
       "entry": 6944,
       "target": 7194,
       "stop": 6757,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-10-29",
+      "ticker": "9107.T",
+      "name": "川崎汽船",
+      "basePrice": 3520.0,
+      "entry": 3490,
+      "target": 3608,
+      "stop": 3401,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
