@@ -12759,11 +12759,11 @@
       "rangeHigh": 11945,
       "predUpRate": 54.5,
       "condN": 66,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-10-30",
+      "actualClose": 11825.0,
+      "actualReturn": 1.68,
+      "inRange": true,
+      "wentUp": true
     },
     {
       "baseDate": "2026-10-29",
@@ -12774,11 +12774,11 @@
       "rangeHigh": 19394,
       "predUpRate": null,
       "condN": 11,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-10-30",
+      "actualClose": 19200.0,
+      "actualReturn": 1.64,
+      "inRange": true,
+      "wentUp": true
     },
     {
       "baseDate": "2026-10-29",
@@ -12789,11 +12789,11 @@
       "rangeHigh": 4520,
       "predUpRate": 48.7,
       "condN": 78,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-10-30",
+      "actualClose": 4600.0,
+      "actualReturn": 4.9,
+      "inRange": false,
+      "wentUp": true
     },
     {
       "baseDate": "2026-10-29",
@@ -12804,11 +12804,11 @@
       "rangeHigh": 7578,
       "predUpRate": 52.4,
       "condN": 166,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-10-30",
+      "actualClose": 7672.0,
+      "actualReturn": 2.88,
+      "inRange": false,
+      "wentUp": true
     },
     {
       "baseDate": "2026-10-29",
@@ -12819,11 +12819,11 @@
       "rangeHigh": 6546,
       "predUpRate": 51.9,
       "condN": 79,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-10-30",
+      "actualClose": 6651.0,
+      "actualReturn": 2.78,
+      "inRange": false,
+      "wentUp": true
     },
     {
       "baseDate": "2026-10-29",
@@ -12834,11 +12834,11 @@
       "rangeHigh": 3107,
       "predUpRate": 54.2,
       "condN": 72,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-10-30",
+      "actualClose": 3095.0,
+      "actualReturn": 1.04,
+      "inRange": true,
+      "wentUp": true
     },
     {
       "baseDate": "2026-10-29",
@@ -12849,11 +12849,11 @@
       "rangeHigh": 6548,
       "predUpRate": 53.8,
       "condN": 78,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-10-30",
+      "actualClose": 6517.0,
+      "actualReturn": 1.1,
+      "inRange": true,
+      "wentUp": true
     },
     {
       "baseDate": "2026-10-29",
@@ -12864,11 +12864,11 @@
       "rangeHigh": 7131,
       "predUpRate": 52.4,
       "condN": 208,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-10-30",
+      "actualClose": 7096.0,
+      "actualReturn": 1.28,
+      "inRange": true,
+      "wentUp": true
     },
     {
       "baseDate": "2026-10-29",
@@ -12879,11 +12879,11 @@
       "rangeHigh": 3132,
       "predUpRate": null,
       "condN": 7,
-      "actualDate": null,
-      "actualClose": null,
-      "actualReturn": null,
-      "inRange": null,
-      "wentUp": null
+      "actualDate": "2026-10-30",
+      "actualClose": 3070.0,
+      "actualReturn": -0.23,
+      "inRange": true,
+      "wentUp": false
     },
     {
       "baseDate": "2026-10-29",
@@ -12894,6 +12894,66 @@
       "rangeHigh": 1459,
       "predUpRate": 36.4,
       "condN": 33,
+      "actualDate": "2026-10-30",
+      "actualClose": 1440.0,
+      "actualReturn": 1.34,
+      "inRange": true,
+      "wentUp": true
+    },
+    {
+      "baseDate": "2026-10-29",
+      "ticker": "4661.T",
+      "name": "オリエンタルランド",
+      "basePrice": 3438.0,
+      "rangeLow": 3380,
+      "rangeHigh": 3496,
+      "predUpRate": 53.8,
+      "condN": 39,
+      "actualDate": "2026-10-30",
+      "actualClose": 3438.0,
+      "actualReturn": 0.0,
+      "inRange": true,
+      "wentUp": false
+    },
+    {
+      "baseDate": "2026-10-29",
+      "ticker": "9022.T",
+      "name": "JR東海",
+      "basePrice": 3951.0,
+      "rangeLow": 3896,
+      "rangeHigh": 4006,
+      "predUpRate": 53.4,
+      "condN": 88,
+      "actualDate": "2026-10-30",
+      "actualClose": 3951.0,
+      "actualReturn": 0.0,
+      "inRange": true,
+      "wentUp": false
+    },
+    {
+      "baseDate": "2026-10-29",
+      "ticker": "9107.T",
+      "name": "川崎汽船",
+      "basePrice": 3520.0,
+      "rangeLow": 3461,
+      "rangeHigh": 3579,
+      "predUpRate": 55.1,
+      "condN": 185,
+      "actualDate": "2026-10-30",
+      "actualClose": 3520.0,
+      "actualReturn": 0.0,
+      "inRange": true,
+      "wentUp": false
+    },
+    {
+      "baseDate": "2026-10-30",
+      "ticker": "6532.T",
+      "name": "ベイカレント・コンサルティング",
+      "basePrice": 11825.0,
+      "rangeLow": 11506,
+      "rangeHigh": 12144,
+      "predUpRate": 56.1,
+      "condN": 66,
       "actualDate": null,
       "actualClose": null,
       "actualReturn": null,
@@ -12901,7 +12961,97 @@
       "wentUp": null
     },
     {
-      "baseDate": "2026-10-29",
+      "baseDate": "2026-10-30",
+      "ticker": "6098.T",
+      "name": "リクルートHD",
+      "basePrice": 19200.0,
+      "rangeLow": 18689,
+      "rangeHigh": 19711,
+      "predUpRate": 48.1,
+      "condN": 79,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-30",
+      "ticker": "4478.T",
+      "name": "freee",
+      "basePrice": 4600.0,
+      "rangeLow": 4458,
+      "rangeHigh": 4742,
+      "predUpRate": 49.4,
+      "condN": 79,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-30",
+      "ticker": "9104.T",
+      "name": "商船三井",
+      "basePrice": 7672.0,
+      "rangeLow": 7548,
+      "rangeHigh": 7796,
+      "predUpRate": 52.7,
+      "condN": 167,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-30",
+      "ticker": "4502.T",
+      "name": "武田薬品工業",
+      "basePrice": 6651.0,
+      "rangeLow": 6574,
+      "rangeHigh": 6728,
+      "predUpRate": 52.5,
+      "condN": 80,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-30",
+      "ticker": "9531.T",
+      "name": "東京ガス",
+      "basePrice": 6517.0,
+      "rangeLow": 6416,
+      "rangeHigh": 6618,
+      "predUpRate": 53.8,
+      "condN": 78,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-30",
+      "ticker": "8630.T",
+      "name": "SOMPOホールディングス",
+      "basePrice": 7096.0,
+      "rangeLow": 6970,
+      "rangeHigh": 7222,
+      "predUpRate": 52.6,
+      "condN": 209,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-30",
       "ticker": "4661.T",
       "name": "オリエンタルランド",
       "basePrice": 3438.0,
@@ -12916,7 +13066,7 @@
       "wentUp": null
     },
     {
-      "baseDate": "2026-10-29",
+      "baseDate": "2026-10-30",
       "ticker": "9022.T",
       "name": "JR東海",
       "basePrice": 3951.0,
@@ -12931,7 +13081,7 @@
       "wentUp": null
     },
     {
-      "baseDate": "2026-10-29",
+      "baseDate": "2026-10-30",
       "ticker": "9107.T",
       "name": "川崎汽船",
       "basePrice": 3520.0,
@@ -13552,6 +13702,15 @@
     },
     {
       "baseDate": "2026-10-29",
+      "spxUp": false,
+      "predUpRate": 44.3,
+      "n": 212,
+      "actualDate": "2026-10-30",
+      "topixReturn": -1.16,
+      "wentUp": false
+    },
+    {
+      "baseDate": "2026-10-30",
       "spxUp": false,
       "predUpRate": 44.3,
       "n": 212,
@@ -18309,9 +18468,9 @@
       "entry": 1385,
       "target": 1458,
       "stop": 1330,
-      "status": "entered",
+      "status": "target",
       "enteredDate": "2026-10-28",
-      "resolvedDate": null
+      "resolvedDate": "2026-10-30"
     },
     {
       "baseDate": "2026-10-27",
@@ -18381,9 +18540,9 @@
       "entry": 7397,
       "target": 7639,
       "stop": 7216,
-      "status": "entered",
+      "status": "target",
       "enteredDate": "2026-10-29",
-      "resolvedDate": null
+      "resolvedDate": "2026-10-30"
     },
     {
       "baseDate": "2026-10-29",
@@ -18411,6 +18570,30 @@
     },
     {
       "baseDate": "2026-10-29",
+      "ticker": "9107.T",
+      "name": "川崎汽船",
+      "basePrice": 3520.0,
+      "entry": 3490,
+      "target": 3608,
+      "stop": 3401,
+      "status": "entered",
+      "enteredDate": "2026-10-30",
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-10-30",
+      "ticker": "9104.T",
+      "name": "商船三井",
+      "basePrice": 7672.0,
+      "entry": 7610,
+      "target": 7859,
+      "stop": 7424,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-10-30",
       "ticker": "9107.T",
       "name": "川崎汽船",
       "basePrice": 3520.0,
