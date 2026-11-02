@@ -13109,6 +13109,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-30",
+      "ticker": "2502.T",
+      "name": "アサヒグループHD",
+      "basePrice": 1671.0,
+      "rangeLow": 1651,
+      "rangeHigh": 1691,
+      "predUpRate": 46.8,
+      "condN": 186,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-10-30",
+      "ticker": "7267.T",
+      "name": "ホンダ",
+      "basePrice": 1799.0,
+      "rangeLow": 1767,
+      "rangeHigh": 1831,
+      "predUpRate": 50.0,
+      "condN": 186,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -18651,6 +18681,30 @@
       "entry": 2624,
       "target": 2728,
       "stop": 2546,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-10-30",
+      "ticker": "2502.T",
+      "name": "アサヒグループHD",
+      "basePrice": 1671.0,
+      "entry": 1661,
+      "target": 1700,
+      "stop": 1632,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-10-30",
+      "ticker": "7267.T",
+      "name": "ホンダ",
+      "basePrice": 1799.0,
+      "entry": 1783,
+      "target": 1848,
+      "stop": 1734,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
