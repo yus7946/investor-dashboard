@@ -1,6 +1,6 @@
 {
-  "updated": "2026年11月02日 16:58",
-  "updatedAtMs": 1793606280387,
+  "updated": "2026年11月02日 18:43",
+  "updatedAtMs": 1793612614880,
   "updateMode": "light",
   "fetched": 163,
   "universeTotal": 166,
@@ -133,7 +133,7 @@
         "date": "2026-10-30",
         "daysTo": -1,
         "revGrowthPct": 48.4,
-        "epsGrowthPct": null
+        "epsGrowthPct": 73.9
       },
       {
         "ticker": "6752.T",
@@ -487,8 +487,8 @@
   "marketOutlook": {
     "spxChangePct": -1.82,
     "spxDate": "2026-10-30",
-    "usdjpy": 157.74,
-    "usdjpyChangePct": -0.04,
+    "usdjpy": 157.86,
+    "usdjpyChangePct": 0.04,
     "condition": "米S&P500が直近下落",
     "topixUpRate": 43.9,
     "n": 212,
@@ -3931,7 +3931,7 @@
       "exDivDate": "2027-03-30",
       "dividendYield": 4.8,
       "per": 56.2,
-      "pbr": 10.99,
+      "pbr": 10.32,
       "roe": 33.8,
       "rsi": 34.7,
       "vol": 0.6495,
