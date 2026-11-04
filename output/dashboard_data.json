@@ -1,6 +1,6 @@
 {
-  "updated": "2026年11月04日 21:22",
-  "updatedAtMs": 1793794957035,
+  "updated": "2026年11月04日 22:10",
+  "updatedAtMs": 1793797813078,
   "updateMode": "light",
   "fetched": 163,
   "universeTotal": 166,
@@ -543,8 +543,8 @@
   "marketOutlook": {
     "spxChangePct": 0.36,
     "spxDate": "2026-11-03",
-    "usdjpy": 158.32,
-    "usdjpyChangePct": 0.26,
+    "usdjpy": 158.24,
+    "usdjpyChangePct": 0.21,
     "condition": "米S&P500が直近上昇",
     "topixUpRate": 64.1,
     "n": 273,
