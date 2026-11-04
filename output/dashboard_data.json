@@ -1,6 +1,6 @@
 {
-  "updated": "2026年11月04日 18:33",
-  "updatedAtMs": 1793784797578,
+  "updated": "2026年11月04日 20:21",
+  "updatedAtMs": 1793791310084,
   "updateMode": "light",
   "fetched": 163,
   "universeTotal": 166,
@@ -68,8 +68,8 @@
         "name": "住友商事",
         "date": "2026-11-02",
         "daysTo": -2,
-        "revGrowthPct": 9.0,
-        "epsGrowthPct": 13.2
+        "revGrowthPct": 12.6,
+        "epsGrowthPct": 23.7
       },
       {
         "ticker": "2413.T",
@@ -543,8 +543,8 @@
   "marketOutlook": {
     "spxChangePct": 0.36,
     "spxDate": "2026-11-03",
-    "usdjpy": 158.32,
-    "usdjpyChangePct": 0.26,
+    "usdjpy": 158.51,
+    "usdjpyChangePct": 0.38,
     "condition": "米S&P500が直近上昇",
     "topixUpRate": 64.1,
     "n": 273,
@@ -4103,7 +4103,7 @@
       "exDivDate": "2026-09-29",
       "dividendYield": 1.33,
       "per": 29.1,
-      "pbr": 8.05,
+      "pbr": 8.02,
       "roe": 27.7,
       "rsi": 39.9,
       "vol": 0.2988,
@@ -4446,7 +4446,7 @@
       "price": 1632.0,
       "divPerShare": 20.0,
       "exDivDate": "2026-09-29",
-      "dividendYield": 1.25,
+      "dividendYield": 0.63,
       "per": 13.0,
       "pbr": 1.18,
       "roe": null,
@@ -4778,7 +4778,7 @@
       "exDivDate": "2027-03-30",
       "dividendYield": 2.64,
       "per": 12.2,
-      "pbr": 1.7,
+      "pbr": 1.65,
       "roe": 13.6,
       "rsi": 36.9,
       "vol": 0.306,
