@@ -13439,6 +13439,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-11-02",
+      "ticker": "8630.T",
+      "name": "SOMPOホールディングス",
+      "basePrice": 7172.0,
+      "rangeLow": 7044,
+      "rangeHigh": 7300,
+      "predUpRate": 52.4,
+      "condN": 210,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-11-02",
+      "ticker": "5108.T",
+      "name": "ブリヂストン",
+      "basePrice": 4044.0,
+      "rangeLow": 3993,
+      "rangeHigh": 4095,
+      "predUpRate": 55.5,
+      "condN": 209,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -19182,6 +19212,30 @@
       "entry": 1783,
       "target": 1848,
       "stop": 1734,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-02",
+      "ticker": "8630.T",
+      "name": "SOMPOホールディングス",
+      "basePrice": 7172.0,
+      "entry": 7108,
+      "target": 7364,
+      "stop": 6916,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-02",
+      "ticker": "5108.T",
+      "name": "ブリヂストン",
+      "basePrice": 4044.0,
+      "entry": 4019,
+      "target": 4121,
+      "stop": 3943,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
