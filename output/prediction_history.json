@@ -13469,6 +13469,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-11-02",
+      "ticker": "9020.T",
+      "name": "JR東日本",
+      "basePrice": 3751.0,
+      "rangeLow": 3702,
+      "rangeHigh": 3800,
+      "predUpRate": 50.5,
+      "condN": 212,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
