@@ -33,6 +33,7 @@ from signals.signal import judge_all
 from backtest.backtest import run_backtest
 from forecast.next_day import build_forecasts
 from forecast.overnight import build_overnight_forecast, is_final_for_today, JST
+from reports.market_report import build_market_report
 from forecast.tracker import (
     load_history, save_history, calibration_factor, update, compute_accuracy,
 )
@@ -334,6 +335,18 @@ def main():
         except Exception as e:
             print(f"  [警告] 翌営業日予報に失敗しました（前回の予報があればそれを表示）: {e}")
 
+    # 相場環境レポート（イベント前後の各市場・荒れ具合・荒れ相場での予報の信頼度）。軽いので毎回更新する
+    print("\n相場環境レポートを作成中...")
+    market_report = None
+    try:
+        market_report = build_market_report(MASTER, overnight)
+        if market_report:
+            ev = market_report.get("event")
+            print(f"  荒れ具合: 日経ボラ{market_report['regime']['n225Vol']}%・VIX{market_report['regime']['vix']}"
+                  + (f" / イベント: {ev['name']}（{len(ev['assets'])}市場）" if ev else ""))
+    except Exception as e:
+        print(f"  [警告] 相場環境レポートの作成に失敗しました（表示なしになります）: {e}")
+
     print("\n7/8 翌営業日見通し計算・答え合わせ中...")
     # 過去の決算発表日（材料インパクト実績用）。フル時のみ取得しキャッシュ（top10で+10リクエスト）
     past_earnings = {}
@@ -411,6 +424,7 @@ def main():
             market=market,
             market_outlook=outlook,
             overnight=overnight,
+            market_report=market_report,
             accuracy=accuracy,
             stock_master=stock_master,
             fetched_count=len(stocks),

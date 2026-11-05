@@ -722,6 +722,7 @@ body::before {
 </div>
 
 <div id="overnight-card" class="on-card" style="display:none"></div>
+<div id="report-card" class="on-card" style="display:none"></div>
 
 <!-- 市場全体の状況（折りたたみ） -->
 <button class="market-toggle" onclick="toggleMarket(this)">
@@ -1948,6 +1949,69 @@ function renderOvernight() {
     </div>`;
 }
 
+// ── 相場環境レポート（イベント前後の各市場・荒れ具合・荒れ相場での予報の信頼度）──
+function renderMarketReport() {
+  const el = document.getElementById('report-card');
+  const r = DATA.marketReport;
+  if (!el) return;
+  if (!r) { el.style.display = 'none'; return; }
+  const sg = (v, u = '%', d = 2) => v == null ? '—' : (v >= 0 ? '+' : '') + v.toFixed(d) + u;
+  const cl = v => v == null ? 'var(--muted)' : v >= 0 ? 'var(--green)' : 'var(--red)';
+  const md = d => { const [, m, dd] = d.split('-'); return `${+m}/${+dd}`; };
+  const g = r.regime, e = r.event;
+  let h = `<div class="on-head"><div class="on-title">相場環境レポート</div><div class="on-sub">${md(r.generatedAt.slice(0, 10))} ${r.generatedAt.slice(11)}時点</div></div>`;
+  h += `<div class="on-box" style="margin-top:8px">荒れ具合：日経平均の値動きの大きさ（直近20日・年率）<b>${g.n225Vol}%</b>（過去5年で上位${g.n225VolTopPct}%）／`
+    + `VIX <b>${g.vix}</b>（上位${g.vixTopPct}%）／日経平均は3か月高値から<b style="color:${cl(g.n225FromHigh)}">${sg(g.n225FromHigh, '%', 1)}</b><br>`
+    + `<span style="color:var(--muted)">日経平均の直近10日：${g.n225Daily10.map(x => sg(x, '', 1)).join(' ')}</span></div>`;
+  const cur = r.reliability && r.reliability.current;
+  if (cur && Object.keys(cur).length) {
+    h += `<div class="on-sec">今と似た状況での予報の当たり方（過去2年の検証）</div>`;
+    Object.values(cur).forEach(x => {
+      h += `<div style="font-size:11.5px;margin:2px 0">${x.title}が<b>${x.label}</b>の日（${x.days}日）：`
+        + `終値 <b>${x.cc}%</b>（寄付きと同じ向きの予報 <b>${x.ccAgree}%</b>）・寄付き <b>${x.gap}%</b></div>`;
+    });
+    h += `<div style="font-size:10.5px;color:var(--muted)">海外の動きが大きい日ほど、翌日の予報は当たりやすい傾向があります（動きが小さい日は五分五分に近づく）。</div>`;
+  }
+  if (e) {
+    h += `<div class="on-sec">${e.name}（${md(e.date)}投票）後の各市場：投票日の前の終値との比較</div>`;
+    if (e.summary) {
+      const src = (e.sources || []).map(s => `<a href="${s.url}" target="_blank" rel="noopener" style="color:var(--accent2)">${s.title.split(':')[0]}</a>`).join('・');
+      h += `<div style="font-size:11.5px;margin-bottom:4px">${e.summary}<span style="color:var(--muted)">（出典：${src}）</span></div>`;
+    }
+    h += `<div class="on-row" style="font-size:10.5px;color:var(--muted);border-top:none"><div>市場</div><div class="on-p">反応日</div><div class="on-p">累計（最新）</div></div>`;
+    e.assets.forEach(a => {
+      const u = a.unit === 'pt' ? 'pt' : '%';
+      h += `<div class="on-row"><div class="on-name">${a.label}<small>${md(a.lastDate)}時点 ${a.last.toLocaleString()}</small></div>`
+        + `<div class="on-p" style="color:${cl(a.react)}">${sg(a.react, u)}</div><div class="on-p" style="color:${cl(a.since)}">${sg(a.since, u)}</div></div>`;
+    });
+    let mine = [];
+    try { mine = loadHoldings().map(x => x.code && String(x.code).replace(/\.T$/, '') + '.T').filter(t => e.moves[t]); } catch (err) { mine = []; }
+    mine = [...new Set(mine)];
+    const nm = t => (DATA.overnight && (DATA.overnight.stocks.find(s => s.ticker === t) || {}).name) || t;
+    if (mine.length) {
+      h += `<div class="on-sec">あなたの保有銘柄（投票日の前の終値との比較）</div>`;
+      mine.sort((a, b) => e.moves[a][1] - e.moves[b][1]).forEach(t => {
+        h += `<div class="on-row"><div class="on-name">${nm(t)}<small>${t.replace('.T', '')}</small></div>`
+          + `<div class="on-p" style="color:${cl(e.moves[t][0])}">${sg(e.moves[t][0])}</div><div class="on-p" style="color:${cl(e.moves[t][1])}">${sg(e.moves[t][1])}</div></div>`;
+      });
+    }
+    const lst = (arr, ttl, c) => `<div class="on-sec" style="color:${c}">${ttl}</div>` + arr.map(x => `<div class="on-row"><div class="on-name">${x.name}<small>${x.ticker.replace('.T', '')}</small></div><div></div><div class="on-p" style="color:${cl(x.since)}">${sg(x.since)}</div></div>`).join('');
+    h += lst(e.topUp, '分析対象で上げが大きい銘柄', 'var(--green)') + lst(e.topDown, '分析対象で下げが大きい銘柄', 'var(--red)');
+    h += `<div style="font-size:10.5px;color:var(--muted)">日本は決算発表の時期と重なっており、個別銘柄の動きには決算の影響も含まれます。</div>`;
+    if (e.forecastTrack && e.forecastTrack.length) {
+      h += `<div class="on-sec">投票日以降の翌日予報の成績</div>` + e.forecastTrack.map(t =>
+        `<div style="font-size:11.5px">${md(t.d)}：終値 <b>${t.cc}%</b>${t.agree != null ? `（同じ向き ${t.agree}%）` : ''}・寄付き <b>${t.gap}%</b>・市場全体の予報 ${t.mkt}% → 実際は${t.mktUp ? '上昇' : '下落'}${(t.mkt >= 50) === t.mktUp ? '（的中）' : '（外れ）'}</div>`).join('');
+    }
+    if (e.history) {
+      h += `<div class="on-sec">${e.history.title}</div>` + e.history.rows.map(x => `<div style="font-size:11.5px">${x.label}：平均 <b style="color:${cl(x.avg)}">${sg(x.avg, '%', 1)}</b>（上昇${x.up}/${x.n}回）</div>`).join('')
+        + `<div style="font-size:10.5px;color:var(--muted)">${e.history.note}</div>`;
+    }
+  }
+  h += `<div class="on-val">すべてYahoo Financeの実測値から自動計算（毎回の更新で最新化）。将来の値動きを保証するものではなく、売買の推奨でもありません。</div>`;
+  el.style.display = 'block';
+  el.innerHTML = h;
+}
+
 function renderOutlook() {
   const el = document.getElementById('outlook-card');
   if (!el) return;
@@ -2967,6 +3031,7 @@ function renderHoldings() {
 document.addEventListener('DOMContentLoaded', () => {
   renderVerdict();
   renderOvernight();
+  renderMarketReport();
   renderRegime();
   renderOutlook();
   renderAccuracy();

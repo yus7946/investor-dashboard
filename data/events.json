@@ -1,0 +1,24 @@
+[
+  {
+    "id": "us-midterm-2026",
+    "name": "米中間選挙",
+    "date": "2026-11-03",
+    "showUntil": "2026-12-31",
+    "summary": "開票速報では民主党が上院・下院とも過半数を獲得（一部の選挙区は未確定）。結果判明直後の米株価先物は上昇したと報じられた。",
+    "sources": [
+      {"title": "CBS News: 2026 Senate midterm election results", "url": "https://www.cbsnews.com/live-updates/senate-election-results-2026/"},
+      {"title": "CNBC: 2026 midterm election results: House, Senate", "url": "https://www.cnbc.com/2026/11/04/2026-midterm-election-results-live-updates.html"}
+    ],
+    "history": {
+      "title": "過去の中間選挙（2006・2010・2014・2018・2022年の5回）",
+      "note": "Yahoo Financeの日足から計算。米国は投票日の終値、日経平均は投票日翌営業日の前日終値を基準。5回だけなので偶然の幅が大きい参考値。",
+      "rows": [
+        {"label": "米S&P500 20営業日後", "avg": 1.4, "up": 3, "n": 5},
+        {"label": "米S&P500 60営業日後", "avg": 4.3, "up": 3, "n": 5},
+        {"label": "日経平均 反応日", "avg": 0.1, "up": 2, "n": 5},
+        {"label": "日経平均 20営業日後", "avg": 2.9, "up": 2, "n": 5},
+        {"label": "日経平均 60営業日後", "avg": 3.6, "up": 3, "n": 5}
+      ]
+    }
+  }
+]

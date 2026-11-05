@@ -25,6 +25,11 @@ try:
 except ImportError:
     yf = None
 
+try:
+    import jpholiday
+except ImportError:
+    jpholiday = None
+
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 JST = timezone(timedelta(hours=9))
@@ -62,15 +67,23 @@ EXTRA_SEC = [f"pred_{k}" for k in US_SECTORS]
 EXTRA_ADR = ["adr_imp", "adr_has"]
 FEATURES = OVERNIGHT + STOCK + EXTRA_SEC + EXTRA_ADR  # 2026-10-13 PDCA#1で採用（research/results.jsonl）
 BANDS = [0, .2, .3, .4, .45, .55, .6, .7, .8, 1.0001]
+CLEAN = True  # 異常値の除去（研究用に切り替え可能）
 HIGH_CONF = 0.7  # p>=0.7 または p<=0.3 を「高確信」とする
 
 
+def _is_closed(d) -> bool:
+    """東証の休場日（土日・祝日・年末年始 12/31〜1/3）。"""
+    if d.weekday() >= 5 or (d.month, d.day) in ((12, 31), (1, 1), (1, 2), (1, 3)):
+        return True
+    return bool(jpholiday and jpholiday.is_holiday(d))
+
+
 def _target_date(now: datetime) -> pd.Timestamp:
-    """予報の対象日。16:00（大引け15:30＋Yahooの配信遅延）前ならその日、以降・週末なら次の平日。"""
+    """予報の対象日。16:00（大引け15:30＋Yahooの配信遅延）前ならその日、以降・休場日なら次の取引日。"""
     d = now.date()
-    if d.weekday() >= 5 or (now.hour, now.minute) >= (16, 0):
+    if _is_closed(d) or (now.hour, now.minute) >= (16, 0):
         d += timedelta(days=1)
-        while d.weekday() >= 5:
+        while _is_closed(d):
             d += timedelta(days=1)
     return pd.Timestamp(d)
 
@@ -82,6 +95,15 @@ def _last_before(close: pd.DataFrame, sym: str, idx: pd.DatetimeIndex) -> pd.Ser
     return cal.reindex(idx)
 
 
+def _clean_spikes(df: pd.DataFrame) -> pd.DataFrame:
+    """前後の日の中央値と比べて半分以下/2倍以上の値が1〜2日だけ現れる異常値を欠損にする。
+    東証は値幅制限で1日に2倍・半分にはならないため、本当の値動きは消えない。
+    （Yahooの1306.Tは2026-03-30/31だけ約1/10の値で、βが約120日間ほぼ0に壊れていた）"""
+    med = df.rolling(5, center=True, min_periods=3).median()
+    ratio = df / med
+    return df.mask((ratio < 0.5) | (ratio > 2.0))
+
+
 def _roll_beta(y: pd.Series, x: pd.Series, n: int = 250) -> pd.Series:
     return y.rolling(n, min_periods=60).cov(x) / x.rolling(n, min_periods=60).var()
 
@@ -89,12 +111,14 @@ def _roll_beta(y: pd.Series, x: pd.Series, n: int = 250) -> pd.Series:
 def build_panel(px: pd.DataFrame, tickers: list[str], target: pd.Timestamp):
     """銘柄×日付の特徴量パネル。行tの海外系特徴は「t翌営業日の寄付き前に既知の値」。"""
     px = px[px.index < target]  # 対象日当日の値動き（寄付き後の実行時など）を絶対に使わない
-    C, O, H, L, V = (px[k] for k in ("Close", "Open", "High", "Low", "Volume"))
+    C, O, H, L = (_clean_spikes(px[k]) if CLEAN else px[k] for k in ("Close", "Open", "High", "Low"))
+    V = px["Volume"]
     jp = C[MKT].dropna().index
     jp = jp[jp < target]
     idx = jp.append(pd.DatetimeIndex([target]))
 
     lv = {k: _last_before(C, k, idx) for k in (SPX, SOX, FX, NKD)}
+    vix_lvl = _last_before(C, US_EXTRA["vix"], idx) if US_EXTRA["vix"] in C.columns else pd.Series(np.nan, index=idx)
     spx, sox, fx = (lv[k] / lv[k].shift(1) - 1 for k in (SPX, SOX, FX))
     # ^N225 の最新終値が欠けている日は、日経225ETFの騰落率で前回値から補完する。
     # （2026-10-14〜16に前日終値が未反映のまま1日古い値で埋まり、先物ギャップを最大5%読み違えた）
@@ -165,6 +189,7 @@ def build_panel(px: pd.DataFrame, tickers: list[str], target: pd.Timestamp):
         adr = implied_gap(ADR[s], c) if s in ADR else pd.Series(np.nan, index=idx)
         f["adr_imp"] = adr.shift(-1)
         f["adr_has"] = float(s in ADR)
+        f["vixlvl"] = vix_lvl.shift(-1)  # 分析用（学習には使わない）
         f["y_cc"] = r.shift(-1)
         f["y_gap"] = gap.shift(-1)
         f["close"] = c
@@ -249,6 +274,7 @@ def _validate(panel: pd.DataFrame, quarters: int = 8, feats: list[str] | None = 
     out["y_cc"]["agreeShare"] = round(float(agree.mean()) * 100, 1)
     out["y_cc"]["agreeAccuracy"] = round(float(((m.p > .5) == m.label)[agree].mean()) * 100, 1)
     out["y_cc"]["splitAccuracy"] = round(float(((m.p > .5) == m.label)[~agree].mean()) * 100, 1)
+    out["regimes"] = _regime_table(m, kept["y_gap"], panel)
     hit = (mkt_rows.p > .5) == (mkt_rows.ret > 0)
     strong = (mkt_rows.p >= .6) | (mkt_rows.p <= .4)
     out["market"] = {
@@ -257,6 +283,34 @@ def _validate(panel: pd.DataFrame, quarters: int = 8, feats: list[str] | None = 
         "strongN": int(strong.sum()),
         "strongAccuracy": round(float(hit[strong].mean()) * 100, 1) if strong.sum() else None,
     }
+    return out
+
+
+REGIMES = {
+    "nkd": ("夜間の日経先物の動き（絶対値）", [0, .005, .01, .02, 1], ["0.5%未満", "0.5〜1%", "1〜2%", "2%以上"]),
+    "vixlvl": ("VIX（米国の恐怖指数）", [0, 15, 20, 25, 999], ["15未満", "15〜20", "20〜25", "25以上"]),
+}
+
+
+def _regime_table(cc: pd.DataFrame, gap: pd.DataFrame, panel: pd.DataFrame) -> dict:
+    """荒れ相場ほど当たるのか外れるのか。夜間の先物の動きの大きさ・VIX水準ごとの検証的中率。"""
+    ctx = panel[["date", "tk", "nkd", "vixlvl"]]
+    c = cc.merge(ctx, on=["date", "tk"]).assign(hit=lambda d: (d.p > .5) == d.label, agree=lambda d: (d.p > .5) == (d.p_g > .5))
+    g = gap.merge(ctx, on=["date", "tk"]).assign(hit=lambda d: (d.p > .5) == d.label)
+    out = {}
+    for col, (title, bins, labels) in REGIMES.items():
+        val = (lambda d: d[col].abs()) if col == "nkd" else (lambda d: d[col])
+        cb, gb = pd.cut(val(c), bins, labels=labels), pd.cut(val(g), bins, labels=labels)
+        rows = []
+        for lab, lo, hi in zip(labels, bins[:-1], bins[1:]):
+            cm, gm = cb == lab, gb == lab
+            if cm.sum() < 300:
+                continue
+            rows.append({"label": lab, "lo": lo, "hi": hi, "days": int(c[cm].date.nunique()),
+                         "cc": round(float(c[cm].hit.mean()) * 100, 1),
+                         "ccAgree": round(float(c[cm & c.agree].hit.mean()) * 100, 1),
+                         "gap": round(float(g[gm].hit.mean()) * 100, 1)})
+        out[col] = {"title": title, "rows": rows}
     return out
 
 
