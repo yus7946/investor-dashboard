@@ -13649,6 +13649,51 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-11-04",
+      "ticker": "7261.T",
+      "name": "マツダ",
+      "basePrice": 1189.5,
+      "rangeLow": 1163,
+      "rangeHigh": 1216,
+      "predUpRate": 43.3,
+      "condN": 30,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-11-04",
+      "ticker": "5108.T",
+      "name": "ブリヂストン",
+      "basePrice": 4256.0,
+      "rangeLow": 4202,
+      "rangeHigh": 4310,
+      "predUpRate": 55.5,
+      "condN": 209,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-11-04",
+      "ticker": "9202.T",
+      "name": "ANAホールディングス",
+      "basePrice": 3315.0,
+      "rangeLow": 3275,
+      "rangeHigh": 3355,
+      "predUpRate": 51.2,
+      "condN": 41,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
