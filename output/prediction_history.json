@@ -13859,6 +13859,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-11-05",
+      "ticker": "8303.T",
+      "name": "新生銀行",
+      "basePrice": 1636.0,
+      "rangeLow": 1535,
+      "rangeHigh": 1737,
+      "predUpRate": null,
+      "condN": 9,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -19716,6 +19731,30 @@
       "entry": 6448,
       "target": 6694,
       "stop": 6263,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-05",
+      "ticker": "9022.T",
+      "name": "JR東海",
+      "basePrice": 4172.0,
+      "entry": 4142,
+      "target": 4262,
+      "stop": 4052,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-05",
+      "ticker": "4661.T",
+      "name": "オリエンタルランド",
+      "basePrice": 3529.0,
+      "entry": 3499,
+      "target": 3620,
+      "stop": 3408,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
