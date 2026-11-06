@@ -1,6 +1,6 @@
 {
-  "updated": "2026年11月06日 22:07",
-  "updatedAtMs": 1793970434865,
+  "updated": "2026年11月06日 23:12",
+  "updatedAtMs": 1793974322588,
   "updateMode": "light",
   "fetched": 163,
   "universeTotal": 166,
@@ -2880,12 +2880,12 @@
     "basis": "夜間に確定した米S&P500・米半導体指数(SOX)・ドル円・CME日経先物の動きと、銘柄ごとの過去の感応度を機械学習（勾配ブースティング）で組み合わせた確率。的中率はすべて、その時点より前のデータだけで学習した予測の答え合わせ（先読みなし）。寄付き後の値動きや数日先は予測力が確認できないため対象外。"
   },
   "marketReport": {
-    "generatedAt": "2026-11-06 22:07",
+    "generatedAt": "2026-11-06 23:11",
     "regime": {
       "n225Vol": 31.2,
       "n225VolTopPct": 11,
-      "vix": 27.4,
-      "vixTopPct": 9,
+      "vix": 26.5,
+      "vixTopPct": 11,
       "vixDate": "2026-11-06",
       "n225FromHigh": -18.7,
       "n225Daily10": [
@@ -3078,10 +3078,10 @@
           "label": "VIX（恐怖指数）",
           "group": "level",
           "base": 20.83,
-          "last": 27.36,
+          "last": 26.5,
           "react": -4.22,
-          "since": 6.53,
-          "day": -0.82,
+          "since": 5.67,
+          "day": -1.68,
           "unit": "pt",
           "lastDate": "2026-11-06"
         },
@@ -3090,12 +3090,12 @@
           "label": "米10年金利",
           "group": "level",
           "base": 4.95,
-          "last": 4.84,
+          "last": 4.87,
           "react": -0.06,
-          "since": -0.12,
-          "day": -0.06,
+          "since": -0.08,
+          "day": 0.03,
           "unit": "pt",
-          "lastDate": "2026-11-05"
+          "lastDate": "2026-11-06"
         },
         {
           "symbol": "JPY=X",
@@ -3883,7 +3883,7 @@
           "ccAgree": 70.8,
           "gap": 79.9,
           "title": "VIX（米国の恐怖指数）",
-          "value": 27.4
+          "value": 26.5
         }
       },
       "table": {
