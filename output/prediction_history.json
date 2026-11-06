@@ -13844,6 +13844,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-11-05",
+      "ticker": "7832.T",
+      "name": "バンダイナムコHD",
+      "basePrice": 6510.0,
+      "rangeLow": 6387,
+      "rangeHigh": 6633,
+      "predUpRate": 46.5,
+      "condN": 159,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -19653,6 +19668,54 @@
       "entry": 1143,
       "target": 1194,
       "stop": 1105,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-05",
+      "ticker": "2502.T",
+      "name": "アサヒグループHD",
+      "basePrice": 1744.5,
+      "entry": 1734,
+      "target": 1776,
+      "stop": 1703,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-05",
+      "ticker": "9020.T",
+      "name": "JR東日本",
+      "basePrice": 3878.0,
+      "entry": 3852,
+      "target": 3956,
+      "stop": 3774,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-05",
+      "ticker": "7267.T",
+      "name": "ホンダ",
+      "basePrice": 1863.5,
+      "entry": 1847,
+      "target": 1915,
+      "stop": 1796,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-05",
+      "ticker": "7832.T",
+      "name": "バンダイナムコHD",
+      "basePrice": 6510.0,
+      "entry": 6448,
+      "target": 6694,
+      "stop": 6263,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
