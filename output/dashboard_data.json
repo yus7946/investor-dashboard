@@ -1,6 +1,6 @@
 {
-  "updated": "2026年11月06日 20:17",
-  "updatedAtMs": 1793963839630,
+  "updated": "2026年11月06日 21:20",
+  "updatedAtMs": 1793967653705,
   "updateMode": "light",
   "fetched": 163,
   "universeTotal": 166,
@@ -40,20 +40,20 @@
         "epsGrowthPct": 332.0
       },
       {
+        "ticker": "5401.T",
+        "name": "日本製鉄",
+        "date": "2026-11-05",
+        "daysTo": -1,
+        "revGrowthPct": 15.1,
+        "epsGrowthPct": 97.2
+      },
+      {
         "ticker": "8113.T",
         "name": "ユニ・チャーム",
         "date": "2026-11-06",
         "daysTo": 0,
         "revGrowthPct": 6.9,
         "epsGrowthPct": 27.9
-      },
-      {
-        "ticker": "5401.T",
-        "name": "日本製鉄",
-        "date": "2026-11-05",
-        "daysTo": -1,
-        "revGrowthPct": 40.4,
-        "epsGrowthPct": null
       },
       {
         "ticker": "8801.T",
@@ -116,24 +116,24 @@
         "name": "ダイキン工業",
         "date": "2026-11-05",
         "daysTo": -1,
-        "revGrowthPct": null,
-        "epsGrowthPct": null
+        "revGrowthPct": 17.3,
+        "epsGrowthPct": 22.6
       },
       {
         "ticker": "7974.T",
         "name": "任天堂",
         "date": "2026-11-05",
         "daysTo": -1,
-        "revGrowthPct": -9.5,
-        "epsGrowthPct": 55.0
+        "revGrowthPct": -15.0,
+        "epsGrowthPct": -27.9
       },
       {
         "ticker": "9101.T",
         "name": "日本郵船",
         "date": "2026-11-05",
         "daysTo": -1,
-        "revGrowthPct": 21.1,
-        "epsGrowthPct": 37.4
+        "revGrowthPct": 33.8,
+        "epsGrowthPct": 185.3
       },
       {
         "ticker": "9433.T",
@@ -156,8 +156,8 @@
         "name": "ローム",
         "date": "2026-11-05",
         "daysTo": -1,
-        "revGrowthPct": 16.8,
-        "epsGrowthPct": 203.8
+        "revGrowthPct": 12.3,
+        "epsGrowthPct": -10.7
       },
       {
         "ticker": "7011.T",
@@ -639,8 +639,8 @@
   "marketOutlook": {
     "spxChangePct": -4.36,
     "spxDate": "2026-11-05",
-    "usdjpy": 158.23,
-    "usdjpyChangePct": -0.08,
+    "usdjpy": 158.29,
+    "usdjpyChangePct": -0.04,
     "condition": "米S&P500が直近下落",
     "topixUpRate": 43.7,
     "n": 213,
@@ -2880,12 +2880,12 @@
     "basis": "夜間に確定した米S&P500・米半導体指数(SOX)・ドル円・CME日経先物の動きと、銘柄ごとの過去の感応度を機械学習（勾配ブースティング）で組み合わせた確率。的中率はすべて、その時点より前のデータだけで学習した予測の答え合わせ（先読みなし）。寄付き後の値動きや数日先は予測力が確認できないため対象外。"
   },
   "marketReport": {
-    "generatedAt": "2026-11-06 20:17",
+    "generatedAt": "2026-11-06 21:20",
     "regime": {
       "n225Vol": 31.2,
       "n225VolTopPct": 11,
-      "vix": 26.8,
-      "vixTopPct": 10,
+      "vix": 26.7,
+      "vixTopPct": 11,
       "vixDate": "2026-11-06",
       "n225FromHigh": -18.7,
       "n225Daily10": [
@@ -3078,10 +3078,10 @@
           "label": "VIX（恐怖指数）",
           "group": "level",
           "base": 20.83,
-          "last": 26.79,
+          "last": 26.73,
           "react": -4.22,
-          "since": 5.96,
-          "day": -1.39,
+          "since": 5.9,
+          "day": -1.45,
           "unit": "pt",
           "lastDate": "2026-11-06"
         },
@@ -3102,10 +3102,10 @@
           "label": "ドル円",
           "group": "fx",
           "base": 157.91,
-          "last": 158.23,
+          "last": 158.3,
           "react": 0.35,
-          "since": 0.2,
-          "day": -0.08,
+          "since": 0.24,
+          "day": -0.04,
           "unit": "%",
           "lastDate": "2026-11-06"
         },
@@ -3883,7 +3883,7 @@
           "ccAgree": 70.8,
           "gap": 79.9,
           "title": "VIX（米国の恐怖指数）",
-          "value": 26.8
+          "value": 26.7
         }
       },
       "table": {
@@ -5460,8 +5460,8 @@
       "exDivDate": "2027-03-30",
       "dividendYield": 1.72,
       "per": 21.8,
-      "pbr": 1.96,
-      "roe": 9.6,
+      "pbr": 2.04,
+      "roe": 9.8,
       "rsi": 59.8,
       "vol": 0.2575,
       "inTop": false,
@@ -6015,8 +6015,8 @@
       "exDivDate": "2027-03-30",
       "dividendYield": 1.84,
       "per": 16.0,
-      "pbr": 2.38,
-      "roe": 14.1,
+      "pbr": 2.61,
+      "roe": 14.7,
       "rsi": 46.4,
       "vol": 0.2642,
       "inTop": false,
@@ -6240,8 +6240,8 @@
       "exDivDate": "2027-03-30",
       "dividendYield": 4.69,
       "per": 8.8,
-      "pbr": 0.88,
-      "roe": 7.7,
+      "pbr": 0.84,
+      "roe": 10.2,
       "rsi": 37.0,
       "vol": 0.3127,
       "inTop": false,
@@ -6268,10 +6268,10 @@
       "price": 2998.5,
       "divPerShare": 120.0,
       "exDivDate": "2027-03-30",
-      "dividendYield": 3.49,
+      "dividendYield": 3.77,
       "per": 9.8,
-      "pbr": 1.05,
-      "roe": 7.6,
+      "pbr": 1.03,
+      "roe": 11.0,
       "rsi": 32.5,
       "vol": 0.3589,
       "inTop": false,
@@ -6330,8 +6330,8 @@
       "exDivDate": "2027-03-30",
       "dividendYield": 2.85,
       "per": 20.0,
-      "pbr": 3.19,
-      "roe": null,
+      "pbr": 3.16,
+      "roe": 15.4,
       "rsi": 44.1,
       "vol": 0.4186,
       "inTop": false,
@@ -6555,8 +6555,8 @@
       "exDivDate": "2027-03-30",
       "dividendYield": 3.6,
       "per": 12.3,
-      "pbr": 0.62,
-      "roe": 5.5,
+      "pbr": 0.59,
+      "roe": 7.1,
       "rsi": 58.3,
       "vol": 0.2511,
       "inTop": false,
@@ -7515,7 +7515,7 @@
       "exDivDate": "2027-03-30",
       "dividendYield": 3.0,
       "per": 17.9,
-      "pbr": 1.62,
+      "pbr": 1.58,
       "roe": 9.2,
       "rsi": 33.2,
       "vol": 0.5844,
@@ -7680,8 +7680,8 @@
       "exDivDate": "2027-03-30",
       "dividendYield": 1.54,
       "per": null,
-      "pbr": 1.41,
-      "roe": null,
+      "pbr": 1.4,
+      "roe": -18.4,
       "rsi": 14.4,
       "vol": 0.7461,
       "inTop": false,
