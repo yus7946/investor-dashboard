@@ -14024,6 +14024,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-11-06",
+      "ticker": "5411.T",
+      "name": "JFEホールディングス",
+      "basePrice": 1819.0,
+      "rangeLow": 1794,
+      "rangeHigh": 1844,
+      "predUpRate": 47.5,
+      "condN": 179,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-11-06",
+      "ticker": "7261.T",
+      "name": "マツダ",
+      "basePrice": 1159.0,
+      "rangeLow": 1133,
+      "rangeHigh": 1185,
+      "predUpRate": 46.5,
+      "condN": 228,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -19986,6 +20016,30 @@
       "entry": 6331,
       "target": 6573,
       "stop": 6149,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-06",
+      "ticker": "5411.T",
+      "name": "JFEホールディングス",
+      "basePrice": 1819.0,
+      "entry": 1806,
+      "target": 1857,
+      "stop": 1768,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-06",
+      "ticker": "7261.T",
+      "name": "マツダ",
+      "basePrice": 1159.0,
+      "entry": 1146,
+      "target": 1198,
+      "stop": 1107,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
