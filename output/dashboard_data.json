@@ -1,6 +1,6 @@
 {
-  "updated": "2026年11月11日 18:38",
-  "updatedAtMs": 1794389926419,
+  "updated": "2026年11月11日 20:19",
+  "updatedAtMs": 1794395985731,
   "updateMode": "light",
   "fetched": 163,
   "universeTotal": 166,
@@ -36,16 +36,16 @@
         "name": "SUBARU",
         "date": "2026-11-10",
         "daysTo": -1,
-        "revGrowthPct": 3.0,
-        "epsGrowthPct": -8.0
+        "revGrowthPct": 7.8,
+        "epsGrowthPct": 55.0
       },
       {
         "ticker": "7832.T",
         "name": "バンダイナムコHD",
         "date": "2026-11-10",
         "daysTo": -1,
-        "revGrowthPct": 9.3,
-        "epsGrowthPct": 34.6
+        "revGrowthPct": 16.5,
+        "epsGrowthPct": 20.3
       },
       {
         "ticker": "6098.T",
@@ -60,8 +60,8 @@
         "name": "資生堂",
         "date": "2026-11-10",
         "daysTo": -1,
-        "revGrowthPct": 10.5,
-        "epsGrowthPct": 264.8
+        "revGrowthPct": 8.1,
+        "epsGrowthPct": null
       },
       {
         "ticker": "7201.T",
@@ -84,8 +84,8 @@
         "name": "エーザイ",
         "date": "2026-11-10",
         "daysTo": -1,
-        "revGrowthPct": 15.6,
-        "epsGrowthPct": 26.0
+        "revGrowthPct": 19.4,
+        "epsGrowthPct": 15.1
       },
       {
         "ticker": "2181.T",
@@ -108,8 +108,8 @@
         "name": "ホンダ",
         "date": "2026-11-10",
         "daysTo": -1,
-        "revGrowthPct": 13.5,
-        "epsGrowthPct": 147.5
+        "revGrowthPct": 12.9,
+        "epsGrowthPct": -41.7
       },
       {
         "ticker": "9735.T",
@@ -124,8 +124,8 @@
         "name": "ディー・エヌ・エー",
         "date": "2026-11-10",
         "daysTo": -1,
-        "revGrowthPct": -10.9,
-        "epsGrowthPct": 231.6
+        "revGrowthPct": -5.6,
+        "epsGrowthPct": -63.4
       },
       {
         "ticker": "8252.T",
@@ -228,8 +228,8 @@
         "name": "川崎重工業",
         "date": "2026-11-10",
         "daysTo": -1,
-        "revGrowthPct": 11.3,
-        "epsGrowthPct": 269.0
+        "revGrowthPct": 6.5,
+        "epsGrowthPct": -18.3
       }
     ],
     "soon": [
@@ -423,8 +423,8 @@
   "marketOutlook": {
     "spxChangePct": -0.38,
     "spxDate": "2026-11-10",
-    "usdjpy": 158.9,
-    "usdjpyChangePct": 0.58,
+    "usdjpy": 159.12,
+    "usdjpyChangePct": 0.72,
     "condition": "米S&P500が直近下落",
     "topixUpRate": 43.9,
     "n": 214,
@@ -2652,12 +2652,12 @@
     "basis": "夜間に確定した米S&P500・米半導体指数(SOX)・ドル円・CME日経先物の動きと、銘柄ごとの過去の感応度を機械学習（勾配ブースティング）で組み合わせた確率。的中率はすべて、その時点より前のデータだけで学習した予測の答え合わせ（先読みなし）。寄付き後の値動きや数日先は予測力が確認できないため対象外。"
   },
   "marketReport": {
-    "generatedAt": "2026-11-11 18:38",
+    "generatedAt": "2026-11-11 20:19",
     "regime": {
       "n225Vol": 35.9,
       "n225VolTopPct": 7,
-      "vix": 18.8,
-      "vixTopPct": 42,
+      "vix": 18.7,
+      "vixTopPct": 43,
       "vixDate": "2026-11-11",
       "n225FromHigh": -13.3,
       "n225Daily10": [
@@ -2850,10 +2850,10 @@
           "label": "VIX（恐怖指数）",
           "group": "level",
           "base": 20.83,
-          "last": 18.8,
+          "last": 18.69,
           "react": -4.22,
-          "since": -2.03,
-          "day": -0.66,
+          "since": -2.14,
+          "day": -0.77,
           "unit": "pt",
           "lastDate": "2026-11-11"
         },
@@ -2874,10 +2874,10 @@
           "label": "ドル円",
           "group": "fx",
           "base": 157.91,
-          "last": 158.9,
+          "last": 159.12,
           "react": 0.35,
-          "since": 0.62,
-          "day": 0.58,
+          "since": 0.76,
+          "day": 0.72,
           "unit": "%",
           "lastDate": "2026-11-11"
         },
@@ -3679,7 +3679,7 @@
           "ccAgree": 58.8,
           "gap": 63.4,
           "title": "VIX（米国の恐怖指数）",
-          "value": 18.8
+          "value": 18.7
         }
       },
       "table": {
@@ -4442,8 +4442,8 @@
           "basis": "1日の実績振れ幅σ=1.4%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値1,894円 / 安値1,676円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
         },
         "cond": {
-          "upRate": 48.1,
-          "n": 181,
+          "upRate": 48.3,
+          "n": 180,
           "condition": "RSI中立圏×5日上昇局面",
           "note": null
         },
@@ -4492,7 +4492,7 @@
         "isSoon": false,
         "passed": false,
         "revGrowthPct": 10.9,
-        "epsGrowthPct": 15.6,
+        "epsGrowthPct": 16.2,
         "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
       },
       "yutai": null,
@@ -4766,13 +4766,13 @@
       "rank": 9,
       "ticker": "7270.T",
       "name": "SUBARU",
-      "score": 0.548,
+      "score": 0.55,
       "f": 6,
       "per": 18.7,
-      "pbr": 0.7,
-      "roe": 3.1,
-      "value": 0.282,
-      "quality": 0.452,
+      "pbr": 0.69,
+      "roe": 3.7,
+      "value": 0.289,
+      "quality": 0.456,
       "momentum": 0.433,
       "smart": 0.829,
       "smartMoney": {
@@ -4874,8 +4874,8 @@
         "isToday": false,
         "isSoon": true,
         "passed": true,
-        "revGrowthPct": 3.0,
-        "epsGrowthPct": -8.0,
+        "revGrowthPct": 7.8,
+        "epsGrowthPct": 55.0,
         "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
       },
       "yutai": null,
@@ -5200,10 +5200,10 @@
       "price": 1769.0,
       "divPerShare": 70.0,
       "exDivDate": "2027-03-30",
-      "dividendYield": 3.72,
+      "dividendYield": 3.78,
       "per": null,
-      "pbr": 0.58,
-      "roe": -0.8,
+      "pbr": 0.56,
+      "roe": -1.2,
       "rsi": 46.5,
       "vol": 0.363,
       "inTop": false,
@@ -5368,7 +5368,7 @@
       "dividendYield": 1.55,
       "per": 33.4,
       "pbr": 2.5,
-      "roe": -3.1,
+      "roe": 7.9,
       "rsi": 65.0,
       "vol": 0.4514,
       "inTop": false,
@@ -5681,7 +5681,7 @@
       "divPerShare": 132.0,
       "exDivDate": "2026-12-29",
       "dividendYield": 1.84,
-      "per": 23.3,
+      "per": 23.4,
       "pbr": 5.63,
       "roe": 25.3,
       "rsi": 65.5,
@@ -5728,7 +5728,7 @@
       "dividendYield": 3.19,
       "per": 36.7,
       "pbr": 1.58,
-      "roe": 5.0,
+      "roe": 5.1,
       "rsi": 49.1,
       "vol": 0.3363,
       "inTop": false,
@@ -5756,7 +5756,7 @@
       "divPerShare": 210.0,
       "exDivDate": "2027-03-30",
       "dividendYield": 3.05,
-      "per": 17.9,
+      "per": 19.2,
       "pbr": 3.59,
       "roe": 21.2,
       "rsi": 23.7,
@@ -5771,9 +5771,9 @@
       "divPerShare": 48.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 0.72,
-      "per": 27.2,
+      "per": 28.7,
       "pbr": 4.94,
-      "roe": 18.3,
+      "roe": 18.2,
       "rsi": 57.9,
       "vol": 0.4115,
       "inTop": false,
@@ -6327,8 +6327,8 @@
       "exDivDate": "2027-03-30",
       "dividendYield": 4.13,
       "per": 18.7,
-      "pbr": 0.7,
-      "roe": 3.1,
+      "pbr": 0.69,
+      "roe": 3.7,
       "rsi": 56.2,
       "vol": 0.3493,
       "inTop": true,
@@ -6776,9 +6776,9 @@
       "divPerShare": 39.2,
       "exDivDate": "2027-03-30",
       "dividendYield": 2.0,
-      "per": 14.2,
+      "per": 13.8,
       "pbr": 1.86,
-      "roe": 14.4,
+      "roe": 13.0,
       "rsi": 21.2,
       "vol": 0.4744,
       "inTop": false,
@@ -6927,7 +6927,7 @@
       "exDivDate": "2027-03-30",
       "dividendYield": 2.31,
       "per": 8.4,
-      "pbr": 1.25,
+      "pbr": 1.2,
       "roe": 14.5,
       "rsi": 62.1,
       "vol": 0.3705,
@@ -7362,8 +7362,8 @@
       "exDivDate": "2026-03-30",
       "dividendYield": 2.48,
       "per": 7.3,
-      "pbr": 1.17,
-      "roe": 16.2,
+      "pbr": 1.05,
+      "roe": 12.8,
       "rsi": 49.1,
       "vol": 0.2925,
       "inTop": false,
@@ -7407,7 +7407,7 @@
       "exDivDate": "2027-03-30",
       "dividendYield": 1.62,
       "per": 38.9,
-      "pbr": 0.64,
+      "pbr": 0.63,
       "roe": 2.0,
       "rsi": 53.3,
       "vol": 0.2571,
