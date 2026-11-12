@@ -14714,6 +14714,36 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-11-11",
+      "ticker": "6178.T",
+      "name": "日本郵政",
+      "basePrice": 2413.5,
+      "rangeLow": 2374,
+      "rangeHigh": 2453,
+      "predUpRate": 65.3,
+      "condN": 167,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
+    },
+    {
+      "baseDate": "2026-11-11",
+      "ticker": "9531.T",
+      "name": "東京ガス",
+      "basePrice": 6660.0,
+      "rangeLow": 6552,
+      "rangeHigh": 6768,
+      "predUpRate": 53.7,
+      "condN": 177,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -21075,6 +21105,30 @@
       "entry": 1810,
       "target": 1862,
       "stop": 1771,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-11",
+      "ticker": "6178.T",
+      "name": "日本郵政",
+      "basePrice": 2413.5,
+      "entry": 2394,
+      "target": 2472,
+      "stop": 2335,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-11",
+      "ticker": "9531.T",
+      "name": "東京ガス",
+      "basePrice": 6660.0,
+      "entry": 6606,
+      "target": 6822,
+      "stop": 6444,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
