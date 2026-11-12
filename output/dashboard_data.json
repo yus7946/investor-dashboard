@@ -1,6 +1,6 @@
 {
-  "updated": "2026年11月12日 20:38",
-  "updatedAtMs": 1794483531519,
+  "updated": "2026年11月12日 22:03",
+  "updatedAtMs": 1794488595230,
   "updateMode": "light",
   "fetched": 163,
   "universeTotal": 166,
@@ -343,8 +343,8 @@
   "marketOutlook": {
     "spxChangePct": 1.31,
     "spxDate": "2026-11-11",
-    "usdjpy": 159.66,
-    "usdjpyChangePct": 0.6,
+    "usdjpy": 159.62,
+    "usdjpyChangePct": 0.58,
     "condition": "米S&P500が直近上昇",
     "topixUpRate": 64.7,
     "n": 272,
@@ -2584,7 +2584,7 @@
     "basis": "夜間に確定した米S&P500・米半導体指数(SOX)・ドル円・CME日経先物の動きと、銘柄ごとの過去の感応度を機械学習（勾配ブースティング）で組み合わせた確率。的中率はすべて、その時点より前のデータだけで学習した予測の答え合わせ（先読みなし）。寄付き後の値動きや数日先は予測力が確認できないため対象外。"
   },
   "marketReport": {
-    "generatedAt": "2026-11-12 20:38",
+    "generatedAt": "2026-11-12 22:03",
     "regime": {
       "n225Vol": 35.9,
       "n225VolTopPct": 7,
@@ -2782,10 +2782,10 @@
           "label": "VIX（恐怖指数）",
           "group": "level",
           "base": 20.83,
-          "last": 18.3,
+          "last": 18.32,
           "react": -4.22,
-          "since": -2.53,
-          "day": 0.81,
+          "since": -2.51,
+          "day": 0.83,
           "unit": "pt",
           "lastDate": "2026-11-12"
         },
@@ -2806,10 +2806,10 @@
           "label": "ドル円",
           "group": "fx",
           "base": 157.91,
-          "last": 159.66,
+          "last": 159.61,
           "react": 0.35,
-          "since": 1.11,
-          "day": 0.6,
+          "since": 1.07,
+          "day": 0.57,
           "unit": "%",
           "lastDate": "2026-11-12"
         },
