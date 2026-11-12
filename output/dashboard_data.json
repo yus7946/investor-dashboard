@@ -1,6 +1,6 @@
 {
-  "updated": "2026年11月12日 22:03",
-  "updatedAtMs": 1794488595230,
+  "updated": "2026年11月12日 22:55",
+  "updatedAtMs": 1794491752672,
   "updateMode": "light",
   "fetched": 163,
   "universeTotal": 166,
@@ -343,8 +343,8 @@
   "marketOutlook": {
     "spxChangePct": 1.31,
     "spxDate": "2026-11-11",
-    "usdjpy": 159.62,
-    "usdjpyChangePct": 0.58,
+    "usdjpy": 159.73,
+    "usdjpyChangePct": 0.65,
     "condition": "米S&P500が直近上昇",
     "topixUpRate": 64.7,
     "n": 272,
@@ -2584,12 +2584,12 @@
     "basis": "夜間に確定した米S&P500・米半導体指数(SOX)・ドル円・CME日経先物の動きと、銘柄ごとの過去の感応度を機械学習（勾配ブースティング）で組み合わせた確率。的中率はすべて、その時点より前のデータだけで学習した予測の答え合わせ（先読みなし）。寄付き後の値動きや数日先は予測力が確認できないため対象外。"
   },
   "marketReport": {
-    "generatedAt": "2026-11-12 22:03",
+    "generatedAt": "2026-11-12 22:55",
     "regime": {
       "n225Vol": 35.9,
       "n225VolTopPct": 7,
-      "vix": 18.3,
-      "vixTopPct": 46,
+      "vix": 18.9,
+      "vixTopPct": 41,
       "vixDate": "2026-11-12",
       "n225FromHigh": -14.0,
       "n225Daily10": [
@@ -2782,10 +2782,10 @@
           "label": "VIX（恐怖指数）",
           "group": "level",
           "base": 20.83,
-          "last": 18.32,
+          "last": 18.91,
           "react": -4.22,
-          "since": -2.51,
-          "day": 0.83,
+          "since": -1.92,
+          "day": 1.42,
           "unit": "pt",
           "lastDate": "2026-11-12"
         },
@@ -2794,22 +2794,22 @@
           "label": "米10年金利",
           "group": "level",
           "base": 4.95,
-          "last": 5.0,
+          "last": 5.05,
           "react": -0.06,
-          "since": 0.05,
-          "day": 0.02,
+          "since": 0.1,
+          "day": 0.05,
           "unit": "pt",
-          "lastDate": "2026-11-11"
+          "lastDate": "2026-11-12"
         },
         {
           "symbol": "JPY=X",
           "label": "ドル円",
           "group": "fx",
           "base": 157.91,
-          "last": 159.61,
+          "last": 159.74,
           "react": 0.35,
-          "since": 1.07,
-          "day": 0.57,
+          "since": 1.15,
+          "day": 0.65,
           "unit": "%",
           "lastDate": "2026-11-12"
         },
@@ -3619,7 +3619,7 @@
           "ccAgree": 58.5,
           "gap": 63.1,
           "title": "VIX（米国の恐怖指数）",
-          "value": 18.3
+          "value": 18.9
         }
       },
       "table": {
@@ -4402,8 +4402,8 @@
           "basis": "1日の実績振れ幅σ=1.4%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値1,894円 / 安値1,676円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
         },
         "cond": {
-          "upRate": 48.4,
-          "n": 182,
+          "upRate": 48.6,
+          "n": 181,
           "condition": "RSI中立圏×5日上昇局面",
           "note": null
         },
