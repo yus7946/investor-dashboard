@@ -1,6 +1,6 @@
 {
-  "updated": "2026年11月13日 20:21",
-  "updatedAtMs": 1794568900118,
+  "updated": "2026年11月13日 21:28",
+  "updatedAtMs": 1794572918389,
   "updateMode": "light",
   "fetched": 163,
   "universeTotal": 166,
@@ -239,8 +239,8 @@
   "marketOutlook": {
     "spxChangePct": -0.35,
     "spxDate": "2026-11-12",
-    "usdjpy": 159.91,
-    "usdjpyChangePct": 0.11,
+    "usdjpy": 160.02,
+    "usdjpyChangePct": 0.18,
     "condition": "米S&P500が直近下落",
     "topixUpRate": 44.4,
     "n": 214,
@@ -2480,12 +2480,12 @@
     "basis": "夜間に確定した米S&P500・米半導体指数(SOX)・ドル円・CME日経先物の動きと、銘柄ごとの過去の感応度を機械学習（勾配ブースティング）で組み合わせた確率。的中率はすべて、その時点より前のデータだけで学習した予測の答え合わせ（先読みなし）。寄付き後の値動きや数日先は予測力が確認できないため対象外。"
   },
   "marketReport": {
-    "generatedAt": "2026-11-13 20:21",
+    "generatedAt": "2026-11-13 21:28",
     "regime": {
       "n225Vol": 32.1,
       "n225VolTopPct": 11,
-      "vix": 18.4,
-      "vixTopPct": 46,
+      "vix": 18.2,
+      "vixTopPct": 47,
       "vixDate": "2026-11-13",
       "n225FromHigh": -13.5,
       "n225Daily10": [
@@ -2678,10 +2678,10 @@
           "label": "VIX（恐怖指数）",
           "group": "level",
           "base": 20.83,
-          "last": 18.36,
+          "last": 18.17,
           "react": -4.22,
-          "since": -2.47,
-          "day": -0.34,
+          "since": -2.66,
+          "day": -0.53,
           "unit": "pt",
           "lastDate": "2026-11-13"
         },
@@ -2702,10 +2702,10 @@
           "label": "ドル円",
           "group": "fx",
           "base": 157.91,
-          "last": 159.91,
+          "last": 160.02,
           "react": 0.35,
-          "since": 1.27,
-          "day": 0.11,
+          "since": 1.33,
+          "day": 0.18,
           "unit": "%",
           "lastDate": "2026-11-13"
         },
@@ -3523,7 +3523,7 @@
           "ccAgree": 58.6,
           "gap": 63.1,
           "title": "VIX（米国の恐怖指数）",
-          "value": 18.4
+          "value": 18.2
         }
       },
       "table": {
@@ -3761,10 +3761,10 @@
       "name": "JFEホールディングス",
       "score": 0.601,
       "f": 6,
-      "per": 12.5,
+      "per": 12.6,
       "pbr": 0.44,
       "roe": 3.9,
-      "value": 0.452,
+      "value": 0.451,
       "quality": 0.457,
       "momentum": 0.355,
       "smart": 0.907,
@@ -3879,134 +3879,6 @@
     },
     {
       "rank": 3,
-      "ticker": "9201.T",
-      "name": "日本航空",
-      "score": 0.594,
-      "f": 7,
-      "per": 15.1,
-      "pbr": 1.02,
-      "roe": 8.3,
-      "value": 0.2,
-      "quality": 0.488,
-      "momentum": 0.514,
-      "smart": 0.921,
-      "smartMoney": {
-        "score": 0.652,
-        "label": "買い集めの兆候",
-        "tone": "pos",
-        "cmf": 0.184,
-        "mfi": 79.1,
-        "obvSlope": 0.31,
-        "vwapDevPct": 10.5,
-        "factors": [
-          "安値圏でも買われている（CMFプラス）",
-          "上昇日に出来高が集中（OBV上向き）",
-          "直近平均コスト(VWAP)を上回って推移"
-        ]
-      },
-      "smartAdjusted": null,
-      "signal": "売り",
-      "rsi": 75.5,
-      "conf": "中",
-      "strategy": [
-        "dividend"
-      ],
-      "dividend_yield": 2.7,
-      "volatility": 0.2964,
-      "short_ratio": null,
-      "regime_adjusted": false,
-      "forecast": {
-        "price": 3544.0,
-        "rangeLow": 3492,
-        "rangeHigh": 3596,
-        "rangeLow2": 3441,
-        "rangeHigh2": 3647,
-        "volDPct": 1.45,
-        "calibrated": true,
-        "plan": {
-          "entry": 3518,
-          "target": 3621,
-          "stop": 3441,
-          "rr": 1.34,
-          "hi3m": 3544,
-          "lo3m": 2882,
-          "basis": "1日の実績振れ幅σ=1.5%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値3,544円 / 安値2,882円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
-        },
-        "cond": {
-          "upRate": 51.7,
-          "n": 60,
-          "condition": "RSI70以上（買われすぎ圏）×5日上昇局面",
-          "note": null
-        },
-        "factors": [
-          {
-            "label": "RSI 75.5（買われすぎ圏・反落しやすい傾向）",
-            "dir": "-"
-          }
-        ],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.90倍に自動補正済み。目標カバー率は約75%）"
-      },
-      "impact": {
-        "price": 3544.0,
-        "normalYen": 57,
-        "normalPct": 1.6,
-        "bigVol": {
-          "n": 3,
-          "avgAbsPct": 6.1,
-          "maxAbsPct": 8.0,
-          "avgYen": 216
-        },
-        "earnings": {
-          "n": 8,
-          "avgAbsPct": 1.4,
-          "maxAbsPct": 2.6,
-          "avgYen": 50,
-          "maxYen": 92,
-          "upCount": 4,
-          "recentPct": [
-            -1.8,
-            1.2,
-            -0.5
-          ]
-        },
-        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
-      },
-      "risk": {
-        "safety": 81,
-        "level": "低",
-        "penalties": [
-          "買われすぎ（RSI76）→ 反落で損切りに当たりやすい"
-        ],
-        "supports": [
-          "機関の買い集め兆候"
-        ],
-        "stopPct": 2.19,
-        "rr": 1.34
-      },
-      "earnings": {
-        "date": "2027-02-03",
-        "daysTo": 58,
-        "isToday": false,
-        "isSoon": false,
-        "passed": false,
-        "revGrowthPct": 13.1,
-        "epsGrowthPct": -15.6,
-        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
-      },
-      "yutai": null,
-      "news": [
-        {
-          "title": "日本航空（株）第１回社債型種類株式【92015】：株価・株式情報",
-          "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1wM1BIWUdEZEZHLV9wRmxFN3Q5akZVTzFSZXhhQTlrLWs5QnlBN1phSjBUY2hyVG9nSnA3NFdJTm9rU241aDR0SjFKVVNfR1BteEpV?oc=5",
-          "pubDate": "Thu, 12 Nov 2026 21:57:26 GMT",
-          "sentiment": "neu",
-          "theme": "その他"
-        }
-      ]
-    },
-    {
-      "rank": 4,
       "ticker": "5401.T",
       "name": "日本製鉄",
       "score": 0.594,
@@ -4139,6 +4011,134 @@
       ]
     },
     {
+      "rank": 4,
+      "ticker": "9201.T",
+      "name": "日本航空",
+      "score": 0.593,
+      "f": 7,
+      "per": 15.1,
+      "pbr": 1.02,
+      "roe": 8.3,
+      "value": 0.2,
+      "quality": 0.488,
+      "momentum": 0.514,
+      "smart": 0.921,
+      "smartMoney": {
+        "score": 0.652,
+        "label": "買い集めの兆候",
+        "tone": "pos",
+        "cmf": 0.184,
+        "mfi": 79.1,
+        "obvSlope": 0.31,
+        "vwapDevPct": 10.5,
+        "factors": [
+          "安値圏でも買われている（CMFプラス）",
+          "上昇日に出来高が集中（OBV上向き）",
+          "直近平均コスト(VWAP)を上回って推移"
+        ]
+      },
+      "smartAdjusted": null,
+      "signal": "売り",
+      "rsi": 75.5,
+      "conf": "中",
+      "strategy": [
+        "dividend"
+      ],
+      "dividend_yield": 2.7,
+      "volatility": 0.2964,
+      "short_ratio": null,
+      "regime_adjusted": false,
+      "forecast": {
+        "price": 3544.0,
+        "rangeLow": 3492,
+        "rangeHigh": 3596,
+        "rangeLow2": 3441,
+        "rangeHigh2": 3647,
+        "volDPct": 1.45,
+        "calibrated": true,
+        "plan": {
+          "entry": 3518,
+          "target": 3621,
+          "stop": 3441,
+          "rr": 1.34,
+          "hi3m": 3544,
+          "lo3m": 2882,
+          "basis": "1日の実績振れ幅σ=1.5%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値3,544円 / 安値2,882円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
+        "cond": {
+          "upRate": 51.7,
+          "n": 60,
+          "condition": "RSI70以上（買われすぎ圏）×5日上昇局面",
+          "note": null
+        },
+        "factors": [
+          {
+            "label": "RSI 75.5（買われすぎ圏・反落しやすい傾向）",
+            "dir": "-"
+          }
+        ],
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.90倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "impact": {
+        "price": 3544.0,
+        "normalYen": 57,
+        "normalPct": 1.6,
+        "bigVol": {
+          "n": 3,
+          "avgAbsPct": 6.1,
+          "maxAbsPct": 8.0,
+          "avgYen": 216
+        },
+        "earnings": {
+          "n": 8,
+          "avgAbsPct": 1.4,
+          "maxAbsPct": 2.6,
+          "avgYen": 50,
+          "maxYen": 92,
+          "upCount": 4,
+          "recentPct": [
+            -1.8,
+            1.2,
+            -0.5
+          ]
+        },
+        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
+      },
+      "risk": {
+        "safety": 81,
+        "level": "低",
+        "penalties": [
+          "買われすぎ（RSI76）→ 反落で損切りに当たりやすい"
+        ],
+        "supports": [
+          "機関の買い集め兆候"
+        ],
+        "stopPct": 2.19,
+        "rr": 1.34
+      },
+      "earnings": {
+        "date": "2027-02-03",
+        "daysTo": 58,
+        "isToday": false,
+        "isSoon": false,
+        "passed": false,
+        "revGrowthPct": 13.1,
+        "epsGrowthPct": -15.6,
+        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
+      },
+      "yutai": null,
+      "news": [
+        {
+          "title": "日本航空（株）第１回社債型種類株式【92015】：株価・株式情報",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1wM1BIWUdEZEZHLV9wRmxFN3Q5akZVTzFSZXhhQTlrLWs5QnlBN1phSjBUY2hyVG9nSnA3NFdJTm9rU241aDR0SjFKVVNfR1BteEpV?oc=5",
+          "pubDate": "Thu, 12 Nov 2026 21:57:26 GMT",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
+    },
+    {
       "rank": 5,
       "ticker": "9202.T",
       "name": "ANAホールディングス",
@@ -4147,7 +4147,7 @@
       "per": 10.9,
       "pbr": 1.0,
       "roe": 12.4,
-      "value": 0.21,
+      "value": 0.209,
       "quality": 0.517,
       "momentum": 0.416,
       "smart": 0.933,
@@ -4614,7 +4614,7 @@
       "rank": 9,
       "ticker": "8604.T",
       "name": "野村HD",
-      "score": 0.563,
+      "score": 0.562,
       "f": 7,
       "per": 11.3,
       "pbr": 1.2,
@@ -5058,7 +5058,7 @@
       "exDivDate": "2027-03-30",
       "dividendYield": 3.86,
       "per": null,
-      "pbr": 0.58,
+      "pbr": 0.6,
       "roe": -1.2,
       "rsi": 54.1,
       "vol": 0.3644,
@@ -5627,8 +5627,8 @@
       "divPerShare": 48.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 0.71,
-      "per": 29.0,
-      "pbr": 5.0,
+      "per": 27.5,
+      "pbr": 4.73,
       "roe": 18.2,
       "rsi": 62.9,
       "vol": 0.4085,
@@ -5822,8 +5822,8 @@
       "divPerShare": 44.0,
       "exDivDate": "2027-03-30",
       "dividendYield": 3.35,
-      "per": 4.1,
-      "pbr": 0.94,
+      "per": 11.7,
+      "pbr": 0.82,
       "roe": 26.1,
       "rsi": 25.7,
       "vol": 0.3594,
@@ -6153,7 +6153,7 @@
       "exDivDate": "2027-09-29",
       "dividendYield": 3.33,
       "per": 17.2,
-      "pbr": 3.33,
+      "pbr": 3.26,
       "roe": 19.0,
       "rsi": 60.3,
       "vol": 0.44,
@@ -6227,7 +6227,7 @@
       "divPerShare": 80.0,
       "exDivDate": "2027-03-30",
       "dividendYield": 4.38,
-      "per": 12.5,
+      "per": 12.6,
       "pbr": 0.44,
       "roe": 3.9,
       "rsi": 68.0,
@@ -6573,7 +6573,7 @@
       "exDivDate": null,
       "dividendYield": null,
       "per": 55.8,
-      "pbr": 13.53,
+      "pbr": 12.37,
       "roe": 24.7,
       "rsi": 39.6,
       "vol": 0.7676,
@@ -6948,7 +6948,7 @@
       "exDivDate": "2027-03-30",
       "dividendYield": 2.44,
       "per": 19.2,
-      "pbr": 1.65,
+      "pbr": 1.6,
       "roe": 8.9,
       "rsi": 44.5,
       "vol": 0.3177,
@@ -7143,7 +7143,7 @@
       "exDivDate": "2027-03-30",
       "dividendYield": 1.16,
       "per": 23.5,
-      "pbr": 3.88,
+      "pbr": 3.76,
       "roe": 16.7,
       "rsi": 39.8,
       "vol": 1.0524,
