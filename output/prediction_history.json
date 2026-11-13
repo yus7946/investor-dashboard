@@ -15044,6 +15044,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-11-12",
+      "ticker": "4661.T",
+      "name": "オリエンタルランド",
+      "basePrice": 3813.0,
+      "rangeLow": 3745,
+      "rangeHigh": 3881,
+      "predUpRate": 54.5,
+      "condN": 44,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
