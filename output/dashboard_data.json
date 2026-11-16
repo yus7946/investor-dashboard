@@ -1,6 +1,6 @@
 {
-  "updated": "2026年11月16日 18:57",
-  "updatedAtMs": 1794823066429,
+  "updated": "2026年11月16日 20:52",
+  "updatedAtMs": 1794829953207,
   "updateMode": "light",
   "fetched": 163,
   "universeTotal": 166,
@@ -103,8 +103,8 @@
   "marketOutlook": {
     "spxChangePct": -0.4,
     "spxDate": "2026-11-13",
-    "usdjpy": 159.56,
-    "usdjpyChangePct": -0.2,
+    "usdjpy": 159.57,
+    "usdjpyChangePct": -0.19,
     "condition": "米S&P500が直近下落",
     "topixUpRate": 44.1,
     "n": 213,
@@ -2344,11 +2344,11 @@
     "basis": "夜間に確定した米S&P500・米半導体指数(SOX)・ドル円・CME日経先物の動きと、銘柄ごとの過去の感応度を機械学習（勾配ブースティング）で組み合わせた確率。的中率はすべて、その時点より前のデータだけで学習した予測の答え合わせ（先読みなし）。寄付き後の値動きや数日先は予測力が確認できないため対象外。"
   },
   "marketReport": {
-    "generatedAt": "2026-11-16 18:57",
+    "generatedAt": "2026-11-16 20:52",
     "regime": {
       "n225Vol": 32.4,
       "n225VolTopPct": 11,
-      "vix": 20.1,
+      "vix": 20.0,
       "vixTopPct": 33,
       "vixDate": "2026-11-16",
       "n225FromHigh": -15.6,
@@ -2542,10 +2542,10 @@
           "label": "VIX（恐怖指数）",
           "group": "level",
           "base": 20.83,
-          "last": 20.08,
+          "last": 19.96,
           "react": -4.22,
-          "since": -0.75,
-          "day": 0.78,
+          "since": -0.87,
+          "day": 0.66,
           "unit": "pt",
           "lastDate": "2026-11-16"
         },
@@ -2566,10 +2566,10 @@
           "label": "ドル円",
           "group": "fx",
           "base": 157.91,
-          "last": 159.56,
+          "last": 159.57,
           "react": 0.35,
-          "since": 1.04,
-          "day": -0.2,
+          "since": 1.05,
+          "day": -0.19,
           "unit": "%",
           "lastDate": "2026-11-16"
         },
@@ -3395,7 +3395,7 @@
           "ccAgree": 61.4,
           "gap": 70.5,
           "title": "VIX（米国の恐怖指数）",
-          "value": 20.1
+          "value": 20.0
         }
       },
       "table": {
@@ -3520,7 +3520,7 @@
       "pbr": 18.16,
       "roe": 41.6,
       "value": 0.01,
-      "quality": 0.988,
+      "quality": 0.991,
       "momentum": 1.0,
       "smart": 0.813,
       "smartMoney": {
@@ -3625,13 +3625,13 @@
       "rank": 2,
       "ticker": "9201.T",
       "name": "日本航空",
-      "score": 0.669,
+      "score": 0.67,
       "f": 9,
       "per": 15.1,
       "pbr": 1.02,
       "roe": 8.3,
       "value": 0.195,
-      "quality": 0.979,
+      "quality": 0.981,
       "momentum": 0.514,
       "smart": 0.934,
       "smartMoney": {
@@ -3759,7 +3759,7 @@
       "pbr": 0.81,
       "roe": 10.7,
       "value": 0.255,
-      "quality": 0.979,
+      "quality": 0.982,
       "momentum": 0.44,
       "smart": 0.93,
       "smartMoney": {
@@ -3876,7 +3876,7 @@
       "pbr": 5.52,
       "roe": 12.4,
       "value": 0.034,
-      "quality": 0.98,
+      "quality": 0.982,
       "momentum": 0.707,
       "smart": 0.893,
       "smartMoney": {
@@ -4003,7 +4003,7 @@
       "pbr": 1.0,
       "roe": 12.4,
       "value": 0.204,
-      "quality": 0.98,
+      "quality": 0.982,
       "momentum": 0.419,
       "smart": 0.936,
       "smartMoney": {
@@ -4132,7 +4132,7 @@
       "pbr": 0.44,
       "roe": 3.9,
       "value": 0.446,
-      "quality": 0.977,
+      "quality": 0.98,
       "momentum": 0.362,
       "smart": 0.79,
       "smartMoney": {
@@ -4180,8 +4180,8 @@
           "basis": "1日の実績振れ幅σ=1.4%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値1,894円 / 安値1,676円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
         },
         "cond": {
-          "upRate": 48.6,
-          "n": 181,
+          "upRate": 48.4,
+          "n": 182,
           "condition": "RSI中立圏×5日上昇局面",
           "note": null
         },
@@ -4255,7 +4255,7 @@
       "pbr": 0.63,
       "roe": 7.1,
       "value": 0.319,
-      "quality": 0.978,
+      "quality": 0.981,
       "momentum": 0.441,
       "smart": 0.79,
       "smartMoney": {
@@ -4370,13 +4370,13 @@
       "rank": 8,
       "ticker": "2502.T",
       "name": "アサヒグループHD",
-      "score": 0.638,
+      "score": 0.64,
       "f": 8,
       "per": 15.1,
-      "pbr": 0.9,
-      "roe": 5.6,
-      "value": 0.221,
-      "quality": 0.978,
+      "pbr": 0.87,
+      "roe": 6.1,
+      "value": 0.227,
+      "quality": 0.98,
       "momentum": 0.404,
       "smart": 0.895,
       "smartMoney": {
@@ -4456,8 +4456,8 @@
         "isToday": false,
         "isSoon": false,
         "passed": false,
-        "revGrowthPct": 12.0,
-        "epsGrowthPct": 114.2,
+        "revGrowthPct": 6.2,
+        "epsGrowthPct": 40.6,
         "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
       },
       "yutai": null,
@@ -4473,7 +4473,7 @@
       "pbr": 1.49,
       "roe": 12.1,
       "value": 0.132,
-      "quality": 0.98,
+      "quality": 0.982,
       "momentum": 0.472,
       "smart": 0.869,
       "smartMoney": {
@@ -4573,7 +4573,7 @@
       "pbr": 1.26,
       "roe": 0,
       "value": 0.161,
-      "quality": 0.976,
+      "quality": 0.979,
       "momentum": 0.348,
       "smart": 1.0,
       "smartMoney": {
@@ -5146,8 +5146,8 @@
       "exDivDate": "2027-03-30",
       "dividendYield": 3.98,
       "per": 13.1,
-      "pbr": 1.57,
-      "roe": 13.6,
+      "pbr": 1.5,
+      "roe": 12.3,
       "rsi": 51.9,
       "vol": 0.2846,
       "inTop": false,
@@ -5836,8 +5836,8 @@
       "exDivDate": "2026-12-29",
       "dividendYield": 3.43,
       "per": 15.1,
-      "pbr": 0.9,
-      "roe": 5.6,
+      "pbr": 0.87,
+      "roe": 6.1,
       "rsi": 61.6,
       "vol": 0.2815,
       "inTop": true,
@@ -6106,7 +6106,7 @@
       "exDivDate": "2027-03-30",
       "dividendYield": 0.27,
       "per": 47.2,
-      "pbr": 12.82,
+      "pbr": 12.28,
       "roe": 27.4,
       "rsi": 18.8,
       "vol": 0.825,
@@ -6136,8 +6136,8 @@
       "exDivDate": "2026-12-29",
       "dividendYield": 0.27,
       "per": 21.1,
-      "pbr": 4.57,
-      "roe": 22.7,
+      "pbr": 4.28,
+      "roe": 19.7,
       "rsi": 14.0,
       "vol": 0.9589,
       "inTop": false,
@@ -6196,8 +6196,8 @@
       "exDivDate": "2027-03-30",
       "dividendYield": 0.7,
       "per": 16.7,
-      "pbr": 15.53,
-      "roe": 81.3,
+      "pbr": 9.05,
+      "roe": 72.9,
       "rsi": 53.2,
       "vol": 0.471,
       "inTop": false,
@@ -6406,8 +6406,8 @@
       "exDivDate": "2026-12-29",
       "dividendYield": 8.34,
       "per": 12.1,
-      "pbr": 1.86,
-      "roe": 16.6,
+      "pbr": 1.55,
+      "roe": 28.3,
       "rsi": 39.4,
       "vol": 0.4641,
       "inTop": false,
@@ -6737,7 +6737,7 @@
       "dividendYield": 2.51,
       "per": 15.7,
       "pbr": 0.67,
-      "roe": null,
+      "roe": 5.4,
       "rsi": 54.4,
       "vol": 0.2858,
       "inTop": false,
@@ -7213,7 +7213,7 @@
     {
       "type": "good",
       "title": "入替候補IN: 日本航空",
-      "desc": "高スコア+モメンタム (score=0.669)"
+      "desc": "高スコア+モメンタム (score=0.67)"
     },
     {
       "type": "good",
@@ -7223,7 +7223,7 @@
     {
       "type": "warn",
       "title": "入替候補OUT: レーザーテック",
-      "desc": "スコア下位15% (score=0.331)"
+      "desc": "スコア下位15% (score=0.332)"
     },
     {
       "type": "warn",
@@ -7233,7 +7233,7 @@
     {
       "type": "warn",
       "title": "入替候補OUT: TDK",
-      "desc": "スコア下位15% (score=0.325)"
+      "desc": "スコア下位15% (score=0.326)"
     }
   ],
   "flow": null,
