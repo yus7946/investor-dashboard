@@ -15239,6 +15239,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-11-13",
+      "ticker": "2502.T",
+      "name": "アサヒグループHD",
+      "basePrice": 1844.0,
+      "rangeLow": 1821,
+      "rangeHigh": 1867,
+      "predUpRate": 52.5,
+      "condN": 202,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -21918,6 +21933,18 @@
       "entry": 4390,
       "target": 4510,
       "stop": 4300,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-13",
+      "ticker": "2502.T",
+      "name": "アサヒグループHD",
+      "basePrice": 1844.0,
+      "entry": 1832,
+      "target": 1879,
+      "stop": 1797,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
