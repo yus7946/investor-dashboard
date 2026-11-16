@@ -1,6 +1,6 @@
 {
-  "updated": "2026年11月16日 22:01",
-  "updatedAtMs": 1794834094528,
+  "updated": "2026年11月16日 22:52",
+  "updatedAtMs": 1794837159114,
   "updateMode": "light",
   "fetched": 163,
   "universeTotal": 166,
@@ -103,8 +103,8 @@
   "marketOutlook": {
     "spxChangePct": -0.4,
     "spxDate": "2026-11-13",
-    "usdjpy": 159.5,
-    "usdjpyChangePct": -0.23,
+    "usdjpy": 159.57,
+    "usdjpyChangePct": -0.19,
     "condition": "米S&P500が直近下落",
     "topixUpRate": 44.1,
     "n": 213,
@@ -2344,12 +2344,12 @@
     "basis": "夜間に確定した米S&P500・米半導体指数(SOX)・ドル円・CME日経先物の動きと、銘柄ごとの過去の感応度を機械学習（勾配ブースティング）で組み合わせた確率。的中率はすべて、その時点より前のデータだけで学習した予測の答え合わせ（先読みなし）。寄付き後の値動きや数日先は予測力が確認できないため対象外。"
   },
   "marketReport": {
-    "generatedAt": "2026-11-16 22:01",
+    "generatedAt": "2026-11-16 22:52",
     "regime": {
       "n225Vol": 32.4,
       "n225VolTopPct": 11,
-      "vix": 20.5,
-      "vixTopPct": 31,
+      "vix": 20.7,
+      "vixTopPct": 30,
       "vixDate": "2026-11-16",
       "n225FromHigh": -15.6,
       "n225Daily10": [
@@ -2542,10 +2542,10 @@
           "label": "VIX（恐怖指数）",
           "group": "level",
           "base": 20.83,
-          "last": 20.47,
+          "last": 20.64,
           "react": -4.22,
-          "since": -0.36,
-          "day": 1.17,
+          "since": -0.19,
+          "day": 1.34,
           "unit": "pt",
           "lastDate": "2026-11-16"
         },
@@ -2554,22 +2554,22 @@
           "label": "米10年金利",
           "group": "level",
           "base": 4.95,
-          "last": 5.15,
+          "last": 5.14,
           "react": -0.06,
-          "since": 0.2,
-          "day": 0.05,
+          "since": 0.19,
+          "day": -0.01,
           "unit": "pt",
-          "lastDate": "2026-11-13"
+          "lastDate": "2026-11-16"
         },
         {
           "symbol": "JPY=X",
           "label": "ドル円",
           "group": "fx",
           "base": 157.91,
-          "last": 159.5,
+          "last": 159.6,
           "react": 0.35,
-          "since": 1.0,
-          "day": -0.24,
+          "since": 1.06,
+          "day": -0.17,
           "unit": "%",
           "lastDate": "2026-11-16"
         },
@@ -3395,7 +3395,7 @@
           "ccAgree": 61.4,
           "gap": 70.5,
           "title": "VIX（米国の恐怖指数）",
-          "value": 20.5
+          "value": 20.7
         }
       },
       "table": {
