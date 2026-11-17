@@ -1,0 +1,39 @@
+name: Research
+
+# 予報モデルの改善実験（PDCAの Do/Check）をGitHubのサーバーで実行する。
+# research/request.txt に実験名（research/experiment.py の EXPERIMENTS のキー）を空白区切りで書いて push すると起動し、
+# 結果を research/results.jsonl と research/last_run.log に書き戻す。
+# （手元のPCは2026-11にWindowsのアプリ制御でscikit-learnのDLLがブロックされ、実験を動かせなくなったため）
+on:
+  push:
+    branches: [main]
+    paths: ["research/request.txt"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: research
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Run experiments
+        run: python -W ignore research/experiment.py $(cat research/request.txt) 2>&1 | grep -v "Failed download\|delisted\|possibly" | tee research/last_run.log
+      - name: Commit results
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add research/results.jsonl research/last_run.log
+          git diff --cached --quiet || git commit -m "chore: research results"
+          git pull --rebase origin main
+          git push

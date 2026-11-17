@@ -232,8 +232,16 @@ def _band_table(p: np.ndarray, label: np.ndarray) -> list[dict]:
     return rows
 
 
+def recency_weights(dates: pd.Series, half_life_days: float | None) -> np.ndarray | None:
+    """新しいデータほど重く学習するための重み（半減期は暦日）。Noneなら全期間を同じ重さで扱う。"""
+    if not half_life_days:
+        return None
+    age = (dates.max() - dates).dt.days.to_numpy()
+    return 0.5 ** (age / half_life_days)
+
+
 def _validate(panel: pd.DataFrame, quarters: int = 8, feats: list[str] | None = None, model_fn=None,
-              keep_preds: bool = False) -> dict:
+              keep_preds: bool = False, half_life: float | None = None) -> dict:
     """直近8四半期を1四半期ずつ「それ以前のデータだけで学習→予測」して答え合わせする。"""
     feats = feats or FEATURES
     out = {}
@@ -248,7 +256,7 @@ def _validate(panel: pd.DataFrame, quarters: int = 8, feats: list[str] | None = 
             tr, te = d[d.date < f0 - pd.Timedelta(days=3)], d[(d.date >= f0) & (d.date < f1)]
             if len(te) == 0 or len(tr) < 20000:
                 continue
-            m = (model_fn or _model)().fit(tr[feats], tr.label)
+            m = (model_fn or _model)().fit(tr[feats], tr.label, sample_weight=recency_weights(tr.date, half_life))
             preds.append(te.assign(p=m.predict_proba(te[feats])[:, 1]))
         P = pd.concat(preds)
         p, lab = P.p.to_numpy(), P.label.to_numpy()

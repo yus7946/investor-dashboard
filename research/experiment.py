@@ -39,6 +39,9 @@ EXPERIMENTS = {
     "sec_adr": (BASE + ov.EXTRA_SEC + ov.EXTRA_ADR, None),
     "prod": (ov.FEATURES, None),  # 本番で採用中の特徴量
     "no_stock": (ov.OVERNIGHT + ov.EXTRA_SEC + ov.EXTRA_ADR, None),  # 前日までの値動き（反転傾向など）を除外
+    "hl730": (ov.FEATURES, None, 730),  # 新しいデータほど重く（半減期2年）
+    "hl365": (ov.FEATURES, None, 365),  # 半減期1年
+    "hl180": (ov.FEATURES, None, 180),  # 半減期半年
     "all": (BASE + ov.EXTRA_MKT + ov.EXTRA_SEC + ov.EXTRA_ADR, None),
     "all_big": (BASE + ov.EXTRA_MKT + ov.EXTRA_SEC + ov.EXTRA_ADR,
                 lambda: HistGradientBoostingClassifier(max_iter=300, learning_rate=0.04, max_leaf_nodes=31,
@@ -56,11 +59,14 @@ def load_px(period: str, refresh: bool):
     return px
 
 
-def paired(base: dict, cand: dict, y: str) -> tuple[float, float]:
-    """同じ日・同じ銘柄の予測で的中率の差をとり、日単位の標準誤差を返す（日内の銘柄は独立でないため）。"""
+def paired(base: dict, cand: dict, y: str, last_days: int | None = None) -> tuple[float, float]:
+    """同じ日・同じ銘柄の予測で的中率の差をとり、日単位の標準誤差を返す（日内の銘柄は独立でないため）。
+    last_days を指定すると直近その営業日数だけで比べる。"""
     m = base["_preds"][y].merge(cand["_preds"][y], on=["date", "tk", "label"], suffixes=("_b", "_c"))
     m["d"] = ((m.p_c > .5) == m.label).astype(float) - ((m.p_b > .5) == m.label).astype(float)
     daily = m.groupby("date").d.mean() * 100
+    if last_days:
+        daily = daily.tail(last_days)
     return round(float(daily.mean()), 2), round(float(daily.std(ddof=1) / np.sqrt(len(daily))), 2)
 
 
@@ -78,9 +84,10 @@ def main():
     baseline = names[0]  # 先頭の実験を比較の基準にする
     base = None
     for name in names:
-        feats, model_fn = EXPERIMENTS[name]
+        feats, model_fn, *rest = EXPERIMENTS[name]
+        half_life = rest[0] if rest else None
         t0 = time.time()
-        v = ov._validate(panel, feats=feats, model_fn=model_fn, keep_preds=True)
+        v = ov._validate(panel, feats=feats, model_fn=model_fn, keep_preds=True, half_life=half_life)
         if name == baseline:
             base = v
         row = {
@@ -95,10 +102,13 @@ def main():
             row["baseline"] = baseline
             row["ccDiff"], row["ccDiffSE"] = paired(base, v, "y_cc")
             row["gapDiff"], row["gapDiffSE"] = paired(base, v, "y_gap")
+            row["ccDiff60"], row["ccDiff60SE"] = paired(base, v, "y_cc", 60)
+            row["gapDiff60"], row["gapDiff60SE"] = paired(base, v, "y_gap", 60)
         print(f"{name:8s} 終値{row['cc']}%(高確信{row['ccHC']}%/{row['ccHCn']}件) "
               f"寄付き{row['gap']}%(高確信{row['gapHC']}%/{row['gapHCn']}件) 市場{row['mkt']}%(強{row['mktStrong']}%) "
               f"AUC {row['ccAUC']}/{row['gapAUC']} {row['sec']}s"
               + (f"\n         vs {baseline}: 終値{row['ccDiff']:+}pt(±{row['ccDiffSE']}) 寄付き{row['gapDiff']:+}pt(±{row['gapDiffSE']})"
+                 f" ／ 直近60日: 終値{row['ccDiff60']:+}pt(±{row['ccDiff60SE']}) 寄付き{row['gapDiff60']:+}pt(±{row['gapDiff60SE']})"
                  if "ccDiff" in row else ""), flush=True)
         with open(RESULTS, "a", encoding="utf-8") as f:
             f.write(json.dumps(row, ensure_ascii=False) + "\n")
