@@ -46,6 +46,9 @@ investor_dashboard.html      # フロントエンド全部（単一ファイル�
 ```
 
 ## 直近の実装履歴（新しい順）
+000000. **実験はGitHub Actionsで（2026-11-17〜）**: 手元PCはWindowsのアプリ制御でscikit-learnが動かない。
+   `research/request.txt` に実験名を書いてpush → `research.yml` が実行し `research/last_run.log`・`results.jsonl` に書き戻す。
+   JPX投資部門別売買は新形式（stock_1_w_*.xlsx）に対応済み（要openpyxl）。
 00000. **相場環境レポート（2026-11-05）**: `reports/market_report.py`＋`data/events.json`。イベントを1件追加すると
    投票日前の終値比で各市場・業種・保有銘柄の動きを自動集計。荒れ具合と、荒れ具合ごとの予報的中率も表示。異常値除去・休場日対応も追加（PDCA #5）。
 0000. **運用1週目の点検（2026-10-19）**: 本番で^N225の前日終値が未反映→1日古い値で予報していた不具合を修正

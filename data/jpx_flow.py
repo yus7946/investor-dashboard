@@ -17,75 +17,71 @@ INDEX_URL = "https://www.jpx.co.jp/markets/statistics-equities/investor-type/ind
 BASE_URL = "https://www.jpx.co.jp"
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
 
-# 表示する投資部門（表中の日本語ラベル → 表示名）
+# 表示する投資部門（表示名, 列見出し（英語部分）に含まれる語）。複数列に一致したら合計する
+# （海外投資家=法人＋個人、個人=現金＋信用）。2026-10下旬にJPXのファイルが stock_1_w_*.xlsx 形式に変わった。
 CATEGORIES = [
-    ("海外投資家", "海外投資家"),
-    ("個　人", "個人"),
-    ("信託銀行", "信託銀行"),
-    ("投資信託", "投資信託"),
+    ("海外投資家", "Foreigners"),
+    ("個人", "Brokerage > Individuals"),
+    ("信託銀行", "Trust BK"),
+    ("投資信託", "Investment Trusts"),
 ]
+FILE_RE = r'href="(/markets/statistics-equities/investor-type/[^"]*stock_1_w_(\d{8})_(\d{8})\.xlsx)"'
 
 
-def _latest_file_url() -> str | None:
+def _latest_file() -> tuple[str, str, str] | None:
+    """最新週のファイルURL・週ラベル（"MM/DD～MM/DD"）・週の開始日（YYYYMMDD）。"""
     resp = requests.get(INDEX_URL, headers=HEADERS, timeout=15)
     resp.raise_for_status()
-    m = re.search(
-        r'href="(/markets/statistics-equities/investor-type/[^"]*stock_val_1_\d+\.xls)"',
-        resp.text,
-    )
-    return BASE_URL + m.group(1) if m else None
+    found = re.findall(FILE_RE, resp.text)
+    if not found:
+        return None
+    path, start, end = max(found, key=lambda m: m[1])
+    return BASE_URL + path, f"{start[4:6]}/{start[6:]}～{end[4:6]}/{end[6:]}", start
+
+
+def _english(v) -> str:
+    """「金額 Value」のような日英併記セルから英語部分だけを取り出す。"""
+    m = re.search(r"[A-Za-z][A-Za-z .,&\-/()]*$", str(v).replace("\n", " "))
+    return m.group(0).strip() if m and str(v) != "nan" else ""
 
 
 def fetch_investor_flow() -> dict | None:
-    """戻り値: {"week": "06/22～06/26", "flows": [{"label","value"(億円)},...], "source": str} または None"""
+    """戻り値: {"week": "11/02～11/06", "flows": [{"label","value"(億円)},...], "source": str} または None"""
     try:
-        url = _latest_file_url()
-        if not url:
+        latest = _latest_file()
+        if not latest:
             return None
+        url, week_label, week_start = latest
         resp = requests.get(url, headers=HEADERS, timeout=30)
         resp.raise_for_status()
-        df = pd.read_excel(io.BytesIO(resp.content), sheet_name="TSE Prime", header=None)
+        df = pd.read_excel(io.BytesIO(resp.content), header=None)
 
-        # 週ラベル行（"MM/DD～MM/DD"）を探す。最右の週ブロックが最新
-        week_cells = []  # (row, col, label)
-        for i in range(len(df)):
-            for j in range(df.shape[1]):
-                v = str(df.iat[i, j])
-                if re.fullmatch(r"\d{2}/\d{2}～\d{2}/\d{2}", v.strip()):
-                    week_cells.append((i, j, v.strip()))
-        if not week_cells:
-            return None
-        # 最新週 = 最も右の列のブロック。差引き列はブロック先頭列+3
-        latest = max(week_cells, key=lambda x: x[1])
-        balance_col = latest[1] + 3
-        week_label = latest[2]
-        if balance_col >= df.shape[1]:
-            return None
+        # 見出し行（結合セル）を横に埋めて、各列を「Brokerage > Individuals > Cash > Balance」のような名前にする
+        top = next(i for i in range(len(df)) if any("Proprietary" in str(v) for v in df.iloc[i]))
+        sub = next(i for i in range(top, len(df)) if any("Balance" in str(v) for v in df.iloc[i]))
+        hdr = df.iloc[top:sub + 1].ffill(axis=1)
+        labels = {}
+        for c in range(df.shape[1]):
+            parts = [_english(hdr.iat[r, c]) for r in range(len(hdr))]
+            labels[c] = " > ".join(dict.fromkeys(p for p in parts if p))
+
+        # 東証プライムの「金額」行（市場名の行か、その次の行）
+        prime = next(i for i in range(sub + 1, len(df)) if any("TSE Prime" in str(v) for v in df.iloc[i, :3]))
+        value_row = next(i for i in (prime, prime + 1) if any("Value" in str(v) for v in df.iloc[i, :4]))
 
         flows = []
-        for row_label, disp in CATEGORIES:
-            for i in range(len(df)):
-                cell = str(df.iat[i, 0]).strip()
-                if cell != row_label:
-                    continue
-                # 差引きセルは売り/買い/合計3行のどこかに入る（結合セルのため）
-                val = None
-                for k in range(3):
-                    if i + k >= len(df):
-                        break
-                    raw = df.iat[i + k, balance_col]
-                    num = pd.to_numeric(str(raw).replace(",", ""), errors="coerce")
-                    if pd.notna(num):
-                        val = float(num)
-                        break
-                if val is not None:
-                    flows.append({"label": disp, "value": round(val / 100000)})  # 千円→億円
-                break
+        for disp, key in CATEGORIES:
+            cols = [c for c, lab in labels.items() if lab.endswith("Balance") and key in lab]
+            vals = [pd.to_numeric(str(df.iat[value_row, c]).replace(",", ""), errors="coerce") for c in cols]
+            vals = [v for v in vals if pd.notna(v)]
+            if vals:
+                flows.append({"label": disp, "value": round(float(sum(vals)) / 100000)})  # 千円→億円
 
         if not flows:
             return None
         return {
             "week": week_label,
+            "start": week_start,
             "flows": flows,
             "source": "JPX 投資部門別売買状況（東証プライム・週次・金額ベース）",
         }
@@ -111,9 +107,9 @@ def update_flow_history(flow: dict | None, path: str = HISTORY_PATH,
 
     if flow and flow.get("week") and flow.get("flows"):
         history = [h for h in history if h.get("week") != flow["week"]]
-        history.append({"week": flow["week"], "flows": flow["flows"]})
-        # 週ラベル "MM/DD～MM/DD" の開始日でソート（年跨ぎは希少なため簡易ソートで十分）
-        history.sort(key=lambda h: h["week"])
+        history.append({"week": flow["week"], "start": flow.get("start"), "flows": flow["flows"]})
+        # 年つきの開始日（YYYYMMDD）で並べる（"MM/DD"の文字列順だと年をまたいだ時に1月が先頭に来て最新週が消える）
+        history.sort(key=lambda h: h.get("start") or h["week"])
         history = history[-max_weeks:]
         try:
             os.makedirs(os.path.dirname(path), exist_ok=True)
