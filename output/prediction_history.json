@@ -15539,6 +15539,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-11-16",
+      "ticker": "5401.T",
+      "name": "日本製鉄",
+      "basePrice": 697.0,
+      "rangeLow": 687,
+      "rangeHigh": 707,
+      "predUpRate": 52.5,
+      "condN": 204,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -22383,6 +22398,18 @@
       "entry": 2751,
       "target": 2867,
       "stop": 2664,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-16",
+      "ticker": "5108.T",
+      "name": "ブリヂストン",
+      "basePrice": 4420.0,
+      "entry": 4390,
+      "target": 4509,
+      "stop": 4301,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
