@@ -1,6 +1,6 @@
 {
-  "updated": "2026年11月17日 21:15",
-  "updatedAtMs": 1794917728182,
+  "updated": "2026年11月17日 22:42",
+  "updatedAtMs": 1794922979302,
   "updateMode": "light",
   "fetched": 163,
   "universeTotal": 166,
@@ -79,8 +79,8 @@
   "marketOutlook": {
     "spxChangePct": -1.92,
     "spxDate": "2026-11-16",
-    "usdjpy": 159.25,
-    "usdjpyChangePct": -0.33,
+    "usdjpy": 159.38,
+    "usdjpyChangePct": -0.25,
     "condition": "米S&P500が直近下落",
     "topixUpRate": 43.9,
     "n": 214,
@@ -2320,12 +2320,12 @@
     "basis": "夜間に確定した米S&P500・米半導体指数(SOX)・ドル円・CME日経先物の動きと、銘柄ごとの過去の感応度を機械学習（勾配ブースティング）で組み合わせた確率。的中率はすべて、その時点より前のデータだけで学習した予測の答え合わせ（先読みなし）。寄付き後の値動きや数日先は予測力が確認できないため対象外。"
   },
   "marketReport": {
-    "generatedAt": "2026-11-17 21:15",
+    "generatedAt": "2026-11-17 22:42",
     "regime": {
       "n225Vol": 32.5,
       "n225VolTopPct": 10,
-      "vix": 22.4,
-      "vixTopPct": 22,
+      "vix": 22.9,
+      "vixTopPct": 20,
       "vixDate": "2026-11-17",
       "n225FromHigh": -16.7,
       "n225Daily10": [
@@ -2518,10 +2518,10 @@
           "label": "VIX（恐怖指数）",
           "group": "level",
           "base": 20.83,
-          "last": 22.4,
+          "last": 22.92,
           "react": -4.22,
-          "since": 1.57,
-          "day": -0.51,
+          "since": 2.09,
+          "day": 0.01,
           "unit": "pt",
           "lastDate": "2026-11-17"
         },
@@ -2533,19 +2533,19 @@
           "last": 5.12,
           "react": -0.06,
           "since": 0.17,
-          "day": -0.03,
+          "day": 0.0,
           "unit": "pt",
-          "lastDate": "2026-11-16"
+          "lastDate": "2026-11-17"
         },
         {
           "symbol": "JPY=X",
           "label": "ドル円",
           "group": "fx",
           "base": 157.91,
-          "last": 159.26,
+          "last": 159.38,
           "react": 0.35,
-          "since": 0.85,
-          "day": -0.33,
+          "since": 0.93,
+          "day": -0.25,
           "unit": "%",
           "lastDate": "2026-11-17"
         },
@@ -3379,7 +3379,7 @@
           "ccAgree": 61.3,
           "gap": 70.5,
           "title": "VIX（米国の恐怖指数）",
-          "value": 22.4
+          "value": 22.9
         }
       },
       "table": {
@@ -4368,7 +4368,7 @@
       "name": "ユニ・チャーム",
       "score": 0.639,
       "f": 7,
-      "per": 32.8,
+      "per": 32.3,
       "pbr": 2.5,
       "roe": 7.9,
       "value": 0.074,
@@ -5104,8 +5104,8 @@
       "divPerShare": 100.0,
       "exDivDate": "2027-03-30",
       "dividendYield": 3.07,
-      "per": 14.5,
-      "pbr": 1.5,
+      "per": 14.1,
+      "pbr": 1.48,
       "roe": 8.1,
       "rsi": 47.2,
       "vol": 0.3209,
@@ -5479,7 +5479,7 @@
       "divPerShare": 48.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 0.68,
-      "per": 28.1,
+      "per": 27.5,
       "pbr": 4.83,
       "roe": 18.2,
       "rsi": 65.5,
@@ -6394,7 +6394,7 @@
       "divPerShare": 24.0,
       "exDivDate": "2027-06-29",
       "dividendYield": 3.0,
-      "per": 12.7,
+      "per": 12.9,
       "pbr": 0.75,
       "roe": 4.7,
       "rsi": 47.6,
@@ -6814,7 +6814,7 @@
       "divPerShare": 22.0,
       "exDivDate": "2026-12-29",
       "dividendYield": 1.9,
-      "per": 32.8,
+      "per": 32.3,
       "pbr": 2.5,
       "roe": 7.9,
       "rsi": 70.6,
