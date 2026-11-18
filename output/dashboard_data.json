@@ -1,6 +1,6 @@
 {
-  "updated": "2026年11月18日 21:03",
-  "updatedAtMs": 1795003380016,
+  "updated": "2026年11月18日 22:17",
+  "updatedAtMs": 1795007856764,
   "updateMode": "light",
   "fetched": 163,
   "universeTotal": 166,
@@ -62,8 +62,8 @@
   "marketOutlook": {
     "spxChangePct": -1.03,
     "spxDate": "2026-11-17",
-    "usdjpy": 159.35,
-    "usdjpyChangePct": -0.11,
+    "usdjpy": 159.39,
+    "usdjpyChangePct": -0.08,
     "condition": "米S&P500が直近下落",
     "topixUpRate": 43.7,
     "n": 215,
@@ -2303,12 +2303,12 @@
     "basis": "夜間に確定した米S&P500・米半導体指数(SOX)・ドル円・CME日経先物の動きと、銘柄ごとの過去の感応度を機械学習（勾配ブースティング）で組み合わせた確率。的中率はすべて、その時点より前のデータだけで学習した予測の答え合わせ（先読みなし）。寄付き後の値動きや数日先は予測力が確認できないため対象外。"
   },
   "marketReport": {
-    "generatedAt": "2026-11-18 21:02",
+    "generatedAt": "2026-11-18 22:17",
     "regime": {
       "n225Vol": 32.5,
       "n225VolTopPct": 10,
-      "vix": 24.2,
-      "vixTopPct": 17,
+      "vix": 24.7,
+      "vixTopPct": 15,
       "vixDate": "2026-11-18",
       "n225FromHigh": -16.5,
       "n225Daily10": [
@@ -2501,10 +2501,10 @@
           "label": "VIX（恐怖指数）",
           "group": "level",
           "base": 20.83,
-          "last": 24.2,
+          "last": 24.66,
           "react": -4.22,
-          "since": 3.37,
-          "day": -1.26,
+          "since": 3.83,
+          "day": -0.8,
           "unit": "pt",
           "lastDate": "2026-11-18"
         },
@@ -2525,10 +2525,10 @@
           "label": "ドル円",
           "group": "fx",
           "base": 157.91,
-          "last": 159.35,
+          "last": 159.39,
           "react": 0.35,
-          "since": 0.91,
-          "day": -0.11,
+          "since": 0.93,
+          "day": -0.08,
           "unit": "%",
           "lastDate": "2026-11-18"
         },
@@ -3370,7 +3370,7 @@
           "ccAgree": 61.5,
           "gap": 70.3,
           "title": "VIX（米国の恐怖指数）",
-          "value": 24.2
+          "value": 24.7
         }
       },
       "table": {
