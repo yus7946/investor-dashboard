@@ -76,6 +76,7 @@ RIDGE_LAM, RIDGE_N = 0.1, 250  # 係数を0へ縮める強さ（指標の大き�
 BANDS = [0, .2, .3, .4, .45, .55, .6, .7, .8, 1.0001]
 CLEAN = True  # 異常値の除去（研究用に切り替え可能）
 HIGH_CONF = 0.7  # p>=0.7 または p<=0.3 を「高確信」とする
+RESEARCH = False  # True で研究用の候補特徴量も作る（research/experiment.py が設定。本番は作らない）
 MODEL_VERSION = "v2"  # 運用記録に残し、モデルごとの実績を分けて点検できるようにする（v1: 〜2026-11-18、v2: リッジ回帰）
 
 
@@ -104,7 +105,7 @@ def _last_before(close: pd.DataFrame, sym: str, idx: pd.DatetimeIndex) -> pd.Ser
 
 
 def _roll_ridge(y: np.ndarray, X: np.ndarray, outer: np.ndarray, lam: float, n: int = 250,
-                min_n: int | None = None) -> np.ndarray:
+                min_n: int | None = None, prior: np.ndarray | None = None) -> np.ndarray:
     """y（寄付きギャップ）を複数の海外指標 X で同時に説明する係数を、各日までの直近n日だけで推定する（リッジ回帰）。
     指標の大きさを揃えた尺度で係数を0へ縮め、相関の強い指標どうしで係数が暴れないようにする。outer は X の外積。"""
     ok = np.isfinite(y) & np.isfinite(X).all(axis=1)
@@ -117,10 +118,42 @@ def _roll_ridge(y: np.ndarray, X: np.ndarray, outer: np.ndarray, lam: float, n: 
     XX = win(np.where(ok[:, None, None], outer, 0.0))
     Xy, cnt = win(Xo * yo[:, None]), win(ok.astype(float))
     k = X.shape[1]
-    A = XX + (lam * np.einsum("tii->ti", XX))[:, :, None] * np.eye(k) + 1e-14 * np.eye(k)
+    D = lam * np.einsum("tii->ti", XX)
+    A = XX + D[:, :, None] * np.eye(k) + 1e-14 * np.eye(k)
+    if prior is not None:  # 0ではなく prior（例: 全銘柄平均の係数）へ向けて縮める
+        Xy = Xy + D * np.nan_to_num(prior)
     B = np.linalg.solve(A, Xy[..., None])[..., 0]
     B[cnt < (min_n or min(120, n // 2))] = np.nan
     return B
+
+
+def _ridge_preds(gaps: dict, adrs: dict, fac: np.ndarray, lam: float = None, prior=None):
+    """銘柄ごとのリッジ回帰で、翌営業日の想定ギャップを全銘柄分まとめて求める。
+    gaps: 銘柄→寄付きギャップ(T,)、adrs: 銘柄→ADRの想定ギャップ(T,)（ADRのある銘柄だけ）、fac: 夜間の海外指標(T,k)。
+    返り値: {銘柄: (指標だけの予測, ADRも使った予測)}、係数の全銘柄平均(T,k)、ADR係数の平均(T,)。
+    prior=(係数の平均, ADR係数の平均) を渡すと、0ではなく全銘柄平均の係数へ向けて縮める（研究用）。"""
+    lam = RIDGE_LAM if lam is None else lam
+    outer = np.einsum("ti,tj->tij", np.nan_to_num(fac), np.nan_to_num(fac))
+    # 予測に使う翌日の値。一部の指標だけ欠けた日（配信遅れ等）は「動きなし」とみなす（日経先物が無い日は予報自体を出さない）
+    fac_next = np.nan_to_num(_next(fac))
+    out, Bs, Ba = {}, [], []
+    for s, g in gaps.items():
+        B = _roll_ridge(g, fac, outer, lam, RIDGE_N, prior=None if prior is None else prior[0])
+        p = (B * fac_next).sum(axis=1)
+        Bs.append(B)
+        pa = p
+        if s in adrs:  # ADRのある銘柄は「ADRの想定ギャップ」も同時に説明変数に入れる。ADRが取引されなかった日は p
+            a = adrs[s][:, None]
+            X = np.hstack([fac, a])
+            pr = None if prior is None else np.hstack([prior[0], prior[1][:, None]])
+            B2 = _roll_ridge(g, X, np.einsum("ti,tj->tij", np.nan_to_num(X), np.nan_to_num(X)), lam, RIDGE_N, prior=pr)
+            p2 = (B2 * np.hstack([fac_next, _next(a)])).sum(axis=1)
+            Ba.append(B2[:, -1])
+            pa = np.where(np.isnan(p2), p, p2)
+        out[s] = (p, pa)
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", category=RuntimeWarning)
+        return out, np.nanmean(Bs, axis=0), np.nanmean(Ba, axis=0) if Ba else None
 
 
 def _next(X: np.ndarray) -> np.ndarray:
@@ -187,10 +220,29 @@ def build_panel(px: pd.DataFrame, tickers: list[str], target: pd.Timestamp):
     ewj_imp = implied_gap("EWJ", mkt)
     fac_all = {"nkd": nkd, "spx": spx, "sox": sox, "fx": fx, "ewj_imp": ewj_imp, **ext}
     fac = np.column_stack([fac_all[k].to_numpy(float) for k in RIDGE_FACTORS])
-    fac_outer = np.einsum("ti,tj->tij", np.nan_to_num(fac), np.nan_to_num(fac))
-    # 予測に使う翌日の値。一部の指標だけ欠けた日（配信遅れ等）は「動きなし」とみなす（日経先物が無い日は予報自体を出さない）
-    fac_next = np.nan_to_num(_next(fac))
     ridge_missing = [k for k, x in zip(RIDGE_FACTORS, fac[-1]) if np.isnan(x)]
+    gaps, adrs = {}, {}  # 寄付きギャップとADRの想定ギャップを全銘柄分先に作る
+    for s in tickers:
+        if s in C.columns and C[s].reindex(idx).notna().sum() >= 300:
+            c = C[s].reindex(idx)
+            gaps[s] = (O[s].reindex(idx) / c.shift(1) - 1).to_numpy(float)
+            if s in ADR:
+                adrs[s] = implied_gap(ADR[s], c).to_numpy(float)
+    ridge, B_mean, Ba_mean = _ridge_preds(gaps, adrs, fac)
+    research = {}
+    if RESEARCH:
+        for lam in (0.3, 1.0):  # 全銘柄平均の係数へ縮める（経験ベイズ）
+            pooled = _ridge_preds(gaps, adrs, fac, lam=lam, prior=(B_mean, Ba_mean))[0]
+            research[f"pred_ridge_pool{str(lam).replace('.', '')}"] = {k: v[1] for k, v in pooled.items()}
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore", category=RuntimeWarning)
+            adrb = np.nanmean(np.vstack(list(adrs.values())), axis=0)  # 日本企業ADRの想定ギャップの平均（ADRバスケット）
+        research["pred_ridge_b"] = {k: v[1] for k, v in _ridge_preds(gaps, adrs, np.hstack([fac, adrb[:, None]]))[0].items()}
+        nxt = pd.Series(idx[1:].append(pd.DatetimeIndex([pd.NaT])), index=idx)  # 行tの「翌営業日」
+        cal = pd.DataFrame({"dow": nxt.dt.dayofweek, "gapdays": (nxt - nxt.index).dt.days,
+                            "monthpos": nxt.groupby(nxt.dt.to_period("M")).cumcount(),
+                            "sq": ((nxt.dt.dayofweek == 4) & nxt.dt.day.between(8, 14)).astype(float)}, index=idx)
+        cal["monthend"] = cal.monthpos.groupby(nxt.dt.to_period("M")).transform("max") - cal.monthpos
 
     frames = []
     for s in tickers:
@@ -228,15 +280,12 @@ def build_panel(px: pd.DataFrame, tickers: list[str], target: pd.Timestamp):
         adr = implied_gap(ADR[s], c) if s in ADR else pd.Series(np.nan, index=idx)
         f["adr_imp"] = adr.shift(-1)
         f["adr_has"] = float(s in ADR)
-        # 19の海外指標で寄付きギャップを同時に説明する銘柄ごとの係数（当日までの直近250日）×翌日の指標＝想定ギャップ
-        gv = gap.to_numpy(float)
-        f["pred_ridge"] = (_roll_ridge(gv, fac, fac_outer, RIDGE_LAM, RIDGE_N) * fac_next).sum(axis=1)
-        f["pred_ridge_adr"] = f.pred_ridge
-        if s in ADR:  # ADRのある銘柄は「ADRの想定ギャップ」も同時に説明変数に入れる。ADRが取引されなかった日は上の値
-            a = adr.to_numpy(float)[:, None]
-            X = np.hstack([fac, a])
-            B = _roll_ridge(gv, X, np.einsum("ti,tj->tij", np.nan_to_num(X), np.nan_to_num(X)), RIDGE_LAM, RIDGE_N)
-            f["pred_ridge_adr"] = pd.Series((B * np.hstack([fac_next, _next(a)])).sum(axis=1), idx).fillna(f.pred_ridge)
+        # 19の海外指標（＋ADR）で寄付きギャップを同時に説明する銘柄ごとの係数（当日までの直近250日）×翌日の指標＝想定ギャップ
+        f["pred_ridge"], f["pred_ridge_adr"] = ridge[s]
+        for k, v in research.items():
+            f[k] = v[s]
+        if RESEARCH:
+            f[list(cal.columns)] = cal
         f["vixlvl"] = vix_lvl.shift(-1)  # 分析用（学習には使わない）
         f["y_cc"] = r.shift(-1)
         f["y_gap"] = gap.shift(-1)
@@ -244,6 +293,9 @@ def build_panel(px: pd.DataFrame, tickers: list[str], target: pd.Timestamp):
         f["tk"] = s
         frames.append(f.iloc[:-1])  # 対象日の行自体は特徴量を持たないので落とす
     panel = pd.concat(frames).rename_axis("date").reset_index()
+    if RESEARCH:  # その日の全銘柄の中での位置（相対的な想定ギャップ）
+        g = panel.groupby("date").pred_ridge_adr
+        panel["rel_ridge"], panel["rank_ridge"] = panel.pred_ridge_adr - g.transform("mean"), g.rank(pct=True)
     inputs = {
         "spxPct": _pct(spx.iloc[-1]), "soxPct": _pct(sox.iloc[-1]), "usdjpyPct": _pct(fx.iloc[-1]),
         "usdjpy": _round(lv[FX].iloc[-1], 2), "nkdPct": _pct(nkd_raw.iloc[-1]), "nkd": _round(lv[NKD].iloc[-1], 0),

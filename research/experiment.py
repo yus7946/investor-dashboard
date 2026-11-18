@@ -31,6 +31,7 @@ import pandas as pd  # noqa: E402
 import forecast.overnight as ov  # noqa: E402
 from data.universe import MASTER  # noqa: E402
 
+ov.RESEARCH = True  # 研究用の候補特徴量も作る
 HERE = os.path.dirname(os.path.abspath(__file__))
 CACHE = os.path.join(HERE, "cache")
 RESULTS = os.path.join(HERE, "results.jsonl")
@@ -67,6 +68,29 @@ def mono(feats):
                                                   l2_regularization=1.0, random_state=0, monotonic_cst=cst)
 
 
+def gbm(**kw):
+    base = dict(max_iter=150, learning_rate=0.05, max_leaf_nodes=15, min_samples_leaf=400, l2_regularization=1.0, random_state=0)
+    return lambda: HistGradientBoostingClassifier(**{**base, **kw})
+
+
+class Bag:
+    """特徴量を毎回ランダムに7割だけ使う勾配ブースティングを5本作って平均（ばらつきを減らす）。"""
+    def fit(self, X, y, sample_weight=None):
+        self.ms = [gbm(max_features=0.7, random_state=i)().fit(X, y, sample_weight=sample_weight) for i in range(5)]
+        return self
+
+    def predict_proba(self, X):
+        return np.mean([m.predict_proba(X) for m in self.ms], axis=0)
+
+
+def swap(feats, new):
+    """本番の pred_ridge_adr を候補に置き換えた特徴量リスト。"""
+    return [new if f == "pred_ridge_adr" else f for f in feats]
+
+
+CAL = ["dow", "gapdays", "monthpos", "monthend", "sq"]
+
+
 def size_weight(tr, y):
     """値動きの大きい日ほど重く学ぶ（小さな値動きの上げ下げは雑音が多い）。ふだんの値動き比で上限3倍。"""
     return np.clip((tr[y].abs() / tr.vol20).fillna(1).to_numpy(), 0.1, 3.0)
@@ -89,6 +113,17 @@ EXPERIMENTS = {
     "wt": (P, None, {"weight_fn": size_weight}),  # 値動きの大きさで重み付け
     "ens": (P, Blend),  # 勾配ブースティング＋ロジスティック回帰
     "ridge_noadr": (ov.FEATURES_V1 + ["pred_ridge"], None),  # リッジ回帰のみ（ADRを入れない）
+    # PDCA#8（2026-11）
+    "pool03": (swap(P, "pred_ridge_pool03"), None),  # リッジ回帰の係数を全銘柄平均へ縮める（経験ベイズ）
+    "pool10": (swap(P, "pred_ridge_pool10"), None),  # 同・強く
+    "adrb": (swap(P, "pred_ridge_b"), None),  # 日本企業ADRバスケットを20個目の指標に
+    "cal": (P + CAL, None),  # 曜日・休日をはさむか・月末月初・SQ
+    "rel": (P + ["rel_ridge", "rank_ridge"], None),  # その日の全銘柄の中での想定ギャップの位置
+    "gbm_mf": (P, gbm(max_features=0.5)),  # 分岐ごとに特徴量の半分だけ見る
+    "gbm_slow": (P, gbm(learning_rate=0.03, max_iter=400, min_samples_leaf=800)),  # ゆっくり・強い正則化
+    "bag5": (P, Bag),  # 5本の平均
+    "trim3": (P, None, {"weight_fn": lambda tr, y: (tr[y].abs() / tr.vol20 <= 3).fillna(True).to_numpy(float)}),  # 平常の3倍超の日を学習から外す
+    "trim4": (P, None, {"weight_fn": lambda tr, y: (tr[y].abs() / tr.vol20 <= 4).fillna(True).to_numpy(float)}),  # 同・4倍
     "all": (BASE + ov.EXTRA_MKT + ov.EXTRA_SEC + ov.EXTRA_ADR, None),
     "all_big": (BASE + ov.EXTRA_MKT + ov.EXTRA_SEC + ov.EXTRA_ADR,
                 lambda: HistGradientBoostingClassifier(max_iter=300, learning_rate=0.04, max_leaf_nodes=31,
