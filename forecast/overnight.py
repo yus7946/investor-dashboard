@@ -41,6 +41,8 @@ US_EXTRA = {"ixic": "^IXIC", "rut": "^RUT", "vix": "^VIX", "tnx": "^TNX", "oil":
             "copper": "HG=F", "ewj": "EWJ"}
 # 米国の業種ETF。銘柄ごとの感応度×夜間リターンを特徴量にする
 US_SECTORS = {"xlf": "XLF", "xle": "XLE", "xli": "XLI", "xlv": "XLV"}
+# 残りの米国業種ETF（リッジ回帰で11業種すべてを同時に使う。2026-11 PDCA#7）
+US_SECTORS2 = {"xlk": "XLK", "xly": "XLY", "xlp": "XLP", "xlb": "XLB", "xlu": "XLU", "xlc": "XLC", "xlre": "XLRE"}
 # 米国で取引される日本企業の株（ADR等）。夜間についた値段から翌朝の東京の値段を逆算できる
 ADR = {
     "7203.T": "TM", "6758.T": "SONY", "8306.T": "MUFG", "8316.T": "SMFG", "8411.T": "MFG", "7267.T": "HMC",
@@ -65,10 +67,16 @@ STOCK = ["r1", "x1", "x5", "x20", "vol20", "vratio", "clv", "gap_today", "rsi", 
 EXTRA_MKT = list(US_EXTRA) + ["ewj_imp"]
 EXTRA_SEC = [f"pred_{k}" for k in US_SECTORS]
 EXTRA_ADR = ["adr_imp", "adr_has"]
-FEATURES = OVERNIGHT + STOCK + EXTRA_SEC + EXTRA_ADR  # 2026-10-13 PDCA#1で採用（research/results.jsonl）
+EXTRA_RIDGE = ["pred_ridge_adr"]
+FEATURES_V1 = OVERNIGHT + STOCK + EXTRA_SEC + EXTRA_ADR  # 2026-10-13 PDCA#1で採用
+FEATURES = FEATURES_V1 + EXTRA_RIDGE  # 2026-11-18 PDCA#7で採用（research/results.jsonl）
+# 銘柄ごとのリッジ回帰で同時に使う夜間の海外指標（19個）
+RIDGE_FACTORS = ["nkd", "spx", "sox", "fx", "tnx", "oil", "copper", "gold", "ewj_imp"] + list(US_SECTORS) + list(US_SECTORS2)
+RIDGE_LAM, RIDGE_N = 0.1, 250  # 係数を0へ縮める強さ（指標の大きさを揃えた尺度）・推定に使う直近の営業日数
 BANDS = [0, .2, .3, .4, .45, .55, .6, .7, .8, 1.0001]
 CLEAN = True  # 異常値の除去（研究用に切り替え可能）
 HIGH_CONF = 0.7  # p>=0.7 または p<=0.3 を「高確信」とする
+MODEL_VERSION = "v2"  # 運用記録に残し、モデルごとの実績を分けて点検できるようにする（v1: 〜2026-11-18、v2: リッジ回帰）
 
 
 def _is_closed(d) -> bool:
@@ -93,6 +101,31 @@ def _last_before(close: pd.DataFrame, sym: str, idx: pd.DatetimeIndex) -> pd.Ser
     s = close[sym].dropna()
     cal = s.reindex(pd.date_range(s.index[0], idx[-1])).ffill().shift(1)
     return cal.reindex(idx)
+
+
+def _roll_ridge(y: np.ndarray, X: np.ndarray, outer: np.ndarray, lam: float, n: int = 250,
+                min_n: int | None = None) -> np.ndarray:
+    """y（寄付きギャップ）を複数の海外指標 X で同時に説明する係数を、各日までの直近n日だけで推定する（リッジ回帰）。
+    指標の大きさを揃えた尺度で係数を0へ縮め、相関の強い指標どうしで係数が暴れないようにする。outer は X の外積。"""
+    ok = np.isfinite(y) & np.isfinite(X).all(axis=1)
+    Xo, yo = np.where(ok[:, None], X, 0.0), np.where(ok, y, 0.0)
+
+    def win(a):
+        c = np.cumsum(a, axis=0)
+        c[n:] = c[n:] - c[:-n]
+        return c
+    XX = win(np.where(ok[:, None, None], outer, 0.0))
+    Xy, cnt = win(Xo * yo[:, None]), win(ok.astype(float))
+    k = X.shape[1]
+    A = XX + (lam * np.einsum("tii->ti", XX))[:, :, None] * np.eye(k) + 1e-14 * np.eye(k)
+    B = np.linalg.solve(A, Xy[..., None])[..., 0]
+    B[cnt < (min_n or min(120, n // 2))] = np.nan
+    return B
+
+
+def _next(X: np.ndarray) -> np.ndarray:
+    """行tに行t+1の値（翌営業日の寄付き前に既知の海外情報）を載せる。最終行はNaN。"""
+    return np.vstack([X[1:], np.full((1, X.shape[1]), np.nan)])
 
 
 def _clean_spikes(df: pd.DataFrame) -> pd.DataFrame:
@@ -145,13 +178,19 @@ def build_panel(px: pd.DataFrame, tickers: list[str], target: pd.Timestamp):
         return raw / ratio - 1
 
     ext = {}
-    for k, sym in {**US_EXTRA, **US_SECTORS}.items():
+    for k, sym in {**US_EXTRA, **US_SECTORS, **US_SECTORS2}.items():
         if sym in C.columns and C[sym].notna().sum() >= 120:
             l = _last_before(C, sym, idx)
             ext[k] = (l - l.shift(1)) / 100 if k == "tnx" else l / l.shift(1) - 1  # 金利は%ポイント差
         else:
             ext[k] = pd.Series(np.nan, index=idx)
     ewj_imp = implied_gap("EWJ", mkt)
+    fac_all = {"nkd": nkd, "spx": spx, "sox": sox, "fx": fx, "ewj_imp": ewj_imp, **ext}
+    fac = np.column_stack([fac_all[k].to_numpy(float) for k in RIDGE_FACTORS])
+    fac_outer = np.einsum("ti,tj->tij", np.nan_to_num(fac), np.nan_to_num(fac))
+    # 予測に使う翌日の値。一部の指標だけ欠けた日（配信遅れ等）は「動きなし」とみなす（日経先物が無い日は予報自体を出さない）
+    fac_next = np.nan_to_num(_next(fac))
+    ridge_missing = [k for k, x in zip(RIDGE_FACTORS, fac[-1]) if np.isnan(x)]
 
     frames = []
     for s in tickers:
@@ -189,6 +228,15 @@ def build_panel(px: pd.DataFrame, tickers: list[str], target: pd.Timestamp):
         adr = implied_gap(ADR[s], c) if s in ADR else pd.Series(np.nan, index=idx)
         f["adr_imp"] = adr.shift(-1)
         f["adr_has"] = float(s in ADR)
+        # 19の海外指標で寄付きギャップを同時に説明する銘柄ごとの係数（当日までの直近250日）×翌日の指標＝想定ギャップ
+        gv = gap.to_numpy(float)
+        f["pred_ridge"] = (_roll_ridge(gv, fac, fac_outer, RIDGE_LAM, RIDGE_N) * fac_next).sum(axis=1)
+        f["pred_ridge_adr"] = f.pred_ridge
+        if s in ADR:  # ADRのある銘柄は「ADRの想定ギャップ」も同時に説明変数に入れる。ADRが取引されなかった日は上の値
+            a = adr.to_numpy(float)[:, None]
+            X = np.hstack([fac, a])
+            B = _roll_ridge(gv, X, np.einsum("ti,tj->tij", np.nan_to_num(X), np.nan_to_num(X)), RIDGE_LAM, RIDGE_N)
+            f["pred_ridge_adr"] = pd.Series((B * np.hstack([fac_next, _next(a)])).sum(axis=1), idx).fillna(f.pred_ridge)
         f["vixlvl"] = vix_lvl.shift(-1)  # 分析用（学習には使わない）
         f["y_cc"] = r.shift(-1)
         f["y_gap"] = gap.shift(-1)
@@ -200,6 +248,7 @@ def build_panel(px: pd.DataFrame, tickers: list[str], target: pd.Timestamp):
         "spxPct": _pct(spx.iloc[-1]), "soxPct": _pct(sox.iloc[-1]), "usdjpyPct": _pct(fx.iloc[-1]),
         "usdjpy": _round(lv[FX].iloc[-1], 2), "nkdPct": _pct(nkd_raw.iloc[-1]), "nkd": _round(lv[NKD].iloc[-1], 0),
         "n225": _round(n225.iloc[-2], 0), "n225Estimated": n225_missing,
+        "ridgeMissing": ridge_missing,  # 点検用: 対象日の朝に欠けていた海外指標（0とみなした）
     }
     return panel, inputs
 
@@ -241,7 +290,7 @@ def recency_weights(dates: pd.Series, half_life_days: float | None) -> np.ndarra
 
 
 def _validate(panel: pd.DataFrame, quarters: int = 8, feats: list[str] | None = None, model_fn=None,
-              keep_preds: bool = False, half_life: float | None = None) -> dict:
+              keep_preds: bool = False, half_life: float | None = None, weight_fn=None) -> dict:
     """直近8四半期を1四半期ずつ「それ以前のデータだけで学習→予測」して答え合わせする。"""
     feats = feats or FEATURES
     out = {}
@@ -256,7 +305,10 @@ def _validate(panel: pd.DataFrame, quarters: int = 8, feats: list[str] | None = 
             tr, te = d[d.date < f0 - pd.Timedelta(days=3)], d[(d.date >= f0) & (d.date < f1)]
             if len(te) == 0 or len(tr) < 20000:
                 continue
-            m = (model_fn or _model)().fit(tr[feats], tr.label, sample_weight=recency_weights(tr.date, half_life))
+            w = recency_weights(tr.date, half_life)
+            if weight_fn is not None:  # 研究用: 学習時の重み（例: 値動きの大きさ）
+                w = weight_fn(tr, y) * (1.0 if w is None else w)
+            m = (model_fn or _model)().fit(tr[feats], tr.label, sample_weight=w)
             preds.append(te.assign(p=m.predict_proba(te[feats])[:, 1]))
         P = pd.concat(preds)
         p, lab = P.p.to_numpy(), P.label.to_numpy()
@@ -360,7 +412,7 @@ def _update_history(history: dict, panel: pd.DataFrame, today_pred: dict | None)
             mret = float(rows["y_cc"].dropna().mean())
             history.setdefault("days", []).append({
                 "d": str(nxt.date()), "n": n, "cc": cc_hit, "gap": gap_hit, "gn": gap_n, "hcN": hc_n, "hc": hc_hit, "agN": ag_n, "ag": ag_hit,
-                "mp": pend.get("mkt"), "mUp": mret > 0,
+                "mp": pend.get("mkt"), "mUp": mret > 0, "m": pend.get("model", "v1"),
             })
             history["days"] = history["days"][-250:]
         history.pop("pending")
@@ -422,6 +474,7 @@ def is_final_for_today(fc: dict | None, now: datetime | None = None) -> bool:
 def download(tickers: list[str], period: str = "5y") -> pd.DataFrame:
     """予報に使う全データを1回の一括リクエストで取得する。"""
     extra = [MKT, N225, N225_ETF, SPX, SOX, FX, NKD] + list(US_EXTRA.values()) + list(US_SECTORS.values())
+    extra += list(US_SECTORS2.values())
     extra += [ADR[t] for t in tickers if t in ADR]
     return yf.download(list(dict.fromkeys(tickers + extra)), period=period, interval="1d",
                        auto_adjust=True, group_by="column", threads=True, progress=False)
@@ -478,7 +531,7 @@ def build_overnight_forecast(universe: list[tuple[str, str]], now: datetime | No
     base = str(panel.date.max().date())
     provisional = not (target.date() == now.date() and (6, 0) <= (now.hour, now.minute) < (15, 30))
     history = _update_history(history, panel, None if provisional else {
-        "b": base, "d": str(target.date()), "mkt": mkt_p,
+        "b": base, "d": str(target.date()), "mkt": mkt_p, "model": MODEL_VERSION,
         "preds": {s["ticker"]: [s["pUp"], s["pGapUp"]] for s in stocks},
     })
     os.makedirs(os.path.dirname(HISTORY_PATH), exist_ok=True)
@@ -497,7 +550,7 @@ def build_overnight_forecast(universe: list[tuple[str, str]], now: datetime | No
         "stocks": stocks,
         "validation": validation,
         "live": _live_stats(history, validation["y_cc"]["accuracy"]),
-        "basis": "夜間に確定した米S&P500・米半導体指数(SOX)・ドル円・CME日経先物の動きと、銘柄ごとの過去の感応度を"
-                 "機械学習（勾配ブースティング）で組み合わせた確率。的中率はすべて、その時点より前のデータだけで"
+        "basis": "夜間に確定した米S&P500・米半導体指数(SOX)・ドル円・CME日経先物・米国11業種・金利・原油・日本企業のADRなどの動きと、"
+                 "銘柄ごとの過去の感応度（19指標を同時に推定するリッジ回帰）を機械学習（勾配ブースティング）で組み合わせた確率。的中率はすべて、その時点より前のデータだけで"
                  "学習した予測の答え合わせ（先読みなし）。寄付き後の値動きや数日先は予測力が確認できないため対象外。",
     }

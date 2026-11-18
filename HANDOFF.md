@@ -46,6 +46,9 @@ investor_dashboard.html      # フロントエンド全部（単一ファイル�
 ```
 
 ## 直近の実装履歴（新しい順）
+0000000. **予報モデルv2（2026-11-18、PDCA#7）**: `forecast/overnight.py` に銘柄ごとのリッジ回帰（19の夜間指標＋ADRで
+   寄付きギャップを同時推定、`pred_ridge_adr`）を追加。検証で終値59.0→59.8%・寄付き65.4→66.7%（有意、古い期間でも確認）。
+   ほかに試した8手法（アンサンブル・単調性制約・市場専用モデル等）は効果なし。運用記録の各日に `"m"`（モデル版）を記録。
 000000. **実験はGitHub Actionsで（2026-11-17〜）**: 手元PCはWindowsのアプリ制御でscikit-learnが動かない。
    `research/request.txt` に実験名を書いてpush → `research.yml` が実行し `research/last_run.log`・`results.jsonl` に書き戻す。
    JPX投資部門別売買は新形式（stock_1_w_*.xlsx）に対応済み（要openpyxl）。
