@@ -15839,6 +15839,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-11-17",
+      "ticker": "2269.T",
+      "name": "明治HD",
+      "basePrice": 4677.0,
+      "rangeLow": 4619,
+      "rangeHigh": 4735,
+      "predUpRate": 56.4,
+      "condN": 179,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
