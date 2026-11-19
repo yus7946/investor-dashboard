@@ -1,6 +1,6 @@
 {
-  "updated": "2026年11月19日 22:41",
-  "updatedAtMs": 1795095695508,
+  "updated": "2026年11月19日 23:35",
+  "updatedAtMs": 1795098931504,
   "updateMode": "light",
   "fetched": 163,
   "universeTotal": 166,
@@ -60,13 +60,13 @@
     "source": "TOPIX連動ETF(1306.T)終値と200日移動平均から判定"
   },
   "marketOutlook": {
-    "spxChangePct": -0.23,
-    "spxDate": "2026-11-18",
-    "usdjpy": 159.92,
-    "usdjpyChangePct": 0.26,
-    "condition": "米S&P500が直近下落",
-    "topixUpRate": 44.0,
-    "n": 216,
+    "spxChangePct": 1.17,
+    "spxDate": "2026-11-19",
+    "usdjpy": 159.87,
+    "usdjpyChangePct": 0.23,
+    "condition": "米S&P500が直近上昇",
+    "topixUpRate": 65.1,
+    "n": 269,
     "regime": "neutral",
     "basis": "過去2年で「米国市場が上昇/下落した翌営業日に東京(TOPIX ETF)が上昇した割合」を実際に集計。統計的傾向であり将来を保証しません。出典: Yahoo Finance価格データ。"
   },
@@ -2292,12 +2292,12 @@
     "basis": "夜間に確定した米S&P500・米半導体指数(SOX)・ドル円・CME日経先物・米国11業種・金利・原油・日本企業のADRなどの動きと、銘柄ごとの過去の感応度（19指標を同時に推定するリッジ回帰）を機械学習（勾配ブースティング）で組み合わせた確率。的中率はすべて、その時点より前のデータだけで学習した予測の答え合わせ（先読みなし）。寄付き後の値動きや数日先は予測力が確認できないため対象外。"
   },
   "marketReport": {
-    "generatedAt": "2026-11-19 22:41",
+    "generatedAt": "2026-11-19 23:35",
     "regime": {
       "n225Vol": 32.4,
       "n225VolTopPct": 11,
-      "vix": 22.2,
-      "vixTopPct": 23,
+      "vix": 22.4,
+      "vixTopPct": 22,
       "vixDate": "2026-11-19",
       "n225FromHigh": -15.9,
       "n225Daily10": [
@@ -2370,36 +2370,36 @@
           "label": "米S&P500",
           "group": "us",
           "base": 7568.92,
-          "last": 7323.63,
+          "last": 7409.86,
           "react": 1.58,
-          "since": -3.24,
-          "day": -0.23,
+          "since": -2.1,
+          "day": 1.18,
           "unit": "%",
-          "lastDate": "2026-11-18"
+          "lastDate": "2026-11-19"
         },
         {
           "symbol": "^IXIC",
           "label": "米ナスダック",
           "group": "us",
           "base": 25372.01,
-          "last": 24429.88,
+          "last": 24905.49,
           "react": 1.44,
-          "since": -3.71,
-          "day": 0.42,
+          "since": -1.84,
+          "day": 1.95,
           "unit": "%",
-          "lastDate": "2026-11-18"
+          "lastDate": "2026-11-19"
         },
         {
           "symbol": "^SOX",
           "label": "米半導体(SOX)",
           "group": "us",
           "base": 10600.4,
-          "last": 9652.8,
+          "last": 10026.26,
           "react": -3.13,
-          "since": -8.94,
-          "day": 0.1,
+          "since": -5.42,
+          "day": 3.87,
           "unit": "%",
-          "lastDate": "2026-11-18"
+          "lastDate": "2026-11-19"
         },
         {
           "symbol": "^RUT",
@@ -2418,82 +2418,82 @@
           "label": "米金融",
           "group": "sector",
           "base": 57.19,
-          "last": 56.42,
+          "last": 56.48,
           "react": 3.51,
-          "since": -1.35,
-          "day": -1.14,
+          "since": -1.24,
+          "day": 0.11,
           "unit": "%",
-          "lastDate": "2026-11-18"
+          "lastDate": "2026-11-19"
         },
         {
           "symbol": "XLE",
           "label": "米エネルギー",
           "group": "sector",
           "base": 66.68,
-          "last": 61.29,
+          "last": 61.74,
           "react": -4.74,
-          "since": -8.08,
-          "day": -3.27,
+          "since": -7.4,
+          "day": 0.74,
           "unit": "%",
-          "lastDate": "2026-11-18"
+          "lastDate": "2026-11-19"
         },
         {
           "symbol": "XLV",
           "label": "米ヘルスケア",
           "group": "sector",
           "base": 184.02,
-          "last": 181.17,
+          "last": 180.99,
           "react": 3.06,
-          "since": -1.55,
-          "day": -2.2,
+          "since": -1.65,
+          "day": -0.1,
           "unit": "%",
-          "lastDate": "2026-11-18"
+          "lastDate": "2026-11-19"
         },
         {
           "symbol": "XLI",
           "label": "米資本財",
           "group": "sector",
           "base": 171.32,
-          "last": 164.66,
+          "last": 164.99,
           "react": -1.09,
-          "since": -3.89,
-          "day": -0.05,
+          "since": -3.7,
+          "day": 0.2,
           "unit": "%",
-          "lastDate": "2026-11-18"
+          "lastDate": "2026-11-19"
         },
         {
           "symbol": "XLK",
           "label": "米テクノロジー",
           "group": "sector",
           "base": 176.51,
-          "last": 163.81,
+          "last": 168.51,
           "react": -0.01,
-          "since": -7.2,
-          "day": 0.34,
+          "since": -4.53,
+          "day": 2.87,
           "unit": "%",
-          "lastDate": "2026-11-18"
+          "lastDate": "2026-11-19"
         },
         {
           "symbol": "ITA",
           "label": "米防衛・航空",
           "group": "sector",
           "base": 72.06,
-          "last": 69.39,
+          "last": 69.81,
           "react": -1.54,
-          "since": -3.7,
-          "day": -0.3,
+          "since": -3.11,
+          "day": 0.61,
           "unit": "%",
-          "lastDate": "2026-11-18"
+          "lastDate": "2026-11-19"
         },
         {
           "symbol": "^VIX",
           "label": "VIX（恐怖指数）",
           "group": "level",
           "base": 20.83,
-          "last": 22.25,
+          "last": 22.43,
           "react": -4.22,
-          "since": 1.42,
-          "day": -2.31,
+          "since": 1.6,
+          "day": -2.13,
           "unit": "pt",
           "lastDate": "2026-11-19"
         },
@@ -2502,9 +2502,9 @@
           "label": "米10年金利",
           "group": "level",
           "base": 4.95,
-          "last": 5.1,
+          "last": 5.09,
           "react": -0.06,
-          "since": 0.15,
+          "since": 0.14,
           "day": 0.03,
           "unit": "pt",
           "lastDate": "2026-11-19"
@@ -2514,10 +2514,10 @@
           "label": "ドル円",
           "group": "fx",
           "base": 157.91,
-          "last": 159.92,
+          "last": 159.86,
           "react": 0.35,
-          "since": 1.27,
-          "day": 0.26,
+          "since": 1.23,
+          "day": 0.22,
           "unit": "%",
           "lastDate": "2026-11-19"
         },
@@ -3367,7 +3367,7 @@
           "ccAgree": 62.4,
           "gap": 71.1,
           "title": "VIX（米国の恐怖指数）",
-          "value": 22.2
+          "value": 22.4
         }
       },
       "table": {
