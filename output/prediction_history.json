@@ -16454,6 +16454,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-11-19",
+      "ticker": "4502.T",
+      "name": "武田薬品工業",
+      "basePrice": 6992.0,
+      "rangeLow": 6907,
+      "rangeHigh": 7077,
+      "predUpRate": 52.6,
+      "condN": 196,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -23697,6 +23712,18 @@
       "entry": 246,
       "target": 251,
       "stop": 242,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-19",
+      "ticker": "4502.T",
+      "name": "武田薬品工業",
+      "basePrice": 6992.0,
+      "entry": 6949,
+      "target": 7120,
+      "stop": 6821,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
