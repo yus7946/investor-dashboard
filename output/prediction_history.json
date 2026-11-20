@@ -16469,6 +16469,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-11-19",
+      "ticker": "7201.T",
+      "name": "日産自動車",
+      "basePrice": 266.3,
+      "rangeLow": 259,
+      "rangeHigh": 273,
+      "predUpRate": 43.9,
+      "condN": 180,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -23724,6 +23739,42 @@
       "entry": 6949,
       "target": 7120,
       "stop": 6821,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-19",
+      "ticker": "7832.T",
+      "name": "バンダイナムコHD",
+      "basePrice": 7068.0,
+      "entry": 6999,
+      "target": 7274,
+      "stop": 6793,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-19",
+      "ticker": "9022.T",
+      "name": "JR東海",
+      "basePrice": 4394.0,
+      "entry": 4361,
+      "target": 4492,
+      "stop": 4263,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-19",
+      "ticker": "7201.T",
+      "name": "日産自動車",
+      "basePrice": 266.3,
+      "entry": 263,
+      "target": 277,
+      "stop": 252,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
