@@ -454,7 +454,55 @@ def _band_hit(bands: list[dict], p: float) -> float | None:
     return None
 
 
-def _update_history(history: dict, panel: pd.DataFrame, today_pred: dict | None) -> dict:
+def _replay_pending(px: pd.DataFrame, tickers: list[str], pend: dict, panel_now: pd.DataFrame) -> dict | None:
+    """前回の予報を「確定したデータだけ」で作り直した場合の入力と的中率（毎朝の自動点検）。
+    本番の記録と大きく違えば、本番だけで起きたデータの欠け・遅延・混入を疑う（2026-10の^N225、11月の先物の混入はこれで見つかった）。"""
+    try:
+        T = pd.Timestamp(pend["d"])
+        old, inp = build_panel(px, tickers, T)
+        base = old.date.max()
+        if str(base.date()) != pend["b"]:
+            return None
+        last = old[old.date == base]
+        last = last[last[OVERNIGHT + STOCK].notna().all(axis=1) & last.tk.isin(list(pend["preds"]))]
+        ans = panel_now[panel_now.date == base].set_index("tk")
+        out = {"nkd": inp["nkdPct"]}
+        for y, key in (("y_cc", "cc"), ("y_gap", "gap")):
+            d = _labeled(old, y)
+            p = _model().fit(d[FEATURES], d.label).predict_proba(last[FEATURES])[:, 1]
+            a = ans[y].reindex(last.tk).to_numpy(float)
+            ok = ~np.isnan(a) & (a != 0)
+            out[key] = round(float(((p > .5) == (a > 0))[ok].mean()) * 100, 1) if ok.any() else None
+        return out
+    except Exception as e:  # 点検の失敗で予報を止めない
+        print(f"  [警告] 前回予報の再現に失敗: {e}")
+        return None
+
+
+def _day_flags(pend: dict, rec: dict, rp: dict | None) -> list[str]:
+    """その日の予報について、点検で確認すべき点（注意）を列挙する。"""
+    fl, inp = [], pend.get("in") or {}
+    at = pend.get("at")
+    if at and at >= "09:00":
+        fl.append(f"寄付き後に作成（{at}）")
+    if inp.get("est"):
+        fl.append("前日の日経平均を日経225ETFで補完")
+    if inp.get("fixed"):
+        fl.append("先物を清算値に補正: " + "・".join(inp["fixed"]))
+    if inp.get("miss"):
+        fl.append("欠けた指標: " + "・".join(inp["miss"]))
+    if rp:
+        if rp.get("nkd") is not None and inp.get("nkd") is not None and abs(rp["nkd"] - inp["nkd"]) > 0.3:
+            fl.append(f"先物の入力が確定値と違う（記録{inp['nkd']:+.2f}% / 確定{rp['nkd']:+.2f}%）")
+        for k, name, n in (("cc", "終値", rec["n"]), ("gap", "寄付き", rec["gn"])):
+            if rp.get(k) is not None and n:
+                diff = rec[k] / n * 100 - rp[k]
+                if abs(diff) >= 10:  # 同じモデル・同じデータなら一致するはず。差はデータの違いを示す
+                    fl.append(f"確定データでの再現と{name}の的中が{diff:+.0f}pt違う")
+    return fl
+
+
+def _update_history(history: dict, panel: pd.DataFrame, today_pred: dict | None, replay: dict | None = None) -> dict:
     """前回の予報を実績と照合して日次サマリーに追加し、今回の予報を保留中として保存する。"""
     pend = history.get("pending")
     last_date = panel.date.max()
@@ -482,11 +530,17 @@ def _update_history(history: dict, panel: pd.DataFrame, today_pred: dict | None)
                 hc_hit += int((pc >= 50) == (ac > 0))
         if n:
             mret = float(rows["y_cc"].dropna().mean())
-            history.setdefault("days", []).append({
+            rec = {
                 "d": str(nxt.date()), "n": n, "cc": cc_hit, "gap": gap_hit, "gn": gap_n, "hcN": hc_n, "hc": hc_hit, "agN": ag_n, "ag": ag_hit,
                 "mp": pend.get("mkt"), "mUp": mret > 0, "m": pend.get("model", "v1"), "at": pend.get("at"),
                 **({"x": pend["x"]} if pend.get("x") else {}),  # 不具合が判明した予報（集計から除外）
-            })
+            }
+            if replay:
+                rec["rp"] = replay
+            fl = _day_flags(pend, rec, replay)
+            if fl:
+                rec["fl"] = fl
+            history.setdefault("days", []).append(rec)
             history["days"] = history["days"][-250:]
         history.pop("pending")
     if today_pred:  # 暫定予報は答え合わせ対象にしない
@@ -509,6 +563,15 @@ def _health(days: list[dict], val_acc: float) -> dict:
         status, note = "ok", "検証時と同等以上"
     return {"status": status, "note": note, "recentAccuracy": round(mean, 1), "days": len(acc),
             "validationAccuracy": val_acc, "margin": round(2 * se, 1)}
+
+
+def _day_row(d: dict) -> dict:
+    """画面の「日々の答え合わせ」1行分。"""
+    return {"d": d["d"], "at": d.get("at"), "m": d.get("m", "v1"),
+            "cc": round(d["cc"] / d["n"] * 100), "gap": round(d["gap"] / max(1, d.get("gn", d["n"])) * 100),
+            "ag": round(d["ag"] / d["agN"] * 100) if d.get("agN") else None,
+            "mkt": None if d.get("mp") is None else (d["mp"] >= 50) == d["mUp"],
+            "rp": d.get("rp"), "fl": d.get("fl", []), "x": bool(d.get("x"))}
 
 
 def _live_stats(history: dict, val_acc: float | None = None) -> dict | None:
@@ -537,6 +600,7 @@ def _live_stats(history: dict, val_acc: float | None = None) -> dict | None:
         "agreeAccuracy": round(sum(d.get("ag", 0) for d in days) / ag_n * 100, 1) if ag_n else None,
         "highConfAccuracy": round(sum(d["hc"] for d in days) / hc_n * 100, 1) if hc_n else None,
         "marketN": len(mk),
+        "recent": [_day_row(d) for d in all_days[-10:]][::-1],  # 日々の答え合わせ（新しい順）
         "marketAccuracy": round(sum((d["mp"] >= 50) == d["mUp"] for d in mk) / len(mk) * 100, 1) if mk else None,
     }
 
@@ -636,10 +700,14 @@ def build_overnight_forecast(universe: list[tuple[str, str]], now: datetime | No
             history = json.load(f)
     base = str(panel.date.max().date())
     provisional = not (target.date() == now.date() and (6, 0) <= (now.hour, now.minute) < (15, 30))
+    pend = history.get("pending")
+    replay = (_replay_pending(px, tickers, pend, panel)
+              if pend and pend.get("preds") and pd.Timestamp(pend["b"]) < panel.date.max() else None)
     history = _update_history(history, panel, None if provisional else {
         "b": base, "d": str(target.date()), "mkt": mkt_p, "model": MODEL_VERSION, "at": now.strftime("%H:%M"),
+        "in": {"nkd": inputs["nkdPct"], "est": inputs["n225Estimated"], "fixed": fixed, "miss": inputs["ridgeMissing"]},
         "preds": {s["ticker"]: [s["pUp"], s["pGapUp"]] for s in stocks},
-    })
+    }, replay)
     os.makedirs(os.path.dirname(HISTORY_PATH), exist_ok=True)
     with open(HISTORY_PATH, "w", encoding="utf-8") as f:
         json.dump(history, f, ensure_ascii=False, separators=(",", ":"))

@@ -1922,6 +1922,19 @@ function renderOvernight() {
       + (hl.recentAccuracy != null ? `（直近${hl.days}日の終値的中${hl.recentAccuracy}% / 検証時${hl.validationAccuracy}%・誤差幅±${hl.margin}pt）` : '')
       + `<span style="color:var(--muted)"> ${hl.note}</span></div>`
     : '';
+  // 日々の答え合わせ（毎朝自動で記録。確定したデータで作り直した結果＝再現と比べ、食い違いは注意として表示）
+  const rec = (live && live.recent) || [];
+  const pc = (x, base) => x == null ? '—' : `<b style="color:${x >= base ? 'var(--green)' : x < 50 ? 'var(--red)' : 'inherit'}">${x}%</b>`;
+  const dayRow = r => `<div style="padding:4px 0;border-top:1px solid var(--line, #e5e7eb)${r.x ? ';opacity:.6' : ''}">
+      <b>${md(r.d)}</b> <span style="color:var(--muted)">${r.at ? r.at + '作成' : ''}${r.m ? '・' + r.m : ''}</span>${r.x ? ' <span style="color:var(--stop)">集計外</span>' : ''}<br>
+      終値 ${pc(r.cc, 60)}${r.ag != null ? `（同じ向き ${pc(r.ag, 60)}）` : ''}・寄付き ${pc(r.gap, 65)}・市場全体 ${r.mkt == null ? '—' : r.mkt ? '<b style="color:var(--green)">的中</b>' : '<b style="color:var(--red)">外れ</b>'}
+      ${r.rp ? `<span style="color:var(--muted)">／確定データで再現: 終値${r.rp.cc}%・寄付き${r.rp.gap}%</span>` : ''}
+      ${(r.fl || []).map(f => `<div style="color:var(--stop)">⚠ ${f}</div>`).join('')}</div>`;
+  const dailyTxt = rec.length
+    ? `<details style="margin-top:6px"><summary style="cursor:pointer"><b>日々の答え合わせ</b>（直近${rec.length}営業日・毎朝自動で記録）</summary>
+        <div style="font-size:12px;margin-top:4px">${rec.map(dayRow).join('')}
+        <div style="color:var(--muted);margin-top:4px">「確定データで再現」は、後から確定した正しいデータだけで同じ予報を作り直した結果。本番の記録と大きく違う日は、本番だけでデータの欠け・遅れ・混入が起きた可能性があり、⚠で示します。</div></div></details>`
+    : '';
   el.style.display = 'block';
   el.innerHTML = `
     <div class="on-head">
@@ -1945,7 +1958,7 @@ function renderOvernight() {
       <div><b>過去2年の検証</b>（${v.from}〜${v.to}・各時点より前のデータだけで学習して答え合わせ）:
       終値の方向 <b>${v.y_cc.accuracy}%</b>（「毎日上がる」と言い続けた場合は${v.y_cc.baseline}%）${v.y_cc.agreeAccuracy != null ? `、寄付きと同じ向きの予報に限ると <b>${v.y_cc.agreeAccuracy}%</b>（逆向きの時は${v.y_cc.splitAccuracy}%のため予報なし）` : ''}、確率70%以上/30%以下の予報は <b>${v.y_cc.highConfAccuracy}%</b>。
       寄付きの方向 <b>${v.y_gap.accuracy}%</b>、高確信時 <b>${v.y_gap.highConfAccuracy}%</b>。</div>
-      ${liveTxt}${exTxt}${healthTxt}
+      ${liveTxt}${exTxt}${healthTxt}${dailyTxt}
       <div style="margin-top:4px">寄付きでほとんどの値動きが織り込まれ、寄付き後〜大引けや数日先は予測力が確認できないため対象外です。確率は保証ではありません。</div>
     </div>`;
 }

@@ -3325,6 +3325,144 @@ const DATA = {
       "agreeAccuracy": 63.1,
       "highConfAccuracy": 69.0,
       "marketN": 10,
+      "recent": [
+        {
+          "d": "2026-11-19",
+          "at": "10:29",
+          "m": "v2",
+          "cc": 58,
+          "gap": 41,
+          "ag": 57,
+          "mkt": true,
+          "rp": null,
+          "fl": [
+            "寄付き後に作成（10:29）"
+          ],
+          "x": true
+        },
+        {
+          "d": "2026-11-18",
+          "at": "10:53",
+          "m": "v1",
+          "cc": 65,
+          "gap": 40,
+          "ag": 62,
+          "mkt": true,
+          "rp": null,
+          "fl": [
+            "寄付き後に作成（10:53）"
+          ],
+          "x": true
+        },
+        {
+          "d": "2026-11-17",
+          "at": "11:37",
+          "m": null,
+          "cc": 77,
+          "gap": 70,
+          "ag": 79,
+          "mkt": true,
+          "rp": null,
+          "fl": [
+            "寄付き後に作成（11:37）"
+          ],
+          "x": true
+        },
+        {
+          "d": "2026-11-16",
+          "at": "08:31",
+          "m": null,
+          "cc": 54,
+          "gap": 70,
+          "ag": 54,
+          "mkt": false,
+          "rp": null,
+          "fl": [],
+          "x": false
+        },
+        {
+          "d": "2026-11-13",
+          "at": "09:42",
+          "m": null,
+          "cc": 60,
+          "gap": 57,
+          "ag": 60,
+          "mkt": true,
+          "rp": null,
+          "fl": [
+            "寄付き後に作成（09:42）"
+          ],
+          "x": true
+        },
+        {
+          "d": "2026-11-12",
+          "at": "10:42",
+          "m": null,
+          "cc": 36,
+          "gap": 52,
+          "ag": 28,
+          "mkt": true,
+          "rp": null,
+          "fl": [
+            "寄付き後に作成（10:42）"
+          ],
+          "x": true
+        },
+        {
+          "d": "2026-11-11",
+          "at": "09:15",
+          "m": null,
+          "cc": 47,
+          "gap": 51,
+          "ag": 45,
+          "mkt": true,
+          "rp": null,
+          "fl": [
+            "寄付き後に作成（09:15）"
+          ],
+          "x": true
+        },
+        {
+          "d": "2026-11-10",
+          "at": "11:24",
+          "m": null,
+          "cc": 78,
+          "gap": 81,
+          "ag": 85,
+          "mkt": true,
+          "rp": null,
+          "fl": [
+            "寄付き後に作成（11:24）"
+          ],
+          "x": true
+        },
+        {
+          "d": "2026-11-09",
+          "at": "08:08",
+          "m": null,
+          "cc": 48,
+          "gap": 65,
+          "ag": 56,
+          "mkt": true,
+          "rp": null,
+          "fl": [],
+          "x": false
+        },
+        {
+          "d": "2026-11-06",
+          "at": "09:33",
+          "m": null,
+          "cc": 93,
+          "gap": 94,
+          "ag": 97,
+          "mkt": true,
+          "rp": null,
+          "fl": [
+            "寄付き後に作成（09:33）"
+          ],
+          "x": true
+        }
+      ],
       "marketAccuracy": 30.0
     },
     "basis": "夜間に確定した米S&P500・米半導体指数(SOX)・ドル円・CME日経先物・米国11業種・金利・原油・日本企業のADRなどの動きと、銘柄ごとの過去の感応度（19指標を同時に推定するリッジ回帰）を機械学習（勾配ブースティング）で組み合わせた確率。的中率はすべて、その時点より前のデータだけで学習した予測の答え合わせ（先読みなし）。寄付き後の値動きや数日先は予測力が確認できないため対象外。"
@@ -9197,6 +9335,19 @@ function renderOvernight() {
       + (hl.recentAccuracy != null ? `（直近${hl.days}日の終値的中${hl.recentAccuracy}% / 検証時${hl.validationAccuracy}%・誤差幅±${hl.margin}pt）` : '')
       + `<span style="color:var(--muted)"> ${hl.note}</span></div>`
     : '';
+  // 日々の答え合わせ（毎朝自動で記録。確定したデータで作り直した結果＝再現と比べ、食い違いは注意として表示）
+  const rec = (live && live.recent) || [];
+  const pc = (x, base) => x == null ? '—' : `<b style="color:${x >= base ? 'var(--green)' : x < 50 ? 'var(--red)' : 'inherit'}">${x}%</b>`;
+  const dayRow = r => `<div style="padding:4px 0;border-top:1px solid var(--line, #e5e7eb)${r.x ? ';opacity:.6' : ''}">
+      <b>${md(r.d)}</b> <span style="color:var(--muted)">${r.at ? r.at + '作成' : ''}${r.m ? '・' + r.m : ''}</span>${r.x ? ' <span style="color:var(--stop)">集計外</span>' : ''}<br>
+      終値 ${pc(r.cc, 60)}${r.ag != null ? `（同じ向き ${pc(r.ag, 60)}）` : ''}・寄付き ${pc(r.gap, 65)}・市場全体 ${r.mkt == null ? '—' : r.mkt ? '<b style="color:var(--green)">的中</b>' : '<b style="color:var(--red)">外れ</b>'}
+      ${r.rp ? `<span style="color:var(--muted)">／確定データで再現: 終値${r.rp.cc}%・寄付き${r.rp.gap}%</span>` : ''}
+      ${(r.fl || []).map(f => `<div style="color:var(--stop)">⚠ ${f}</div>`).join('')}</div>`;
+  const dailyTxt = rec.length
+    ? `<details style="margin-top:6px"><summary style="cursor:pointer"><b>日々の答え合わせ</b>（直近${rec.length}営業日・毎朝自動で記録）</summary>
+        <div style="font-size:12px;margin-top:4px">${rec.map(dayRow).join('')}
+        <div style="color:var(--muted);margin-top:4px">「確定データで再現」は、後から確定した正しいデータだけで同じ予報を作り直した結果。本番の記録と大きく違う日は、本番だけでデータの欠け・遅れ・混入が起きた可能性があり、⚠で示します。</div></div></details>`
+    : '';
   el.style.display = 'block';
   el.innerHTML = `
     <div class="on-head">
@@ -9220,7 +9371,7 @@ function renderOvernight() {
       <div><b>過去2年の検証</b>（${v.from}〜${v.to}・各時点より前のデータだけで学習して答え合わせ）:
       終値の方向 <b>${v.y_cc.accuracy}%</b>（「毎日上がる」と言い続けた場合は${v.y_cc.baseline}%）${v.y_cc.agreeAccuracy != null ? `、寄付きと同じ向きの予報に限ると <b>${v.y_cc.agreeAccuracy}%</b>（逆向きの時は${v.y_cc.splitAccuracy}%のため予報なし）` : ''}、確率70%以上/30%以下の予報は <b>${v.y_cc.highConfAccuracy}%</b>。
       寄付きの方向 <b>${v.y_gap.accuracy}%</b>、高確信時 <b>${v.y_gap.highConfAccuracy}%</b>。</div>
-      ${liveTxt}${exTxt}${healthTxt}
+      ${liveTxt}${exTxt}${healthTxt}${dailyTxt}
       <div style="margin-top:4px">寄付きでほとんどの値動きが織り込まれ、寄付き後〜大引けや数日先は予測力が確認できないため対象外です。確率は保証ではありません。</div>
     </div>`;
 }

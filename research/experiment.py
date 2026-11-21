@@ -215,24 +215,33 @@ def replay(px, dates):
         last = last[last[ov.OVERNIGHT + ov.STOCK].notna().all(axis=1)]
         ans = full[full.date == panel.date.max()].set_index("tk")
         res = {}
+        feats = ov.FEATURES_V1 if d < "2026-11-19" else ov.FEATURES  # その日に本番で使っていたモデル
         for y in ("y_cc", "y_gap"):
             dd = ov._labeled(panel, y)
-            p = ov._model().fit(dd[ov.FEATURES], dd.label).predict_proba(last[ov.FEATURES])[:, 1]
+            p = ov._model().fit(dd[feats], dd.label).predict_proba(last[feats])[:, 1]
             a = ans.loc[last.tk, y].to_numpy()
             ok = ~np.isnan(a) & (a != 0)
             res[y] = round(float(((p > .5) == (a > 0))[ok].mean()) * 100, 1)
             if y == "y_cc":
                 res["mkt"] = f"{p.mean() * 100:.0f}%→{'上' if np.nanmean(a) > 0 else '下'}"
         print(f"replay {d}: 終値{res['y_cc']}% 寄付き{res['y_gap']}% 市場{res['mkt']} 先物{inp['nkdPct']}%", flush=True)
+        print("replayjson " + json.dumps({"d": d, "cc": res["y_cc"], "gap": res["y_gap"], "nkd": inp["nkdPct"]}), flush=True)
 
 
 def e2e():
     """本番の予報処理（先物の清算値への置き換えを含む）を通しで実行。運用記録には書き込まない。"""
     import tempfile
     ov.RESEARCH = False
-    ov.HISTORY_PATH = os.path.join(tempfile.mkdtemp(), "h.json")
+    tmp = os.path.join(tempfile.mkdtemp(), "h.json")
+    if os.path.exists(ov.HISTORY_PATH):  # 本物の記録のコピーで、前回予報の答え合わせ・再現チェックまで通す
+        with open(ov.HISTORY_PATH, encoding="utf-8") as f, open(tmp, "w", encoding="utf-8") as g:
+            g.write(f.read())
+    ov.HISTORY_PATH = tmp
     fc = ov.build_overnight_forecast(MASTER)
     json.dumps(fc, ensure_ascii=False)
+    with open(tmp, encoding="utf-8") as f:
+        last = json.load(f)["days"][-1]
+    print("e2e last graded:", json.dumps(last, ensure_ascii=False), flush=True)
     print("e2e ok:", fc["targetDate"], "stocks", len(fc["stocks"]), "inputs", fc["inputs"],
           "val", fc["validation"]["y_cc"]["accuracy"], fc["validation"]["y_gap"]["accuracy"], flush=True)
     ov.RESEARCH = True
