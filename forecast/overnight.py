@@ -35,6 +35,8 @@ warnings.filterwarnings("ignore", category=RuntimeWarning)
 JST = timezone(timedelta(hours=9))
 HISTORY_PATH = "output/overnight_history.json"
 MKT, N225, SPX, SOX, FX, NKD = "1306.T", "^N225", "^GSPC", "^SOX", "JPY=X", "NKD=F"
+# CMEの先物の日足の終値＝清算値。清算時刻ごろの1時間足（開始時刻・米中部時間）で同じ値を再現できる（2026-11-21に照合）
+FUT_SETTLE = {NKD: 14, "CL=F": 13, "GC=F": 12, "HG=F": 11}
 N225_ETF = "1321.T"  # 日経225連動ETF。Yahooの^N225は前日分の反映が翌朝に間に合わない日がある
 # 夜間（東京の引け後〜翌寄付き前）に確定する米国の追加指標
 US_EXTRA = {"ixic": "^IXIC", "rut": "^RUT", "vix": "^VIX", "tnx": "^TNX", "oil": "CL=F", "gold": "GC=F",
@@ -296,6 +298,7 @@ def build_panel(px: pd.DataFrame, tickers: list[str], target: pd.Timestamp):
     if RESEARCH:  # その日の全銘柄の中での位置（相対的な想定ギャップ）
         g = panel.groupby("date").pred_ridge_adr
         panel["rel_ridge"], panel["rank_ridge"] = panel.pred_ridge_adr - g.transform("mean"), g.rank(pct=True)
+        panel = _trust_features(panel)
     inputs = {
         "spxPct": _pct(spx.iloc[-1]), "soxPct": _pct(sox.iloc[-1]), "usdjpyPct": _pct(fx.iloc[-1]),
         "usdjpy": _round(lv[FX].iloc[-1], 2), "nkdPct": _pct(nkd_raw.iloc[-1]), "nkd": _round(lv[NKD].iloc[-1], 0),
@@ -303,6 +306,23 @@ def build_panel(px: pd.DataFrame, tickers: list[str], target: pd.Timestamp):
         "ridgeMissing": ridge_missing,  # 点検用: 対象日の朝に欠けていた海外指標（0とみなした）
     }
     return panel, inputs
+
+
+def _trust_features(panel: pd.DataFrame) -> pd.DataFrame:
+    """研究用: 想定ギャップの「最近の当たり具合」。行tの y は翌営業日の値なので、行tで使えるのは行t-1までの答えだけ。
+    銘柄ごと（直近60日）: 向きの的中率・実際÷想定の傾き。市場全体（直近20日）: 銘柄間の相関（寄付き/終値）と的中率。"""
+    panel = panel.sort_values(["tk", "date"]).reset_index(drop=True)
+    pr, yg = panel.pred_ridge_adr, panel.y_gap
+    ok = pr.notna() & yg.notna() & (yg != 0)
+    tmp = pd.DataFrame({"tk": panel.tk, "hit": ((pr > 0) == (yg > 0)).astype(float).where(ok),
+                        "xy": (pr * yg).where(ok), "xx": (pr * pr).where(ok)})
+    g = tmp.groupby("tk")
+    prev = {c: g[c].transform(lambda x: x.rolling(60, min_periods=30).mean().shift(1)) for c in ("hit", "xy", "xx")}
+    panel["hit_tk60"], panel["slope_tk60"] = prev["hit"], prev["xy"] / prev["xx"]
+    day = panel.assign(hit=tmp.hit).groupby("date").apply(lambda d: pd.Series({
+        "skill_mkt20": d.pred_ridge_adr.corr(d.y_gap), "follow_mkt20": d.pred_ridge_adr.corr(d.y_cc), "hit_mkt20": d.hit.mean()}))
+    day = day.sort_index().rolling(20, min_periods=10).mean().shift(1)
+    return panel.merge(day, left_on="date", right_index=True, how="left")
 
 
 def _pct(x):
@@ -464,7 +484,7 @@ def _update_history(history: dict, panel: pd.DataFrame, today_pred: dict | None)
             mret = float(rows["y_cc"].dropna().mean())
             history.setdefault("days", []).append({
                 "d": str(nxt.date()), "n": n, "cc": cc_hit, "gap": gap_hit, "gn": gap_n, "hcN": hc_n, "hc": hc_hit, "agN": ag_n, "ag": ag_hit,
-                "mp": pend.get("mkt"), "mUp": mret > 0, "m": pend.get("model", "v1"),
+                "mp": pend.get("mkt"), "mUp": mret > 0, "m": pend.get("model", "v1"), "at": pend.get("at"),
             })
             history["days"] = history["days"][-250:]
         history.pop("pending")
@@ -532,6 +552,34 @@ def download(tickers: list[str], period: str = "5y") -> pd.DataFrame:
                        auto_adjust=True, group_by="column", threads=True, progress=False)
 
 
+def fix_futures_close(px: pd.DataFrame, target: pd.Timestamp) -> list[str]:
+    """CMEの先物は米中部17:00（日本時間 冬8:00・夏7:00）に取引が再開すると、Yahooの最新の日足の終値が
+    清算値から「いまの価格」に置き換わる。寄付き後に実行すると、前日の終値のつもりで東京時間の値動きを含む価格を
+    使ってしまう（2026-11-18〜20に発生。11/19は前日比-0.29%を+0.75%と読み、寄付きの的中が41%に落ちた）。
+    学習データ（確定した日足＝清算値）とそろえるため、取引が再開していたら清算時刻ごろの1時間足の終値で置き換える。"""
+    syms = [s for s in FUT_SETTLE if s in px["Close"].columns]
+    try:
+        h = yf.download(syms, period="5d", interval="1h", auto_adjust=True, group_by="column", progress=False)["Close"]
+        h.index = h.index.tz_convert("America/Chicago")
+    except Exception as e:  # 取得できなければ日足のまま（予報は出す）
+        print(f"  [警告] 先物の1時間足を取得できず: {e}")
+        return []
+    fixed = []
+    for s in syms:
+        col = px["Close"][s].dropna()
+        col = col[col.index < target]
+        if col.empty or s not in h.columns:
+            continue
+        d = col.index[-1]  # 予報が「前日の終値」として使う日足
+        bars = h[s].dropna()
+        bars = bars[bars.index.date == d.date()]
+        settle = bars[bars.index.hour == FUT_SETTLE[s]]
+        if (bars.index.hour >= 17).any() and len(settle):  # 夕方の取引再開後＝日足が「いまの価格」になっている
+            px.loc[d, ("Close", s)] = float(settle.iloc[0])
+            fixed.append(s)
+    return fixed
+
+
 def build_overnight_forecast(universe: list[tuple[str, str]], now: datetime | None = None,
                              earnings: dict[str, str] | None = None) -> dict | None:
     if yf is None:
@@ -544,7 +592,9 @@ def build_overnight_forecast(universe: list[tuple[str, str]], now: datetime | No
     if px is None or px.empty:
         return None
     target = _target_date(now)
+    fixed = fix_futures_close(px, target)
     panel, inputs = build_panel(px, tickers, target)
+    inputs["futuresFixed"] = fixed  # 点検用: 取引再開後の価格を清算値に置き換えた先物
     if inputs["nkdPct"] is None or inputs["spxPct"] is None:
         print("  [警告] 夜間の海外データが取得できないため翌日予報を出しません")
         return None
@@ -583,7 +633,7 @@ def build_overnight_forecast(universe: list[tuple[str, str]], now: datetime | No
     base = str(panel.date.max().date())
     provisional = not (target.date() == now.date() and (6, 0) <= (now.hour, now.minute) < (15, 30))
     history = _update_history(history, panel, None if provisional else {
-        "b": base, "d": str(target.date()), "mkt": mkt_p, "model": MODEL_VERSION,
+        "b": base, "d": str(target.date()), "mkt": mkt_p, "model": MODEL_VERSION, "at": now.strftime("%H:%M"),
         "preds": {s["ticker"]: [s["pUp"], s["pGapUp"]] for s in stocks},
     })
     os.makedirs(os.path.dirname(HISTORY_PATH), exist_ok=True)

@@ -122,6 +122,10 @@ EXPERIMENTS = {
     "gbm_mf": (P, gbm(max_features=0.5)),  # 分岐ごとに特徴量の半分だけ見る
     "gbm_slow": (P, gbm(learning_rate=0.03, max_iter=400, min_samples_leaf=800)),  # ゆっくり・強い正則化
     "bag5": (P, Bag),  # 5本の平均
+    # PDCA#9（2026-11）: 最近の当たり具合（信頼度）
+    "trust_tk": (P + ["hit_tk60", "slope_tk60"], None),
+    "trust_mkt": (P + ["skill_mkt20", "follow_mkt20", "hit_mkt20"], None),
+    "trust": (P + ["hit_tk60", "slope_tk60", "skill_mkt20", "follow_mkt20", "hit_mkt20"], None),
     "trim3": (P, None, {"weight_fn": lambda tr, y: (tr[y].abs() / tr.vol20 <= 3).fillna(True).to_numpy(float)}),  # 平常の3倍超の日を学習から外す
     "trim4": (P, None, {"weight_fn": lambda tr, y: (tr[y].abs() / tr.vol20 <= 4).fillna(True).to_numpy(float)}),  # 同・4倍
     "all": (BASE + ov.EXTRA_MKT + ov.EXTRA_SEC + ov.EXTRA_ADR, None),
@@ -200,6 +204,40 @@ def market_paired(base: dict, cand: dict) -> tuple[float, float]:
     return round(float(d.mean()), 2), round(float(d.std(ddof=1) / np.sqrt(len(d))), 2)
 
 
+def replay(px, dates):
+    """本番と同じ手順（対象日より前のデータだけで全期間学習→対象日を予報）を、確定済みの正しいデータでやり直して答え合わせ。"""
+    tickers = [t for t, _ in MASTER]
+    full, _ = ov.build_panel(px, tickers, pd.Timestamp(datetime.now(ov.JST).date()) + pd.Timedelta(days=7))
+    for d in dates:
+        T = pd.Timestamp(d)
+        panel, inp = ov.build_panel(px, tickers, T)
+        last = panel[panel.date == panel.date.max()]
+        last = last[last[ov.OVERNIGHT + ov.STOCK].notna().all(axis=1)]
+        ans = full[full.date == panel.date.max()].set_index("tk")
+        res = {}
+        for y in ("y_cc", "y_gap"):
+            dd = ov._labeled(panel, y)
+            p = ov._model().fit(dd[ov.FEATURES], dd.label).predict_proba(last[ov.FEATURES])[:, 1]
+            a = ans.loc[last.tk, y].to_numpy()
+            ok = ~np.isnan(a) & (a != 0)
+            res[y] = round(float(((p > .5) == (a > 0))[ok].mean()) * 100, 1)
+            if y == "y_cc":
+                res["mkt"] = f"{p.mean() * 100:.0f}%→{'上' if np.nanmean(a) > 0 else '下'}"
+        print(f"replay {d}: 終値{res['y_cc']}% 寄付き{res['y_gap']}% 市場{res['mkt']} 先物{inp['nkdPct']}%", flush=True)
+
+
+def e2e():
+    """本番の予報処理（先物の清算値への置き換えを含む）を通しで実行。運用記録には書き込まない。"""
+    import tempfile
+    ov.RESEARCH = False
+    ov.HISTORY_PATH = os.path.join(tempfile.mkdtemp(), "h.json")
+    fc = ov.build_overnight_forecast(MASTER)
+    json.dumps(fc, ensure_ascii=False)
+    print("e2e ok:", fc["targetDate"], "stocks", len(fc["stocks"]), "inputs", fc["inputs"],
+          "val", fc["validation"]["y_cc"]["accuracy"], fc["validation"]["y_gap"]["accuracy"], flush=True)
+    ov.RESEARCH = True
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("names", nargs="*")
@@ -207,7 +245,16 @@ def main():
     ap.add_argument("--refresh", action="store_true")
     ap.add_argument("--quarters", type=int, default=8, help="検証する四半期数。8超なら、候補選びに使っていない古い期間の差も表示")
     a = ap.parse_args()
+    if "e2e" in a.names:
+        e2e()
+        a.names.remove("e2e")
     px = load_px(a.period, a.refresh)
+    rp = [n for n in a.names if n.startswith("replay=")]
+    if rp:
+        replay(px, rp[0].split("=", 1)[1].split(","))
+        a.names.remove(rp[0])
+        if not a.names:
+            return
     target = ov._target_date(datetime.now(ov.JST))
     panel, _ = ov.build_panel(px, [t for t, _ in MASTER], target)
     print(f"panel rows={len(panel)} stocks={panel.tk.nunique()} last={panel.date.max().date()}", flush=True)

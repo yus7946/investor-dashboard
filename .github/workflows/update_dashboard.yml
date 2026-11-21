@@ -7,6 +7,11 @@ on:
     # 実績上、朝の定期実行は予定より2〜3時間遅れて始まる（2026-10-14〜19: 1:57〜3:08の遅れ）。
     # 早めに置き、米国市場の終了前に始まってしまった場合は下の「Wait for US close」で6:05まで待つ。
     - cron: "37 19 * * 0-4"
+    # 2026-11-18〜21は定期実行が毎日約6時間遅れ（4:37の予定が10:25ごろ開始）、予報が毎日寄付き後になった。
+    # 深夜にも起動予定を置き、早く始まったら下の「Wait for US close」で6:25まで待つ。遅れても寄付き前に間に合いやすくする。
+    # JST 1:07 = UTC 16:07、JST 3:07 = UTC 18:07（前日）
+    - cron: "7 16 * * 0-4"
+    - cron: "7 18 * * 0-4"
     # ── 予備（ライト）: JST 6:07 = UTC 21:07。朝のフル更新が遅延・失敗しても予報を出すため。
     # 今日の確定予報が既にあれば予報は作り直さない（main.py の is_final_for_today）。
     - cron: "7 21 * * 0-4"
@@ -58,27 +63,40 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "light=${{ github.event.inputs.mode == 'light' && '1' || '0' }}" >> "$GITHUB_OUTPUT"
-          elif [ "${{ github.event.schedule }}" = "37 19 * * 0-4" ]; then
+          elif [ "${{ github.event.schedule }}" = "37 19 * * 0-4" ] || [ "${{ github.event.schedule }}" = "7 16 * * 0-4" ] || [ "${{ github.event.schedule }}" = "7 18 * * 0-4" ]; then
             echo "light=0" >> "$GITHUB_OUTPUT"
           else
             echo "light=1" >> "$GITHUB_OUTPUT"
           fi
-      # 米国市場(夏時間5:00/冬時間6:00 JST終了)が閉じる前に始まったら6:05 JSTまで待つ（最大3時間）
+      # 米国市場(夏時間5:00/冬時間6:00 JST終了)と先物の清算値(冬6:00)が出そろう6:25 JSTまで待つ（最大5.5時間）。
+      # 5.5時間より前（=1:07の予定どおりに始まる前の日の夜など）なら何もせず終わり、次の起動予定に任せる。
       - name: Wait for US close
+        id: wait
         if: github.event_name == 'schedule' && steps.mode.outputs.light == '0'
         run: |
           python -c "
-          import time, datetime as dt
+          import os, time, datetime as dt
           now = dt.datetime.now(dt.timezone(dt.timedelta(hours=9)))
-          wait = (now.replace(hour=6, minute=5, second=0, microsecond=0) - now).total_seconds()
-          wait = wait if 0 < wait <= 3 * 3600 else 0
-          print(f'JST {now:%H:%M} / wait {wait:.0f}s'); time.sleep(wait)"
+          t = now.replace(hour=6, minute=25, second=0, microsecond=0)
+          if now.hour >= 16:
+              t += dt.timedelta(days=1)
+          wait = (t - now).total_seconds()
+          if wait > 5.5 * 3600:
+              print(f'JST {now:%H:%M} / too early, skip')
+              print('skip=1', file=open(os.environ['GITHUB_OUTPUT'], 'a'))
+          else:
+              wait = max(wait, 0)
+              print(f'JST {now:%H:%M} / wait {wait:.0f}s')
+              time.sleep(wait)"
       - name: Run pipeline
+        if: steps.wait.outputs.skip != '1'
         env:
           DASHBOARD_LIGHT: ${{ steps.mode.outputs.light }}
         run: python main.py
       - run: python update_dashboard.py
-      - run: |
+        if: steps.wait.outputs.skip != '1'
+      - if: steps.wait.outputs.skip != '1'
+        run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add output/ docs/
