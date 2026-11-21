@@ -485,6 +485,7 @@ def _update_history(history: dict, panel: pd.DataFrame, today_pred: dict | None)
             history.setdefault("days", []).append({
                 "d": str(nxt.date()), "n": n, "cc": cc_hit, "gap": gap_hit, "gn": gap_n, "hcN": hc_n, "hc": hc_hit, "agN": ag_n, "ag": ag_hit,
                 "mp": pend.get("mkt"), "mUp": mret > 0, "m": pend.get("model", "v1"), "at": pend.get("at"),
+                **({"x": pend["x"]} if pend.get("x") else {}),  # 不具合が判明した予報（集計から除外）
             })
             history["days"] = history["days"][-250:]
         history.pop("pending")
@@ -513,10 +514,13 @@ def _health(days: list[dict], val_acc: float) -> dict:
 def _live_stats(history: dict, val_acc: float | None = None) -> dict | None:
     all_days = history.get("days") or []
     # 原因が判明し修正済みの不具合があった日（"x"に理由）は、記録は残したまま集計から外し、画面で明示する
-    bad = [d for d in all_days if d.get("x")]
     days = [d for d in all_days if not d.get("x")]
-    excluded = {"days": len(bad), "from": bad[0]["d"], "to": bad[-1]["d"], "reason": bad[0]["x"],
-                "ccAccuracy": round(sum(d["cc"] for d in bad) / sum(d["n"] for d in bad) * 100, 1)} if bad else None
+    excluded = []  # 原因ごとにまとめる
+    for reason in dict.fromkeys(d["x"] for d in all_days if d.get("x")):
+        bad = [d for d in all_days if d.get("x") == reason]
+        excluded.append({"days": len(bad), "from": bad[0]["d"], "to": bad[-1]["d"], "reason": reason,
+                         "ccAccuracy": round(sum(d["cc"] for d in bad) / sum(d["n"] for d in bad) * 100, 1)})
+    excluded = excluded or None
     if not days:
         return {"days": 0, "n": 0, "excluded": excluded} if excluded else None
     n = sum(d["n"] for d in days)

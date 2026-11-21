@@ -3292,31 +3292,40 @@ const DATA = {
       }
     },
     "live": {
-      "excluded": {
-        "days": 6,
-        "from": "2026-10-14",
-        "to": "2026-10-21",
-        "reason": "前日の日経平均の終値に1日古い値を使う不具合（10/21修正済み）があった",
-        "ccAccuracy": 56.5
-      },
+      "excluded": [
+        {
+          "days": 6,
+          "from": "2026-10-14",
+          "to": "2026-10-21",
+          "reason": "前日の日経平均の終値に1日古い値を使う不具合（10/21修正済み）があった",
+          "ccAccuracy": 56.5
+        },
+        {
+          "days": 10,
+          "from": "2026-11-04",
+          "to": "2026-11-19",
+          "reason": "予報を寄付き後に作り、日経先物などの価格に東京の取引時間中の値動きが混ざる不具合（11/21修正済み）があった",
+          "ccAccuracy": 63.7
+        }
+      ],
       "health": {
-        "status": "ok",
-        "note": "検証時と同等以上",
-        "recentAccuracy": 59.6,
-        "days": 20,
+        "status": "watch",
+        "note": "検証時をやや下回る（誤差の範囲）。経過観察",
+        "recentAccuracy": 55.6,
+        "days": 10,
         "validationAccuracy": 59.7,
-        "margin": 7.0
+        "margin": 8.2
       },
-      "days": 20,
+      "days": 10,
       "since": "2026-10-22",
-      "n": 3216,
-      "ccAccuracy": 59.6,
-      "gapAccuracy": 64.6,
-      "highConfN": 758,
-      "agreeAccuracy": 64.2,
-      "highConfAccuracy": 77.3,
-      "marketN": 20,
-      "marketAccuracy": 60.0
+      "n": 1607,
+      "ccAccuracy": 55.6,
+      "gapAccuracy": 65.5,
+      "highConfN": 319,
+      "agreeAccuracy": 63.1,
+      "highConfAccuracy": 69.0,
+      "marketN": 10,
+      "marketAccuracy": 30.0
     },
     "basis": "夜間に確定した米S&P500・米半導体指数(SOX)・ドル円・CME日経先物・米国11業種・金利・原油・日本企業のADRなどの動きと、銘柄ごとの過去の感応度（19指標を同時に推定するリッジ回帰）を機械学習（勾配ブースティング）で組み合わせた確率。的中率はすべて、その時点より前のデータだけで学習した予測の答え合わせ（先読みなし）。寄付き後の値動きや数日先は予測力が確認できないため対象外。"
   },
@@ -9178,7 +9187,8 @@ function renderOvernight() {
     ? `<div style="margin-top:4px"><b>運用開始後の実績</b>（${live.since}〜・${live.days}営業日）: 終値の方向 <b>${live.ccAccuracy}%</b>・寄付き <b>${live.gapAccuracy}%</b>${live.agreeAccuracy != null ? `・同じ向きの終値予報 <b>${live.agreeAccuracy}%</b>` : ''}${live.highConfAccuracy != null ? `・高確信時 <b>${live.highConfAccuracy}%</b>（${live.highConfN}件）` : ''}${live.marketAccuracy != null ? `・市場全体 <b>${live.marketAccuracy}%</b>` : ''}</div>`
     : '<div style="margin-top:4px">運用開始後の実績は、翌営業日から自動で答え合わせして表示します。</div>';
   const ex = live && live.excluded;
-  const exTxt = ex ? `<div style="margin-top:4px;color:var(--stop)">※${ex.from}〜${ex.to}の${ex.days}営業日分は、${ex.reason}ため集計から除外しています（当時の終値的中${ex.ccAccuracy}%）。</div>` : '';
+  const exList = Array.isArray(ex) ? ex : (ex ? [ex] : []);
+  const exTxt = exList.map(e => `<div style="margin-top:4px;color:var(--stop)">※${e.from}〜${e.to}のうち${e.days}営業日分は、${e.reason}ため集計から除外しています（当時の終値的中${e.ccAccuracy}%）。</div>`).join('');
   const hl = live && live.health;
   const hcol = { ok: 'var(--green)', watch: 'var(--yellow)', degraded: 'var(--red)', collecting: 'var(--muted)' };
   const hname = { ok: '良好', watch: '経過観察', degraded: '要見直し', collecting: '判定待ち' };

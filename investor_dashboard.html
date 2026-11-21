@@ -1912,7 +1912,8 @@ function renderOvernight() {
     ? `<div style="margin-top:4px"><b>運用開始後の実績</b>（${live.since}〜・${live.days}営業日）: 終値の方向 <b>${live.ccAccuracy}%</b>・寄付き <b>${live.gapAccuracy}%</b>${live.agreeAccuracy != null ? `・同じ向きの終値予報 <b>${live.agreeAccuracy}%</b>` : ''}${live.highConfAccuracy != null ? `・高確信時 <b>${live.highConfAccuracy}%</b>（${live.highConfN}件）` : ''}${live.marketAccuracy != null ? `・市場全体 <b>${live.marketAccuracy}%</b>` : ''}</div>`
     : '<div style="margin-top:4px">運用開始後の実績は、翌営業日から自動で答え合わせして表示します。</div>';
   const ex = live && live.excluded;
-  const exTxt = ex ? `<div style="margin-top:4px;color:var(--stop)">※${ex.from}〜${ex.to}の${ex.days}営業日分は、${ex.reason}ため集計から除外しています（当時の終値的中${ex.ccAccuracy}%）。</div>` : '';
+  const exList = Array.isArray(ex) ? ex : (ex ? [ex] : []);
+  const exTxt = exList.map(e => `<div style="margin-top:4px;color:var(--stop)">※${e.from}〜${e.to}のうち${e.days}営業日分は、${e.reason}ため集計から除外しています（当時の終値的中${e.ccAccuracy}%）。</div>`).join('');
   const hl = live && live.health;
   const hcol = { ok: 'var(--green)', watch: 'var(--yellow)', degraded: 'var(--red)', collecting: 'var(--muted)' };
   const hname = { ok: '良好', watch: '経過観察', degraded: '要見直し', collecting: '判定待ち' };
