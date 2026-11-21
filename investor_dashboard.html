@@ -1911,6 +1911,8 @@ function renderOvernight() {
   const liveTxt = live && live.n > 0
     ? `<div style="margin-top:4px"><b>運用開始後の実績</b>（${live.since}〜・${live.days}営業日）: 終値の方向 <b>${live.ccAccuracy}%</b>・寄付き <b>${live.gapAccuracy}%</b>${live.agreeAccuracy != null ? `・同じ向きの終値予報 <b>${live.agreeAccuracy}%</b>` : ''}${live.highConfAccuracy != null ? `・高確信時 <b>${live.highConfAccuracy}%</b>（${live.highConfN}件）` : ''}${live.marketAccuracy != null ? `・市場全体 <b>${live.marketAccuracy}%</b>` : ''}</div>`
     : '<div style="margin-top:4px">運用開始後の実績は、翌営業日から自動で答え合わせして表示します。</div>';
+  const rpl = live && live.replay;
+  const rplTxt = rpl && rpl.days ? `<div style="margin-top:4px"><b>確定データで再現した場合</b>（${rpl.days}営業日・本番のデータの欠けや遅れを除いたモデル本来の成績）: 終値 <b>${rpl.cc}%</b>・寄付き <b>${rpl.gap}%</b>・市場全体 <b>${rpl.market}%</b></div>` : '';
   const ex = live && live.excluded;
   const exList = Array.isArray(ex) ? ex : (ex ? [ex] : []);
   const exTxt = exList.map(e => `<div style="margin-top:4px;color:var(--stop)">※${e.from}〜${e.to}のうち${e.days}営業日分は、${e.reason}ため集計から除外しています（当時の終値的中${e.ccAccuracy}%）。</div>`).join('');
@@ -1928,7 +1930,7 @@ function renderOvernight() {
   const dayRow = r => `<div style="padding:4px 0;border-top:1px solid var(--line, #e5e7eb)${r.x ? ';opacity:.6' : ''}">
       <b>${md(r.d)}</b> <span style="color:var(--muted)">${r.at ? r.at + '作成' : ''}${r.m ? '・' + r.m : ''}</span>${r.x ? ' <span style="color:var(--stop)">集計外</span>' : ''}<br>
       終値 ${pc(r.cc, 60)}${r.ag != null ? `（同じ向き ${pc(r.ag, 60)}）` : ''}・寄付き ${pc(r.gap, 65)}・市場全体 ${r.mkt == null ? '—' : r.mkt ? '<b style="color:var(--green)">的中</b>' : '<b style="color:var(--red)">外れ</b>'}
-      ${r.rp ? `<span style="color:var(--muted)">／確定データで再現: 終値${r.rp.cc}%・寄付き${r.rp.gap}%</span>` : ''}
+      ${r.rp ? `<span style="color:var(--muted)">／確定データで再現: 終値${r.rp.cc}%・寄付き${r.rp.gap}%${r.rp.mp != null ? `・市場${r.rp.mp >= 50 ? '上' : '下'}` : ''}</span>` : ''}
       ${(r.fl || []).map(f => `<div style="color:var(--stop)">⚠ ${f}</div>`).join('')}</div>`;
   const dailyTxt = rec.length
     ? `<details style="margin-top:6px"><summary style="cursor:pointer"><b>日々の答え合わせ</b>（直近${rec.length}営業日・毎朝自動で記録）</summary>
@@ -1958,7 +1960,7 @@ function renderOvernight() {
       <div><b>過去2年の検証</b>（${v.from}〜${v.to}・各時点より前のデータだけで学習して答え合わせ）:
       終値の方向 <b>${v.y_cc.accuracy}%</b>（「毎日上がる」と言い続けた場合は${v.y_cc.baseline}%）${v.y_cc.agreeAccuracy != null ? `、寄付きと同じ向きの予報に限ると <b>${v.y_cc.agreeAccuracy}%</b>（逆向きの時は${v.y_cc.splitAccuracy}%のため予報なし）` : ''}、確率70%以上/30%以下の予報は <b>${v.y_cc.highConfAccuracy}%</b>。
       寄付きの方向 <b>${v.y_gap.accuracy}%</b>、高確信時 <b>${v.y_gap.highConfAccuracy}%</b>。</div>
-      ${liveTxt}${exTxt}${healthTxt}${dailyTxt}
+      ${liveTxt}${rplTxt}${exTxt}${healthTxt}${dailyTxt}
       <div style="margin-top:4px">寄付きでほとんどの値動きが織り込まれ、寄付き後〜大引けや数日先は予測力が確認できないため対象外です。確率は保証ではありません。</div>
     </div>`;
 }

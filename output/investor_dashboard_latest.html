@@ -3292,6 +3292,12 @@ const DATA = {
       }
     },
     "live": {
+      "replay": {
+        "days": 20,
+        "cc": 58.5,
+        "gap": 65.7,
+        "market": 45
+      },
       "excluded": [
         {
           "days": 6,
@@ -3334,9 +3340,18 @@ const DATA = {
           "gap": 41,
           "ag": 57,
           "mkt": true,
-          "rp": null,
+          "rp": {
+            "nkd": -0.29,
+            "cc": 44.7,
+            "gap": 60.4,
+            "mp": 39.0
+          },
           "fl": [
-            "寄付き後に作成（10:29）"
+            "寄付き後に作成（10:29）",
+            "前日の日経平均を日経225ETFで補完",
+            "先物の入力が確定値と違う（記録+0.75% / 確定-0.29%）",
+            "確定データでの再現と終値の的中が+13pt違う",
+            "確定データでの再現と寄付きの的中が-19pt違う"
           ],
           "x": true
         },
@@ -3348,117 +3363,177 @@ const DATA = {
           "gap": 40,
           "ag": 62,
           "mkt": true,
-          "rp": null,
+          "rp": {
+            "nkd": 0.08,
+            "cc": 67.5,
+            "gap": 57.6,
+            "mp": 48.0
+          },
           "fl": [
-            "寄付き後に作成（10:53）"
+            "寄付き後に作成（10:53）",
+            "前日の日経平均を日経225ETFで補完",
+            "先物の入力が確定値と違う（記録-0.40% / 確定+0.08%）",
+            "確定データでの再現と寄付きの的中が-18pt違う"
           ],
           "x": true
         },
         {
           "d": "2026-11-17",
           "at": "11:37",
-          "m": null,
+          "m": "v1",
           "cc": 77,
           "gap": 70,
           "ag": 79,
           "mkt": true,
-          "rp": null,
+          "rp": {
+            "nkd": -0.73,
+            "cc": 79.0,
+            "gap": 74.5,
+            "mp": 38.0
+          },
           "fl": [
-            "寄付き後に作成（11:37）"
+            "寄付き後に作成（11:37）",
+            "先物の入力が確定値と違う（記録-1.19% / 確定-0.73%）"
           ],
           "x": true
         },
         {
           "d": "2026-11-16",
           "at": "08:31",
-          "m": null,
+          "m": "v1",
           "cc": 54,
           "gap": 70,
           "ag": 54,
           "mkt": false,
-          "rp": null,
-          "fl": [],
+          "rp": {
+            "nkd": -0.09,
+            "cc": 55.8,
+            "gap": 70.3,
+            "mp": 64.0
+          },
+          "fl": [
+            "先物の入力が確定値と違う（記録+0.24% / 確定-0.09%）"
+          ],
           "x": false
         },
         {
           "d": "2026-11-13",
           "at": "09:42",
-          "m": null,
+          "m": "v1",
           "cc": 60,
           "gap": 57,
           "ag": 60,
           "mkt": true,
-          "rp": null,
+          "rp": {
+            "nkd": 0.7,
+            "cc": 60.5,
+            "gap": 58.2,
+            "mp": 61.0
+          },
           "fl": [
-            "寄付き後に作成（09:42）"
+            "寄付き後に作成（09:42）",
+            "前日の日経平均を日経225ETFで補完",
+            "先物の入力が確定値と違う（記録+1.52% / 確定+0.70%）"
           ],
           "x": true
         },
         {
           "d": "2026-11-12",
           "at": "10:42",
-          "m": null,
+          "m": "v1",
           "cc": 36,
           "gap": 52,
           "ag": 28,
           "mkt": true,
-          "rp": null,
+          "rp": {
+            "nkd": 1.29,
+            "cc": 31.9,
+            "gap": 56.9,
+            "mp": 42.0
+          },
           "fl": [
-            "寄付き後に作成（10:42）"
+            "寄付き後に作成（10:42）",
+            "前日の日経平均を日経225ETFで補完",
+            "先物の入力が確定値と違う（記録+0.33% / 確定+1.29%）"
           ],
           "x": true
         },
         {
           "d": "2026-11-11",
           "at": "09:15",
-          "m": null,
+          "m": "v1",
           "cc": 47,
           "gap": 51,
           "ag": 45,
           "mkt": true,
-          "rp": null,
+          "rp": {
+            "nkd": -0.61,
+            "cc": 37.9,
+            "gap": 50.3,
+            "mp": 46.0
+          },
           "fl": [
-            "寄付き後に作成（09:15）"
+            "寄付き後に作成（09:15）",
+            "前日の日経平均を日経225ETFで補完",
+            "先物の入力が確定値と違う（記録+0.03% / 確定-0.61%）"
           ],
           "x": true
         },
         {
           "d": "2026-11-10",
           "at": "11:24",
-          "m": null,
+          "m": "v1",
           "cc": 78,
           "gap": 81,
           "ag": 85,
           "mkt": true,
-          "rp": null,
+          "rp": {
+            "nkd": 3.73,
+            "cc": 80.9,
+            "gap": 78.6,
+            "mp": 61.0
+          },
           "fl": [
-            "寄付き後に作成（11:24）"
+            "寄付き後に作成（11:24）",
+            "前日の日経平均を日経225ETFで補完",
+            "先物の入力が確定値と違う（記録+4.05% / 確定+3.73%）"
           ],
           "x": true
         },
         {
           "d": "2026-11-09",
           "at": "08:08",
-          "m": null,
+          "m": "v1",
           "cc": 48,
           "gap": 65,
           "ag": 56,
           "mkt": true,
-          "rp": null,
+          "rp": {
+            "nkd": 1.45,
+            "cc": 44.4,
+            "gap": 59.2,
+            "mp": 49.0
+          },
           "fl": [],
           "x": false
         },
         {
           "d": "2026-11-06",
           "at": "09:33",
-          "m": null,
+          "m": "v1",
           "cc": 93,
           "gap": 94,
           "ag": 97,
           "mkt": true,
-          "rp": null,
+          "rp": {
+            "nkd": -6.02,
+            "cc": 98.1,
+            "gap": 93.2,
+            "mp": 21.0
+          },
           "fl": [
-            "寄付き後に作成（09:33）"
+            "寄付き後に作成（09:33）",
+            "前日の日経平均を日経225ETFで補完"
           ],
           "x": true
         }
@@ -9324,6 +9399,8 @@ function renderOvernight() {
   const liveTxt = live && live.n > 0
     ? `<div style="margin-top:4px"><b>運用開始後の実績</b>（${live.since}〜・${live.days}営業日）: 終値の方向 <b>${live.ccAccuracy}%</b>・寄付き <b>${live.gapAccuracy}%</b>${live.agreeAccuracy != null ? `・同じ向きの終値予報 <b>${live.agreeAccuracy}%</b>` : ''}${live.highConfAccuracy != null ? `・高確信時 <b>${live.highConfAccuracy}%</b>（${live.highConfN}件）` : ''}${live.marketAccuracy != null ? `・市場全体 <b>${live.marketAccuracy}%</b>` : ''}</div>`
     : '<div style="margin-top:4px">運用開始後の実績は、翌営業日から自動で答え合わせして表示します。</div>';
+  const rpl = live && live.replay;
+  const rplTxt = rpl && rpl.days ? `<div style="margin-top:4px"><b>確定データで再現した場合</b>（${rpl.days}営業日・本番のデータの欠けや遅れを除いたモデル本来の成績）: 終値 <b>${rpl.cc}%</b>・寄付き <b>${rpl.gap}%</b>・市場全体 <b>${rpl.market}%</b></div>` : '';
   const ex = live && live.excluded;
   const exList = Array.isArray(ex) ? ex : (ex ? [ex] : []);
   const exTxt = exList.map(e => `<div style="margin-top:4px;color:var(--stop)">※${e.from}〜${e.to}のうち${e.days}営業日分は、${e.reason}ため集計から除外しています（当時の終値的中${e.ccAccuracy}%）。</div>`).join('');
@@ -9341,7 +9418,7 @@ function renderOvernight() {
   const dayRow = r => `<div style="padding:4px 0;border-top:1px solid var(--line, #e5e7eb)${r.x ? ';opacity:.6' : ''}">
       <b>${md(r.d)}</b> <span style="color:var(--muted)">${r.at ? r.at + '作成' : ''}${r.m ? '・' + r.m : ''}</span>${r.x ? ' <span style="color:var(--stop)">集計外</span>' : ''}<br>
       終値 ${pc(r.cc, 60)}${r.ag != null ? `（同じ向き ${pc(r.ag, 60)}）` : ''}・寄付き ${pc(r.gap, 65)}・市場全体 ${r.mkt == null ? '—' : r.mkt ? '<b style="color:var(--green)">的中</b>' : '<b style="color:var(--red)">外れ</b>'}
-      ${r.rp ? `<span style="color:var(--muted)">／確定データで再現: 終値${r.rp.cc}%・寄付き${r.rp.gap}%</span>` : ''}
+      ${r.rp ? `<span style="color:var(--muted)">／確定データで再現: 終値${r.rp.cc}%・寄付き${r.rp.gap}%${r.rp.mp != null ? `・市場${r.rp.mp >= 50 ? '上' : '下'}` : ''}</span>` : ''}
       ${(r.fl || []).map(f => `<div style="color:var(--stop)">⚠ ${f}</div>`).join('')}</div>`;
   const dailyTxt = rec.length
     ? `<details style="margin-top:6px"><summary style="cursor:pointer"><b>日々の答え合わせ</b>（直近${rec.length}営業日・毎朝自動で記録）</summary>
@@ -9371,7 +9448,7 @@ function renderOvernight() {
       <div><b>過去2年の検証</b>（${v.from}〜${v.to}・各時点より前のデータだけで学習して答え合わせ）:
       終値の方向 <b>${v.y_cc.accuracy}%</b>（「毎日上がる」と言い続けた場合は${v.y_cc.baseline}%）${v.y_cc.agreeAccuracy != null ? `、寄付きと同じ向きの予報に限ると <b>${v.y_cc.agreeAccuracy}%</b>（逆向きの時は${v.y_cc.splitAccuracy}%のため予報なし）` : ''}、確率70%以上/30%以下の予報は <b>${v.y_cc.highConfAccuracy}%</b>。
       寄付きの方向 <b>${v.y_gap.accuracy}%</b>、高確信時 <b>${v.y_gap.highConfAccuracy}%</b>。</div>
-      ${liveTxt}${exTxt}${healthTxt}${dailyTxt}
+      ${liveTxt}${rplTxt}${exTxt}${healthTxt}${dailyTxt}
       <div style="margin-top:4px">寄付きでほとんどの値動きが織り込まれ、寄付き後〜大引けや数日先は予測力が確認できないため対象外です。確率は保証ではありません。</div>
     </div>`;
 }

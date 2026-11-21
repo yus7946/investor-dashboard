@@ -473,6 +473,8 @@ def _replay_pending(px: pd.DataFrame, tickers: list[str], pend: dict, panel_now:
             a = ans[y].reindex(last.tk).to_numpy(float)
             ok = ~np.isnan(a) & (a != 0)
             out[key] = round(float(((p > .5) == (a > 0))[ok].mean()) * 100, 1) if ok.any() else None
+            if y == "y_cc":
+                out["mp"] = round(float(p.mean()) * 100, 1)  # 市場全体の上昇確率（再現）
         return out
     except Exception as e:  # 点検の失敗で予報を止めない
         print(f"  [警告] 前回予報の再現に失敗: {e}")
@@ -590,7 +592,14 @@ def _live_stats(history: dict, val_acc: float | None = None) -> dict | None:
     hc_n = sum(d["hcN"] for d in days)
     ag_n = sum(d.get("agN", 0) for d in days)
     mk = [d for d in days if d.get("mp") is not None]
+    # 確定データでの再現（本番のデータの問題を除いた、モデル本来の成績）。集計外の日も含める
+    rps = [d for d in all_days if d.get("rp") and d["rp"].get("cc") is not None]
+    replay = {"days": len(rps), "cc": round(float(np.mean([d["rp"]["cc"] for d in rps])), 1),
+              "gap": round(float(np.mean([d["rp"]["gap"] for d in rps])), 1),
+              "market": round(sum((d["rp"]["mp"] >= 50) == d["mUp"] for d in rps if d["rp"].get("mp") is not None)
+                              / max(1, sum(d["rp"].get("mp") is not None for d in rps)) * 100)} if rps else None
     return {
+        "replay": replay,
         "excluded": excluded,
         "health": _health(days, val_acc) if val_acc is not None else None,
         "days": len(days), "since": days[0]["d"], "n": n,
