@@ -92,7 +92,7 @@ def main():
         eq = np.cumprod(1 + r)
         se = r[r != 0].std(ddof=1) / np.sqrt((r != 0).sum()) * 100 if (r != 0).sum() > 1 else None
         print(f"■ AIの仮想運用: {pp[0]['d']}〜 {len(pp)}営業日（売買{len(traded)}日・寄付き後で除外{len(allp) - len(pp)}日）"
-              f" 累計{(eq[-1] - 1) * 100:+.2f}%（コスト0.1%なら{(np.cumprod(1 + r - 0.001 * (r != 0))[-1] - 1) * 100:+.2f}%）"
+              f" 累計{(eq[-1] - 1) * 100:+.2f}%＝10万円→{100000 * eq[-1]:,.0f}円（コスト0.1%なら{(np.cumprod(1 + r - 0.001 * (r != 0))[-1] - 1) * 100:+.2f}%）"
               f" 売買日の平均{r[r != 0].mean() * 100:+.3f}%" + (f"±{se:.3f}" if se else "")
               + f" 勝ち{sum(p['ret'] > 0 for p in traded)}/{len(traded)}日")
         for p in allp[-5:]:

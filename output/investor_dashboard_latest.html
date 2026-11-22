@@ -9409,6 +9409,11 @@ function renderPaperSummary() {
   const nm = t => { const x = onFind(t); return x ? x.name : t.replace('.T', ''); };
   const sg = (v, d = 2) => v == null ? '—' : `<b style="color:${v >= 0 ? 'var(--green)' : 'var(--red)'}">${v >= 0 ? '+' : ''}${v.toFixed(d)}%</b>`;
   const md = d => { const [, m, dd] = d.split('-'); return `${+m}/${+dd}`; };
+  // 金額表示: 10万円で始め、1株単位で同じ金額ずつ買えた場合（税金は含まない）
+  const START = 100000;
+  const yen = v => `${Math.round(v).toLocaleString()}円`;
+  const val = pct => START * (1 + pct / 100);
+  const yenDiff = pct => { const d = Math.round(START * pct / 100); return `<b style="color:${d >= 0 ? 'var(--green)' : 'var(--red)'}">${d >= 0 ? '+' : ''}${d.toLocaleString()}円</b>`; };
   let h = `<div class="on-sec">③ AIの仮想運用 <span style="font-weight:400;font-size:10px;color:var(--muted)">仮想のお金で毎日売買した記録</span></div>`;
   const note = o.provisional ? '（暫定。翌朝の確定予報で決まります）'
     : o.beforeOpen === false ? '（寄付き後に出た予報のため、仮想運用では数えません）' : '';
@@ -9417,19 +9422,20 @@ function renderPaperSummary() {
     : '条件を満たす銘柄がないため売買しない'}<span style="color:var(--muted)">${note}</span></div>`;
   const L = pp.live, B = pp.backtest;
   h += L && L.days
-    ? `<div style="font-size:11.5px;margin-top:2px">これまで（${md(L.since)}〜・${L.days}営業日、売買${L.traded}日）：累計 ${sg(L.cost0.total)}`
-      + `（売買コスト0.1%なら ${sg(L.cost10.total)}）・勝った日 ${L.win == null ? '—' : L.win + '%'}・最大の下落 ${sg(L.cost0.maxDD)}</div>`
-    : `<div style="font-size:11.5px;margin-top:2px;color:var(--muted)">実績は、寄付き前に出た予報の日から記録を始めます。</div>`;
-  if (B) h += `<div style="font-size:11px;color:var(--muted);margin-top:2px">過去${B.days}営業日の検証：累計 ${sg(B.cost0.total, 1)}・最大の下落 ${sg(B.cost0.maxDD, 1)}`
-    + `（売買コスト0.1%なら累計 ${sg(B.cost10.total, 1)}）</div>`;
+    ? `<div style="font-size:12px;margin-top:4px">これまで（${md(L.since)}〜・${L.days}営業日、売買${L.traded}日）：<b>10万円 → ${yen(val(L.cost0.total))}</b>（${yenDiff(L.cost0.total)}・${sg(L.cost0.total)}）</div>`
+      + `<div style="font-size:11px;color:var(--muted)">売買コスト0.1%なら ${yen(val(L.cost10.total))}・勝った日 ${L.win == null ? '—' : L.win + '%'}・最大の下落 ${sg(L.cost0.maxDD)}</div>`
+    : `<div style="font-size:11.5px;margin-top:2px;color:var(--muted)">実績は、寄付き前に出た予報の日から記録を始めます（10万円で始めた場合の金額で表示）。</div>`;
+  if (B) h += `<div style="font-size:11px;color:var(--muted);margin-top:2px">過去${B.days}営業日の検証なら：10万円 → ${yen(val(B.cost0.total))}`
+    + `（途中の最大の下落 ${sg(B.cost0.maxDD, 1)}）。売買コスト0.1%なら ${yen(val(B.cost10.total))}</div>`;
   if (L && L.recent && L.recent.length) {
     h += `<details style="margin-top:4px;font-size:11px"><summary style="cursor:pointer">日ごとの記録</summary>` + L.recent.map(p =>
-      `<div style="padding:3px 0;border-top:1px solid var(--border)${p.late ? ';opacity:.55' : ''}"><b>${md(p.d)}</b> ${p.picks.length ? sg(p.ret) : '売買なし'}`
+      `<div style="padding:3px 0;border-top:1px solid var(--border)${p.late ? ';opacity:.55' : ''}"><b>${md(p.d)}</b> ${p.picks.length ? `${sg(p.ret)}（10万円あたり ${yenDiff(p.ret)}）` : '売買なし'}`
       + `${p.late ? ' <span style="color:var(--muted)">寄付き後の予報のため数えない</span>' : ''}<br><span style="color:var(--muted)">`
       + p.picks.map(([t, r]) => `${nm(t)} ${r >= 0 ? '+' : ''}${r}%`).join('・') + `</span></div>`).join('') + `</details>`;
   }
   h += `<details style="font-size:10.5px;color:var(--muted);margin-top:2px"><summary style="cursor:pointer">ルールと注意</summary>`
     + `${pp.rule}。手数料0円の証券会社で、寄付き・引けの成行注文（板寄せで約定）を想定。`
+    + `金額は10万円で始めて、1株単位で同じ金額ずつ買えた場合の計算（100株単位では10万円で買えない銘柄が多い）。税金（利益の約20%）は含まない。`
     + (B ? `過去の検証（先読みなし）の1日平均は ${sg(B.cost0.avg, 3)}、売買コスト0.1%なら ${sg(B.cost10.avg, 3)} で、余裕は小さい。` : '')
     + `仮想の売買の記録で、実際の売買を勧めるものではありません。過去の成績は将来を保証しません。</details>`;
   return h;
