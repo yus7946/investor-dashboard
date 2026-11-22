@@ -38,6 +38,7 @@ RESULTS = os.path.join(HERE, "results.jsonl")
 
 BASE = ov.OVERNIGHT + ov.STOCK
 P = ov.FEATURES
+PRE = ["nkd_pre", "nkd_delta", "pred_delta", "es_delta"]  # 寄付き直前の先物（PDCA#12）
 # 「この指標が上がるほど上がりやすい」が理屈で決まる特徴量（単調性制約の対象）
 UP = {"nkd", "spx", "pred_gap", "pred_sox", "pred_fx", "pred_all", "adr_imp", "ewj_imp", "pred_ridge", "pred_ridge_adr",
       *ov.EXTRA_SEC}
@@ -122,6 +123,10 @@ EXPERIMENTS = {
     "gbm_mf": (P, gbm(max_features=0.5)),  # 分岐ごとに特徴量の半分だけ見る
     "gbm_slow": (P, gbm(learning_rate=0.03, max_iter=400, min_samples_leaf=800)),  # ゆっくり・強い正則化
     "bag5": (P, Bag),  # 5本の平均
+    # PDCA#12（2026-11）: 寄付き直前の先物（1時間足は直近730日のみ）
+    "preopen": (P + PRE, None),
+    "preopen_nkd": (P + ["nkd_pre", "nkd_delta", "pred_delta"], None),
+    "preopen_swap": ([{"nkd": "nkd_f", "pred_gap": "pred_gap_f", "pred_all": "pred_all_f", "pred_ridge_adr": "pred_ridge_adr_f"}.get(f, f) for f in P], None),
     # PDCA#9（2026-11）: 最近の当たり具合（信頼度）
     "trust_tk": (P + ["hit_tk60", "slope_tk60"], None),
     "trust_mkt": (P + ["skill_mkt20", "follow_mkt20", "hit_mkt20"], None),
@@ -191,6 +196,47 @@ def market_eval(panel, base_v):
         d = (hit[k] - hit["cur"]) * 100
         print(f"market:{k:5s} {hit[k].mean() * 100:.1f}% (強{hit[k][strong].mean() * 100:.1f}%/{int(strong.sum())}日) "
               f"vs cur {d.mean():+.1f}pt(±{d.std(ddof=1) / np.sqrt(len(d)):.1f}) n={len(d)}", flush=True)
+
+
+def add_preopen(panel: pd.DataFrame, px: pd.DataFrame) -> pd.DataFrame:
+    """PDCA#12: 寄付き直前（日本時間8:00〜9:00の1時間足の終値＝9:00直前の値段）の先物の動き。
+    Yahooの1時間足は直近730日分だけなので、それより前の行は欠損（勾配ブースティングは欠損を扱える）。
+    nkd_pre: 先物の寄付き直前の値段÷前日の日経平均終値（ベーシス調整は既存のnkdと同じ）／nkd_delta: 清算値から寄付き直前までの動き／
+    pred_delta: 銘柄の感応度×その動き／es_delta: S&P500先物の清算値から寄付き直前までの動き"""
+    import yfinance as yf
+    path = os.path.join(CACHE, "fut_60m.pkl")
+    if os.path.exists(path) and time.time() - os.path.getmtime(path) < 86400:
+        h = pickle.load(open(path, "rb"))
+    else:
+        h = yf.download(["NKD=F", "ES=F"], period="730d", interval="60m", auto_adjust=True, group_by="column", progress=False)["Close"]
+        pickle.dump(h, open(path, "wb"))
+    jst, cst = h.tz_convert("Asia/Tokyo"), h.tz_convert("America/Chicago")
+    pre = jst[jst.index.hour == 8].copy()  # 8:00〜9:00の足。終値は9:00直前の値段
+    pre.index = pre.index.tz_localize(None).normalize()
+    st = cst[cst.index.hour == 14].copy()  # 米中部14:00〜15:00の足の終値＝清算値（日足の終値と照合済み）
+    st.index = st.index.tz_localize(None).normalize()
+    days = pd.DatetimeIndex(sorted(panel.date.unique()))
+    nxt = days[1:].append(pd.DatetimeIndex([days[-1] + pd.Timedelta(days=1)]))  # 行tの翌営業日
+    cal = pd.date_range(min(st.index.min(), days[0]), nxt[-1])
+    settle = st.reindex(cal).ffill().shift(1)  # 各日dについて「dより前の暦日に確定した清算値」
+    n225 = px["Close"]["^N225"].reindex(days).ffill()
+    rows = pd.DataFrame(index=days)
+    for k, col in (("NKD=F", "nkd_delta"), ("ES=F", "es_delta")):
+        rows[col] = pre[k].reindex(nxt).values / settle[k].reindex(nxt).values - 1
+    raw_settle = settle["NKD=F"].reindex(nxt).values / n225.values - 1
+    med = pd.Series(raw_settle, index=days).rolling(60, min_periods=20).median()
+    rows["nkd_pre"] = pre["NKD=F"].reindex(nxt).values / n225.values - 1 - med.values
+    out = panel.merge(rows[["nkd_pre", "nkd_delta", "es_delta"]], left_on="date", right_index=True, how="left")
+    out["pred_delta"] = out.gbeta * out.nkd_delta
+    # 置き換え版: 先物の値段そのものを寄付き直前の値に差し替える（取れない日は清算値のまま）。リッジ回帰の先物の項は単独の感応度で近似
+    out["nkd_f"] = out.nkd_pre.fillna(out.nkd)
+    out["pred_gap_f"] = out.gbeta * out.nkd_f
+    out["pred_all_f"] = out.pred_gap_f + out.pred_sox + out.pred_fx
+    out["pred_ridge_adr_f"] = out.pred_ridge_adr + out.gbeta * (out.nkd_f - out.nkd)
+    cov = out.nkd_delta.notna().mean() * 100
+    print(f"寄付き直前の先物: 行の{cov:.0f}%で取得（{out.loc[out.nkd_delta.notna(), 'date'].min()}〜）"
+          f" 清算値からの動きの大きさ（絶対値の中央値） {out.nkd_delta.abs().median() * 100:.2f}%", flush=True)
+    return out
 
 
 def market_paired(base: dict, cand: dict) -> tuple[float, float]:
@@ -266,6 +312,8 @@ def main():
             return
     target = ov._target_date(datetime.now(ov.JST))
     panel, _ = ov.build_panel(px, [t for t, _ in MASTER], target)
+    if any(n.startswith("preopen") for n in a.names):
+        panel = add_preopen(panel, px)
     print(f"panel rows={len(panel)} stocks={panel.tk.nunique()} last={panel.date.max().date()}", flush=True)
     names = a.names or list(EXPERIMENTS)
     baseline = names[0]  # 先頭の実験を比較の基準にする

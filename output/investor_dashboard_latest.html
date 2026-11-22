@@ -9385,8 +9385,9 @@ function renderToday() {
   h += warn ? `<div class="on-warn">${warn}</div>` : `<div class="on-box" style="color:var(--green)">✓ 寄付き前に出た確定予報です</div>`;
   // 1. 市場全体と、今日の当たりやすさ
   const cur = r && r.reliability && r.reliability.current && r.reliability.current.nkd;
+  const mb = (v.market.bands || []).find(b => b.lo <= o.market.pUp && o.market.pUp < b.hi);
   h += `<div class="on-sec">① 東京市場全体</div><div style="font-size:13px"><b style="color:${m.c}">${Math.round(o.market.pUp)}%</b>（${m.t}）`
-    + `<span style="color:var(--muted);font-size:11px"> 過去2年の方向的中${v.market.accuracy}%</span></div>`;
+    + `<span style="color:var(--muted);font-size:11px"> ${mb ? `この確率帯（${mb.lo}〜${mb.hi}%）の過去の的中 <b>${mb.acc}%</b>（${mb.n}日）` : `過去2年の方向的中${v.market.accuracy}%`}</span></div>`;
   if (cur) h += `<div style="font-size:11.5px;margin-top:2px">今日の海外の動きは<b>${cur.label}</b>（夜間の日経先物）。同じ状況の日の過去の的中：終値<b>${cur.cc}%</b>・寄付き<b>${cur.gap}%</b>`
     + `<span style="color:var(--muted)">（動きが大きい日ほど当たりやすく、小さい日は五分五分に近い）</span></div>`;
   // 2. 保有銘柄

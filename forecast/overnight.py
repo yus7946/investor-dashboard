@@ -418,6 +418,9 @@ def _validate(panel: pd.DataFrame, quarters: int = 8, feats: list[str] | None = 
         "baseline": round(float(max((mkt_rows.ret > 0).mean(), (mkt_rows.ret <= 0).mean())) * 100, 1),
         "strongN": int(strong.sum()),
         "strongAccuracy": round(float(hit[strong].mean()) * 100, 1) if strong.sum() else None,
+        # 確率帯ごとの方向的中（2026-11-22 PDCA#12: 45〜55%は約53%で五分五分、55〜60%は約68%、65%以上は約83%）
+        "bands": [{"lo": round(lo * 100), "hi": round(min(hi, 1) * 100), "n": int(sel.sum()), "acc": round(float(hit[sel].mean()) * 100, 1)}
+                  for lo, hi in MKT_BANDS for sel in [(mkt_rows.p >= lo) & (mkt_rows.p < hi)] if sel.sum() >= 10],
     }
     return out
 
@@ -459,6 +462,9 @@ def _paper_live(history: dict) -> dict:
                 "win": round(sum(p["ret"] > 0 for p in traded) / len(traded) * 100) if traded else None,
                 "cost0": stats(0.0), "cost10": stats(0.001), "recent": allp[-10:][::-1]})
     return out
+
+
+MKT_BANDS = [(0, .35), (.35, .40), (.40, .45), (.45, .55), (.55, .60), (.60, .65), (.65, 1.01)]
 
 
 REGIMES = {
