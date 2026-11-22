@@ -82,6 +82,26 @@ def main():
         print("  → 20営業日に到達。検証時との差を「日次SEの2倍」で判定し、PDCAに記録すること")
     c = Counter(re.sub(r"（.*|:.*|[+-]?\d+pt", "", f) for d in post for f in d.get("fl", []))
     print("■ 修正後の注意の件数:", dict(c) or "なし")
+    # AIの仮想運用（寄付き前に出た予報の日だけ数える）
+    allp = h.get("paper") or []
+    pp = [p for p in allp if not p.get("late")]
+    bt = (v.get("paper") or {})
+    if pp:
+        r = np.array([p["ret"] / 100 if p["picks"] else 0.0 for p in pp])
+        traded = [p for p in pp if p["picks"]]
+        eq = np.cumprod(1 + r)
+        se = r[r != 0].std(ddof=1) / np.sqrt((r != 0).sum()) * 100 if (r != 0).sum() > 1 else None
+        print(f"■ AIの仮想運用: {pp[0]['d']}〜 {len(pp)}営業日（売買{len(traded)}日・寄付き後で除外{len(allp) - len(pp)}日）"
+              f" 累計{(eq[-1] - 1) * 100:+.2f}%（コスト0.1%なら{(np.cumprod(1 + r - 0.001 * (r != 0))[-1] - 1) * 100:+.2f}%）"
+              f" 売買日の平均{r[r != 0].mean() * 100:+.3f}%" + (f"±{se:.3f}" if se else "")
+              + f" 勝ち{sum(p['ret'] > 0 for p in traded)}/{len(traded)}日")
+        for p in allp[-5:]:
+            print(f"  {p['d']} {p.get('at')} {'除外 ' if p.get('late') else ''}{p['ret']:+.2f}% " + " ".join(f"{t.replace('.T', '')}:{x:+.1f}" for t, x in p["picks"]))
+    else:
+        print(f"■ AIの仮想運用: 実績なし（寄付き後で除外{len(allp)}日）")
+    if bt:
+        print(f"  検証（同じルール・{bt.get('days')}日）: 1日平均{bt['cost0']['avg']:+.3f}%（コスト0.1%なら{bt['cost10']['avg']:+.3f}%）"
+              f" 最大下落{bt['cost0']['maxDD']}%")
     pend = h.get("pending") or {}
     print("■ 答え合わせ待ち:", pend.get("d"), pend.get("at"), pend.get("model"))
 
