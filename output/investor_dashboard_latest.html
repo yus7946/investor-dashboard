@@ -73,11 +73,9 @@ body::before {
 .header h1 {
   font-size: clamp(20px, 5vw, 26px); font-weight: 800; line-height: 1.2;
   letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #2A2620 0%, #2C3E63 45%, #C9A227 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-  opacity: 0;
+  color: var(--accent);
 }
-.header-meta { font-size: 12px; color: var(--muted); opacity: 0; }
+.header-meta { font-size: 12px; color: var(--muted); }
 
 /* ── 更新バー ── */
 .update-bar {
@@ -578,7 +576,7 @@ body::before {
 .field-optional.show { display: block; }
 
 /* ── コピーボタン ── */
-.copy-section { position: sticky; bottom: 16px; z-index: 100; margin-top: 24px; }
+.copy-section { position: static; margin-top: 24px; }
 .copy-btn {
   width: 100%; padding: 16px;
   background: linear-gradient(135deg, var(--accent), var(--accent2));
@@ -702,48 +700,42 @@ body::before {
 <div class="header">
   <div class="header-badge" id="badge">LIVE</div>
   <h1 id="title">株コンパス</h1>
-  <div class="header-meta" id="meta">実データで導く、今日の売買判断</div>
+  <div class="header-meta" id="meta">夜間の海外の動きから、翌日の値動きを予報（検証つき）</div>
 </div>
 
 <!-- 更新バー -->
 <div class="update-bar">
-  <span><span class="live-dot"></span>データ取得済み<span id="update-mode-note" style="font-weight:400;color:var(--muted)"></span></span>
-  <span id="update-time">--</span>
-</div>
-<div class="update-bar" id="freshness-bar">
-  <span>最終更新からの経過</span>
-  <span id="freshness-time">--</span>
+  <span><span class="live-dot"></span>最終更新 <span id="update-time">--</span>（<span id="freshness-time">--</span>）<span id="update-mode-note" style="display:none"></span></span>
 </div>
 
-<!-- 今日の結論（ヒーロー） -->
+<!-- 今日見ること（検証で裏付けのある情報だけを1枚に要約） -->
+<div id="today-card" class="on-card"></div>
+
+<!-- タブ -->
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('forecast')">予報</button>
+  <button class="tab" onclick="switchTab('screening')">銘柄一覧<br><span style="font-weight:400;font-size:9px">参考</span></button>
+  <button class="tab" onclick="switchTab('watch')">ニュース・需給</button>
+  <button class="tab" onclick="switchTab('assets')">自分の資産</button>
+</div>
+
+<!-- ── タブ0：予報（検証で裏付けのある情報）── -->
+<div class="tab-content active" id="tab-forecast">
+<div id="overnight-card" class="on-card" style="display:none"></div>
+<div id="report-card" class="on-card" style="display:none"></div>
+</div>
+
+<!-- ── タブ1：銘柄一覧（参考） ── -->
+<div class="tab-content" id="tab-screening">
+
+  <div class="on-box" style="margin-bottom:10px;line-height:1.6">この一覧のスコアと「買い/売り」の目安は、旧来の指標（テクニカル・資金フローの推定など）から作ったものです。
+  過去の検証では、翌日〜数週間の値動きを当てる力は確認できていません（的中 約51%）。値動きの見通しは「予報」タブ（検証で裏付けあり）を見てください。</div>
+  <details style="margin-bottom:10px"><summary style="cursor:pointer;font-size:12px;font-weight:700">スコア上位のまとめ（旧「今日の結論」）</summary>
 <div class="verdict" id="verdict">
   <div class="verdict-headline" id="verdict-headline">読み込み中…</div>
   <div class="verdict-groups" id="verdict-groups"></div>
 </div>
-
-<div id="overnight-card" class="on-card" style="display:none"></div>
-<div id="report-card" class="on-card" style="display:none"></div>
-
-<!-- 市場全体の状況（折りたたみ） -->
-<button class="market-toggle" onclick="toggleMarket(this)">
-  <span>市場全体の状況・予測の答え合わせを見る</span>
-  <span id="market-arrow">▼</span>
-</button>
-<div class="market-collapse" id="market-collapse">
-  <div id="regime-banner" style="display:none;padding:10px 14px;border-radius:12px;margin-bottom:10px;font-size:12px;line-height:1.6"></div>
-  <div id="outlook-card" style="display:none;padding:12px 14px;border-radius:12px;margin-bottom:10px;font-size:12px;line-height:1.7;background:rgba(74,111,165,0.06);border:1px solid rgba(74,111,165,0.2)"></div>
-  <div id="accuracy-card" style="display:none;padding:12px 14px;border-radius:12px;margin-bottom:10px;font-size:12px;line-height:1.7;background:rgba(31,111,74,0.05);border:1px solid rgba(31,111,74,0.18)"></div>
-</div>
-
-<!-- タブ -->
-<div class="tabs">
-  <button class="tab active" onclick="switchTab('screening')">銘柄チェック</button>
-  <button class="tab" onclick="switchTab('watch')">今日のアラート</button>
-  <button class="tab" onclick="switchTab('assets')">自分の資産</button>
-</div>
-
-<!-- ── タブ1：銘柄チェック ── -->
-<div class="tab-content active" id="tab-screening">
+  </details>
 
   <div class="section-hint">評価の高い順に並んでいます。緑の「買い」バッジが買いサイン、赤の「売り」が売りサイン、黄の「様子見」は急がず待つ目安です。もっと詳しく見たいときは各銘柄の「数字で詳しく見る」を開いてください。</div>
 
@@ -820,9 +812,19 @@ body::before {
       <div id="bt-note" style="margin-top:12px;font-size:11px;line-height:1.7;color:var(--muted)"></div>
     </div>
   </div>
+<!-- 市場全体の状況（折りたたみ） -->
+<button class="market-toggle" onclick="toggleMarket(this)">
+  <span>旧来の市場見通しと答え合わせ（参考）</span>
+  <span id="market-arrow">▼</span>
+</button>
+<div class="market-collapse" id="market-collapse">
+  <div id="regime-banner" style="display:none;padding:10px 14px;border-radius:12px;margin-bottom:10px;font-size:12px;line-height:1.6"></div>
+  <div id="outlook-card" style="display:none;padding:12px 14px;border-radius:12px;margin-bottom:10px;font-size:12px;line-height:1.7;background:rgba(74,111,165,0.06);border:1px solid rgba(74,111,165,0.2)"></div>
+  <div id="accuracy-card" style="display:none;padding:12px 14px;border-radius:12px;margin-bottom:10px;font-size:12px;line-height:1.7;background:rgba(31,111,74,0.05);border:1px solid rgba(31,111,74,0.18)"></div>
+</div>
 </div>
 
-<!-- ── タブ2：今日のアラート ── -->
+<!-- ── タブ2：ニュース・需給 ── -->
 <div class="tab-content" id="tab-watch">
 
   <div class="section-hint">急変・注目のアラートを優先表示しています。赤＝注意、緑＝好材料、青＝情報</div>
@@ -9352,6 +9354,87 @@ function onLabel(p) {
   if (p > 30) return { t: 'やや下落寄り', c: 'var(--red)' };
   return { t: '下落の可能性が高い', c: 'var(--red)' };
 }
+// 予報の状態。warn があれば注意書き、なければ寄付き前に出た確定予報
+function onStatus(o) {
+  const todayJst = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+  const hourJst = new Date(Date.now() + 9 * 3600e3).getUTCHours();
+  const md = d => { const [, m, dd] = d.split('-'); return `${+m}/${+dd}`; };
+  let warn = '';
+  if (o.targetDate < todayJst && hourJst < 9) warn = `今日の予報は朝6時半ごろに出ます。いま表示しているのは前営業日（${md(o.targetDate)}）の予報です。`;
+  else if (o.targetDate < todayJst) warn = `この予報は${md(o.targetDate)}向けの古いものです（休場日、または今朝の更新の失敗）。`;
+  else if (o.targetDate === todayJst && hourJst >= 16 && !o.provisional) warn = '本日の予報です（大引け後）。結果は明朝の答え合わせに反映され、次の予報は明朝6時半ごろに出ます。';
+  else if (o.provisional) warn = '米国市場の取引終了前の情報で作った暫定予報です。翌朝の更新で確定します。';
+  else if (o.beforeOpen === false) warn = `更新が遅れ、寄付き後（${o.generatedAt.slice(11)}）に作成された予報です。寄付きの予報は答え合わせ用、終値の予報は参考としてご覧ください。`;
+  return { warn, md };
+}
+
+// ── 今日見ること（検証で裏付けのある情報だけを1枚に要約）──
+function renderToday() {
+  const el = document.getElementById('today-card');
+  if (!el) return;
+  const o = DATA.overnight, r = DATA.marketReport;
+  if (!o) {
+    el.innerHTML = `<div class="on-title">今日見ること</div><div class="on-sub" style="margin-top:4px">海外データの取得に失敗したため、今回は予報がありません（推測値では埋めません）。</div>`;
+    return;
+  }
+  const { warn, md } = onStatus(o);
+  const m = onLabel(o.market.pUp);
+  const v = o.validation;
+  let h = `<div class="on-head"><div class="on-title">今日見ること <span style="font-size:12px">${md(o.targetDate)}</span></div>`
+    + `<div class="on-sub">${o.generatedAt.slice(5, 10).replace('-', '/')} ${o.generatedAt.slice(11)}作成</div></div>`;
+  h += warn ? `<div class="on-warn">${warn}</div>` : `<div class="on-box" style="color:var(--green)">✓ 寄付き前に出た確定予報です</div>`;
+  // 1. 市場全体と、今日の当たりやすさ
+  const cur = r && r.reliability && r.reliability.current && r.reliability.current.nkd;
+  h += `<div class="on-sec">① 東京市場全体</div><div style="font-size:13px"><b style="color:${m.c}">${Math.round(o.market.pUp)}%</b>（${m.t}）`
+    + `<span style="color:var(--muted);font-size:11px"> 過去2年の方向的中${v.market.accuracy}%</span></div>`;
+  if (cur) h += `<div style="font-size:11.5px;margin-top:2px">今日の海外の動きは<b>${cur.label}</b>（夜間の日経先物）。同じ状況の日の過去の的中：終値<b>${cur.cc}%</b>・寄付き<b>${cur.gap}%</b>`
+    + `<span style="color:var(--muted)">（動きが大きい日ほど当たりやすく、小さい日は五分五分に近い）</span></div>`;
+  // 2. 保有銘柄
+  let mine = [];
+  try { mine = loadHoldings().map(x => onFind(x.code)).filter(Boolean); } catch (e) { mine = []; }
+  mine = mine.filter((x, i, a) => a.findIndex(y => y.ticker === x.ticker) === i);
+  h += `<div class="on-sec">② あなたの保有銘柄</div>`;
+  h += mine.length ? mine.map(onRow).join('')
+    : `<div style="font-size:11.5px;color:var(--muted)">「自分の資産」タブで保有銘柄を登録すると、ここに予報が出ます。</div>`;
+  // 3. AIの仮想運用
+  h += renderPaperSummary();
+  h += `<div style="font-size:10.5px;color:var(--muted);margin-top:8px">上がる/下がる確率が高い銘柄・予報の成績・日々の答え合わせは「予報」タブにあります。確率は保証ではありません。</div>`;
+  el.innerHTML = h;
+}
+
+// AIの仮想運用（仮想のお金で毎日売買した記録）。データがなければ何も出さない
+function renderPaperSummary() {
+  const o = DATA.overnight, pp = o && o.paper;
+  if (!pp) return '';
+  const nm = t => { const x = onFind(t); return x ? x.name : t.replace('.T', ''); };
+  const sg = (v, d = 2) => v == null ? '—' : `<b style="color:${v >= 0 ? 'var(--green)' : 'var(--red)'}">${v >= 0 ? '+' : ''}${v.toFixed(d)}%</b>`;
+  const md = d => { const [, m, dd] = d.split('-'); return `${+m}/${+dd}`; };
+  let h = `<div class="on-sec">③ AIの仮想運用 <span style="font-weight:400;font-size:10px;color:var(--muted)">仮想のお金で毎日売買した記録</span></div>`;
+  const note = o.provisional ? '（暫定。翌朝の確定予報で決まります）'
+    : o.beforeOpen === false ? '（寄付き後に出た予報のため、仮想運用では数えません）' : '';
+  h += `<div style="font-size:11.5px">${md(o.targetDate)}の売買：${pp.today.length
+    ? pp.today.map(t => `<b>${nm(t)}</b>`).join('・') + ' を寄付きで買い、大引けで売る'
+    : '条件を満たす銘柄がないため売買しない'}<span style="color:var(--muted)">${note}</span></div>`;
+  const L = pp.live, B = pp.backtest;
+  h += L && L.days
+    ? `<div style="font-size:11.5px;margin-top:2px">これまで（${md(L.since)}〜・${L.days}営業日、売買${L.traded}日）：累計 ${sg(L.cost0.total)}`
+      + `（売買コスト0.1%なら ${sg(L.cost10.total)}）・勝った日 ${L.win == null ? '—' : L.win + '%'}・最大の下落 ${sg(L.cost0.maxDD)}</div>`
+    : `<div style="font-size:11.5px;margin-top:2px;color:var(--muted)">実績は、寄付き前に出た予報の日から記録を始めます。</div>`;
+  if (B) h += `<div style="font-size:11px;color:var(--muted);margin-top:2px">過去${B.days}営業日の検証：累計 ${sg(B.cost0.total, 1)}・最大の下落 ${sg(B.cost0.maxDD, 1)}`
+    + `（売買コスト0.1%なら累計 ${sg(B.cost10.total, 1)}）</div>`;
+  if (L && L.recent && L.recent.length) {
+    h += `<details style="margin-top:4px;font-size:11px"><summary style="cursor:pointer">日ごとの記録</summary>` + L.recent.map(p =>
+      `<div style="padding:3px 0;border-top:1px solid var(--border)${p.late ? ';opacity:.55' : ''}"><b>${md(p.d)}</b> ${p.picks.length ? sg(p.ret) : '売買なし'}`
+      + `${p.late ? ' <span style="color:var(--muted)">寄付き後の予報のため数えない</span>' : ''}<br><span style="color:var(--muted)">`
+      + p.picks.map(([t, r]) => `${nm(t)} ${r >= 0 ? '+' : ''}${r}%`).join('・') + `</span></div>`).join('') + `</details>`;
+  }
+  h += `<details style="font-size:10.5px;color:var(--muted);margin-top:2px"><summary style="cursor:pointer">ルールと注意</summary>`
+    + `${pp.rule}。手数料0円の証券会社で、寄付き・引けの成行注文（板寄せで約定）を想定。`
+    + (B ? `過去の検証（先読みなし）の1日平均は ${sg(B.cost0.avg, 3)}、売買コスト0.1%なら ${sg(B.cost10.avg, 3)} で、余裕は小さい。` : '')
+    + `仮想の売買の記録で、実際の売買を勧めるものではありません。過去の成績は将来を保証しません。</details>`;
+  return h;
+}
+
 function onSigned(v, d = 2) { return v == null ? '—' : (v >= 0 ? '+' : '') + v.toFixed(d) + '%'; }
 function onFind(code) {
   const o = DATA.overnight;
@@ -9377,15 +9460,8 @@ function renderOvernight() {
     el.innerHTML = `<div class="on-title">明日の方向予報</div><div class="on-sub" style="margin-top:4px">今回は海外データの取得に失敗したため予報を出していません（推測値では埋めません）。</div>`;
     return;
   }
-  const todayJst = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
   const md = d => { const [, m, dd] = d.split('-'); return `${+m}/${+dd}`; };
-  const hourJst = new Date(Date.now() + 9 * 3600e3).getUTCHours();
-  let warn = '';
-  if (o.targetDate < todayJst && hourJst < 9) warn = `本日の予報は朝8時ごろに更新されます。下は前営業日（${md(o.targetDate)}）の予報です。`;
-  else if (o.targetDate < todayJst) warn = `この予報は${md(o.targetDate)}向けの古いものです（今朝の更新に失敗した可能性）。参考にしないでください。`;
-  else if (o.targetDate === todayJst && hourJst >= 16 && !o.provisional) warn = '本日の予報です（大引け後）。結果は明朝の答え合わせに反映され、明日の予報は明朝8時ごろに出ます。';
-  else if (o.provisional) warn = '米国市場の取引終了前の情報で作った暫定予報です。翌朝の更新で確定します。';
-  else if (o.beforeOpen === false) warn = `更新が遅れ、寄付き後（${o.generatedAt.slice(11)}）に作成された予報です。寄付きの予報は答え合わせ用、終値の予報は参考としてご覧ください。`;
+  const warn = onStatus(o).warn;
   const m = onLabel(o.market.pUp);
   const v = o.validation, inp = o.inputs;
   const chip = (lbl, val) => `<span class="on-chip">${lbl} <b style="color:${val == null ? 'var(--muted)' : val >= 0 ? 'var(--green)' : 'var(--red)'}">${onSigned(val)}</b></span>`;
@@ -9444,13 +9520,13 @@ function renderOvernight() {
     ${ups.length ? `<div class="on-sec" style="color:var(--green)">上がる確率が高い銘柄</div>${ups.map(onRow).join('')}` : ''}
     ${downs.length ? `<div class="on-sec" style="color:var(--red)">下がる確率が高い銘柄</div>${downs.map(onRow).join('')}` : ''}
     ${!ups.length && !downs.length ? '<div class="on-sec" style="color:var(--muted)">今日は海外の動きが小さく、方向に自信を持てる銘柄はありません（無理に予報しません）。</div>' : ''}
-    <div class="on-val">
-      <div><b>過去2年の検証</b>（${v.from}〜${v.to}・各時点より前のデータだけで学習して答え合わせ）:
+    <details class="on-val"><summary style="cursor:pointer;color:var(--text)"><b>この予報の成績</b>（過去2年の検証・運用実績・日々の答え合わせ）</summary>
+      <div style="margin-top:6px"><b>過去2年の検証</b>（${v.from}〜${v.to}・各時点より前のデータだけで学習して答え合わせ）:
       終値の方向 <b>${v.y_cc.accuracy}%</b>（「毎日上がる」と言い続けた場合は${v.y_cc.baseline}%）${v.y_cc.agreeAccuracy != null ? `、寄付きと同じ向きの予報に限ると <b>${v.y_cc.agreeAccuracy}%</b>（逆向きの時は${v.y_cc.splitAccuracy}%のため予報なし）` : ''}、確率70%以上/30%以下の予報は <b>${v.y_cc.highConfAccuracy}%</b>。
       寄付きの方向 <b>${v.y_gap.accuracy}%</b>、高確信時 <b>${v.y_gap.highConfAccuracy}%</b>。</div>
       ${liveTxt}${rplTxt}${exTxt}${healthTxt}${dailyTxt}
       <div style="margin-top:4px">寄付きでほとんどの値動きが織り込まれ、寄付き後〜大引けや数日先は予測力が確認できないため対象外です。確率は保証ではありません。</div>
-    </div>`;
+    </details>`;
 }
 
 // ── 相場環境レポート（イベント前後の各市場・荒れ具合・荒れ相場での予報の信頼度）──
@@ -9477,7 +9553,7 @@ function renderMarketReport() {
     h += `<div style="font-size:10.5px;color:var(--muted)">海外の動きが大きい日ほど、翌日の予報は当たりやすい傾向があります（動きが小さい日は五分五分に近づく）。</div>`;
   }
   if (e) {
-    h += `<div class="on-sec">${e.name}（${md(e.date)}投票）後の各市場：投票日の前の終値との比較</div>`;
+    h += `<details style="margin-top:8px"><summary class="on-sec" style="cursor:pointer">${e.name}（${md(e.date)}投票）後の各市場 ▼</summary><div style="font-size:10.5px;color:var(--muted)">投票日の前の終値との比較</div>`;
     if (e.summary) {
       const src = (e.sources || []).map(s => `<a href="${s.url}" target="_blank" rel="noopener" style="color:var(--accent2)">${s.title.split(':')[0]}</a>`).join('・');
       h += `<div style="font-size:11.5px;margin-bottom:4px">${e.summary}<span style="color:var(--muted)">（出典：${src}）</span></div>`;
@@ -9510,6 +9586,7 @@ function renderMarketReport() {
       h += `<div class="on-sec">${e.history.title}</div>` + e.history.rows.map(x => `<div style="font-size:11.5px">${x.label}：平均 <b style="color:${cl(x.avg)}">${sg(x.avg, '%', 1)}</b>（上昇${x.up}/${x.n}回）</div>`).join('')
         + `<div style="font-size:10.5px;color:var(--muted)">${e.history.note}</div>`;
     }
+    h += `</details>`;
   }
   h += `<div class="on-val">すべてYahoo Financeの実測値から自動計算（毎回の更新で最新化）。将来の値動きを保証するものではなく、売買の推奨でもありません。</div>`;
   el.style.display = 'block';
@@ -9570,7 +9647,7 @@ function renderBacktest() {
 
 function switchTab(id) {
   document.querySelectorAll('.tab').forEach((t,i) => {
-    const ids = ['screening','watch','assets'];
+    const ids = ['forecast','screening','watch','assets'];
     t.classList.toggle('active', ids[i] === id);
   });
   document.querySelectorAll('.tab-content').forEach(c => {
@@ -10407,6 +10484,7 @@ function renderHoldingActions() {
 
 function renderHoldings() {
   const list = loadHoldings();
+  try { renderToday(); } catch (e) { /* 予報データがない場合など */ }
   const el   = document.getElementById('holding-list');
   if (list.length === 0) {
     el.innerHTML = '<div class="card" style="color:var(--muted);font-size:12px">まだ保有銘柄が登録されていません。下のフォームから追加してください。</div>';
@@ -10536,6 +10614,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderVerdict();
   renderOvernight();
   renderMarketReport();
+  renderToday();
   renderRegime();
   renderOutlook();
   renderAccuracy();

@@ -79,7 +79,10 @@ BANDS = [0, .2, .3, .4, .45, .55, .6, .7, .8, 1.0001]
 CLEAN = True  # 異常値の除去（研究用に切り替え可能）
 HIGH_CONF = 0.7  # p>=0.7 または p<=0.3 を「高確信」とする
 RESEARCH = False  # True で研究用の候補特徴量も作る（research/experiment.py が設定。本番は作らない）
-MODEL_VERSION = "v2"  # 運用記録に残し、モデルごとの実績を分けて点検できるようにする（v1: 〜2026-11-18、v2: リッジ回帰）
+MODEL_VERSION = "v2"
+# AIの仮想運用（2026-11-22 PDCA#11）: 毎朝の予報で「終値が上がる確率60%以上・寄付きと同じ向き」の上位5銘柄を
+# 寄付き成行で買い、引け成行で売る（決算またぎは除く）。寄付き・大引けとも板寄せで約定するので、検証の値段＝約定する値段
+PAPER_TOP, PAPER_MIN_P = 5, 0.6  # 運用記録に残し、モデルごとの実績を分けて点検できるようにする（v1: 〜2026-11-18、v2: リッジ回帰）
 
 
 def _is_closed(d) -> bool:
@@ -407,6 +410,7 @@ def _validate(panel: pd.DataFrame, quarters: int = 8, feats: list[str] | None = 
     out["y_cc"]["agreeAccuracy"] = round(float(((m.p > .5) == m.label)[agree].mean()) * 100, 1)
     out["y_cc"]["splitAccuracy"] = round(float(((m.p > .5) == m.label)[~agree].mean()) * 100, 1)
     out["regimes"] = _regime_table(m, kept["y_gap"], panel)
+    out["paper"] = _paper_backtest(m, panel)
     hit = (mkt_rows.p > .5) == (mkt_rows.ret > 0)
     strong = (mkt_rows.p >= .6) | (mkt_rows.p <= .4)
     out["market"] = {
@@ -415,6 +419,45 @@ def _validate(panel: pd.DataFrame, quarters: int = 8, feats: list[str] | None = 
         "strongN": int(strong.sum()),
         "strongAccuracy": round(float(hit[strong].mean()) * 100, 1) if strong.sum() else None,
     }
+    return out
+
+
+def _paper_backtest(m: pd.DataFrame, panel: pd.DataFrame) -> dict | None:
+    """仮想運用のルールを、検証期間の予報（先読みなし）に当てはめた成績。売買コスト0%（手数料0円・板寄せ）と0.1%の両方。"""
+    d = m.merge(panel[["date", "tk", "y_cc", "y_gap"]], on=["date", "tk"])
+    d["oc"] = (1 + d.y_cc) / (1 + d.y_gap) - 1  # 翌営業日の寄付き→大引け
+    d = d[d.oc.notna()]
+    picks = d[(d.p >= PAPER_MIN_P) & (d.p_g >= .5)].sort_values("p", ascending=False).groupby("date").head(PAPER_TOP)
+    daily = picks.groupby("date").oc.mean().reindex(sorted(d.date.unique())).fillna(0.0)  # 条件を満たす銘柄がない日は売買しない
+    if not len(daily):
+        return None
+
+    def stats(cost):
+        r = daily - cost * (daily != 0)
+        eq = (1 + r).cumprod()
+        return {"avg": round(float(r.mean()) * 100, 3), "total": round(float(eq.iloc[-1] - 1) * 100, 1),
+                "maxDD": round(float((eq / eq.cummax() - 1).min()) * 100, 1),
+                "win": round(float((r[daily != 0] > 0).mean()) * 100)}
+    return {"days": int(len(daily)), "traded": int((daily != 0).sum()), "allAvg": round(float(d.groupby("date").oc.mean().mean()) * 100, 3),
+            "cost0": stats(0.0), "cost10": stats(0.001)}
+
+
+def _paper_live(history: dict) -> dict:
+    """仮想運用の実績。寄付き後に作った予報の日は、寄付きで買えないので数えない。"""
+    allp = history.get("paper") or []
+    rows = [p for p in allp if not p.get("late")]
+    out = {"days": len(rows), "late": len(allp) - len(rows)}
+    if not rows:
+        return out
+
+    def stats(cost):
+        r = np.array([(p["ret"] / 100 - cost) if p["picks"] else 0.0 for p in rows])
+        eq = np.cumprod(1 + r)
+        return {"total": round(float(eq[-1] - 1) * 100, 2), "maxDD": round(float((eq / np.maximum.accumulate(eq) - 1).min()) * 100, 2)}
+    traded = [p for p in rows if p["picks"]]
+    out.update({"since": rows[0]["d"], "traded": len(traded),
+                "win": round(sum(p["ret"] > 0 for p in traded) / len(traded) * 100) if traded else None,
+                "cost0": stats(0.0), "cost10": stats(0.001), "recent": allp[-10:][::-1]})
     return out
 
 
@@ -543,6 +586,16 @@ def _update_history(history: dict, panel: pd.DataFrame, today_pred: dict | None,
             if fl:
                 rec["fl"] = fl
             history.setdefault("days", []).append(rec)
+            if "paper" in pend:  # AIの仮想運用: 寄付きで買い大引けで売った損益（寄付き→大引け）
+                pr = []
+                for tk in pend["paper"]:
+                    if tk in rows.index and pd.notna(rows.at[tk, "y_cc"]) and pd.notna(rows.at[tk, "y_gap"]):
+                        pr.append([tk, round(((1 + rows.at[tk, "y_cc"]) / (1 + rows.at[tk, "y_gap"]) - 1) * 100, 2)])
+                history.setdefault("paper", []).append({
+                    "d": str(nxt.date()), "at": pend.get("at"), "picks": pr,
+                    "ret": round(float(np.mean([x[1] for x in pr])), 3) if pr else 0.0,
+                    **({"late": True} if (pend.get("at") or "") >= "09:00" else {})})
+                history["paper"] = history["paper"][-500:]
             history["days"] = history["days"][-250:]
         history.pop("pending")
     if today_pred:  # 暫定予報は答え合わせ対象にしない
@@ -701,6 +754,9 @@ def build_overnight_forecast(universe: list[tuple[str, str]], now: datetime | No
             "split": bool((pc >= .5) != (pg >= .5)),
         })
     stocks.sort(key=lambda s: -abs(s["pUp"] - 50))
+    paper_today = [s["ticker"] for s in sorted(
+        (s for s in stocks if s["pUp"] >= PAPER_MIN_P * 100 and s["pGapUp"] >= 50 and not s["earnings"]),
+        key=lambda s: -s["pUp"])[:PAPER_TOP]]
     mkt_p = round(float(np.mean(probs["y_cc"])) * 100, 1)
 
     history = {}
@@ -716,6 +772,7 @@ def build_overnight_forecast(universe: list[tuple[str, str]], now: datetime | No
         "b": base, "d": str(target.date()), "mkt": mkt_p, "model": MODEL_VERSION, "at": now.strftime("%H:%M"),
         "in": {"nkd": inputs["nkdPct"], "est": inputs["n225Estimated"], "fixed": fixed, "miss": inputs["ridgeMissing"]},
         "preds": {s["ticker"]: [s["pUp"], s["pGapUp"]] for s in stocks},
+        "paper": paper_today,
     }, replay)
     os.makedirs(os.path.dirname(HISTORY_PATH), exist_ok=True)
     with open(HISTORY_PATH, "w", encoding="utf-8") as f:
@@ -733,6 +790,9 @@ def build_overnight_forecast(universe: list[tuple[str, str]], now: datetime | No
         "stocks": stocks,
         "validation": validation,
         "live": _live_stats(history, validation["y_cc"]["accuracy"]),
+        "paper": {"today": paper_today, "backtest": validation.get("paper"), "live": _paper_live(history),
+                  "rule": f"毎朝の予報で、終値が上がる確率{round(PAPER_MIN_P * 100)}%以上かつ寄付きも上がる向きの銘柄から上位{PAPER_TOP}銘柄を、"
+                          "寄付きで買って大引けで売る（決算発表をまたぐ銘柄は除く）。同じ金額ずつ買う"},
         "basis": "夜間に確定した米S&P500・米半導体指数(SOX)・ドル円・CME日経先物・米国11業種・金利・原油・日本企業のADRなどの動きと、"
                  "銘柄ごとの過去の感応度（19指標を同時に推定するリッジ回帰）を機械学習（勾配ブースティング）で組み合わせた確率。的中率はすべて、その時点より前のデータだけで"
                  "学習した予測の答え合わせ（先読みなし）。寄付き後の値動きや数日先は予測力が確認できないため対象外。",
