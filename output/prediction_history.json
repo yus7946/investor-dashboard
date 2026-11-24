@@ -16784,6 +16784,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-11-20",
+      "ticker": "4523.T",
+      "name": "エーザイ",
+      "basePrice": 5347.0,
+      "rangeLow": 5255,
+      "rangeHigh": 5439,
+      "predUpRate": 54.7,
+      "condN": 172,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -24288,6 +24303,18 @@
       "entry": 3772,
       "target": 3907,
       "stop": 3671,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-20",
+      "ticker": "4523.T",
+      "name": "エーザイ",
+      "basePrice": 5347.0,
+      "entry": 5301,
+      "target": 5485,
+      "stop": 5163,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
