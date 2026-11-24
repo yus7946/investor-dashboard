@@ -24279,6 +24279,18 @@
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-20",
+      "ticker": "4661.T",
+      "name": "オリエンタルランド",
+      "basePrice": 3806.0,
+      "entry": 3772,
+      "target": 3907,
+      "stop": 3671,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
     }
   ]
 }
