@@ -12,6 +12,11 @@ on:
     # JST 1:07 = UTC 16:07、JST 3:07 = UTC 18:07（前日）
     - cron: "7 16 * * 0-4"
     - cron: "7 18 * * 0-4"
+    # 2026-11-24は遅れが約11時間（1:07の予定が11:52開始）。前日の夜にも置き、遅れが5〜11時間でもどれかが寄付き前に間に合うように。
+    # JST 19:07 = UTC 10:07、21:07 = UTC 12:07、23:07 = UTC 14:07（日〜木＝翌朝が平日）。0:55より前に始まった回は何もせず終わる
+    - cron: "7 10 * * 0-4"
+    - cron: "7 12 * * 0-4"
+    - cron: "7 14 * * 0-4"
     # ── 予備（ライト）: JST 6:07 = UTC 21:07。朝のフル更新が遅延・失敗しても予報を出すため。
     # 今日の確定予報が既にあれば予報は作り直さない（main.py の is_final_for_today）。
     - cron: "7 21 * * 0-4"
@@ -63,10 +68,12 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "light=${{ github.event.inputs.mode == 'light' && '1' || '0' }}" >> "$GITHUB_OUTPUT"
-          elif [ "${{ github.event.schedule }}" = "37 19 * * 0-4" ] || [ "${{ github.event.schedule }}" = "7 16 * * 0-4" ] || [ "${{ github.event.schedule }}" = "7 18 * * 0-4" ]; then
-            echo "light=0" >> "$GITHUB_OUTPUT"
           else
-            echo "light=1" >> "$GITHUB_OUTPUT"
+            # 朝のフル更新（深夜・前日夜の起動を含む）はフル、それ以外の毎時はライト
+            case "${{ github.event.schedule }}" in
+              "37 19 * * 0-4"|"7 16 * * 0-4"|"7 18 * * 0-4"|"7 10 * * 0-4"|"7 12 * * 0-4"|"7 14 * * 0-4") echo "light=0" >> "$GITHUB_OUTPUT" ;;
+              *) echo "light=1" >> "$GITHUB_OUTPUT" ;;
+            esac
           fi
       # 米国市場(夏時間5:00/冬時間6:00 JST終了)と先物の清算値(冬6:00)が出そろう6:25 JSTまで待つ（最大5.5時間）。
       # 5.5時間より前（=1:07の予定どおりに始まる前の日の夜など）なら何もせず終わり、次の起動予定に任せる。

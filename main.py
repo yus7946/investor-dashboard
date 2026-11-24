@@ -319,11 +319,15 @@ def main():
     # 5年分の一括取得と学習を伴うため、朝のフル更新で作り、ライト時は今日の確定予報が既にあれば再利用する。
     # （GitHubの定期実行は数時間遅れることがあり、朝の更新が失敗・遅延した日は後続の更新で作り直す）
     print("\n翌営業日の方向予報（寄付き前予報）を計算中...")
-    overnight = cache.get("overnight") if light else None
+    # フル更新でも、今日向けの確定予報がすでにあれば作り直さない（2026-11-24: 定期実行が遅れて朝のフル更新が何本も
+    # 続けて走ると、後の回が寄付き前に出た予報を寄付き後の予報で上書きし、運用記録の作成時刻が寄付き後になってしまう）
+    overnight = cache.get("overnight") if light else _load_heavy_cache().get("overnight")
     rebuilt_overnight = False
     now_jst = datetime.now(JST)
     in_window = (6, 0) <= (now_jst.hour, now_jst.minute) < (15, 30)
-    if not light or (in_window and not is_final_for_today(overnight)):
+    if is_final_for_today(overnight):
+        cache["overnight"] = overnight  # 保存し直すキャッシュにも残す
+    elif not light or in_window:
         rebuilt_overnight = True
         try:
             fresh = build_overnight_forecast(MASTER, earnings=cache.get("earnings_dates"))
