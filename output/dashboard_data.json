@@ -1,6 +1,6 @@
 {
-  "updated": "2026年11月24日 21:43",
-  "updatedAtMs": 1795524199948,
+  "updated": "2026年11月24日 23:05",
+  "updatedAtMs": 1795529112699,
   "updateMode": "light",
   "fetched": 163,
   "universeTotal": 166,
@@ -32,8 +32,8 @@
   "marketOutlook": {
     "spxChangePct": 4.73,
     "spxDate": "2026-11-23",
-    "usdjpy": 159.14,
-    "usdjpyChangePct": 0.13,
+    "usdjpy": 159.12,
+    "usdjpyChangePct": 0.12,
     "condition": "米S&P500が直近上昇",
     "topixUpRate": 65.4,
     "n": 266,
@@ -2594,11 +2594,11 @@
     "basis": "夜間に確定した米S&P500・米半導体指数(SOX)・ドル円・CME日経先物・米国11業種・金利・原油・日本企業のADRなどの動きと、銘柄ごとの過去の感応度（19指標を同時に推定するリッジ回帰）を機械学習（勾配ブースティング）で組み合わせた確率。的中率はすべて、その時点より前のデータだけで学習した予測の答え合わせ（先読みなし）。寄付き後の値動きや数日先は予測力が確認できないため対象外。"
   },
   "marketReport": {
-    "generatedAt": "2026-11-24 21:43",
+    "generatedAt": "2026-11-24 23:05",
     "regime": {
       "n225Vol": 38.9,
       "n225VolTopPct": 5,
-      "vix": 29.3,
+      "vix": 29.5,
       "vixTopPct": 6,
       "vixDate": "2026-11-24",
       "n225FromHigh": -17.0,
@@ -2792,10 +2792,10 @@
           "label": "VIX（恐怖指数）",
           "group": "level",
           "base": 20.83,
-          "last": 29.32,
+          "last": 29.52,
           "react": -4.22,
-          "since": 8.49,
-          "day": 2.7,
+          "since": 8.69,
+          "day": 2.9,
           "unit": "pt",
           "lastDate": "2026-11-24"
         },
@@ -2804,22 +2804,22 @@
           "label": "米10年金利",
           "group": "level",
           "base": 4.95,
-          "last": 4.92,
+          "last": 4.89,
           "react": -0.06,
-          "since": -0.03,
-          "day": 0.01,
+          "since": -0.06,
+          "day": -0.03,
           "unit": "pt",
-          "lastDate": "2026-11-23"
+          "lastDate": "2026-11-24"
         },
         {
           "symbol": "JPY=X",
           "label": "ドル円",
           "group": "fx",
           "base": 157.91,
-          "last": 159.14,
+          "last": 159.11,
           "react": 0.35,
-          "since": 0.77,
-          "day": 0.13,
+          "since": 0.76,
+          "day": 0.11,
           "unit": "%",
           "lastDate": "2026-11-24"
         },
@@ -3597,7 +3597,7 @@
           "ccAgree": 72.7,
           "gap": 79.5,
           "title": "VIX（米国の恐怖指数）",
-          "value": 29.3
+          "value": 29.5
         }
       },
       "table": {
@@ -5379,8 +5379,8 @@
       "divPerShare": 15.67,
       "exDivDate": "2027-03-30",
       "dividendYield": 2.71,
-      "per": null,
-      "pbr": 2.08,
+      "per": 50.5,
+      "pbr": 2.03,
       "roe": 6.3,
       "rsi": 53.3,
       "vol": 0.3142,
@@ -5394,7 +5394,7 @@
       "divPerShare": 198.0,
       "exDivDate": "2027-03-30",
       "dividendYield": 6.7,
-      "per": 16.6,
+      "per": 16.7,
       "pbr": 1.18,
       "roe": 7.2,
       "rsi": 54.4,
@@ -6489,7 +6489,7 @@
       "divPerShare": null,
       "exDivDate": null,
       "dividendYield": null,
-      "per": 110.2,
+      "per": 113.6,
       "pbr": 5.96,
       "roe": 5.7,
       "rsi": 42.1,
@@ -6804,7 +6804,7 @@
       "divPerShare": 190.0,
       "exDivDate": "2027-03-30",
       "dividendYield": 4.06,
-      "per": 12.5,
+      "per": 12.0,
       "pbr": 1.11,
       "roe": 10.4,
       "rsi": 40.2,
@@ -7421,7 +7421,7 @@
     },
     {
       "type": "warn",
-      "title": "入替候補OUT: 信越化学",
+      "title": "入替候補OUT: オキサイド",
       "desc": "スコア下位15% (score=0.331)"
     },
     {
