@@ -211,10 +211,10 @@
   ],
   "2269.T": [
    {
-    "title": "明治ホールディングス(株)【2269】：決算情報",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBIZHI4ZkNVTVE2OURiN2lwMU5GclBUeHoxbTJURnhwUU43QTZTcTlscGlydE5ndl9HMWtxZlJmQnVIWXVEcG9BcjVqLU1sOGNPRmp2U2VwU3c1UVVRRzNTMQ?oc=5",
-    "pubDate": "Fri, 20 Nov 2026 08:00:00 GMT",
+    "title": "明治HD【2269】利益予想据え置きでもなぜ株価「3割高」？ 総還元性向111％と中国事業譲渡の先に待つ、見逃せない“焦点”",
+    "source": "Finasee",
+    "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5hS3F4TGJwU3ZnQkY1UGwzOE0wLVFNY3laeVM5b1lzc2ZoR3BYODVBTVBiVHdwejNiQXJGMlRGREF6WFZDN1p1VW00amRzTlpoYW9Z?oc=5",
+    "pubDate": "Mon, 23 Nov 2026 21:00:00 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
@@ -239,14 +239,14 @@
     "theme": "AI"
    }
   ],
-  "4911.T": [
+  "4452.T": [
    {
-    "title": "(株)資生堂【4911】：今の株価の理由は？値動きの背景をAIが解説",
+    "title": "花王(株)【KAOOY】：株価・株式情報",
     "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBmVjZoRVFtZGxSQmFTZ1FnVExqX2xyYTZrS2xXVTFNUXJ3OHdSWExDWWZXeHd3bHZrb2JwMzZyUThGbDR2R01ROC1NZWdNZlRrTHg4SmxRRWZzbUFsQzU0?oc=5",
-    "pubDate": "Fri, 20 Nov 2026 07:01:33 GMT",
+    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE51V05IR1kyZVpHYnJoQVRJWmZyNTZFTy00NkI1NmstYVY0V0xwXzZWaV9NY0FuS08yQ3RRYU5GLXdHM3VtMWVaZnhBS1NFTjl3?oc=5",
+    "pubDate": "Tue, 24 Nov 2026 12:30:06 GMT",
     "sentiment": "neu",
-    "theme": "AI"
+    "theme": "その他"
    }
   ]
  },
@@ -322,17 +322,17 @@
  "theme_trends": [
   {
    "theme": "その他",
-   "mentions": 8,
+   "mentions": 9,
    "pos": 1,
    "neg": 0,
-   "prevMentions": 8
+   "prevMentions": 9
   },
   {
    "theme": "AI",
-   "mentions": 2,
+   "mentions": 1,
    "pos": 0,
    "neg": 0,
-   "prevMentions": 2
+   "prevMentions": 1
   }
  ],
  "flow": {
@@ -359,13 +359,13 @@
   "source": "JPX 投資部門別売買状況（東証プライム・週次・金額ベース）"
  },
  "backtest": {
-  "annual": "+14.4%",
-  "benchmark": "+23.2%",
+  "annual": "+14.3%",
+  "benchmark": "+23.1%",
   "sharpe": "0.38",
-  "dd": "-33.9%",
+  "dd": "-34.0%",
   "winrate": "56.5%",
   "months": "23ヶ月",
-  "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+23.2%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
+  "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+23.1%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
  },
  "overnight": {
   "generatedAt": "2026-11-25 07:19",
@@ -3009,15 +3009,15 @@
    "2025-02-04",
    "2024-11-05"
   ],
-  "4911.T": [
-   "2026-11-09",
-   "2026-08-04",
-   "2026-05-11",
-   "2026-02-09",
-   "2025-11-09",
-   "2025-08-05",
-   "2025-05-11",
-   "2025-02-09"
+  "4452.T": [
+   "2026-11-04",
+   "2026-08-05",
+   "2026-05-12",
+   "2026-02-05",
+   "2025-11-05",
+   "2025-08-06",
+   "2025-05-08",
+   "2025-02-06"
   ]
  }
 }
