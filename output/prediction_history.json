@@ -17114,6 +17114,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-11-24",
+      "ticker": "4911.T",
+      "name": "資生堂",
+      "basePrice": 4329.0,
+      "rangeLow": 4221,
+      "rangeHigh": 4437,
+      "predUpRate": 47.9,
+      "condN": 194,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -24843,6 +24858,18 @@
       "entry": 3336,
       "target": 3422,
       "stop": 3272,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-24",
+      "ticker": "4911.T",
+      "name": "資生堂",
+      "basePrice": 4329.0,
+      "entry": 4275,
+      "target": 4491,
+      "stop": 4113,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
