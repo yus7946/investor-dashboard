@@ -17099,6 +17099,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-11-24",
+      "ticker": "4452.T",
+      "name": "花王",
+      "basePrice": 4107.0,
+      "rangeLow": 4054,
+      "rangeHigh": 4160,
+      "predUpRate": 49.2,
+      "condN": 65,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
@@ -24816,6 +24831,18 @@
       "entry": 5312,
       "target": 5496,
       "stop": 5174,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-24",
+      "ticker": "9202.T",
+      "name": "ANAホールディングス",
+      "basePrice": 3357.0,
+      "entry": 3336,
+      "target": 3422,
+      "stop": 3272,
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
