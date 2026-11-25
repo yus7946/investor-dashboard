@@ -1,7 +1,7 @@
 {
-  "updated": "2026年11月26日 02:07",
-  "updatedAtMs": 1795626478217,
-  "updateMode": "light",
+  "updated": "2026年11月26日 06:27",
+  "updatedAtMs": 1795642078119,
+  "updateMode": "full",
   "fetched": 163,
   "universeTotal": 166,
   "lowRiskPlan": {
@@ -30,10 +30,10 @@
     "source": "TOPIX連動ETF(1306.T)終値と200日移動平均から判定"
   },
   "marketOutlook": {
-    "spxChangePct": -1.83,
+    "spxChangePct": -0.25,
     "spxDate": "2026-11-25",
-    "usdjpy": 158.83,
-    "usdjpyChangePct": -0.11,
+    "usdjpy": 159.2,
+    "usdjpyChangePct": 0.12,
     "condition": "米S&P500が直近下落",
     "topixUpRate": 43.8,
     "n": 217,
@@ -41,25 +41,25 @@
     "basis": "過去2年で「米国市場が上昇/下落した翌営業日に東京(TOPIX ETF)が上昇した割合」を実際に集計。統計的傾向であり将来を保証しません。出典: Yahoo Finance価格データ。"
   },
   "overnight": {
-    "generatedAt": "2026-11-25 07:19",
+    "generatedAt": "2026-11-26 06:26",
     "baseDate": "2026-11-24",
-    "targetDate": "2026-11-25",
+    "targetDate": "2026-11-26",
     "provisional": false,
     "beforeOpen": true,
     "inputs": {
-      "spxPct": -0.5,
-      "soxPct": -7.88,
-      "usdjpyPct": 0.18,
-      "usdjpy": 159.22,
-      "nkdPct": -1.73,
-      "nkd": 57420.0,
-      "n225": 58428.0,
-      "n225Estimated": true,
+      "spxPct": -0.75,
+      "soxPct": -8.48,
+      "usdjpyPct": 0.17,
+      "usdjpy": 159.21,
+      "nkdPct": -2.16,
+      "nkd": 57375.0,
+      "n225": 58645.0,
+      "n225Estimated": false,
       "ridgeMissing": [],
       "futuresFixed": []
     },
     "market": {
-      "pUp": 51.9
+      "pUp": 57.4
     },
     "stocks": [
       {
@@ -67,10 +67,10 @@
         "name": "レーザーテック",
         "close": 33200.0,
         "pUp": 11,
-        "pGapUp": 4,
-        "expGapPct": -2.92,
-        "hitRate": 81.1,
-        "gapHitRate": 81.1,
+        "pGapUp": 3,
+        "expGapPct": -3.61,
+        "hitRate": 79.7,
+        "gapHitRate": 81.3,
         "earnings": false,
         "split": false
       },
@@ -79,46 +79,10 @@
         "name": "ルネサスエレクトロニクス",
         "close": 2625.0,
         "pUp": 11,
-        "pGapUp": 4,
-        "expGapPct": -2.96,
-        "hitRate": 81.1,
-        "gapHitRate": 81.1,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "6146.T",
-        "name": "ディスコ",
-        "close": 44650.0,
-        "pUp": 11,
-        "pGapUp": 4,
-        "expGapPct": -2.95,
-        "hitRate": 81.1,
-        "gapHitRate": 81.1,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "5802.T",
-        "name": "住友電気工業",
-        "close": 1309.5,
-        "pUp": 11,
-        "pGapUp": 4,
-        "expGapPct": -3.55,
-        "hitRate": 81.1,
-        "gapHitRate": 81.1,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "6857.T",
-        "name": "アドバンテスト",
-        "close": 27275.0,
-        "pUp": 12,
-        "pGapUp": 4,
-        "expGapPct": -3.47,
-        "hitRate": 81.1,
-        "gapHitRate": 81.1,
+        "pGapUp": 3,
+        "expGapPct": -3.66,
+        "hitRate": 79.7,
+        "gapHitRate": 81.3,
         "earnings": false,
         "split": false
       },
@@ -127,46 +91,46 @@
         "name": "SUMCO",
         "close": 2031.5,
         "pUp": 12,
-        "pGapUp": 4,
-        "expGapPct": -3.34,
-        "hitRate": 81.1,
-        "gapHitRate": 81.1,
+        "pGapUp": 3,
+        "expGapPct": -4.14,
+        "hitRate": 79.7,
+        "gapHitRate": 81.3,
         "earnings": false,
         "split": false
       },
       {
-        "ticker": "6273.T",
-        "name": "SMC",
-        "close": 59900.0,
-        "pUp": 12,
-        "pGapUp": 5,
-        "expGapPct": -2.03,
-        "hitRate": 81.1,
-        "gapHitRate": 81.1,
+        "ticker": "6146.T",
+        "name": "ディスコ",
+        "close": 44650.0,
+        "pUp": 13,
+        "pGapUp": 3,
+        "expGapPct": -3.65,
+        "hitRate": 79.7,
+        "gapHitRate": 81.3,
         "earnings": false,
         "split": false
       },
       {
-        "ticker": "6981.T",
-        "name": "村田製作所",
-        "close": 5400.0,
-        "pUp": 12,
-        "pGapUp": 4,
-        "expGapPct": -2.96,
-        "hitRate": 81.1,
-        "gapHitRate": 81.1,
+        "ticker": "5802.T",
+        "name": "住友電気工業",
+        "close": 1309.5,
+        "pUp": 13,
+        "pGapUp": 3,
+        "expGapPct": -4.4,
+        "hitRate": 79.7,
+        "gapHitRate": 81.3,
         "earnings": false,
         "split": false
       },
       {
-        "ticker": "6762.T",
-        "name": "TDK",
-        "close": 2268.0,
-        "pUp": 12,
-        "pGapUp": 5,
-        "expGapPct": -2.5,
-        "hitRate": 81.1,
-        "gapHitRate": 81.1,
+        "ticker": "6857.T",
+        "name": "アドバンテスト",
+        "close": 27275.0,
+        "pUp": 14,
+        "pGapUp": 3,
+        "expGapPct": -4.29,
+        "hitRate": 79.7,
+        "gapHitRate": 81.3,
         "earnings": false,
         "split": false
       },
@@ -176,45 +140,69 @@
         "close": 5344.0,
         "pUp": 14,
         "pGapUp": 4,
-        "expGapPct": -2.23,
-        "hitRate": 81.1,
-        "gapHitRate": 81.1,
+        "expGapPct": -2.76,
+        "hitRate": 79.7,
+        "gapHitRate": 81.3,
         "earnings": false,
         "split": false
       },
       {
-        "ticker": "9984.T",
-        "name": "ソフトバンクG",
-        "close": 3166.0,
+        "ticker": "4307.T",
+        "name": "野村総合研究所",
+        "close": 6135.0,
+        "pUp": 86,
+        "pGapUp": 90,
+        "expGapPct": -0.08,
+        "hitRate": 81.0,
+        "gapHitRate": 84.1,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "4519.T",
+        "name": "中外製薬",
+        "close": 7075.0,
+        "pUp": 86,
+        "pGapUp": 85,
+        "expGapPct": -0.73,
+        "hitRate": 81.0,
+        "gapHitRate": 84.1,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "6981.T",
+        "name": "村田製作所",
+        "close": 5400.0,
+        "pUp": 14,
+        "pGapUp": 3,
+        "expGapPct": -3.66,
+        "hitRate": 79.7,
+        "gapHitRate": 81.3,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "6762.T",
+        "name": "TDK",
+        "close": 2268.0,
         "pUp": 15,
-        "pGapUp": 4,
-        "expGapPct": -3.79,
-        "hitRate": 81.1,
-        "gapHitRate": 81.1,
+        "pGapUp": 3,
+        "expGapPct": -3.09,
+        "hitRate": 79.7,
+        "gapHitRate": 81.3,
         "earnings": false,
         "split": false
       },
       {
-        "ticker": "8411.T",
-        "name": "みずほFG",
-        "close": 7711.0,
-        "pUp": 16,
-        "pGapUp": 7,
-        "expGapPct": -1.65,
-        "hitRate": 81.1,
-        "gapHitRate": 81.1,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "8035.T",
-        "name": "東京エレクトロン",
-        "close": 8946.0,
-        "pUp": 17,
-        "pGapUp": 6,
-        "expGapPct": -2.87,
-        "hitRate": 81.1,
-        "gapHitRate": 81.1,
+        "ticker": "4507.T",
+        "name": "塩野義製薬",
+        "close": 3097.0,
+        "pUp": 85,
+        "pGapUp": 82,
+        "expGapPct": -0.6,
+        "hitRate": 81.0,
+        "gapHitRate": 84.1,
         "earnings": false,
         "split": false
       },
@@ -222,11 +210,107 @@
         "ticker": "7735.T",
         "name": "SCREENホールディングス",
         "close": 7608.0,
-        "pUp": 17,
-        "pGapUp": 6,
-        "expGapPct": -2.85,
-        "hitRate": 81.1,
-        "gapHitRate": 81.1,
+        "pUp": 16,
+        "pGapUp": 4,
+        "expGapPct": -3.53,
+        "hitRate": 79.7,
+        "gapHitRate": 81.3,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "9984.T",
+        "name": "ソフトバンクG",
+        "close": 3166.0,
+        "pUp": 16,
+        "pGapUp": 3,
+        "expGapPct": -4.69,
+        "hitRate": 79.7,
+        "gapHitRate": 81.3,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "6273.T",
+        "name": "SMC",
+        "close": 59900.0,
+        "pUp": 16,
+        "pGapUp": 4,
+        "expGapPct": -2.51,
+        "hitRate": 79.7,
+        "gapHitRate": 81.3,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "4901.T",
+        "name": "富士フイルムHD",
+        "close": 3723.0,
+        "pUp": 83,
+        "pGapUp": 84,
+        "expGapPct": -0.9,
+        "hitRate": 81.0,
+        "gapHitRate": 84.1,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "6758.T",
+        "name": "ソニーグループ",
+        "close": 4322.0,
+        "pUp": 82,
+        "pGapUp": 86,
+        "expGapPct": -0.57,
+        "hitRate": 81.0,
+        "gapHitRate": 84.1,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "8411.T",
+        "name": "みずほFG",
+        "close": 7711.0,
+        "pUp": 18,
+        "pGapUp": 5,
+        "expGapPct": -2.04,
+        "hitRate": 79.7,
+        "gapHitRate": 81.3,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "3382.T",
+        "name": "セブン＆アイHD",
+        "close": 2112.0,
+        "pUp": 82,
+        "pGapUp": 80,
+        "expGapPct": -0.06,
+        "hitRate": 81.0,
+        "gapHitRate": 84.1,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "8035.T",
+        "name": "東京エレクトロン",
+        "close": 8946.0,
+        "pUp": 19,
+        "pGapUp": 4,
+        "expGapPct": -3.55,
+        "hitRate": 79.7,
+        "gapHitRate": 81.3,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "8725.T",
+        "name": "MS&ADインシュアランス",
+        "close": 5203.0,
+        "pUp": 81,
+        "pGapUp": 79,
+        "expGapPct": -0.86,
+        "hitRate": 81.0,
+        "gapHitRate": 70.2,
         "earnings": false,
         "split": false
       },
@@ -234,35 +318,11 @@
         "ticker": "6526.T",
         "name": "ソシオネクスト",
         "close": 1615.5,
-        "pUp": 17,
-        "pGapUp": 6,
-        "expGapPct": -2.24,
-        "hitRate": 81.1,
-        "gapHitRate": 81.1,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "6503.T",
-        "name": "三菱電機",
-        "close": 4622.0,
-        "pUp": 17,
+        "pUp": 19,
         "pGapUp": 5,
-        "expGapPct": -2.02,
-        "hitRate": 81.1,
-        "gapHitRate": 81.1,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "6594.T",
-        "name": "ニデック",
-        "close": 1685.0,
-        "pUp": 18,
-        "pGapUp": 12,
-        "expGapPct": -1.37,
-        "hitRate": 81.1,
-        "gapHitRate": 81.1,
+        "expGapPct": -2.78,
+        "hitRate": 79.7,
+        "gapHitRate": 81.3,
         "earnings": false,
         "split": false
       },
@@ -270,59 +330,119 @@
         "ticker": "6963.T",
         "name": "ローム",
         "close": 2817.0,
-        "pUp": 18,
-        "pGapUp": 6,
-        "expGapPct": -2.37,
-        "hitRate": 81.1,
-        "gapHitRate": 81.1,
+        "pUp": 19,
+        "pGapUp": 4,
+        "expGapPct": -2.93,
+        "hitRate": 79.7,
+        "gapHitRate": 81.3,
         "earnings": false,
         "split": false
       },
       {
-        "ticker": "6501.T",
-        "name": "日立製作所",
-        "close": 4974.0,
+        "ticker": "7832.T",
+        "name": "バンダイナムコHD",
+        "close": 7021.0,
+        "pUp": 80,
+        "pGapUp": 88,
+        "expGapPct": -0.22,
+        "hitRate": 68.0,
+        "gapHitRate": 84.1,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "7974.T",
+        "name": "任天堂",
+        "close": 8656.0,
+        "pUp": 80,
+        "pGapUp": 87,
+        "expGapPct": -0.48,
+        "hitRate": 81.0,
+        "gapHitRate": 84.1,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "2914.T",
+        "name": "JT",
+        "close": 5350.0,
+        "pUp": 80,
+        "pGapUp": 83,
+        "expGapPct": -0.83,
+        "hitRate": 68.0,
+        "gapHitRate": 84.1,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "6503.T",
+        "name": "三菱電機",
+        "close": 4622.0,
         "pUp": 20,
-        "pGapUp": 10,
-        "expGapPct": -1.63,
-        "hitRate": 81.1,
-        "gapHitRate": 81.1,
+        "pGapUp": 4,
+        "expGapPct": -2.5,
+        "hitRate": 79.7,
+        "gapHitRate": 81.3,
         "earnings": false,
         "split": false
       },
       {
-        "ticker": "5714.T",
-        "name": "DOWAホールディングス",
-        "close": 7315.0,
-        "pUp": 20,
-        "pGapUp": 9,
-        "expGapPct": -1.99,
-        "hitRate": 81.1,
-        "gapHitRate": 81.1,
+        "ticker": "4543.T",
+        "name": "テルモ",
+        "close": 2548.5,
+        "pUp": 79,
+        "pGapUp": 88,
+        "expGapPct": -0.27,
+        "hitRate": 68.0,
+        "gapHitRate": 84.1,
         "earnings": false,
         "split": false
       },
       {
-        "ticker": "6521.T",
-        "name": "オキサイド",
-        "close": 2743.0,
-        "pUp": 20,
-        "pGapUp": 7,
-        "expGapPct": -2.48,
-        "hitRate": 66.4,
-        "gapHitRate": 81.1,
+        "ticker": "4568.T",
+        "name": "第一三共",
+        "close": 2737.0,
+        "pUp": 79,
+        "pGapUp": 82,
+        "expGapPct": -0.4,
+        "hitRate": 68.0,
+        "gapHitRate": 84.1,
         "earnings": false,
         "split": false
       },
       {
-        "ticker": "4063.T",
-        "name": "信越化学",
-        "close": 5459.0,
+        "ticker": "8802.T",
+        "name": "三菱地所",
+        "close": 3967.0,
+        "pUp": 79,
+        "pGapUp": 80,
+        "expGapPct": -1.28,
+        "hitRate": 68.0,
+        "gapHitRate": 84.1,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "2181.T",
+        "name": "パーソルホールディングス",
+        "close": 280.8,
+        "pUp": 79,
+        "pGapUp": 81,
+        "expGapPct": -0.06,
+        "hitRate": 68.0,
+        "gapHitRate": 84.1,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "6594.T",
+        "name": "ニデック",
+        "close": 1685.0,
         "pUp": 21,
         "pGapUp": 9,
-        "expGapPct": -1.56,
-        "hitRate": 66.4,
-        "gapHitRate": 81.1,
+        "expGapPct": -1.7,
+        "hitRate": 67.8,
+        "gapHitRate": 81.3,
         "earnings": false,
         "split": false
       },
@@ -330,11 +450,47 @@
         "ticker": "6752.T",
         "name": "パナソニックHD",
         "close": 2946.5,
-        "pUp": 21,
-        "pGapUp": 6,
-        "expGapPct": -2.29,
-        "hitRate": 66.4,
-        "gapHitRate": 81.1,
+        "pUp": 22,
+        "pGapUp": 4,
+        "expGapPct": -2.83,
+        "hitRate": 67.8,
+        "gapHitRate": 81.3,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "8766.T",
+        "name": "東京海上HD",
+        "close": 585.1,
+        "pUp": 78,
+        "pGapUp": 78,
+        "expGapPct": -0.86,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "8801.T",
+        "name": "三井不動産",
+        "close": 1529.5,
+        "pUp": 78,
+        "pGapUp": 77,
+        "expGapPct": -1.02,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "4661.T",
+        "name": "オリエンタルランド",
+        "close": 3820.0,
+        "pUp": 78,
+        "pGapUp": 89,
+        "expGapPct": 0.04,
+        "hitRate": 68.0,
+        "gapHitRate": 84.1,
         "earnings": false,
         "split": false
       },
@@ -343,10 +499,10 @@
         "name": "ラクス",
         "close": 944.4,
         "pUp": 78,
-        "pGapUp": 79,
-        "expGapPct": -0.46,
-        "hitRate": 68.9,
-        "gapHitRate": 70.7,
+        "pGapUp": 77,
+        "expGapPct": -0.56,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
         "earnings": false,
         "split": false
       },
@@ -355,46 +511,70 @@
         "name": "Sansan",
         "close": 1971.0,
         "pUp": 78,
-        "pGapUp": 81,
-        "expGapPct": -0.24,
-        "hitRate": 68.9,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "4519.T",
-        "name": "中外製薬",
-        "close": 7075.0,
-        "pUp": 77,
-        "pGapUp": 81,
-        "expGapPct": -0.59,
-        "hitRate": 68.9,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "7974.T",
-        "name": "任天堂",
-        "close": 8656.0,
-        "pUp": 77,
-        "pGapUp": 86,
-        "expGapPct": -0.39,
-        "hitRate": 68.9,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "4478.T",
-        "name": "freee",
-        "close": 3095.0,
-        "pUp": 77,
-        "pGapUp": 81,
+        "pGapUp": 79,
         "expGapPct": -0.29,
-        "hitRate": 68.9,
-        "gapHitRate": 84.0,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "6521.T",
+        "name": "オキサイド",
+        "close": 2743.0,
+        "pUp": 22,
+        "pGapUp": 4,
+        "expGapPct": -3.07,
+        "hitRate": 67.8,
+        "gapHitRate": 81.3,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "8252.T",
+        "name": "丸井グループ",
+        "close": 2830.0,
+        "pUp": 78,
+        "pGapUp": 81,
+        "expGapPct": -0.06,
+        "hitRate": 68.0,
+        "gapHitRate": 84.1,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "6902.T",
+        "name": "デンソー",
+        "close": 1925.5,
+        "pUp": 77,
+        "pGapUp": 78,
+        "expGapPct": -0.76,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "9735.T",
+        "name": "セコム",
+        "close": 7307.0,
+        "pUp": 77,
+        "pGapUp": 84,
+        "expGapPct": -0.17,
+        "hitRate": 68.0,
+        "gapHitRate": 84.1,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "4502.T",
+        "name": "武田薬品工業",
+        "close": 7060.0,
+        "pUp": 77,
+        "pGapUp": 80,
+        "expGapPct": -0.31,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
         "earnings": false,
         "split": false
       },
@@ -403,22 +583,10 @@
         "name": "マネーフォワード",
         "close": 6470.0,
         "pUp": 77,
-        "pGapUp": 81,
-        "expGapPct": -0.46,
-        "hitRate": 68.9,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "6301.T",
-        "name": "小松製作所",
-        "close": 5774.0,
-        "pUp": 23,
-        "pGapUp": 11,
-        "expGapPct": -1.61,
-        "hitRate": 66.4,
-        "gapHitRate": 81.1,
+        "pGapUp": 74,
+        "expGapPct": -0.56,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
         "earnings": false,
         "split": false
       },
@@ -427,34 +595,10 @@
         "name": "エムスリー",
         "close": 1738.5,
         "pUp": 77,
-        "pGapUp": 84,
-        "expGapPct": -0.03,
-        "hitRate": 68.9,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "6532.T",
-        "name": "ベイカレント・コンサルティング",
-        "close": 13295.0,
-        "pUp": 76,
-        "pGapUp": 86,
-        "expGapPct": -0.27,
-        "hitRate": 68.9,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "2181.T",
-        "name": "パーソルホールディングス",
-        "close": 280.8,
-        "pUp": 76,
         "pGapUp": 81,
-        "expGapPct": -0.05,
-        "hitRate": 68.9,
-        "gapHitRate": 84.0,
+        "expGapPct": -0.04,
+        "hitRate": 68.0,
+        "gapHitRate": 84.1,
         "earnings": false,
         "split": false
       },
@@ -462,167 +606,47 @@
         "ticker": "6861.T",
         "name": "キーエンス",
         "close": 14750.0,
-        "pUp": 25,
-        "pGapUp": 16,
-        "expGapPct": -1.52,
-        "hitRate": 66.4,
-        "gapHitRate": 81.1,
+        "pUp": 24,
+        "pGapUp": 7,
+        "expGapPct": -1.88,
+        "hitRate": 67.8,
+        "gapHitRate": 81.3,
         "earnings": false,
         "split": false
       },
       {
-        "ticker": "6758.T",
-        "name": "ソニーグループ",
-        "close": 4322.0,
-        "pUp": 75,
-        "pGapUp": 86,
-        "expGapPct": -0.46,
-        "hitRate": 68.9,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "6971.T",
-        "name": "京セラ",
-        "close": 2815.5,
-        "pUp": 25,
-        "pGapUp": 13,
-        "expGapPct": -1.71,
-        "hitRate": 66.4,
-        "gapHitRate": 81.1,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "8306.T",
-        "name": "三菱UFJ",
-        "close": 3156.0,
-        "pUp": 25,
-        "pGapUp": 13,
-        "expGapPct": -1.25,
-        "hitRate": 66.4,
-        "gapHitRate": 81.1,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "8604.T",
-        "name": "野村HD",
-        "close": 1434.0,
-        "pUp": 25,
-        "pGapUp": 13,
-        "expGapPct": -1.37,
-        "hitRate": 66.4,
-        "gapHitRate": 81.1,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "4704.T",
-        "name": "トレンドマイクロ",
-        "close": 7475.0,
-        "pUp": 75,
-        "pGapUp": 83,
-        "expGapPct": -0.36,
-        "hitRate": 68.9,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "2802.T",
-        "name": "味の素",
-        "close": 4049.0,
-        "pUp": 25,
-        "pGapUp": 15,
-        "expGapPct": -1.28,
-        "hitRate": 66.4,
-        "gapHitRate": 81.1,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "6460.T",
-        "name": "セガサミーホールディングス",
-        "close": 3298.0,
-        "pUp": 75,
-        "pGapUp": 83,
-        "expGapPct": -0.12,
-        "hitRate": 68.9,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "6770.T",
-        "name": "アルプスアルパイン",
-        "close": 1945.5,
-        "pUp": 26,
-        "pGapUp": 15,
-        "expGapPct": -1.27,
-        "hitRate": 66.4,
-        "gapHitRate": 81.1,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "8316.T",
-        "name": "三井住友FG",
-        "close": 3043.0,
-        "pUp": 26,
-        "pGapUp": 10,
-        "expGapPct": -1.25,
-        "hitRate": 66.4,
-        "gapHitRate": 81.1,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "4307.T",
-        "name": "野村総合研究所",
-        "close": 6135.0,
-        "pUp": 74,
-        "pGapUp": 86,
-        "expGapPct": -0.06,
-        "hitRate": 68.9,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "4568.T",
-        "name": "第一三共",
-        "close": 2737.0,
-        "pUp": 74,
-        "pGapUp": 82,
-        "expGapPct": -0.32,
-        "hitRate": 68.9,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "7832.T",
-        "name": "バンダイナムコHD",
-        "close": 7021.0,
-        "pUp": 74,
+        "ticker": "4452.T",
+        "name": "花王",
+        "close": 4005.0,
+        "pUp": 76,
         "pGapUp": 84,
-        "expGapPct": -0.18,
-        "hitRate": 68.9,
-        "gapHitRate": 84.0,
+        "expGapPct": 0.11,
+        "hitRate": 68.0,
+        "gapHitRate": 84.1,
         "earnings": false,
         "split": false
       },
       {
-        "ticker": "3382.T",
-        "name": "セブン＆アイHD",
-        "close": 2112.0,
-        "pUp": 74,
+        "ticker": "9983.T",
+        "name": "ファーストリテイリング",
+        "close": 84040.0,
+        "pUp": 76,
         "pGapUp": 84,
-        "expGapPct": -0.05,
-        "hitRate": 68.9,
-        "gapHitRate": 84.0,
+        "expGapPct": -0.95,
+        "hitRate": 68.0,
+        "gapHitRate": 84.1,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "4385.T",
+        "name": "メルカリ",
+        "close": 3300.0,
+        "pUp": 76,
+        "pGapUp": 68,
+        "expGapPct": -0.77,
+        "hitRate": 68.0,
+        "gapHitRate": 62.5,
         "earnings": false,
         "split": false
       },
@@ -630,23 +654,347 @@
         "ticker": "6027.T",
         "name": "弁護士ドットコム",
         "close": 3685.0,
-        "pUp": 74,
-        "pGapUp": 74,
-        "expGapPct": -0.55,
-        "hitRate": 68.9,
-        "gapHitRate": 70.7,
+        "pUp": 76,
+        "pGapUp": 69,
+        "expGapPct": -0.68,
+        "hitRate": 68.0,
+        "gapHitRate": 62.5,
         "earnings": false,
         "split": false
       },
       {
-        "ticker": "8252.T",
-        "name": "丸井グループ",
-        "close": 2830.0,
+        "ticker": "8593.T",
+        "name": "三菱HCキャピタル",
+        "close": 1271.5,
+        "pUp": 76,
+        "pGapUp": 71,
+        "expGapPct": -0.63,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "4578.T",
+        "name": "大塚ホールディングス",
+        "close": 12345.0,
+        "pUp": 76,
+        "pGapUp": 75,
+        "expGapPct": -0.46,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "3092.T",
+        "name": "ZOZO",
+        "close": 1178.0,
+        "pUp": 76,
+        "pGapUp": 81,
+        "expGapPct": 0.09,
+        "hitRate": 68.0,
+        "gapHitRate": 84.1,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "6460.T",
+        "name": "セガサミーホールディングス",
+        "close": 3298.0,
+        "pUp": 76,
+        "pGapUp": 81,
+        "expGapPct": -0.14,
+        "hitRate": 68.0,
+        "gapHitRate": 84.1,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "4911.T",
+        "name": "資生堂",
+        "close": 4242.0,
+        "pUp": 75,
+        "pGapUp": 80,
+        "expGapPct": -0.64,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "9101.T",
+        "name": "日本郵船",
+        "close": 6677.0,
+        "pUp": 75,
+        "pGapUp": 68,
+        "expGapPct": -0.45,
+        "hitRate": 68.0,
+        "gapHitRate": 62.5,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "2503.T",
+        "name": "キリンHD",
+        "close": 3053.0,
+        "pUp": 75,
+        "pGapUp": 80,
+        "expGapPct": 0.03,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "5411.T",
+        "name": "JFEホールディングス",
+        "close": 1768.5,
+        "pUp": 75,
+        "pGapUp": 70,
+        "expGapPct": -0.81,
+        "hitRate": 68.0,
+        "gapHitRate": 62.5,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "4478.T",
+        "name": "freee",
+        "close": 3095.0,
+        "pUp": 75,
+        "pGapUp": 75,
+        "expGapPct": -0.36,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "4689.T",
+        "name": "LINEヤフー",
+        "close": 499.1,
+        "pUp": 75,
+        "pGapUp": 78,
+        "expGapPct": -0.13,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "9404.T",
+        "name": "日本テレビホールディングス",
+        "close": 2835.0,
+        "pUp": 75,
+        "pGapUp": 75,
+        "expGapPct": -0.43,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "1925.T",
+        "name": "大和ハウス工業",
+        "close": 2292.0,
+        "pUp": 75,
+        "pGapUp": 77,
+        "expGapPct": -0.36,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "7203.T",
+        "name": "トヨタ自動車",
+        "close": 3311.0,
         "pUp": 74,
-        "pGapUp": 82,
-        "expGapPct": -0.05,
-        "hitRate": 68.9,
-        "gapHitRate": 84.0,
+        "pGapUp": 75,
+        "expGapPct": -0.96,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "7267.T",
+        "name": "ホンダ",
+        "close": 1739.5,
+        "pUp": 74,
+        "pGapUp": 76,
+        "expGapPct": -0.79,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "6971.T",
+        "name": "京セラ",
+        "close": 2815.5,
+        "pUp": 26,
+        "pGapUp": 8,
+        "expGapPct": -2.11,
+        "hitRate": 67.8,
+        "gapHitRate": 81.3,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "3003.T",
+        "name": "ヒューリック",
+        "close": 1939.0,
+        "pUp": 74,
+        "pGapUp": 72,
+        "expGapPct": -0.59,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "8267.T",
+        "name": "イオン",
+        "close": 1191.5,
+        "pUp": 74,
+        "pGapUp": 74,
+        "expGapPct": -0.11,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "4751.T",
+        "name": "サイバーエージェント",
+        "close": 1304.0,
+        "pUp": 74,
+        "pGapUp": 72,
+        "expGapPct": -0.64,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "6753.T",
+        "name": "シャープ",
+        "close": 484.0,
+        "pUp": 74,
+        "pGapUp": 69,
+        "expGapPct": -0.85,
+        "hitRate": 68.0,
+        "gapHitRate": 62.5,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "7270.T",
+        "name": "SUBARU",
+        "close": 2694.5,
+        "pUp": 74,
+        "pGapUp": 76,
+        "expGapPct": -0.8,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "4180.T",
+        "name": "Appier Group",
+        "close": 1404.0,
+        "pUp": 74,
+        "pGapUp": 62,
+        "expGapPct": -1.29,
+        "hitRate": 68.0,
+        "gapHitRate": 62.5,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "5253.T",
+        "name": "カバー",
+        "close": 1202.0,
+        "pUp": 74,
+        "pGapUp": 67,
+        "expGapPct": -0.64,
+        "hitRate": 68.0,
+        "gapHitRate": 62.5,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "4480.T",
+        "name": "メドレー",
+        "close": 1770.0,
+        "pUp": 74,
+        "pGapUp": 68,
+        "expGapPct": -0.62,
+        "hitRate": 68.0,
+        "gapHitRate": 62.5,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "6532.T",
+        "name": "ベイカレント・コンサルティング",
+        "close": 13295.0,
+        "pUp": 74,
+        "pGapUp": 84,
+        "expGapPct": -0.34,
+        "hitRate": 68.0,
+        "gapHitRate": 84.1,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "7011.T",
+        "name": "三菱重工業",
+        "close": 2814.5,
+        "pUp": 26,
+        "pGapUp": 11,
+        "expGapPct": -1.8,
+        "hitRate": 67.8,
+        "gapHitRate": 81.3,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "9020.T",
+        "name": "JR東日本",
+        "close": 3989.0,
+        "pUp": 74,
+        "pGapUp": 78,
+        "expGapPct": 0.14,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "2801.T",
+        "name": "キッコーマン",
+        "close": 1790.5,
+        "pUp": 74,
+        "pGapUp": 76,
+        "expGapPct": 0.11,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "9843.T",
+        "name": "ニトリホールディングス",
+        "close": 3619.0,
+        "pUp": 74,
+        "pGapUp": 77,
+        "expGapPct": 0.14,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
         "earnings": false,
         "split": false
       },
@@ -655,286 +1003,154 @@
         "name": "電通グループ",
         "close": 3644.0,
         "pUp": 74,
-        "pGapUp": 78,
-        "expGapPct": -0.34,
-        "hitRate": 68.9,
-        "gapHitRate": 70.7,
+        "pGapUp": 75,
+        "expGapPct": -0.42,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
         "earnings": false,
         "split": false
       },
       {
-        "ticker": "9404.T",
-        "name": "日本テレビホールディングス",
-        "close": 2835.0,
+        "ticker": "9602.T",
+        "name": "東宝",
+        "close": 1778.0,
         "pUp": 74,
-        "pGapUp": 77,
-        "expGapPct": -0.35,
-        "hitRate": 68.9,
-        "gapHitRate": 70.7,
+        "pGapUp": 79,
+        "expGapPct": 0.37,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
         "earnings": false,
         "split": false
       },
       {
-        "ticker": "7741.T",
-        "name": "HOYA",
-        "close": 23740.0,
-        "pUp": 27,
-        "pGapUp": 25,
-        "expGapPct": -1.49,
-        "hitRate": 66.4,
-        "gapHitRate": 65.6,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "4452.T",
-        "name": "花王",
-        "close": 4005.0,
-        "pUp": 73,
-        "pGapUp": 85,
-        "expGapPct": 0.09,
-        "hitRate": 68.9,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "8725.T",
-        "name": "MS&ADインシュアランス",
-        "close": 5203.0,
-        "pUp": 73,
-        "pGapUp": 71,
-        "expGapPct": -0.69,
-        "hitRate": 68.9,
-        "gapHitRate": 70.7,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "7182.T",
-        "name": "ゆうちょ銀行",
-        "close": 3078.0,
-        "pUp": 27,
-        "pGapUp": 14,
-        "expGapPct": -1.38,
-        "hitRate": 66.4,
-        "gapHitRate": 81.1,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "9735.T",
-        "name": "セコム",
-        "close": 7307.0,
-        "pUp": 73,
-        "pGapUp": 82,
-        "expGapPct": -0.14,
-        "hitRate": 68.9,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "8053.T",
-        "name": "住友商事",
-        "close": 1532.5,
-        "pUp": 27,
-        "pGapUp": 13,
-        "expGapPct": -1.24,
-        "hitRate": 66.4,
-        "gapHitRate": 81.1,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "4661.T",
-        "name": "オリエンタルランド",
-        "close": 3820.0,
-        "pUp": 73,
-        "pGapUp": 85,
-        "expGapPct": 0.03,
-        "hitRate": 68.9,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "4180.T",
-        "name": "Appier Group",
-        "close": 1404.0,
-        "pUp": 73,
+        "ticker": "2432.T",
+        "name": "ディー・エヌ・エー",
+        "close": 2505.0,
+        "pUp": 74,
         "pGapUp": 69,
-        "expGapPct": -1.04,
-        "hitRate": 68.9,
-        "gapHitRate": 62.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "8593.T",
-        "name": "三菱HCキャピタル",
-        "close": 1271.5,
-        "pUp": 73,
-        "pGapUp": 72,
         "expGapPct": -0.51,
-        "hitRate": 68.9,
-        "gapHitRate": 70.7,
+        "hitRate": 68.0,
+        "gapHitRate": 62.5,
         "earnings": false,
         "split": false
       },
       {
-        "ticker": "3092.T",
-        "name": "ZOZO",
-        "close": 1178.0,
+        "ticker": "9401.T",
+        "name": "TBSホールディングス",
+        "close": 6215.0,
+        "pUp": 74,
+        "pGapUp": 64,
+        "expGapPct": -0.88,
+        "hitRate": 68.0,
+        "gapHitRate": 62.5,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "6367.T",
+        "name": "ダイキン工業",
+        "close": 23875.0,
         "pUp": 73,
-        "pGapUp": 83,
-        "expGapPct": 0.07,
-        "hitRate": 68.9,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "4543.T",
-        "name": "テルモ",
-        "close": 2548.5,
-        "pUp": 72,
-        "pGapUp": 83,
-        "expGapPct": -0.22,
-        "hitRate": 68.9,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "4751.T",
-        "name": "サイバーエージェント",
-        "close": 1304.0,
-        "pUp": 72,
-        "pGapUp": 78,
-        "expGapPct": -0.51,
-        "hitRate": 68.9,
-        "gapHitRate": 70.7,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "7012.T",
-        "name": "川崎重工業",
-        "close": 1565.5,
-        "pUp": 28,
-        "pGapUp": 16,
-        "expGapPct": -1.6,
-        "hitRate": 66.4,
-        "gapHitRate": 81.1,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "1925.T",
-        "name": "大和ハウス工業",
-        "close": 2292.0,
-        "pUp": 72,
         "pGapUp": 79,
-        "expGapPct": -0.29,
-        "hitRate": 68.9,
-        "gapHitRate": 70.7,
+        "expGapPct": -1.08,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
         "earnings": false,
         "split": false
       },
       {
-        "ticker": "4523.T",
-        "name": "エーザイ",
-        "close": 5358.0,
-        "pUp": 71,
-        "pGapUp": 79,
-        "expGapPct": -0.35,
-        "hitRate": 68.9,
-        "gapHitRate": 70.7,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "4506.T",
-        "name": "住友ファーマ",
-        "close": 1830.0,
-        "pUp": 71,
-        "pGapUp": 71,
-        "expGapPct": -0.93,
-        "hitRate": 68.9,
-        "gapHitRate": 70.7,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "2914.T",
-        "name": "JT",
-        "close": 5350.0,
-        "pUp": 71,
-        "pGapUp": 72,
-        "expGapPct": -0.67,
-        "hitRate": 68.9,
-        "gapHitRate": 70.7,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "7270.T",
-        "name": "SUBARU",
-        "close": 2694.5,
-        "pUp": 71,
-        "pGapUp": 72,
-        "expGapPct": -0.64,
-        "hitRate": 68.9,
-        "gapHitRate": 70.7,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "4385.T",
-        "name": "メルカリ",
-        "close": 3300.0,
-        "pUp": 71,
-        "pGapUp": 77,
-        "expGapPct": -0.62,
-        "hitRate": 68.9,
-        "gapHitRate": 70.7,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "4480.T",
-        "name": "メドレー",
-        "close": 1770.0,
-        "pUp": 71,
+        "ticker": "4704.T",
+        "name": "トレンドマイクロ",
+        "close": 7475.0,
+        "pUp": 73,
         "pGapUp": 73,
-        "expGapPct": -0.5,
-        "hitRate": 68.9,
-        "gapHitRate": 70.7,
+        "expGapPct": -0.45,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
         "earnings": false,
         "split": false
       },
       {
-        "ticker": "7011.T",
-        "name": "三菱重工業",
-        "close": 2814.5,
-        "pUp": 29,
+        "ticker": "3659.T",
+        "name": "ネクソン",
+        "close": 3077.0,
+        "pUp": 73,
+        "pGapUp": 72,
+        "expGapPct": -0.9,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "8001.T",
+        "name": "伊藤忠商事",
+        "close": 2216.5,
+        "pUp": 73,
+        "pGapUp": 74,
+        "expGapPct": -1.07,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "9531.T",
+        "name": "東京ガス",
+        "close": 6488.0,
+        "pUp": 73,
+        "pGapUp": 67,
+        "expGapPct": -0.67,
+        "hitRate": 68.0,
+        "gapHitRate": 62.5,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "6301.T",
+        "name": "小松製作所",
+        "close": 5774.0,
+        "pUp": 27,
         "pGapUp": 13,
-        "expGapPct": -1.46,
-        "hitRate": 66.4,
-        "gapHitRate": 81.1,
+        "expGapPct": -1.99,
+        "hitRate": 67.8,
+        "gapHitRate": 81.3,
         "earnings": false,
         "split": false
       },
       {
-        "ticker": "7013.T",
-        "name": "IHI",
-        "close": 2275.5,
-        "pUp": 29,
-        "pGapUp": 16,
-        "expGapPct": -1.45,
-        "hitRate": 66.4,
-        "gapHitRate": 81.1,
+        "ticker": "2670.T",
+        "name": "ABCマート",
+        "close": 3282.0,
+        "pUp": 73,
+        "pGapUp": 81,
+        "expGapPct": 0.21,
+        "hitRate": 68.0,
+        "gapHitRate": 84.1,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "8630.T",
+        "name": "SOMPOホールディングス",
+        "close": 7146.0,
+        "pUp": 72,
+        "pGapUp": 74,
+        "expGapPct": -0.93,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "8830.T",
+        "name": "住友不動産",
+        "close": 3398.0,
+        "pUp": 72,
+        "pGapUp": 68,
+        "expGapPct": -1.39,
+        "hitRate": 68.0,
+        "gapHitRate": 62.5,
         "earnings": false,
         "split": false
       },
@@ -942,11 +1158,119 @@
         "ticker": "9022.T",
         "name": "JR東海",
         "close": 4373.0,
-        "pUp": 71,
+        "pUp": 72,
+        "pGapUp": 74,
+        "expGapPct": -0.44,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "7269.T",
+        "name": "スズキ",
+        "close": 2183.5,
+        "pUp": 72,
         "pGapUp": 75,
-        "expGapPct": -0.35,
-        "hitRate": 68.9,
-        "gapHitRate": 70.7,
+        "expGapPct": -1.24,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "2897.T",
+        "name": "日清食品HD",
+        "close": 2814.0,
+        "pUp": 72,
+        "pGapUp": 77,
+        "expGapPct": 0.02,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "1928.T",
+        "name": "積水ハウス",
+        "close": 3405.0,
+        "pUp": 72,
+        "pGapUp": 74,
+        "expGapPct": -0.43,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "8750.T",
+        "name": "第一生命HD",
+        "close": 1748.0,
+        "pUp": 71,
+        "pGapUp": 65,
+        "expGapPct": -1.16,
+        "hitRate": 68.0,
+        "gapHitRate": 62.5,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "7182.T",
+        "name": "ゆうちょ銀行",
+        "close": 3078.0,
+        "pUp": 29,
+        "pGapUp": 10,
+        "expGapPct": -1.71,
+        "hitRate": 67.8,
+        "gapHitRate": 81.3,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "8031.T",
+        "name": "三井物産",
+        "close": 4557.0,
+        "pUp": 71,
+        "pGapUp": 71,
+        "expGapPct": -1.24,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "2802.T",
+        "name": "味の素",
+        "close": 4049.0,
+        "pUp": 29,
+        "pGapUp": 8,
+        "expGapPct": -1.59,
+        "hitRate": 67.8,
+        "gapHitRate": 81.3,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "5401.T",
+        "name": "日本製鉄",
+        "close": 670.7,
+        "pUp": 71,
+        "pGapUp": 61,
+        "expGapPct": -0.59,
+        "hitRate": 68.0,
+        "gapHitRate": 62.5,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "3692.T",
+        "name": "FFRIセキュリティ",
+        "close": 6230.0,
+        "pUp": 29,
+        "pGapUp": 11,
+        "expGapPct": -1.79,
+        "hitRate": 67.8,
+        "gapHitRate": 81.3,
         "earnings": false,
         "split": false
       },
@@ -955,466 +1279,10 @@
         "name": "東映アニメーション",
         "close": 3385.0,
         "pUp": 71,
-        "pGapUp": 83,
-        "expGapPct": 0.06,
-        "hitRate": 68.9,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "2432.T",
-        "name": "ディー・エヌ・エー",
-        "close": 2505.0,
-        "pUp": 71,
-        "pGapUp": 77,
-        "expGapPct": -0.41,
-        "hitRate": 68.9,
-        "gapHitRate": 70.7,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "8766.T",
-        "name": "東京海上HD",
-        "close": 585.1,
-        "pUp": 70,
-        "pGapUp": 76,
-        "expGapPct": -0.7,
-        "hitRate": 68.9,
-        "gapHitRate": 70.7,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "4502.T",
-        "name": "武田薬品工業",
-        "close": 7060.0,
-        "pUp": 70,
-        "pGapUp": 83,
-        "expGapPct": -0.25,
-        "hitRate": 68.9,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "8015.T",
-        "name": "豊田通商",
-        "close": 5934.0,
-        "pUp": 30,
-        "pGapUp": 17,
-        "expGapPct": -1.73,
-        "hitRate": 66.4,
-        "gapHitRate": 81.1,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "8801.T",
-        "name": "三井不動産",
-        "close": 1529.5,
-        "pUp": 70,
-        "pGapUp": 75,
-        "expGapPct": -0.83,
-        "hitRate": 60.8,
-        "gapHitRate": 70.7,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "3003.T",
-        "name": "ヒューリック",
-        "close": 1939.0,
-        "pUp": 70,
-        "pGapUp": 75,
-        "expGapPct": -0.48,
-        "hitRate": 60.8,
-        "gapHitRate": 70.7,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "9502.T",
-        "name": "中部電力",
-        "close": 2380.5,
-        "pUp": 30,
-        "pGapUp": 19,
-        "expGapPct": -0.77,
-        "hitRate": 60.5,
-        "gapHitRate": 81.1,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "6753.T",
-        "name": "シャープ",
-        "close": 484.0,
-        "pUp": 70,
-        "pGapUp": 71,
-        "expGapPct": -0.69,
-        "hitRate": 68.9,
-        "gapHitRate": 70.7,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "4382.T",
-        "name": "HEROZ",
-        "close": 715.0,
-        "pUp": 30,
-        "pGapUp": 18,
-        "expGapPct": -0.93,
-        "hitRate": 60.5,
-        "gapHitRate": 81.1,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "4425.T",
-        "name": "Kudan",
-        "close": 933.0,
-        "pUp": 30,
-        "pGapUp": 20,
-        "expGapPct": -1.58,
-        "hitRate": 60.5,
-        "gapHitRate": 65.6,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "8591.T",
-        "name": "オリックス",
-        "close": 5295.0,
-        "pUp": 30,
-        "pGapUp": 22,
-        "expGapPct": -1.0,
-        "hitRate": 66.4,
-        "gapHitRate": 65.6,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "2670.T",
-        "name": "ABCマート",
-        "close": 3282.0,
-        "pUp": 70,
-        "pGapUp": 81,
-        "expGapPct": 0.17,
-        "hitRate": 60.8,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "1928.T",
-        "name": "積水ハウス",
-        "close": 3405.0,
-        "pUp": 70,
-        "pGapUp": 77,
-        "expGapPct": -0.35,
-        "hitRate": 68.9,
-        "gapHitRate": 70.7,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "7203.T",
-        "name": "トヨタ自動車",
-        "close": 3311.0,
-        "pUp": 69,
-        "pGapUp": 74,
-        "expGapPct": -0.77,
-        "hitRate": 60.8,
-        "gapHitRate": 70.7,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "6326.T",
-        "name": "クボタ",
-        "close": 2381.0,
-        "pUp": 31,
-        "pGapUp": 26,
-        "expGapPct": -1.32,
-        "hitRate": 60.5,
-        "gapHitRate": 65.6,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "7267.T",
-        "name": "ホンダ",
-        "close": 1739.5,
-        "pUp": 69,
-        "pGapUp": 71,
-        "expGapPct": -0.64,
-        "hitRate": 60.8,
-        "gapHitRate": 70.7,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "9433.T",
-        "name": "KDDI",
-        "close": 2777.0,
-        "pUp": 69,
-        "pGapUp": 84,
-        "expGapPct": 0.07,
-        "hitRate": 60.8,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "3659.T",
-        "name": "ネクソン",
-        "close": 3077.0,
-        "pUp": 69,
-        "pGapUp": 75,
-        "expGapPct": -0.73,
-        "hitRate": 60.8,
-        "gapHitRate": 70.7,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "9983.T",
-        "name": "ファーストリテイリング",
-        "close": 84040.0,
-        "pUp": 69,
-        "pGapUp": 77,
-        "expGapPct": -0.77,
-        "hitRate": 60.8,
-        "gapHitRate": 70.7,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "8267.T",
-        "name": "イオン",
-        "close": 1191.5,
-        "pUp": 69,
-        "pGapUp": 81,
-        "expGapPct": -0.09,
-        "hitRate": 60.8,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "7779.T",
-        "name": "サイバーダイン",
-        "close": 162.0,
-        "pUp": 31,
-        "pGapUp": 16,
-        "expGapPct": -1.44,
-        "hitRate": 60.5,
-        "gapHitRate": 81.1,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "9020.T",
-        "name": "JR東日本",
-        "close": 3989.0,
-        "pUp": 69,
         "pGapUp": 79,
-        "expGapPct": 0.11,
-        "hitRate": 60.8,
-        "gapHitRate": 70.7,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "2801.T",
-        "name": "キッコーマン",
-        "close": 1790.5,
-        "pUp": 69,
-        "pGapUp": 81,
-        "expGapPct": 0.09,
-        "hitRate": 60.8,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "4689.T",
-        "name": "LINEヤフー",
-        "close": 499.1,
-        "pUp": 69,
-        "pGapUp": 82,
-        "expGapPct": -0.1,
-        "hitRate": 60.8,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "9602.T",
-        "name": "東宝",
-        "close": 1778.0,
-        "pUp": 69,
-        "pGapUp": 85,
-        "expGapPct": 0.3,
-        "hitRate": 60.8,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "6902.T",
-        "name": "デンソー",
-        "close": 1925.5,
-        "pUp": 68,
-        "pGapUp": 73,
-        "expGapPct": -0.62,
-        "hitRate": 60.8,
-        "gapHitRate": 70.7,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "2502.T",
-        "name": "アサヒグループHD",
-        "close": 1780.0,
-        "pUp": 68,
-        "pGapUp": 83,
-        "expGapPct": 0.03,
-        "hitRate": 60.8,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "2503.T",
-        "name": "キリンHD",
-        "close": 3053.0,
-        "pUp": 68,
-        "pGapUp": 85,
-        "expGapPct": 0.03,
-        "hitRate": 60.8,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "2897.T",
-        "name": "日清食品HD",
-        "close": 2814.0,
-        "pUp": 68,
-        "pGapUp": 83,
-        "expGapPct": 0.01,
-        "hitRate": 60.8,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "6740.T",
-        "name": "ジャパンディスプレイ",
-        "close": 26.0,
-        "pUp": 32,
-        "pGapUp": 22,
-        "expGapPct": -0.54,
-        "hitRate": 60.5,
-        "gapHitRate": 65.6,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "9432.T",
-        "name": "NTT",
-        "close": 166.2,
-        "pUp": 67,
-        "pGapUp": 79,
-        "expGapPct": -0.02,
-        "hitRate": 60.8,
-        "gapHitRate": 70.7,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "9434.T",
-        "name": "ソフトバンク",
-        "close": 238.0,
-        "pUp": 67,
-        "pGapUp": 79,
-        "expGapPct": -0.02,
-        "hitRate": 60.8,
-        "gapHitRate": 70.7,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "4021.T",
-        "name": "日産化学",
-        "close": 6580.0,
-        "pUp": 33,
-        "pGapUp": 18,
-        "expGapPct": -1.13,
-        "hitRate": 60.5,
-        "gapHitRate": 81.1,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "5020.T",
-        "name": "ENEOS",
-        "close": 1144.0,
-        "pUp": 33,
-        "pGapUp": 23,
-        "expGapPct": -0.89,
-        "hitRate": 60.5,
-        "gapHitRate": 65.6,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "3038.T",
-        "name": "神戸物産",
-        "close": 2967.5,
-        "pUp": 67,
-        "pGapUp": 82,
-        "expGapPct": 0.34,
-        "hitRate": 60.8,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "2269.T",
-        "name": "明治HD",
-        "close": 4657.0,
-        "pUp": 67,
-        "pGapUp": 80,
-        "expGapPct": 0.04,
-        "hitRate": 60.8,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "9843.T",
-        "name": "ニトリホールディングス",
-        "close": 3619.0,
-        "pUp": 67,
-        "pGapUp": 83,
-        "expGapPct": 0.11,
-        "hitRate": 60.8,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "9412.T",
-        "name": "スカパーJSAT",
-        "close": 1629.0,
-        "pUp": 33,
-        "pGapUp": 22,
-        "expGapPct": -1.62,
-        "hitRate": 60.5,
-        "gapHitRate": 65.6,
+        "expGapPct": 0.08,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
         "earnings": false,
         "split": false
       },
@@ -1422,347 +1290,23 @@
         "ticker": "3765.T",
         "name": "ガンホー・オンライン・エンターテイメント",
         "close": 2541.0,
-        "pUp": 67,
-        "pGapUp": 80,
-        "expGapPct": -0.21,
-        "hitRate": 60.8,
-        "gapHitRate": 70.7,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "8830.T",
-        "name": "住友不動産",
-        "close": 3398.0,
-        "pUp": 66,
-        "pGapUp": 68,
-        "expGapPct": -1.12,
-        "hitRate": 60.8,
-        "gapHitRate": 62.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "5253.T",
-        "name": "カバー",
-        "close": 1202.0,
-        "pUp": 66,
-        "pGapUp": 69,
-        "expGapPct": -0.52,
-        "hitRate": 60.8,
-        "gapHitRate": 62.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "4578.T",
-        "name": "大塚ホールディングス",
-        "close": 12345.0,
-        "pUp": 66,
-        "pGapUp": 81,
-        "expGapPct": -0.37,
-        "hitRate": 60.8,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "8113.T",
-        "name": "ユニ・チャーム",
-        "close": 1079.0,
-        "pUp": 66,
-        "pGapUp": 83,
-        "expGapPct": 0.19,
-        "hitRate": 60.8,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "9401.T",
-        "name": "TBSホールディングス",
-        "close": 6215.0,
-        "pUp": 66,
-        "pGapUp": 61,
-        "expGapPct": -0.71,
-        "hitRate": 60.8,
-        "gapHitRate": 62.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "9501.T",
-        "name": "東京電力HD",
-        "close": 415.3,
-        "pUp": 35,
-        "pGapUp": 27,
-        "expGapPct": -1.1,
-        "hitRate": 60.5,
-        "gapHitRate": 65.6,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "9101.T",
-        "name": "日本郵船",
-        "close": 6677.0,
-        "pUp": 65,
-        "pGapUp": 78,
-        "expGapPct": -0.37,
-        "hitRate": 60.8,
-        "gapHitRate": 70.7,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "4507.T",
-        "name": "塩野義製薬",
-        "close": 3097.0,
-        "pUp": 65,
-        "pGapUp": 83,
-        "expGapPct": -0.48,
-        "hitRate": 60.8,
-        "gapHitRate": 84.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "4493.T",
-        "name": "サイバーセキュリティクラウド",
-        "close": 1721.0,
-        "pUp": 64,
-        "pGapUp": 62,
-        "expGapPct": -1.18,
-        "hitRate": 60.8,
-        "gapHitRate": 62.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "8697.T",
-        "name": "日本取引所グループ",
-        "close": 2112.0,
-        "pUp": 36,
-        "pGapUp": 33,
-        "expGapPct": -1.11,
-        "hitRate": 60.5,
-        "gapHitRate": 56.9,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "9104.T",
-        "name": "商船三井",
-        "close": 6570.0,
-        "pUp": 63,
-        "pGapUp": 72,
-        "expGapPct": -0.28,
-        "hitRate": 60.8,
-        "gapHitRate": 70.7,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "9107.T",
-        "name": "川崎汽船",
-        "close": 3051.0,
-        "pUp": 63,
-        "pGapUp": 74,
-        "expGapPct": -0.3,
-        "hitRate": 60.8,
-        "gapHitRate": 70.7,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "7201.T",
-        "name": "日産自動車",
-        "close": 269.4,
-        "pUp": 63,
+        "pUp": 71,
         "pGapUp": 73,
-        "expGapPct": -0.98,
-        "hitRate": 60.8,
-        "gapHitRate": 70.7,
+        "expGapPct": -0.26,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
         "earnings": false,
         "split": false
       },
       {
-        "ticker": "9202.T",
-        "name": "ANAホールディングス",
-        "close": 3340.0,
-        "pUp": 63,
-        "pGapUp": 68,
-        "expGapPct": -0.5,
-        "hitRate": 60.8,
-        "gapHitRate": 62.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "3692.T",
-        "name": "FFRIセキュリティ",
-        "close": 6230.0,
-        "pUp": 37,
-        "pGapUp": 36,
-        "expGapPct": -1.45,
-        "hitRate": 60.5,
-        "gapHitRate": 56.9,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "7269.T",
-        "name": "スズキ",
-        "close": 2183.5,
-        "pUp": 62,
-        "pGapUp": 65,
-        "expGapPct": -1.0,
-        "hitRate": 60.8,
-        "gapHitRate": 62.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "4911.T",
-        "name": "資生堂",
-        "close": 4242.0,
-        "pUp": 61,
-        "pGapUp": 79,
-        "expGapPct": -0.52,
-        "hitRate": 60.8,
-        "gapHitRate": 70.7,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "8630.T",
-        "name": "SOMPOホールディングス",
-        "close": 7146.0,
-        "pUp": 61,
-        "pGapUp": 53,
-        "expGapPct": -0.75,
-        "hitRate": 60.8,
-        "gapHitRate": 52.1,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "5411.T",
-        "name": "JFEホールディングス",
-        "close": 1768.5,
-        "pUp": 61,
-        "pGapUp": 56,
-        "expGapPct": -0.65,
-        "hitRate": 60.8,
-        "gapHitRate": 57.4,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "6305.T",
-        "name": "日立建機",
-        "close": 4823.0,
-        "pUp": 39,
-        "pGapUp": 35,
-        "expGapPct": -1.34,
-        "hitRate": 60.5,
-        "gapHitRate": 56.9,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "8002.T",
-        "name": "丸紅",
-        "close": 4471.0,
-        "pUp": 41,
-        "pGapUp": 32,
-        "expGapPct": -1.27,
-        "hitRate": 54.1,
-        "gapHitRate": 56.9,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "8802.T",
-        "name": "三菱地所",
-        "close": 3967.0,
-        "pUp": 58,
-        "pGapUp": 52,
-        "expGapPct": -1.03,
-        "hitRate": 54.7,
-        "gapHitRate": 52.1,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "4901.T",
-        "name": "富士フイルムHD",
-        "close": 3723.0,
-        "pUp": 58,
-        "pGapUp": 63,
-        "expGapPct": -0.73,
-        "hitRate": 54.7,
-        "gapHitRate": 62.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "4420.T",
-        "name": "イーソル",
-        "close": 812.0,
-        "pUp": 42,
-        "pGapUp": 37,
-        "expGapPct": -0.64,
-        "hitRate": 54.1,
-        "gapHitRate": 56.9,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "8031.T",
-        "name": "三井物産",
-        "close": 4557.0,
-        "pUp": 43,
-        "pGapUp": 41,
-        "expGapPct": -1.0,
-        "hitRate": 54.1,
-        "gapHitRate": 53.9,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "9531.T",
-        "name": "東京ガス",
-        "close": 6488.0,
-        "pUp": 57,
-        "pGapUp": 69,
-        "expGapPct": -0.54,
-        "hitRate": 54.7,
-        "gapHitRate": 62.0,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "5599.T",
-        "name": "S&J",
-        "close": 1352.0,
-        "pUp": 57,
-        "pGapUp": 39,
-        "expGapPct": -1.33,
-        "hitRate": 54.7,
-        "gapHitRate": 56.9,
-        "earnings": false,
-        "split": true
-      },
-      {
-        "ticker": "5108.T",
-        "name": "ブリヂストン",
-        "close": 4311.0,
-        "pUp": 56,
-        "pGapUp": 69,
-        "expGapPct": -0.66,
-        "hitRate": 54.7,
-        "gapHitRate": 62.0,
+        "ticker": "7741.T",
+        "name": "HOYA",
+        "close": 23740.0,
+        "pUp": 30,
+        "pGapUp": 12,
+        "expGapPct": -1.84,
+        "hitRate": 59.8,
+        "gapHitRate": 81.3,
         "earnings": false,
         "split": false
       },
@@ -1770,47 +1314,167 @@
         "ticker": "7751.T",
         "name": "キヤノン",
         "close": 4856.0,
-        "pUp": 56,
-        "pGapUp": 70,
-        "expGapPct": -0.56,
-        "hitRate": 54.7,
-        "gapHitRate": 70.7,
+        "pUp": 70,
+        "pGapUp": 72,
+        "expGapPct": -0.69,
+        "hitRate": 60.8,
+        "gapHitRate": 70.2,
         "earnings": false,
         "split": false
       },
       {
-        "ticker": "6367.T",
-        "name": "ダイキン工業",
-        "close": 23875.0,
-        "pUp": 44,
-        "pGapUp": 49,
+        "ticker": "6770.T",
+        "name": "アルプスアルパイン",
+        "close": 1945.5,
+        "pUp": 30,
+        "pGapUp": 13,
+        "expGapPct": -1.57,
+        "hitRate": 59.8,
+        "gapHitRate": 81.3,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "9433.T",
+        "name": "KDDI",
+        "close": 2777.0,
+        "pUp": 70,
+        "pGapUp": 79,
+        "expGapPct": 0.09,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "4523.T",
+        "name": "エーザイ",
+        "close": 5358.0,
+        "pUp": 70,
+        "pGapUp": 76,
+        "expGapPct": -0.43,
+        "hitRate": 68.0,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "4506.T",
+        "name": "住友ファーマ",
+        "close": 1830.0,
+        "pUp": 70,
+        "pGapUp": 58,
+        "expGapPct": -1.15,
+        "hitRate": 68.0,
+        "gapHitRate": 56.5,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "7013.T",
+        "name": "IHI",
+        "close": 2275.5,
+        "pUp": 30,
+        "pGapUp": 10,
+        "expGapPct": -1.8,
+        "hitRate": 67.8,
+        "gapHitRate": 81.3,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "8113.T",
+        "name": "ユニ・チャーム",
+        "close": 1079.0,
+        "pUp": 70,
+        "pGapUp": 79,
+        "expGapPct": 0.24,
+        "hitRate": 60.8,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "8604.T",
+        "name": "野村HD",
+        "close": 1434.0,
+        "pUp": 31,
+        "pGapUp": 20,
+        "expGapPct": -1.7,
+        "hitRate": 59.8,
+        "gapHitRate": 81.3,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "3038.T",
+        "name": "神戸物産",
+        "close": 2967.5,
+        "pUp": 69,
+        "pGapUp": 74,
+        "expGapPct": 0.42,
+        "hitRate": 60.8,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "5714.T",
+        "name": "DOWAホールディングス",
+        "close": 7315.0,
+        "pUp": 31,
+        "pGapUp": 7,
+        "expGapPct": -2.47,
+        "hitRate": 59.8,
+        "gapHitRate": 81.3,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "9166.T",
+        "name": "GENDA",
+        "close": 651.0,
+        "pUp": 69,
+        "pGapUp": 58,
         "expGapPct": -0.87,
-        "hitRate": 54.1,
-        "gapHitRate": 47.9,
+        "hitRate": 60.8,
+        "gapHitRate": 56.5,
         "earnings": false,
         "split": false
       },
       {
-        "ticker": "8001.T",
-        "name": "伊藤忠商事",
-        "close": 2216.5,
-        "pUp": 56,
-        "pGapUp": 55,
-        "expGapPct": -0.86,
-        "hitRate": 54.7,
-        "gapHitRate": 52.1,
+        "ticker": "6501.T",
+        "name": "日立製作所",
+        "close": 4974.0,
+        "pUp": 32,
+        "pGapUp": 13,
+        "expGapPct": -2.01,
+        "hitRate": 59.8,
+        "gapHitRate": 81.3,
         "earnings": false,
         "split": false
       },
       {
-        "ticker": "8955.T",
-        "name": "日本プライムリアルティ投資法人",
-        "close": 92000.0,
-        "pUp": 56,
-        "pGapUp": 64,
-        "expGapPct": -0.22,
-        "hitRate": 54.7,
-        "gapHitRate": 62.0,
+        "ticker": "8306.T",
+        "name": "三菱UFJ",
+        "close": 3156.0,
+        "pUp": 32,
+        "pGapUp": 13,
+        "expGapPct": -1.55,
+        "hitRate": 59.8,
+        "gapHitRate": 81.3,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "8316.T",
+        "name": "三井住友FG",
+        "close": 3043.0,
+        "pUp": 32,
+        "pGapUp": 10,
+        "expGapPct": -1.55,
+        "hitRate": 59.8,
+        "gapHitRate": 81.3,
         "earnings": false,
         "split": false
       },
@@ -1818,11 +1482,119 @@
         "ticker": "9201.T",
         "name": "日本航空",
         "close": 3559.0,
-        "pUp": 56,
-        "pGapUp": 58,
-        "expGapPct": -0.63,
-        "hitRate": 54.7,
-        "gapHitRate": 57.4,
+        "pUp": 68,
+        "pGapUp": 73,
+        "expGapPct": -0.78,
+        "hitRate": 60.8,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "4425.T",
+        "name": "Kudan",
+        "close": 933.0,
+        "pUp": 32,
+        "pGapUp": 12,
+        "expGapPct": -1.96,
+        "hitRate": 59.8,
+        "gapHitRate": 81.3,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "7012.T",
+        "name": "川崎重工業",
+        "close": 1565.5,
+        "pUp": 32,
+        "pGapUp": 12,
+        "expGapPct": -1.98,
+        "hitRate": 59.8,
+        "gapHitRate": 81.3,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "5108.T",
+        "name": "ブリヂストン",
+        "close": 4311.0,
+        "pUp": 67,
+        "pGapUp": 62,
+        "expGapPct": -0.82,
+        "hitRate": 60.8,
+        "gapHitRate": 62.5,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "2502.T",
+        "name": "アサヒグループHD",
+        "close": 1780.0,
+        "pUp": 67,
+        "pGapUp": 76,
+        "expGapPct": 0.04,
+        "hitRate": 60.8,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "7779.T",
+        "name": "サイバーダイン",
+        "close": 162.0,
+        "pUp": 33,
+        "pGapUp": 17,
+        "expGapPct": -1.79,
+        "hitRate": 59.8,
+        "gapHitRate": 81.3,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "6740.T",
+        "name": "ジャパンディスプレイ",
+        "close": 26.0,
+        "pUp": 33,
+        "pGapUp": 29,
+        "expGapPct": -0.67,
+        "hitRate": 59.8,
+        "gapHitRate": 65.0,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "9432.T",
+        "name": "NTT",
+        "close": 166.2,
+        "pUp": 66,
+        "pGapUp": 74,
+        "expGapPct": -0.03,
+        "hitRate": 60.8,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "2269.T",
+        "name": "明治HD",
+        "close": 4657.0,
+        "pUp": 66,
+        "pGapUp": 77,
+        "expGapPct": 0.05,
+        "hitRate": 60.8,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "4382.T",
+        "name": "HEROZ",
+        "close": 715.0,
+        "pUp": 34,
+        "pGapUp": 8,
+        "expGapPct": -1.15,
+        "hitRate": 59.8,
+        "gapHitRate": 81.3,
         "earnings": false,
         "split": false
       },
@@ -1830,11 +1602,83 @@
         "ticker": "3696.T",
         "name": "セレス",
         "close": 1979.0,
-        "pUp": 55,
-        "pGapUp": 51,
-        "expGapPct": -0.61,
-        "hitRate": 54.7,
-        "gapHitRate": 52.1,
+        "pUp": 65,
+        "pGapUp": 48,
+        "expGapPct": -0.75,
+        "hitRate": 60.8,
+        "gapHitRate": 46.9,
+        "earnings": false,
+        "split": true
+      },
+      {
+        "ticker": "9412.T",
+        "name": "スカパーJSAT",
+        "close": 1629.0,
+        "pUp": 35,
+        "pGapUp": 20,
+        "expGapPct": -2.0,
+        "hitRate": 59.8,
+        "gapHitRate": 81.3,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "9434.T",
+        "name": "ソフトバンク",
+        "close": 238.0,
+        "pUp": 64,
+        "pGapUp": 72,
+        "expGapPct": -0.02,
+        "hitRate": 60.8,
+        "gapHitRate": 70.2,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "9503.T",
+        "name": "関西電力",
+        "close": 2522.0,
+        "pUp": 64,
+        "pGapUp": 52,
+        "expGapPct": -0.89,
+        "hitRate": 60.8,
+        "gapHitRate": 53.1,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "8591.T",
+        "name": "オリックス",
+        "close": 5295.0,
+        "pUp": 64,
+        "pGapUp": 53,
+        "expGapPct": -1.24,
+        "hitRate": 60.8,
+        "gapHitRate": 53.1,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "9202.T",
+        "name": "ANAホールディングス",
+        "close": 3340.0,
+        "pUp": 62,
+        "pGapUp": 56,
+        "expGapPct": -0.62,
+        "hitRate": 60.8,
+        "gapHitRate": 56.5,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "4493.T",
+        "name": "サイバーセキュリティクラウド",
+        "close": 1721.0,
+        "pUp": 38,
+        "pGapUp": 11,
+        "expGapPct": -1.46,
+        "hitRate": 59.8,
+        "gapHitRate": 81.3,
         "earnings": false,
         "split": false
       },
@@ -1842,35 +1686,11 @@
         "ticker": "6178.T",
         "name": "日本郵政",
         "close": 2318.5,
-        "pUp": 55,
-        "pGapUp": 45,
-        "expGapPct": -0.9,
-        "hitRate": 54.7,
-        "gapHitRate": 53.9,
-        "earnings": false,
-        "split": true
-      },
-      {
-        "ticker": "9503.T",
-        "name": "関西電力",
-        "close": 2522.0,
-        "pUp": 46,
-        "pGapUp": 42,
-        "expGapPct": -0.72,
-        "hitRate": 50.0,
-        "gapHitRate": 53.9,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "7261.T",
-        "name": "マツダ",
-        "close": 1074.0,
-        "pUp": 54,
-        "pGapUp": 53,
-        "expGapPct": -1.06,
-        "hitRate": 50.0,
-        "gapHitRate": 52.1,
+        "pUp": 62,
+        "pGapUp": 50,
+        "expGapPct": -1.12,
+        "hitRate": 60.8,
+        "gapHitRate": 53.1,
         "earnings": false,
         "split": false
       },
@@ -1878,83 +1698,11 @@
         "ticker": "4755.T",
         "name": "楽天グループ",
         "close": 556.2,
-        "pUp": 54,
-        "pGapUp": 47,
-        "expGapPct": -0.89,
-        "hitRate": 50.0,
-        "gapHitRate": 47.9,
-        "earnings": false,
-        "split": true
-      },
-      {
-        "ticker": "4565.T",
-        "name": "ネクセラファーマ",
-        "close": 1674.0,
-        "pUp": 53,
-        "pGapUp": 52,
-        "expGapPct": -1.09,
-        "hitRate": 50.0,
-        "gapHitRate": 52.1,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "8750.T",
-        "name": "第一生命HD",
-        "close": 1748.0,
-        "pUp": 52,
-        "pGapUp": 41,
-        "expGapPct": -0.94,
-        "hitRate": 50.0,
-        "gapHitRate": 53.9,
-        "earnings": false,
-        "split": true
-      },
-      {
-        "ticker": "6098.T",
-        "name": "リクルートHD",
-        "close": 17410.0,
-        "pUp": 48,
-        "pGapUp": 39,
-        "expGapPct": -0.78,
-        "hitRate": 50.0,
-        "gapHitRate": 56.9,
-        "earnings": false,
-        "split": false
-      },
-      {
-        "ticker": "5401.T",
-        "name": "日本製鉄",
-        "close": 670.7,
-        "pUp": 48,
-        "pGapUp": 52,
-        "expGapPct": -0.48,
-        "hitRate": 50.0,
-        "gapHitRate": 52.1,
-        "earnings": false,
-        "split": true
-      },
-      {
-        "ticker": "6038.T",
-        "name": "イード",
-        "close": 777.0,
-        "pUp": 52,
-        "pGapUp": 44,
-        "expGapPct": -0.18,
-        "hitRate": 50.0,
-        "gapHitRate": 53.9,
-        "earnings": false,
-        "split": true
-      },
-      {
-        "ticker": "8058.T",
-        "name": "三菱商事",
-        "close": 4925.0,
-        "pUp": 49,
-        "pGapUp": 43,
-        "expGapPct": -0.8,
-        "hitRate": 50.0,
-        "gapHitRate": 53.9,
+        "pUp": 38,
+        "pGapUp": 23,
+        "expGapPct": -1.1,
+        "hitRate": 59.8,
+        "gapHitRate": 65.0,
         "earnings": false,
         "split": false
       },
@@ -1962,11 +1710,287 @@
         "ticker": "5019.T",
         "name": "出光興産",
         "close": 1162.0,
-        "pUp": 49,
-        "pGapUp": 55,
-        "expGapPct": -0.5,
-        "hitRate": 50.0,
-        "gapHitRate": 52.1,
+        "pUp": 60,
+        "pGapUp": 64,
+        "expGapPct": -0.62,
+        "hitRate": 54.6,
+        "gapHitRate": 62.5,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "9107.T",
+        "name": "川崎汽船",
+        "close": 3051.0,
+        "pUp": 60,
+        "pGapUp": 65,
+        "expGapPct": -0.37,
+        "hitRate": 60.8,
+        "gapHitRate": 62.5,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "7201.T",
+        "name": "日産自動車",
+        "close": 269.4,
+        "pUp": 60,
+        "pGapUp": 44,
+        "expGapPct": -1.21,
+        "hitRate": 60.8,
+        "gapHitRate": 54.4,
+        "earnings": false,
+        "split": true
+      },
+      {
+        "ticker": "7261.T",
+        "name": "マツダ",
+        "close": 1074.0,
+        "pUp": 60,
+        "pGapUp": 48,
+        "expGapPct": -1.31,
+        "hitRate": 60.8,
+        "gapHitRate": 46.9,
+        "earnings": false,
+        "split": true
+      },
+      {
+        "ticker": "4063.T",
+        "name": "信越化学",
+        "close": 5459.0,
+        "pUp": 41,
+        "pGapUp": 22,
+        "expGapPct": -1.93,
+        "hitRate": 54.8,
+        "gapHitRate": 65.0,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "8002.T",
+        "name": "丸紅",
+        "close": 4471.0,
+        "pUp": 59,
+        "pGapUp": 43,
+        "expGapPct": -1.57,
+        "hitRate": 54.6,
+        "gapHitRate": 54.4,
+        "earnings": false,
+        "split": true
+      },
+      {
+        "ticker": "9502.T",
+        "name": "中部電力",
+        "close": 2380.5,
+        "pUp": 41,
+        "pGapUp": 23,
+        "expGapPct": -0.95,
+        "hitRate": 54.8,
+        "gapHitRate": 65.0,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "9104.T",
+        "name": "商船三井",
+        "close": 6570.0,
+        "pUp": 59,
+        "pGapUp": 65,
+        "expGapPct": -0.35,
+        "hitRate": 54.6,
+        "gapHitRate": 62.5,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "4565.T",
+        "name": "ネクセラファーマ",
+        "close": 1674.0,
+        "pUp": 59,
+        "pGapUp": 42,
+        "expGapPct": -1.35,
+        "hitRate": 54.6,
+        "gapHitRate": 54.4,
+        "earnings": false,
+        "split": true
+      },
+      {
+        "ticker": "5599.T",
+        "name": "S&J",
+        "close": 1352.0,
+        "pUp": 41,
+        "pGapUp": 14,
+        "expGapPct": -1.65,
+        "hitRate": 54.8,
+        "gapHitRate": 81.3,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "8015.T",
+        "name": "豊田通商",
+        "close": 5934.0,
+        "pUp": 42,
+        "pGapUp": 28,
+        "expGapPct": -2.15,
+        "hitRate": 54.8,
+        "gapHitRate": 65.0,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "6326.T",
+        "name": "クボタ",
+        "close": 2381.0,
+        "pUp": 57,
+        "pGapUp": 41,
+        "expGapPct": -1.63,
+        "hitRate": 54.6,
+        "gapHitRate": 54.4,
+        "earnings": false,
+        "split": true
+      },
+      {
+        "ticker": "5020.T",
+        "name": "ENEOS",
+        "close": 1144.0,
+        "pUp": 57,
+        "pGapUp": 47,
+        "expGapPct": -1.1,
+        "hitRate": 54.6,
+        "gapHitRate": 46.9,
+        "earnings": false,
+        "split": true
+      },
+      {
+        "ticker": "4051.T",
+        "name": "GMOフィナンシャルゲート",
+        "close": 5990.0,
+        "pUp": 43,
+        "pGapUp": 31,
+        "expGapPct": -0.48,
+        "hitRate": 54.8,
+        "gapHitRate": 57.4,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "8697.T",
+        "name": "日本取引所グループ",
+        "close": 2112.0,
+        "pUp": 57,
+        "pGapUp": 46,
+        "expGapPct": -1.38,
+        "hitRate": 54.6,
+        "gapHitRate": 46.9,
+        "earnings": false,
+        "split": true
+      },
+      {
+        "ticker": "8058.T",
+        "name": "三菱商事",
+        "close": 4925.0,
+        "pUp": 56,
+        "pGapUp": 42,
+        "expGapPct": -0.98,
+        "hitRate": 54.6,
+        "gapHitRate": 54.4,
+        "earnings": false,
+        "split": true
+      },
+      {
+        "ticker": "8303.T",
+        "name": "新生銀行",
+        "close": 1708.0,
+        "pUp": 55,
+        "pGapUp": 37,
+        "expGapPct": -1.12,
+        "hitRate": 54.6,
+        "gapHitRate": 57.4,
+        "earnings": false,
+        "split": true
+      },
+      {
+        "ticker": "4021.T",
+        "name": "日産化学",
+        "close": 6580.0,
+        "pUp": 45,
+        "pGapUp": 25,
+        "expGapPct": -1.4,
+        "hitRate": 54.8,
+        "gapHitRate": 65.0,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "4420.T",
+        "name": "イーソル",
+        "close": 812.0,
+        "pUp": 45,
+        "pGapUp": 25,
+        "expGapPct": -0.79,
+        "hitRate": 54.8,
+        "gapHitRate": 65.0,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "8955.T",
+        "name": "日本プライムリアルティ投資法人",
+        "close": 92000.0,
+        "pUp": 54,
+        "pGapUp": 58,
+        "expGapPct": -0.27,
+        "hitRate": 50.1,
+        "gapHitRate": 56.5,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "6038.T",
+        "name": "イード",
+        "close": 777.0,
+        "pUp": 54,
+        "pGapUp": 50,
+        "expGapPct": -0.22,
+        "hitRate": 50.1,
+        "gapHitRate": 46.9,
+        "earnings": false,
+        "split": true
+      },
+      {
+        "ticker": "6305.T",
+        "name": "日立建機",
+        "close": 4823.0,
+        "pUp": 54,
+        "pGapUp": 39,
+        "expGapPct": -1.66,
+        "hitRate": 50.1,
+        "gapHitRate": 57.4,
+        "earnings": false,
+        "split": true
+      },
+      {
+        "ticker": "8053.T",
+        "name": "住友商事",
+        "close": 1532.5,
+        "pUp": 47,
+        "pGapUp": 29,
+        "expGapPct": -1.53,
+        "hitRate": 49.9,
+        "gapHitRate": 65.0,
+        "earnings": false,
+        "split": false
+      },
+      {
+        "ticker": "6098.T",
+        "name": "リクルートHD",
+        "close": 17410.0,
+        "pUp": 51,
+        "pGapUp": 35,
+        "expGapPct": -0.96,
+        "hitRate": 50.1,
+        "gapHitRate": 57.4,
         "earnings": false,
         "split": true
       },
@@ -1975,46 +1999,22 @@
         "name": "IGポート",
         "close": 920.0,
         "pUp": 51,
-        "pGapUp": 44,
-        "expGapPct": -0.62,
-        "hitRate": 50.0,
-        "gapHitRate": 53.9,
+        "pGapUp": 28,
+        "expGapPct": -0.76,
+        "hitRate": 50.1,
+        "gapHitRate": 65.0,
         "earnings": false,
         "split": true
       },
       {
-        "ticker": "9166.T",
-        "name": "GENDA",
-        "close": 651.0,
-        "pUp": 51,
-        "pGapUp": 49,
-        "expGapPct": -0.71,
-        "hitRate": 50.0,
-        "gapHitRate": 47.9,
-        "earnings": false,
-        "split": true
-      },
-      {
-        "ticker": "8303.T",
-        "name": "新生銀行",
-        "close": 1708.0,
+        "ticker": "9501.T",
+        "name": "東京電力HD",
+        "close": 415.3,
         "pUp": 50,
-        "pGapUp": 45,
-        "expGapPct": -0.91,
-        "hitRate": 50.0,
-        "gapHitRate": 53.9,
-        "earnings": false,
-        "split": true
-      },
-      {
-        "ticker": "4051.T",
-        "name": "GMOフィナンシャルゲート",
-        "close": 5990.0,
-        "pUp": 50,
-        "pGapUp": 47,
-        "expGapPct": -0.39,
-        "hitRate": 50.0,
-        "gapHitRate": 47.9,
+        "pGapUp": 30,
+        "expGapPct": -1.36,
+        "hitRate": 49.9,
+        "gapHitRate": 65.0,
         "earnings": false,
         "split": false
       }
@@ -2022,134 +2022,134 @@
     "validation": {
       "y_cc": {
         "n": 83175,
-        "auc": 0.6446,
-        "accuracy": 59.8,
+        "auc": 0.6444,
+        "accuracy": 59.9,
         "baseline": 51.0,
-        "highConfN": 20418,
+        "highConfN": 20618,
         "highConfAccuracy": 72.0,
         "bands": [
           {
             "lo": 0,
             "hi": 20,
-            "n": 3148,
-            "upRate": 18.9
+            "n": 3236,
+            "upRate": 20.3
           },
           {
             "lo": 20,
             "hi": 30,
-            "n": 6357,
-            "upRate": 33.6
+            "n": 6264,
+            "upRate": 32.2
           },
           {
             "lo": 30,
             "hi": 40,
-            "n": 11609,
-            "upRate": 39.5
+            "n": 11470,
+            "upRate": 40.2
           },
           {
             "lo": 40,
             "hi": 45,
-            "n": 8092,
-            "upRate": 45.9
+            "n": 8063,
+            "upRate": 45.2
           },
           {
             "lo": 45,
             "hi": 55,
-            "n": 20005,
-            "upRate": 50.0
+            "n": 19662,
+            "upRate": 50.1
           },
           {
             "lo": 55,
             "hi": 60,
-            "n": 9091,
-            "upRate": 54.7
+            "n": 9290,
+            "upRate": 54.6
           },
           {
             "lo": 60,
             "hi": 70,
-            "n": 13960,
+            "n": 14072,
             "upRate": 60.8
           },
           {
             "lo": 70,
             "hi": 80,
-            "n": 7344,
-            "upRate": 68.9
+            "n": 7611,
+            "upRate": 68.0
           },
           {
             "lo": 80,
             "hi": 100,
-            "n": 3569,
-            "upRate": 80.7
+            "n": 3507,
+            "upRate": 81.0
           }
         ],
-        "agreeShare": 89.2,
-        "agreeAccuracy": 60.9,
-        "splitAccuracy": 51.8
+        "agreeShare": 89.6,
+        "agreeAccuracy": 61.0,
+        "splitAccuracy": 52.2
       },
       "from": "2024-10-01",
       "to": "2026-11-20",
       "y_gap": {
-        "n": 82760,
-        "auc": 0.7304,
+        "n": 82759,
+        "auc": 0.7312,
         "accuracy": 66.6,
         "baseline": 54.7,
-        "highConfN": 40630,
-        "highConfAccuracy": 76.9,
+        "highConfN": 40807,
+        "highConfAccuracy": 76.8,
         "bands": [
           {
             "lo": 0,
             "hi": 20,
-            "n": 9910,
-            "upRate": 18.9
+            "n": 10067,
+            "upRate": 18.7
           },
           {
             "lo": 20,
             "hi": 30,
-            "n": 6940,
-            "upRate": 34.4
+            "n": 6761,
+            "upRate": 35.0
           },
           {
             "lo": 30,
             "hi": 40,
-            "n": 8548,
-            "upRate": 43.1
+            "n": 8380,
+            "upRate": 42.6
           },
           {
             "lo": 40,
             "hi": 45,
-            "n": 4523,
-            "upRate": 46.1
+            "n": 4803,
+            "upRate": 45.6
           },
           {
             "lo": 45,
             "hi": 55,
-            "n": 11227,
-            "upRate": 52.1
+            "n": 11704,
+            "upRate": 53.1
           },
           {
             "lo": 55,
             "hi": 60,
-            "n": 6569,
-            "upRate": 57.4
+            "n": 6295,
+            "upRate": 56.5
           },
           {
             "lo": 60,
             "hi": 70,
-            "n": 11263,
-            "upRate": 62.0
+            "n": 10770,
+            "upRate": 62.5
           },
           {
             "lo": 70,
             "hi": 80,
-            "n": 9968,
-            "upRate": 70.7
+            "n": 10157,
+            "upRate": 70.2
           },
           {
             "lo": 80,
             "hi": 100,
-            "n": 13812,
-            "upRate": 84.0
+            "n": 13822,
+            "upRate": 84.1
           }
         ]
       },
@@ -2162,18 +2162,18 @@
               "lo": 0,
               "hi": 0.005,
               "days": 213,
-              "cc": 54.2,
-              "ccAgree": 55.2,
-              "gap": 60.2
+              "cc": 54.5,
+              "ccAgree": 55.3,
+              "gap": 60.0
             },
             {
               "label": "0.5〜1%",
               "lo": 0.005,
               "hi": 0.01,
               "days": 143,
-              "cc": 60.7,
-              "ccAgree": 61.4,
-              "gap": 65.2
+              "cc": 60.9,
+              "ccAgree": 61.5,
+              "gap": 65.4
             },
             {
               "label": "1〜2%",
@@ -2182,15 +2182,15 @@
               "days": 114,
               "cc": 63.8,
               "ccAgree": 64.2,
-              "gap": 74.2
+              "gap": 74.3
             },
             {
               "label": "2%以上",
               "lo": 0.02,
               "hi": 1,
               "days": 49,
-              "cc": 73.1,
-              "ccAgree": 73.5,
+              "cc": 73.2,
+              "ccAgree": 73.6,
               "gap": 81.2
             }
           ]
@@ -2203,9 +2203,9 @@
               "lo": 0,
               "hi": 15,
               "days": 60,
-              "cc": 58.6,
+              "cc": 58.9,
               "ccAgree": 59.7,
-              "gap": 65.4
+              "gap": 65.5
             },
             {
               "label": "15〜20",
@@ -2213,95 +2213,95 @@
               "hi": 20,
               "days": 341,
               "cc": 58.6,
-              "ccAgree": 59.4,
-              "gap": 64.4
+              "ccAgree": 59.5,
+              "gap": 64.3
             },
             {
               "label": "20〜25",
               "lo": 20,
               "hi": 25,
               "days": 80,
-              "cc": 61.2,
-              "ccAgree": 62.2,
-              "gap": 70.8
+              "cc": 61.9,
+              "ccAgree": 62.6,
+              "gap": 71.2
             },
             {
               "label": "25以上",
               "lo": 25,
               "hi": 999,
               "days": 38,
-              "cc": 71.5,
-              "ccAgree": 72.2,
-              "gap": 79.8
+              "cc": 71.8,
+              "ccAgree": 72.3,
+              "gap": 79.5
             }
           ]
         }
       },
       "paper": {
         "days": 519,
-        "traded": 368,
+        "traded": 374,
         "allAvg": -0.032,
         "cost0": {
-          "avg": 0.087,
-          "total": 50.5,
-          "maxDD": -24.2,
-          "win": 55
+          "avg": 0.04,
+          "total": 18.5,
+          "maxDD": -28.5,
+          "win": 52
         },
         "cost10": {
-          "avg": 0.016,
-          "total": 4.2,
-          "maxDD": -28.8,
-          "win": 51
+          "avg": -0.032,
+          "total": -18.5,
+          "maxDD": -30.0,
+          "win": 49
         }
       },
       "market": {
         "n": 519,
-        "accuracy": 67.8,
+        "accuracy": 68.0,
         "baseline": 53.8,
-        "strongN": 283,
-        "strongAccuracy": 79.9,
+        "strongN": 286,
+        "strongAccuracy": 78.0,
         "bands": [
           {
             "lo": 0,
             "hi": 35,
-            "n": 83,
-            "acc": 79.5
+            "n": 84,
+            "acc": 79.8
           },
           {
             "lo": 35,
             "hi": 40,
             "n": 47,
-            "acc": 78.7
+            "acc": 72.3
           },
           {
             "lo": 40,
             "hi": 45,
-            "n": 47,
-            "acc": 55.3
+            "n": 41,
+            "acc": 61.0
           },
           {
             "lo": 45,
             "hi": 55,
-            "n": 128,
-            "acc": 46.9
+            "n": 132,
+            "acc": 48.5
           },
           {
             "lo": 55,
             "hi": 60,
-            "n": 61,
-            "acc": 65.6
+            "n": 60,
+            "acc": 68.3
           },
           {
             "lo": 60,
             "hi": 65,
-            "n": 60,
-            "acc": 73.3
+            "n": 59,
+            "acc": 72.9
           },
           {
             "lo": 65,
             "hi": 100,
-            "n": 93,
-            "acc": 84.9
+            "n": 96,
+            "acc": 82.3
           }
         ]
       }
@@ -2334,7 +2334,7 @@
         "note": "検証時と同等以上",
         "recentAccuracy": 56.3,
         "days": 11,
-        "validationAccuracy": 59.8,
+        "validationAccuracy": 59.9,
         "margin": 7.5
       },
       "days": 11,
@@ -2560,27 +2560,27 @@
     },
     "paper": {
       "today": [
-        "3923.T",
-        "4443.T",
+        "4307.T",
         "4519.T",
-        "7974.T",
-        "4478.T"
+        "4507.T",
+        "4901.T",
+        "6758.T"
       ],
       "backtest": {
         "days": 519,
-        "traded": 368,
+        "traded": 374,
         "allAvg": -0.032,
         "cost0": {
-          "avg": 0.087,
-          "total": 50.5,
-          "maxDD": -24.2,
-          "win": 55
+          "avg": 0.04,
+          "total": 18.5,
+          "maxDD": -28.5,
+          "win": 52
         },
         "cost10": {
-          "avg": 0.016,
-          "total": 4.2,
-          "maxDD": -28.8,
-          "win": 51
+          "avg": -0.032,
+          "total": -18.5,
+          "maxDD": -30.0,
+          "win": 49
         }
       },
       "live": {
@@ -2592,12 +2592,12 @@
     "basis": "夜間に確定した米S&P500・米半導体指数(SOX)・ドル円・CME日経先物・米国11業種・金利・原油・日本企業のADRなどの動きと、銘柄ごとの過去の感応度（19指標を同時に推定するリッジ回帰）を機械学習（勾配ブースティング）で組み合わせた確率。的中率はすべて、その時点より前のデータだけで学習した予測の答え合わせ（先読みなし）。寄付き後の値動きや数日先は予測力が確認できないため対象外。"
   },
   "marketReport": {
-    "generatedAt": "2026-11-26 02:07",
+    "generatedAt": "2026-11-26 06:27",
     "regime": {
       "n225Vol": 38.9,
       "n225VolTopPct": 5,
-      "vix": 33.7,
-      "vixTopPct": 1,
+      "vix": 28.4,
+      "vixTopPct": 8,
       "vixDate": "2026-11-25",
       "n225FromHigh": -17.0,
       "n225Daily10": [
@@ -2670,10 +2670,10 @@
           "label": "米S&P500",
           "group": "us",
           "base": 7568.92,
-          "last": 7068.5,
+          "last": 7182.78,
           "react": 1.58,
-          "since": -6.61,
-          "day": -1.84,
+          "since": -5.1,
+          "day": -0.25,
           "unit": "%",
           "lastDate": "2026-11-25"
         },
@@ -2682,10 +2682,10 @@
           "label": "米ナスダック",
           "group": "us",
           "base": 25372.01,
-          "last": 23046.41,
+          "last": 23585.8,
           "react": 1.44,
-          "since": -9.17,
-          "day": -2.9,
+          "since": -7.04,
+          "day": -0.62,
           "unit": "%",
           "lastDate": "2026-11-25"
         },
@@ -2694,10 +2694,10 @@
           "label": "米半導体(SOX)",
           "group": "us",
           "base": 10600.4,
-          "last": 8321.45,
+          "last": 8774.86,
           "react": -3.13,
-          "since": -21.5,
-          "day": -5.79,
+          "since": -17.22,
+          "day": -0.65,
           "unit": "%",
           "lastDate": "2026-11-25"
         },
@@ -2706,10 +2706,10 @@
           "label": "米小型株(ラッセル2000)",
           "group": "us",
           "base": 2812.45,
-          "last": 2639.65,
+          "last": 2704.06,
           "react": 1.58,
-          "since": -6.14,
-          "day": -1.69,
+          "since": -3.85,
+          "day": 0.71,
           "unit": "%",
           "lastDate": "2026-11-25"
         },
@@ -2718,10 +2718,10 @@
           "label": "米金融",
           "group": "sector",
           "base": 57.19,
-          "last": 55.99,
+          "last": 56.5,
           "react": 3.51,
-          "since": -2.11,
-          "day": -0.22,
+          "since": -1.21,
+          "day": 0.7,
           "unit": "%",
           "lastDate": "2026-11-25"
         },
@@ -2730,10 +2730,10 @@
           "label": "米エネルギー",
           "group": "sector",
           "base": 66.68,
-          "last": 60.61,
+          "last": 60.88,
           "react": -4.74,
-          "since": -9.1,
-          "day": 0.26,
+          "since": -8.7,
+          "day": 0.71,
           "unit": "%",
           "lastDate": "2026-11-25"
         },
@@ -2742,10 +2742,10 @@
           "label": "米ヘルスケア",
           "group": "sector",
           "base": 184.02,
-          "last": 183.34,
+          "last": 183.68,
           "react": 3.06,
-          "since": -0.37,
-          "day": -0.75,
+          "since": -0.18,
+          "day": -0.56,
           "unit": "%",
           "lastDate": "2026-11-25"
         },
@@ -2754,10 +2754,10 @@
           "label": "米資本財",
           "group": "sector",
           "base": 171.32,
-          "last": 160.25,
+          "last": 162.95,
           "react": -1.09,
-          "since": -6.46,
-          "day": -0.84,
+          "since": -4.89,
+          "day": 0.83,
           "unit": "%",
           "lastDate": "2026-11-25"
         },
@@ -2766,10 +2766,10 @@
           "label": "米テクノロジー",
           "group": "sector",
           "base": 176.51,
-          "last": 150.91,
+          "last": 155.82,
           "react": -0.01,
-          "since": -14.5,
-          "day": -3.93,
+          "since": -11.72,
+          "day": -0.81,
           "unit": "%",
           "lastDate": "2026-11-25"
         },
@@ -2778,10 +2778,10 @@
           "label": "米防衛・航空",
           "group": "sector",
           "base": 72.06,
-          "last": 67.85,
+          "last": 68.77,
           "react": -1.54,
-          "since": -5.84,
-          "day": -0.4,
+          "since": -4.56,
+          "day": 0.95,
           "unit": "%",
           "lastDate": "2026-11-25"
         },
@@ -2790,10 +2790,10 @@
           "label": "VIX（恐怖指数）",
           "group": "level",
           "base": 20.83,
-          "last": 33.66,
+          "last": 28.36,
           "react": -4.22,
-          "since": 12.83,
-          "day": 7.3,
+          "since": 7.53,
+          "day": 2.0,
           "unit": "pt",
           "lastDate": "2026-11-25"
         },
@@ -2802,10 +2802,10 @@
           "label": "米10年金利",
           "group": "level",
           "base": 4.95,
-          "last": 4.81,
+          "last": 4.85,
           "react": -0.06,
-          "since": -0.14,
-          "day": -0.09,
+          "since": -0.1,
+          "day": -0.06,
           "unit": "pt",
           "lastDate": "2026-11-25"
         },
@@ -2814,10 +2814,10 @@
           "label": "ドル円",
           "group": "fx",
           "base": 157.91,
-          "last": 158.82,
+          "last": 159.2,
           "react": 0.35,
-          "since": 0.57,
-          "day": -0.12,
+          "since": 0.81,
+          "day": 0.12,
           "unit": "%",
           "lastDate": "2026-11-25"
         },
@@ -3584,26 +3584,26 @@
     "reliability": {
       "current": {
         "nkd": {
-          "label": "1〜2%",
-          "lo": 0.01,
-          "hi": 0.02,
-          "days": 114,
-          "cc": 63.8,
-          "ccAgree": 64.2,
-          "gap": 74.2,
+          "label": "2%以上",
+          "lo": 0.02,
+          "hi": 1,
+          "days": 49,
+          "cc": 73.2,
+          "ccAgree": 73.6,
+          "gap": 81.2,
           "title": "夜間の日経先物の動き（絶対値）",
-          "value": 1.73
+          "value": 2.16
         },
         "vixlvl": {
           "label": "25以上",
           "lo": 25,
           "hi": 999,
           "days": 38,
-          "cc": 71.5,
-          "ccAgree": 72.2,
-          "gap": 79.8,
+          "cc": 71.8,
+          "ccAgree": 72.3,
+          "gap": 79.5,
           "title": "VIX（米国の恐怖指数）",
-          "value": 33.7
+          "value": 28.4
         }
       },
       "table": {
@@ -3615,18 +3615,18 @@
               "lo": 0,
               "hi": 0.005,
               "days": 213,
-              "cc": 54.2,
-              "ccAgree": 55.2,
-              "gap": 60.2
+              "cc": 54.5,
+              "ccAgree": 55.3,
+              "gap": 60.0
             },
             {
               "label": "0.5〜1%",
               "lo": 0.005,
               "hi": 0.01,
               "days": 143,
-              "cc": 60.7,
-              "ccAgree": 61.4,
-              "gap": 65.2
+              "cc": 60.9,
+              "ccAgree": 61.5,
+              "gap": 65.4
             },
             {
               "label": "1〜2%",
@@ -3635,15 +3635,15 @@
               "days": 114,
               "cc": 63.8,
               "ccAgree": 64.2,
-              "gap": 74.2
+              "gap": 74.3
             },
             {
               "label": "2%以上",
               "lo": 0.02,
               "hi": 1,
               "days": 49,
-              "cc": 73.1,
-              "ccAgree": 73.5,
+              "cc": 73.2,
+              "ccAgree": 73.6,
               "gap": 81.2
             }
           ]
@@ -3656,9 +3656,9 @@
               "lo": 0,
               "hi": 15,
               "days": 60,
-              "cc": 58.6,
+              "cc": 58.9,
               "ccAgree": 59.7,
-              "gap": 65.4
+              "gap": 65.5
             },
             {
               "label": "15〜20",
@@ -3666,26 +3666,26 @@
               "hi": 20,
               "days": 341,
               "cc": 58.6,
-              "ccAgree": 59.4,
-              "gap": 64.4
+              "ccAgree": 59.5,
+              "gap": 64.3
             },
             {
               "label": "20〜25",
               "lo": 20,
               "hi": 25,
               "days": 80,
-              "cc": 61.2,
-              "ccAgree": 62.2,
-              "gap": 70.8
+              "cc": 61.9,
+              "ccAgree": 62.6,
+              "gap": 71.2
             },
             {
               "label": "25以上",
               "lo": 25,
               "hi": 999,
               "days": 38,
-              "cc": 71.5,
-              "ccAgree": 72.2,
-              "gap": 79.8
+              "cc": 71.8,
+              "ccAgree": 72.3,
+              "gap": 79.5
             }
           ]
         }
@@ -3709,13 +3709,13 @@
     "note": "予測と実際の答え合わせを毎営業日ぶん蓄積した実績です。件数が増えるほど信頼度が上がります。将来を保証するものではありません。"
   },
   "backtest": {
-    "annual": "+14.3%",
-    "benchmark": "+23.1%",
+    "annual": "+14.4%",
+    "benchmark": "+23.5%",
     "sharpe": "0.38",
-    "dd": "-34.0%",
+    "dd": "-33.9%",
     "winrate": "56.5%",
     "months": "23ヶ月",
-    "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+23.1%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
+    "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+23.5%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
   },
   "stocks": [
     {
@@ -3788,7 +3788,19 @@
           "maxAbsPct": 9.4,
           "avgYen": 738
         },
-        "earnings": null,
+        "earnings": {
+          "n": 8,
+          "avgAbsPct": 5.0,
+          "maxAbsPct": 15.8,
+          "avgYen": 738,
+          "maxYen": 2330,
+          "upCount": 4,
+          "recentPct": [
+            2.1,
+            9.4,
+            15.8
+          ]
+        },
         "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
@@ -3810,7 +3822,16 @@
         "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
       },
       "yutai": null,
-      "news": []
+      "news": [
+        {
+          "title": "キーエンス、11月20日の株主に株式5分割 代表的な値がさ株（ロイター）",
+          "source": "Yahoo!ニュース",
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBueXJWTkhHTHEtaTlQSmpFWEJEZFpOWWU5TzFwMnhhNzY4MUxTRE9nOEJBaHhidmowZzhOVVlkN3JTWUVaSUpEdDRneEcyMWtCTjFxMUZiSWQ5X3NYd09ZaUZSa3BsQm1Jb012Znktc0UxcnA5MnJXMm9RbDdKdm8?oc=5",
+          "pubDate": "Sun, 22 Nov 2026 07:07:00 GMT",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
     },
     {
       "rank": 2,
@@ -3871,7 +3892,12 @@
           "condition": "RSI中立圏×5日下落局面",
           "note": null
         },
-        "factors": [],
+        "factors": [
+          {
+            "label": "直近ニュースがポジティブ寄り（1件/簡易判定）",
+            "dir": "+"
+          }
+        ],
         "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.90倍に自動補正済み。目標カバー率は約75%）"
       },
       "impact": {
@@ -3884,7 +3910,19 @@
           "maxAbsPct": 16.7,
           "avgYen": 189
         },
-        "earnings": null,
+        "earnings": {
+          "n": 8,
+          "avgAbsPct": 3.7,
+          "maxAbsPct": 16.7,
+          "avgYen": 123,
+          "maxYen": 553,
+          "upCount": 4,
+          "recentPct": [
+            16.7,
+            -0.1,
+            -1.5
+          ]
+        },
         "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
@@ -3906,7 +3944,16 @@
         "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
       },
       "yutai": "なし（株主優待は廃止）",
-      "news": []
+      "news": [
+        {
+          "title": "トヨタ自動車/トヨタグループ株式ファンド【7931603B】：基準価格・投資信託情報",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1JV1VLT19ZNXNfQkxlaUo1NWtJRjZrcGZ2Q2dVMmtjVWpxSUhUbXg4Wjc1dDRBN0ZHV0JhdHRuWTQzdHZ2YkNuYWFLaEJ6U0xBZlluZQ?oc=5",
+          "pubDate": "Wed, 25 Nov 2026 14:57:18 GMT",
+          "sentiment": "pos",
+          "theme": "自動車"
+        }
+      ]
     },
     {
       "rank": 3,
@@ -3980,7 +4027,19 @@
           "maxAbsPct": 1.6,
           "avgYen": 43
         },
-        "earnings": null,
+        "earnings": {
+          "n": 8,
+          "avgAbsPct": 2.2,
+          "maxAbsPct": 5.5,
+          "avgYen": 95,
+          "maxYen": 238,
+          "upCount": 5,
+          "recentPct": [
+            -1.6,
+            -0.6,
+            -0.5
+          ]
+        },
         "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
@@ -4002,7 +4061,16 @@
         "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
       },
       "yutai": null,
-      "news": []
+      "news": [
+        {
+          "title": "ソニーグループ(株)【SONY】：株価・株式情報",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBaWnphQUR5QkRjZVlTVmx6UFR5V014TllydmRXWkxLMjQyQlpTTTV0ZXN6b1lsNVZBTGlQMXJGcGFTbHdkcFJuYURxeFRfLTg?oc=5",
+          "pubDate": "Wed, 25 Nov 2026 18:42:38 GMT",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
     },
     {
       "rank": 4,
@@ -4074,7 +4142,19 @@
           "maxAbsPct": 8.3,
           "avgYen": 218
         },
-        "earnings": null,
+        "earnings": {
+          "n": 8,
+          "avgAbsPct": 5.1,
+          "maxAbsPct": 11.2,
+          "avgYen": 278,
+          "maxYen": 611,
+          "upCount": 4,
+          "recentPct": [
+            2.6,
+            -8.3,
+            2.3
+          ]
+        },
         "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
@@ -4096,7 +4176,16 @@
         "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
       },
       "yutai": null,
-      "news": []
+      "news": [
+        {
+          "title": "信越化学工業(株)【4063】：今の株価の理由は？値動きの背景をAIが解説",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9fZnZfbnFJTWhtSjluMV80eDlsYnl0bVoxOUVfbzdCaGFUV0tSdzBOV1BpUUlKc3pwWlBkVG8zMlFMa0dBcWpPZ01jTkZzQkpNajM3eW1WaW9sRndYaFk0?oc=5",
+          "pubDate": "Fri, 20 Nov 2026 06:53:57 GMT",
+          "sentiment": "neu",
+          "theme": "AI"
+        }
+      ]
     },
     {
       "rank": 5,
@@ -4170,7 +4259,19 @@
           "maxAbsPct": 4.9,
           "avgYen": 81
         },
-        "earnings": null,
+        "earnings": {
+          "n": 8,
+          "avgAbsPct": 4.6,
+          "maxAbsPct": 18.2,
+          "avgYen": 110,
+          "maxYen": 433,
+          "upCount": 6,
+          "recentPct": [
+            -2.3,
+            1.5,
+            0.9
+          ]
+        },
         "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
@@ -4192,7 +4293,16 @@
         "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
       },
       "yutai": null,
-      "news": []
+      "news": [
+        {
+          "title": "(株)クボタ【6326】：企業情報（決算時期・代表者名・大株主情報・IR動画など）",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1BVmpXYUVYMDhQS29XTXQ1V2dpeS02R2llRV9VTFlVaHNsRmYxTzZJUFpZYVRWTXJqYlhpU25MSmpYWXFiZzF4QXY5MGpUeVBtb2VsY1BmTElYVllT?oc=5",
+          "pubDate": "Fri, 20 Nov 2026 08:00:00 GMT",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
     },
     {
       "rank": 6,
@@ -4264,7 +4374,19 @@
           "maxAbsPct": 6.2,
           "avgYen": 456
         },
-        "earnings": null,
+        "earnings": {
+          "n": 8,
+          "avgAbsPct": 4.8,
+          "maxAbsPct": 18.0,
+          "avgYen": 429,
+          "maxYen": 1610,
+          "upCount": 2,
+          "recentPct": [
+            -5.2,
+            6.2,
+            -1.7
+          ]
+        },
         "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
@@ -4288,7 +4410,16 @@
         "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
       },
       "yutai": null,
-      "news": []
+      "news": [
+        {
+          "title": "東京エレクトロン株が大幅高 半導体「スーパーサイクル」見方強まる",
+          "source": "日本経済新聞",
+          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1BSk96aGFhdy1Vb2FHMl9ONm5WUG1OOU9OYWpxWnViWHFiakV2YzU0WnZsUDZ6b3VmNjFzWlZzMnVfNnpndEh6LUIyNlpQSUo4Q19zREtMRzRWZ1g2S0MtbTRfMjN5emZLbzhFMQ?oc=5",
+          "pubDate": "Mon, 02 Nov 2026 08:00:00 GMT",
+          "sentiment": "neu",
+          "theme": "半導体"
+        }
+      ]
     },
     {
       "rank": 7,
@@ -4355,7 +4486,19 @@
         "normalYen": 135,
         "normalPct": 2.7,
         "bigVol": null,
-        "earnings": null,
+        "earnings": {
+          "n": 8,
+          "avgAbsPct": 5.0,
+          "maxAbsPct": 9.8,
+          "avgYen": 249,
+          "maxYen": 487,
+          "upCount": 3,
+          "recentPct": [
+            -9.8,
+            6.0,
+            -5.8
+          ]
+        },
         "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
@@ -4377,7 +4520,16 @@
         "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
       },
       "yutai": null,
-      "news": []
+      "news": [
+        {
+          "title": "(株)日立製作所【6501】：株価・株式情報",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFByMHRhcmpKZmVUc0dRcWhLWV82WjBRYzY1RXVrdHFQa3FJRHpDOWNEdTRhX0tvSVpMSmduSmJsa2xBTDVmb3hyOGlfREhvWlpMaGc?oc=5",
+          "pubDate": "Fri, 20 Nov 2026 06:54:00 GMT",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
     },
     {
       "rank": 8,
@@ -4449,7 +4601,19 @@
           "maxAbsPct": 10.5,
           "avgYen": 100
         },
-        "earnings": null,
+        "earnings": {
+          "n": 8,
+          "avgAbsPct": 3.6,
+          "maxAbsPct": 10.5,
+          "avgYen": 69,
+          "maxYen": 202,
+          "upCount": 2,
+          "recentPct": [
+            3.3,
+            -10.5,
+            -2.0
+          ]
+        },
         "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
@@ -4471,7 +4635,16 @@
         "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
       },
       "yutai": null,
-      "news": []
+      "news": [
+        {
+          "title": "(株)デンソー【6902】：企業情報（決算時期・代表者名・大株主情報・IR動画など）",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE0zNVB2c3A4N20wSWxQNWd2WTlPeFVvUUsxT0FRR2x0SFdheXU1ZzRyNG1uY3EwRVBKTjlEX05vQmZQWkxQZFY5MkJjLWZWbUs5ZkU4ZncxTk15SHRfcW5Pa2FVcVdocWU0V3V4WFh6aTEzWmhuUlE?oc=5",
+          "pubDate": "Thu, 19 Nov 2026 10:02:33 GMT",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
     },
     {
       "rank": 9,
@@ -4545,7 +4718,19 @@
           "maxAbsPct": 6.2,
           "avgYen": 172
         },
-        "earnings": null,
+        "earnings": {
+          "n": 8,
+          "avgAbsPct": 1.5,
+          "maxAbsPct": 2.9,
+          "avgYen": 65,
+          "maxYen": 125,
+          "upCount": 6,
+          "recentPct": [
+            1.9,
+            2.9,
+            -1.0
+          ]
+        },
         "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
@@ -4567,7 +4752,16 @@
         "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
       },
       "yutai": null,
-      "news": []
+      "news": [
+        {
+          "title": "(株)ブリヂストン【5108】：株価・株式情報",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9VWm50Um5NaDl1alVJc1FPdzFSSVhacm5lOXlIbGJMQ1J2NHBaalBPZDJhZFhJVkFpbVIzWnNKV3JfZm5xLXkzbjVZS3BoYTNvUXc?oc=5",
+          "pubDate": "Fri, 20 Nov 2026 06:57:52 GMT",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
     },
     {
       "rank": 10,
@@ -4626,7 +4820,12 @@
           "condition": "RSI中立圏×5日下落局面",
           "note": null
         },
-        "factors": [],
+        "factors": [
+          {
+            "label": "直近ニュースがポジティブ寄り（1件/簡易判定）",
+            "dir": "+"
+          }
+        ],
         "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.90倍に自動補正済み。目標カバー率は約75%）"
       },
       "impact": {
@@ -4634,7 +4833,19 @@
         "normalYen": 53,
         "normalPct": 2.1,
         "bigVol": null,
-        "earnings": null,
+        "earnings": {
+          "n": 8,
+          "avgAbsPct": 6.3,
+          "maxAbsPct": 18.6,
+          "avgYen": 161,
+          "maxYen": 474,
+          "upCount": 3,
+          "recentPct": [
+            -6.2,
+            2.6,
+            18.6
+          ]
+        },
         "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
@@ -4656,7 +4867,16 @@
         "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
       },
       "yutai": null,
-      "news": []
+      "news": [
+        {
+          "title": "医薬品セクターが相対優位、ディフェンシブ買い【今日の市場はどう動いた？】",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFAzdERnMmV2LUJMWThlNEY3REVIZHdTWXRKT3pOdVJGZmdHdlZ5czQzQnlKWG03ZWJsWHRSeFNGelBZcWliYUZOZnByR0gxV01hMXRkanNWMTBmYlVRbE1OSktvMkY?oc=5",
+          "pubDate": "Wed, 25 Nov 2026 02:57:45 GMT",
+          "sentiment": "pos",
+          "theme": "その他"
+        }
+      ]
     }
   ],
   "stockMaster": [
@@ -7159,18 +7379,18 @@
     },
     {
       "type": "info",
-      "title": "空売り残高: シャープ (6753)",
-      "desc": "開示合計6.53%・前回比横ばい（4件・出典JPX 11/24時点）"
+      "title": "空売り残高: 日産自動車 (7201)",
+      "desc": "開示合計6.04%・前回比減少中（3件・出典JPX 11/25時点）"
     },
     {
       "type": "info",
-      "title": "空売り残高: ネクセラファーマ (4565)",
-      "desc": "開示合計6.44%・前回比減少中（5件・出典JPX 11/24時点）"
+      "title": "空売り残高: 川崎汽船 (9107)",
+      "desc": "開示合計3.86%・前回比減少中（3件・出典JPX 11/25時点）"
     },
     {
-      "type": "info",
-      "title": "空売り残高: セブン＆アイHD (3382)",
-      "desc": "開示合計4.91%・前回比減少中（1件・出典JPX 11/24時点）"
+      "type": "warn",
+      "title": "空売り残高: マツダ (7261)",
+      "desc": "開示合計3.70%・前回比増加中（3件・出典JPX 11/25時点）"
     },
     {
       "type": "warn",
@@ -7524,13 +7744,27 @@
   "themeTrends": [
     {
       "theme": "その他",
-      "mentions": 9,
+      "mentions": 7,
       "pos": 1,
       "neg": 0,
-      "prevMentions": 9
+      "prevMentions": 7
+    },
+    {
+      "theme": "自動車",
+      "mentions": 1,
+      "pos": 1,
+      "neg": 0,
+      "prevMentions": 1
     },
     {
       "theme": "AI",
+      "mentions": 1,
+      "pos": 0,
+      "neg": 0,
+      "prevMentions": 1
+    },
+    {
+      "theme": "半導体",
       "mentions": 1,
       "pos": 0,
       "neg": 0,
