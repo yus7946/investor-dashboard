@@ -161,10 +161,10 @@
   ],
   "4502.T": [
    {
-    "title": "武田薬品工業(株)【TAK】：株価・株式情報",
+    "title": "武田薬品工業(株)【4502】：株価チャート",
     "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9TWDdnWS1Db1NhR09TY09pd3dsUTNtYVZlaGhPWE1oRldxS0JVNXZoMnAtWVkyeEE4b3BPRG5DQmJ4LTctaHY0ODZYOUtrdw?oc=5",
-    "pubDate": "Wed, 25 Nov 2026 15:22:05 GMT",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5LYktvVkxyejBpRUIyYVJhRmRHTlp2Q3RVeDhIMWVUd1BRS2cyT090RWFzQk1hLVE1TUZUMkpOamlMOXd0ZHQ2RjVkN3h3cnNMZkRYZHZHZ25Edw?oc=5",
+    "pubDate": "Fri, 20 Nov 2026 11:35:02 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
@@ -181,9 +181,20 @@
   ],
   "9202.T": [
    {
-    "title": "Half Year Results Change The Bull Case For ANA Holdings Stock (TSE:9202)?",
-    "source": "Simply Wall St.",
-    "url": "https://finance.yahoo.com/markets/stocks/articles/half-results-change-bull-case-091808798.html",
+    "title": "ＡＮＡホールディングス(株)【ALNPY】：株価・株式情報",
+    "source": "Yahoo!ファイナンス",
+    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9TdHA0NUNORG9qbGZCUm1tQlhqMHdvTjFCOWJTaHlIU25weTE2YjFxTnZZRnBzcVRZNkF0c0c1Rndud3kwMzRJblVuV2RYV2Ex?oc=5",
+    "pubDate": "Sun, 22 Nov 2026 20:35:09 GMT",
+    "sentiment": "neu",
+    "theme": "その他"
+   }
+  ],
+  "4911.T": [
+   {
+    "title": "(株)資生堂【SSDOY】：株価・株式情報",
+    "source": "Yahoo!ファイナンス",
+    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1JMXlkMzZyYktiTnF4TkFqOUpZS3dIZ2Y3YkNEbnlXa1VlT25OMEFsbXNDN2lWcnNqcWJGWkpTcVVDQ20zN2xGRk15ZXppMF9U?oc=5",
+    "pubDate": "Mon, 23 Nov 2026 23:06:35 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
@@ -204,16 +215,6 @@
     "source": "日本経済新聞",
     "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4wa242NUN0UXNWaFc3VmVOVFBHZkJPZmVDZjh2Y3YwY0JlSFRXYzdQNjNKYjRnUkp6N1c0VWVEV1V2ZmM1VDdZeHJoSzV6dVZ0Z0dWNGhMblE5NWNpU2pTZTNQSmZlMGd2MjRfYw?oc=5",
     "pubDate": "Wed, 25 Nov 2026 10:24:53 GMT",
-    "sentiment": "neu",
-    "theme": "その他"
-   }
-  ],
-  "4911.T": [
-   {
-    "title": "資生堂－みずほが目標株価引き上げ 中計初年度の26/12期は売上成長で見劣り〔DZH 個別株情報〕(時事通信)",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOZ3ZMdzlRdVFua09CcG1aeU1ocEZvMTh1a0tfcU44NnZWbGFaZVRWdmkycHloMGw2QlNDMDBnTFRJRkJjZ2k5WXBYOU1qSzFmNXA3eG13czE5YlM4a2N0dF9KLUFnbk5IYlB0bTljN3RDZHl0dndGclFfZFlBRXdJV2pEYzNiNUk?oc=5",
-    "pubDate": "Wed, 25 Nov 2026 05:42:43 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
@@ -240,10 +241,10 @@
   ],
   "7832.T": [
    {
-    "title": "(株)バンダイナムコホールディングス【NCBDY】：株価・株式情報",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1HYWcwZTlQQXA1MElGSk9tVmVNV3RVMnhDMXotV2o5eElEMlUxZE5RelBnMDRRTWlOZXpseTNpalNzb2tJeVNsWlZ0WVFnRUFS?oc=5",
-    "pubDate": "Tue, 24 Nov 2026 03:41:11 GMT",
+    "title": "バンダイナムコホールディングス[7832]：（株）バンダイナムコホールディングスがPOPS（株）の株式を取得 2026年11月10日(適時開示) ：日経会社情報",
+    "source": "日本経済新聞",
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFB6OEpEX3hmbFhsNW5DZ2lONURoT1JxSFNFY0pmSkVPSVl0cFFCTlQ0a3VHVmpVUmJRTnltb042VEhVbFlHaEllY3E1VFRsQ0VUclRpZVVSbmZuMFc4QUE5dVBkWlA1Rk9jZHc?oc=5",
+    "pubDate": "Tue, 10 Nov 2026 08:00:00 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
@@ -346,13 +347,13 @@
   "source": "JPX 投資部門別売買状況（東証プライム・週次・金額ベース）"
  },
  "backtest": {
-  "annual": "+14.4%",
-  "benchmark": "+23.5%",
-  "sharpe": "0.38",
-  "dd": "-33.9%",
+  "annual": "+15.2%",
+  "benchmark": "+24.1%",
+  "sharpe": "0.40",
+  "dd": "-33.0%",
   "winrate": "56.5%",
   "months": "23ヶ月",
-  "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+23.5%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
+  "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+24.1%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
  },
  "overnight": {
   "generatedAt": "2026-11-26 06:26",
@@ -2946,6 +2947,16 @@
    "2025-04-30",
    "2025-02-03"
   ],
+  "4911.T": [
+   "2026-11-09",
+   "2026-08-04",
+   "2026-05-11",
+   "2026-02-09",
+   "2025-11-09",
+   "2025-08-05",
+   "2025-05-11",
+   "2025-02-09"
+  ],
   "4523.T": [
    "2026-11-10",
    "2026-08-03",
@@ -2965,16 +2976,6 @@
    "2025-07-30",
    "2025-04-28",
    "2025-01-30"
-  ],
-  "4911.T": [
-   "2026-11-09",
-   "2026-08-04",
-   "2026-05-11",
-   "2026-02-09",
-   "2025-11-09",
-   "2025-08-05",
-   "2025-05-11",
-   "2025-02-09"
   ],
   "2269.T": [
    "2026-11-11",
