@@ -149,82 +149,83 @@
   "6963.T": "2027-02-09"
  },
  "news_by_ticker": {
-  "6861.T": [
+  "4502.T": [
    {
-    "title": "キーエンス、11月20日の株主に株式5分割 代表的な値がさ株（ロイター）",
-    "source": "Yahoo!ニュース",
-    "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBueXJWTkhHTHEtaTlQSmpFWEJEZFpOWWU5TzFwMnhhNzY4MUxTRE9nOEJBaHhidmowZzhOVVlkN3JTWUVaSUpEdDRneEcyMWtCTjFxMUZiSWQ5X3NYd09ZaUZSa3BsQm1Jb012Znktc0UxcnA5MnJXMm9RbDdKdm8?oc=5",
-    "pubDate": "Sun, 22 Nov 2026 07:07:00 GMT",
-    "sentiment": "neu",
-    "theme": "その他"
-   }
-  ],
-  "7203.T": [
-   {
-    "title": "ジェイテクトが自社株TOB、トヨタが1,000万株の応募を予定 最大約190億円を投じる ｜Seizo Trend",
-    "source": "ビジネス+IT",
-    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBtMV9ULXJCT0MwbS1OOHpjSnpBbUhsRC1uZjdJQVlMcTBGV1h1VDlwQU9Zejl2MFU1aHhTRnB3bFpfQjNzT3B6dzhxMHV5YUk?oc=5",
-    "pubDate": "Thu, 26 Nov 2026 01:44:00 GMT",
-    "sentiment": "neu",
-    "theme": "その他"
-   }
-  ],
-  "6758.T": [
-   {
-    "title": "ソニーグループ(株)【6758】：決算情報",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5ydERnNjBuRmF5MHZsYUU3M2lHaVRBajFFRGhnSk1zZ3dyOENxbVllZklTTlFBVkZyZTdwLUZ2YWRqUjA4bGllUzBhZ3RweXNZSDQxVGw4T1dJQ2VIek11bQ?oc=5",
-    "pubDate": "Thu, 05 Nov 2026 08:00:00 GMT",
-    "sentiment": "neu",
-    "theme": "その他"
-   }
-  ],
-  "4063.T": [
-   {
-    "title": "信越化学工業(株)【4063】：株価チャート",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBla09rdjFKQmVxaVB4YXB4OW8xQWQtRkNSQnhaUWJSRkxKVEhqVWxMVlZxWkNKMzN3MnBLVUR5X3JMSEpQZjFzNXRXeFBMWWdydWdWbmZBZGtPUQ?oc=5",
-    "pubDate": "Fri, 20 Nov 2026 11:35:02 GMT",
-    "sentiment": "neu",
-    "theme": "その他"
-   }
-  ],
-  "6326.T": [
-   {
-    "title": "Did Strong Profit Growth Just Shift Kubota's (TSE:6326) Investment Narrative?",
-    "source": "Simply Wall St.",
-    "url": "https://finance.yahoo.com/markets/stocks/articles/did-strong-profit-growth-just-181042294.html",
-    "sentiment": "neu",
-    "theme": "その他"
-   }
-  ],
-  "8035.T": [
-   {
-    "title": "東京エレクトロン株が大幅高 半導体「スーパーサイクル」見方強まる",
+    "title": "武田薬品工業など医薬品株が安い AI株高でディフェンシブに売り",
     "source": "日本経済新聞",
-    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1BSk96aGFhdy1Vb2FHMl9ONm5WUG1OOU9OYWpxWnViWHFiakV2YzU0WnZsUDZ6b3VmNjFzWlZzMnVfNnpndEh6LUIyNlpQSUo4Q19zREtMRzRWZ1g2S0MtbTRfMjN5emZLbzhFMQ?oc=5",
-    "pubDate": "Mon, 02 Nov 2026 08:00:00 GMT",
-    "sentiment": "neu",
-    "theme": "半導体"
+    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9rUEdWVDB5SjJIZ1AxaHJIYXJlSTNQTnlTXzhxazdYVkQ3TzNvOHV0MFlac3hCcFpRUm5IYkZDNWxfLVV6RkMxNGhLelRxSmdCR2M5eVBxLWNaVGNfTHhzMmVaajhLQ01GZ3lLbQ?oc=5",
+    "pubDate": "Thu, 26 Nov 2026 02:31:50 GMT",
+    "sentiment": "neg",
+    "theme": "AI"
    }
   ],
-  "6501.T": [
+  "4911.T": [
    {
-    "title": "日立製作所の株価一時9.1%安 27年3月期純利益、市場予想下回る",
-    "source": "日本経済新聞",
-    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE80YWJENU1VaE1QV25MOGhZNUVmN0JobFVLNXplU1B5Yjh2MFUyVVMyMV9Ob2NxdVBwOGE3dno5bkFvNGpSaE5GX2VKbnNQZjEtRkFzVjM5cWVuVnJYb1czc2pwTmt4RlZhZkwxTw?oc=5",
-    "pubDate": "Thu, 29 Oct 2026 07:00:00 GMT",
+    "title": "(株)資生堂【SSDOY】：株価・株式情報",
+    "source": "Yahoo!ファイナンス",
+    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1JMXlkMzZyYktiTnF4TkFqOUpZS3dIZ2Y3YkNEbnlXa1VlT25OMEFsbXNDN2lWcnNqcWJGWkpTcVVDQ20zN2xGRk15ZXppMF9U?oc=5",
+    "pubDate": "Thu, 26 Nov 2026 16:58:03 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
   ],
-  "6902.T": [
+  "4523.T": [
    {
-    "title": "デンソー、発行済み株式の3.99%・2000億円を上限に自社株買い（ロイター）",
+    "title": "【アナリスト評価】エーザイ、レーティング強気を継続、目標株価6,000円に引上げ（米系大手証券）(アイフィス株予報)",
+    "source": "Yahoo!ファイナンス",
+    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNZmtXbzBhSVZvN3hMeHVWcjZEQVdfUTlZaXhDWUJOa2lYNmZDOWVQTlNJOW45ZzlnckZlV005ZGxYZG5oVmpmLTl6NjAyRklyZFUxUlR3eHFDRE14Wk1tbjNFdmRMNGFMcVI5N3VoZWZTcFVwc19aSVN3dFNlYms5VUhvaHU5VmM?oc=5",
+    "pubDate": "Tue, 24 Nov 2026 07:11:37 GMT",
+    "sentiment": "neu",
+    "theme": "その他"
+   }
+  ],
+  "4661.T": [
+   {
+    "title": "京成、OLC株の売却で特別利益506億円 特別損失116億円も計上",
+    "source": "日本経済新聞",
+    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4wa242NUN0UXNWaFc3VmVOVFBHZkJPZmVDZjh2Y3YwY0JlSFRXYzdQNjNKYjRnUkp6N1c0VWVEV1V2ZmM1VDdZeHJoSzV6dVZ0Z0dWNGhMblE5NWNpU2pTZTNQSmZlMGd2MjRfYw?oc=5",
+    "pubDate": "Wed, 25 Nov 2026 10:24:53 GMT",
+    "sentiment": "neu",
+    "theme": "その他"
+   }
+  ],
+  "7832.T": [
+   {
+    "title": "バンダイナムコホールディングス[7832]：（株）バンダイナムコホールディングスがPOPS（株）の株式を取得 2026年11月10日(適時開示) ：日経会社情報",
+    "source": "日本経済新聞",
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFB6OEpEX3hmbFhsNW5DZ2lONURoT1JxSFNFY0pmSkVPSVl0cFFCTlQ0a3VHVmpVUmJRTnltb042VEhVbFlHaEllY3E1VFRsQ0VUclRpZVVSbmZuMFc4QUE5dVBkWlA1Rk9jZHc?oc=5",
+    "pubDate": "Tue, 10 Nov 2026 08:00:00 GMT",
+    "sentiment": "neu",
+    "theme": "その他"
+   }
+  ],
+  "2269.T": [
+   {
+    "title": "明治HD【2269】利益予想据え置きでもなぜ株価「3割高」？ 総還元性向111％と中国事業譲渡の先に待つ、見逃せない“焦点”",
     "source": "Yahoo!ニュース",
-    "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBZS0FoSHhGa3hsaEFRMDBFcDRMYTFHQlUzazlwN3BUamFBNS1xU0p3c1p6cURWMS1ScXpVWHF5OVdOWlpuRlpHS1piVE5fRUN2ZG10X3gxcFJGX194ODctWGgxZXZ0LUJnMzBtbFI3bEE3cjc4WnlSa1ZDaTlscmM?oc=5",
-    "pubDate": "Sun, 22 Nov 2026 07:15:00 GMT",
-    "sentiment": "pos",
+    "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9WS3hPczFHcUctTzBVbXhkRTJqcTJjZklFbmdsZWFrcnhMNTltbGdZUlNGWUpqYUVwNkc1QlNEZHlsSldTdzJZNFVRSTBnRjYzeHN6SWFBOXJwNVV1NEhndG9NNnpSdWFqLXI0WnAxMGRkSzdRSXRDTDdlWE1fSmc?oc=5",
+    "pubDate": "Thu, 26 Nov 2026 08:30:39 GMT",
+    "sentiment": "neu",
+    "theme": "その他"
+   }
+  ],
+  "4307.T": [
+   {
+    "title": "【アナリスト評価】野村総合研究所、レーティング強気を継続、目標株価7,000円に引上げ（米系大手証券）(アイフィス株予報)",
+    "source": "Yahoo!ファイナンス",
+    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPdjlickd1cU5WaU1JRmFLQmhFSktfYThZT0g4b0FsOTAtWjlLRUJ1NFJhLUdxeFhuWnh1OUpHclNObDFoa1E4WnRuQmRuWDhhQWlsTm1HVjZIc3dlQ3lBZzM4UHhmanZOam9tcUlCMGF4NkpRQVFDdklkTzdRN09yWTVZT0hURXM?oc=5",
+    "pubDate": "Wed, 25 Nov 2026 11:47:14 GMT",
+    "sentiment": "neu",
+    "theme": "その他"
+   }
+  ],
+  "4452.T": [
+   {
+    "title": "花王(株)【KAOOY】：株価・株式情報",
+    "source": "Yahoo!ファイナンス",
+    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE51V05IR1kyZVpHYnJoQVRJWmZyNTZFTy00NkI1NmstYVY0V0xwXzZWaV9NY0FuS08yQ3RRYU5GLXdHM3VtMWVaZnhBS1NFTjl3?oc=5",
+    "pubDate": "Tue, 24 Nov 2026 12:30:06 GMT",
+    "sentiment": "neu",
     "theme": "その他"
    }
   ],
@@ -238,12 +239,12 @@
     "theme": "その他"
    }
   ],
-  "4543.T": [
+  "8630.T": [
    {
-    "title": "【アナリスト予想】テルモ、27年3月期経常予想。対前週3.6%下降。(アイフィス株予報)",
+    "title": "ＳＯＭＰＯホールディングス(株)【SMPNY】：株価・株式情報",
     "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQUkxXdUlTUjdhc2V6RVlKbDJuM0NwMzNBb2VNWkNtLWNPY3ROSkJ1T3Z1dDZOMldOT1lXRWxXaWQ3TEdFaFhNZVY2VzlFbk13MjhZSEFEaElncVRnVENieVV3QmpzdTZTUnV6QVFJNGUtQ2ZpZWkwYUtTZ2gwM1hjS1E0SndqSFU?oc=5",
-    "pubDate": "Thu, 26 Nov 2026 13:46:35 GMT",
+    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1aRmtGWHJrcVRjSC1XS3k4a08wbktCdmRkMTRoTGxzNnBXbHZlT1RlNTNTQk9HbU0wOC1xaUFjQ29FUENndW44akNkWUpiend3?oc=5",
+    "pubDate": "Thu, 26 Nov 2026 21:30:53 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
@@ -323,15 +324,15 @@
   {
    "theme": "その他",
    "mentions": 9,
-   "pos": 1,
+   "pos": 0,
    "neg": 0,
    "prevMentions": 9
   },
   {
-   "theme": "半導体",
+   "theme": "AI",
    "mentions": 1,
    "pos": 0,
-   "neg": 0,
+   "neg": 1,
    "prevMentions": 1
   }
  ],
@@ -2978,85 +2979,85 @@
   "basis": "夜間に確定した米S&P500・米半導体指数(SOX)・ドル円・CME日経先物・米国11業種・金利・原油・日本企業のADRなどの動きと、銘柄ごとの過去の感応度（19指標を同時に推定するリッジ回帰）を機械学習（勾配ブースティング）で組み合わせた確率。的中率はすべて、その時点より前のデータだけで学習した予測の答え合わせ（先読みなし）。寄付き後の値動きや数日先は予測力が確認できないため対象外。"
  },
  "past_earnings": {
-  "6861.T": [
+  "4502.T": [
+   "2026-10-28",
+   "2026-07-30",
+   "2026-05-13",
+   "2026-01-28",
+   "2025-10-29",
+   "2025-07-30",
+   "2025-05-07",
+   "2025-01-30"
+  ],
+  "4911.T": [
+   "2026-11-09",
+   "2026-08-04",
+   "2026-05-11",
+   "2026-02-09",
+   "2025-11-09",
+   "2025-08-05",
+   "2025-05-11",
+   "2025-02-09"
+  ],
+  "4523.T": [
+   "2026-11-10",
+   "2026-08-03",
+   "2026-05-15",
+   "2026-02-09",
+   "2025-11-04",
+   "2025-08-04",
+   "2025-05-14",
+   "2025-02-06"
+  ],
+  "4661.T": [
    "2026-10-29",
-   "2026-07-28",
+   "2026-07-29",
+   "2026-04-28",
+   "2026-01-29",
+   "2025-10-30",
+   "2025-07-30",
+   "2025-04-28",
+   "2025-01-30"
+  ],
+  "7832.T": [
+   "2026-11-09",
+   "2026-08-05",
+   "2026-02-04",
+   "2025-11-05",
+   "2025-08-04",
+   "2025-05-07",
+   "2025-02-04",
+   "2024-11-05"
+  ],
+  "2269.T": [
+   "2026-11-11",
+   "2026-08-04",
+   "2026-05-14",
+   "2026-02-12",
+   "2025-11-12",
+   "2025-08-05",
+   "2025-05-08",
+   "2025-02-10"
+  ],
+  "4307.T": [
+   "2026-10-28",
+   "2026-07-29",
    "2026-04-24",
    "2026-01-29",
    "2025-10-29",
-   "2025-07-29",
-   "2025-04-25",
+   "2025-07-28",
+   "2025-04-24",
    "2025-01-30"
   ],
-  "7203.T": [
+  "4452.T": [
    "2026-11-04",
-   "2026-08-04",
-   "2026-05-08",
-   "2026-02-06",
+   "2026-08-05",
+   "2026-05-12",
+   "2026-02-05",
    "2025-11-05",
    "2025-08-06",
    "2025-05-08",
-   "2025-02-04"
-  ],
-  "6758.T": [
-   "2026-11-05",
-   "2026-07-30",
-   "2026-05-07",
-   "2026-02-04",
-   "2025-11-10",
-   "2025-08-06",
-   "2025-05-13",
-   "2025-02-12"
-  ],
-  "4063.T": [
-   "2026-10-27",
-   "2026-07-24",
-   "2026-04-28",
-   "2026-01-27",
-   "2025-10-24",
-   "2025-07-23",
-   "2025-04-25",
-   "2025-01-28"
-  ],
-  "6326.T": [
-   "2026-11-08",
-   "2026-08-04",
-   "2026-05-08",
-   "2026-02-11",
-   "2025-11-06",
-   "2025-08-05",
-   "2025-05-08",
-   "2025-02-12"
-  ],
-  "8035.T": [
-   "2026-10-29",
-   "2026-07-30",
-   "2026-04-29",
-   "2026-02-06",
-   "2025-10-31",
-   "2025-07-31",
-   "2025-04-30",
    "2025-02-06"
-  ],
-  "6501.T": [
-   "2026-10-28",
-   "2026-07-29",
-   "2026-04-27",
-   "2026-01-28",
-   "2025-10-30",
-   "2025-07-31",
-   "2025-04-27",
-   "2025-01-31"
-  ],
-  "6902.T": [
-   "2026-10-28",
-   "2026-07-30",
-   "2026-04-27",
-   "2026-02-02",
-   "2025-10-30",
-   "2025-07-30",
-   "2025-04-24",
-   "2025-01-30"
   ],
   "5108.T": [
    "2026-11-12",
@@ -3068,15 +3069,15 @@
    "2025-05-15",
    "2025-02-17"
   ],
-  "4543.T": [
-   "2026-11-12",
-   "2026-08-06",
-   "2026-05-15",
+  "8630.T": [
+   "2026-11-18",
+   "2026-08-14",
+   "2026-05-20",
    "2026-02-13",
-   "2025-11-12",
-   "2025-08-07",
-   "2025-05-14",
-   "2025-02-13"
+   "2024-02-13",
+   "2023-11-17",
+   "2023-08-09",
+   "2023-05-19"
   ]
  }
 }
