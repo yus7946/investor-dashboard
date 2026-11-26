@@ -159,16 +159,6 @@
     "theme": "その他"
    }
   ],
-  "9201.T": [
-   {
-    "title": "日本航空（株）第１回社債型種類株式【92015】：株価・株式情報",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1wM1BIWUdEZEZHLV9wRmxFN3Q5akZVTzFSZXhhQTlrLWs5QnlBN1phSjBUY2hyVG9nSnA3NFdJTm9rU241aDR0SjFKVVNfR1BteEpV?oc=5",
-    "pubDate": "Wed, 25 Nov 2026 17:34:25 GMT",
-    "sentiment": "neu",
-    "theme": "その他"
-   }
-  ],
   "4502.T": [
    {
     "title": "武田薬品工業(株)【TAK】：株価・株式情報",
@@ -179,22 +169,21 @@
     "theme": "その他"
    }
   ],
-  "4661.T": [
+  "9201.T": [
    {
-    "title": "京成、OLC株の売却で特別利益506億円 特別損失116億円も計上",
-    "source": "日本経済新聞",
-    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4wa242NUN0UXNWaFc3VmVOVFBHZkJPZmVDZjh2Y3YwY0JlSFRXYzdQNjNKYjRnUkp6N1c0VWVEV1V2ZmM1VDdZeHJoSzV6dVZ0Z0dWNGhMblE5NWNpU2pTZTNQSmZlMGd2MjRfYw?oc=5",
-    "pubDate": "Wed, 25 Nov 2026 10:24:53 GMT",
+    "title": "日本航空（株）第１回社債型種類株式【92015】：株価・株式情報",
+    "source": "Yahoo!ファイナンス",
+    "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1wM1BIWUdEZEZHLV9wRmxFN3Q5akZVTzFSZXhhQTlrLWs5QnlBN1phSjBUY2hyVG9nSnA3NFdJTm9rU241aDR0SjFKVVNfR1BteEpV?oc=5",
+    "pubDate": "Wed, 25 Nov 2026 17:34:25 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
   ],
   "9202.T": [
    {
-    "title": "ＡＮＡホールディングス(株)【ALNPY】：株価・株式情報",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9TdHA0NUNORG9qbGZCUm1tQlhqMHdvTjFCOWJTaHlIU25weTE2YjFxTnZZRnBzcVRZNkF0c0c1Rndud3kwMzRJblVuV2RYV2Ex?oc=5",
-    "pubDate": "Sun, 22 Nov 2026 20:35:09 GMT",
+    "title": "Half Year Results Change The Bull Case For ANA Holdings Stock (TSE:9202)?",
+    "source": "Simply Wall St.",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/half-results-change-bull-case-091808798.html",
     "sentiment": "neu",
     "theme": "その他"
    }
@@ -209,12 +198,22 @@
     "theme": "その他"
    }
   ],
-  "2670.T": [
+  "4661.T": [
    {
-    "title": "ABCマート株が年初来高値圏 成長モデルの「履き替え」問われる - 日経ヴェリタス",
+    "title": "京成、OLC株の売却で特別利益506億円 特別損失116億円も計上",
     "source": "日本経済新聞",
-    "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE8tRlkyeTVsWS1GVU5nSG1kNXZ5MlA0bU9XNW5TMDRNbmlXb2xWdHJfV1haY2xfbERpalVoREZNeFRkaDc2U2tLSXZWaHRfZlB2eHJETEZwSTlIZ0xIeU1zX2o3X0JHTmlVXy1OYkZWcmxIRXhjaFhVYjNsbC0tUQ?oc=5",
-    "pubDate": "Thu, 29 Oct 2026 07:00:00 GMT",
+    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4wa242NUN0UXNWaFc3VmVOVFBHZkJPZmVDZjh2Y3YwY0JlSFRXYzdQNjNKYjRnUkp6N1c0VWVEV1V2ZmM1VDdZeHJoSzV6dVZ0Z0dWNGhMblE5NWNpU2pTZTNQSmZlMGd2MjRfYw?oc=5",
+    "pubDate": "Wed, 25 Nov 2026 10:24:53 GMT",
+    "sentiment": "neu",
+    "theme": "その他"
+   }
+  ],
+  "4911.T": [
+   {
+    "title": "資生堂－みずほが目標株価引き上げ 中計初年度の26/12期は売上成長で見劣り〔DZH 個別株情報〕(時事通信)",
+    "source": "Yahoo!ファイナンス",
+    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOZ3ZMdzlRdVFua09CcG1aeU1ocEZvMTh1a0tfcU44NnZWbGFaZVRWdmkycHloMGw2QlNDMDBnTFRJRkJjZ2k5WXBYOU1qSzFmNXA3eG13czE5YlM4a2N0dF9KLUFnbk5IYlB0bTljN3RDZHl0dndGclFfZFlBRXdJV2pEYzNiNUk?oc=5",
+    "pubDate": "Wed, 25 Nov 2026 05:42:43 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
@@ -229,22 +228,22 @@
     "theme": "その他"
    }
   ],
+  "2670.T": [
+   {
+    "title": "ABCマート株が年初来高値圏 成長モデルの「履き替え」問われる - 日経ヴェリタス",
+    "source": "日本経済新聞",
+    "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE8tRlkyeTVsWS1GVU5nSG1kNXZ5MlA0bU9XNW5TMDRNbmlXb2xWdHJfV1haY2xfbERpalVoREZNeFRkaDc2U2tLSXZWaHRfZlB2eHJETEZwSTlIZ0xIeU1zX2o3X0JHTmlVXy1OYkZWcmxIRXhjaFhVYjNsbC0tUQ?oc=5",
+    "pubDate": "Thu, 29 Oct 2026 07:00:00 GMT",
+    "sentiment": "neu",
+    "theme": "その他"
+   }
+  ],
   "7832.T": [
    {
     "title": "(株)バンダイナムコホールディングス【NCBDY】：株価・株式情報",
     "source": "Yahoo!ファイナンス",
     "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1HYWcwZTlQQXA1MElGSk9tVmVNV3RVMnhDMXotV2o5eElEMlUxZE5RelBnMDRRTWlOZXpseTNpalNzb2tJeVNsWlZ0WVFnRUFS?oc=5",
     "pubDate": "Tue, 24 Nov 2026 03:41:11 GMT",
-    "sentiment": "neu",
-    "theme": "その他"
-   }
-  ],
-  "4911.T": [
-   {
-    "title": "資生堂－みずほが目標株価引き上げ 中計初年度の26/12期は売上成長で見劣り〔DZH 個別株情報〕(時事通信)",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOZ3ZMdzlRdVFua09CcG1aeU1ocEZvMTh1a0tfcU44NnZWbGFaZVRWdmkycHloMGw2QlNDMDBnTFRJRkJjZ2k5WXBYOU1qSzFmNXA3eG13czE5YlM4a2N0dF9KLUFnbk5IYlB0bTljN3RDZHl0dndGclFfZFlBRXdJV2pEYzNiNUk?oc=5",
-    "pubDate": "Wed, 25 Nov 2026 05:42:43 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
@@ -2917,16 +2916,6 @@
    "2023-10-12",
    "2023-07-13"
   ],
-  "9201.T": [
-   "2026-11-01",
-   "2026-08-02",
-   "2026-04-29",
-   "2026-02-02",
-   "2025-10-29",
-   "2025-07-29",
-   "2025-05-01",
-   "2025-02-04"
-  ],
   "4502.T": [
    "2026-10-28",
    "2026-07-30",
@@ -2937,15 +2926,15 @@
    "2025-05-07",
    "2025-01-30"
   ],
-  "4661.T": [
-   "2026-10-29",
-   "2026-07-29",
-   "2026-04-28",
-   "2026-01-29",
-   "2025-10-30",
-   "2025-07-30",
-   "2025-04-28",
-   "2025-01-30"
+  "9201.T": [
+   "2026-11-01",
+   "2026-08-02",
+   "2026-04-29",
+   "2026-02-02",
+   "2025-10-29",
+   "2025-07-29",
+   "2025-05-01",
+   "2025-02-04"
   ],
   "9202.T": [
    "2026-10-28",
@@ -2967,15 +2956,25 @@
    "2025-05-14",
    "2025-02-06"
   ],
-  "2670.T": [
-   "2026-10-07",
-   "2026-07-08",
-   "2026-04-08",
-   "2026-01-07",
-   "2025-10-08",
-   "2025-07-08",
-   "2025-04-09",
-   "2025-01-08"
+  "4661.T": [
+   "2026-10-29",
+   "2026-07-29",
+   "2026-04-28",
+   "2026-01-29",
+   "2025-10-30",
+   "2025-07-30",
+   "2025-04-28",
+   "2025-01-30"
+  ],
+  "4911.T": [
+   "2026-11-09",
+   "2026-08-04",
+   "2026-05-11",
+   "2026-02-09",
+   "2025-11-09",
+   "2025-08-05",
+   "2025-05-11",
+   "2025-02-09"
   ],
   "2269.T": [
    "2026-11-11",
@@ -2987,6 +2986,16 @@
    "2025-05-08",
    "2025-02-10"
   ],
+  "2670.T": [
+   "2026-10-07",
+   "2026-07-08",
+   "2026-04-08",
+   "2026-01-07",
+   "2025-10-08",
+   "2025-07-08",
+   "2025-04-09",
+   "2025-01-08"
+  ],
   "7832.T": [
    "2026-11-09",
    "2026-08-05",
@@ -2996,16 +3005,6 @@
    "2025-05-07",
    "2025-02-04",
    "2024-11-05"
-  ],
-  "4911.T": [
-   "2026-11-09",
-   "2026-08-04",
-   "2026-05-11",
-   "2026-02-09",
-   "2025-11-09",
-   "2025-08-05",
-   "2025-05-11",
-   "2025-02-09"
   ]
  }
 }

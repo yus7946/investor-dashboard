@@ -25350,6 +25350,78 @@
       "status": "waiting",
       "enteredDate": null,
       "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-25",
+      "ticker": "4502.T",
+      "name": "武田薬品工業",
+      "basePrice": 7365.0,
+      "entry": 7318,
+      "target": 7506,
+      "stop": 7177,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-25",
+      "ticker": "9201.T",
+      "name": "日本航空",
+      "basePrice": 3613.0,
+      "entry": 3586,
+      "target": 3693,
+      "stop": 3506,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-25",
+      "ticker": "4523.T",
+      "name": "エーザイ",
+      "basePrice": 5631.0,
+      "entry": 5581,
+      "target": 5780,
+      "stop": 5431,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-25",
+      "ticker": "4661.T",
+      "name": "オリエンタルランド",
+      "basePrice": 3966.0,
+      "entry": 3930,
+      "target": 4075,
+      "stop": 3821,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-25",
+      "ticker": "2269.T",
+      "name": "明治HD",
+      "basePrice": 4827.0,
+      "entry": 4796,
+      "target": 4918,
+      "stop": 4704,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
+    },
+    {
+      "baseDate": "2026-11-25",
+      "ticker": "7832.T",
+      "name": "バンダイナムコHD",
+      "basePrice": 7410.0,
+      "entry": 7335,
+      "target": 7635,
+      "stop": 7110,
+      "status": "waiting",
+      "enteredDate": null,
+      "resolvedDate": null
     }
   ]
 }

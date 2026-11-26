@@ -1,6 +1,6 @@
 {
-  "updated": "2026年11月26日 08:04",
-  "updatedAtMs": 1795647866117,
+  "updated": "2026年11月26日 09:17",
+  "updatedAtMs": 1795652248792,
   "updateMode": "full",
   "fetched": 163,
   "universeTotal": 166,
@@ -32,11 +32,11 @@
   "marketOutlook": {
     "spxChangePct": -0.25,
     "spxDate": "2026-11-25",
-    "usdjpy": 159.16,
-    "usdjpyChangePct": 0.09,
+    "usdjpy": 159.14,
+    "usdjpyChangePct": -0.08,
     "condition": "米S&P500が直近下落",
-    "topixUpRate": 43.6,
-    "n": 218,
+    "topixUpRate": 43.4,
+    "n": 219,
     "regime": "neutral",
     "basis": "過去2年で「米国市場が上昇/下落した翌営業日に東京(TOPIX ETF)が上昇した割合」を実際に集計。統計的傾向であり将来を保証しません。出典: Yahoo Finance価格データ。"
   },
@@ -2592,16 +2592,15 @@
     "basis": "夜間に確定した米S&P500・米半導体指数(SOX)・ドル円・CME日経先物・米国11業種・金利・原油・日本企業のADRなどの動きと、銘柄ごとの過去の感応度（19指標を同時に推定するリッジ回帰）を機械学習（勾配ブースティング）で組み合わせた確率。的中率はすべて、その時点より前のデータだけで学習した予測の答え合わせ（先読みなし）。寄付き後の値動きや数日先は予測力が確認できないため対象外。"
   },
   "marketReport": {
-    "generatedAt": "2026-11-26 08:04",
+    "generatedAt": "2026-11-26 09:17",
     "regime": {
-      "n225Vol": 38.9,
+      "n225Vol": 39.3,
       "n225VolTopPct": 5,
       "vix": 28.3,
       "vixTopPct": 8,
       "vixDate": "2026-11-25",
-      "n225FromHigh": -17.0,
+      "n225FromHigh": -18.6,
       "n225Daily10": [
-        2.9,
         1.3,
         -0.7,
         0.5,
@@ -2610,7 +2609,8 @@
         0.3,
         0.7,
         -5.1,
-        3.9
+        3.9,
+        -1.9
       ]
     },
     "event": {
@@ -2814,12 +2814,12 @@
           "label": "ドル円",
           "group": "fx",
           "base": 157.91,
-          "last": 159.16,
+          "last": 159.14,
           "react": 0.35,
-          "since": 0.79,
-          "day": 0.09,
+          "since": 0.78,
+          "day": -0.08,
           "unit": "%",
-          "lastDate": "2026-11-25"
+          "lastDate": "2026-11-26"
         },
         {
           "symbol": "^N225",
@@ -3722,7 +3722,7 @@
       "rank": 1,
       "ticker": "6532.T",
       "name": "ベイカレント・コンサルティング",
-      "score": 0.714,
+      "score": 0.706,
       "f": 6,
       "per": 47.1,
       "pbr": 19.13,
@@ -3730,24 +3730,23 @@
       "value": 0.008,
       "quality": 0.991,
       "momentum": 1.0,
-      "smart": 0.903,
+      "smart": 0.876,
       "smartMoney": {
-        "score": 0.598,
+        "score": 0.57,
         "label": "買い集めの兆候",
         "tone": "pos",
-        "cmf": 0.332,
-        "mfi": 57.2,
-        "obvSlope": 0.14,
-        "vwapDevPct": 9.7,
+        "cmf": 0.333,
+        "mfi": 58.0,
+        "obvSlope": 0.1,
+        "vwapDevPct": 8.9,
         "factors": [
           "安値圏でも買われている（CMFプラス）",
-          "直近平均コスト(VWAP)を上回って推移",
-          "直近5日は買い方向の出来高が優勢"
+          "直近平均コスト(VWAP)を上回って推移"
         ]
       },
       "smartAdjusted": null,
       "signal": "強い買い",
-      "rsi": 64.8,
+      "rsi": 60.3,
       "conf": "高",
       "strategy": [
         "swing"
@@ -3758,29 +3757,29 @@
       "regime_adjusted": false,
       "forecast": {
         "price": 13315.0,
-        "rangeLow": 12933,
-        "rangeHigh": 13697,
-        "rangeLow2": 12551,
-        "rangeHigh2": 14079,
-        "volDPct": 2.87,
+        "rangeLow": 12927,
+        "rangeHigh": 13703,
+        "rangeLow2": 12538,
+        "rangeHigh2": 14092,
+        "volDPct": 2.92,
         "calibrated": true,
         "plan": {
-          "entry": 13124,
-          "target": 13888,
-          "stop": 12551,
-          "rr": 1.33,
+          "entry": 13121,
+          "target": 13898,
+          "stop": 12539,
+          "rr": 1.34,
           "hi3m": 13315,
           "lo3m": 7215,
           "basis": "1日の実績振れ幅σ=2.9%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値13,315円 / 安値7,215円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
         },
         "cond": {
-          "upRate": 43.8,
-          "n": 185,
+          "upRate": 43.5,
+          "n": 186,
           "condition": "RSI中立圏×5日上昇局面",
           "note": null
         },
         "factors": [],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.90倍に自動補正済み。目標カバー率は約75%）"
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.91倍に自動補正済み。目標カバー率は約75%）"
       },
       "impact": {
         "price": 13315.0,
@@ -3804,12 +3803,12 @@
         "supports": [
           "機関の買い集め兆候"
         ],
-        "stopPct": 4.37,
-        "rr": 1.33
+        "stopPct": 4.44,
+        "rr": 1.34
       },
       "earnings": {
         "date": "2027-01-14",
-        "daysTo": 36,
+        "daysTo": 35,
         "isToday": false,
         "isSoon": false,
         "passed": false,
@@ -3831,25 +3830,142 @@
     },
     {
       "rank": 2,
+      "ticker": "4502.T",
+      "name": "武田薬品工業",
+      "score": 0.69,
+      "f": 7,
+      "per": 316.4,
+      "pbr": 1.59,
+      "roe": 0.6,
+      "value": 0.109,
+      "quality": 0.979,
+      "momentum": 0.562,
+      "smart": 1.0,
+      "smartMoney": {
+        "score": 0.771,
+        "label": "買い集めの兆候",
+        "tone": "pos",
+        "cmf": 0.199,
+        "mfi": 80.4,
+        "obvSlope": 0.33,
+        "vwapDevPct": 8.1,
+        "factors": [
+          "安値圏でも買われている（CMFプラス）",
+          "上昇日に出来高が集中（OBV上向き）",
+          "直近平均コスト(VWAP)を上回って推移",
+          "直近5日は買い方向の出来高が優勢"
+        ]
+      },
+      "smartAdjusted": null,
+      "signal": "強い買い",
+      "rsi": 66.7,
+      "conf": "高",
+      "strategy": [
+        "dividend"
+      ],
+      "dividend_yield": 2.9,
+      "volatility": 0.2628,
+      "short_ratio": null,
+      "regime_adjusted": false,
+      "forecast": {
+        "price": 7365.0,
+        "rangeLow": 7271,
+        "rangeHigh": 7459,
+        "rangeLow2": 7177,
+        "rangeHigh2": 7553,
+        "volDPct": 1.28,
+        "calibrated": true,
+        "plan": {
+          "entry": 7318,
+          "target": 7506,
+          "stop": 7177,
+          "rr": 1.33,
+          "hi3m": 7365,
+          "lo3m": 5518,
+          "basis": "1日の実績振れ幅σ=1.3%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値7,365円 / 安値5,518円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
+        "cond": {
+          "upRate": 53.6,
+          "n": 196,
+          "condition": "RSI中立圏×5日上昇局面",
+          "note": null
+        },
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.91倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "impact": {
+        "price": 7365.0,
+        "normalYen": 103,
+        "normalPct": 1.4,
+        "bigVol": null,
+        "earnings": {
+          "n": 8,
+          "avgAbsPct": 1.6,
+          "maxAbsPct": 3.6,
+          "avgYen": 118,
+          "maxYen": 265,
+          "upCount": 5,
+          "recentPct": [
+            2.6,
+            -3.6,
+            1.2
+          ]
+        },
+        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
+      },
+      "risk": {
+        "safety": 94,
+        "level": "低",
+        "penalties": [],
+        "supports": [
+          "機関の買い集め兆候"
+        ],
+        "stopPct": 1.93,
+        "rr": 1.33
+      },
+      "earnings": {
+        "date": "2027-01-28",
+        "daysTo": 45,
+        "isToday": false,
+        "isSoon": false,
+        "passed": false,
+        "revGrowthPct": 6.7,
+        "epsGrowthPct": null,
+        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
+      },
+      "yutai": null,
+      "news": [
+        {
+          "title": "武田薬品工業(株)【TAK】：株価・株式情報",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9TWDdnWS1Db1NhR09TY09pd3dsUTNtYVZlaGhPWE1oRldxS0JVNXZoMnAtWVkyeEE4b3BPRG5DQmJ4LTctaHY0ODZYOUtrdw?oc=5",
+          "pubDate": "Wed, 25 Nov 2026 15:22:05 GMT",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
+    },
+    {
+      "rank": 3,
       "ticker": "9201.T",
       "name": "日本航空",
-      "score": 0.684,
+      "score": 0.673,
       "f": 9,
       "per": 15.4,
       "pbr": 1.04,
       "roe": 8.3,
       "value": 0.179,
       "quality": 0.981,
-      "momentum": 0.5,
-      "smart": 1.0,
+      "momentum": 0.507,
+      "smart": 0.954,
       "smartMoney": {
-        "score": 0.748,
+        "score": 0.697,
         "label": "買い集めの兆候",
         "tone": "pos",
-        "cmf": 0.347,
-        "mfi": 78.6,
-        "obvSlope": 0.4,
-        "vwapDevPct": 8.1,
+        "cmf": 0.307,
+        "mfi": 76.2,
+        "obvSlope": 0.37,
+        "vwapDevPct": 7.5,
         "factors": [
           "安値圏でも買われている（CMFプラス）",
           "上昇日に出来高が集中（OBV上向き）",
@@ -3857,46 +3973,42 @@
         ]
       },
       "smartAdjusted": null,
-      "signal": "様子見",
-      "rsi": 71.8,
-      "conf": "低",
+      "signal": "強い買い",
+      "rsi": 62.2,
+      "conf": "高",
       "strategy": [
+        "swing",
         "dividend"
       ],
       "dividend_yield": 2.7,
-      "volatility": 0.2917,
+      "volatility": 0.2914,
       "short_ratio": null,
       "regime_adjusted": false,
       "forecast": {
         "price": 3613.0,
-        "rangeLow": 3560,
-        "rangeHigh": 3666,
-        "rangeLow2": 3507,
-        "rangeHigh2": 3719,
-        "volDPct": 1.46,
+        "rangeLow": 3559,
+        "rangeHigh": 3667,
+        "rangeLow2": 3506,
+        "rangeHigh2": 3720,
+        "volDPct": 1.49,
         "calibrated": true,
         "plan": {
-          "entry": 3587,
+          "entry": 3586,
           "target": 3693,
-          "stop": 3508,
+          "stop": 3506,
           "rr": 1.34,
           "hi3m": 3613,
           "lo3m": 2882,
           "basis": "1日の実績振れ幅σ=1.5%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値3,613円 / 安値2,882円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
         },
         "cond": {
-          "upRate": 54.8,
-          "n": 62,
-          "condition": "RSI70以上（買われすぎ圏）×5日上昇局面",
+          "upRate": 49.2,
+          "n": 181,
+          "condition": "RSI中立圏×5日上昇局面",
           "note": null
         },
-        "factors": [
-          {
-            "label": "RSI 71.8（買われすぎ圏・反落しやすい傾向）",
-            "dir": "-"
-          }
-        ],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.90倍に自動補正済み。目標カバー率は約75%）"
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.91倍に自動補正済み。目標カバー率は約75%）"
       },
       "impact": {
         "price": 3613.0,
@@ -3924,18 +4036,18 @@
         "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
-        "safety": 86,
+        "safety": 91,
         "level": "低",
         "penalties": [],
         "supports": [
           "機関の買い集め兆候"
         ],
-        "stopPct": 2.2,
+        "stopPct": 2.23,
         "rr": 1.34
       },
       "earnings": {
         "date": "2027-02-03",
-        "daysTo": 50,
+        "daysTo": 49,
         "isToday": false,
         "isSoon": false,
         "passed": false,
@@ -3956,26 +4068,26 @@
       ]
     },
     {
-      "rank": 3,
-      "ticker": "4502.T",
-      "name": "武田薬品工業",
-      "score": 0.679,
-      "f": 7,
-      "per": 316.4,
-      "pbr": 1.59,
-      "roe": 0.6,
-      "value": 0.109,
-      "quality": 0.979,
-      "momentum": 0.554,
-      "smart": 0.97,
+      "rank": 4,
+      "ticker": "9202.T",
+      "name": "ANAホールディングス",
+      "score": 0.659,
+      "f": 9,
+      "per": 11.0,
+      "pbr": 1.0,
+      "roe": 12.4,
+      "value": 0.191,
+      "quality": 0.982,
+      "momentum": 0.409,
+      "smart": 0.959,
       "smartMoney": {
-        "score": 0.701,
+        "score": 0.704,
         "label": "買い集めの兆候",
         "tone": "pos",
-        "cmf": 0.147,
-        "mfi": 80.3,
-        "obvSlope": 0.3,
-        "vwapDevPct": 8.9,
+        "cmf": 0.246,
+        "mfi": 52.3,
+        "obvSlope": 0.51,
+        "vwapDevPct": 4.0,
         "factors": [
           "安値圏でも買われている（CMFプラス）",
           "上昇日に出来高が集中（OBV上向き）",
@@ -3984,250 +4096,8 @@
         ]
       },
       "smartAdjusted": null,
-      "signal": "様子見",
-      "rsi": 72.5,
-      "conf": "低",
-      "strategy": [
-        "dividend"
-      ],
-      "dividend_yield": 2.9,
-      "volatility": 0.2633,
-      "short_ratio": null,
-      "regime_adjusted": false,
-      "forecast": {
-        "price": 7365.0,
-        "rangeLow": 7272,
-        "rangeHigh": 7458,
-        "rangeLow2": 7180,
-        "rangeHigh2": 7550,
-        "volDPct": 1.26,
-        "calibrated": true,
-        "plan": {
-          "entry": 7319,
-          "target": 7504,
-          "stop": 7180,
-          "rr": 1.33,
-          "hi3m": 7365,
-          "lo3m": 5518,
-          "basis": "1日の実績振れ幅σ=1.3%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値7,365円 / 安値5,518円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
-        },
-        "cond": {
-          "upRate": 51.2,
-          "n": 84,
-          "condition": "RSI70以上（買われすぎ圏）×5日上昇局面",
-          "note": null
-        },
-        "factors": [
-          {
-            "label": "RSI 72.5（買われすぎ圏・反落しやすい傾向）",
-            "dir": "-"
-          }
-        ],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.90倍に自動補正済み。目標カバー率は約75%）"
-      },
-      "impact": {
-        "price": 7365.0,
-        "normalYen": 103,
-        "normalPct": 1.4,
-        "bigVol": null,
-        "earnings": {
-          "n": 8,
-          "avgAbsPct": 1.6,
-          "maxAbsPct": 3.6,
-          "avgYen": 118,
-          "maxYen": 265,
-          "upCount": 5,
-          "recentPct": [
-            2.6,
-            -3.6,
-            1.2
-          ]
-        },
-        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
-      },
-      "risk": {
-        "safety": 88,
-        "level": "低",
-        "penalties": [],
-        "supports": [
-          "機関の買い集め兆候"
-        ],
-        "stopPct": 1.9,
-        "rr": 1.33
-      },
-      "earnings": {
-        "date": "2027-01-28",
-        "daysTo": 46,
-        "isToday": false,
-        "isSoon": false,
-        "passed": false,
-        "revGrowthPct": 6.7,
-        "epsGrowthPct": null,
-        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
-      },
-      "yutai": null,
-      "news": [
-        {
-          "title": "武田薬品工業(株)【TAK】：株価・株式情報",
-          "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9TWDdnWS1Db1NhR09TY09pd3dsUTNtYVZlaGhPWE1oRldxS0JVNXZoMnAtWVkyeEE4b3BPRG5DQmJ4LTctaHY0ODZYOUtrdw?oc=5",
-          "pubDate": "Wed, 25 Nov 2026 15:22:05 GMT",
-          "sentiment": "neu",
-          "theme": "その他"
-        }
-      ]
-    },
-    {
-      "rank": 4,
-      "ticker": "4661.T",
-      "name": "オリエンタルランド",
-      "score": 0.661,
-      "f": 6,
-      "per": 48.0,
-      "pbr": 5.66,
-      "roe": 12.4,
-      "value": 0.03,
-      "quality": 0.982,
-      "momentum": 0.755,
-      "smart": 0.845,
-      "smartMoney": {
-        "score": 0.508,
-        "label": "買い集めの兆候",
-        "tone": "pos",
-        "cmf": 0.186,
-        "mfi": 60.5,
-        "obvSlope": 0.35,
-        "vwapDevPct": 9.2,
-        "factors": [
-          "安値圏でも買われている（CMFプラス）",
-          "上昇日に出来高が集中（OBV上向き）",
-          "直近平均コスト(VWAP)を上回って推移"
-        ]
-      },
-      "smartAdjusted": null,
-      "signal": "様子見",
-      "rsi": 69.0,
-      "conf": "低",
-      "strategy": [
-        "swing"
-      ],
-      "dividend_yield": 0.5,
-      "volatility": 0.367,
-      "short_ratio": null,
-      "regime_adjusted": false,
-      "forecast": {
-        "price": 3966.0,
-        "rangeLow": 3895,
-        "rangeHigh": 4037,
-        "rangeLow2": 3824,
-        "rangeHigh2": 4108,
-        "volDPct": 1.8,
-        "calibrated": true,
-        "plan": {
-          "entry": 3930,
-          "target": 4072,
-          "stop": 3823,
-          "rr": 1.33,
-          "hi3m": 3966,
-          "lo3m": 2816,
-          "basis": "1日の実績振れ幅σ=1.8%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値3,966円 / 安値2,816円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
-        },
-        "cond": {
-          "upRate": 50.0,
-          "n": 188,
-          "condition": "RSI中立圏×5日上昇局面",
-          "note": null
-        },
-        "factors": [],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.90倍に自動補正済み。目標カバー率は約75%）"
-      },
-      "impact": {
-        "price": 3966.0,
-        "normalYen": 79,
-        "normalPct": 2.0,
-        "bigVol": {
-          "n": 4,
-          "avgAbsPct": 5.7,
-          "maxAbsPct": 8.5,
-          "avgYen": 226
-        },
-        "earnings": {
-          "n": 8,
-          "avgAbsPct": 5.5,
-          "maxAbsPct": 10.1,
-          "avgYen": 218,
-          "maxYen": 401,
-          "upCount": 2,
-          "recentPct": [
-            8.5,
-            -3.6,
-            -10.1
-          ]
-        },
-        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
-      },
-      "risk": {
-        "safety": 82,
-        "level": "低",
-        "penalties": [],
-        "supports": [
-          "機関の買い集め兆候"
-        ],
-        "stopPct": 2.72,
-        "rr": 1.33
-      },
-      "earnings": {
-        "date": "2027-01-28",
-        "daysTo": 46,
-        "isToday": false,
-        "isSoon": false,
-        "passed": false,
-        "revGrowthPct": 10.2,
-        "epsGrowthPct": -1.2,
-        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
-      },
-      "yutai": null,
-      "news": [
-        {
-          "title": "京成、OLC株の売却で特別利益506億円 特別損失116億円も計上",
-          "source": "日本経済新聞",
-          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4wa242NUN0UXNWaFc3VmVOVFBHZkJPZmVDZjh2Y3YwY0JlSFRXYzdQNjNKYjRnUkp6N1c0VWVEV1V2ZmM1VDdZeHJoSzV6dVZ0Z0dWNGhMblE5NWNpU2pTZTNQSmZlMGd2MjRfYw?oc=5",
-          "pubDate": "Wed, 25 Nov 2026 10:24:53 GMT",
-          "sentiment": "neu",
-          "theme": "その他"
-        }
-      ]
-    },
-    {
-      "rank": 5,
-      "ticker": "9202.T",
-      "name": "ANAホールディングス",
-      "score": 0.652,
-      "f": 9,
-      "per": 11.0,
-      "pbr": 1.0,
-      "roe": 12.4,
-      "value": 0.191,
-      "quality": 0.982,
-      "momentum": 0.409,
-      "smart": 0.936,
-      "smartMoney": {
-        "score": 0.649,
-        "label": "買い集めの兆候",
-        "tone": "pos",
-        "cmf": 0.383,
-        "mfi": 55.7,
-        "obvSlope": 0.49,
-        "vwapDevPct": 4.6,
-        "factors": [
-          "安値圏でも買われている（CMFプラス）",
-          "上昇日に出来高が集中（OBV上向き）",
-          "直近平均コスト(VWAP)を上回って推移"
-        ]
-      },
-      "smartAdjusted": null,
       "signal": "強い買い",
-      "rsi": 66.7,
+      "rsi": 54.3,
       "conf": "高",
       "strategy": [
         "swing"
@@ -4240,27 +4110,27 @@
         "price": 3350.0,
         "rangeLow": 3307,
         "rangeHigh": 3393,
-        "rangeLow2": 3265,
-        "rangeHigh2": 3435,
-        "volDPct": 1.27,
+        "rangeLow2": 3263,
+        "rangeHigh2": 3437,
+        "volDPct": 1.3,
         "calibrated": true,
         "plan": {
-          "entry": 3329,
-          "target": 3414,
-          "stop": 3265,
-          "rr": 1.33,
+          "entry": 3328,
+          "target": 3415,
+          "stop": 3263,
+          "rr": 1.34,
           "hi3m": 3363,
           "lo3m": 2844,
           "basis": "1日の実績振れ幅σ=1.3%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値3,363円 / 安値2,844円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
         },
         "cond": {
-          "upRate": 49.7,
-          "n": 189,
-          "condition": "RSI中立圏×5日下落局面",
+          "upRate": 46.0,
+          "n": 176,
+          "condition": "RSI中立圏×5日上昇局面",
           "note": null
         },
         "factors": [],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.90倍に自動補正済み。目標カバー率は約75%）"
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.91倍に自動補正済み。目標カバー率は約75%）"
       },
       "impact": {
         "price": 3350.0,
@@ -4294,12 +4164,12 @@
         "supports": [
           "機関の買い集め兆候"
         ],
-        "stopPct": 1.92,
-        "rr": 1.33
+        "stopPct": 1.95,
+        "rr": 1.34
       },
       "earnings": {
         "date": "2027-01-28",
-        "daysTo": 46,
+        "daysTo": 45,
         "isToday": false,
         "isSoon": false,
         "passed": false,
@@ -4310,79 +4180,77 @@
       "yutai": null,
       "news": [
         {
-          "title": "ＡＮＡホールディングス(株)【ALNPY】：株価・株式情報",
-          "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9TdHA0NUNORG9qbGZCUm1tQlhqMHdvTjFCOWJTaHlIU25weTE2YjFxTnZZRnBzcVRZNkF0c0c1Rndud3kwMzRJblVuV2RYV2Ex?oc=5",
-          "pubDate": "Sun, 22 Nov 2026 20:35:09 GMT",
+          "title": "Half Year Results Change The Bull Case For ANA Holdings Stock (TSE:9202)?",
+          "source": "Simply Wall St.",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/half-results-change-bull-case-091808798.html",
           "sentiment": "neu",
           "theme": "その他"
         }
       ]
     },
     {
-      "rank": 6,
+      "rank": 5,
       "ticker": "4523.T",
       "name": "エーザイ",
-      "score": 0.645,
+      "score": 0.653,
       "f": 7,
       "per": 34.4,
       "pbr": 1.77,
       "roe": 5.1,
       "value": 0.101,
       "quality": 0.98,
-      "momentum": 0.511,
-      "smart": 0.931,
+      "momentum": 0.541,
+      "smart": 0.93,
       "smartMoney": {
-        "score": 0.642,
+        "score": 0.657,
         "label": "買い集めの兆候",
         "tone": "pos",
-        "cmf": 0.192,
-        "mfi": 77.3,
-        "obvSlope": 0.22,
-        "vwapDevPct": 9.3,
+        "cmf": 0.228,
+        "mfi": 77.2,
+        "obvSlope": 0.17,
+        "vwapDevPct": 8.6,
         "factors": [
           "安値圏でも買われている（CMFプラス）",
-          "上昇日に出来高が集中（OBV上向き）",
-          "直近平均コスト(VWAP)を上回って推移",
-          "直近5日は買い方向の出来高が優勢"
+          "直近平均コスト(VWAP)を上回って推移"
         ]
       },
       "smartAdjusted": null,
-      "signal": "様子見",
-      "rsi": 69.0,
-      "conf": "低",
+      "signal": "強い買い",
+      "rsi": 62.4,
+      "conf": "高",
       "strategy": [
+        "swing",
         "dividend"
       ],
       "dividend_yield": 3.0,
-      "volatility": 0.3266,
+      "volatility": 0.321,
       "short_ratio": null,
       "regime_adjusted": false,
       "forecast": {
         "price": 5631.0,
-        "rangeLow": 5533,
-        "rangeHigh": 5729,
-        "rangeLow2": 5435,
-        "rangeHigh2": 5827,
-        "volDPct": 1.74,
+        "rangeLow": 5531,
+        "rangeHigh": 5731,
+        "rangeLow2": 5432,
+        "rangeHigh2": 5830,
+        "volDPct": 1.77,
         "calibrated": true,
         "plan": {
-          "entry": 5582,
-          "target": 5778,
-          "stop": 5435,
+          "entry": 5581,
+          "target": 5780,
+          "stop": 5431,
           "rr": 1.33,
           "hi3m": 5631,
           "lo3m": 4545,
-          "basis": "1日の実績振れ幅σ=1.7%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値5,631円 / 安値4,545円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+          "basis": "1日の実績振れ幅σ=1.8%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値5,631円 / 安値4,545円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
         },
         "cond": {
-          "upRate": 54.9,
-          "n": 173,
+          "upRate": 54.6,
+          "n": 174,
           "condition": "RSI中立圏×5日上昇局面",
           "note": null
         },
         "factors": [],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.90倍に自動補正済み。目標カバー率は約75%）"
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.91倍に自動補正済み。目標カバー率は約75%）"
       },
       "impact": {
         "price": 5631.0,
@@ -4405,18 +4273,18 @@
         "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
-        "safety": 86,
+        "safety": 88,
         "level": "低",
         "penalties": [],
         "supports": [
           "機関の買い集め兆候"
         ],
-        "stopPct": 2.63,
+        "stopPct": 2.69,
         "rr": 1.33
       },
       "earnings": {
         "date": "2027-02-04",
-        "daysTo": 51,
+        "daysTo": 50,
         "isToday": false,
         "isSoon": false,
         "passed": false,
@@ -4437,392 +4305,139 @@
       ]
     },
     {
-      "rank": 7,
-      "ticker": "2670.T",
-      "name": "ABCマート",
-      "score": 0.638,
-      "f": 9,
-      "per": 17.0,
-      "pbr": 2.01,
-      "roe": 12.0,
-      "value": 0.095,
-      "quality": 0.982,
-      "momentum": 0.472,
-      "smart": 0.936,
-      "smartMoney": {
-        "score": 0.649,
-        "label": "買い集めの兆候",
-        "tone": "pos",
-        "cmf": 0.243,
-        "mfi": 62.1,
-        "obvSlope": 0.3,
-        "vwapDevPct": 6.1,
-        "factors": [
-          "安値圏でも買われている（CMFプラス）",
-          "上昇日に出来高が集中（OBV上向き）",
-          "直近平均コスト(VWAP)を上回って推移",
-          "直近5日は買い方向の出来高が優勢"
-        ]
-      },
-      "smartAdjusted": null,
-      "signal": "強い買い",
-      "rsi": 64.5,
-      "conf": "高",
-      "strategy": [
-        "swing"
-      ],
-      "dividend_yield": 2.4,
-      "volatility": 0.3131,
-      "short_ratio": null,
-      "regime_adjusted": false,
-      "forecast": {
-        "price": 3353.0,
-        "rangeLow": 3304,
-        "rangeHigh": 3402,
-        "rangeLow2": 3255,
-        "rangeHigh2": 3451,
-        "volDPct": 1.46,
-        "calibrated": true,
-        "plan": {
-          "entry": 3329,
-          "target": 3427,
-          "stop": 3256,
-          "rr": 1.34,
-          "hi3m": 3359,
-          "lo3m": 2641,
-          "basis": "1日の実績振れ幅σ=1.5%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値3,359円 / 安値2,641円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
-        },
-        "cond": {
-          "upRate": 50.6,
-          "n": 164,
-          "condition": "RSI中立圏×5日上昇局面",
-          "note": null
-        },
-        "factors": [],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.90倍に自動補正済み。目標カバー率は約75%）"
-      },
-      "impact": {
-        "price": 3353.0,
-        "normalYen": 55,
-        "normalPct": 1.6,
-        "bigVol": {
-          "n": 4,
-          "avgAbsPct": 4.3,
-          "maxAbsPct": 11.4,
-          "avgYen": 144
-        },
-        "earnings": {
-          "n": 8,
-          "avgAbsPct": 5.8,
-          "maxAbsPct": 11.4,
-          "avgYen": 194,
-          "maxYen": 382,
-          "upCount": 3,
-          "recentPct": [
-            3.6,
-            -11.4,
-            7.7
-          ]
-        },
-        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
-      },
-      "risk": {
-        "safety": 89,
-        "level": "低",
-        "penalties": [],
-        "supports": [
-          "機関の買い集め兆候"
-        ],
-        "stopPct": 2.19,
-        "rr": 1.34
-      },
-      "earnings": {
-        "date": "2027-01-06",
-        "daysTo": 30,
-        "isToday": false,
-        "isSoon": false,
-        "passed": false,
-        "revGrowthPct": 4.7,
-        "epsGrowthPct": 2.2,
-        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
-      },
-      "yutai": null,
-      "news": [
-        {
-          "title": "ABCマート株が年初来高値圏 成長モデルの「履き替え」問われる - 日経ヴェリタス",
-          "source": "日本経済新聞",
-          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE8tRlkyeTVsWS1GVU5nSG1kNXZ5MlA0bU9XNW5TMDRNbmlXb2xWdHJfV1haY2xfbERpalVoREZNeFRkaDc2U2tLSXZWaHRfZlB2eHJETEZwSTlIZ0xIeU1zX2o3X0JHTmlVXy1OYkZWcmxIRXhjaFhVYjNsbC0tUQ?oc=5",
-          "pubDate": "Thu, 29 Oct 2026 07:00:00 GMT",
-          "sentiment": "neu",
-          "theme": "その他"
-        }
-      ]
-    },
-    {
-      "rank": 8,
-      "ticker": "2269.T",
-      "name": "明治HD",
-      "score": 0.637,
-      "f": 7,
-      "per": 30.7,
-      "pbr": 1.68,
-      "roe": 5.7,
-      "value": 0.108,
-      "quality": 0.98,
-      "momentum": 0.49,
-      "smart": 0.898,
-      "smartMoney": {
-        "score": 0.591,
-        "label": "買い集めの兆候",
-        "tone": "pos",
-        "cmf": 0.132,
-        "mfi": 72.2,
-        "obvSlope": 0.36,
-        "vwapDevPct": 8.6,
-        "factors": [
-          "安値圏でも買われている（CMFプラス）",
-          "上昇日に出来高が集中（OBV上向き）",
-          "直近平均コスト(VWAP)を上回って推移",
-          "直近5日は買い方向の出来高が優勢"
-        ]
-      },
-      "smartAdjusted": null,
-      "signal": "様子見",
-      "rsi": 71.2,
-      "conf": "低",
-      "strategy": [
-        "swing"
-      ],
-      "dividend_yield": 2.3,
-      "volatility": 0.2905,
-      "short_ratio": null,
-      "regime_adjusted": false,
-      "forecast": {
-        "price": 4827.0,
-        "rangeLow": 4767,
-        "rangeHigh": 4887,
-        "rangeLow2": 4707,
-        "rangeHigh2": 4947,
-        "volDPct": 1.25,
-        "calibrated": true,
-        "plan": {
-          "entry": 4797,
-          "target": 4917,
-          "stop": 4707,
-          "rr": 1.33,
-          "hi3m": 4827,
-          "lo3m": 4059,
-          "basis": "1日の実績振れ幅σ=1.2%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値4,827円 / 安値4,059円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
-        },
-        "cond": {
-          "upRate": 60.0,
-          "n": 75,
-          "condition": "RSI70以上（買われすぎ圏）×5日上昇局面",
-          "note": null
-        },
-        "factors": [
-          {
-            "label": "RSI 71.2（買われすぎ圏・反落しやすい傾向）",
-            "dir": "-"
-          }
-        ],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.90倍に自動補正済み。目標カバー率は約75%）"
-      },
-      "impact": {
-        "price": 4827.0,
-        "normalYen": 67,
-        "normalPct": 1.4,
-        "bigVol": {
-          "n": 3,
-          "avgAbsPct": 5.4,
-          "maxAbsPct": 11.1,
-          "avgYen": 261
-        },
-        "earnings": {
-          "n": 8,
-          "avgAbsPct": 1.7,
-          "maxAbsPct": 5.6,
-          "avgYen": 82,
-          "maxYen": 270,
-          "upCount": 5,
-          "recentPct": [
-            1.4,
-            -1.1,
-            3.1
-          ]
-        },
-        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
-      },
-      "risk": {
-        "safety": 87,
-        "level": "低",
-        "penalties": [],
-        "supports": [
-          "機関の買い集め兆候"
-        ],
-        "stopPct": 1.88,
-        "rr": 1.33
-      },
-      "earnings": {
-        "date": "2027-02-18",
-        "daysTo": 61,
-        "isToday": false,
-        "isSoon": false,
-        "passed": false,
-        "revGrowthPct": 2.5,
-        "epsGrowthPct": 20.9,
-        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
-      },
-      "yutai": null,
-      "news": [
-        {
-          "title": "明治HD株高値圏 食品値上げ・販売数量増のおいしい関係",
-          "source": "日本経済新聞",
-          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5oN2U0LUJiN0xxZUdtLWdSdFZKX0dERVd1UUE0LVdKa2xPeDd0WDdXYm9nSnJ0U2cxeWMtTzI2SzVLTXdKMEhIb2UxYnBPZzBDSWhfRjF6eDBGVlpncjhwRlQtZngzOHFfRHlRMk5aS1ZwUklQNG1feXVMZC1RUQ?oc=5",
-          "pubDate": "Tue, 08 Sep 2026 07:00:00 GMT",
-          "sentiment": "neu",
-          "theme": "その他"
-        }
-      ]
-    },
-    {
-      "rank": 9,
-      "ticker": "7832.T",
-      "name": "バンダイナムコHD",
-      "score": 0.636,
+      "rank": 6,
+      "ticker": "4661.T",
+      "name": "オリエンタルランド",
+      "score": 0.646,
       "f": 6,
-      "per": 29.6,
-      "pbr": 5.08,
-      "roe": 18.2,
-      "value": 0.036,
-      "quality": 0.984,
-      "momentum": 0.838,
-      "smart": 0.705,
+      "per": 48.0,
+      "pbr": 5.66,
+      "roe": 12.4,
+      "value": 0.03,
+      "quality": 0.982,
+      "momentum": 0.742,
+      "smart": 0.808,
       "smartMoney": {
-        "score": 0.292,
+        "score": 0.459,
         "label": "買い集めの兆候",
         "tone": "pos",
-        "cmf": 0.084,
-        "mfi": 55.6,
-        "obvSlope": 0.07,
-        "vwapDevPct": 11.3,
+        "cmf": 0.179,
+        "mfi": 59.7,
+        "obvSlope": 0.38,
+        "vwapDevPct": 8.3,
         "factors": [
           "安値圏でも買われている（CMFプラス）",
+          "上昇日に出来高が集中（OBV上向き）",
           "直近平均コスト(VWAP)を上回って推移"
         ]
       },
       "smartAdjusted": null,
-      "signal": "様子見",
-      "rsi": 70.5,
-      "conf": "低",
+      "signal": "強い買い",
+      "rsi": 62.8,
+      "conf": "高",
       "strategy": [
         "swing"
       ],
-      "dividend_yield": 0.7,
-      "volatility": 0.3986,
+      "dividend_yield": 0.5,
+      "volatility": 0.3669,
       "short_ratio": null,
       "regime_adjusted": false,
       "forecast": {
-        "price": 7410.0,
-        "rangeLow": 7262,
-        "rangeHigh": 7558,
-        "rangeLow2": 7115,
-        "rangeHigh2": 7705,
-        "volDPct": 1.99,
+        "price": 3966.0,
+        "rangeLow": 3894,
+        "rangeHigh": 4038,
+        "rangeLow2": 3821,
+        "rangeHigh2": 4111,
+        "volDPct": 1.82,
         "calibrated": true,
         "plan": {
-          "entry": 7336,
-          "target": 7631,
-          "stop": 7115,
+          "entry": 3930,
+          "target": 4075,
+          "stop": 3821,
           "rr": 1.33,
-          "hi3m": 7410,
-          "lo3m": 5212,
-          "basis": "1日の実績振れ幅σ=2.0%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値7,410円 / 安値5,212円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+          "hi3m": 3966,
+          "lo3m": 2816,
+          "basis": "1日の実績振れ幅σ=1.8%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値3,966円 / 安値2,816円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
         },
         "cond": {
-          "upRate": 52.2,
-          "n": 90,
-          "condition": "RSI70以上（買われすぎ圏）×5日上昇局面",
+          "upRate": 49.7,
+          "n": 189,
+          "condition": "RSI中立圏×5日上昇局面",
           "note": null
         },
-        "factors": [
-          {
-            "label": "RSI 70.5（買われすぎ圏・反落しやすい傾向）",
-            "dir": "-"
-          }
-        ],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.90倍に自動補正済み。目標カバー率は約75%）"
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.91倍に自動補正済み。目標カバー率は約75%）"
       },
       "impact": {
-        "price": 7410.0,
-        "normalYen": 164,
-        "normalPct": 2.2,
+        "price": 3966.0,
+        "normalYen": 79,
+        "normalPct": 2.0,
         "bigVol": {
           "n": 4,
-          "avgAbsPct": 7.0,
-          "maxAbsPct": 10.8,
-          "avgYen": 519
+          "avgAbsPct": 5.7,
+          "maxAbsPct": 8.5,
+          "avgYen": 226
         },
         "earnings": {
-          "n": 7,
-          "avgAbsPct": 6.5,
-          "maxAbsPct": 13.7,
-          "avgYen": 482,
-          "maxYen": 1015,
-          "upCount": 4,
+          "n": 8,
+          "avgAbsPct": 5.5,
+          "maxAbsPct": 10.1,
+          "avgYen": 218,
+          "maxYen": 401,
+          "upCount": 2,
           "recentPct": [
-            -1.8,
-            10.8,
-            2.2
+            8.5,
+            -3.6,
+            -10.1
           ]
         },
         "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
-        "safety": 77,
+        "safety": 83,
         "level": "低",
         "penalties": [],
         "supports": [
           "機関の買い集め兆候"
         ],
-        "stopPct": 3.01,
+        "stopPct": 2.77,
         "rr": 1.33
       },
       "earnings": {
-        "date": "2027-02-04",
-        "daysTo": 51,
+        "date": "2027-01-28",
+        "daysTo": 45,
         "isToday": false,
         "isSoon": false,
         "passed": false,
-        "revGrowthPct": 16.5,
-        "epsGrowthPct": 20.3,
+        "revGrowthPct": 10.2,
+        "epsGrowthPct": -1.2,
         "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
       },
       "yutai": null,
       "news": [
         {
-          "title": "(株)バンダイナムコホールディングス【NCBDY】：株価・株式情報",
-          "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1HYWcwZTlQQXA1MElGSk9tVmVNV3RVMnhDMXotV2o5eElEMlUxZE5RelBnMDRRTWlOZXpseTNpalNzb2tJeVNsWlZ0WVFnRUFS?oc=5",
-          "pubDate": "Tue, 24 Nov 2026 03:41:11 GMT",
+          "title": "京成、OLC株の売却で特別利益506億円 特別損失116億円も計上",
+          "source": "日本経済新聞",
+          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4wa242NUN0UXNWaFc3VmVOVFBHZkJPZmVDZjh2Y3YwY0JlSFRXYzdQNjNKYjRnUkp6N1c0VWVEV1V2ZmM1VDdZeHJoSzV6dVZ0Z0dWNGhMblE5NWNpU2pTZTNQSmZlMGd2MjRfYw?oc=5",
+          "pubDate": "Wed, 25 Nov 2026 10:24:53 GMT",
           "sentiment": "neu",
           "theme": "その他"
         }
       ]
     },
     {
-      "rank": 10,
+      "rank": 7,
       "ticker": "4911.T",
       "name": "資生堂",
-      "score": 0.629,
+      "score": 0.634,
       "f": 7,
-      "per": 36.3,
+      "per": 35.6,
       "pbr": 2.77,
       "roe": 7.9,
       "value": 0.065,
       "quality": 0.981,
-      "momentum": 0.647,
-      "smart": 0.842,
+      "momentum": 0.673,
+      "smart": 0.835,
       "smartMoney": {
         "score": 0.504,
         "label": "買い集めの兆候",
@@ -4846,21 +4461,21 @@
         "swing"
       ],
       "dividend_yield": 1.4,
-      "volatility": 0.4441,
+      "volatility": 0.4433,
       "short_ratio": 2.47,
       "regime_adjusted": false,
       "forecast": {
         "price": 4332.0,
-        "rangeLow": 4224,
-        "rangeHigh": 4440,
-        "rangeLow2": 4116,
-        "rangeHigh2": 4548,
-        "volDPct": 2.49,
+        "rangeLow": 4222,
+        "rangeHigh": 4442,
+        "rangeLow2": 4112,
+        "rangeHigh2": 4552,
+        "volDPct": 2.54,
         "calibrated": true,
         "plan": {
-          "entry": 4278,
-          "target": 4494,
-          "stop": 4116,
+          "entry": 4277,
+          "target": 4497,
+          "stop": 4112,
           "rr": 1.33,
           "hi3m": 4393,
           "lo3m": 3219,
@@ -4878,7 +4493,7 @@
             "dir": "-"
           }
         ],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.90倍に自動補正済み。目標カバー率は約75%）"
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.91倍に自動補正済み。目標カバー率は約75%）"
       },
       "impact": {
         "price": 4332.0,
@@ -4909,12 +4524,12 @@
         "supports": [
           "機関の買い集め兆候"
         ],
-        "stopPct": 3.79,
+        "stopPct": 3.86,
         "rr": 1.33
       },
       "earnings": {
         "date": "2027-02-10",
-        "daysTo": 55,
+        "daysTo": 54,
         "isToday": false,
         "isSoon": false,
         "passed": false,
@@ -4933,6 +4548,365 @@
           "theme": "その他"
         }
       ]
+    },
+    {
+      "rank": 8,
+      "ticker": "2269.T",
+      "name": "明治HD",
+      "score": 0.629,
+      "f": 7,
+      "per": 29.6,
+      "pbr": 1.68,
+      "roe": 5.7,
+      "value": 0.108,
+      "quality": 0.98,
+      "momentum": 0.494,
+      "smart": 0.867,
+      "smartMoney": {
+        "score": 0.555,
+        "label": "買い集めの兆候",
+        "tone": "pos",
+        "cmf": 0.118,
+        "mfi": 72.9,
+        "obvSlope": 0.38,
+        "vwapDevPct": 8.0,
+        "factors": [
+          "安値圏でも買われている（CMFプラス）",
+          "上昇日に出来高が集中（OBV上向き）",
+          "直近平均コスト(VWAP)を上回って推移"
+        ]
+      },
+      "smartAdjusted": null,
+      "signal": "強い買い",
+      "rsi": 66.9,
+      "conf": "高",
+      "strategy": [
+        "swing"
+      ],
+      "dividend_yield": 2.3,
+      "volatility": 0.2905,
+      "short_ratio": null,
+      "regime_adjusted": false,
+      "forecast": {
+        "price": 4827.0,
+        "rangeLow": 4766,
+        "rangeHigh": 4888,
+        "rangeLow2": 4705,
+        "rangeHigh2": 4949,
+        "volDPct": 1.27,
+        "calibrated": true,
+        "plan": {
+          "entry": 4796,
+          "target": 4918,
+          "stop": 4704,
+          "rr": 1.33,
+          "hi3m": 4827,
+          "lo3m": 4059,
+          "basis": "1日の実績振れ幅σ=1.3%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値4,827円 / 安値4,059円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
+        "cond": {
+          "upRate": 57.2,
+          "n": 180,
+          "condition": "RSI中立圏×5日上昇局面",
+          "note": null
+        },
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.91倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "impact": {
+        "price": 4827.0,
+        "normalYen": 67,
+        "normalPct": 1.4,
+        "bigVol": {
+          "n": 3,
+          "avgAbsPct": 5.4,
+          "maxAbsPct": 11.1,
+          "avgYen": 261
+        },
+        "earnings": {
+          "n": 8,
+          "avgAbsPct": 1.7,
+          "maxAbsPct": 5.6,
+          "avgYen": 82,
+          "maxYen": 270,
+          "upCount": 5,
+          "recentPct": [
+            1.4,
+            -1.1,
+            3.1
+          ]
+        },
+        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
+      },
+      "risk": {
+        "safety": 91,
+        "level": "低",
+        "penalties": [],
+        "supports": [
+          "機関の買い集め兆候"
+        ],
+        "stopPct": 1.92,
+        "rr": 1.33
+      },
+      "earnings": {
+        "date": "2027-02-18",
+        "daysTo": 60,
+        "isToday": false,
+        "isSoon": false,
+        "passed": false,
+        "revGrowthPct": 2.5,
+        "epsGrowthPct": 20.9,
+        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
+      },
+      "yutai": null,
+      "news": [
+        {
+          "title": "明治HD株高値圏 食品値上げ・販売数量増のおいしい関係",
+          "source": "日本経済新聞",
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5oN2U0LUJiN0xxZUdtLWdSdFZKX0dERVd1UUE0LVdKa2xPeDd0WDdXYm9nSnJ0U2cxeWMtTzI2SzVLTXdKMEhIb2UxYnBPZzBDSWhfRjF6eDBGVlpncjhwRlQtZngzOHFfRHlRMk5aS1ZwUklQNG1feXVMZC1RUQ?oc=5",
+          "pubDate": "Tue, 08 Sep 2026 07:00:00 GMT",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "ticker": "2670.T",
+      "name": "ABCマート",
+      "score": 0.627,
+      "f": 9,
+      "per": 17.0,
+      "pbr": 2.01,
+      "roe": 12.0,
+      "value": 0.095,
+      "quality": 0.982,
+      "momentum": 0.486,
+      "smart": 0.886,
+      "smartMoney": {
+        "score": 0.586,
+        "label": "買い集めの兆候",
+        "tone": "pos",
+        "cmf": 0.283,
+        "mfi": 53.5,
+        "obvSlope": 0.36,
+        "vwapDevPct": 5.6,
+        "factors": [
+          "安値圏でも買われている（CMFプラス）",
+          "上昇日に出来高が集中（OBV上向き）",
+          "直近平均コスト(VWAP)を上回って推移"
+        ]
+      },
+      "smartAdjusted": null,
+      "signal": "強い買い",
+      "rsi": 49.5,
+      "conf": "高",
+      "strategy": [
+        "swing"
+      ],
+      "dividend_yield": 2.4,
+      "volatility": 0.3119,
+      "short_ratio": null,
+      "regime_adjusted": false,
+      "forecast": {
+        "price": 3353.0,
+        "rangeLow": 3303,
+        "rangeHigh": 3403,
+        "rangeLow2": 3254,
+        "rangeHigh2": 3452,
+        "volDPct": 1.48,
+        "calibrated": true,
+        "plan": {
+          "entry": 3328,
+          "target": 3427,
+          "stop": 3253,
+          "rr": 1.32,
+          "hi3m": 3359,
+          "lo3m": 2641,
+          "basis": "1日の実績振れ幅σ=1.5%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値3,359円 / 安値2,641円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
+        "cond": {
+          "upRate": 50.3,
+          "n": 165,
+          "condition": "RSI中立圏×5日上昇局面",
+          "note": null
+        },
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.91倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "impact": {
+        "price": 3353.0,
+        "normalYen": 54,
+        "normalPct": 1.6,
+        "bigVol": {
+          "n": 4,
+          "avgAbsPct": 4.3,
+          "maxAbsPct": 11.4,
+          "avgYen": 144
+        },
+        "earnings": {
+          "n": 8,
+          "avgAbsPct": 5.8,
+          "maxAbsPct": 11.4,
+          "avgYen": 194,
+          "maxYen": 382,
+          "upCount": 3,
+          "recentPct": [
+            3.6,
+            -11.4,
+            7.7
+          ]
+        },
+        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
+      },
+      "risk": {
+        "safety": 89,
+        "level": "低",
+        "penalties": [],
+        "supports": [
+          "機関の買い集め兆候"
+        ],
+        "stopPct": 2.25,
+        "rr": 1.32
+      },
+      "earnings": {
+        "date": "2027-01-06",
+        "daysTo": 29,
+        "isToday": false,
+        "isSoon": false,
+        "passed": false,
+        "revGrowthPct": 4.7,
+        "epsGrowthPct": 2.2,
+        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
+      },
+      "yutai": null,
+      "news": [
+        {
+          "title": "ABCマート株が年初来高値圏 成長モデルの「履き替え」問われる - 日経ヴェリタス",
+          "source": "日本経済新聞",
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE8tRlkyeTVsWS1GVU5nSG1kNXZ5MlA0bU9XNW5TMDRNbmlXb2xWdHJfV1haY2xfbERpalVoREZNeFRkaDc2U2tLSXZWaHRfZlB2eHJETEZwSTlIZ0xIeU1zX2o3X0JHTmlVXy1OYkZWcmxIRXhjaFhVYjNsbC0tUQ?oc=5",
+          "pubDate": "Thu, 29 Oct 2026 07:00:00 GMT",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "ticker": "7832.T",
+      "name": "バンダイナムコHD",
+      "score": 0.624,
+      "f": 6,
+      "per": 29.8,
+      "pbr": 5.08,
+      "roe": 18.2,
+      "value": 0.036,
+      "quality": 0.984,
+      "momentum": 0.844,
+      "smart": 0.659,
+      "smartMoney": {
+        "score": 0.219,
+        "label": "中立",
+        "tone": "neu",
+        "cmf": 0.053,
+        "mfi": 55.5,
+        "obvSlope": 0.1,
+        "vwapDevPct": 10.5,
+        "factors": [
+          "直近平均コスト(VWAP)を上回って推移"
+        ]
+      },
+      "smartAdjusted": null,
+      "signal": "強い買い",
+      "rsi": 63.9,
+      "conf": "高",
+      "strategy": [
+        "swing"
+      ],
+      "dividend_yield": 0.7,
+      "volatility": 0.3984,
+      "short_ratio": null,
+      "regime_adjusted": false,
+      "forecast": {
+        "price": 7410.0,
+        "rangeLow": 7260,
+        "rangeHigh": 7560,
+        "rangeLow2": 7110,
+        "rangeHigh2": 7710,
+        "volDPct": 2.02,
+        "calibrated": true,
+        "plan": {
+          "entry": 7335,
+          "target": 7635,
+          "stop": 7110,
+          "rr": 1.33,
+          "hi3m": 7410,
+          "lo3m": 5212,
+          "basis": "1日の実績振れ幅σ=2.0%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値7,410円 / 安値5,212円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
+        "cond": {
+          "upRate": 46.5,
+          "n": 159,
+          "condition": "RSI中立圏×5日上昇局面",
+          "note": null
+        },
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.91倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "impact": {
+        "price": 7410.0,
+        "normalYen": 164,
+        "normalPct": 2.2,
+        "bigVol": {
+          "n": 4,
+          "avgAbsPct": 7.0,
+          "maxAbsPct": 10.8,
+          "avgYen": 519
+        },
+        "earnings": {
+          "n": 7,
+          "avgAbsPct": 6.5,
+          "maxAbsPct": 13.7,
+          "avgYen": 482,
+          "maxYen": 1015,
+          "upCount": 4,
+          "recentPct": [
+            -1.8,
+            10.8,
+            2.2
+          ]
+        },
+        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
+      },
+      "risk": {
+        "safety": 80,
+        "level": "低",
+        "penalties": [],
+        "supports": [],
+        "stopPct": 3.07,
+        "rr": 1.33
+      },
+      "earnings": {
+        "date": "2027-02-04",
+        "daysTo": 50,
+        "isToday": false,
+        "isSoon": false,
+        "passed": false,
+        "revGrowthPct": 16.5,
+        "epsGrowthPct": 20.3,
+        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
+      },
+      "yutai": null,
+      "news": [
+        {
+          "title": "(株)バンダイナムコホールディングス【NCBDY】：株価・株式情報",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1HYWcwZTlQQXA1MElGSk9tVmVNV3RVMnhDMXotV2o5eElEMlUxZE5RelBnMDRRTWlOZXpseTNpalNzb2tJeVNsWlZ0WVFnRUFS?oc=5",
+          "pubDate": "Tue, 24 Nov 2026 03:41:11 GMT",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
     }
   ],
   "stockMaster": [
@@ -4946,8 +4920,8 @@
       "per": 32.9,
       "pbr": 4.8,
       "roe": 15.6,
-      "rsi": 45.3,
-      "vol": 0.379,
+      "rsi": 52.2,
+      "vol": 0.3777,
       "inTop": false,
       "yutai": null
     },
@@ -4961,7 +4935,7 @@
       "per": 9.6,
       "pbr": 1.07,
       "roe": 11.6,
-      "rsi": 65.6,
+      "rsi": 41.0,
       "vol": 0.3703,
       "inTop": false,
       "yutai": "なし（株主優待は廃止）"
@@ -4976,8 +4950,8 @@
       "per": 20.5,
       "pbr": 3.08,
       "roe": 15.0,
-      "rsi": 73.3,
-      "vol": 0.3109,
+      "rsi": 65.7,
+      "vol": 0.3101,
       "inTop": false,
       "yutai": null
     },
@@ -4991,7 +4965,7 @@
       "per": 20.2,
       "pbr": 2.21,
       "roe": 11.7,
-      "rsi": 41.4,
+      "rsi": 44.0,
       "vol": 0.4015,
       "inTop": false,
       "yutai": null
@@ -5007,7 +4981,7 @@
       "pbr": 0.97,
       "roe": 10.3,
       "rsi": 33.8,
-      "vol": 0.373,
+      "vol": 0.3738,
       "inTop": false,
       "yutai": null
     },
@@ -5021,8 +4995,8 @@
       "per": 50.2,
       "pbr": 8.07,
       "roe": 33.8,
-      "rsi": 34.9,
-      "vol": 0.7047,
+      "rsi": 41.0,
+      "vol": 0.7045,
       "inTop": false,
       "yutai": null
     },
@@ -5037,7 +5011,7 @@
       "pbr": 3.38,
       "roe": 12.3,
       "rsi": 52.0,
-      "vol": 0.3634,
+      "vol": 0.3649,
       "inTop": false,
       "yutai": null
     },
@@ -5051,8 +5025,8 @@
       "per": 12.4,
       "pbr": 0.95,
       "roe": 8.9,
-      "rsi": 62.9,
-      "vol": 0.2928,
+      "rsi": 53.7,
+      "vol": 0.2927,
       "inTop": false,
       "yutai": null
     },
@@ -5066,7 +5040,7 @@
       "per": 19.4,
       "pbr": 1.47,
       "roe": 12.1,
-      "rsi": 64.8,
+      "rsi": 56.3,
       "vol": 0.2662,
       "inTop": false,
       "yutai": null
@@ -5081,7 +5055,7 @@
       "per": 35.0,
       "pbr": 2.49,
       "roe": 7.5,
-      "rsi": 65.0,
+      "rsi": 54.1,
       "vol": 0.3724,
       "inTop": false,
       "yutai": null
@@ -5097,7 +5071,7 @@
       "pbr": 14.97,
       "roe": 65.4,
       "rsi": 30.2,
-      "vol": 0.8562,
+      "vol": 0.8552,
       "inTop": false,
       "yutai": null
     },
@@ -5111,8 +5085,8 @@
       "per": 28.4,
       "pbr": 7.83,
       "roe": 27.7,
-      "rsi": 45.6,
-      "vol": 0.3226,
+      "rsi": 48.2,
+      "vol": 0.3221,
       "inTop": false,
       "yutai": null
     },
@@ -5126,8 +5100,8 @@
       "per": 43.1,
       "pbr": 10.98,
       "roe": 31.1,
-      "rsi": 34.0,
-      "vol": 0.8899,
+      "rsi": 41.5,
+      "vol": 0.8889,
       "inTop": false,
       "yutai": null
     },
@@ -5141,7 +5115,7 @@
       "per": null,
       "pbr": 0.57,
       "roe": -1.2,
-      "rsi": 47.3,
+      "rsi": 32.4,
       "vol": 0.3346,
       "inTop": false,
       "yutai": null
@@ -5156,7 +5130,7 @@
       "per": 23.9,
       "pbr": 2.5,
       "roe": 11.0,
-      "rsi": 38.0,
+      "rsi": 37.3,
       "vol": 0.4986,
       "inTop": false,
       "yutai": null
@@ -5171,8 +5145,8 @@
       "per": 12.5,
       "pbr": 1.24,
       "roe": 11.0,
-      "rsi": 64.6,
-      "vol": 0.2536,
+      "rsi": 54.7,
+      "vol": 0.2534,
       "inTop": false,
       "yutai": null
     },
@@ -5186,8 +5160,8 @@
       "per": 23.0,
       "pbr": 1.07,
       "roe": 5.0,
-      "rsi": 35.6,
-      "vol": 0.4247,
+      "rsi": 38.2,
+      "vol": 0.4243,
       "inTop": false,
       "yutai": null
     },
@@ -5198,11 +5172,11 @@
       "divPerShare": 370.0,
       "exDivDate": "2027-03-30",
       "dividendYield": 1.55,
-      "per": 24.3,
+      "per": 23.8,
       "pbr": 2.27,
       "roe": 9.8,
-      "rsi": 85.2,
-      "vol": 0.2348,
+      "rsi": 83.3,
+      "vol": 0.2212,
       "inTop": false,
       "yutai": null
     },
@@ -5216,8 +5190,8 @@
       "per": 7.3,
       "pbr": 1.5,
       "roe": 23.6,
-      "rsi": 37.4,
-      "vol": 0.6828,
+      "rsi": 41.9,
+      "vol": 0.675,
       "inTop": false,
       "yutai": null
     },
@@ -5231,8 +5205,8 @@
       "per": 21.2,
       "pbr": 1.19,
       "roe": 6.5,
-      "rsi": 31.7,
-      "vol": 0.649,
+      "rsi": 37.6,
+      "vol": 0.6487,
       "inTop": false,
       "yutai": null
     },
@@ -5246,7 +5220,7 @@
       "per": 22.9,
       "pbr": 0.85,
       "roe": 3.9,
-      "rsi": 58.7,
+      "rsi": 51.4,
       "vol": 0.4037,
       "inTop": false,
       "yutai": null
@@ -5261,8 +5235,8 @@
       "per": 13.5,
       "pbr": 2.54,
       "roe": 20.6,
-      "rsi": 30.7,
-      "vol": 0.8358,
+      "rsi": 40.1,
+      "vol": 0.8349,
       "inTop": false,
       "yutai": null
     },
@@ -5273,11 +5247,11 @@
       "divPerShare": 562.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 1.26,
-      "per": 27.6,
+      "per": 30.4,
       "pbr": 7.01,
       "roe": 27.9,
       "rsi": 38.9,
-      "vol": 0.747,
+      "vol": 0.7481,
       "inTop": false,
       "yutai": null
     },
@@ -5291,8 +5265,8 @@
       "per": 26.0,
       "pbr": 3.38,
       "roe": 12.9,
-      "rsi": 74.5,
-      "vol": 0.2865,
+      "rsi": 67.9,
+      "vol": 0.286,
       "inTop": false,
       "yutai": null
     },
@@ -5303,11 +5277,11 @@
       "divPerShare": 60.0,
       "exDivDate": "2026-12-29",
       "dividendYield": 1.41,
-      "per": 36.3,
+      "per": 35.6,
       "pbr": 2.77,
       "roe": 7.9,
       "rsi": 65.1,
-      "vol": 0.4441,
+      "vol": 0.4433,
       "inTop": true,
       "yutai": null
     },
@@ -5321,7 +5295,7 @@
       "per": 12.8,
       "pbr": 1.54,
       "roe": 9.6,
-      "rsi": 40.4,
+      "rsi": 35.7,
       "vol": 0.3241,
       "inTop": false,
       "yutai": null
@@ -5336,7 +5310,7 @@
       "per": 13.8,
       "pbr": 1.43,
       "roe": 8.1,
-      "rsi": 42.5,
+      "rsi": 39.9,
       "vol": 0.3268,
       "inTop": false,
       "yutai": null
@@ -5348,11 +5322,11 @@
       "divPerShare": 200.0,
       "exDivDate": "2027-03-30",
       "dividendYield": 2.59,
-      "per": 12.5,
+      "per": 12.9,
       "pbr": 1.6,
       "roe": 13.1,
-      "rsi": 48.3,
-      "vol": 0.3982,
+      "rsi": 45.4,
+      "vol": 0.3981,
       "inTop": false,
       "yutai": null
     },
@@ -5366,7 +5340,7 @@
       "per": 10.1,
       "pbr": 1.07,
       "roe": 11.5,
-      "rsi": 40.3,
+      "rsi": 29.9,
       "vol": 0.3311,
       "inTop": false,
       "yutai": null
@@ -5381,8 +5355,8 @@
       "per": 70.3,
       "pbr": 1.19,
       "roe": 9.7,
-      "rsi": 52.3,
-      "vol": 0.2898,
+      "rsi": 48.6,
+      "vol": 0.2871,
       "inTop": false,
       "yutai": null
     },
@@ -5396,8 +5370,8 @@
       "per": 12.0,
       "pbr": 1.19,
       "roe": 7.1,
-      "rsi": 59.7,
-      "vol": 0.283,
+      "rsi": 58.0,
+      "vol": 0.2829,
       "inTop": false,
       "yutai": null
     },
@@ -5411,7 +5385,7 @@
       "per": 12.4,
       "pbr": 1.43,
       "roe": 12.3,
-      "rsi": 46.8,
+      "rsi": 43.2,
       "vol": 0.2886,
       "inTop": false,
       "yutai": null
@@ -5423,11 +5397,11 @@
       "divPerShare": 15.67,
       "exDivDate": "2027-03-30",
       "dividendYield": 2.68,
-      "per": null,
-      "pbr": 2.13,
+      "per": 51.6,
+      "pbr": 2.08,
       "roe": 6.3,
-      "rsi": 56.1,
-      "vol": 0.3141,
+      "rsi": 46.7,
+      "vol": 0.314,
       "inTop": false,
       "yutai": null
     },
@@ -5441,8 +5415,8 @@
       "per": 16.3,
       "pbr": 1.15,
       "roe": 7.2,
-      "rsi": 49.6,
-      "vol": 0.356,
+      "rsi": 47.6,
+      "vol": 0.3554,
       "inTop": false,
       "yutai": null
     },
@@ -5456,8 +5430,8 @@
       "per": 13.4,
       "pbr": 1.21,
       "roe": null,
-      "rsi": 60.5,
-      "vol": 0.347,
+      "rsi": 53.1,
+      "vol": 0.3455,
       "inTop": false,
       "yutai": null
     },
@@ -5471,8 +5445,8 @@
       "per": 14.0,
       "pbr": 0.94,
       "roe": 9.8,
-      "rsi": 26.2,
-      "vol": 0.9239,
+      "rsi": 28.8,
+      "vol": 0.909,
       "inTop": false,
       "yutai": null
     },
@@ -5486,8 +5460,8 @@
       "per": 14.6,
       "pbr": 1.37,
       "roe": 9.8,
-      "rsi": 57.3,
-      "vol": 0.2122,
+      "rsi": 55.8,
+      "vol": 0.2119,
       "inTop": false,
       "yutai": "なし（過去はdポイント優待）"
     },
@@ -5498,11 +5472,11 @@
       "divPerShare": 84.0,
       "exDivDate": "2027-03-30",
       "dividendYield": 3.02,
-      "per": 15.0,
+      "per": 15.4,
       "pbr": 2.08,
       "roe": 14.5,
-      "rsi": 50.0,
-      "vol": 0.2439,
+      "rsi": 39.9,
+      "vol": 0.2437,
       "inTop": false,
       "yutai": "100株以上でカタログギフト等（長期保有優遇・要IR確認）"
     },
@@ -5516,8 +5490,8 @@
       "per": 20.5,
       "pbr": 3.66,
       "roe": 15.0,
-      "rsi": 54.6,
-      "vol": 0.2063,
+      "rsi": 42.1,
+      "vol": 0.2061,
       "inTop": false,
       "yutai": null
     },
@@ -5531,8 +5505,8 @@
       "per": 36.3,
       "pbr": 12.9,
       "roe": 39.7,
-      "rsi": 46.8,
-      "vol": 0.5242,
+      "rsi": 43.8,
+      "vol": 0.5241,
       "inTop": false,
       "yutai": null
     },
@@ -5546,8 +5520,8 @@
       "per": 154.5,
       "pbr": 9.45,
       "roe": 5.1,
-      "rsi": 60.2,
-      "vol": 0.4777,
+      "rsi": 57.0,
+      "vol": 0.4773,
       "inTop": false,
       "yutai": null
     },
@@ -5576,8 +5550,8 @@
       "per": 31.1,
       "pbr": 7.85,
       "roe": 24.2,
-      "rsi": 63.1,
-      "vol": 0.5298,
+      "rsi": 61.2,
+      "vol": 0.5278,
       "inTop": false,
       "yutai": null
     },
@@ -5591,8 +5565,8 @@
       "per": 17.9,
       "pbr": 3.19,
       "roe": 14.2,
-      "rsi": 71.8,
-      "vol": 0.4253,
+      "rsi": 66.4,
+      "vol": 0.4248,
       "inTop": false,
       "yutai": null
     },
@@ -5606,7 +5580,7 @@
       "per": 26.1,
       "pbr": 2.3,
       "roe": 9.4,
-      "rsi": 75.2,
+      "rsi": 71.5,
       "vol": 0.2358,
       "inTop": false,
       "yutai": null
@@ -5621,8 +5595,8 @@
       "per": 24.5,
       "pbr": 5.91,
       "roe": 25.3,
-      "rsi": 63.9,
-      "vol": 0.3459,
+      "rsi": 58.2,
+      "vol": 0.333,
       "inTop": false,
       "yutai": null
     },
@@ -5636,8 +5610,8 @@
       "per": 316.4,
       "pbr": 1.59,
       "roe": 0.6,
-      "rsi": 72.5,
-      "vol": 0.2633,
+      "rsi": 66.7,
+      "vol": 0.2628,
       "inTop": true,
       "yutai": null
     },
@@ -5651,7 +5625,7 @@
       "per": 18.9,
       "pbr": 3.0,
       "roe": 17.6,
-      "rsi": 49.4,
+      "rsi": 40.2,
       "vol": 0.4196,
       "inTop": false,
       "yutai": null
@@ -5666,8 +5640,8 @@
       "per": 34.4,
       "pbr": 1.77,
       "roe": 5.1,
-      "rsi": 69.0,
-      "vol": 0.3266,
+      "rsi": 62.4,
+      "vol": 0.321,
       "inTop": true,
       "yutai": null
     },
@@ -5681,8 +5655,8 @@
       "per": 18.2,
       "pbr": 2.0,
       "roe": 13.3,
-      "rsi": 49.2,
-      "vol": 0.532,
+      "rsi": 39.3,
+      "vol": 0.5291,
       "inTop": false,
       "yutai": null
     },
@@ -5693,11 +5667,11 @@
       "divPerShare": 210.0,
       "exDivDate": "2027-03-30",
       "dividendYield": 3.19,
-      "per": 16.2,
+      "per": 16.4,
       "pbr": 3.3,
       "roe": 21.2,
-      "rsi": 26.8,
-      "vol": 0.3357,
+      "rsi": 28.3,
+      "vol": 0.3353,
       "inTop": false,
       "yutai": null
     },
@@ -5708,11 +5682,11 @@
       "divPerShare": 48.0,
       "exDivDate": "2026-09-29",
       "dividendYield": 0.68,
-      "per": 29.6,
+      "per": 29.8,
       "pbr": 5.08,
       "roe": 18.2,
-      "rsi": 70.5,
-      "vol": 0.3986,
+      "rsi": 63.9,
+      "vol": 0.3984,
       "inTop": true,
       "yutai": null
     },
@@ -5726,8 +5700,8 @@
       "per": 17.6,
       "pbr": 1.88,
       "roe": 11.7,
-      "rsi": 46.8,
-      "vol": 0.3128,
+      "rsi": 42.7,
+      "vol": 0.3107,
       "inTop": false,
       "yutai": null
     },
@@ -5741,8 +5715,8 @@
       "per": 13.2,
       "pbr": 1.46,
       "roe": 11.7,
-      "rsi": 42.9,
-      "vol": 0.302,
+      "rsi": 38.2,
+      "vol": 0.3013,
       "inTop": false,
       "yutai": null
     },
@@ -5756,8 +5730,8 @@
       "per": 16.2,
       "pbr": 2.3,
       "roe": 14.7,
-      "rsi": 49.8,
-      "vol": 0.2672,
+      "rsi": 38.9,
+      "vol": 0.2657,
       "inTop": false,
       "yutai": null
     },
@@ -5771,8 +5745,8 @@
       "per": 12.7,
       "pbr": 1.66,
       "roe": 14.4,
-      "rsi": 44.2,
-      "vol": 0.3289,
+      "rsi": 32.6,
+      "vol": 0.3287,
       "inTop": false,
       "yutai": null
     },
@@ -5786,7 +5760,7 @@
       "per": 11.3,
       "pbr": 1.53,
       "roe": 13.6,
-      "rsi": 41.2,
+      "rsi": 32.9,
       "vol": 0.3361,
       "inTop": false,
       "yutai": null
@@ -5801,8 +5775,8 @@
       "per": 13.9,
       "pbr": 2.06,
       "roe": 16.8,
-      "rsi": 40.8,
-      "vol": 0.3807,
+      "rsi": 32.4,
+      "vol": 0.3803,
       "inTop": false,
       "yutai": null
     },
@@ -5816,8 +5790,8 @@
       "per": 16.2,
       "pbr": 1.27,
       "roe": 7.9,
-      "rsi": 45.3,
-      "vol": 0.3003,
+      "rsi": 32.6,
+      "vol": 0.2996,
       "inTop": false,
       "yutai": "保有株数に応じ宿泊優待割引券（要IR確認・手動更新）"
     },
@@ -5831,8 +5805,8 @@
       "per": 16.4,
       "pbr": 1.8,
       "roe": 13.3,
-      "rsi": 58.0,
-      "vol": 0.3606,
+      "rsi": 44.9,
+      "vol": 0.3603,
       "inTop": false,
       "yutai": null
     },
@@ -5846,8 +5820,8 @@
       "per": 13.5,
       "pbr": 1.25,
       "roe": 9.5,
-      "rsi": 57.4,
-      "vol": 0.3652,
+      "rsi": 48.4,
+      "vol": 0.3637,
       "inTop": false,
       "yutai": null
     },
@@ -5861,8 +5835,8 @@
       "per": 12.0,
       "pbr": 1.6,
       "roe": 13.4,
-      "rsi": 60.1,
-      "vol": 0.2661,
+      "rsi": 47.8,
+      "vol": 0.266,
       "inTop": false,
       "yutai": null
     },
@@ -5876,7 +5850,7 @@
       "per": 19.7,
       "pbr": 1.32,
       "roe": 6.8,
-      "rsi": 55.9,
+      "rsi": 45.8,
       "vol": 0.1617,
       "inTop": false,
       "yutai": null
@@ -5888,10 +5862,10 @@
       "divPerShare": 38.0,
       "exDivDate": "2027-03-30",
       "dividendYield": 3.32,
-      "per": 4.4,
+      "per": 4.3,
       "pbr": 0.8,
       "roe": 19.6,
-      "rsi": 25.4,
+      "rsi": 30.1,
       "vol": 0.3362,
       "inTop": false,
       "yutai": null
@@ -5906,8 +5880,8 @@
       "per": 10.5,
       "pbr": 0.81,
       "roe": 26.1,
-      "rsi": 22.6,
-      "vol": 0.3642,
+      "rsi": 26.2,
+      "vol": 0.3641,
       "inTop": false,
       "yutai": null
     },
@@ -5921,8 +5895,8 @@
       "per": 2.4,
       "pbr": 0.19,
       "roe": 9.6,
-      "rsi": 39.5,
-      "vol": 0.399,
+      "rsi": 37.7,
+      "vol": 0.3981,
       "inTop": false,
       "yutai": null
     },
@@ -5936,8 +5910,8 @@
       "per": null,
       "pbr": 0.63,
       "roe": -7.1,
-      "rsi": 41.8,
-      "vol": 0.3414,
+      "rsi": 40.4,
+      "vol": 0.3394,
       "inTop": false,
       "yutai": null
     },
@@ -5951,8 +5925,8 @@
       "per": 8.5,
       "pbr": 0.79,
       "roe": 9.5,
-      "rsi": 42.5,
-      "vol": 0.319,
+      "rsi": 40.1,
+      "vol": 0.3186,
       "inTop": false,
       "yutai": null
     },
@@ -5966,8 +5940,8 @@
       "per": 11.8,
       "pbr": 1.24,
       "roe": 11.6,
-      "rsi": 51.8,
-      "vol": 0.2279,
+      "rsi": 51.2,
+      "vol": 0.2278,
       "inTop": false,
       "yutai": null
     },
@@ -5982,7 +5956,7 @@
       "pbr": 0.84,
       "roe": 10.2,
       "rsi": 26.4,
-      "vol": 0.3095,
+      "vol": 0.31,
       "inTop": false,
       "yutai": "なし（日本郵船は株主優待制度なし）"
     },
@@ -5996,7 +5970,7 @@
       "per": 8.1,
       "pbr": 0.74,
       "roe": 9.7,
-      "rsi": 26.0,
+      "rsi": 36.7,
       "vol": 0.3364,
       "inTop": false,
       "yutai": null
@@ -6011,8 +5985,8 @@
       "per": 10.1,
       "pbr": 1.03,
       "roe": 11.0,
-      "rsi": 28.1,
-      "vol": 0.361,
+      "rsi": 39.4,
+      "vol": 0.3608,
       "inTop": false,
       "yutai": null
     },
@@ -6026,8 +6000,8 @@
       "per": 48.8,
       "pbr": 9.29,
       "roe": 22.3,
-      "rsi": 69.4,
-      "vol": 0.2927,
+      "rsi": 63.5,
+      "vol": 0.2926,
       "inTop": false,
       "yutai": null
     },
@@ -6038,10 +6012,10 @@
       "divPerShare": 32.0,
       "exDivDate": "2026-10-29",
       "dividendYield": 1.08,
-      "per": 24.2,
+      "per": 22.7,
       "pbr": 3.65,
       "roe": 16.6,
-      "rsi": 49.6,
+      "rsi": 36.4,
       "vol": 0.3255,
       "inTop": false,
       "yutai": null
@@ -6056,8 +6030,8 @@
       "per": 48.0,
       "pbr": 5.66,
       "roe": 12.4,
-      "rsi": 69.0,
-      "vol": 0.367,
+      "rsi": 62.8,
+      "vol": 0.3669,
       "inTop": true,
       "yutai": null
     },
@@ -6068,10 +6042,10 @@
       "divPerShare": 253.0,
       "exDivDate": "2027-03-30",
       "dividendYield": 2.92,
-      "per": 23.3,
+      "per": 22.5,
       "pbr": 3.47,
       "roe": 15.4,
-      "rsi": 58.3,
+      "rsi": 51.6,
       "vol": 0.403,
       "inTop": false,
       "yutai": "なし（任天堂は株主優待制度なし）"
@@ -6086,7 +6060,7 @@
       "per": 16.5,
       "pbr": 2.43,
       "roe": 14.7,
-      "rsi": 31.9,
+      "rsi": 26.1,
       "vol": 0.476,
       "inTop": false,
       "yutai": "100株以上でJT関連商品の詰め合わせ（年1回・要IR確認）"
@@ -6101,7 +6075,7 @@
       "per": 14.6,
       "pbr": 0.87,
       "roe": 6.1,
-      "rsi": 62.7,
+      "rsi": 55.6,
       "vol": 0.2753,
       "inTop": false,
       "yutai": null
@@ -6116,8 +6090,8 @@
       "per": 13.2,
       "pbr": 1.9,
       "roe": 14.9,
-      "rsi": 59.5,
-      "vol": 0.3014,
+      "rsi": 51.8,
+      "vol": 0.3006,
       "inTop": false,
       "yutai": null
     },
@@ -6131,8 +6105,8 @@
       "per": 24.8,
       "pbr": 5.04,
       "roe": 20.6,
-      "rsi": 25.6,
-      "vol": 0.4574,
+      "rsi": 26.6,
+      "vol": 0.4563,
       "inTop": false,
       "yutai": null
     },
@@ -6146,8 +6120,8 @@
       "per": null,
       "pbr": 0.19,
       "roe": -6.5,
-      "rsi": 46.4,
-      "vol": 0.4242,
+      "rsi": 31.1,
+      "vol": 0.4234,
       "inTop": false,
       "yutai": null
     },
@@ -6158,10 +6132,10 @@
       "divPerShare": 107.5,
       "exDivDate": "2027-03-30",
       "dividendYield": 2.31,
-      "per": 30.7,
+      "per": 29.6,
       "pbr": 1.68,
       "roe": 5.7,
-      "rsi": 71.2,
+      "rsi": 66.9,
       "vol": 0.2905,
       "inTop": true,
       "yutai": null
@@ -6176,7 +6150,7 @@
       "per": 17.7,
       "pbr": 1.36,
       "roe": 8.1,
-      "rsi": 54.6,
+      "rsi": 45.9,
       "vol": 0.2541,
       "inTop": false,
       "yutai": null
@@ -6191,8 +6165,8 @@
       "per": 37.6,
       "pbr": 2.81,
       "roe": 6.6,
-      "rsi": 51.8,
-      "vol": 0.3665,
+      "rsi": 42.5,
+      "vol": 0.366,
       "inTop": false,
       "yutai": null
     },
@@ -6206,8 +6180,8 @@
       "per": 15.4,
       "pbr": 1.04,
       "roe": 8.3,
-      "rsi": 71.8,
-      "vol": 0.2917,
+      "rsi": 62.2,
+      "vol": 0.2914,
       "inTop": true,
       "yutai": null
     },
@@ -6221,7 +6195,7 @@
       "per": 11.0,
       "pbr": 1.0,
       "roe": 12.4,
-      "rsi": 66.7,
+      "rsi": 54.3,
       "vol": 0.2484,
       "inTop": true,
       "yutai": null
@@ -6236,8 +6210,8 @@
       "per": 16.3,
       "pbr": 3.1,
       "roe": 19.0,
-      "rsi": 52.7,
-      "vol": 0.4207,
+      "rsi": 43.7,
+      "vol": 0.4199,
       "inTop": false,
       "yutai": null
     },
@@ -6251,7 +6225,7 @@
       "per": 24.6,
       "pbr": 1.08,
       "roe": 5.1,
-      "rsi": 37.3,
+      "rsi": 26.0,
       "vol": 0.4463,
       "inTop": false,
       "yutai": null
@@ -6266,7 +6240,7 @@
       "per": 18.7,
       "pbr": 0.69,
       "roe": 3.7,
-      "rsi": 55.7,
+      "rsi": 38.4,
       "vol": 0.3169,
       "inTop": false,
       "yutai": null
@@ -6282,7 +6256,7 @@
       "pbr": 0.87,
       "roe": 20.3,
       "rsi": 42.4,
-      "vol": 0.4608,
+      "vol": 0.4627,
       "inTop": false,
       "yutai": null
     },
@@ -6296,7 +6270,7 @@
       "per": 9.9,
       "pbr": 0.61,
       "roe": 7.1,
-      "rsi": 58.6,
+      "rsi": 56.4,
       "vol": 0.2543,
       "inTop": false,
       "yutai": null
@@ -6311,8 +6285,8 @@
       "per": 12.3,
       "pbr": 0.43,
       "roe": 3.9,
-      "rsi": 54.4,
-      "vol": 0.2586,
+      "rsi": 49.5,
+      "vol": 0.2585,
       "inTop": false,
       "yutai": null
     },
@@ -6327,7 +6301,7 @@
       "pbr": 1.09,
       "roe": -2.8,
       "rsi": 37.5,
-      "vol": 1.0356,
+      "vol": 1.0395,
       "inTop": false,
       "yutai": null
     },
@@ -6341,8 +6315,8 @@
       "per": 13.7,
       "pbr": 4.11,
       "roe": 33.5,
-      "rsi": 49.1,
-      "vol": 0.5295,
+      "rsi": 40.7,
+      "vol": 0.5272,
       "inTop": false,
       "yutai": null
     },
@@ -6356,8 +6330,8 @@
       "per": null,
       "pbr": 2.66,
       "roe": -8.3,
-      "rsi": 65.6,
-      "vol": 0.5758,
+      "rsi": 57.6,
+      "vol": 0.5703,
       "inTop": false,
       "yutai": null
     },
@@ -6371,8 +6345,8 @@
       "per": 52.4,
       "pbr": 12.86,
       "roe": 27.4,
-      "rsi": 39.2,
-      "vol": 0.8184,
+      "rsi": 42.7,
+      "vol": 0.8183,
       "inTop": false,
       "yutai": null
     },
@@ -6386,8 +6360,8 @@
       "per": 34.3,
       "pbr": 3.57,
       "roe": 11.3,
-      "rsi": 50.7,
-      "vol": 0.6581,
+      "rsi": 48.2,
+      "vol": 0.6577,
       "inTop": false,
       "yutai": null
     },
@@ -6401,8 +6375,8 @@
       "per": 20.3,
       "pbr": 3.73,
       "roe": 19.7,
-      "rsi": 21.1,
-      "vol": 0.9771,
+      "rsi": 22.6,
+      "vol": 0.9759,
       "inTop": false,
       "yutai": null
     },
@@ -6417,7 +6391,7 @@
       "pbr": 0.85,
       "roe": 0.3,
       "rsi": 20.4,
-      "vol": 0.4503,
+      "vol": 0.4504,
       "inTop": false,
       "yutai": null
     },
@@ -6431,7 +6405,7 @@
       "per": 24.9,
       "pbr": 1.89,
       "roe": 11.6,
-      "rsi": 28.5,
+      "rsi": 32.8,
       "vol": 0.8722,
       "inTop": false,
       "yutai": null
@@ -6446,7 +6420,7 @@
       "per": 126.4,
       "pbr": 9.21,
       "roe": 7.3,
-      "rsi": 19.5,
+      "rsi": 16.1,
       "vol": 0.6547,
       "inTop": false,
       "yutai": null
@@ -6458,11 +6432,11 @@
       "divPerShare": 8.0,
       "exDivDate": "2027-03-30",
       "dividendYield": 0.85,
-      "per": 13.8,
+      "per": 13.3,
       "pbr": 7.75,
       "roe": 72.9,
       "rsi": 40.4,
-      "vol": 0.4868,
+      "vol": 0.4888,
       "inTop": false,
       "yutai": null
     },
@@ -6476,7 +6450,7 @@
       "per": 37.2,
       "pbr": 11.85,
       "roe": 44.5,
-      "rsi": 42.7,
+      "rsi": 36.2,
       "vol": 0.5839,
       "inTop": false,
       "yutai": null
@@ -6491,8 +6465,8 @@
       "per": 23.1,
       "pbr": 3.97,
       "roe": 18.0,
-      "rsi": 25.7,
-      "vol": 0.6604,
+      "rsi": 16.7,
+      "vol": 0.6554,
       "inTop": false,
       "yutai": null
     },
@@ -6506,8 +6480,8 @@
       "per": 33.3,
       "pbr": 3.6,
       "roe": 10.4,
-      "rsi": 33.9,
-      "vol": 0.5923,
+      "rsi": 26.4,
+      "vol": 0.5898,
       "inTop": false,
       "yutai": null
     },
@@ -6521,7 +6495,7 @@
       "per": 66.2,
       "pbr": 8.1,
       "roe": 13.1,
-      "rsi": 43.7,
+      "rsi": 38.4,
       "vol": 0.6334,
       "inTop": false,
       "yutai": null
@@ -6537,7 +6511,7 @@
       "pbr": 5.07,
       "roe": 5.7,
       "rsi": 37.1,
-      "vol": 0.8153,
+      "vol": 0.8169,
       "inTop": false,
       "yutai": null
     },
@@ -6548,10 +6522,10 @@
       "divPerShare": 158.0,
       "exDivDate": "2027-09-29",
       "dividendYield": 2.64,
-      "per": 25.4,
+      "per": 26.0,
       "pbr": 6.92,
       "roe": 28.0,
-      "rsi": 50.4,
+      "rsi": 46.9,
       "vol": 0.3767,
       "inTop": false,
       "yutai": null
@@ -6597,7 +6571,7 @@
       "pbr": 1.94,
       "roe": 6.3,
       "rsi": 38.6,
-      "vol": 0.6906,
+      "vol": 0.6932,
       "inTop": false,
       "yutai": null
     },
@@ -6611,7 +6585,7 @@
       "per": 47.1,
       "pbr": 19.13,
       "roe": 41.6,
-      "rsi": 64.8,
+      "rsi": 60.3,
       "vol": 0.5354,
       "inTop": true,
       "yutai": null
@@ -6627,7 +6601,7 @@
       "pbr": 0.73,
       "roe": 4.7,
       "rsi": 41.7,
-      "vol": 0.1682,
+      "vol": 0.1689,
       "inTop": false,
       "yutai": null
     },
@@ -6641,8 +6615,8 @@
       "per": null,
       "pbr": 4.13,
       "roe": -7.0,
-      "rsi": 26.1,
-      "vol": 0.6413,
+      "rsi": 28.2,
+      "vol": 0.6389,
       "inTop": false,
       "yutai": null
     },
@@ -6656,8 +6630,8 @@
       "per": 48.8,
       "pbr": 10.84,
       "roe": 24.7,
-      "rsi": 30.3,
-      "vol": 0.7818,
+      "rsi": 24.7,
+      "vol": 0.7805,
       "inTop": false,
       "yutai": null
     },
@@ -6671,7 +6645,7 @@
       "per": 5.6,
       "pbr": 1.41,
       "roe": 28.3,
-      "rsi": 36.1,
+      "rsi": 30.4,
       "vol": 0.4582,
       "inTop": false,
       "yutai": null
@@ -6686,8 +6660,8 @@
       "per": 14.8,
       "pbr": 2.78,
       "roe": 19.0,
-      "rsi": 48.9,
-      "vol": 0.295,
+      "rsi": 41.8,
+      "vol": 0.2948,
       "inTop": false,
       "yutai": "なし（パーソルHDは株主優待制度なし・配当のみ）"
     },
@@ -6701,8 +6675,8 @@
       "per": 28.7,
       "pbr": 2.75,
       "roe": 14.7,
-      "rsi": 26.5,
-      "vol": 0.4249,
+      "rsi": 31.2,
+      "vol": 0.4246,
       "inTop": false,
       "yutai": null
     },
@@ -6717,7 +6691,7 @@
       "pbr": 1.29,
       "roe": 13.0,
       "rsi": 14.4,
-      "vol": 0.464,
+      "vol": 0.4565,
       "inTop": false,
       "yutai": null
     },
@@ -6731,8 +6705,8 @@
       "per": 12.3,
       "pbr": 3.23,
       "roe": 29.5,
-      "rsi": 38.5,
-      "vol": 0.4819,
+      "rsi": 35.9,
+      "vol": 0.4787,
       "inTop": false,
       "yutai": null
     },
@@ -6747,7 +6721,7 @@
       "pbr": 1.63,
       "roe": 10.5,
       "rsi": 41.4,
-      "vol": 0.493,
+      "vol": 0.495,
       "inTop": false,
       "yutai": null
     },
@@ -6761,7 +6735,7 @@
       "per": null,
       "pbr": 2.29,
       "roe": -61.3,
-      "rsi": 39.8,
+      "rsi": 43.4,
       "vol": 0.5423,
       "inTop": false,
       "yutai": null
@@ -6776,8 +6750,8 @@
       "per": 18.9,
       "pbr": 0.93,
       "roe": 5.1,
-      "rsi": 47.7,
-      "vol": 0.2073,
+      "rsi": 37.8,
+      "vol": 0.2063,
       "inTop": false,
       "yutai": null
     },
@@ -6791,8 +6765,8 @@
       "per": 70.3,
       "pbr": 6.34,
       "roe": 30.0,
-      "rsi": 53.7,
-      "vol": 0.3622,
+      "rsi": 46.5,
+      "vol": 0.3621,
       "inTop": false,
       "yutai": null
     },
@@ -6806,8 +6780,8 @@
       "per": 19.1,
       "pbr": 1.49,
       "roe": 8.2,
-      "rsi": 63.8,
-      "vol": 0.3041,
+      "rsi": 55.8,
+      "vol": 0.304,
       "inTop": false,
       "yutai": null
     },
@@ -6818,11 +6792,11 @@
       "divPerShare": 34.0,
       "exDivDate": "2027-03-30",
       "dividendYield": 0.78,
-      "per": 8.0,
+      "per": 7.8,
       "pbr": 0.8,
       "roe": 10.7,
-      "rsi": 65.0,
-      "vol": 0.2764,
+      "rsi": 56.4,
+      "vol": 0.2763,
       "inTop": false,
       "yutai": null
     },
@@ -6836,8 +6810,8 @@
       "per": 13.2,
       "pbr": 1.45,
       "roe": 11.8,
-      "rsi": 36.7,
-      "vol": 0.4057,
+      "rsi": 34.7,
+      "vol": 0.4044,
       "inTop": false,
       "yutai": null
     },
@@ -6851,8 +6825,8 @@
       "per": 11.8,
       "pbr": 1.1,
       "roe": 10.4,
-      "rsi": 38.1,
-      "vol": 0.3622,
+      "rsi": 32.9,
+      "vol": 0.3619,
       "inTop": false,
       "yutai": null
     },
@@ -6866,8 +6840,8 @@
       "per": 8.4,
       "pbr": 1.23,
       "roe": 14.5,
-      "rsi": 60.8,
-      "vol": 0.3423,
+      "rsi": 47.8,
+      "vol": 0.3422,
       "inTop": false,
       "yutai": null
     },
@@ -6881,8 +6855,8 @@
       "per": 5.5,
       "pbr": 0.36,
       "roe": 6.8,
-      "rsi": 49.3,
-      "vol": 0.3371,
+      "rsi": 29.0,
+      "vol": 0.3369,
       "inTop": false,
       "yutai": null
     },
@@ -6897,7 +6871,7 @@
       "pbr": 3.04,
       "roe": 10.7,
       "rsi": 34.7,
-      "vol": 0.9646,
+      "vol": 0.9681,
       "inTop": false,
       "yutai": null
     },
@@ -6911,8 +6885,8 @@
       "per": 10.9,
       "pbr": 1.75,
       "roe": 12.4,
-      "rsi": 38.1,
-      "vol": 0.6092,
+      "rsi": 45.0,
+      "vol": 0.6085,
       "inTop": false,
       "yutai": null
     },
@@ -6926,8 +6900,8 @@
       "per": 18.4,
       "pbr": 1.95,
       "roe": 12.1,
-      "rsi": 40.8,
-      "vol": 0.4469,
+      "rsi": 42.2,
+      "vol": 0.447,
       "inTop": false,
       "yutai": null
     },
@@ -6942,7 +6916,7 @@
       "pbr": 1.34,
       "roe": 16.2,
       "rsi": 33.2,
-      "vol": 0.6892,
+      "vol": 0.6914,
       "inTop": false,
       "yutai": null
     },
@@ -6957,7 +6931,7 @@
       "pbr": 1.19,
       "roe": 7.2,
       "rsi": 72.5,
-      "vol": 0.3588,
+      "vol": 0.3597,
       "inTop": false,
       "yutai": null
     },
@@ -6971,8 +6945,8 @@
       "per": 16.9,
       "pbr": 2.14,
       "roe": 12.6,
-      "rsi": 66.8,
-      "vol": 0.347,
+      "rsi": 61.2,
+      "vol": 0.3467,
       "inTop": false,
       "yutai": null
     },
@@ -6986,8 +6960,8 @@
       "per": 11.6,
       "pbr": 1.6,
       "roe": 15.2,
-      "rsi": 62.6,
-      "vol": 0.296,
+      "rsi": 55.1,
+      "vol": 0.2954,
       "inTop": false,
       "yutai": null
     },
@@ -7001,8 +6975,8 @@
       "per": 15.0,
       "pbr": 0.64,
       "roe": 5.4,
-      "rsi": 45.5,
-      "vol": 0.291,
+      "rsi": 41.1,
+      "vol": 0.2909,
       "inTop": false,
       "yutai": null
     },
@@ -7016,8 +6990,8 @@
       "per": 24.4,
       "pbr": 2.99,
       "roe": 12.3,
-      "rsi": 54.6,
-      "vol": 0.4012,
+      "rsi": 45.8,
+      "vol": 0.4011,
       "inTop": false,
       "yutai": null
     },
@@ -7031,7 +7005,7 @@
       "per": 18.6,
       "pbr": 1.55,
       "roe": 8.9,
-      "rsi": 41.9,
+      "rsi": 31.8,
       "vol": 0.3186,
       "inTop": false,
       "yutai": null
@@ -7046,8 +7020,8 @@
       "per": 31.9,
       "pbr": 2.43,
       "roe": 7.9,
-      "rsi": 63.4,
-      "vol": 0.2909,
+      "rsi": 54.2,
+      "vol": 0.2901,
       "inTop": false,
       "yutai": null
     },
@@ -7061,8 +7035,8 @@
       "per": 21.5,
       "pbr": 11.58,
       "roe": 52.0,
-      "rsi": 60.4,
-      "vol": 0.2988,
+      "rsi": 52.9,
+      "vol": 0.2984,
       "inTop": false,
       "yutai": null
     },
@@ -7076,7 +7050,7 @@
       "per": null,
       "pbr": 1.53,
       "roe": -2.7,
-      "rsi": 32.9,
+      "rsi": 21.5,
       "vol": 0.4191,
       "inTop": false,
       "yutai": null
@@ -7091,8 +7065,8 @@
       "per": 23.0,
       "pbr": 1.16,
       "roe": 5.7,
-      "rsi": 51.5,
-      "vol": 0.3111,
+      "rsi": 39.8,
+      "vol": 0.311,
       "inTop": false,
       "yutai": null
     },
@@ -7106,8 +7080,8 @@
       "per": 22.9,
       "pbr": 2.06,
       "roe": 9.4,
-      "rsi": 63.5,
-      "vol": 0.4257,
+      "rsi": 59.9,
+      "vol": 0.4253,
       "inTop": false,
       "yutai": null
     },
@@ -7121,8 +7095,8 @@
       "per": 16.7,
       "pbr": 2.18,
       "roe": 12.7,
-      "rsi": 58.9,
-      "vol": 0.1935,
+      "rsi": 48.4,
+      "vol": 0.1933,
       "inTop": false,
       "yutai": null
     },
@@ -7136,8 +7110,8 @@
       "per": 6.2,
       "pbr": 1.13,
       "roe": 19.7,
-      "rsi": 41.0,
-      "vol": 0.3002,
+      "rsi": 35.7,
+      "vol": 0.2997,
       "inTop": false,
       "yutai": "2024年に株主優待は廃止済み"
     },
@@ -7151,8 +7125,8 @@
       "per": 17.0,
       "pbr": 2.01,
       "roe": 12.0,
-      "rsi": 64.5,
-      "vol": 0.3131,
+      "rsi": 49.5,
+      "vol": 0.3119,
       "inTop": true,
       "yutai": null
     },
@@ -7166,8 +7140,8 @@
       "per": null,
       "pbr": 2.26,
       "roe": -35.4,
-      "rsi": 44.5,
-      "vol": 0.3417,
+      "rsi": 31.2,
+      "vol": 0.3414,
       "inTop": false,
       "yutai": null
     },
@@ -7181,8 +7155,8 @@
       "per": 25.2,
       "pbr": 2.91,
       "roe": 11.8,
-      "rsi": 49.5,
-      "vol": 0.4542,
+      "rsi": 38.6,
+      "vol": 0.4538,
       "inTop": false,
       "yutai": null
     },
@@ -7196,8 +7170,8 @@
       "per": 24.5,
       "pbr": 1.89,
       "roe": 7.8,
-      "rsi": 40.5,
-      "vol": 0.5266,
+      "rsi": 37.8,
+      "vol": 0.5257,
       "inTop": false,
       "yutai": null
     },
@@ -7211,8 +7185,8 @@
       "per": 37.3,
       "pbr": 1.86,
       "roe": 5.2,
-      "rsi": 57.0,
-      "vol": 0.6185,
+      "rsi": 49.4,
+      "vol": 0.6183,
       "inTop": false,
       "yutai": null
     },
@@ -7226,8 +7200,8 @@
       "per": 21.7,
       "pbr": 3.47,
       "roe": 16.7,
-      "rsi": 31.8,
-      "vol": 1.0232,
+      "rsi": 27.2,
+      "vol": 1.0217,
       "inTop": false,
       "yutai": null
     },
@@ -7242,7 +7216,7 @@
       "pbr": 2.65,
       "roe": 5.9,
       "rsi": 50.0,
-      "vol": 0.5787,
+      "vol": 0.5807,
       "inTop": false,
       "yutai": null
     },
@@ -7256,8 +7230,8 @@
       "per": 16.2,
       "pbr": 1.43,
       "roe": 9.2,
-      "rsi": 32.3,
-      "vol": 0.5585,
+      "rsi": 23.8,
+      "vol": 0.5565,
       "inTop": false,
       "yutai": null
     },
@@ -7271,8 +7245,8 @@
       "per": 39.0,
       "pbr": 2.92,
       "roe": 7.4,
-      "rsi": 59.2,
-      "vol": 0.3691,
+      "rsi": 48.5,
+      "vol": 0.369,
       "inTop": false,
       "yutai": null
     },
@@ -7286,8 +7260,8 @@
       "per": 30.0,
       "pbr": 4.07,
       "roe": 14.4,
-      "rsi": 66.8,
-      "vol": 0.3496,
+      "rsi": 58.5,
+      "vol": 0.349,
       "inTop": false,
       "yutai": null
     },
@@ -7301,8 +7275,8 @@
       "per": 7.5,
       "pbr": 1.06,
       "roe": 12.8,
-      "rsi": 50.1,
-      "vol": 0.2923,
+      "rsi": 40.8,
+      "vol": 0.2898,
       "inTop": false,
       "yutai": null
     },
@@ -7316,8 +7290,8 @@
       "per": 47.0,
       "pbr": 1.15,
       "roe": 4.5,
-      "rsi": 63.8,
-      "vol": 0.3064,
+      "rsi": 57.0,
+      "vol": 0.3017,
       "inTop": false,
       "yutai": null
     },
@@ -7331,8 +7305,8 @@
       "per": 243.7,
       "pbr": 1.86,
       "roe": 0.7,
-      "rsi": 48.3,
-      "vol": 0.341,
+      "rsi": 36.9,
+      "vol": 0.3388,
       "inTop": false,
       "yutai": null
     },
@@ -7346,8 +7320,8 @@
       "per": 39.9,
       "pbr": 0.67,
       "roe": 2.0,
-      "rsi": 58.2,
-      "vol": 0.2524,
+      "rsi": 54.6,
+      "vol": 0.2523,
       "inTop": false,
       "yutai": null
     },
@@ -7361,8 +7335,8 @@
       "per": 12.3,
       "pbr": 0.62,
       "roe": 5.6,
-      "rsi": 40.6,
-      "vol": 0.2775,
+      "rsi": 32.0,
+      "vol": 0.2768,
       "inTop": false,
       "yutai": null
     },
@@ -7377,7 +7351,7 @@
       "pbr": 1.01,
       "roe": 12.3,
       "rsi": 51.7,
-      "vol": 0.2377,
+      "vol": 0.2387,
       "inTop": false,
       "yutai": null
     },
@@ -7391,8 +7365,8 @@
       "per": 9.9,
       "pbr": 0.98,
       "roe": 12.8,
-      "rsi": 53.7,
-      "vol": 0.2245,
+      "rsi": 46.2,
+      "vol": 0.2242,
       "inTop": false,
       "yutai": null
     },
@@ -7407,7 +7381,7 @@
       "pbr": 35.62,
       "roe": -3323.4,
       "rsi": 50.0,
-      "vol": 0.8516,
+      "vol": 0.8455,
       "inTop": false,
       "yutai": null
     },
@@ -7422,7 +7396,7 @@
       "pbr": 1.32,
       "roe": -18.4,
       "rsi": 31.8,
-      "vol": 0.7564,
+      "vol": 0.7586,
       "inTop": false,
       "yutai": null
     }
@@ -7451,32 +7425,32 @@
     {
       "type": "good",
       "title": "入替候補IN: ベイカレント・コンサルティング",
-      "desc": "高スコア+モメンタム (score=0.714)"
-    },
-    {
-      "type": "good",
-      "title": "入替候補IN: 日本航空",
-      "desc": "高スコア+モメンタム (score=0.684)"
+      "desc": "高スコア+モメンタム (score=0.706)"
     },
     {
       "type": "good",
       "title": "入替候補IN: 武田薬品工業",
-      "desc": "高スコア+モメンタム (score=0.679)"
+      "desc": "高スコア+モメンタム (score=0.69)"
+    },
+    {
+      "type": "good",
+      "title": "入替候補IN: 日本航空",
+      "desc": "高スコア+モメンタム (score=0.673)"
     },
     {
       "type": "warn",
-      "title": "入替候補OUT: ローム",
-      "desc": "スコア下位15% (score=0.324)"
+      "title": "入替候補OUT: 豊田通商",
+      "desc": "スコア下位15% (score=0.317)"
     },
     {
       "type": "warn",
-      "title": "入替候補OUT: ファナック",
-      "desc": "スコア下位15% (score=0.322)"
+      "title": "入替候補OUT: レーザーテック",
+      "desc": "スコア下位15% (score=0.315)"
     },
     {
       "type": "warn",
-      "title": "入替候補OUT: ディスコ",
-      "desc": "スコア下位15% (score=0.319)"
+      "title": "入替候補OUT: TDK",
+      "desc": "スコア下位15% (score=0.312)"
     }
   ],
   "flow": {
