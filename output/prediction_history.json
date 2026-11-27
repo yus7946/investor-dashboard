@@ -17789,6 +17789,21 @@
       "actualReturn": null,
       "inRange": null,
       "wentUp": null
+    },
+    {
+      "baseDate": "2026-11-26",
+      "ticker": "4565.T",
+      "name": "ネクセラファーマ",
+      "basePrice": 2031.0,
+      "rangeLow": 1970,
+      "rangeHigh": 2092,
+      "predUpRate": 40.9,
+      "condN": 44,
+      "actualDate": null,
+      "actualClose": null,
+      "actualReturn": null,
+      "inRange": null,
+      "wentUp": null
     }
   ],
   "marketPredictions": [
