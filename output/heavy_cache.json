@@ -149,6 +149,26 @@
   "6963.T": "2027-02-09"
  },
  "news_by_ticker": {
+  "6532.T": [
+   {
+    "title": "「専門性より柔軟性」 ベイカレントや山岡家、人材戦略が呼ぶ株高",
+    "source": "日本経済新聞",
+    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBidzhUMkNlNFY1WkpXYmtueTlUZ3ppMFBrSm4xeXEwMmJPODFLcjlsNjJyLTkydkNlZmItR3l3QTE1Q1BVTXBtbDRqZGFOeDhhNnZWSE5MODYxNmF4V0dwZUZiajhDTXVwT3FXNQ?oc=5",
+    "pubDate": "Wed, 25 Nov 2026 09:00:18 GMT",
+    "sentiment": "neu",
+    "theme": "その他"
+   }
+  ],
+  "9201.T": [
+   {
+    "title": "日本航空（株）第１回社債型種類株式【92015】：株価・株式情報",
+    "source": "Yahoo!ファイナンス",
+    "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1wM1BIWUdEZEZHLV9wRmxFN3Q5akZVTzFSZXhhQTlrLWs5QnlBN1phSjBUY2hyVG9nSnA3NFdJTm9rU241aDR0SjFKVVNfR1BteEpV?oc=5",
+    "pubDate": "Thu, 26 Nov 2026 11:59:52 GMT",
+    "sentiment": "neu",
+    "theme": "その他"
+   }
+  ],
   "4502.T": [
    {
     "title": "武田薬品工業など医薬品株が安い AI株高でディフェンシブに売り",
@@ -157,6 +177,16 @@
     "pubDate": "Thu, 26 Nov 2026 02:31:50 GMT",
     "sentiment": "neg",
     "theme": "AI"
+   }
+  ],
+  "4523.T": [
+   {
+    "title": "エーザイ(株)【4523】：株価・株式情報",
+    "source": "Yahoo!ファイナンス",
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBHY21vRWtiMGpDMmNEZi03R3BadmxFYlgzcW03Y3lkSndUNmZEd2s1Sl9BeHEwQ0QtWlpFV2xkTlRncnNiVEVVLWJtM3ZJYkpBUGc?oc=5",
+    "pubDate": "Fri, 20 Nov 2026 06:57:07 GMT",
+    "sentiment": "neu",
+    "theme": "その他"
    }
   ],
   "4911.T": [
@@ -169,22 +199,12 @@
     "theme": "その他"
    }
   ],
-  "4523.T": [
+  "5411.T": [
    {
-    "title": "【アナリスト評価】エーザイ、レーティング強気を継続、目標株価6,000円に引上げ（米系大手証券）(アイフィス株予報)",
+    "title": "ＪＦＥホールディングス(株)【5411】：決算情報",
     "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNZmtXbzBhSVZvN3hMeHVWcjZEQVdfUTlZaXhDWUJOa2lYNmZDOWVQTlNJOW45ZzlnckZlV005ZGxYZG5oVmpmLTl6NjAyRklyZFUxUlR3eHFDRE14Wk1tbjNFdmRMNGFMcVI5N3VoZWZTcFVwc19aSVN3dFNlYms5VUhvaHU5VmM?oc=5",
-    "pubDate": "Tue, 24 Nov 2026 07:11:37 GMT",
-    "sentiment": "neu",
-    "theme": "その他"
-   }
-  ],
-  "4661.T": [
-   {
-    "title": "京成、OLC株の売却で特別利益506億円 特別損失116億円も計上",
-    "source": "日本経済新聞",
-    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4wa242NUN0UXNWaFc3VmVOVFBHZkJPZmVDZjh2Y3YwY0JlSFRXYzdQNjNKYjRnUkp6N1c0VWVEV1V2ZmM1VDdZeHJoSzV6dVZ0Z0dWNGhMblE5NWNpU2pTZTNQSmZlMGd2MjRfYw?oc=5",
-    "pubDate": "Wed, 25 Nov 2026 10:24:53 GMT",
+    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9EZW96Z2VXOEtxU1ZicjdyWkFJM0hkOU05NHNHVFd3S1lOaGRxZ004NEdoM0Vuc2ZvSXRMWVFVUkNyY1VMTk45N3lMVjZkRE9NeVRHSnFCbXF3SkdZNTBvag?oc=5",
+    "pubDate": "Fri, 06 Nov 2026 08:00:00 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
@@ -199,6 +219,16 @@
     "theme": "その他"
    }
   ],
+  "4661.T": [
+   {
+    "title": "京成、OLC株の売却で特別利益506億円 特別損失116億円も計上",
+    "source": "日本経済新聞",
+    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4wa242NUN0UXNWaFc3VmVOVFBHZkJPZmVDZjh2Y3YwY0JlSFRXYzdQNjNKYjRnUkp6N1c0VWVEV1V2ZmM1VDdZeHJoSzV6dVZ0Z0dWNGhMblE5NWNpU2pTZTNQSmZlMGd2MjRfYw?oc=5",
+    "pubDate": "Wed, 25 Nov 2026 10:24:53 GMT",
+    "sentiment": "neu",
+    "theme": "その他"
+   }
+  ],
   "2269.T": [
    {
     "title": "明治HD【2269】利益予想据え置きでもなぜ株価「3割高」？ 総還元性向111％と中国事業譲渡の先に待つ、見逃せない“焦点”",
@@ -209,42 +239,12 @@
     "theme": "その他"
    }
   ],
-  "4307.T": [
+  "2670.T": [
    {
-    "title": "【アナリスト評価】野村総合研究所、レーティング強気を継続、目標株価7,000円に引上げ（米系大手証券）(アイフィス株予報)",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPdjlickd1cU5WaU1JRmFLQmhFSktfYThZT0g4b0FsOTAtWjlLRUJ1NFJhLUdxeFhuWnh1OUpHclNObDFoa1E4WnRuQmRuWDhhQWlsTm1HVjZIc3dlQ3lBZzM4UHhmanZOam9tcUlCMGF4NkpRQVFDdklkTzdRN09yWTVZT0hURXM?oc=5",
-    "pubDate": "Wed, 25 Nov 2026 11:47:14 GMT",
-    "sentiment": "neu",
-    "theme": "その他"
-   }
-  ],
-  "4452.T": [
-   {
-    "title": "花王(株)【KAOOY】：株価・株式情報",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE51V05IR1kyZVpHYnJoQVRJWmZyNTZFTy00NkI1NmstYVY0V0xwXzZWaV9NY0FuS08yQ3RRYU5GLXdHM3VtMWVaZnhBS1NFTjl3?oc=5",
-    "pubDate": "Tue, 24 Nov 2026 12:30:06 GMT",
-    "sentiment": "neu",
-    "theme": "その他"
-   }
-  ],
-  "5108.T": [
-   {
-    "title": "(株)ブリヂストン【5108】：株価・株式情報",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9VWm50Um5NaDl1alVJc1FPdzFSSVhacm5lOXlIbGJMQ1J2NHBaalBPZDJhZFhJVkFpbVIzWnNKV3JfZm5xLXkzbjVZS3BoYTNvUXc?oc=5",
-    "pubDate": "Fri, 20 Nov 2026 06:57:52 GMT",
-    "sentiment": "neu",
-    "theme": "その他"
-   }
-  ],
-  "8630.T": [
-   {
-    "title": "ＳＯＭＰＯホールディングス(株)【SMPNY】：株価・株式情報",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1aRmtGWHJrcVRjSC1XS3k4a08wbktCdmRkMTRoTGxzNnBXbHZlT1RlNTNTQk9HbU0wOC1xaUFjQ29FUENndW44akNkWUpiend3?oc=5",
-    "pubDate": "Thu, 26 Nov 2026 21:30:53 GMT",
+    "title": "ABCマート株が年初来高値圏 成長モデルの「履き替え」問われる - 日経ヴェリタス",
+    "source": "日本経済新聞",
+    "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE8tRlkyeTVsWS1GVU5nSG1kNXZ5MlA0bU9XNW5TMDRNbmlXb2xWdHJfV1haY2xfbERpalVoREZNeFRkaDc2U2tLSXZWaHRfZlB2eHJETEZwSTlIZ0xIeU1zX2o3X0JHTmlVXy1OYkZWcmxIRXhjaFhVYjNsbC0tUQ?oc=5",
+    "pubDate": "Thu, 29 Oct 2026 07:00:00 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
@@ -360,13 +360,13 @@
   "source": "JPX 投資部門別売買状況（東証プライム・週次・金額ベース）"
  },
  "backtest": {
-  "annual": "+15.8%",
-  "benchmark": "+23.5%",
-  "sharpe": "0.42",
-  "dd": "-32.3%",
+  "annual": "+15.3%",
+  "benchmark": "+24.1%",
+  "sharpe": "0.40",
+  "dd": "-32.8%",
   "winrate": "56.5%",
   "months": "23ヶ月",
-  "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+23.5%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
+  "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+24.1%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
  },
  "overnight": {
   "generatedAt": "2026-11-27 06:26",
@@ -2979,6 +2979,26 @@
   "basis": "夜間に確定した米S&P500・米半導体指数(SOX)・ドル円・CME日経先物・米国11業種・金利・原油・日本企業のADRなどの動きと、銘柄ごとの過去の感応度（19指標を同時に推定するリッジ回帰）を機械学習（勾配ブースティング）で組み合わせた確率。的中率はすべて、その時点より前のデータだけで学習した予測の答え合わせ（先読みなし）。寄付き後の値動きや数日先は予測力が確認できないため対象外。"
  },
  "past_earnings": {
+  "6532.T": [
+   "2026-10-15",
+   "2026-07-15",
+   "2024-10-09",
+   "2024-07-10",
+   "2024-04-11",
+   "2024-01-11",
+   "2023-10-12",
+   "2023-07-13"
+  ],
+  "9201.T": [
+   "2026-11-01",
+   "2026-08-02",
+   "2026-04-29",
+   "2026-02-02",
+   "2025-10-29",
+   "2025-07-29",
+   "2025-05-01",
+   "2025-02-04"
+  ],
   "4502.T": [
    "2026-10-28",
    "2026-07-30",
@@ -2988,16 +3008,6 @@
    "2025-07-30",
    "2025-05-07",
    "2025-01-30"
-  ],
-  "4911.T": [
-   "2026-11-09",
-   "2026-08-04",
-   "2026-05-11",
-   "2026-02-09",
-   "2025-11-09",
-   "2025-08-05",
-   "2025-05-11",
-   "2025-02-09"
   ],
   "4523.T": [
    "2026-11-10",
@@ -3009,15 +3019,25 @@
    "2025-05-14",
    "2025-02-06"
   ],
-  "4661.T": [
-   "2026-10-29",
-   "2026-07-29",
-   "2026-04-28",
-   "2026-01-29",
-   "2025-10-30",
-   "2025-07-30",
-   "2025-04-28",
-   "2025-01-30"
+  "4911.T": [
+   "2026-11-09",
+   "2026-08-04",
+   "2026-05-11",
+   "2026-02-09",
+   "2025-11-09",
+   "2025-08-05",
+   "2025-05-11",
+   "2025-02-09"
+  ],
+  "5411.T": [
+   "2026-11-05",
+   "2026-08-05",
+   "2026-05-07",
+   "2026-02-04",
+   "2025-11-05",
+   "2025-08-04",
+   "2025-05-08",
+   "2025-02-06"
   ],
   "7832.T": [
    "2026-11-09",
@@ -3029,6 +3049,16 @@
    "2025-02-04",
    "2024-11-05"
   ],
+  "4661.T": [
+   "2026-10-29",
+   "2026-07-29",
+   "2026-04-28",
+   "2026-01-29",
+   "2025-10-30",
+   "2025-07-30",
+   "2025-04-28",
+   "2025-01-30"
+  ],
   "2269.T": [
    "2026-11-11",
    "2026-08-04",
@@ -3039,45 +3069,15 @@
    "2025-05-08",
    "2025-02-10"
   ],
-  "4307.T": [
-   "2026-10-28",
-   "2026-07-29",
-   "2026-04-24",
-   "2026-01-29",
-   "2025-10-29",
-   "2025-07-28",
-   "2025-04-24",
-   "2025-01-30"
-  ],
-  "4452.T": [
-   "2026-11-04",
-   "2026-08-05",
-   "2026-05-12",
-   "2026-02-05",
-   "2025-11-05",
-   "2025-08-06",
-   "2025-05-08",
-   "2025-02-06"
-  ],
-  "5108.T": [
-   "2026-11-12",
-   "2026-08-07",
-   "2026-05-14",
-   "2026-02-16",
-   "2025-11-12",
-   "2025-08-08",
-   "2025-05-15",
-   "2025-02-17"
-  ],
-  "8630.T": [
-   "2026-11-18",
-   "2026-08-14",
-   "2026-05-20",
-   "2026-02-13",
-   "2024-02-13",
-   "2023-11-17",
-   "2023-08-09",
-   "2023-05-19"
+  "2670.T": [
+   "2026-10-07",
+   "2026-07-08",
+   "2026-04-08",
+   "2026-01-07",
+   "2025-10-08",
+   "2025-07-08",
+   "2025-04-09",
+   "2025-01-08"
   ]
  }
 }
