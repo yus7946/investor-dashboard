@@ -181,40 +181,10 @@
   ],
   "4523.T": [
    {
-    "title": "エーザイ(株)【4523】：株価・株式情報",
+    "title": "【アナリスト評価】エーザイ、レーティング強気を継続、目標株価6,000円に引上げ（米系大手証券）(アイフィス株予報)",
     "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBHY21vRWtiMGpDMmNEZi03R3BadmxFYlgzcW03Y3lkSndUNmZEd2s1Sl9BeHEwQ0QtWlpFV2xkTlRncnNiVEVVLWJtM3ZJYkpBUGc?oc=5",
-    "pubDate": "Fri, 20 Nov 2026 06:57:07 GMT",
-    "sentiment": "neu",
-    "theme": "その他"
-   }
-  ],
-  "4911.T": [
-   {
-    "title": "(株)資生堂【SSDOY】：株価・株式情報",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1JMXlkMzZyYktiTnF4TkFqOUpZS3dIZ2Y3YkNEbnlXa1VlT25OMEFsbXNDN2lWcnNqcWJGWkpTcVVDQ20zN2xGRk15ZXppMF9U?oc=5",
-    "pubDate": "Thu, 26 Nov 2026 16:58:03 GMT",
-    "sentiment": "neu",
-    "theme": "その他"
-   }
-  ],
-  "5411.T": [
-   {
-    "title": "ＪＦＥホールディングス(株)【5411】：決算情報",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9EZW96Z2VXOEtxU1ZicjdyWkFJM0hkOU05NHNHVFd3S1lOaGRxZ004NEdoM0Vuc2ZvSXRMWVFVUkNyY1VMTk45N3lMVjZkRE9NeVRHSnFCbXF3SkdZNTBvag?oc=5",
-    "pubDate": "Fri, 06 Nov 2026 08:00:00 GMT",
-    "sentiment": "neu",
-    "theme": "その他"
-   }
-  ],
-  "7832.T": [
-   {
-    "title": "バンダイナムコホールディングス[7832]：（株）バンダイナムコホールディングスがPOPS（株）の株式を取得 2026年11月10日(適時開示) ：日経会社情報",
-    "source": "日本経済新聞",
-    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFB6OEpEX3hmbFhsNW5DZ2lONURoT1JxSFNFY0pmSkVPSVl0cFFCTlQ0a3VHVmpVUmJRTnltb042VEhVbFlHaEllY3E1VFRsQ0VUclRpZVVSbmZuMFc4QUE5dVBkWlA1Rk9jZHc?oc=5",
-    "pubDate": "Tue, 10 Nov 2026 08:00:00 GMT",
+    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNZmtXbzBhSVZvN3hMeHVWcjZEQVdfUTlZaXhDWUJOa2lYNmZDOWVQTlNJOW45ZzlnckZlV005ZGxYZG5oVmpmLTl6NjAyRklyZFUxUlR3eHFDRE14Wk1tbjNFdmRMNGFMcVI5N3VoZWZTcFVwc19aSVN3dFNlYms5VUhvaHU5VmM?oc=5",
+    "pubDate": "Tue, 24 Nov 2026 07:11:37 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
@@ -229,6 +199,26 @@
     "theme": "その他"
    }
   ],
+  "5411.T": [
+   {
+    "title": "ＪＦＥホールディングス(株)【5411】：決算情報",
+    "source": "Yahoo!ファイナンス",
+    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9EZW96Z2VXOEtxU1ZicjdyWkFJM0hkOU05NHNHVFd3S1lOaGRxZ004NEdoM0Vuc2ZvSXRMWVFVUkNyY1VMTk45N3lMVjZkRE9NeVRHSnFCbXF3SkdZNTBvag?oc=5",
+    "pubDate": "Fri, 06 Nov 2026 08:00:00 GMT",
+    "sentiment": "neu",
+    "theme": "その他"
+   }
+  ],
+  "4911.T": [
+   {
+    "title": "(株)資生堂【SSDOY】：株価・株式情報",
+    "source": "Yahoo!ファイナンス",
+    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1JMXlkMzZyYktiTnF4TkFqOUpZS3dIZ2Y3YkNEbnlXa1VlT25OMEFsbXNDN2lWcnNqcWJGWkpTcVVDQ20zN2xGRk15ZXppMF9U?oc=5",
+    "pubDate": "Thu, 26 Nov 2026 16:58:03 GMT",
+    "sentiment": "neu",
+    "theme": "その他"
+   }
+  ],
   "2269.T": [
    {
     "title": "明治HD【2269】利益予想据え置きでもなぜ株価「3割高」？ 総還元性向111％と中国事業譲渡の先に待つ、見逃せない“焦点”",
@@ -239,12 +229,22 @@
     "theme": "その他"
    }
   ],
-  "2670.T": [
+  "4452.T": [
    {
-    "title": "ABCマート株が年初来高値圏 成長モデルの「履き替え」問われる - 日経ヴェリタス",
+    "title": "花王(株)【KAOOY】：株価・株式情報",
+    "source": "Yahoo!ファイナンス",
+    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE51V05IR1kyZVpHYnJoQVRJWmZyNTZFTy00NkI1NmstYVY0V0xwXzZWaV9NY0FuS08yQ3RRYU5GLXdHM3VtMWVaZnhBS1NFTjl3?oc=5",
+    "pubDate": "Tue, 24 Nov 2026 12:30:06 GMT",
+    "sentiment": "neu",
+    "theme": "その他"
+   }
+  ],
+  "7832.T": [
+   {
+    "title": "バンダイナムコホールディングス[7832]：（株）バンダイナムコホールディングスがPOPS（株）の株式を取得 2026年11月10日(適時開示) ：日経会社情報",
     "source": "日本経済新聞",
-    "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE8tRlkyeTVsWS1GVU5nSG1kNXZ5MlA0bU9XNW5TMDRNbmlXb2xWdHJfV1haY2xfbERpalVoREZNeFRkaDc2U2tLSXZWaHRfZlB2eHJETEZwSTlIZ0xIeU1zX2o3X0JHTmlVXy1OYkZWcmxIRXhjaFhVYjNsbC0tUQ?oc=5",
-    "pubDate": "Thu, 29 Oct 2026 07:00:00 GMT",
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFB6OEpEX3hmbFhsNW5DZ2lONURoT1JxSFNFY0pmSkVPSVl0cFFCTlQ0a3VHVmpVUmJRTnltb042VEhVbFlHaEllY3E1VFRsQ0VUclRpZVVSbmZuMFc4QUE5dVBkWlA1Rk9jZHc?oc=5",
+    "pubDate": "Tue, 10 Nov 2026 08:00:00 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
@@ -360,13 +360,13 @@
   "source": "JPX 投資部門別売買状況（東証プライム・週次・金額ベース）"
  },
  "backtest": {
-  "annual": "+15.3%",
-  "benchmark": "+24.1%",
+  "annual": "+15.2%",
+  "benchmark": "+24.2%",
   "sharpe": "0.40",
-  "dd": "-32.8%",
+  "dd": "-33.0%",
   "winrate": "56.5%",
   "months": "23ヶ月",
-  "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+24.1%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
+  "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+24.2%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
  },
  "overnight": {
   "generatedAt": "2026-11-27 06:26",
@@ -3019,6 +3019,26 @@
    "2025-05-14",
    "2025-02-06"
   ],
+  "4661.T": [
+   "2026-10-29",
+   "2026-07-29",
+   "2026-04-28",
+   "2026-01-29",
+   "2025-10-30",
+   "2025-07-30",
+   "2025-04-28",
+   "2025-01-30"
+  ],
+  "5411.T": [
+   "2026-11-05",
+   "2026-08-05",
+   "2026-05-07",
+   "2026-02-04",
+   "2025-11-05",
+   "2025-08-04",
+   "2025-05-08",
+   "2025-02-06"
+  ],
   "4911.T": [
    "2026-11-09",
    "2026-08-04",
@@ -3029,13 +3049,23 @@
    "2025-05-11",
    "2025-02-09"
   ],
-  "5411.T": [
-   "2026-11-05",
+  "2269.T": [
+   "2026-11-11",
+   "2026-08-04",
+   "2026-05-14",
+   "2026-02-12",
+   "2025-11-12",
+   "2025-08-05",
+   "2025-05-08",
+   "2025-02-10"
+  ],
+  "4452.T": [
+   "2026-11-04",
    "2026-08-05",
-   "2026-05-07",
-   "2026-02-04",
+   "2026-05-12",
+   "2026-02-05",
    "2025-11-05",
-   "2025-08-04",
+   "2025-08-06",
    "2025-05-08",
    "2025-02-06"
   ],
@@ -3048,36 +3078,6 @@
    "2025-05-07",
    "2025-02-04",
    "2024-11-05"
-  ],
-  "4661.T": [
-   "2026-10-29",
-   "2026-07-29",
-   "2026-04-28",
-   "2026-01-29",
-   "2025-10-30",
-   "2025-07-30",
-   "2025-04-28",
-   "2025-01-30"
-  ],
-  "2269.T": [
-   "2026-11-11",
-   "2026-08-04",
-   "2026-05-14",
-   "2026-02-12",
-   "2025-11-12",
-   "2025-08-05",
-   "2025-05-08",
-   "2025-02-10"
-  ],
-  "2670.T": [
-   "2026-10-07",
-   "2026-07-08",
-   "2026-04-08",
-   "2026-01-07",
-   "2025-10-08",
-   "2025-07-08",
-   "2025-04-09",
-   "2025-01-08"
   ]
  }
 }
