@@ -1,6 +1,6 @@
 {
-  "updated": "2026年11月27日 20:03",
-  "updatedAtMs": 1795777392169,
+  "updated": "2026年11月27日 21:55",
+  "updatedAtMs": 1795784152187,
   "updateMode": "light",
   "fetched": 163,
   "universeTotal": 166,
@@ -32,8 +32,8 @@
   "marketOutlook": {
     "spxChangePct": -0.25,
     "spxDate": "2026-11-25",
-    "usdjpy": 159.49,
-    "usdjpyChangePct": 0.18,
+    "usdjpy": 159.48,
+    "usdjpyChangePct": 0.17,
     "condition": "米S&P500が直近下落",
     "topixUpRate": 43.6,
     "n": 220,
@@ -2651,12 +2651,12 @@
     "basis": "夜間に確定した米S&P500・米半導体指数(SOX)・ドル円・CME日経先物・米国11業種・金利・原油・日本企業のADRなどの動きと、銘柄ごとの過去の感応度（19指標を同時に推定するリッジ回帰）を機械学習（勾配ブースティング）で組み合わせた確率。的中率はすべて、その時点より前のデータだけで学習した予測の答え合わせ（先読みなし）。寄付き後の値動きや数日先は予測力が確認できないため対象外。"
   },
   "marketReport": {
-    "generatedAt": "2026-11-27 20:03",
+    "generatedAt": "2026-11-27 21:55",
     "regime": {
       "n225Vol": 40.0,
       "n225VolTopPct": 4,
-      "vix": 24.6,
-      "vixTopPct": 16,
+      "vix": 25.4,
+      "vixTopPct": 14,
       "vixDate": "2026-11-27",
       "n225FromHigh": -16.9,
       "n225Daily10": [
@@ -2849,10 +2849,10 @@
           "label": "VIX（恐怖指数）",
           "group": "level",
           "base": 20.83,
-          "last": 24.61,
+          "last": 25.37,
           "react": -4.22,
-          "since": 3.78,
-          "day": -2.19,
+          "since": 4.54,
+          "day": -1.43,
           "unit": "pt",
           "lastDate": "2026-11-27"
         },
@@ -2873,9 +2873,9 @@
           "label": "ドル円",
           "group": "fx",
           "base": 157.91,
-          "last": 159.49,
+          "last": 159.48,
           "react": 0.35,
-          "since": 1.0,
+          "since": 0.99,
           "day": 0.17,
           "unit": "%",
           "lastDate": "2026-11-27"
@@ -3041,10 +3041,6 @@
         "7182.T": [
           1.14,
           0.64
-        ],
-        "8303.T": [
-          2.03,
-          -1.0
         ],
         "9984.T": [
           -3.2,
@@ -3662,15 +3658,15 @@
           "value": 1.15
         },
         "vixlvl": {
-          "label": "20〜25",
-          "lo": 20,
-          "hi": 25,
-          "days": 80,
-          "cc": 61.6,
-          "ccAgree": 62.3,
-          "gap": 70.7,
+          "label": "25以上",
+          "lo": 25,
+          "hi": 999,
+          "days": 39,
+          "cc": 71.8,
+          "ccAgree": 72.5,
+          "gap": 79.9,
           "title": "VIX（米国の恐怖指数）",
-          "value": 24.6
+          "value": 25.4
         }
       },
       "table": {
@@ -3898,847 +3894,6 @@
     },
     {
       "rank": 2,
-      "ticker": "4502.T",
-      "name": "武田薬品工業",
-      "score": 0.669,
-      "f": 7,
-      "per": 328.9,
-      "pbr": 1.58,
-      "roe": 0.6,
-      "value": 0.114,
-      "quality": 0.979,
-      "momentum": 0.538,
-      "smart": 0.945,
-      "smartMoney": {
-        "score": 0.609,
-        "label": "買い集めの兆候",
-        "tone": "pos",
-        "cmf": 0.103,
-        "mfi": 83.7,
-        "obvSlope": 0.37,
-        "vwapDevPct": 7.4,
-        "factors": [
-          "安値圏でも買われている（CMFプラス）",
-          "上昇日に出来高が集中（OBV上向き）",
-          "直近平均コスト(VWAP)を上回って推移",
-          "直近5日は買い方向の出来高が優勢"
-        ]
-      },
-      "smartAdjusted": null,
-      "signal": "売り",
-      "rsi": 79.9,
-      "conf": "中",
-      "strategy": [
-        "dividend"
-      ],
-      "dividend_yield": 2.8,
-      "volatility": 0.2641,
-      "short_ratio": null,
-      "regime_adjusted": false,
-      "forecast": {
-        "price": 7341.0,
-        "rangeLow": 7247,
-        "rangeHigh": 7435,
-        "rangeLow2": 7152,
-        "rangeHigh2": 7530,
-        "volDPct": 1.28,
-        "calibrated": true,
-        "plan": {
-          "entry": 7294,
-          "target": 7483,
-          "stop": 7153,
-          "rr": 1.34,
-          "hi3m": 7365,
-          "lo3m": 5518,
-          "basis": "1日の実績振れ幅σ=1.3%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値7,365円 / 安値5,518円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
-        },
-        "cond": {
-          "upRate": 50.6,
-          "n": 85,
-          "condition": "RSI70以上（買われすぎ圏）×5日上昇局面",
-          "note": null
-        },
-        "factors": [
-          {
-            "label": "RSI 79.9（買われすぎ圏・反落しやすい傾向）",
-            "dir": "-"
-          },
-          {
-            "label": "直近ニュースがネガティブ寄り（1件/簡易判定）",
-            "dir": "-"
-          }
-        ],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.92倍に自動補正済み。目標カバー率は約75%）"
-      },
-      "impact": {
-        "price": 7341.0,
-        "normalYen": 103,
-        "normalPct": 1.4,
-        "bigVol": null,
-        "earnings": {
-          "n": 8,
-          "avgAbsPct": 1.6,
-          "maxAbsPct": 3.6,
-          "avgYen": 117,
-          "maxYen": 264,
-          "upCount": 5,
-          "recentPct": [
-            2.6,
-            -3.6,
-            1.2
-          ]
-        },
-        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
-      },
-      "risk": {
-        "safety": 78,
-        "level": "低",
-        "penalties": [
-          "買われすぎ（RSI80）→ 反落で損切りに当たりやすい"
-        ],
-        "supports": [
-          "機関の買い集め兆候"
-        ],
-        "stopPct": 1.93,
-        "rr": 1.34
-      },
-      "earnings": {
-        "date": "2027-01-28",
-        "daysTo": 44,
-        "isToday": false,
-        "isSoon": false,
-        "passed": false,
-        "revGrowthPct": 6.7,
-        "epsGrowthPct": null,
-        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
-      },
-      "yutai": null,
-      "news": [
-        {
-          "title": "武田薬品工業など医薬品株が安い AI株高でディフェンシブに売り",
-          "source": "日本経済新聞",
-          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9rUEdWVDB5SjJIZ1AxaHJIYXJlSTNQTnlTXzhxazdYVkQ3TzNvOHV0MFlac3hCcFpRUm5IYkZDNWxfLVV6RkMxNGhLelRxSmdCR2M5eVBxLWNaVGNfTHhzMmVaajhLQ01GZ3lLbQ?oc=5",
-          "pubDate": "Thu, 26 Nov 2026 02:31:50 GMT",
-          "sentiment": "neg",
-          "theme": "AI"
-        }
-      ]
-    },
-    {
-      "rank": 3,
-      "ticker": "9201.T",
-      "name": "日本航空",
-      "score": 0.668,
-      "f": 9,
-      "per": 15.3,
-      "pbr": 1.0,
-      "roe": 8.3,
-      "value": 0.195,
-      "quality": 0.981,
-      "momentum": 0.467,
-      "smart": 0.963,
-      "smartMoney": {
-        "score": 0.636,
-        "label": "買い集めの兆候",
-        "tone": "pos",
-        "cmf": 0.33,
-        "mfi": 76.0,
-        "obvSlope": 0.36,
-        "vwapDevPct": 3.3,
-        "factors": [
-          "安値圏でも買われている（CMFプラス）",
-          "上昇日に出来高が集中（OBV上向き）",
-          "直近平均コスト(VWAP)を上回って推移"
-        ]
-      },
-      "smartAdjusted": null,
-      "signal": "強い買い",
-      "rsi": 64.4,
-      "conf": "高",
-      "strategy": [
-        "swing",
-        "dividend"
-      ],
-      "dividend_yield": 2.7,
-      "volatility": 0.2953,
-      "short_ratio": null,
-      "regime_adjusted": false,
-      "forecast": {
-        "price": 3483.0,
-        "rangeLow": 3431,
-        "rangeHigh": 3535,
-        "rangeLow2": 3379,
-        "rangeHigh2": 3587,
-        "volDPct": 1.5,
-        "calibrated": true,
-        "plan": {
-          "entry": 3457,
-          "target": 3561,
-          "stop": 3379,
-          "rr": 1.33,
-          "hi3m": 3613,
-          "lo3m": 2882,
-          "basis": "1日の実績振れ幅σ=1.5%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値3,613円 / 安値2,882円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
-        },
-        "cond": {
-          "upRate": 52.4,
-          "n": 185,
-          "condition": "RSI中立圏×5日下落局面",
-          "note": null
-        },
-        "factors": [],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.92倍に自動補正済み。目標カバー率は約75%）"
-      },
-      "impact": {
-        "price": 3483.0,
-        "normalYen": 57,
-        "normalPct": 1.6,
-        "bigVol": {
-          "n": 3,
-          "avgAbsPct": 6.1,
-          "maxAbsPct": 8.0,
-          "avgYen": 212
-        },
-        "earnings": {
-          "n": 8,
-          "avgAbsPct": 1.4,
-          "maxAbsPct": 2.6,
-          "avgYen": 49,
-          "maxYen": 91,
-          "upCount": 4,
-          "recentPct": [
-            -1.8,
-            1.2,
-            -0.5
-          ]
-        },
-        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
-      },
-      "risk": {
-        "safety": 90,
-        "level": "低",
-        "penalties": [],
-        "supports": [
-          "機関の買い集め兆候"
-        ],
-        "stopPct": 2.26,
-        "rr": 1.33
-      },
-      "earnings": {
-        "date": "2027-02-03",
-        "daysTo": 48,
-        "isToday": false,
-        "isSoon": false,
-        "passed": false,
-        "revGrowthPct": 13.1,
-        "epsGrowthPct": -15.6,
-        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
-      },
-      "yutai": null,
-      "news": [
-        {
-          "title": "日本航空(株)【JAPSY】：株価・株式情報",
-          "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9fMEEtbHBKUXVDNVRQWTdxdDFYNkg3QmtyOTdxU2hGOGhieEVtTjlrNk00a2sySnBBVVBaM3NMVC1nazhPR0VPeVdpbHdraS1U?oc=5",
-          "pubDate": "Wed, 25 Nov 2026 22:24:31 GMT",
-          "sentiment": "neu",
-          "theme": "その他"
-        }
-      ]
-    },
-    {
-      "rank": 4,
-      "ticker": "4523.T",
-      "name": "エーザイ",
-      "score": 0.661,
-      "f": 7,
-      "per": 36.0,
-      "pbr": 1.76,
-      "roe": 5.1,
-      "value": 0.106,
-      "quality": 0.98,
-      "momentum": 0.513,
-      "smart": 0.973,
-      "smartMoney": {
-        "score": 0.651,
-        "label": "買い集めの兆候",
-        "tone": "pos",
-        "cmf": 0.182,
-        "mfi": 78.9,
-        "obvSlope": 0.21,
-        "vwapDevPct": 8.0,
-        "factors": [
-          "安値圏でも買われている（CMFプラス）",
-          "上昇日に出来高が集中（OBV上向き）",
-          "直近平均コスト(VWAP)を上回って推移",
-          "直近5日は買い方向の出来高が優勢"
-        ]
-      },
-      "smartAdjusted": null,
-      "signal": "売り",
-      "rsi": 84.6,
-      "conf": "中",
-      "strategy": [
-        "dividend"
-      ],
-      "dividend_yield": 2.9,
-      "volatility": 0.3209,
-      "short_ratio": null,
-      "regime_adjusted": false,
-      "forecast": {
-        "price": 5602.0,
-        "rangeLow": 5502,
-        "rangeHigh": 5702,
-        "rangeLow2": 5403,
-        "rangeHigh2": 5801,
-        "volDPct": 1.78,
-        "calibrated": true,
-        "plan": {
-          "entry": 5552,
-          "target": 5751,
-          "stop": 5403,
-          "rr": 1.34,
-          "hi3m": 5631,
-          "lo3m": 4545,
-          "basis": "1日の実績振れ幅σ=1.8%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値5,631円 / 安値4,545円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
-        },
-        "cond": {
-          "upRate": 50.7,
-          "n": 67,
-          "condition": "RSI70以上（買われすぎ圏）×5日上昇局面",
-          "note": null
-        },
-        "factors": [
-          {
-            "label": "RSI 84.6（買われすぎ圏・反落しやすい傾向）",
-            "dir": "-"
-          }
-        ],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.92倍に自動補正済み。目標カバー率は約75%）"
-      },
-      "impact": {
-        "price": 5602.0,
-        "normalYen": 109,
-        "normalPct": 1.9,
-        "bigVol": null,
-        "earnings": {
-          "n": 8,
-          "avgAbsPct": 2.9,
-          "maxAbsPct": 6.2,
-          "avgYen": 162,
-          "maxYen": 347,
-          "upCount": 4,
-          "recentPct": [
-            0.3,
-            -0.7,
-            -6.2
-          ]
-        },
-        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
-      },
-      "risk": {
-        "safety": 68,
-        "level": "中",
-        "penalties": [
-          "買われすぎ（RSI85）→ 反落で損切りに当たりやすい"
-        ],
-        "supports": [
-          "機関の買い集め兆候"
-        ],
-        "stopPct": 2.68,
-        "rr": 1.34
-      },
-      "earnings": {
-        "date": "2027-02-04",
-        "daysTo": 49,
-        "isToday": false,
-        "isSoon": false,
-        "passed": false,
-        "revGrowthPct": 19.4,
-        "epsGrowthPct": 15.1,
-        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
-      },
-      "yutai": null,
-      "news": [
-        {
-          "title": "エーザイ(株)【4523】：株価・株式情報",
-          "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBHY21vRWtiMGpDMmNEZi03R3BadmxFYlgzcW03Y3lkSndUNmZEd2s1Sl9BeHEwQ0QtWlpFV2xkTlRncnNiVEVVLWJtM3ZJYkpBUGc?oc=5",
-          "pubDate": "Fri, 20 Nov 2026 06:57:07 GMT",
-          "sentiment": "neu",
-          "theme": "その他"
-        }
-      ]
-    },
-    {
-      "rank": 5,
-      "ticker": "5411.T",
-      "name": "JFEホールディングス",
-      "score": 0.659,
-      "f": 8,
-      "per": 12.5,
-      "pbr": 0.44,
-      "roe": 3.9,
-      "value": 0.439,
-      "quality": 0.98,
-      "momentum": 0.364,
-      "smart": 0.836,
-      "smartMoney": {
-        "score": 0.45,
-        "label": "買い集めの兆候",
-        "tone": "pos",
-        "cmf": 0.074,
-        "mfi": 69.7,
-        "obvSlope": 0.23,
-        "vwapDevPct": 1.8,
-        "factors": [
-          "上昇日に出来高が集中（OBV上向き）",
-          "直近平均コスト(VWAP)を上回って推移",
-          "直近5日は買い方向の出来高が優勢"
-        ]
-      },
-      "smartAdjusted": null,
-      "signal": "強い買い",
-      "rsi": 63.3,
-      "conf": "高",
-      "strategy": [
-        "swing",
-        "dividend"
-      ],
-      "dividend_yield": 4.5,
-      "volatility": 0.2573,
-      "short_ratio": null,
-      "regime_adjusted": false,
-      "forecast": {
-        "price": 1818.5,
-        "rangeLow": 1792,
-        "rangeHigh": 1845,
-        "rangeLow2": 1765,
-        "rangeHigh2": 1872,
-        "volDPct": 1.46,
-        "calibrated": true,
-        "plan": {
-          "entry": 1805,
-          "target": 1858,
-          "stop": 1765,
-          "rr": 1.32,
-          "hi3m": 1894,
-          "lo3m": 1676,
-          "basis": "1日の実績振れ幅σ=1.5%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値1,894円 / 安値1,676円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
-        },
-        "cond": {
-          "upRate": 48.3,
-          "n": 180,
-          "condition": "RSI中立圏×5日上昇局面",
-          "note": null
-        },
-        "factors": [],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.92倍に自動補正済み。目標カバー率は約75%）"
-      },
-      "impact": {
-        "price": 1818.5,
-        "normalYen": 29,
-        "normalPct": 1.6,
-        "bigVol": {
-          "n": 3,
-          "avgAbsPct": 1.8,
-          "maxAbsPct": 2.5,
-          "avgYen": 33
-        },
-        "earnings": {
-          "n": 8,
-          "avgAbsPct": 1.6,
-          "maxAbsPct": 2.6,
-          "avgYen": 29,
-          "maxYen": 47,
-          "upCount": 5,
-          "recentPct": [
-            -2.5,
-            1.1,
-            1.8
-          ]
-        },
-        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
-      },
-      "risk": {
-        "safety": 94,
-        "level": "低",
-        "penalties": [],
-        "supports": [
-          "機関の買い集め兆候"
-        ],
-        "stopPct": 2.22,
-        "rr": 1.32
-      },
-      "earnings": {
-        "date": "2027-02-04",
-        "daysTo": 49,
-        "isToday": false,
-        "isSoon": false,
-        "passed": false,
-        "revGrowthPct": 10.9,
-        "epsGrowthPct": 16.3,
-        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
-      },
-      "yutai": null,
-      "news": [
-        {
-          "title": "ＪＦＥホールディングス(株)【5411】：決算情報",
-          "source": "Yahoo!ファイナンス",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9EZW96Z2VXOEtxU1ZicjdyWkFJM0hkOU05NHNHVFd3S1lOaGRxZ004NEdoM0Vuc2ZvSXRMWVFVUkNyY1VMTk45N3lMVjZkRE9NeVRHSnFCbXF3SkdZNTBvag?oc=5",
-          "pubDate": "Fri, 06 Nov 2026 08:00:00 GMT",
-          "sentiment": "neu",
-          "theme": "その他"
-        }
-      ]
-    },
-    {
-      "rank": 6,
-      "ticker": "4565.T",
-      "name": "ネクセラファーマ",
-      "score": 0.654,
-      "f": 6,
-      "per": null,
-      "pbr": 2.92,
-      "roe": -8.3,
-      "value": 0.059,
-      "quality": 0.976,
-      "momentum": 0.771,
-      "smart": 0.878,
-      "smartMoney": {
-        "score": 0.512,
-        "label": "買い集めの兆候",
-        "tone": "pos",
-        "cmf": 0.043,
-        "mfi": 65.6,
-        "obvSlope": 0.33,
-        "vwapDevPct": 19.4,
-        "factors": [
-          "上昇日に出来高が集中（OBV上向き）",
-          "直近平均コスト(VWAP)を上回って推移",
-          "直近5日は買い方向の出来高が優勢"
-        ]
-      },
-      "smartAdjusted": null,
-      "signal": "様子見",
-      "rsi": 74.8,
-      "conf": "低",
-      "strategy": [
-        "growth"
-      ],
-      "dividend_yield": 0.0,
-      "volatility": 0.5773,
-      "short_ratio": 5.14,
-      "regime_adjusted": false,
-      "forecast": {
-        "price": 2051.0,
-        "rangeLow": 1989,
-        "rangeHigh": 2113,
-        "rangeLow2": 1928,
-        "rangeHigh2": 2174,
-        "volDPct": 3.01,
-        "calibrated": true,
-        "plan": {
-          "entry": 2020,
-          "target": 2143,
-          "stop": 1927,
-          "rr": 1.32,
-          "hi3m": 2051,
-          "lo3m": 1122,
-          "basis": "1日の実績振れ幅σ=3.0%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値2,051円 / 安値1,122円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
-        },
-        "cond": {
-          "upRate": 40.9,
-          "n": 44,
-          "condition": "RSI70以上（買われすぎ圏）×5日上昇局面",
-          "note": null
-        },
-        "factors": [
-          {
-            "label": "RSI 74.8（買われすぎ圏・反落しやすい傾向）",
-            "dir": "-"
-          },
-          {
-            "label": "空売り残高5.14%（売り圧力・踏み上げ両方の要因）",
-            "dir": "-"
-          }
-        ],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.92倍に自動補正済み。目標カバー率は約75%）"
-      },
-      "impact": {
-        "price": 2051.0,
-        "normalYen": 67,
-        "normalPct": 3.3,
-        "bigVol": {
-          "n": 12,
-          "avgAbsPct": 6.4,
-          "maxAbsPct": 13.7,
-          "avgYen": 131
-        },
-        "earnings": null,
-        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
-      },
-      "risk": {
-        "safety": 44,
-        "level": "高",
-        "penalties": [
-          "値動きが大きい（年率58%）→ 建玉は小さめに",
-          "空売り残高5.14%（急変動リスク）"
-        ],
-        "supports": [
-          "機関の買い集め兆候"
-        ],
-        "stopPct": 4.6,
-        "rr": 1.32
-      },
-      "earnings": {
-        "date": "2027-02-12",
-        "daysTo": 55,
-        "isToday": false,
-        "isSoon": false,
-        "passed": false,
-        "revGrowthPct": 30.8,
-        "epsGrowthPct": null,
-        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
-      },
-      "yutai": null,
-      "news": []
-    },
-    {
-      "rank": 7,
-      "ticker": "7832.T",
-      "name": "バンダイナムコHD",
-      "score": 0.633,
-      "f": 6,
-      "per": 29.2,
-      "pbr": 5.01,
-      "roe": 18.2,
-      "value": 0.039,
-      "quality": 0.984,
-      "momentum": 0.794,
-      "smart": 0.726,
-      "smartMoney": {
-        "score": 0.29,
-        "label": "買い集めの兆候",
-        "tone": "pos",
-        "cmf": 0.11,
-        "mfi": 58.7,
-        "obvSlope": 0.11,
-        "vwapDevPct": 7.9,
-        "factors": [
-          "安値圏でも買われている（CMFプラス）",
-          "直近平均コスト(VWAP)を上回って推移",
-          "直近5日は売り方向の出来高が優勢"
-        ]
-      },
-      "smartAdjusted": null,
-      "signal": "様子見",
-      "rsi": 72.1,
-      "conf": "低",
-      "strategy": [
-        "swing"
-      ],
-      "dividend_yield": 0.7,
-      "volatility": 0.3983,
-      "short_ratio": null,
-      "regime_adjusted": false,
-      "forecast": {
-        "price": 7309.0,
-        "rangeLow": 7160,
-        "rangeHigh": 7458,
-        "rangeLow2": 7012,
-        "rangeHigh2": 7606,
-        "volDPct": 2.03,
-        "calibrated": true,
-        "plan": {
-          "entry": 7235,
-          "target": 7532,
-          "stop": 7012,
-          "rr": 1.33,
-          "hi3m": 7410,
-          "lo3m": 5212,
-          "basis": "1日の実績振れ幅σ=2.0%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値7,410円 / 安値5,212円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
-        },
-        "cond": {
-          "upRate": 50.6,
-          "n": 89,
-          "condition": "RSI70以上（買われすぎ圏）×5日上昇局面",
-          "note": null
-        },
-        "factors": [
-          {
-            "label": "RSI 72.1（買われすぎ圏・反落しやすい傾向）",
-            "dir": "-"
-          }
-        ],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.92倍に自動補正済み。目標カバー率は約75%）"
-      },
-      "impact": {
-        "price": 7309.0,
-        "normalYen": 162,
-        "normalPct": 2.2,
-        "bigVol": {
-          "n": 4,
-          "avgAbsPct": 7.0,
-          "maxAbsPct": 10.8,
-          "avgYen": 512
-        },
-        "earnings": {
-          "n": 7,
-          "avgAbsPct": 6.5,
-          "maxAbsPct": 13.7,
-          "avgYen": 475,
-          "maxYen": 1001,
-          "upCount": 4,
-          "recentPct": [
-            -1.8,
-            10.8,
-            2.2
-          ]
-        },
-        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
-      },
-      "risk": {
-        "safety": 75,
-        "level": "低",
-        "penalties": [],
-        "supports": [
-          "機関の買い集め兆候"
-        ],
-        "stopPct": 3.08,
-        "rr": 1.33
-      },
-      "earnings": {
-        "date": "2027-02-04",
-        "daysTo": 49,
-        "isToday": false,
-        "isSoon": false,
-        "passed": false,
-        "revGrowthPct": 16.5,
-        "epsGrowthPct": 20.3,
-        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
-      },
-      "yutai": null,
-      "news": [
-        {
-          "title": "バンダイナムコホールディングス[7832]：（株）バンダイナムコホールディングスがPOPS（株）の株式を取得 2026年11月10日(適時開示) ：日経会社情報",
-          "source": "日本経済新聞",
-          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFB6OEpEX3hmbFhsNW5DZ2lONURoT1JxSFNFY0pmSkVPSVl0cFFCTlQ0a3VHVmpVUmJRTnltb042VEhVbFlHaEllY3E1VFRsQ0VUclRpZVVSbmZuMFc4QUE5dVBkWlA1Rk9jZHc?oc=5",
-          "pubDate": "Tue, 10 Nov 2026 08:00:00 GMT",
-          "sentiment": "neu",
-          "theme": "その他"
-        }
-      ]
-    },
-    {
-      "rank": 8,
-      "ticker": "4307.T",
-      "name": "野村総合研究所",
-      "score": 0.631,
-      "f": 6,
-      "per": 168.5,
-      "pbr": 9.68,
-      "roe": 5.1,
-      "value": 0.015,
-      "quality": 0.98,
-      "momentum": 0.52,
-      "smart": 1.0,
-      "smartMoney": {
-        "score": 0.69,
-        "label": "買い集めの兆候",
-        "tone": "pos",
-        "cmf": 0.211,
-        "mfi": 73.6,
-        "obvSlope": 0.08,
-        "vwapDevPct": 9.6,
-        "factors": [
-          "安値圏でも買われている（CMFプラス）",
-          "直近平均コスト(VWAP)を上回って推移",
-          "直近5日は買い方向の出来高が優勢"
-        ]
-      },
-      "smartAdjusted": null,
-      "signal": "様子見",
-      "rsi": 73.8,
-      "conf": "低",
-      "strategy": [
-        "swing"
-      ],
-      "dividend_yield": 1.4,
-      "volatility": 0.4748,
-      "short_ratio": null,
-      "regime_adjusted": false,
-      "forecast": {
-        "price": 6691.0,
-        "rangeLow": 6532,
-        "rangeHigh": 6850,
-        "rangeLow2": 6372,
-        "rangeHigh2": 7010,
-        "volDPct": 2.38,
-        "calibrated": true,
-        "plan": {
-          "entry": 6611,
-          "target": 6930,
-          "stop": 6372,
-          "rr": 1.33,
-          "hi3m": 6691,
-          "lo3m": 4778,
-          "basis": "1日の実績振れ幅σ=2.4%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値6,691円 / 安値4,778円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
-        },
-        "cond": {
-          "upRate": 41.0,
-          "n": 61,
-          "condition": "RSI70以上（買われすぎ圏）×5日上昇局面",
-          "note": null
-        },
-        "factors": [
-          {
-            "label": "RSI 73.8（買われすぎ圏・反落しやすい傾向）",
-            "dir": "-"
-          }
-        ],
-        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.92倍に自動補正済み。目標カバー率は約75%）"
-      },
-      "impact": {
-        "price": 6691.0,
-        "normalYen": 174,
-        "normalPct": 2.6,
-        "bigVol": {
-          "n": 3,
-          "avgAbsPct": 7.8,
-          "maxAbsPct": 16.0,
-          "avgYen": 522
-        },
-        "earnings": null,
-        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
-      },
-      "risk": {
-        "safety": 65,
-        "level": "中",
-        "penalties": [
-          "値動きが大きい（年率47%）→ 建玉は小さめに"
-        ],
-        "supports": [
-          "機関の買い集め兆候"
-        ],
-        "stopPct": 3.62,
-        "rr": 1.33
-      },
-      "earnings": {
-        "date": "2027-01-28",
-        "daysTo": 44,
-        "isToday": false,
-        "isSoon": false,
-        "passed": false,
-        "revGrowthPct": 9.0,
-        "epsGrowthPct": 14.8,
-        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
-      },
-      "yutai": null,
-      "news": []
-    },
-    {
-      "rank": 9,
       "ticker": "4911.T",
       "name": "資生堂",
       "score": 0.627,
@@ -4861,64 +4016,63 @@
       ]
     },
     {
-      "rank": 10,
-      "ticker": "4661.T",
-      "name": "オリエンタルランド",
-      "score": 0.626,
-      "f": 6,
-      "per": 46.4,
-      "pbr": 5.47,
-      "roe": 12.4,
-      "value": 0.033,
-      "quality": 0.982,
-      "momentum": 0.684,
-      "smart": 0.786,
+      "rank": 3,
+      "ticker": "6902.T",
+      "name": "デンソー",
+      "score": 0.615,
+      "f": 9,
+      "per": 12.3,
+      "pbr": 0.94,
+      "roe": 8.9,
+      "value": 0.209,
+      "quality": 0.981,
+      "momentum": 0.332,
+      "smart": 0.887,
       "smartMoney": {
-        "score": 0.378,
+        "score": 0.525,
         "label": "買い集めの兆候",
         "tone": "pos",
-        "cmf": 0.179,
-        "mfi": 54.8,
-        "obvSlope": 0.33,
-        "vwapDevPct": 4.2,
+        "cmf": 0.206,
+        "mfi": 64.1,
+        "obvSlope": 0.15,
+        "vwapDevPct": 2.5,
         "factors": [
           "安値圏でも買われている（CMFプラス）",
-          "上昇日に出来高が集中（OBV上向き）",
           "直近平均コスト(VWAP)を上回って推移",
-          "直近5日は売り方向の出来高が優勢"
+          "直近5日は買い方向の出来高が優勢"
         ]
       },
       "smartAdjusted": null,
       "signal": "強い買い",
-      "rsi": 66.2,
+      "rsi": 62.1,
       "conf": "高",
       "strategy": [
-        "swing"
+        "dividend"
       ],
-      "dividend_yield": 0.5,
-      "volatility": 0.369,
+      "dividend_yield": 3.8,
+      "volatility": 0.2917,
       "short_ratio": null,
       "regime_adjusted": false,
       "forecast": {
-        "price": 3835.0,
-        "rangeLow": 3765,
-        "rangeHigh": 3905,
-        "rangeLow2": 3695,
-        "rangeHigh2": 3975,
-        "volDPct": 1.83,
+        "price": 1936.5,
+        "rangeLow": 1904,
+        "rangeHigh": 1969,
+        "rangeLow2": 1872,
+        "rangeHigh2": 2001,
+        "volDPct": 1.65,
         "calibrated": true,
         "plan": {
-          "entry": 3800,
-          "target": 3940,
-          "stop": 3695,
+          "entry": 1920,
+          "target": 1984,
+          "stop": 1872,
           "rr": 1.33,
-          "hi3m": 3966,
-          "lo3m": 2816,
-          "basis": "1日の実績振れ幅σ=1.8%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値3,966円 / 安値2,816円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+          "hi3m": 1952,
+          "lo3m": 1808,
+          "basis": "1日の実績振れ幅σ=1.7%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値1,952円 / 安値1,808円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
         },
         "cond": {
-          "upRate": 51.5,
-          "n": 169,
+          "upRate": 59.0,
+          "n": 183,
           "condition": "RSI中立圏×5日下落局面",
           "note": null
         },
@@ -4926,28 +4080,730 @@
         "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.92倍に自動補正済み。目標カバー率は約75%）"
       },
       "impact": {
-        "price": 3835.0,
-        "normalYen": 77,
-        "normalPct": 2.0,
+        "price": 1936.5,
+        "normalYen": 35,
+        "normalPct": 1.8,
         "bigVol": {
           "n": 4,
-          "avgAbsPct": 5.7,
-          "maxAbsPct": 8.5,
-          "avgYen": 219
+          "avgAbsPct": 5.2,
+          "maxAbsPct": 10.5,
+          "avgYen": 101
+        },
+        "earnings": null,
+        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
+      },
+      "risk": {
+        "safety": 91,
+        "level": "低",
+        "penalties": [],
+        "supports": [
+          "機関の買い集め兆候"
+        ],
+        "stopPct": 2.5,
+        "rr": 1.33
+      },
+      "earnings": {
+        "date": "2027-02-02",
+        "daysTo": 47,
+        "isToday": false,
+        "isSoon": false,
+        "passed": false,
+        "revGrowthPct": 5.1,
+        "epsGrowthPct": 8.4,
+        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
+      },
+      "yutai": null,
+      "news": []
+    },
+    {
+      "rank": 4,
+      "ticker": "7751.T",
+      "name": "キヤノン",
+      "score": 0.613,
+      "f": 9,
+      "per": 12.6,
+      "pbr": 1.25,
+      "roe": 11.0,
+      "value": 0.16,
+      "quality": 0.982,
+      "momentum": 0.417,
+      "smart": 0.82,
+      "smartMoney": {
+        "score": 0.427,
+        "label": "買い集めの兆候",
+        "tone": "pos",
+        "cmf": 0.032,
+        "mfi": 58.3,
+        "obvSlope": 0.27,
+        "vwapDevPct": 4.3,
+        "factors": [
+          "上昇日に出来高が集中（OBV上向き）",
+          "直近平均コスト(VWAP)を上回って推移",
+          "直近5日は買い方向の出来高が優勢"
+        ]
+      },
+      "smartAdjusted": null,
+      "signal": "売り",
+      "rsi": 76.9,
+      "conf": "中",
+      "strategy": [
+        "dividend"
+      ],
+      "dividend_yield": 3.2,
+      "volatility": 0.2534,
+      "short_ratio": null,
+      "regime_adjusted": false,
+      "forecast": {
+        "price": 4993.0,
+        "rangeLow": 4919,
+        "rangeHigh": 5067,
+        "rangeLow2": 4844,
+        "rangeHigh2": 5142,
+        "volDPct": 1.49,
+        "calibrated": true,
+        "plan": {
+          "entry": 4956,
+          "target": 5105,
+          "stop": 4844,
+          "rr": 1.33,
+          "hi3m": 4993,
+          "lo3m": 4317,
+          "basis": "1日の実績振れ幅σ=1.5%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値4,993円 / 安値4,317円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
+        "cond": {
+          "upRate": 50.0,
+          "n": 42,
+          "condition": "RSI70以上（買われすぎ圏）×5日上昇局面",
+          "note": null
+        },
+        "factors": [
+          {
+            "label": "RSI 76.9（買われすぎ圏・反落しやすい傾向）",
+            "dir": "-"
+          }
+        ],
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.92倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "impact": {
+        "price": 4993.0,
+        "normalYen": 81,
+        "normalPct": 1.6,
+        "bigVol": {
+          "n": 4,
+          "avgAbsPct": 4.9,
+          "maxAbsPct": 6.0,
+          "avgYen": 245
+        },
+        "earnings": null,
+        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
+      },
+      "risk": {
+        "safety": 83,
+        "level": "低",
+        "penalties": [
+          "買われすぎ（RSI77）→ 反落で損切りに当たりやすい"
+        ],
+        "supports": [
+          "機関の買い集め兆候"
+        ],
+        "stopPct": 2.26,
+        "rr": 1.33
+      },
+      "earnings": {
+        "date": "2027-01-28",
+        "daysTo": 44,
+        "isToday": false,
+        "isSoon": false,
+        "passed": false,
+        "revGrowthPct": 4.9,
+        "epsGrowthPct": 25.2,
+        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
+      },
+      "yutai": null,
+      "news": []
+    },
+    {
+      "rank": 5,
+      "ticker": "4452.T",
+      "name": "花王",
+      "score": 0.613,
+      "f": 7,
+      "per": 26.4,
+      "pbr": 3.34,
+      "roe": 12.9,
+      "value": 0.058,
+      "quality": 0.982,
+      "momentum": 0.496,
+      "smart": 0.84,
+      "smartMoney": {
+        "score": 0.456,
+        "label": "買い集めの兆候",
+        "tone": "pos",
+        "cmf": 0.116,
+        "mfi": 69.8,
+        "obvSlope": 0.27,
+        "vwapDevPct": 4.2,
+        "factors": [
+          "安値圏でも買われている（CMFプラス）",
+          "上昇日に出来高が集中（OBV上向き）",
+          "直近平均コスト(VWAP)を上回って推移"
+        ]
+      },
+      "smartAdjusted": null,
+      "signal": "様子見",
+      "rsi": 72.9,
+      "conf": "低",
+      "strategy": [
+        "swing"
+      ],
+      "dividend_yield": 1.9,
+      "volatility": 0.2864,
+      "short_ratio": null,
+      "regime_adjusted": false,
+      "forecast": {
+        "price": 4070.0,
+        "rangeLow": 4016,
+        "rangeHigh": 4124,
+        "rangeLow2": 3963,
+        "rangeHigh2": 4177,
+        "volDPct": 1.31,
+        "calibrated": true,
+        "plan": {
+          "entry": 4043,
+          "target": 4150,
+          "stop": 3963,
+          "rr": 1.34,
+          "hi3m": 4118,
+          "lo3m": 3387,
+          "basis": "1日の実績振れ幅σ=1.3%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値4,118円 / 安値3,387円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
+        "cond": {
+          "upRate": 48.5,
+          "n": 66,
+          "condition": "RSI70以上（買われすぎ圏）×5日上昇局面",
+          "note": null
+        },
+        "factors": [
+          {
+            "label": "RSI 72.9（買われすぎ圏・反落しやすい傾向）",
+            "dir": "-"
+          }
+        ],
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.92倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "impact": {
+        "price": 4070.0,
+        "normalYen": 58,
+        "normalPct": 1.4,
+        "bigVol": {
+          "n": 3,
+          "avgAbsPct": 6.7,
+          "maxAbsPct": 12.8,
+          "avgYen": 273
         },
         "earnings": {
           "n": 8,
-          "avgAbsPct": 5.5,
-          "maxAbsPct": 10.1,
-          "avgYen": 211,
-          "maxYen": 387,
-          "upCount": 2,
+          "avgAbsPct": 3.6,
+          "maxAbsPct": 12.8,
+          "avgYen": 147,
+          "maxYen": 521,
+          "upCount": 6,
           "recentPct": [
-            8.5,
-            -3.6,
-            -10.1
+            4.3,
+            12.8,
+            0.3
           ]
         },
+        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
+      },
+      "risk": {
+        "safety": 85,
+        "level": "低",
+        "penalties": [],
+        "supports": [
+          "機関の買い集め兆候"
+        ],
+        "stopPct": 1.98,
+        "rr": 1.34
+      },
+      "earnings": {
+        "date": "2027-02-09",
+        "daysTo": 52,
+        "isToday": false,
+        "isSoon": false,
+        "passed": false,
+        "revGrowthPct": 5.8,
+        "epsGrowthPct": 14.8,
+        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
+      },
+      "yutai": null,
+      "news": [
+        {
+          "title": "花王(株)【KAOOY】：株価・株式情報",
+          "source": "Yahoo!ファイナンス",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE51V05IR1kyZVpHYnJoQVRJWmZyNTZFTy00NkI1NmstYVY0V0xwXzZWaV9NY0FuS08yQ3RRYU5GLXdHM3VtMWVaZnhBS1NFTjl3?oc=5",
+          "pubDate": "Tue, 24 Nov 2026 12:30:06 GMT",
+          "sentiment": "neu",
+          "theme": "その他"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "ticker": "5108.T",
+      "name": "ブリヂストン",
+      "score": 0.611,
+      "f": 9,
+      "per": 19.5,
+      "pbr": 1.45,
+      "roe": 12.1,
+      "value": 0.134,
+      "quality": 0.982,
+      "momentum": 0.464,
+      "smart": 0.798,
+      "smartMoney": {
+        "score": 0.395,
+        "label": "買い集めの兆候",
+        "tone": "pos",
+        "cmf": 0.18,
+        "mfi": 56.1,
+        "obvSlope": 0.22,
+        "vwapDevPct": 2.4,
+        "factors": [
+          "安値圏でも買われている（CMFプラス）",
+          "上昇日に出来高が集中（OBV上向き）",
+          "直近平均コスト(VWAP)を上回って推移"
+        ]
+      },
+      "smartAdjusted": null,
+      "signal": "強い買い",
+      "rsi": 61.3,
+      "conf": "高",
+      "strategy": [
+        "swing",
+        "dividend"
+      ],
+      "dividend_yield": 3.0,
+      "volatility": 0.2671,
+      "short_ratio": null,
+      "regime_adjusted": false,
+      "forecast": {
+        "price": 4318.0,
+        "rangeLow": 4258,
+        "rangeHigh": 4378,
+        "rangeLow2": 4198,
+        "rangeHigh2": 4438,
+        "volDPct": 1.39,
+        "calibrated": true,
+        "plan": {
+          "entry": 4288,
+          "target": 4408,
+          "stop": 4198,
+          "rr": 1.33,
+          "hi3m": 4420,
+          "lo3m": 3715,
+          "basis": "1日の実績振れ幅σ=1.4%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値4,420円 / 安値3,715円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
+        "cond": {
+          "upRate": 59.1,
+          "n": 154,
+          "condition": "RSI中立圏×5日下落局面",
+          "note": null
+        },
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.92倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "impact": {
+        "price": 4318.0,
+        "normalYen": 65,
+        "normalPct": 1.5,
+        "bigVol": {
+          "n": 6,
+          "avgAbsPct": 4.0,
+          "maxAbsPct": 6.2,
+          "avgYen": 173
+        },
+        "earnings": null,
+        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
+      },
+      "risk": {
+        "safety": 93,
+        "level": "低",
+        "penalties": [],
+        "supports": [
+          "機関の買い集め兆候"
+        ],
+        "stopPct": 2.1,
+        "rr": 1.33
+      },
+      "earnings": {
+        "date": "2027-02-16",
+        "daysTo": 57,
+        "isToday": false,
+        "isSoon": false,
+        "passed": false,
+        "revGrowthPct": 10.2,
+        "epsGrowthPct": 36.3,
+        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
+      },
+      "yutai": null,
+      "news": []
+    },
+    {
+      "rank": 7,
+      "ticker": "8630.T",
+      "name": "SOMPOホールディングス",
+      "score": 0.604,
+      "f": 8,
+      "per": 71.9,
+      "pbr": 1.19,
+      "roe": 9.7,
+      "value": 0.155,
+      "quality": 0.981,
+      "momentum": 0.426,
+      "smart": 0.805,
+      "smartMoney": {
+        "score": 0.405,
+        "label": "買い集めの兆候",
+        "tone": "pos",
+        "cmf": 0.048,
+        "mfi": 73.8,
+        "obvSlope": 0.35,
+        "vwapDevPct": 1.6,
+        "factors": [
+          "上昇日に出来高が集中（OBV上向き）",
+          "直近平均コスト(VWAP)を上回って推移",
+          "直近5日は買い方向の出来高が優勢"
+        ]
+      },
+      "smartAdjusted": null,
+      "signal": "強い買い",
+      "rsi": 64.1,
+      "conf": "高",
+      "strategy": [
+        "swing",
+        "dividend"
+      ],
+      "dividend_yield": 2.8,
+      "volatility": 0.2846,
+      "short_ratio": null,
+      "regime_adjusted": false,
+      "forecast": {
+        "price": 7212.0,
+        "rangeLow": 7077,
+        "rangeHigh": 7347,
+        "rangeLow2": 6942,
+        "rangeHigh2": 7482,
+        "volDPct": 1.87,
+        "calibrated": true,
+        "plan": {
+          "entry": 7145,
+          "target": 7415,
+          "stop": 6943,
+          "rr": 1.34,
+          "hi3m": 7320,
+          "lo3m": 6483,
+          "basis": "1日の実績振れ幅σ=1.9%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値7,320円 / 安値6,483円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
+        "cond": {
+          "upRate": 51.6,
+          "n": 215,
+          "condition": "RSI中立圏×5日上昇局面",
+          "note": null
+        },
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.92倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "impact": {
+        "price": 7212.0,
+        "normalYen": 147,
+        "normalPct": 2.0,
+        "bigVol": null,
+        "earnings": null,
+        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
+      },
+      "risk": {
+        "safety": 92,
+        "level": "低",
+        "penalties": [],
+        "supports": [
+          "機関の買い集め兆候"
+        ],
+        "stopPct": 2.83,
+        "rr": 1.34
+      },
+      "earnings": {
+        "date": "2027-02-11",
+        "daysTo": 54,
+        "isToday": false,
+        "isSoon": false,
+        "passed": false,
+        "revGrowthPct": 10.0,
+        "epsGrowthPct": -86.0,
+        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
+      },
+      "yutai": null,
+      "news": []
+    },
+    {
+      "rank": 8,
+      "ticker": "7267.T",
+      "name": "ホンダ",
+      "score": 0.568,
+      "f": 7,
+      "per": null,
+      "pbr": 0.57,
+      "roe": -1.2,
+      "value": 0.322,
+      "quality": 0.978,
+      "momentum": 0.447,
+      "smart": 0.582,
+      "smartMoney": {
+        "score": 0.08,
+        "label": "中立",
+        "tone": "neu",
+        "cmf": -0.041,
+        "mfi": 49.6,
+        "obvSlope": 0.16,
+        "vwapDevPct": -2.0,
+        "factors": [
+          "直近平均コスト(VWAP)を下回って推移",
+          "直近5日は買い方向の出来高が優勢"
+        ]
+      },
+      "smartAdjusted": null,
+      "signal": "強い買い",
+      "rsi": 43.3,
+      "conf": "高",
+      "strategy": [
+        "swing",
+        "dividend"
+      ],
+      "dividend_yield": 4.0,
+      "volatility": 0.3344,
+      "short_ratio": null,
+      "regime_adjusted": false,
+      "forecast": {
+        "price": 1776.0,
+        "rangeLow": 1741,
+        "rangeHigh": 1811,
+        "rangeLow2": 1707,
+        "rangeHigh2": 1845,
+        "volDPct": 1.94,
+        "calibrated": true,
+        "plan": {
+          "entry": 1759,
+          "target": 1828,
+          "stop": 1707,
+          "rr": 1.33,
+          "hi3m": 1942,
+          "lo3m": 1578,
+          "basis": "1日の実績振れ幅σ=1.9%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値1,942円 / 安値1,578円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
+        "cond": {
+          "upRate": 56.9,
+          "n": 188,
+          "condition": "RSI中立圏×5日下落局面",
+          "note": null
+        },
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.92倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "impact": {
+        "price": 1776.0,
+        "normalYen": 38,
+        "normalPct": 2.1,
+        "bigVol": null,
+        "earnings": null,
+        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
+      },
+      "risk": {
+        "safety": 87,
+        "level": "低",
+        "penalties": [],
+        "supports": [],
+        "stopPct": 2.96,
+        "rr": 1.33
+      },
+      "earnings": {
+        "date": "2027-02-10",
+        "daysTo": 53,
+        "isToday": false,
+        "isSoon": false,
+        "passed": false,
+        "revGrowthPct": 12.9,
+        "epsGrowthPct": -41.7,
+        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
+      },
+      "yutai": null,
+      "news": []
+    },
+    {
+      "rank": 9,
+      "ticker": "8766.T",
+      "name": "東京海上HD",
+      "score": 0.566,
+      "f": 7,
+      "per": null,
+      "pbr": 2.12,
+      "roe": 6.3,
+      "value": 0.084,
+      "quality": 0.98,
+      "momentum": 0.424,
+      "smart": 0.742,
+      "smartMoney": {
+        "score": 0.313,
+        "label": "買い集めの兆候",
+        "tone": "pos",
+        "cmf": -0.05,
+        "mfi": 71.0,
+        "obvSlope": 0.49,
+        "vwapDevPct": 1.7,
+        "factors": [
+          "上昇日に出来高が集中（OBV上向き）",
+          "直近平均コスト(VWAP)を上回って推移",
+          "直近5日は買い方向の出来高が優勢"
+        ]
+      },
+      "smartAdjusted": null,
+      "signal": "強い買い",
+      "rsi": 62.3,
+      "conf": "高",
+      "strategy": [
+        "swing",
+        "dividend"
+      ],
+      "dividend_yield": 2.6,
+      "volatility": 0.3146,
+      "short_ratio": null,
+      "regime_adjusted": false,
+      "forecast": {
+        "price": 594.4,
+        "rangeLow": 582,
+        "rangeHigh": 607,
+        "rangeLow2": 569,
+        "rangeHigh2": 620,
+        "volDPct": 2.12,
+        "calibrated": true,
+        "plan": {
+          "entry": 588,
+          "target": 613,
+          "stop": 569,
+          "rr": 1.32,
+          "hi3m": 606,
+          "lo3m": 505,
+          "basis": "1日の実績振れ幅σ=2.1%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値606円 / 安値505円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
+        "cond": {
+          "upRate": 54.4,
+          "n": 193,
+          "condition": "RSI中立圏×5日上昇局面",
+          "note": null
+        },
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.92倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "impact": {
+        "price": 594.4,
+        "normalYen": 14,
+        "normalPct": 2.3,
+        "bigVol": null,
+        "earnings": null,
+        "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
+      },
+      "risk": {
+        "safety": 89,
+        "level": "低",
+        "penalties": [],
+        "supports": [
+          "機関の買い集め兆候"
+        ],
+        "stopPct": 3.23,
+        "rr": 1.32
+      },
+      "earnings": {
+        "date": "2027-02-10",
+        "daysTo": 53,
+        "isToday": false,
+        "isSoon": false,
+        "passed": false,
+        "revGrowthPct": 18.6,
+        "epsGrowthPct": -1.7,
+        "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
+      },
+      "yutai": null,
+      "news": []
+    },
+    {
+      "rank": 10,
+      "ticker": "4543.T",
+      "name": "テルモ",
+      "score": 0.56,
+      "f": 7,
+      "per": 34.3,
+      "pbr": 2.44,
+      "roe": 7.5,
+      "value": 0.077,
+      "quality": 0.981,
+      "momentum": 0.364,
+      "smart": 0.804,
+      "smartMoney": {
+        "score": 0.404,
+        "label": "買い集めの兆候",
+        "tone": "pos",
+        "cmf": 0.112,
+        "mfi": 56.3,
+        "obvSlope": 0.22,
+        "vwapDevPct": 4.9,
+        "factors": [
+          "安値圏でも買われている（CMFプラス）",
+          "上昇日に出来高が集中（OBV上向き）",
+          "直近平均コスト(VWAP)を上回って推移"
+        ]
+      },
+      "smartAdjusted": null,
+      "signal": "強い買い",
+      "rsi": 59.0,
+      "conf": "高",
+      "strategy": [
+        "swing"
+      ],
+      "dividend_yield": 1.3,
+      "volatility": 0.3717,
+      "short_ratio": null,
+      "regime_adjusted": false,
+      "forecast": {
+        "price": 2638.0,
+        "rangeLow": 2588,
+        "rangeHigh": 2688,
+        "rangeLow2": 2538,
+        "rangeHigh2": 2738,
+        "volDPct": 1.9,
+        "calibrated": true,
+        "plan": {
+          "entry": 2613,
+          "target": 2713,
+          "stop": 2538,
+          "rr": 1.33,
+          "hi3m": 2696,
+          "lo3m": 2217,
+          "basis": "1日の実績振れ幅σ=1.9%を単位に、買い目安=現値-0.5σ・利確=買値+2σ・損切り=買値-1.5σで機械的に算出（利益:損失の比率 1.3:1）。参考: 直近3ヶ月の高値2,696円 / 安値2,217円。この目安が実際に機能したかは毎営業日答え合わせして下の実績に反映します。損切りは必ずセットで守ることを想定した設計です。"
+        },
+        "cond": {
+          "upRate": 48.6,
+          "n": 183,
+          "condition": "RSI中立圏×5日上昇局面",
+          "note": null
+        },
+        "factors": [],
+        "basis": "レンジは過去2年の日次値動きの標準偏差を、答え合わせ実績で当たり幅に合わせて補正したもの。実績確率は同条件だった過去の日の翌日騰落を実際に集計。統計的傾向であり将来を保証しません。（答え合わせ実績に基づきレンジ幅を0.92倍に自動補正済み。目標カバー率は約75%）"
+      },
+      "impact": {
+        "price": 2638.0,
+        "normalYen": 55,
+        "normalPct": 2.1,
+        "bigVol": null,
+        "earnings": null,
         "basis": "すべて過去の実測値（ふだん=過去2年の日次σ、出来高急増日=直近6ヶ月で出来高が20日平均の2倍以上だった日、決算=過去の発表後最初の取引日の騰落）。円換算は現在の株価ベース。過去の実績であり将来の値動きを保証しません。"
       },
       "risk": {
@@ -4957,30 +4813,21 @@
         "supports": [
           "機関の買い集め兆候"
         ],
-        "stopPct": 2.76,
+        "stopPct": 2.87,
         "rr": 1.33
       },
       "earnings": {
-        "date": "2027-01-28",
-        "daysTo": 44,
+        "date": "2027-02-11",
+        "daysTo": 54,
         "isToday": false,
         "isSoon": false,
         "passed": false,
-        "revGrowthPct": 10.2,
-        "epsGrowthPct": -1.2,
+        "revGrowthPct": 13.7,
+        "epsGrowthPct": null,
         "source": "決算日: yfinance calendar / 前年比: yfinance info（無料・遅延あり）"
       },
       "yutai": null,
-      "news": [
-        {
-          "title": "京成、OLC株の売却で特別利益506億円 特別損失116億円も計上",
-          "source": "日本経済新聞",
-          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4wa242NUN0UXNWaFc3VmVOVFBHZkJPZmVDZjh2Y3YwY0JlSFRXYzdQNjNKYjRnUkp6N1c0VWVEV1V2ZmM1VDdZeHJoSzV6dVZ0Z0dWNGhMblE5NWNpU2pTZTNQSmZlMGd2MjRfYw?oc=5",
-          "pubDate": "Wed, 25 Nov 2026 10:24:53 GMT",
-          "sentiment": "neu",
-          "theme": "その他"
-        }
-      ]
+      "news": []
     }
   ],
   "stockMaster": [
@@ -5101,7 +4948,7 @@
       "roe": 8.9,
       "rsi": 62.1,
       "vol": 0.2917,
-      "inTop": false,
+      "inTop": true,
       "yutai": null
     },
     {
@@ -5116,7 +4963,7 @@
       "roe": 12.1,
       "rsi": 61.3,
       "vol": 0.2671,
-      "inTop": false,
+      "inTop": true,
       "yutai": null
     },
     {
@@ -5131,7 +4978,7 @@
       "roe": 7.5,
       "rsi": 59.0,
       "vol": 0.3717,
-      "inTop": false,
+      "inTop": true,
       "yutai": null
     },
     {
@@ -5191,7 +5038,7 @@
       "roe": -1.2,
       "rsi": 43.3,
       "vol": 0.3344,
-      "inTop": false,
+      "inTop": true,
       "yutai": null
     },
     {
@@ -5221,7 +5068,7 @@
       "roe": 11.0,
       "rsi": 76.9,
       "vol": 0.2534,
-      "inTop": false,
+      "inTop": true,
       "yutai": null
     },
     {
@@ -5341,7 +5188,7 @@
       "roe": 12.9,
       "rsi": 72.9,
       "vol": 0.2864,
-      "inTop": false,
+      "inTop": true,
       "yutai": null
     },
     {
@@ -5396,7 +5243,7 @@
       "divPerShare": 200.0,
       "exDivDate": "2027-03-30",
       "dividendYield": 2.71,
-      "per": 13.0,
+      "per": 12.9,
       "pbr": 1.66,
       "roe": 13.1,
       "rsi": 57.6,
@@ -5431,7 +5278,7 @@
       "roe": 9.7,
       "rsi": 64.1,
       "vol": 0.2846,
-      "inTop": false,
+      "inTop": true,
       "yutai": null
     },
     {
@@ -5476,7 +5323,7 @@
       "roe": 6.3,
       "rsi": 62.3,
       "vol": 0.3146,
-      "inTop": false,
+      "inTop": true,
       "yutai": null
     },
     {
@@ -5504,8 +5351,8 @@
       "per": 12.3,
       "pbr": 1.12,
       "roe": null,
-      "rsi": 38.3,
-      "vol": 0.3623,
+      "rsi": 50.0,
+      "vol": NaN,
       "inTop": false,
       "yutai": null
     },
@@ -5596,7 +5443,7 @@
       "roe": 5.1,
       "rsi": 73.8,
       "vol": 0.4748,
-      "inTop": true,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -5686,7 +5533,7 @@
       "roe": 0.6,
       "rsi": 79.9,
       "vol": 0.2641,
-      "inTop": true,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -5716,7 +5563,7 @@
       "roe": 5.1,
       "rsi": 84.6,
       "vol": 0.3209,
-      "inTop": true,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -5761,7 +5608,7 @@
       "roe": 18.2,
       "rsi": 72.1,
       "vol": 0.3983,
-      "inTop": true,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -6106,7 +5953,7 @@
       "roe": 12.4,
       "rsi": 66.2,
       "vol": 0.369,
-      "inTop": true,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -6256,7 +6103,7 @@
       "roe": 8.3,
       "rsi": 64.4,
       "vol": 0.2953,
-      "inTop": true,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -6361,7 +6208,7 @@
       "roe": 3.9,
       "rsi": 63.3,
       "vol": 0.2573,
-      "inTop": true,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -6406,7 +6253,7 @@
       "roe": -8.3,
       "rsi": 74.8,
       "vol": 0.5773,
-      "inTop": true,
+      "inTop": false,
       "yutai": null
     },
     {
@@ -7513,6 +7360,11 @@
     },
     {
       "type": "warn",
+      "title": "入替候補OUT: ニデック",
+      "desc": "スコア下位15% (score=0.371)"
+    },
+    {
+      "type": "warn",
       "title": "入替候補OUT: 日産化学",
       "desc": "スコア下位15% (score=0.368)"
     },
@@ -7520,11 +7372,6 @@
       "type": "warn",
       "title": "入替候補OUT: S&J",
       "desc": "スコア下位15% (score=0.368)"
-    },
-    {
-      "type": "warn",
-      "title": "入替候補OUT: メドレー",
-      "desc": "スコア下位15% (score=0.359)"
     }
   ],
   "flow": {
