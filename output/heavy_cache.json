@@ -161,10 +161,10 @@
   ],
   "9201.T": [
    {
-    "title": "日本航空（株）第１回社債型種類株式【92015】：株価・株式情報",
+    "title": "日本航空(株)【JAPSY】：株価・株式情報",
     "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1wM1BIWUdEZEZHLV9wRmxFN3Q5akZVTzFSZXhhQTlrLWs5QnlBN1phSjBUY2hyVG9nSnA3NFdJTm9rU241aDR0SjFKVVNfR1BteEpV?oc=5",
-    "pubDate": "Thu, 26 Nov 2026 11:59:52 GMT",
+    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9fMEEtbHBKUXVDNVRQWTdxdDFYNkg3QmtyOTdxU2hGOGhieEVtTjlrNk00a2sySnBBVVBaM3NMVC1nazhPR0VPeVdpbHdraS1U?oc=5",
+    "pubDate": "Wed, 25 Nov 2026 22:24:31 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
@@ -181,10 +181,20 @@
   ],
   "4523.T": [
    {
-    "title": "【アナリスト評価】エーザイ、レーティング強気を継続、目標株価6,000円に引上げ（米系大手証券）(アイフィス株予報)",
+    "title": "エーザイ(株)【4523】：株価・株式情報",
     "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNZmtXbzBhSVZvN3hMeHVWcjZEQVdfUTlZaXhDWUJOa2lYNmZDOWVQTlNJOW45ZzlnckZlV005ZGxYZG5oVmpmLTl6NjAyRklyZFUxUlR3eHFDRE14Wk1tbjNFdmRMNGFMcVI5N3VoZWZTcFVwc19aSVN3dFNlYms5VUhvaHU5VmM?oc=5",
-    "pubDate": "Tue, 24 Nov 2026 07:11:37 GMT",
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBHY21vRWtiMGpDMmNEZi03R3BadmxFYlgzcW03Y3lkSndUNmZEd2s1Sl9BeHEwQ0QtWlpFV2xkTlRncnNiVEVVLWJtM3ZJYkpBUGc?oc=5",
+    "pubDate": "Fri, 20 Nov 2026 06:57:07 GMT",
+    "sentiment": "neu",
+    "theme": "その他"
+   }
+  ],
+  "4911.T": [
+   {
+    "title": "(株)資生堂【SSDOY】：株価・株式情報",
+    "source": "Yahoo!ファイナンス",
+    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1JMXlkMzZyYktiTnF4TkFqOUpZS3dIZ2Y3YkNEbnlXa1VlT25OMEFsbXNDN2lWcnNqcWJGWkpTcVVDQ20zN2xGRk15ZXppMF9U?oc=5",
+    "pubDate": "Thu, 26 Nov 2026 16:58:03 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
@@ -205,16 +215,6 @@
     "source": "Yahoo!ファイナンス",
     "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9EZW96Z2VXOEtxU1ZicjdyWkFJM0hkOU05NHNHVFd3S1lOaGRxZ004NEdoM0Vuc2ZvSXRMWVFVUkNyY1VMTk45N3lMVjZkRE9NeVRHSnFCbXF3SkdZNTBvag?oc=5",
     "pubDate": "Fri, 06 Nov 2026 08:00:00 GMT",
-    "sentiment": "neu",
-    "theme": "その他"
-   }
-  ],
-  "4911.T": [
-   {
-    "title": "(株)資生堂【SSDOY】：株価・株式情報",
-    "source": "Yahoo!ファイナンス",
-    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1JMXlkMzZyYktiTnF4TkFqOUpZS3dIZ2Y3YkNEbnlXa1VlT25OMEFsbXNDN2lWcnNqcWJGWkpTcVVDQ20zN2xGRk15ZXppMF9U?oc=5",
-    "pubDate": "Thu, 26 Nov 2026 16:58:03 GMT",
     "sentiment": "neu",
     "theme": "その他"
    }
@@ -360,13 +360,13 @@
   "source": "JPX 投資部門別売買状況（東証プライム・週次・金額ベース）"
  },
  "backtest": {
-  "annual": "+15.2%",
-  "benchmark": "+24.2%",
-  "sharpe": "0.40",
-  "dd": "-33.0%",
+  "annual": "+15.5%",
+  "benchmark": "+24.4%",
+  "sharpe": "0.41",
+  "dd": "-32.5%",
   "winrate": "56.5%",
   "months": "23ヶ月",
-  "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+24.2%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
+  "note": "検証方法: 前月末までの6ヶ月騰落率上位10銘柄を翌月保有・月次入替（先読みなし・手数料0.1%/月控除）。同期間のTOPIX連動ETF(1306)は年率+24.4%。これは総合スコアのうち勢い(モメンタム)成分のみの近似検証で、割安度・稼ぐ力を含む総合スコア自体の検証ではありません。過去の実績であり、将来の成果を保証するものではありません。"
  },
  "overnight": {
   "generatedAt": "2026-11-27 06:26",
@@ -3019,6 +3019,16 @@
    "2025-05-14",
    "2025-02-06"
   ],
+  "4911.T": [
+   "2026-11-09",
+   "2026-08-04",
+   "2026-05-11",
+   "2026-02-09",
+   "2025-11-09",
+   "2025-08-05",
+   "2025-05-11",
+   "2025-02-09"
+  ],
   "4661.T": [
    "2026-10-29",
    "2026-07-29",
@@ -3038,16 +3048,6 @@
    "2025-08-04",
    "2025-05-08",
    "2025-02-06"
-  ],
-  "4911.T": [
-   "2026-11-09",
-   "2026-08-04",
-   "2026-05-11",
-   "2026-02-09",
-   "2025-11-09",
-   "2025-08-05",
-   "2025-05-11",
-   "2025-02-09"
   ],
   "2269.T": [
    "2026-11-11",
